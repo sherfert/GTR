@@ -1,0 +1,27 @@
+{
+  "name": "corpus-fuzzer",
+  "version": "1.0.0",
+  "description": "Fuzz from corpus",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.cased.de/git/ec-spride-sola-projects-js-reliability-correctness"
+  },
+  "keywords": [
+    "fuzzer",
+    "JS"
+  ],
+  "author": "Michael Pradel, Jibesh Patra",
+  "license": "MIT",
+  "dependencies": {
+    "escodegen": "^1.8.0",
+    "esprima": "^2.7.2",
+    "jsonfile": "^2.2.3",
+    "plotly": "^1.0.6",
+    "seedrandom": "^2.4.2",
+    "single-line-log": "^1.1.1"
+  }
+}

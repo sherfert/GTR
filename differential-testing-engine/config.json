@@ -1,0 +1,7 @@
+{
+  "preprocessor": "./jalangiPreprocessor.js",
+  "codeDirectory": "generatedCode",
+  "fileRefreshSleep": 2000,
+  "repetitionsPerBrowser": 2,
+  "port": 4000
+}
