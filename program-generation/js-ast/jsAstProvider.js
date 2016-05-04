@@ -103,5 +103,6 @@
 
     exports.init = init;
     exports.nextTree = nextTree;
+    exports.astToTree = astToTree;
 
 })();
