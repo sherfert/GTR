@@ -1,12 +1,11 @@
 var x = 23;
 var y = 5;
-var sum = x + y;
-console.log("sum is " + sum);
+var z = [2,5,"NaN"];
 function foo() {
-	while(x != y) {
+	if(x != y) {
 		y++;
 		x = z;
 	}
-	return x;
+	return z[2].fun();
 }
 foo();

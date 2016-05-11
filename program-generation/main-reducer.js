@@ -9,11 +9,10 @@
     var treeProvider = require(config.treeProvider);
     var treeGenerator = require(config.treeGenerator);
     var ddReducer = require("./tree-reducer/deltaDebuggingReducer");
+    var inputTester = require("./tree-reducer/inputTester");
 
 
-    /* Simply checks if a fixed code snipped is contained.
-     * TODO provide a test function in another module that
-     * actually executes the code.
+    /** Simply checks if a fixed code snipped is contained.
      */
     function simpleTest(code) {
         var snippet1 = "var x = 23;";
@@ -26,8 +25,10 @@
         return "pass";
     }
 
-    var code = fs.readFileSync("tree-reducer/input/test.js");
-    var newCode = ddReducer.ddminChar(code, simpleTest);
+    var code = "" + fs.readFileSync("tree-reducer/input/test.js");
+    var tester = new inputTester.Tester(code);
+    var test = function(c) { return tester.test(c)};
+    var newCode = ddReducer.ddminChar(code, test);
 
 
     //var ast = esprima.parse(code);

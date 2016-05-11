@@ -7,6 +7,7 @@
     var config = require("../config").config;
     var fs = require('fs');
     var child_process = require('child_process');
+    var tmp = require('tmp');
 
     /**
      * Tests if a randomly generated program crashes in node.
@@ -42,5 +43,34 @@
         return test_result;
     }
 
+    // TODO extract the interesting part of the error message
+    function crashTestJSCode(code) {
+        let nodePath = config.nodePath;
+
+        /* Check if node exists */
+        if (!fs.existsSync(nodePath)) {
+            console.error("Could not crash test, node not found in " + nodePath);
+            return {name:"NodeNotFound", message:"Could not crash test, node not found in " + nodePath};
+        } else {
+            // Write the code to a temporary file
+            let file = tmp.fileSync();
+            fs.writeFileSync(file.name, code);
+            let executableProgram = nodePath + " " + file.name;
+            try {
+                child_process.execSync(executableProgram, {
+                    timeout: 2000,
+                    stdio: 'pipe',
+                    shell: '/bin/bash',
+                    killSignal: 'SIGKILL'
+                });
+
+            } catch (e) {
+                return e;
+            }
+        }
+        return {name: "", message:""};
+    }
+
     exports.crashTestJS = crashTestJS;
+    exports.crashTestJSCode = crashTestJSCode;
 })();

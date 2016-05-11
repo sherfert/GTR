@@ -17,7 +17,7 @@
         this.text = text;
 
         if(tokens === undefined) {
-            tokens = Array.from("" + text);
+            tokens = Array.from(text);
         }
         this.tokens = tokens;
 
@@ -38,7 +38,7 @@
      */
     TextInput.prototype.getLength = function() {
         return this.activeTokens.length;
-    }
+    };
 
     /**
      * Configures the granularity for the subsequent calls to getSubset and
@@ -73,7 +73,7 @@
      */
     TextInput.prototype.getSubset = function(num) {
         return new TextInput(this.text, this.tokens, this.chunks[num]);
-    }
+    };
 
     /**
      *
@@ -93,7 +93,7 @@
             }
         }
         return new TextInput(this.text, this.tokens, complement);
-    }
+    };
 
     /**
      * Obtains the code that results from putting all active tokens together.
@@ -106,7 +106,7 @@
             str = str + this.tokens[this.activeTokens[i]];
         }
         return str;
-    }
+    };
 
     function ddminTree(tree, test) {
         return tree;
@@ -137,6 +137,13 @@
      * @return {Input}       The minimized input.
      */
     function ddmin2(input, n, test) {
+        var len = input.getLength();
+        if(len == 1) {
+            // No further minimization possible
+            console.log("Return' subset: " + input.activeTokens);
+            return input;
+        }
+
         // Set the granularity on the input
         input.setGranularity(n);
 
@@ -144,8 +151,12 @@
         for(var i = 0; i < n; i++) {
             // Obtain subset
             var subset = input.getSubset(i);
+            var result = test(subset.getCurrentCode());
+            console.log("Testing subset: " + subset.activeTokens + "\n\tyields " + result);
             // Test the subset
-            if(test(subset.getCurrentCode()) == "fail") {
+            if(result == "fail") {
+                console.log("Continue with subset and granularity " + 2
+                    + " and length " + subset.getLength());
                 return ddmin2(subset, 2, test);
             }
         }
@@ -154,19 +165,24 @@
         for(var i = 0; i < n; i++) {
             // Obtain subset
             var subset = input.getComplement(i);
+            var result = test(subset.getCurrentCode());
+            console.log("Testing complm: " + subset.activeTokens + "\n\tyields " + result);
             // Test the subset
-            if(test(subset.getCurrentCode()) == "fail") {
+            if(result == "fail") {
+                console.log("Continue with complement and granularity " + Math.max(n - 1, 2)
+                    + " and length " + subset.getLength());
                 return ddmin2(subset, Math.max(n - 1, 2), test);
             }
         }
 
-        var len = input.getLength();
         if(n < len) {
             // Increase granularity
+            console.log("Increasing granularity to " + Math.min(len, 2 * n));
             return ddmin2(input, Math.min(len, 2 * n), test);
         }
 
         // Otherwise done
+        console.log("Return' subset: " + input.activeTokens);
         return input;
     }
 
