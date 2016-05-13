@@ -55,20 +55,14 @@
             // Write the code to a temporary file
             let file = tmp.fileSync();
             fs.writeFileSync(file.name, code);
-            let executableProgram = nodePath + " " + file.name;
-            try {
-                child_process.execSync(executableProgram, {
-                    timeout: 2000,
-                    stdio: 'pipe',
-                    shell: '/bin/bash',
-                    killSignal: 'SIGKILL'
-                });
-
-            } catch (e) {
-                return e;
-            }
+            // Return the result of spawning a child process
+            return child_process.spawnSync(nodePath, [file.name], {
+                encoding: 'utf8',
+                shell: false,
+                timeout: 1000,
+                killSignal: 'SIGKILL'
+            });
         }
-        return {name: "", message:""};
     }
 
     exports.crashTestJS = crashTestJS;
