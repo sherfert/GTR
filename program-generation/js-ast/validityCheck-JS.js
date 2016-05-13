@@ -35,5 +35,20 @@
         return valid;
     }
 
+    /**
+     * Checks if a code is syntactically valid.
+     * @param {string} code the code to test
+     * @returns {string} {@code ""} if the syntax is fine, and a string with the error message otherwise.
+     */
+    function testValidityJSCode(code) {
+        try {
+            esprima.parse(code);
+            return "";
+        } catch (err) {
+            return "Syntax error: " + err;
+        }
+    }
+
     exports.validJS = validJS;
+    exports.testValidityJSCode = testValidityJSCode;
 })();

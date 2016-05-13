@@ -43,16 +43,21 @@
         return test_result;
     }
 
-    // TODO extract the interesting part of the error message
+    /**
+     * Executes a piece of code in a child instance of node.js. Return the process result.
+     * @param {string} code the code to execute
+     * @returns {object} the result of child_process.spawnSync. Or, if node was not found, an object with
+     *      {@code name:"NodeNotFound"} and an additional message property.
+     */
     function crashTestJSCode(code) {
         let nodePath = config.nodePath;
 
-        /* Check if node exists */
+        // Check if node exists
         if (!fs.existsSync(nodePath)) {
             console.error("Could not crash test, node not found in " + nodePath);
-            return {name:"NodeNotFound", message:"Could not crash test, node not found in " + nodePath};
+            return {name:"NodeNotFound", status:1, message:"Could not crash test, node not found in " + nodePath};
         } else {
-            // Write the code to a temporary file
+            // Write the code to a temporary file (will be removed by library)
             let file = tmp.fileSync();
             fs.writeFileSync(file.name, code);
             // Return the result of spawning a child process

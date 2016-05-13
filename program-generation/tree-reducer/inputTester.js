@@ -2,12 +2,13 @@
 
 (function() {
     var crashTester = require("../js-ast/crashTest-JS");
+    var syntaxTester = require("../js-ast/validityCheck-JS");
 
     /**
-     * A method that executes the code and returns an error object obtained from the execution.
-     * @type {function(string) : object}
+     * A method that executes the code and returns an error message obtained from the execution.
+     * @type {function(string) : string}
      */
-    var testMethod = testWithChildProcess;//testCodeWithTryCatchEval;
+    var testMethod = testWithChildProcess;
 
     /**
      * Creates a tester that compares subsequent code executions to an execution of the code given here.
@@ -43,9 +44,24 @@
         }
     };
 
+    /**
+     * Tests arbitrary code first with esprima for syntax errors and afterwards with node for runtime errors.
+     * @param {string} code the code to test
+     * @returns {string} the error message or {@code "" } if the code runs without exception.
+     */
     function testWithChildProcess(code) {
-        // TODO first run a syntax check because this is slow as hell
+        // First run a syntax check
+        var err = syntaxTester.testValidityJSCode(code);
+        if(err) {
+            // There was a syntax error
+            return err;
+        }
+        // Then actually execute the code
         var res = crashTester.crashTestJSCode(code);
+        if(res.name === "NodeNotFound") {
+            // Node was not found
+            return res.name + ": " + res.message;
+        }
         if(res.status == 0) {
             // It ran successfully - no error
             return "";
@@ -66,7 +82,7 @@
      * FIXME hangs if the code contains an endless loop.
      * FIXME can create global variables, in which case consecutive executions depend on previous ones
      * @param {string} code the code to execute
-     * @returns {string} the message or {@code "" } if the code runs without exception.
+     * @returns {string} the error message or {@code "" } if the code runs without exception.
      */
     function testCodeWithTryCatchEval(code) {
         console.log("Testing:");
