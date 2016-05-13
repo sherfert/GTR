@@ -2,7 +2,6 @@
 
 (function() {
 
-    // TODO implement cacheing of already tested subsets
     // TODO extract all input independent methods to a common supertype
 
     /**
@@ -48,7 +47,7 @@
     TextInput.prototype.setGranularity = function(n) {
         // The maximum size a chunk can have
         var maxChunkSize = Math.ceil(this.activeTokens.length / n);
-        // Number of chuncks with the maximum length
+        // Number of chunks with the maximum length
         var maxLengthChunks = n;
         // Some chunks must be shorter if there is no clean division
         if(this.activeTokens.length % n != 0) {
@@ -116,6 +115,9 @@
         return ddmin(new TextInput(text), test).getCurrentCode();
     }
 
+    // A map that serves as a cache for ddmin
+    var cache;
+
     /**
      * Implements a generic ddmin algorithm. The input needs to be of type Input
      * or a descendant.
@@ -126,6 +128,8 @@
      * @return {Input}       The minimized input.
      */
     function ddmin(input, test) {
+        // Empty the cache
+        cache = {};
         return ddmin2(input, 2, test);
     }
 
@@ -148,11 +152,23 @@
         input.setGranularity(n);
 
         // Try reducing to subset
-        for(var i = 0; i < n; i++) {
+        for(let i = 0; i < n; i++) {
             // Obtain subset
-            var subset = input.getSubset(i);
-            var result = test(subset.getCurrentCode());
-            console.log("Testing subset: " + subset.activeTokens + "\n\tyields " + result);
+            let subset = input.getSubset(i);
+            let result;
+            // Check the cache
+            let key = subset.activeTokens.toString();
+            if(cache.hasOwnProperty(key)) {
+                console.log("Using cached value");
+                result = cache[key];
+            } else {
+                // No cached value available
+                result = test(subset.getCurrentCode());
+                // Cache the result
+                cache[key] = result;
+            }
+
+            console.log("Testing subset: " + key + "\n\tyields " + result);
             // Test the subset
             if(result == "fail") {
                 console.log("Continue with subset and granularity " + 2
@@ -162,10 +178,22 @@
         }
 
         // Try reducing to complement
-        for(var i = 0; i < n; i++) {
+        for(let i = 0; i < n; i++) {
             // Obtain subset
-            var subset = input.getComplement(i);
-            var result = test(subset.getCurrentCode());
+            let subset = input.getComplement(i);
+            let result;
+            // Check the cache
+            let key = subset.activeTokens.toString();
+            if(cache.hasOwnProperty(key)) {
+                console.log("Using cached value");
+                result = cache[key];
+            } else {
+                // No cached value available
+                result = test(subset.getCurrentCode());
+                // Cache the result
+                cache[key] = result;
+            }
+
             console.log("Testing complm: " + subset.activeTokens + "\n\tyields " + result);
             // Test the subset
             if(result == "fail") {
