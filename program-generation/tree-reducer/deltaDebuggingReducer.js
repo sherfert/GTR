@@ -4,115 +4,121 @@
 
     // TODO extract all input independent methods to a common supertype
 
+
     /**
-     *
-     * @param {string} text The text that comprises this input
-     * @param {Array.<string>} tokens optional tokens of the text.
-     *                                Auto-generated if omitted
-     * @param {Array.<number>} activeTokens optional list of indices of tokens
-     *                                      in the tokens list that are active. Set to all tokens if omitted.
+     * An input for the ddmin algorithm that uses text as input and splits it into char-tokens.
      */
-    function TextInput(text, tokens, activeTokens) {
-        this.text = text;
+    class TextInput {
+        /**
+         *
+         * @param {string} text The text that comprises this input
+         * @param {Array.<string>} tokens optional tokens of the text.
+         *                                Auto-generated if omitted
+         * @param {Array.<number>} activeTokens optional list of indices of tokens
+         *                                      in the tokens list that are active. Set to all tokens if omitted.
+         */
+        constructor(text, tokens, activeTokens) {
+            this.text = text;
 
-        if(tokens === undefined) {
-            tokens = Array.from(text);
+            if(tokens === undefined) {
+                tokens = Array.from(text);
+            }
+            this.tokens = tokens;
+
+            if(activeTokens === undefined) {
+                activeTokens = [];
+                // Initially all tokens are active
+                for (var i = 0; i < tokens.length; i++) {
+                    activeTokens.push(i);
+                }
+            }
+            this.activeTokens = activeTokens;
         }
-        this.tokens = tokens;
 
-        if(activeTokens === undefined) {
-            activeTokens = [];
-            // Initially all tokens are active
-            for (var i = 0; i < tokens.length; i++) {
-                activeTokens.push(i);
+        /**
+         *
+         * @return {number} the length of the currently selected subset, that is the
+         * number of active tokens.
+         */
+        get length() {
+            return this.activeTokens.length;
+        }
+
+        /**
+         * Configures the granularity for the subsequent calls to getSubset and
+         * getComplement.
+         * @param {number} n the number of chunks to split the current subset into.
+         */
+        set granularity(n) {
+            // The maximum size a chunk can have
+            var maxChunkSize = Math.ceil(this.activeTokens.length / n);
+            // Number of chunks with the maximum length
+            var maxLengthChunks = n;
+            // Some chunks must be shorter if there is no clean division
+            if(this.activeTokens.length % n != 0) {
+                maxLengthChunks = this.activeTokens.length % n;
+            }
+
+            // Split the activeTokens into n chunks
+            var index = 0;
+            this.chunks =[];
+            for (var i = 0; i < n; i++) {
+                var chunkSize = (i < maxLengthChunks) ? maxChunkSize : maxChunkSize - 1;
+                this.chunks.push(this.activeTokens.slice(index, index + chunkSize));
+                index += chunkSize;
             }
         }
-        this.activeTokens = activeTokens;
+
+        /**
+         *
+         * @param  {number} num the number of the subset to obtain
+         * @return {TextInput} a new input object that has the same tokens, but only
+         * those of the specified subset are active
+         */
+        getSubset(num) {
+            return new TextInput(this.text, this.tokens, this.chunks[num]);
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the complement to obtain
+         * @return {TextInput} a new input object that has the same tokens, but only
+         * those of the specified complement are active
+         */
+        getComplement(num) {
+            var complement = [];
+            for (var i = 0; i < this.chunks.length; i++) {
+                // Skip the num-th entry
+                if(i == num) {
+                    continue;
+                }
+                for (var j = 0; j < this.chunks[i].length; j++) {
+                    complement.push(this.chunks[i][j]);
+                }
+            }
+            return new TextInput(this.text, this.tokens, complement);
+        }
+
+        /**
+         * Obtains the code that results from putting all active tokens together.
+         * @return {string} the code that is obtained by concatenating all active
+         * tokens
+         */
+        get currentCode() {
+            var str = "";
+            for (var i = 0; i < this.activeTokens.length; i++) {
+                str = str + this.tokens[this.activeTokens[i]];
+            }
+            return str;
+        }
     }
-
-    /**
-     *
-     * @return {number} the length of the currently selected subset, that is the
-     * number of active tokens.
-     */
-    TextInput.prototype.getLength = function() {
-        return this.activeTokens.length;
-    };
-
-    /**
-     * Configures the granularity for the subsequent calls to getSubset and
-     * getComplement.
-     * @param {number} n the number of chunks to split the current subset into.
-     */
-    TextInput.prototype.setGranularity = function(n) {
-        // The maximum size a chunk can have
-        var maxChunkSize = Math.ceil(this.activeTokens.length / n);
-        // Number of chunks with the maximum length
-        var maxLengthChunks = n;
-        // Some chunks must be shorter if there is no clean division
-        if(this.activeTokens.length % n != 0) {
-            maxLengthChunks = this.activeTokens.length % n;
-        }
-
-        // Split the activeTokens into n chunks
-        var index = 0;
-        this.chunks =[];
-        for (var i = 0; i < n; i++) {
-            var chunkSize = (i < maxLengthChunks) ? maxChunkSize : maxChunkSize - 1;
-            this.chunks.push(this.activeTokens.slice(index, index + chunkSize));
-            index += chunkSize;
-        }
-    };
-
-    /**
-     *
-     * @param  {number} num the number of the subset to obtain
-     * @return {TextInput} a new input object that has the same tokens, but only
-     * those of the specified subset are active
-     */
-    TextInput.prototype.getSubset = function(num) {
-        return new TextInput(this.text, this.tokens, this.chunks[num]);
-    };
-
-    /**
-     *
-     * @param  {number} num the number of the complement to obtain
-     * @return {TextInput} a new input object that has the same tokens, but only
-     * those of the specified complement are active
-     */
-    TextInput.prototype.getComplement = function(num) {
-        var complement = [];
-        for (var i = 0; i < this.chunks.length; i++) {
-            // Skip the num-th entry
-            if(i == num) {
-                continue;
-            }
-            for (var j = 0; j < this.chunks[i].length; j++) {
-                complement.push(this.chunks[i][j]);
-            }
-        }
-        return new TextInput(this.text, this.tokens, complement);
-    };
-
-    /**
-     * Obtains the code that results from putting all active tokens together.
-     * @return {string} the code that is obtained by concatenating all active
-     * tokens
-     */
-    TextInput.prototype.getCurrentCode = function() {
-        var str = "";
-        for (var i = 0; i < this.activeTokens.length; i++) {
-            str = str + this.tokens[this.activeTokens[i]];
-        }
-        return str;
-    };
 
     function ddminTree(tree, test) {
         return tree;
     }
 
     function ddminChar(text, test) {
-        return ddmin(new TextInput(text), test).getCurrentCode();
+        return ddmin(new TextInput(text), test).currentCode;
     }
 
     // A map that serves as a cache for ddmin
@@ -141,7 +147,7 @@
      * @return {Input}       The minimized input.
      */
     function ddmin2(input, n, test) {
-        var len = input.getLength();
+        var len = input.length;
         if(len == 1) {
             // No further minimization possible
             console.log("Return' subset: " + input.activeTokens);
@@ -149,7 +155,7 @@
         }
 
         // Set the granularity on the input
-        input.setGranularity(n);
+        input.granularity = n;
 
         // Try reducing to subset
         for(let i = 0; i < n; i++) {
@@ -163,7 +169,7 @@
                 result = cache[key];
             } else {
                 // No cached value available
-                result = test(subset.getCurrentCode());
+                result = test(subset.currentCode);
                 // Cache the result
                 cache[key] = result;
             }
@@ -172,7 +178,7 @@
             // Test the subset
             if(result == "fail") {
                 console.log("Continue with subset and granularity " + 2
-                    + " and length " + subset.getLength());
+                    + " and length " + subset.length);
                 return ddmin2(subset, 2, test);
             }
         }
@@ -189,7 +195,7 @@
                 result = cache[key];
             } else {
                 // No cached value available
-                result = test(subset.getCurrentCode());
+                result = test(subset.currentCode);
                 // Cache the result
                 cache[key] = result;
             }
@@ -198,7 +204,7 @@
             // Test the subset
             if(result == "fail") {
                 console.log("Continue with complement and granularity " + Math.max(n - 1, 2)
-                    + " and length " + subset.getLength());
+                    + " and length " + subset.length);
                 return ddmin2(subset, Math.max(n - 1, 2), test);
             }
         }
