@@ -2,36 +2,23 @@
 
 (function() {
 
-    // TODO extract all input independent methods to a common supertype
-
+    // TODO line based ddmin
 
     /**
-     * An input for the ddmin algorithm that uses text as input and splits it into char-tokens.
+     * Abstract class for all kinds of input to the ddmin algorithm.
+     *
+     * Subclasses should define the following additional methods:
+     * getSubset(num) : Obtain a copy of the input where the active tokens are set to the num'th chunk.
+     * getComplement(num) : Obtain a copy of the input where the active tokens are set to the complement of the
+     *  num'th chunk.
+     * get currentCode() : Obtain the code that corresponds to the current active tokens.
      */
-    class TextInput {
+    class Input {
         /**
-         *
-         * @param {string} text The text that comprises this input
-         * @param {Array.<string>} tokens optional tokens of the text.
-         *                                Auto-generated if omitted
-         * @param {Array.<number>} activeTokens optional list of indices of tokens
-         *                                      in the tokens list that are active. Set to all tokens if omitted.
+         * @param {Array.<number>} activeTokens list of indices of tokens
+         *                                      in the tokens list that are active.
          */
-        constructor(text, tokens, activeTokens) {
-            this.text = text;
-
-            if(tokens === undefined) {
-                tokens = Array.from(text);
-            }
-            this.tokens = tokens;
-
-            if(activeTokens === undefined) {
-                activeTokens = [];
-                // Initially all tokens are active
-                for (var i = 0; i < tokens.length; i++) {
-                    activeTokens.push(i);
-                }
-            }
+        constructor(activeTokens) {
             this.activeTokens = activeTokens;
         }
 
@@ -70,6 +57,56 @@
         }
 
         /**
+         * Gets the chunks that are associated with a complement.
+         *
+         * @param {number} num the number of the complement chunks to obtain
+         * @returns {Array} the chunks that are associated with the complement of the given number.
+         */
+        getComplementChunks(num) {
+            var complement = [];
+            for (var i = 0; i < this.chunks.length; i++) {
+                // Skip the num-th entry
+                if(i == num) {
+                    continue;
+                }
+                for (var j = 0; j < this.chunks[i].length; j++) {
+                    complement.push(this.chunks[i][j]);
+                }
+            }
+            return complement;
+        }
+    }
+
+
+    /**
+     * An input for the ddmin algorithm that uses text as input and splits it into char-tokens.
+     */
+    class TextInput extends Input {
+        /**
+         *
+         * @param {string} text The text that comprises this input
+         * @param {Array.<string>} tokens optional tokens of the text.
+         *                                Auto-generated if omitted
+         * @param {Array.<number>} activeTokens optional list of indices of tokens
+         *                                      in the tokens list that are active. Set to all tokens if omitted.
+         */
+        constructor(text, tokens, activeTokens) {
+            if(tokens === undefined) {
+                tokens = Array.from(text);
+            }
+            if(activeTokens === undefined) {
+                activeTokens = [];
+                // Initially all tokens are active
+                for (var i = 0; i < tokens.length; i++) {
+                    activeTokens.push(i);
+                }
+            }
+            super(activeTokens);
+            this.text = text;
+            this.tokens = tokens;
+        }
+
+        /**
          *
          * @param  {number} num the number of the subset to obtain
          * @return {TextInput} a new input object that has the same tokens, but only
@@ -86,17 +123,7 @@
          * those of the specified complement are active
          */
         getComplement(num) {
-            var complement = [];
-            for (var i = 0; i < this.chunks.length; i++) {
-                // Skip the num-th entry
-                if(i == num) {
-                    continue;
-                }
-                for (var j = 0; j < this.chunks[i].length; j++) {
-                    complement.push(this.chunks[i][j]);
-                }
-            }
-            return new TextInput(this.text, this.tokens, complement);
+            return new TextInput(this.text, this.tokens, super.getComplementChunks(num));
         }
 
         /**
