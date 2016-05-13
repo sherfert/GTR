@@ -65,8 +65,8 @@
     function testJSTreeWithChildProcess(tree) {
         // First, try to convert the tree to code
         var code = treeGenerator.treeToCodeNoFileIO(tree);
-        if(!code) {
-            return "InvalidTree";
+        if(code instanceof Error) {
+            return "Could not convert tree to code: " +  code.toString();
         }
         // Afterwards the usual test procedure for code
         return testJSWithChildProcess(code);

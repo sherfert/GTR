@@ -217,10 +217,17 @@
             if(tokens === undefined) {
                 tokens = [];
                 // Flatten the nodes into an array
-                tree.preorder(function(node) {tokens.push(node)});
+                var num = 0;
+                tree.preorder(function(node) {
+                    tokens.push(node);
+                    if(node != tree) {
+                        node.number = num++;
+                    }
+                });
                 // Remove the root, since it is not eligible for removal
                 tokens.splice(0,1);
-                //console.log("Toks: " + tokens);
+                console.log("len:" + tokens.length);
+                console.log(tree.toString());
             }
             if(activeTokens === undefined) {
                 activeTokens = [];
@@ -264,15 +271,21 @@
             var newTree = this.tree.deepCopy();
             // Number all tokens (same traversal order as when flattening in the beginning)
             var num = 0;
-            newTree.preorder(function(node) { node.number = num++; });
+            newTree.preorder(function(node) {
+                if(node != newTree) {
+                    node.number = num++;
+                }
+            });
             // Attach incoming edges to the nodes, so we can find the parent while traversing the tree
             newTree.attachIncomingEdges();
 
+            // FIXME This is still buggy. The list of edges is changed while preorder iterates over it
             // Keep only the nodes that are active
             var activeTokens = this.activeTokens;
             newTree.preorder( function(node) {
                 if(node != newTree && activeTokens.indexOf(node.number) == -1) {
                     // The node is removed
+                    console.log("removing node " + node.number);
 
                     // First remove the edge from the parent
                     var parent = node.incoming.target;
@@ -281,6 +294,7 @@
                         let outgoing = parent.outgoing[i];
                         let target = outgoing.target;
                         if(target == node) {
+                            console.log("Removing edge " + outgoing.label);
                             parent.outgoing.splice(i, 1);
                             removeIndex = i;
                             break;
@@ -296,10 +310,14 @@
                 }
             });
 
+            console.log("New tree:");
+            console.log(newTree.toString());
             // Return the new tree
             return newTree;
         }
     }
+
+    // TODO comments
 
     function ddminTree(tree, test) {
         return ddmin(new TreeInput(tree), test).currentCode;
@@ -360,13 +378,14 @@
                 console.log("Using cached value");
                 result = cache[key];
             } else {
+                console.log("Testing subset: " + key);
                 // No cached value available
                 result = test(subset.currentCode);
                 // Cache the result
                 cache[key] = result;
             }
 
-            console.log("Testing subset: " + key + "\n\tyields " + result);
+            console.log("Testing result: " + result);
             // Test the subset
             if(result == "fail") {
                 console.log("Continue with subset and granularity " + 2
@@ -386,13 +405,15 @@
                 console.log("Using cached value");
                 result = cache[key];
             } else {
+
+                console.log("Testing complm: " + key);
                 // No cached value available
                 result = test(subset.currentCode);
                 // Cache the result
                 cache[key] = result;
             }
 
-            console.log("Testing complm: " + subset.activeTokens + "\n\tyields " + result);
+            console.log("Testing result: " + result);
             // Test the subset
             if(result == "fail") {
                 console.log("Continue with complement and granularity " + Math.max(n - 1, 2)

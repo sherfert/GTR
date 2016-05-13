@@ -25,7 +25,7 @@
         return "pass";
     }
 
-    var code = "" + fs.readFileSync("tree-reducer/input/test.js");
+    var code = "" + fs.readFileSync("tree-reducer/input/input2.js");
     //var tester = new inputTester.CodeTester(code);
 
     var ast = esprima.parse(code);

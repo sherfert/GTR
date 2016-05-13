@@ -137,13 +137,17 @@
     }
 
     // Does not write any files
+    // TODO comment
     function treeToCodeNoFileIO(tree) {
         var ast = treeToAST(tree);
+        //console.log("Trying:");
+        //console.log(JSON.stringify(ast, null, 2));
+
         try {
             var code = escodegen.generate(ast);
             return code;
         } catch (e) {
-            return undefined;
+            return e;
         }
     }
 

@@ -15,15 +15,20 @@
             return this.toPrettyString(0);
         },
         toPrettyString:function(depth) {
-            // TODO include depth
-            var res = this.label + "[";
-            for (var i = 0; i < this.outgoing.length; i++) {
+            var indentation = "";
+            for(let i = 0; i < depth; i++) {
+                indentation += "  ";
+            }
+            var res = indentation + this.label + (this.hasOwnProperty("number") ? " (" + this.number + ")" : "") + "\n";
+            for (let i = 0; i < this.outgoing.length; i++) {
                 var outgoing = this.outgoing[i];
                 var target = outgoing.target;
-                res += outgoing.label + "->" + target.label + " ";
+                res += indentation + "-" + outgoing.label + "->" + target.label + "\n";
+                res += target.toPrettyString(depth + 1);
             }
-            res += "]";
             return res;
+
+
         },
         nbNodes:function() {
             var sum = 1;
