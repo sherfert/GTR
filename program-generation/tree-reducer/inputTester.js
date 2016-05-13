@@ -1,55 +1,95 @@
 // Author: Satia Herfert
 
 (function() {
+    var config = require("./../config").config;
     var crashTester = require("../js-ast/crashTest-JS");
     var syntaxTester = require("../js-ast/validityCheck-JS");
+    var treeGenerator = require("../" + config.treeGenerator);
 
     /**
-     * A method that executes the code and returns an error message obtained from the execution.
-     * @type {function(string) : string}
+     * A generalized tester for some kind of testable input.
      */
-    var testMethod = testWithChildProcess;
+    class Tester {
+        /**
+         *
+         * @param {function(string) : string} testMethod A method that executes the input and returns
+         *      an error message obtained from the execution.
+         * @param initialInput the input for an initial execution to obtain an error message to compare with
+         */
+        constructor(testMethod, initialInput) {
+            this.testMethod = testMethod;
+            // Run the initial code and save error message
+            this.errorMessage = testMethod(initialInput);
+            console.log("Error obtained: " + this.errorMessage);
+        }
 
-    /**
-     * Creates a tester that compares subsequent code executions to an execution of the code given here.
-     * The comparison is based on the error the code generates.
-     * @param initialCode the initial code that servers as a base for comparison
-     * @constructor
-     */
-    function Tester(initialCode) {
-        this.initialCode = initialCode;
-        // Run the initial code and save error message
-        this.errorMessage = testMethod(initialCode);
-        console.log("Error obtained: " + this.errorMessage);
+        /**
+         * Tests an input by executing it and comparing the error to the error obtained in the initial execution.
+         * @param {string} input the input to execute
+         * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the same
+         *      error as in the initial execution, "?" if another error is produced.
+         */
+        test(input) {
+            var errmsg = this.testMethod(input);
+            console.log("Error obtained: " + errmsg);
+            if(errmsg == this.errorMessage) {
+                // The same error is triggered
+                return "fail";
+            } else if(!errmsg) {
+                // The program runs fine
+                return "pass";
+            } else {
+                // A different error is triggered
+                return "?";
+            }
+        }
     }
 
     /**
-     * Tests a code by executing it and comparing the error to the error obtained in the initial execution.
-     * @param {string} code the code to execute
-     * @returns {string} "pass" if the code runs without exception, "fail" if the code reproduces the same
-     *      error as in the initial execution, "?" if another error is produced.
+     * Tester for trees that can be converted to executable JavaScript code.
      */
-    Tester.prototype.test = function(code) {
-        var errmsg = testMethod(code);
-        console.log("Error obtained: " + errmsg);
-        if(errmsg == this.errorMessage) {
-            // The same error is triggered
-            return "fail";
-        } else if(!errmsg) {
-            // The program runs fine
-            return "pass";
-        } else {
-            // A different error is triggered
-            return "?";
+    class JSTreeTester extends Tester {
+        /**
+         * @param initialInput the input for an initial execution to obtain an error message to compare with
+         */
+        constructor(initialInput) {
+            super(testJSTreeWithChildProcess, initialInput);
         }
-    };
+    }
+
+    /**
+     * Tests trees that can be converted to JavaScript code.
+     * @param {string} tree the tree to test
+     * @returns {string} the error message or {@code "" } if the code runs without exception.
+     */
+    function testJSTreeWithChildProcess(tree) {
+        // First, try to convert the tree to code
+        var code = treeGenerator.treeToCodeNoFileIO(tree);
+        if(!code) {
+            return "InvalidTree";
+        }
+        // Afterwards the usual test procedure for code
+        return testJSWithChildProcess(code);
+    }
+
+    /**
+     * Tester for exetubale JavaScript code.
+     */
+    class CodeTester extends Tester {
+        /**
+         * @param initialInput the input for an initial execution to obtain an error message to compare with
+         */
+        constructor(initialInput) {
+            super(testJSWithChildProcess, initialInput);
+        }
+    }
 
     /**
      * Tests arbitrary code first with esprima for syntax errors and afterwards with node for runtime errors.
      * @param {string} code the code to test
      * @returns {string} the error message or {@code "" } if the code runs without exception.
      */
-    function testWithChildProcess(code) {
+    function testJSWithChildProcess(code) {
         // First run a syntax check
         var err = syntaxTester.testValidityJSCode(code);
         if(err) {
@@ -95,5 +135,6 @@
         return "";
     }
 
-    exports.Tester = Tester;
+    exports.CodeTester = CodeTester;
+    exports.JSTreeTester = JSTreeTester;
 })();

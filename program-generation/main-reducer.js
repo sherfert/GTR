@@ -12,7 +12,7 @@
     var inputTester = require("./tree-reducer/inputTester");
 
 
-    /** Simply checks if a fixed code snipped is contained.
+    /** Simply checks if a fixed code snippet is contained.
      */
     function simpleTest(code) {
         var snippet1 = "var x = 23;";
@@ -26,14 +26,19 @@
     }
 
     var code = "" + fs.readFileSync("tree-reducer/input/test.js");
-    var tester = new inputTester.Tester(code);
+    //var tester = new inputTester.CodeTester(code);
+
+    var ast = esprima.parse(code);
+    var tree = treeProvider.astToTree(ast);
+    var tester = new inputTester.JSTreeTester(tree);
+
+
     var test = function(c) { return tester.test(c)};
-    var newCode = ddReducer.ddminChar(code, test);
+    var newTree = ddReducer.ddminTree(tree, test);
 
 
-    //var ast = esprima.parse(code);
-    //var tree = treeProvider.astToTree(ast);
-    //var newCode = treeGenerator.treeToCode(tree);
+
+    var newCode = treeGenerator.treeToCode(tree);
     console.log("RESULT:\n" + newCode);
 
 })();

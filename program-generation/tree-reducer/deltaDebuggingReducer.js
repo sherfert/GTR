@@ -1,8 +1,7 @@
 // Author: Satia Herfert
 
 (function() {
-
-    // TODO line based ddmin
+    var loTrees = require("./../labeledOrderedTrees");
 
     /**
      * Abstract class for all kinds of input to the ddmin algorithm.
@@ -11,7 +10,8 @@
      * getSubset(num) : Obtain a copy of the input where the active tokens are set to the num'th chunk.
      * getComplement(num) : Obtain a copy of the input where the active tokens are set to the complement of the
      *  num'th chunk.
-     * get currentCode() : Obtain the code that corresponds to the current active tokens.
+     * get currentCode() : Obtain the code that corresponds to the current active tokens. The type should be the
+     *  same as the input type that was used to create the Input in the beginning.
      */
     class Input {
         /**
@@ -201,8 +201,108 @@
         }
     }
 
+    /**
+     * An input for the ddmin algorithm that uses a tree as input and splits it into nodes.
+     */
+    class TreeInput extends Input {
+        /**
+         *
+         * @param {Node} tree The tree that comprises this input
+         * @param {Array.<node>} tokens optional nodes of the tree.
+         *                                Auto-generated if omitted
+         * @param {Array.<number>} activeTokens optional list of indices of tokens
+         *                                      in the tokens list that are active. Set to all tokens if omitted.
+         */
+        constructor(tree, tokens, activeTokens) {
+            if(tokens === undefined) {
+                tokens = [];
+                // Flatten the nodes into an array
+                tree.preorder(function(node) {tokens.push(node)});
+                // Remove the root, since it is not eligible for removal
+                tokens.splice(0,1);
+                //console.log("Toks: " + tokens);
+            }
+            if(activeTokens === undefined) {
+                activeTokens = [];
+                // Initially all tokens are active
+                for (var i = 0; i < tokens.length; i++) {
+                    activeTokens.push(i);
+                }
+            }
+            super(activeTokens);
+            this.tree = tree;
+            this.tokens = tokens;
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the subset to obtain
+         * @return {TreeInput} a new input object that has the same tokens, but only
+         * those of the specified subset are active
+         */
+        getSubset(num) {
+            return new TreeInput(this.tree, this.tokens, this.chunks[num]);
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the complement to obtain
+         * @return {TreeInput} a new input object that has the same tokens, but only
+         * those of the specified complement are active
+         */
+        getComplement(num) {
+            return new TreeInput(this.tree, this.tokens, super.getComplementChunks(num));
+        }
+
+        /**
+         * Tree with all active nodes together. When deleting nodes, the edges that belonged to the parent
+         *      (not the child) will be preserved for new connection.
+         * @return {Node} a tree with all active nodes put together.
+         */
+        get currentCode() {
+            // Create a copy of the tree
+            var newTree = this.tree.deepCopy();
+            // Number all tokens (same traversal order as when flattening in the beginning)
+            var num = 0;
+            newTree.preorder(function(node) { node.number = num++; });
+            // Attach incoming edges to the nodes, so we can find the parent while traversing the tree
+            newTree.attachIncomingEdges();
+
+            // Keep only the nodes that are active
+            var activeTokens = this.activeTokens;
+            newTree.preorder( function(node) {
+                if(node != newTree && activeTokens.indexOf(node.number) == -1) {
+                    // The node is removed
+
+                    // First remove the edge from the parent
+                    var parent = node.incoming.target;
+                    var removeIndex;
+                    for (let i = 0; i < parent.outgoing.length; i++) {
+                        let outgoing = parent.outgoing[i];
+                        let target = outgoing.target;
+                        if(target == node) {
+                            parent.outgoing.splice(i, 1);
+                            removeIndex = i;
+                            break;
+                        }
+                    }
+                    // Then attach all children to the parent (at the position this node was removed)
+                    // Reversed iteration order: elements end up in correct order
+                    for (let i = node.outgoing.length - 1; i >= 0; --i) {
+                        let outgoing = node.outgoing[i];
+                        let target = outgoing.target;
+                        parent.outgoing.splice(removeIndex, 0, new loTrees.Edge(node.incoming.label, target));
+                    }
+                }
+            });
+
+            // Return the new tree
+            return newTree;
+        }
+    }
+
     function ddminTree(tree, test) {
-        return tree;
+        return ddmin(new TreeInput(tree), test).currentCode;
     }
 
     function ddminChar(text, test) {

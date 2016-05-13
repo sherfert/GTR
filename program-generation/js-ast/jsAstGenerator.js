@@ -20,7 +20,8 @@
         /* TODO: This is a temporary workaround. To check if tree.outgoing.length is always = 0 in the corpus
          * FIXME: Remove 'ThisExpression' and 'EmptyStatement' from this check.
          * */
-        if (tree.outgoing.length === 0 && mandatoryArrayTypes.indexOf(tree.label) === -1 && tree.label !== "ThisExpression" && tree.label !== "EmptyStatement") {
+        if (tree.outgoing.length === 0 && mandatoryArrayTypes.indexOf(tree.label) === -1
+                && tree.label !== "ThisExpression" && tree.label !== "EmptyStatement") {
             /* Special case for RegExp. Test if the string is a RegExp. This tests if the first
              *  and the last character of a string is a /
              * */
@@ -135,6 +136,18 @@
         }
     }
 
+    // Does not write any files
+    function treeToCodeNoFileIO(tree) {
+        var ast = treeToAST(tree);
+        try {
+            var code = escodegen.generate(ast);
+            return code;
+        } catch (e) {
+            return undefined;
+        }
+    }
+
     exports.treeToCode = treeToCode;
+    exports.treeToCodeNoFileIO = treeToCodeNoFileIO;
 
 })();
