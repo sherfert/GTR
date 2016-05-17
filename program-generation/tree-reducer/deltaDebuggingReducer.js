@@ -217,17 +217,11 @@
             if(tokens === undefined) {
                 tokens = [];
                 // Flatten the nodes into an array
-                var num = 0;
                 tree.preorder(function(node) {
                     tokens.push(node);
-                    if(node != tree) {
-                        node.number = num++;
-                    }
                 });
-                // Remove the root, since it is not eligible for removal
+                // Remove the root from the tokens, since it is not eligible for removal
                 tokens.splice(0,1);
-                console.log("len:" + tokens.length);
-                console.log(tree.toString());
             }
             if(activeTokens === undefined) {
                 activeTokens = [];
@@ -276,57 +270,106 @@
                     node.number = num++;
                 }
             });
-            // Attach incoming edges to the nodes, so we can find the parent while traversing the tree
-            newTree.attachIncomingEdges();
 
-            // FIXME This is still buggy. The list of edges is changed while preorder iterates over it
             // Keep only the nodes that are active
-            var activeTokens = this.activeTokens;
+            var ti = this;
             newTree.preorder( function(node) {
-                if(node != newTree && activeTokens.indexOf(node.number) == -1) {
-                    // The node is removed
-                    console.log("removing node " + node.number);
-
-                    // First remove the edge from the parent
-                    var parent = node.incoming.target;
-                    var removeIndex;
-                    for (let i = 0; i < parent.outgoing.length; i++) {
-                        let outgoing = parent.outgoing[i];
-                        let target = outgoing.target;
-                        if(target == node) {
-                            console.log("Removing edge " + outgoing.label);
-                            parent.outgoing.splice(i, 1);
-                            removeIndex = i;
-                            break;
-                        }
+                //Iterate through the children.
+                for (var i = 0; i < node.outgoing.length; i++) {
+                    var outgoing = node.outgoing[i];
+                    var target = outgoing.target;
+                    if(ti.activeTokens.indexOf(target.number) == -1) {
+                        // Remove the target, providing the parent node
+                        ti.removeNode(target, node);
+                        // This means the same index needs to be repeated, in case the
+                        // target's children have been attached here
+                        i--;
                     }
-                    // Then attach all children to the parent (at the position this node was removed)
-                    // Reversed iteration order: elements end up in correct order
-                    for (let i = node.outgoing.length - 1; i >= 0; --i) {
-                        let outgoing = node.outgoing[i];
-                        let target = outgoing.target;
-                        parent.outgoing.splice(removeIndex, 0, new loTrees.Edge(node.incoming.label, target));
-                    }
-                }
+                }                
             });
 
-            console.log("New tree:");
-            console.log(newTree.toString());
+            //console.log("New tree:");
+            //console.log(newTree.toString());
             // Return the new tree
             return newTree;
         }
+
+        /**
+         * Internal method. Removes a node from a tree.
+         * @param {Node} node the node to remove.
+         * @param {Node} parent its parent.
+         */
+        removeNode (node, parent) {
+            // First remove the edge from the parent
+            var removeIndex;
+            var removedEdge;
+            for (let i = 0; i < parent.outgoing.length; i++) {
+                let outgoing = parent.outgoing[i];
+                let target = outgoing.target;
+                if(target == node) {
+                    removedEdge = outgoing;
+                    removeIndex = i;
+                    parent.outgoing.splice(i, 1);
+                    break;
+                }
+            }
+            // Then attach all children to the parent (at the position this node was removed)
+            // Reversed iteration order: elements end up in correct order
+            for (let i = node.outgoing.length - 1; i >= 0; --i) {
+                let outgoing = node.outgoing[i];
+                let target = outgoing.target;
+
+                // This places the label of the parent edge
+                //parent.outgoing.splice(removeIndex, 0, new Edge(removedEdge.label, target));
+                // The results with this are bad, since the Tree->AST conversion queries the nodes with
+                // particular names (which then exist) and tries to obtain members on them (which do not exist)
+                // resulting often in a failed conversion.
+
+                // This places the label of the child edge
+                parent.outgoing.splice(removeIndex, 0, outgoing);
+                // The results with this are better, since nodes have children with edges that do not belong to
+                // the node, and thus won't even be queried in the conversion process. Effectively, some parts of
+                // the tree will be ignored during conversion, but more trees obtained can actually be converted.
+            }
+        }
     }
 
-    // TODO comments
-
+    /**
+     * Naive tree based ddmin.
+     *
+     * All nodes are numbered 0..n, excluding the root node.
+     * The numbering is done in pre-order. The normal ddmin algorithm
+     * is performed on the set of tokens 0..n. To build a tree with
+     * some nodes missing, the following procedure is applied:
+     * If a node is not present in the current active subset of tokens,
+     * the node will be removed from its parent's list of children. All children
+     * of the removed node are attached to the parent node, the new edge gets the
+     * label of the edge that previously connected the removed node with the child.
+     *
+     * @param {Node} tree the tree obtained from the AST.
+     * @param {function(Node): string} test see below
+     * @returns {Node} the minimized tree.
+     */
     function ddminTree(tree, test) {
         return ddmin(new TreeInput(tree), test).currentCode;
     }
 
+    /**
+     * Character based ddmin.
+     * @param {string} text the program
+     * @param {function(string): string} test see below
+     * @returns {string} the minimized code.
+     */
     function ddminChar(text, test) {
         return ddmin(new TextInput(text), test).currentCode;
     }
 
+    /**
+     * Line based ddmin.
+     * @param {string} text the program 
+     * @param {function(string): string} test see below
+     * @returns {string} the minimized code.
+     */
     function ddminLine(text, test) {
         return ddmin(new LineInput(text), test).currentCode;
     }
@@ -338,9 +381,11 @@
      * Implements a generic ddmin algorithm. The input needs to be of type Input
      * or a descendant.
      * @param  {Input} input    The Input to minimize
-     * @param  {function(string): string} test  a test function that evaluates a
+     * @param  {function(object): string} test  a test function that evaluates a
      *                                    predicate, given the code and returns "fail" if the test fails, "pass" if
-     *                                    the test passes, and "?" if the test is undecidable
+     *                                    the test passes, and "?" if the test is undecidable. This function should
+     *                                    take objects of the same type as the constructor of the Input subclass
+     *                                    of the input instance passed.
      * @return {Input}       The minimized input.
      */
     function ddmin(input, test) {
@@ -353,7 +398,7 @@
      * The implementation of ddmin with a current granularity.
      * @param  {Input} input The Input to minimize
      * @param  {number} n     the granularity
-     * @param  {function(string): string} test  s.a.
+     * @param  {function(object): string} test  s.a.
      * @return {Input}       The minimized input.
      */
     function ddmin2(input, n, test) {

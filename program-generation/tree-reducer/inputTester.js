@@ -25,7 +25,7 @@
 
         /**
          * Tests an input by executing it and comparing the error to the error obtained in the initial execution.
-         * @param {string} input the input to execute
+         * @param {object} input the input to execute
          * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the same
          *      error as in the initial execution, "?" if another error is produced.
          */
@@ -59,7 +59,7 @@
 
     /**
      * Tests trees that can be converted to JavaScript code.
-     * @param {string} tree the tree to test
+     * @param {Node} tree the tree to test
      * @returns {string} the error message or {@code "" } if the code runs without exception.
      */
     function testJSTreeWithChildProcess(tree) {

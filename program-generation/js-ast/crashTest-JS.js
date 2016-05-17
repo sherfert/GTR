@@ -64,7 +64,7 @@
             return child_process.spawnSync(nodePath, [file.name], {
                 encoding: 'utf8',
                 shell: false,
-                timeout: 1000,
+                timeout: 500,
                 killSignal: 'SIGKILL'
             });
         }

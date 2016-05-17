@@ -4,6 +4,11 @@
 
     var util = require("./util");
 
+    /**
+     * A tree or node of a tree, including its subtree.
+     * @param {string} label the label of the node.
+     * @constructor
+     */
     function Node(label) {
         util.assert(typeof label === "string", typeof label);
         this.label = label;
@@ -14,6 +19,10 @@
         toString:function() {
             return this.toPrettyString(0);
         },
+        /**
+         * @param depth the distance of this node to the root node. Needed for correct indentation.
+         * @returns {string} a pretty string representation of the tree.
+         */
         toPrettyString:function(depth) {
             var indentation = "";
             for(let i = 0; i < depth; i++) {
@@ -30,6 +39,9 @@
 
 
         },
+        /**
+         * @returns {number} the number of nodes in the tree.
+         */
         nbNodes:function() {
             var sum = 1;
             for (var i = 0; i < this.outgoing.length; i++) {
@@ -39,6 +51,10 @@
             }
             return sum;
         },
+        /**
+         * Traverses the tree in preorder and applies the given function to each node.
+         * @param {function(node)} func the function to apply.
+         */
         preorder:function(func) {
             func(this);
             for (var i = 0; i < this.outgoing.length; i++) {
@@ -47,6 +63,10 @@
                 target.preorder(func);
             }
         },
+        /**
+         * Traverses the tree in postorder and applies the given function to each node.
+         * @param {function(node)} func the function to apply.
+         */
         postorder:function(func) {
             for (var i = 0; i < this.outgoing.length; i++) {
                 var outgoing = this.outgoing[i];
@@ -55,6 +75,10 @@
             }
             func(this);
         },
+        /**
+         * Creates a deep copy of this tree
+         * @returns {Node} a deep copy.
+         */
         deepCopy:function() {
             var node = new Node(this.label);
             for (var i = 0; i < this.outgoing.length; i++) {
@@ -63,23 +87,25 @@
                 node.outgoing.push(newEdge);
             }
             return node;
-        },
-        attachIncomingEdges:function() {
-            for (var i = 0; i < this.outgoing.length; i++) {
-                var outgoing = this.outgoing[i];
-                var target = outgoing.target;
-                target.incoming = new Edge(outgoing.label, this);
-                target.attachIncomingEdges();
-            }
         }
     };
 
+    /**
+     * An edge in a tree with a label and a target node.
+     * @param {string} label the label
+     * @param {Node} target the target node
+     * @constructor
+     */
     function Edge(label, target) {
         this.label = label;
         this.target = target;
     }
 
     Edge.prototype = {
+        /**
+         * Part of Node's deepCopy function.
+         * @returns {Edge} a deep copy of this edge.
+         */
         deepCopy: function () {
             return new Edge(this.label, this.target.deepCopy());
         }
