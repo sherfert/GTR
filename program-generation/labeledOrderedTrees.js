@@ -76,6 +76,23 @@
             func(this);
         },
         /**
+         * Applies a function to all nodes of a particular level of the tree.
+         * @param {number} level the level
+         * @param {function(node)} func the function to apply
+         */
+        applyToLevel:function(level, func) {
+            if(level == 0) {
+                func(this);
+            } else {
+                // Recurse until we reache the level
+                for (var i = 0; i < this.outgoing.length; i++) {
+                    var outgoing = this.outgoing[i];
+                    var target = outgoing.target;
+                    target.applyToLevel(level - 1, func);
+                }
+            }
+        },
+        /**
          * Creates a deep copy of this tree
          * @returns {Node} a deep copy.
          */

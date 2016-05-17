@@ -325,6 +325,85 @@
     }
 
     /**
+     * An input for the ddmin algorithm that uses a tree as input and uses the nodes of
+     * a given level as tokens.
+     */
+    class TreeLevelInput extends Input {
+        /**
+         *
+         * @param {Node} tree The tree that comprises this input
+         * @param {number} level the of the tree at which to consider nodes. Must be >= 1.
+         * @param {Array.<number>} activeTokens optional list of indices of tokens
+         *                                      in the tokens list that are active. Set to all tokens if omitted.
+         */
+        constructor(tree, level, activeTokens) {
+            // Obtain number of nodes in the level
+            var numToks = 0;
+            tree.applyToLevel(level, function(node) {
+                numToks++;
+            });
+
+            if(activeTokens === undefined) {
+                activeTokens = [];
+                // Initially all tokens are active
+                for (var i = 0; i < numToks; i++) {
+                    activeTokens.push(i);
+                }
+            }
+            super(activeTokens);
+            this.tree = tree;
+            this.level = level;
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the subset to obtain
+         * @return {TreeLevelInput} a new input object that has the same tokens, but only
+         * those of the specified subset are active
+         */
+        getSubset(num) {
+            return new TreeLevelInput(this.tree, this.level, this.chunks[num]);
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the complement to obtain
+         * @return {TreeLevelInput} a new input object that has the same tokens, but only
+         * those of the specified complement are active
+         */
+        getComplement(num) {
+            return new TreeLevelInput(this.tree, this.level, super.getComplementChunks(num));
+        }
+
+        /**
+         * Tree with all inactive childs of a level removed, including the corresponding subtrees.
+         * @return {Node} a smaller tree.
+         */
+        get currentCode() {
+            // Create a copy of the tree
+            var newTree = this.tree.deepCopy();
+
+            var currentChild = 0;
+            var ti = this;
+            // Go through the previous level and remove the childs.
+            newTree.applyToLevel(this.level - 1, function(node) {
+                for (var i = 0; i < node.outgoing.length; i++) {
+                    if(ti.activeTokens.indexOf(currentChild) == -1) {
+                        // Remove this node
+                        node.outgoing.splice(i, 1);
+                        // Repeat this index
+                        i--;
+                    }
+                    // Increment the child number
+                    currentChild++;
+                }
+            });
+
+            return newTree;
+        }
+    }
+
+    /**
      * Naive tree based ddmin.
      *
      * All nodes are numbered 0..n, excluding the root node.
@@ -342,6 +421,18 @@
      */
     function ddminTree(tree, test) {
         return ddmin(new TreeInput(tree), test).currentCode;
+    }
+
+    /**
+     * Hierarchical delta debugging.
+     *
+     * @param {Node} tree the tree obtained from the AST.
+     * @param {function(Node): string} test see below
+     * @returns {Node} the minimized tree.
+     */
+    function hdd(tree, test) {
+        // TODO actually implement HDD
+        return ddmin(new TreeLevelInput(tree, 1), test).currentCode
     }
 
     /**
@@ -469,6 +560,7 @@
     }
 
     exports.ddminTree = ddminTree;
+    exports.hdd = hdd;
     exports.ddminChar = ddminChar;
     exports.ddminLine = ddminLine;
 })();
