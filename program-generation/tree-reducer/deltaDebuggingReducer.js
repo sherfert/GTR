@@ -208,31 +208,21 @@
         /**
          *
          * @param {Node} tree The tree that comprises this input
-         * @param {Array.<node>} tokens optional nodes of the tree.
-         *                                Auto-generated if omitted
          * @param {Array.<number>} activeTokens optional list of indices of tokens
          *                                      in the tokens list that are active. Set to all tokens if omitted.
          */
-        constructor(tree, tokens, activeTokens) {
-            if(tokens === undefined) {
-                tokens = [];
-                // Flatten the nodes into an array
-                tree.preorder(function(node) {
-                    tokens.push(node);
-                });
-                // Remove the root from the tokens, since it is not eligible for removal
-                tokens.splice(0,1);
-            }
+        constructor(tree, activeTokens) {
+            // Number of nodes, exluding the root
+            var numToks = tree.nbNodes() - 1;
             if(activeTokens === undefined) {
                 activeTokens = [];
                 // Initially all tokens are active
-                for (var i = 0; i < tokens.length; i++) {
+                for (var i = 0; i < numToks; i++) {
                     activeTokens.push(i);
                 }
             }
             super(activeTokens);
             this.tree = tree;
-            this.tokens = tokens;
         }
 
         /**
@@ -242,7 +232,7 @@
          * those of the specified subset are active
          */
         getSubset(num) {
-            return new TreeInput(this.tree, this.tokens, this.chunks[num]);
+            return new TreeInput(this.tree, this.chunks[num]);
         }
 
         /**
@@ -252,12 +242,12 @@
          * those of the specified complement are active
          */
         getComplement(num) {
-            return new TreeInput(this.tree, this.tokens, super.getComplementChunks(num));
+            return new TreeInput(this.tree, super.getComplementChunks(num));
         }
 
         /**
-         * Tree with all active nodes together. When deleting nodes, the edges that belonged to the parent
-         *      (not the child) will be preserved for new connection.
+         * Tree with all active nodes together. When deleting nodes, the edges that belonged to the child
+         *      (not the parent) will be preserved for new connection.
          * @return {Node} a tree with all active nodes put together.
          */
         get currentCode() {
