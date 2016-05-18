@@ -85,7 +85,7 @@
         Function:{params:true, defaults:true},
         BlockStatement:{body:true},
         SwitchStatement:{cases:true},
-        TryStatement:{cases:true,guardedHandlers:true},
+        TryStatement:{cases:true,guardedHandlers:true,handlers:true},
         LetStatement:{head:true},
         FunctionDeclaration:{params:true,defaults:true},
         VariableDeclaration:{declarations:true},
