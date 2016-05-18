@@ -11,20 +11,21 @@
     var ddReducer = require("./tree-reducer/deltaDebuggingReducer");
     var inputTester = require("./tree-reducer/inputTester");
 
-    var code = "" + fs.readFileSync("tree-reducer/input/test.js");
+    var code = "" + fs.readFileSync("tree-reducer/input/test3.js");
 
     // var tester = new inputTester.CodeTester(code);
     // var test = function(c) { return tester.test(c)};
-    // var newCode = ddReducer.ddminLine(code, test);
+    // var newCode = ddReducer.ddminChar(code, test);
 
     var ast = esprima.parse(code);
     var tree = treeProvider.astToTree(ast);
     var tester = new inputTester.JSTreeTester(tree);
     var test = function(c) { return tester.test(c)};
-    var newTree = ddReducer.hddStar(tree, test);
+    var newTree = ddReducer.ddminTree(tree, test);
     var newCode = treeGenerator.treeToCode(newTree);
 
 
     console.log("RESULT:\n" + newCode);
+    console.log("TESTS RUN: " + tester.testsRun);
 
 })();

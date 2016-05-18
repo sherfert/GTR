@@ -96,7 +96,7 @@
             if(level == 0) {
                 func(this);
             } else {
-                // Recurse until we reache the level
+                // Recurse until we reach the level
                 for (var i = 0; i < this.outgoing.length; i++) {
                     var outgoing = this.outgoing[i];
                     var target = outgoing.target;
