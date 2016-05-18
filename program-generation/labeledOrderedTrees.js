@@ -52,6 +52,18 @@
             return sum;
         },
         /**
+         * Return the depth of the tree. A tree with just one node has a depth of 0.
+         */
+        depth:function() {
+            var max = 0;
+            for (var i = 0; i < this.outgoing.length; i++) {
+                var outgoing = this.outgoing[i];
+                var target = outgoing.target;
+                max = Math.max(max, target.depth() + 1);
+            }
+            return max;
+        },
+        /**
          * Traverses the tree in preorder and applies the given function to each node.
          * @param {function(node)} func the function to apply.
          */

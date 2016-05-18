@@ -431,8 +431,15 @@
      * @returns {Node} the minimized tree.
      */
     function hdd(tree, test) {
-        // TODO actually implement HDD
-        return ddmin(new TreeLevelInput(tree, 1), test).currentCode
+        var currentTree = tree;
+
+        // In the original they start with level 0, but we skip the root.
+        for(var level = 1; level <= currentTree.depth() ; level++) {
+            console.log("Testing level " + level + " in HDD.");
+            currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
+        }
+
+        return currentTree;
     }
 
     /**
@@ -484,7 +491,7 @@
      */
     function ddmin2(input, n, test) {
         var len = input.length;
-        if(len == 1) {
+        if(len <= 1) {
             // No further minimization possible
             console.log("Return' subset: " + input.activeTokens);
             return input;
