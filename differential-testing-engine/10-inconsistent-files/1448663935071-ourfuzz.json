@@ -1,0 +1,51 @@
+{
+  "fileName": "1448663935071-ourfuzz.js",
+  "code": "__diffTestingEngineState__ = { state: [], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":6,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116222-25476-ucgeep.js\"};\njalangiLabel11:\n    while (true) {\n        try {\n            J$.Se(217, '/tmp/116222-25476-ucgeep.js', 'evalIndirect');\n            function p(top) {\n                jalangiLabel10:\n                    while (true) {\n                        try {\n                            J$.Fe(177, arguments.callee, this, arguments);\n                            arguments = J$.N(185, 'arguments', arguments, 4);\n                            top = J$.N(193, 'top', top, 4);\n                            J$.X1(169, J$.P(161, J$.G(129, J$.C(24, J$.R(105, 'opr', opr, 2)) ? J$._() : J$.M(121, J$.R(113, 'this', this, 0), 'root', 0)(), 'h', 0), 'h', opr = J$.W(153, 'opr', J$.B(18, '===', J$.T(137, 'none', 21, false), J$.T(145, 'Next', 21, false), 0), J$.I(typeof opr === 'undefined' ? undefined : opr), 4), 0));\n                        } catch (J$e) {\n                            J$.Ex(281, J$e);\n                        } finally {\n                            if (J$.Fr(289))\n                                continue jalangiLabel10;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }\n            d = J$.N(233, 'd', J$.T(225, d, 12, false, 81), 0);\n            p = J$.N(249, 'p', J$.T(241, p, 12, false, 177), 0);\n            if (J$.X1(273, J$.C(16, J$.C(8, J$.U(10, 'typeof', J$.I(typeof a === 'undefined' ? J$.R(9, 'a', undefined, 2) : J$.R(9, 'a', a, 2)))) ? J$._() : J$.M(33, J$.R(17, 'kb', kb, 2), 'b', 0)(J$.T(25, '=', 21, false))))) {\n                function d(url) {\n                    jalangiLabel9:\n                        while (true) {\n                            try {\n                                J$.Fe(81, arguments.callee, this, arguments);\n                                arguments = J$.N(89, 'arguments', arguments, 4);\n                                url = J$.N(97, 'url', url, 4);\n                                J$.X1(73, J$.P(65, J$.R(41, 'counter', counter, 2), J$.R(49, 'r', r, 2), J$.R(57, 'g', g, 2), 2));\n                            } catch (J$e) {\n                                J$.Ex(257, J$e);\n                            } finally {\n                                if (J$.Fr(265))\n                                    continue jalangiLabel9;\n                                else\n                                    return J$.Ra();\n                            }\n                        }\n                }\n            }\n            J$.X1(209, J$.T(201, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(297, J$e);\n        } finally {\n            if (J$.Sr(305)) {\n                J$.L();\n                continue jalangiLabel11;\n            } else {\n                J$.L();\n                break jalangiLabel11;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.result = \"TypeError\";        } else if (e instanceof RangeError) {            __diffTestingEngineState__.result = \"RangeError\";        } else if (e instanceof EvalError) {            __diffTestingEngineState__.result = \"EvalError\";        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.result = \"ReferenceError\";        }        else if (e instanceof URIError) {            __diffTestingEngineState__.result = \"URIError\";        }        else {            __diffTestingEngineState__.result = \"crash\";        }    } __diffTestingEngineState__.result;",
+  "haveSentTo": {
+    "Chrome 31.0.1612.0 (Linux)": 2,
+    "Chrome 23.0.1240.0 (Linux)": 2,
+    "Chrome 48.0.2559.0 (Linux)": 2,
+    "Firefox 25.0 (Linux)": 2,
+    "Firefox 33.0 (Linux)": 2,
+    "Firefox 17.0 (Linux)": 2,
+    "Firefox 44.0 (Linux)": 2,
+    "Chrome 39.0.2126.0 (Linux)": 2
+  },
+  "userAgentToResults": {
+    "Chrome 31.0.1612.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined",
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined"
+    ],
+    "Chrome 23.0.1240.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined",
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined"
+    ],
+    "Chrome 48.0.2559.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined",
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined"
+    ],
+    "Firefox 25.0 (Linux)": [
+      "ReferenceError",
+      "ReferenceError"
+    ],
+    "Firefox 33.0 (Linux)": [
+      "ReferenceError",
+      "ReferenceError"
+    ],
+    "Firefox 17.0 (Linux)": [
+      "ReferenceError",
+      "ReferenceError"
+    ],
+    "Firefox 44.0 (Linux)": [
+      "ReferenceError",
+      "ReferenceError"
+    ],
+    "Chrome 39.0.2126.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined",
+      "Literal: ,function,Literal: ,function,Unary: ,typeof,Conditional: ,undefined,Conditional: ,undefined"
+    ]
+  },
+  "isCrashing": "false",
+  "resultSummary": "INCONSISTENT",
+  "lastTested": "Tue Mar 22 2016 10:25:41 GMT+0100 (CET)"
+}

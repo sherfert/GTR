@@ -1,0 +1,51 @@
+{
+  "fileName": "1448984532886-ourfuzz.js",
+  "code": "__diffTestingEngineState__ = { state: [], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":0,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116222-25476-niu3tl.js\"};\njalangiLabel67:\n    while (true) {\n        try {\n            J$.Se(201, '/tmp/116222-25476-niu3tl.js', 'evalIndirect');\n            J$.X1(177, location = J$.W(169, 'location', J$.T(161, {\n                '\\'isLessThanOrEqualTo\\'': J$.T(9, '\\'\\'', 21, false),\n                23: J$.T(153, function (a, src) {\n                    jalangiLabel66:\n                        while (true) {\n                            try {\n                                J$.Fe(121, arguments.callee, this, arguments);\n                                arguments = J$.N(129, 'arguments', arguments, 4);\n                                a = J$.N(137, 'a', a, 4);\n                                src = J$.N(145, 'src', src, 4);\n                                J$.X1(113, J$.P(105, J$.R(17, 'patch', patch, 2), 'b', J$.G(97, J$.M(89, J$.G(33, J$.R(25, 'this', this, 0), 'location', 0), 'files', 0)(J$.M(57, J$.R(41, 'arguments', arguments, 2), 'location', 0)(J$.R(49, 'patch', patch, 2)), J$.T(65, '0', 21, false), J$.R(73, 'this', this, 0), J$.T(81, '\\'submit\\'', 21, false)), 'location', 0), 0));\n                            } catch (J$e) {\n                                J$.Ex(209, J$e);\n                            } finally {\n                                if (J$.Fr(217))\n                                    continue jalangiLabel66;\n                                else\n                                    return J$.Ra();\n                            }\n                        }\n                }, 12, false, 121)\n            }, 11, false), J$.I(typeof location === 'undefined' ? undefined : location), 4));\n            J$.X1(193, J$.T(185, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(225, J$e);\n        } finally {\n            if (J$.Sr(233)) {\n                J$.L();\n                continue jalangiLabel67;\n            } else {\n                J$.L();\n                break jalangiLabel67;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.result = \"TypeError\";        } else if (e instanceof RangeError) {            __diffTestingEngineState__.result = \"RangeError\";        } else if (e instanceof EvalError) {            __diffTestingEngineState__.result = \"EvalError\";        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.result = \"ReferenceError\";        }        else if (e instanceof URIError) {            __diffTestingEngineState__.result = \"URIError\";        }        else {            __diffTestingEngineState__.result = \"crash\";        }    } __diffTestingEngineState__.result;",
+  "haveSentTo": {
+    "Chrome 31.0.1612.0 (Linux)": 2,
+    "Chrome 23.0.1240.0 (Linux)": 2,
+    "Chrome 48.0.2559.0 (Linux)": 2,
+    "Firefox 25.0 (Linux)": 2,
+    "Firefox 33.0 (Linux)": 2,
+    "Firefox 17.0 (Linux)": 2,
+    "Firefox 44.0 (Linux)": 2,
+    "Chrome 39.0.2126.0 (Linux)": 2
+  },
+  "userAgentToResults": {
+    "Chrome 31.0.1612.0 (Linux)": [
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object",
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object"
+    ],
+    "Chrome 23.0.1240.0 (Linux)": [
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object",
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object"
+    ],
+    "Chrome 48.0.2559.0 (Linux)": [
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object",
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object"
+    ],
+    "Firefox 25.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 33.0 (Linux)": [
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object",
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object"
+    ],
+    "Firefox 17.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 44.0 (Linux)": [
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object",
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object"
+    ],
+    "Chrome 39.0.2126.0 (Linux)": [
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object",
+      "Literal: ,'',Literal: ,function,Literal: ,object,Write: ,object"
+    ]
+  },
+  "isCrashing": "false",
+  "resultSummary": "INCONSISTENT",
+  "lastTested": "Tue Mar 22 2016 10:25:41 GMT+0100 (CET)"
+}

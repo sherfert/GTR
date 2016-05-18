@@ -1,0 +1,51 @@
+{
+  "fileName": "1447944837793-ourfuzz.js",
+  "code": "__diffTestingEngineState__ = { state: [], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":6,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116222-25476-txw9kv.js\"};\njalangiLabel3:\n    while (true) {\n        try {\n            J$.Se(81, '/tmp/116222-25476-txw9kv.js', 'evalIndirect');\n            J$.X1(57, J$.C(24, J$.C(16, J$.C(8, J$.R(9, 'constructor', constructor, 2)) ? J$._() : J$.T(17, '\"\"', 21, false)) ? J$._() : J$.U(10, '!', J$.G(33, J$.R(25, 'Jb', Jb, 2), 'e', 0))) ? J$.B(18, '*', J$.T(41, '\\'No define call for \\'', 21, false), J$.T(49, '\\'undefined\\'', 21, false), 0) : J$._());\n            J$.X1(73, J$.T(65, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(89, J$e);\n        } finally {\n            if (J$.Sr(97)) {\n                J$.L();\n                continue jalangiLabel3;\n            } else {\n                J$.L();\n                break jalangiLabel3;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.result = \"TypeError\";        } else if (e instanceof RangeError) {            __diffTestingEngineState__.result = \"RangeError\";        } else if (e instanceof EvalError) {            __diffTestingEngineState__.result = \"EvalError\";        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.result = \"ReferenceError\";        }        else if (e instanceof URIError) {            __diffTestingEngineState__.result = \"URIError\";        }        else {            __diffTestingEngineState__.result = \"crash\";        }    } __diffTestingEngineState__.result;",
+  "haveSentTo": {
+    "Chrome 31.0.1612.0 (Linux)": 2,
+    "Chrome 23.0.1240.0 (Linux)": 2,
+    "Chrome 48.0.2559.0 (Linux)": 2,
+    "Firefox 25.0 (Linux)": 2,
+    "Firefox 33.0 (Linux)": 2,
+    "Firefox 17.0 (Linux)": 2,
+    "Firefox 44.0 (Linux)": 2,
+    "Chrome 39.0.2126.0 (Linux)": 2
+  },
+  "userAgentToResults": {
+    "Chrome 31.0.1612.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Chrome 23.0.1240.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Chrome 48.0.2559.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Firefox 25.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Firefox 33.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Firefox 17.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Firefox 44.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ],
+    "Chrome 39.0.2126.0 (Linux)": [
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN",
+      "Conditional: ,function,Conditional: ,function,Conditional: ,function,Literal: ,'No define call for ',Literal: ,'undefined',Binary: ,NaN"
+    ]
+  },
+  "isCrashing": "false",
+  "resultSummary": "CONSISTENT",
+  "lastTested": "Tue Mar 22 2016 10:25:40 GMT+0100 (CET)"
+}

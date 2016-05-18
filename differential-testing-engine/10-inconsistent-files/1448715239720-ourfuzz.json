@@ -1,0 +1,51 @@
+{
+  "fileName": "1448715239720-ourfuzz.js",
+  "code": "__diffTestingEngineState__ = { state: [], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":0,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116222-25476-dxecqz.js\"};\njalangiLabel65:\n    while (true) {\n        try {\n            J$.Se(49, '/tmp/116222-25476-dxecqz.js', 'evalIndirect');\n            J$.X1(25, J$.M(17, J$.R(9, 'this', this, 0), 'scrollBy', 0)());\n            J$.X1(41, J$.T(33, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(57, J$e);\n        } finally {\n            if (J$.Sr(65)) {\n                J$.L();\n                continue jalangiLabel65;\n            } else {\n                J$.L();\n                break jalangiLabel65;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.result = \"TypeError\";        } else if (e instanceof RangeError) {            __diffTestingEngineState__.result = \"RangeError\";        } else if (e instanceof EvalError) {            __diffTestingEngineState__.result = \"EvalError\";        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.result = \"ReferenceError\";        }        else if (e instanceof URIError) {            __diffTestingEngineState__.result = \"URIError\";        }        else {            __diffTestingEngineState__.result = \"crash\";        }    } __diffTestingEngineState__.result;",
+  "haveSentTo": {
+    "Chrome 31.0.1612.0 (Linux)": 2,
+    "Chrome 23.0.1240.0 (Linux)": 2,
+    "Chrome 48.0.2559.0 (Linux)": 2,
+    "Firefox 25.0 (Linux)": 2,
+    "Firefox 33.0 (Linux)": 2,
+    "Firefox 17.0 (Linux)": 2,
+    "Firefox 44.0 (Linux)": 2,
+    "Chrome 39.0.2126.0 (Linux)": 2
+  },
+  "userAgentToResults": {
+    "Chrome 31.0.1612.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Chrome 23.0.1240.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Chrome 48.0.2559.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 25.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 33.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 17.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 44.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Chrome 39.0.2126.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ]
+  },
+  "isCrashing": "true",
+  "resultSummary": "CONSISTENT",
+  "lastTested": "Tue Mar 22 2016 10:25:41 GMT+0100 (CET)"
+}

@@ -1,0 +1,51 @@
+{
+  "fileName": "1447945884675-ourfuzz.js",
+  "code": "__diffTestingEngineState__ = { state: [], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":2,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116222-25476-1l18iet.js\"};\njalangiLabel8:\n    while (true) {\n        try {\n            J$.Se(433, '/tmp/116222-25476-1l18iet.js', 'evalIndirect');\n            function evalStr(sc_Vector) {\n                jalangiLabel4:\n                    while (true) {\n                        try {\n                            J$.Fe(65, arguments.callee, this, arguments);\n                            arguments = J$.N(73, 'arguments', arguments, 4);\n                            sc_Vector = J$.N(81, 'sc_Vector', sc_Vector, 4);\n                            J$.X1(57, J$.F(49, J$.R(33, 'size', size, 2), 0)(J$.T(41, '755', 21, false)));\n                        } catch (J$e) {\n                            J$.Ex(513, J$e);\n                        } finally {\n                            if (J$.Fr(521))\n                                continue jalangiLabel4;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }\n            function v(i) {\n                jalangiLabel5:\n                    while (true) {\n                        try {\n                            J$.Fe(201, arguments.callee, this, arguments);\n                            arguments = J$.N(209, 'arguments', arguments, 4);\n                            i = J$.N(217, 'i', i, 4);\n                            while (J$.X1(529, J$.C(8, J$.T(89, true, 23, false))))\n                                J$.X1(121, J$.F(113, J$.R(97, 'o', o, 1), 0)(J$.T(105, '1940', 21, false)));\n                            J$.X1(153, J$.F(145, J$.R(129, 'v', v, 1), 0)(J$.T(137, '986', 21, false)));\n                            J$.X1(193, J$.P(185, J$.R(161, 'this', this, 0), 'msg', J$.B(10, '+', J$.R(169, 'w', w, 2), J$.T(177, '11', 21, false), 0), 0));\n                        } catch (J$e) {\n                            J$.Ex(537, J$e);\n                        } finally {\n                            if (J$.Fr(545))\n                                continue jalangiLabel5;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }\n            function entry(Array) {\n                jalangiLabel6:\n                    while (true) {\n                        try {\n                            J$.Fe(321, arguments.callee, this, arguments);\n                            arguments = J$.N(329, 'arguments', arguments, 4);\n                            Array = J$.N(337, 'Array', Array, 4);\n                            J$.X1(249, J$.F(241, J$.R(225, 'msg', msg, 2), 0)(J$.T(233, '877', 21, false)));\n                            J$.X1(281, J$.F(273, J$.R(257, 'jsStr', jsStr, 2), 0)(J$.T(265, '561', 21, false)));\n                            J$.X1(313, J$.F(305, J$.R(289, 'name', name, 2), 0)(J$.T(297, '1036', 21, false)));\n                        } catch (J$e) {\n                            J$.Ex(553, J$e);\n                        } finally {\n                            if (J$.Fr(561))\n                                continue jalangiLabel6;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }\n            function o(e) {\n                jalangiLabel7:\n                    while (true) {\n                        try {\n                            J$.Fe(369, arguments.callee, this, arguments);\n                            arguments = J$.N(377, 'arguments', arguments, 4);\n                            e = J$.N(385, 'e', e, 4);\n                            J$.X1(361, Int8Array = J$.W(353, 'Int8Array', J$.T(345, '8', 21, false), J$.I(typeof Int8Array === 'undefined' ? undefined : Int8Array), 4));\n                        } catch (J$e) {\n                            J$.Ex(569, J$e);\n                        } finally {\n                            if (J$.Fr(577))\n                                continue jalangiLabel7;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }\n            J$.N(441, 'color', color, 0);\n            evalStr = J$.N(457, 'evalStr', J$.T(449, evalStr, 12, false, 65), 0);\n            v = J$.N(473, 'v', J$.T(465, v, 12, false, 201), 0);\n            entry = J$.N(489, 'entry', J$.T(481, entry, 12, false, 321), 0);\n            o = J$.N(505, 'o', J$.T(497, o, 12, false, 369), 0);\n            var color = J$.X1(25, J$.W(17, 'color', J$.R(9, 'o', o, 1), color, 3));\n            J$.X1(409, J$.F(401, J$.R(393, 'Int8Array', Int8Array, 2), 0)());\n            J$.X1(425, J$.T(417, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(585, J$e);\n        } finally {\n            if (J$.Sr(593)) {\n                J$.L();\n                continue jalangiLabel8;\n            } else {\n                J$.L();\n                break jalangiLabel8;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.result = \"TypeError\";        } else if (e instanceof RangeError) {            __diffTestingEngineState__.result = \"RangeError\";        } else if (e instanceof EvalError) {            __diffTestingEngineState__.result = \"EvalError\";        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.result = \"ReferenceError\";        }        else if (e instanceof URIError) {            __diffTestingEngineState__.result = \"URIError\";        }        else {            __diffTestingEngineState__.result = \"crash\";        }    } __diffTestingEngineState__.result;",
+  "haveSentTo": {
+    "Chrome 31.0.1612.0 (Linux)": 2,
+    "Chrome 23.0.1240.0 (Linux)": 2,
+    "Chrome 48.0.2559.0 (Linux)": 2,
+    "Firefox 25.0 (Linux)": 2,
+    "Firefox 33.0 (Linux)": 2,
+    "Firefox 17.0 (Linux)": 2,
+    "Firefox 44.0 (Linux)": 2,
+    "Chrome 39.0.2126.0 (Linux)": 2
+  },
+  "userAgentToResults": {
+    "Chrome 31.0.1612.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Chrome 23.0.1240.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Chrome 48.0.2559.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Firefox 25.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Literal: ,function,Literal: ,function,Write: ,function",
+      "Literal: ,function,Literal: ,function,Literal: ,function,Literal: ,function,Write: ,function"
+    ],
+    "Firefox 33.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Literal: ,function,Literal: ,function,Write: ,function",
+      "Literal: ,function,Literal: ,function,Literal: ,function,Literal: ,function,Write: ,function"
+    ],
+    "Firefox 17.0 (Linux)": [
+      "Literal: ,function,Literal: ,function,Literal: ,function,Literal: ,function,Write: ,function",
+      "Literal: ,function,Literal: ,function,Literal: ,function,Literal: ,function,Write: ,function"
+    ],
+    "Firefox 44.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ],
+    "Chrome 39.0.2126.0 (Linux)": [
+      "TypeError",
+      "TypeError"
+    ]
+  },
+  "isCrashing": "true",
+  "resultSummary": "INCONSISTENT",
+  "lastTested": "Tue Mar 22 2016 10:25:40 GMT+0100 (CET)"
+}

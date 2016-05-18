@@ -1,0 +1,51 @@
+{
+  "fileName": "1447943512084-ourfuzz.js",
+  "code": "__diffTestingEngineState__ = { state: [], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":4,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116222-25476-1pexwpv.js\"};\njalangiLabel2:\n    while (true) {\n        try {\n            J$.Se(201, '/tmp/116222-25476-1pexwpv.js', 'evalIndirect');\n            J$.X1(177, J$.F(169, J$.R(9, 'setInterval', setInterval, 2), 0)(J$.C(16, J$.C(8, J$.U(10, '!', J$.T(17, '0', 21, false))) ? setInterval = J$.W(137, 'setInterval', J$.T(129, function () {\n                jalangiLabel1:\n                    while (true) {\n                        try {\n                            J$.Fe(105, arguments.callee, this, arguments);\n                            arguments = J$.N(113, 'arguments', arguments, 4);\n                            J$.N(121, 'resIndex', resIndex, 0);\n                            var resIndex = J$.X1(97, J$.W(89, 'resIndex', J$.M(81, J$.M(49, J$.R(25, 'e', e, 2), 'rep', 0)(J$.F(41, J$.R(33, 'callback', callback, 2), 0)()), 'n', 0)(J$.R(57, 'resIndex', resIndex, 0), J$.M(73, J$.R(65, 'this', this, 0), 'undefined', 0)()), resIndex, 1));\n                        } catch (J$e) {\n                            J$.Ex(209, J$e);\n                        } finally {\n                            if (J$.Fr(217))\n                                continue jalangiLabel1;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }, 12, false, 105), J$.I(typeof setInterval === 'undefined' ? undefined : setInterval), 4) : J$._()) ? J$.G(161, J$.G(153, J$.R(145, 'callback', callback, 2), 'resIndex', 0), '$$setClassImmediately', 0) : J$._()));\n            J$.X1(193, J$.T(185, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(225, J$e);\n        } finally {\n            if (J$.Sr(233)) {\n                J$.L();\n                continue jalangiLabel2;\n            } else {\n                J$.L();\n                break jalangiLabel2;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.result = \"TypeError\";        } else if (e instanceof RangeError) {            __diffTestingEngineState__.result = \"RangeError\";        } else if (e instanceof EvalError) {            __diffTestingEngineState__.result = \"EvalError\";        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.result = \"ReferenceError\";        }        else if (e instanceof URIError) {            __diffTestingEngineState__.result = \"URIError\";        }        else {            __diffTestingEngineState__.result = \"crash\";        }    } __diffTestingEngineState__.result;",
+  "haveSentTo": {
+    "Chrome 31.0.1612.0 (Linux)": 2,
+    "Chrome 23.0.1240.0 (Linux)": 2,
+    "Chrome 48.0.2559.0 (Linux)": 2,
+    "Firefox 25.0 (Linux)": 2,
+    "Firefox 33.0 (Linux)": 2,
+    "Firefox 17.0 (Linux)": 2,
+    "Firefox 44.0 (Linux)": 2,
+    "Chrome 39.0.2126.0 (Linux)": 2
+  },
+  "userAgentToResults": {
+    "Chrome 31.0.1612.0 (Linux)": [
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false",
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false"
+    ],
+    "Chrome 23.0.1240.0 (Linux)": [
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false",
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false"
+    ],
+    "Chrome 48.0.2559.0 (Linux)": [
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false",
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false"
+    ],
+    "Firefox 25.0 (Linux)": [
+      "crash",
+      "crash"
+    ],
+    "Firefox 33.0 (Linux)": [
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false",
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false"
+    ],
+    "Firefox 17.0 (Linux)": [
+      "crash",
+      "crash"
+    ],
+    "Firefox 44.0 (Linux)": [
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false",
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false"
+    ],
+    "Chrome 39.0.2126.0 (Linux)": [
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false",
+      "Literal: ,0,Unary: ,!,Conditional: ,false,Conditional: ,false"
+    ]
+  },
+  "isCrashing": "false",
+  "resultSummary": "INCONSISTENT",
+  "lastTested": "Tue Mar 22 2016 10:25:40 GMT+0100 (CET)"
+}
