@@ -21,6 +21,8 @@
             // Run the initial code and save error message
             this.errorMessage = testMethod(initialInput);
             console.log("Error obtained: " + this.errorMessage);
+            // This counter stores the number of tests run so far.
+            this.testsRun = 0;
         }
 
         /**
@@ -31,6 +33,7 @@
          */
         test(input) {
             var errmsg = this.testMethod(input);
+            this.testsRun++;
             console.log("Error obtained: " + errmsg);
             if(errmsg == this.errorMessage) {
                 // The same error is triggered
