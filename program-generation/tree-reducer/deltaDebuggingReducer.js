@@ -443,6 +443,30 @@
     }
 
     /**
+     * HDD* algorithm. Applies HDD repeatedly until no more nodes are removed.
+     * This algorithm ensures 1-minimality, unlike HDD.
+     *
+     * @param {Node} tree the tree obtained from the AST.
+     * @param {function(Node): string} test see below
+     * @returns {Node} the minimized tree.
+     */
+    function hddStar(tree, test) {
+        var currentTree = tree;
+        var nbNodesBefore;
+        var nbNodesAfter = currentTree.nbNodes();
+
+        var i = 0;
+        do {
+            console.log("Iteration " + ++i + " of HDD*");
+            nbNodesBefore = nbNodesAfter;
+            currentTree = hdd(currentTree, test);
+            nbNodesAfter = currentTree.nbNodes();
+        } while(nbNodesAfter < nbNodesBefore);
+
+        return currentTree;
+    }
+
+    /**
      * Character based ddmin.
      * @param {string} text the program
      * @param {function(string): string} test see below
@@ -568,6 +592,7 @@
 
     exports.ddminTree = ddminTree;
     exports.hdd = hdd;
+    exports.hddStar = hddStar;
     exports.ddminChar = ddminChar;
     exports.ddminLine = ddminLine;
 })();

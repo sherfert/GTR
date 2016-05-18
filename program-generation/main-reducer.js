@@ -21,7 +21,7 @@
     var tree = treeProvider.astToTree(ast);
     var tester = new inputTester.JSTreeTester(tree);
     var test = function(c) { return tester.test(c)};
-    var newTree = ddReducer.hdd(tree, test);
+    var newTree = ddReducer.hddStar(tree, test);
     var newCode = treeGenerator.treeToCode(newTree);
 
 
