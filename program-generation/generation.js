@@ -4,7 +4,6 @@
     "use strict";
     try {
         var fs = require("fs");
-        var learning = require("./learning");
         var onelog = require('single-line-log').stdout;
         var timer = require("./evaluation/timer");
         var config = require("./config").config;

@@ -9,14 +9,14 @@
 
     var deterministicRandom = require("./deterministicRandom");
     var config = require("./config").config;
-    var learning = require("./learning");
+    var corpus = require("./corpus");
 
     function getCodePreamble(filetype, filename) {
         let date = new Date(filename), // Getting the date, when the file was created
             seed = deterministicRandom.getSeed(),
             corpusDir = config.corpusDir,
             randomSeed = config.useRandomSeed,
-            corpusSize = learning.getCorpusSize();
+            corpusSize = corpus.getCorpusSize();
 
         switch (filetype.toLowerCase()) {
             case "js":

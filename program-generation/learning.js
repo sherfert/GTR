@@ -12,6 +12,7 @@
     var context = require("./context");
     var getText = require('./getText').getText;
     var plot = require('./utilities/plotter').plot;
+    var corpus = require('./corpus');
     var corpusFilesAndNodes = {
         title: "Files vs Number of nodes",
         x: [],
@@ -22,15 +23,6 @@
         annotation: true
     }; // for plotting
 
-    var corpus = {
-        size: 0,
-        get() {
-            return this.size;
-        },
-        set(s) {
-            this.size = s;
-        }
-    };
     var nbTraversed = 0, numberOfNodes = 0;
 
     function traverseTrees() {
@@ -44,14 +36,10 @@
             //singleLinelog.clear();
             singleLinelog("Traversed " + nbTraversed + " trees\n");
         }
-        corpus.set(nbTraversed);
+        corpus.setCorpusSize(nbTraversed);
         let filetoWrite = process.cwd() + config.corpusFiles_vs_numberOfnodes;
         util.writeToJSONfile(filetoWrite, corpusFilesAndNodes);
         //plot(corpusFilesAndNodes, config.corpusFiles_vs_numberOfnodes.split(".json")[0] + ".eps"); // Please only specify PNG format
-    }
-
-    function getCorpusSize() {
-        return corpus.get();
     }
 
     /**
@@ -130,5 +118,4 @@
     }
 
     exports.learn = learn;
-    exports.getCorpusSize = getCorpusSize;
 })();

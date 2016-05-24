@@ -6,7 +6,7 @@
     "use strict";
     var config = require('./config').config;
     var getCodePreamble = require("./getCodePreamble").getCodePreamble;
-    var learning = require("./learning");
+    var corpus = require("./corpus");
     let currentDateTime;
 
     var fileType = config.fileType;
@@ -15,7 +15,7 @@
         switch (context) {
             case "LogPreamble_generation":
                 currentDateTime = new Date();
-                return "\nGeneration started at " + currentDateTime + "\n\tUsing corpus " + config.corpusDir + " containing " + learning.getCorpusSize() + " files";
+                return "\nGeneration started at " + currentDateTime + "\n\tUsing corpus " + config.corpusDir + " containing " + corpus.getCorpusSize() + " files";
                 break;
             case "LogConclusion_generation":
                 var logConclusion;

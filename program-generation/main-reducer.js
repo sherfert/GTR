@@ -4,7 +4,6 @@
     var fs = require('fs');
     var esprima = require('esprima');
     var escodegen = require('escodegen');
-    var learning = require("./learning");
     var config = require("./config").config;
     var treeProvider = require(config.treeProvider);
     var treeGenerator = require(config.treeGenerator);
