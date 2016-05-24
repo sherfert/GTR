@@ -1,5 +1,4 @@
 // Author: Michael Pradel, Satia Herfert
-// TODO comment file
 (function() {
 
     var util = require("./util");

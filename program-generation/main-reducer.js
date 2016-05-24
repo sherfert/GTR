@@ -13,16 +13,19 @@
 
     var code = "" + fs.readFileSync("tree-reducer/input/test3.js");
 
-    // var tester = new inputTester.CodeTester(code);
-    // var test = function(c) { return tester.test(c)};
-    // var newCode = ddReducer.ddminChar(code, test);
-
-    var ast = esprima.parse(code);
-    var tree = treeProvider.astToTree(ast);
-    var tester = new inputTester.JSTreeTester(tree);
+    var tester = new inputTester.CodeTester(code);
     var test = function(c) { return tester.test(c)};
-    var newTree = ddReducer.ddminTree(tree, test);
-    var newCode = treeGenerator.treeToCode(newTree);
+    //var newCode = ddReducer.ddminChar(code, test);
+    // Beware that execute with code does not count failed tree->code conversions
+    // towards the test run count.
+    var newCode = ddReducer.executeWithCode(ddReducer.hdd, code, test);
+
+    // var ast = esprima.parse(code);
+    // var tree = treeProvider.astToTree(ast);
+    // var tester = new inputTester.JSTreeTester(tree);
+    // var test = function(c) { return tester.test(c)};
+    // var newTree = ddReducer.hdd(tree, test);
+    // var newCode = treeGenerator.treeToCodeNoFileIO(newTree);
 
 
     console.log("RESULT:\n" + newCode);

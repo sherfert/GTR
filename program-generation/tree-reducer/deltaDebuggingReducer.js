@@ -1,7 +1,10 @@
 // Author: Satia Herfert
 
 (function() {
-    var loTrees = require("./../labeledOrderedTrees");
+    var esprima = require('esprima');
+    var config = require("../config").config;
+    var treeProvider = require("../" + config.treeProvider);
+    var treeGenerator = require("../" + config.treeGenerator);
 
     /**
      * Abstract class for all kinds of input to the ddmin algorithm.
@@ -404,6 +407,33 @@
     }
 
     /**
+     * Convenience function to execute any tree based algorithm directly on code.
+     * It can be used at the moment with ddminTree, hdd and hddStar as the first
+     * parameter.
+     *
+     * @param {function(Node,function(Node): string):Node} algorithm the tree-based algorithm to use
+     * @param {String} code the code to minimize
+     * @param {function(string): string} test see below
+     * @returns {String} the minimized code.
+     */
+    function executeWithCode(algorithm, code, test) {
+        var ast = esprima.parse(code);
+        var tree = treeProvider.astToTree(ast);
+        
+        var internalTest = function(t) {
+            var c = treeGenerator.treeToCodeNoFileIO(t);
+            if(c instanceof Error) {
+                // Return "?" if the tree is not convertable
+                return "?";
+            }
+            return test(c);
+        };
+        
+        var newTree = algorithm(tree, internalTest);
+        return treeGenerator.treeToCodeNoFileIO(newTree);
+    }
+
+    /**
      * Naive tree based ddmin.
      *
      * All nodes are numbered 0..n, excluding the root node.
@@ -595,4 +625,5 @@
     exports.hddStar = hddStar;
     exports.ddminChar = ddminChar;
     exports.ddminLine = ddminLine;
+    exports.executeWithCode = executeWithCode;
 })();
