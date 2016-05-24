@@ -1,22 +1,15 @@
-// Author: Michael Pradel
+// Author: Satia Herfert
 
 /**
- * Server part of differential testing engine.
- * Executes .js files added to the codeDir directory in multiple browsers
- * and writes .json files with the results into the same directory.
- *
- * The engine executes each file in each browser to find inconsistencies between browsers.
- * Moreover, the engine executes each file twice per browser to find non-deterministic tests.
- *
- * Assumptions:
- *  - New .js files are added to the codeDir directory, but .js files are never deleted.
+ * Different server that sends files that were found to have
+ * inconsistent results to minimize them. It is important that
+ * the (EXACTLY TWO) browsers exposing the inconsistency connect to this server.
  */
 (function () {
     try {
         var express = require('express');
         var bodyParser = require('body-parser');
         var parser = require('ua-parser-js');
-        var onelog = require('single-line-log').stdout;
         var jsonfile = require('jsonfile');
     } catch (err) {
         console.log(err.message);
@@ -25,50 +18,26 @@
     }
     var fs = require('fs');
 
+    var ddReducer = require("../../program-generation/tree-reducer/deltaDebuggingReducer");
+
     /* Configurations */
     var config = jsonfile.readFileSync("config.json");
     var preprocessor = require(config.preprocessor);
-    var codeDir = config.codeDirectory;
+    var codeDir = config.reduceCodeDirectory;
     var fileRefreshSleep = config.fileRefreshSleep; // milliseconds between re-scans of codeDir
-    var repetitionsPerBrowser = config.repetitionsPerBrowser;
     var port = config.port;
-
 
     var fileNameToState = {};
 
-    function JSFileState(fileName, code /*undefined means syntax error in code*/) {
+    // File state (different from the one in server.js)
+    // for minimizing code.
+    function JSFileState(fileName, code) {
         this.fileName = fileName;
         this.code = code;
-        this.haveSentTo = {}; // user agent string --> number
-        this.userAgentToResults = {}; // user agent string --> array of results
-        this.isCrashing = false;
-        this.resultSummary = code ? "WAITING_FOR_EXECUTION" : "SYNTAX_ERROR";
+        this.minCode; // Minimized code
+        this.haveSentTo = []; // user agent string
+        this.userAgentToResults = {}; // user agent string --> result
     }
-
-    JSFileState.prototype = {
-        updateResultSummary: function () {
-            var userAgents = Object.keys(this.userAgentToResults);
-            // check for non-determinism
-            for (var i = 0; i < userAgents.length; i++) {
-                var results = this.userAgentToResults[userAgents[i]];
-                if (!resultsAreConsistent(results)) {
-                    this.resultSummary = "NON-DETERMINISTIC";
-                    return;
-                }
-            }
-
-            // compare browsers with each other
-            if (userAgents.length > 1) {
-                var results = [];
-                for (var i = 0; i < userAgents.length; i++) {
-                    var userAgentFirstResult = this.userAgentToResults[userAgents[i]][0];
-                    results.push(userAgentFirstResult);
-                }
-                if (resultsAreConsistent(results)) this.resultSummary = "CONSISTENT";
-                else this.resultSummary = "INCONSISTENT";
-            }
-        }
-    };
 
     function startServer() {
         var app = express();
@@ -81,7 +50,6 @@
         app.get('/getCode', function (request, response) {
             var userAgent = request.headers['user-agent'];
             var parsedAgent = parsedUserAgent(userAgent);
-            //console.log("Got request from " + userAgent);
             sendNewFileOnceAvailable(parsedAgent, response);
         });
 
@@ -96,8 +64,6 @@
             }
 
             handleResponse(fileName, parsedAgent, result);
-            onelog("Received    : " + fileName + " " + parsedAgent + " " + new Date().toLocaleTimeString());
-            //console.log("Received result: " + result + " for " + fileName);
             response.send("OK");
         });
 
@@ -109,6 +75,7 @@
         });
     }
 
+    // TODO same as in server.js: Abstract into a library
     function parsedUserAgent(userAgent) {
         var ua = parser(userAgent);
         var parsedUa = "-";
@@ -126,23 +93,10 @@
         }
     }
 
+    // TODO essentially the same as in server.js
     function readCodeFromFiles() {
         var nbNewFiles = 0;
         var allFiles = fs.readdirSync(codeDir);
-        /* TODO
-         /!* Pre-process the readfiles and select only JS files *!/
-
-         /!* Sort the files by names *!/
-         allFiles.sort(function (i, j) {
-         return i < j ? -1 : 1;
-         });
-         var lastReadFile = fs.readFileSync("last-read.txt", "utf8");
-         /!* Remove files that has already been processed *!/
-         var idx = allFiles.indexOf(lastReadFile);
-         if (idx !== -1) {
-         allFiles.slice(idx + 1);
-         }*/
-        //console.log("Not processing " + idx + " files before " + lastReadFile);
         for (var i = 0; i < allFiles.length; i++) {
             var file = allFiles[i];
             if (file.indexOf(".js") === file.length - 3) {
@@ -156,26 +110,25 @@
                         var code = preprocessor.preProcess(rawCode);
                         var state = new JSFileState(file, code);
                         fileNameToState[file] = state;
-                        writeResult(state);
                         nbNewFiles++;
                     }
                 }
             }
         }
         if (nbNewFiles > 0) {
-            onelog("Have read " + nbNewFiles + " new files.");
+            console.log("Have read " + nbNewFiles + " new files.");
         }
-
-
         setTimeout(readCodeFromFiles, fileRefreshSleep);
     }
 
+    /**
+     * Returns a new file if available, otherwise undefined.
+     */
     function getNewFile(userAgent) {
         var allFiles = Object.keys(fileNameToState);
         for (var i = 0; i < allFiles.length; i++) {
             var fileState = fileNameToState[allFiles[i]];
-            if (fileState.resultSummary !== "SYNTAX_ERROR" &&
-                (!fileState.haveSentTo.hasOwnProperty(userAgent) || fileState.haveSentTo[userAgent] < repetitionsPerBrowser)) {
+            if (fileState.haveSentTo.indexOf(userAgent) == -1) {
                 return fileState;
             }
         }
@@ -184,55 +137,49 @@
     function sendNewFileOnceAvailable(userAgent, response) {
         var fileState = getNewFile(userAgent);
         if (fileState) {
-            onelog("Sent        : " + fileState.fileName + " " + userAgent + " " + new Date().toLocaleTimeString());
-            //console.log("Found a new file for " + userAgent + " -- " + fileState.fileName + ". Sending it to client...");
-            var oldHaveSentTo = fileState.haveSentTo[userAgent] | 0;
-            fileState.haveSentTo[userAgent] = oldHaveSentTo + 1;
+            console.log("Sent        : " + fileState.fileName + " " + userAgent + " " + new Date().toLocaleTimeString());
+            fileState.haveSentTo.push(userAgent);
             response.send({
                 code: fileState.code,
                 fileName: fileState.fileName
             });
         } else {
+            // Retry after some time, to see if now there is a new file
             setTimeout(sendNewFileOnceAvailable.bind(null, userAgent, response), fileRefreshSleep);
         }
     }
 
+    function sendReductionRequestOnceAvailable(userAgent, response) {
+
+    }
+
     function handleResponse(fileName, userAgent, result) {
         var fileState = fileNameToState[fileName];
-        if (!fileState)
+        if (!fileState) {
             throw "Error: Received response for unknown file " + fileName;
+        }
 
-        if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) fileState.userAgentToResults[userAgent] = [];
-        fileState.userAgentToResults[userAgent].push(result['result']);
+        if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) {
+            fileState.userAgentToResults[userAgent] = result['result'];
+        }
         /* If it crashes in atleast one of the browsers then set it to true */
         if (JSON.parse(result['isCrashing'])) {
             fileState.isCrashing = result['isCrashing'];
         }
-        fileState.updateResultSummary();
 
         writeResult(fileState);
     }
 
-    function resultsAreConsistent(results) {
-        for (var i = 0; i < results.length; i++) {
-            var result1 = results[i];
-            for (var j = i + 1; j < results.length; j++) {
-                var result2 = results[j];
-                if (!twoResultsAreConsistent(result1, result2)) return false;
-            }
-        }
-        return true;
-    }
-
-    function twoResultsAreConsistent(result1, result2) {
-        return result1 === result2; // to revise if we have a richer representation of results
-    }
-
+    // TODO same as in server.js
     function writeResult(fileState) {
         fileState.lastTested = new Date().toLocaleString();
         fs.writeFileSync("last-read.txt", fileState.fileName);
         var resultFileName = fileState.fileName + "on"; // .js --> .json
         fs.writeFileSync(codeDir + "/" + resultFileName, JSON.stringify(fileState, 0, 2));
+    }
+
+    function reduce(fileState) {
+        // Called once a file was executed in 2 browsers
     }
 
     startServer();

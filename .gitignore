@@ -8,6 +8,7 @@
 **/node_modules
 **/corpusForTesting*/*
 */generatedCode/*
+*/inconsistentCode/*
 */results/**
 **/valid-*
 **/syntactically-*

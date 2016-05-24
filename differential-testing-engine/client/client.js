@@ -106,8 +106,9 @@
             dataType: "json",
             timeout: pollTimeout,
             complete: function (xhr, textStatus) {
-                if (textStatus === "timeout")
+                if (textStatus === "timeout") {
                     setTimeout(pollForCode, 0);
+                }
             }
         });
     }
