@@ -465,7 +465,7 @@
 
         // In the original they start with level 0, but we skip the root.
         for(var level = 1; level <= currentTree.depth() ; level++) {
-            console.log("Testing level " + level + " in HDD.");
+            //console.log("Testing level " + level + " in HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
         }
 
@@ -487,7 +487,7 @@
 
         var i = 0;
         do {
-            console.log("Iteration " + ++i + " of HDD*");
+            //console.log("Iteration " + ++i + " of HDD*");
             nbNodesBefore = nbNodesAfter;
             currentTree = hdd(currentTree, test);
             nbNodesAfter = currentTree.nbNodes();
@@ -547,7 +547,7 @@
         var len = input.length;
         if(len <= 1) {
             // No further minimization possible
-            console.log("Return' subset: " + input.activeTokens);
+            //console.log("Return' subset: " + input.activeTokens);
             return input;
         }
 
@@ -562,21 +562,21 @@
             // Check the cache
             let key = subset.activeTokens.toString();
             if(cache.hasOwnProperty(key)) {
-                console.log("Using cached value");
+                //console.log("Using cached value");
                 result = cache[key];
             } else {
-                console.log("Testing subset: " + key);
+                //console.log("Testing subset: " + key);
                 // No cached value available
                 result = test(subset.currentCode);
                 // Cache the result
                 cache[key] = result;
             }
 
-            console.log("Testing result: " + result);
+            //console.log("Testing result: " + result);
             // Test the subset
             if(result == "fail") {
-                console.log("Continue with subset and granularity " + 2
-                    + " and length " + subset.length);
+                //console.log("Continue with subset and granularity " + 2
+                //    + " and length " + subset.length);
                 return ddmin2(subset, 2, test);
             }
         }
@@ -589,34 +589,34 @@
             // Check the cache
             let key = subset.activeTokens.toString();
             if(cache.hasOwnProperty(key)) {
-                console.log("Using cached value");
+                //console.log("Using cached value");
                 result = cache[key];
             } else {
 
-                console.log("Testing complm: " + key);
+                //console.log("Testing complm: " + key);
                 // No cached value available
                 result = test(subset.currentCode);
                 // Cache the result
                 cache[key] = result;
             }
 
-            console.log("Testing result: " + result);
+            //console.log("Testing result: " + result);
             // Test the subset
             if(result == "fail") {
-                console.log("Continue with complement and granularity " + Math.max(n - 1, 2)
-                    + " and length " + subset.length);
+                //console.log("Continue with complement and granularity " + Math.max(n - 1, 2)
+                //    + " and length " + subset.length);
                 return ddmin2(subset, Math.max(n - 1, 2), test);
             }
         }
 
         if(n < len) {
             // Increase granularity
-            console.log("Increasing granularity to " + Math.min(len, 2 * n));
+            //console.log("Increasing granularity to " + Math.min(len, 2 * n));
             return ddmin2(input, Math.min(len, 2 * n), test);
         }
 
         // Otherwise done
-        console.log("Return' subset: " + input.activeTokens);
+        //console.log("Return' subset: " + input.activeTokens);
         return input;
     }
 
