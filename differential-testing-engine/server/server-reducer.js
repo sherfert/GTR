@@ -4,6 +4,8 @@
  * Different server that sends files that were found to have
  * inconsistent results to minimize them. It is important that
  * the (EXACTLY TWO) browsers exposing the inconsistency connect to this server.
+ *
+ * TODO forbid more than two connections
  */
 (function () {
     try {
@@ -11,13 +13,13 @@
         var bodyParser = require('body-parser');
         var parser = require('ua-parser-js');
         var jsonfile = require('jsonfile');
+        var deasync = require('deasync');
     } catch (err) {
         console.log(err.message);
         console.log("Can't continue until you fix above error/s..");
         process.exit(1);
     }
     var fs = require('fs');
-
     var ddReducer = require("../../program-generation/tree-reducer/deltaDebuggingReducer");
 
     /* Configurations */
@@ -28,14 +30,15 @@
     var port = config.port;
 
     var fileNameToState = {};
+    var listOfAgents = [];
+    var reducerQueue = {};
 
     // File state (different from the one in server.js)
     // for minimizing code.
-    function JSFileState(fileName, code) {
+    function JSFileState(fileName, rawCode) {
         this.fileName = fileName;
-        this.code = code;
+        this.rawCode = rawCode;
         this.minCode; // Minimized code
-        this.haveSentTo = []; // user agent string
         this.userAgentToResults = {}; // user agent string --> result
     }
 
@@ -50,7 +53,15 @@
         app.get('/getCode', function (request, response) {
             var userAgent = request.headers['user-agent'];
             var parsedAgent = parsedUserAgent(userAgent);
-            sendNewFileOnceAvailable(parsedAgent, response);
+
+            // Save the agent name
+            if(listOfAgents.indexOf(parsedAgent) < 0) {
+                console.log("First connection of " + parsedAgent);
+                listOfAgents.push(parsedAgent);
+                reducerQueue[parsedAgent] = [];
+            }
+
+            sendReductionRequestOnceAvailable(parsedAgent, response);
         });
 
         app.post('/reportResult', function (request, response) {
@@ -107,8 +118,7 @@
                         var rawCode = fs.readFileSync(codeDir + "/" + file, {
                             encoding: "utf8"
                         });
-                        var code = preprocessor.preProcess(rawCode);
-                        var state = new JSFileState(file, code);
+                        var state = new JSFileState(file, rawCode);
                         fileNameToState[file] = state;
                         nbNewFiles++;
                     }
@@ -118,39 +128,6 @@
         if (nbNewFiles > 0) {
             console.log("Have read " + nbNewFiles + " new files.");
         }
-        setTimeout(readCodeFromFiles, fileRefreshSleep);
-    }
-
-    /**
-     * Returns a new file if available, otherwise undefined.
-     */
-    function getNewFile(userAgent) {
-        var allFiles = Object.keys(fileNameToState);
-        for (var i = 0; i < allFiles.length; i++) {
-            var fileState = fileNameToState[allFiles[i]];
-            if (fileState.haveSentTo.indexOf(userAgent) == -1) {
-                return fileState;
-            }
-        }
-    }
-
-    function sendNewFileOnceAvailable(userAgent, response) {
-        var fileState = getNewFile(userAgent);
-        if (fileState) {
-            console.log("Sent        : " + fileState.fileName + " " + userAgent + " " + new Date().toLocaleTimeString());
-            fileState.haveSentTo.push(userAgent);
-            response.send({
-                code: fileState.code,
-                fileName: fileState.fileName
-            });
-        } else {
-            // Retry after some time, to see if now there is a new file
-            setTimeout(sendNewFileOnceAvailable.bind(null, userAgent, response), fileRefreshSleep);
-        }
-    }
-
-    function sendReductionRequestOnceAvailable(userAgent, response) {
-
     }
 
     function handleResponse(fileName, userAgent, result) {
@@ -161,13 +138,16 @@
 
         if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) {
             fileState.userAgentToResults[userAgent] = result['result'];
+        } else {
+            // FIXME
+            //console.log(userAgent + " processing " + fileName + " again. Aborting.");
+            return;
         }
         /* If it crashes in atleast one of the browsers then set it to true */
         if (JSON.parse(result['isCrashing'])) {
             fileState.isCrashing = result['isCrashing'];
         }
-
-        writeResult(fileState);
+        // TODO
     }
 
     // TODO same as in server.js
@@ -178,11 +158,75 @@
         fs.writeFileSync(codeDir + "/" + resultFileName, JSON.stringify(fileState, 0, 2));
     }
 
+    function sendReductionRequestOnceAvailable(userAgent, response) {
+        if(reducerQueue[userAgent].length == 0) {
+            // Retry after some time, to see if now there is a new request
+            //console.log(userAgent + " waiting for a request");
+            setTimeout(sendReductionRequestOnceAvailable.bind(null, userAgent, response), fileRefreshSleep);
+            return;
+        }
+
+        var request = reducerQueue[userAgent].shift();
+        var fileState = fileNameToState[request.name];
+        console.log("Sent: " + fileState.fileName + ":" + request.number + " " + userAgent);
+        response.send({
+            code: preprocessor.preProcess(fileState.minCode),
+            fileName: fileState.fileName
+        });
+    }
+
+
     function reduce(fileState) {
-        // Called once a file was executed in 2 browsers
+        var counter = 0;
+        console.log("Starting reduction of " + fileState.fileName);
+        // First, send the original code to the browsers to have results for the comparison
+        var testInBrowsers = function(c) {
+            console.log("testing code of " + fileState.fileName + " iteration " + counter);
+            // Update the code
+            fileState.minCode = c;
+            var request = {
+                name:fileState.fileName,
+                number: counter++
+            };
+            // Push the request to the queue for all agents
+            for (var i = 0; i < listOfAgents.length; i++) {
+                var agent = listOfAgents[i];
+                reducerQueue[agent].push(request);
+            }
+
+            // TODO wait for and obtain results
+        };
+
+
+
+        var originalResults = fileState.userAgentToResults;
+
+        var test = function(c) {
+            testInBrowsers(c);
+            // TODO
+            return "?";
+        };
+        fileState.minCode = ddReducer.executeWithCode(ddReducer.hdd, fileState.rawCode, test);
+
+        writeResult(fileState);
+
+        console.log("Reduction done of " + fileState.fileName);
+    }
+
+    // TODO the reductions should happen in parallel (?)
+    function reduceAllFiles() {
+        for (var key in fileNameToState) {
+            if (fileNameToState.hasOwnProperty(key)) {
+                reduce(fileNameToState[key]);
+            }
+        }
     }
 
     startServer();
     readCodeFromFiles();
+    // Invoke reduce as soon as two browsers have connected.
+    console.log("Waiting for browsers to connect");
+    deasync.loopWhile(function() { return listOfAgents.length < 2; });
+    reduceAllFiles();
 
 })();
