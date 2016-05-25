@@ -3,6 +3,8 @@
   "codeDirectory": "generatedCode",
   "reduceCodeDirectory":"inconsistentCode",
   "fileRefreshSleep": 2000,
+  "reduceRefreshSleep": 100,
+  "reduceBrowsersExpected":2,
   "repetitionsPerBrowser": 2,
   "port": 4000
 }
