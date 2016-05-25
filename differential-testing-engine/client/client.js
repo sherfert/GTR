@@ -12,7 +12,8 @@
         var code = dataReceivedForExecution.code;
         var fileNameForDifferentialTesting = dataReceivedForExecution.fileName;
         console.log("Executing received code " + fileNameForDifferentialTesting);
-        executeInWebWorker(code, fileNameForDifferentialTesting);
+        // executeInWebWorker(code, fileNameForDifferentialTesting);
+        executeUsingEval(code, fileNameForDifferentialTesting);
     }
 
     function executeInWebWorker(code, fileNameForDifferentialTesting) {
@@ -86,7 +87,29 @@
         }, 5000);
     }
 
-    function executeOutofWebWorker(code, fileNameForDifferentialTesting) {
+    function executeUsingEval(code, fileNameForDifferentialTesting) {
+       /* var currentHost = window.location.host;
+        currentHost = "http://" + currentHost;
+        var jalangiFolder = "/jalangiRuntime/";
+        var pathToJalangi = currentHost + jalangiFolder;
+
+        var jalangiRuntime = ['esotope.js', 'acorn.js', 'Constants.js', 'Config.js', 'astUtil.js', 'esnstrument.js', 'iidToLocation.js', 'analysis.js', 'executionSummarizer.js'];
+
+        jalangiRuntime.forEach(function (filename) {
+            console.log("Appending");
+            var script = document.createElement('script');
+            script.setAttribute('src', pathToJalangi + filename);
+            document.head.appendChild(script);
+        });*/
+
+        var result = sandboxExecution(code);
+        sendResultReloadPage({result: result, isCrashing: false}, fileNameForDifferentialTesting);
+    }
+
+    /* The name of the function is "misleading". Previously, using eval in the executeCode() was returning the 'this'
+     *  as the post object rather than the window object. using eval in a separate function avoids this for now.
+     * */
+    function sandboxExecution(code) {
         return eval(code);
     }
 
