@@ -15,7 +15,6 @@
     try {
         var express = require('express');
         var bodyParser = require('body-parser');
-        var parser = require('ua-parser-js');
         var onelog = require('single-line-log').stdout;
         var jsonfile = require('jsonfile');
     } catch (err) {
@@ -24,6 +23,7 @@
         process.exit(1);
     }
     var fs = require('fs');
+    var util = require('./util-server');
 
     /* Configurations */
     var config = jsonfile.readFileSync("config.json");
@@ -80,7 +80,7 @@
 
         app.get('/getCode', function (request, response) {
             var userAgent = request.headers['user-agent'];
-            var parsedAgent = parsedUserAgent(userAgent);
+            var parsedAgent = util.parsedUserAgent(userAgent);
             //console.log("Got request from " + userAgent);
             sendNewFileOnceAvailable(parsedAgent, response);
         });
@@ -90,7 +90,7 @@
             var fileName = request.body.fileName;
             var result = request.body.result;
 
-            var parsedAgent = parsedUserAgent(userAgent);
+            var parsedAgent = util.parsedUserAgent(userAgent);
             if (request.body.hasOwnProperty("library") && request.body.library !== "nil") {
                 parsedAgent = parsedAgent + " + " + request.body["library"];
             }
@@ -107,23 +107,6 @@
 
             console.log("\nServer listening at http://%s:%s", host, port);
         });
-    }
-
-    function parsedUserAgent(userAgent) {
-        var ua = parser(userAgent);
-        var parsedUa = "-";
-        if (ua) {
-            if (ua.hasOwnProperty("browser")) {
-                parsedUa = ua.browser.name + " ";
-                parsedUa += ua.browser.version;
-            }
-            if (ua.hasOwnProperty("os")) {
-                parsedUa = parsedUa + " (" + ua.os.name + ")";
-            }
-            return parsedUa;
-        } else {
-            return userAgent;
-        }
     }
 
     function readCodeFromFiles() {
@@ -156,7 +139,7 @@
                         var code = preprocessor.preProcess(rawCode);
                         var state = new JSFileState(file, code);
                         fileNameToState[file] = state;
-                        writeResult(state);
+                        util.writeResult(codeDir, state);
                         nbNewFiles++;
                     }
                 }
@@ -210,7 +193,7 @@
         }
         fileState.updateResultSummary();
 
-        writeResult(fileState);
+        util.writeResult(codeDir, fileState);
     }
 
     function resultsAreConsistent(results) {
@@ -226,13 +209,6 @@
 
     function twoResultsAreConsistent(result1, result2) {
         return result1 === result2; // to revise if we have a richer representation of results
-    }
-
-    function writeResult(fileState) {
-        fileState.lastTested = new Date().toLocaleString();
-        fs.writeFileSync("last-read.txt", fileState.fileName);
-        var resultFileName = fileState.fileName + "on"; // .js --> .json
-        fs.writeFileSync(codeDir + "/" + resultFileName, JSON.stringify(fileState, 0, 2));
     }
 
     startServer();

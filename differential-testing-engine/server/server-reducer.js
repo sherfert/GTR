@@ -11,7 +11,6 @@
     try {
         var express = require('express');
         var bodyParser = require('body-parser');
-        var parser = require('ua-parser-js');
         var jsonfile = require('jsonfile');
         var deasync = require('deasync');
     } catch (err) {
@@ -20,7 +19,8 @@
         process.exit(1);
     }
     var fs = require('fs');
-    var ddReducer = require("../../program-generation/tree-reducer/deltaDebuggingReducer");
+    var ddReducer = require('../../program-generation/tree-reducer/deltaDebuggingReducer');
+    var util = require('./util-server');
 
     /* Configurations */
     var config = jsonfile.readFileSync("config.json");
@@ -59,7 +59,7 @@
 
         app.get('/getCode', function (request, response) {
             var userAgent = request.headers['user-agent'];
-            var parsedAgent = parsedUserAgent(userAgent);
+            var parsedAgent = util.parsedUserAgent(userAgent);
 
             // Save the agent name
             if(listOfAgents.indexOf(parsedAgent) < 0) {
@@ -76,7 +76,7 @@
             var fileName = request.body.fileName;
             var result = request.body.result;
 
-            var parsedAgent = parsedUserAgent(userAgent);
+            var parsedAgent = util.parsedUserAgent(userAgent);
             if (request.body.hasOwnProperty("library") && request.body.library !== "nil") {
                 parsedAgent = parsedAgent + " + " + request.body["library"];
             }
@@ -92,26 +92,7 @@
             console.log("\nServer listening at http://%s:%s", host, port);
         });
     }
-
-    // TODO same as in server.js: Abstract into a library
-    function parsedUserAgent(userAgent) {
-        var ua = parser(userAgent);
-        var parsedUa = "-";
-        if (ua) {
-            if (ua.hasOwnProperty("browser")) {
-                parsedUa = ua.browser.name + " ";
-                parsedUa += ua.browser.version;
-            }
-            if (ua.hasOwnProperty("os")) {
-                parsedUa = parsedUa + " (" + ua.os.name + ")";
-            }
-            return parsedUa;
-        } else {
-            return userAgent;
-        }
-    }
-
-    // TODO essentially the same as in server.js
+    
     function readCodeFromFiles() {
         var nbNewFiles = 0;
         var allFiles = fs.readdirSync(codeDir);
@@ -137,7 +118,6 @@
         }
     }
 
-    // TODO similar as in server.js
     function handleResponse(fileName, userAgent, result) {
         var fileState = fileNameToState[fileName];
         if (!fileState) {
@@ -151,14 +131,6 @@
         if (JSON.parse(result['isCrashing'])) {
             fileState.isCrashing = result['isCrashing'];
         }
-    }
-
-    // TODO same as in server.js
-    function writeResult(fileState) {
-        fileState.lastTested = new Date().toLocaleString();
-        fs.writeFileSync("last-read.txt", fileState.fileName);
-        var resultFileName = fileState.fileName + "on"; // .js --> .json
-        fs.writeFileSync(codeDir + "/" + resultFileName, JSON.stringify(fileState, 0, 2));
     }
 
     /**
@@ -248,7 +220,7 @@
         // Restore original results
         fileState.userAgentToResults = originalResults;
         // Write to file
-        writeResult(fileState);
+        util.writeResult(codeDir, fileState);
         // Also write minimized code
         fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
         console.log("Reduction done of " + fileState.fileName);
