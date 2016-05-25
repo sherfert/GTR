@@ -27,7 +27,7 @@
     var preprocessor = require(config.preprocessor);
     var codeDir = config.reduceCodeDirectory;
     var reduceRefreshSleep = config.reduceRefreshSleep; // milliseconds between re-scans of the the queue
-    var nbBrowsers = config.educeBrowsersExpected;
+    var nbBrowsers = config.reduceBrowsersExpected;
     var port = config.port;
 
     var fileNameToState = {};
@@ -242,11 +242,15 @@
             // All other cases, we do not care further
             return "?";
         };
+
         fileState.minCode = ddReducer.executeWithCode(ddReducer.hdd, fileState.rawCode, test);
+        //fileState.minCode = ddReducer.ddminLine(fileState.rawCode, test);
         // Restore original results
         fileState.userAgentToResults = originalResults;
         // Write to file
         writeResult(fileState);
+        // Also write minimized code
+        fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
         console.log("Reduction done of " + fileState.fileName);
     }
 
@@ -263,9 +267,10 @@
 
     startServer();
     readCodeFromFiles();
-    // Invoke reduce as soon as two browsers have connected.
+    // Invoke reduce as soon as n browsers have connected.
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
     reduceAllFiles();
+
 
 })();
