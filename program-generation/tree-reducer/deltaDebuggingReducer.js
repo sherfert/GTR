@@ -465,7 +465,7 @@
 
         // In the original they start with level 0, but we skip the root.
         for(var level = 1; level <= currentTree.depth() ; level++) {
-            //console.log("Testing level " + level + " in HDD.");
+            console.log("Testing level " + level + " in HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
         }
 
@@ -487,7 +487,7 @@
 
         var i = 0;
         do {
-            //console.log("Iteration " + ++i + " of HDD*");
+            console.log("Iteration " + ++i + " of HDD*");
             nbNodesBefore = nbNodesAfter;
             currentTree = hdd(currentTree, test);
             nbNodesAfter = currentTree.nbNodes();

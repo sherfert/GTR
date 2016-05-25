@@ -148,7 +148,7 @@
 
         var request = reducerQueue[userAgent].shift();
         var fileState = fileNameToState[request.name];
-        console.log("Sent: " + fileState.fileName + ":" + request.number + " " + userAgent);
+        //console.log("Sent: " + fileState.fileName + ":" + request.number + " " + userAgent);
         response.send({
             code: fileState.testCode,
             fileName: fileState.fileName
@@ -206,7 +206,7 @@
         var test = function(c) {
             var res = testInBrowsers(c);
             var s = JSON.stringify(res);
-            console.log("Got more results: " + s);
+            //console.log("Got more results: " + s);
             if(s === cmpWith) {
                 // Same inconsistency
                 return "fail"
