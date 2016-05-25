@@ -44,6 +44,11 @@
         this.userAgentToResults = {}; // user agent string --> result
     }
 
+    /**
+     * Starts the server. The API consists of
+     * GET /getCode that will return a piece of code to test and
+     * POST /resportResult that must be used to report the results of tested code.
+     */
     function startServer() {
         var app = express();
         app.use(express.static('client'));
@@ -156,6 +161,12 @@
         fs.writeFileSync(codeDir + "/" + resultFileName, JSON.stringify(fileState, 0, 2));
     }
 
+    /**
+     * Reschedules itself if there is no pending request in the queue.
+     * Otherwise, pops the first request (for this agent) and sends it to the client.
+     * @param userAgent the user agent name
+     * @param response the response object to send data to the client
+     */
     function sendReductionRequestOnceAvailable(userAgent, response) {
         if(reducerQueue[userAgent].length == 0) {
             // Retry after some time, to see if now there is a new request
@@ -173,8 +184,16 @@
     }
 
 
+    /**
+     * Reduces the code of one file using HDD to a hopefully smaller piece of code
+     * that exposes the same inconsistency.
+     *
+     * @param fileState the fileState of the file to minimize.
+     */
     function reduce(fileState) {
         var counter = 0;
+        // This functions tests given code in browsers
+        // and waits until all have returned a result
         var testInBrowsers = function(c) {
             // Update the code
             fileState.minCode = c;
