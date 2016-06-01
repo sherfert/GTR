@@ -148,12 +148,70 @@
 
         var request = reducerQueue[userAgent].shift();
         var fileState = fileNameToState[request.name];
-        //console.log("Sent: " + fileState.fileName + ":" + request.number + " " + userAgent);
         response.send({
             code: fileState.testCode,
             fileName: fileState.fileName
         });
     }
+
+    /**
+     * This functions tests given code in browsers
+     * and waits until all have returned a result
+     *
+     * @param c the code to test
+     * @param fileState the fileState of the file to test.
+     * @returns {object} (user agent string --> result) for all browsers
+     */
+    var testInBrowsers = function(c, fileState) {
+        // Update the code
+        fileState.testCode = preprocessor.preProcess(c);
+        // Instrumentation can fail. In that case we have undefined results
+        if(!fileState.testCode) {
+            return undefined;
+        }
+
+        // At the moment a request is just defined by the filename.
+        // Using an object in case this gets more complex.
+        var request = {
+            name:fileState.fileName
+        };
+        // Push the request to the queue for all agents
+        for (var i = 0; i < listOfAgents.length; i++) {
+            var agent = listOfAgents[i];
+            reducerQueue[agent].push(request);
+        }
+
+        // Wait for the results from the browsers
+        var res = fileState.userAgentToResults;
+        deasync.loopWhile(function() {
+            return Object.keys(res).length < nbBrowsers;
+        });
+        // Remove the results for the next iteration
+        fileState.userAgentToResults = {};
+        // Return the results
+        return res;
+    };
+
+    /**
+     * Oracle for delta debugging. Uses the given filestate to compare the results.
+     *
+     * @param c the code to evaluate using the oracle
+     * @param cmpWith the result to comparse with (JSON of browser results)
+     * @param fileState the fileState of the file to test
+     * @returns {String}
+     */
+    var testOracle = function(c, cmpWith, fileState) {
+        // Obtain results for the given code
+        var res = testInBrowsers(c, fileState);
+        // Convert to JSON to compare with original results
+        var s = JSON.stringify(res);
+        if(s === cmpWith) {
+            // Same inconsistency
+            return "fail"
+        }
+        // All other cases, we do not care further
+        return "?";
+    };
 
 
     /**
@@ -163,56 +221,15 @@
      * @param fileState the fileState of the file to minimize.
      */
     function reduce(fileState) {
-        var counter = 0;
-        // This functions tests given code in browsers
-        // and waits until all have returned a result
-        var testInBrowsers = function(c) {
-            // Update the code
-            fileState.minCode = c;
-            fileState.testCode = preprocessor.preProcess(fileState.minCode);
-            // Instrumentation can fail. In that case we have undefined results
-            if(!fileState.testCode) {
-                return undefined;
-            }
-
-            console.log("testing code of " + fileState.fileName + " iteration " + counter);
-            var request = {
-                name:fileState.fileName,
-                number: counter++
-            };
-            // Push the request to the queue for all agents
-            for (var i = 0; i < listOfAgents.length; i++) {
-                var agent = listOfAgents[i];
-                reducerQueue[agent].push(request);
-            }
-
-            // Wait for the results from the browsers
-            var res = fileState.userAgentToResults;
-            deasync.loopWhile(function() {
-                return Object.keys(res).length < nbBrowsers;
-            });
-            // Remove the results for the next iteration
-            fileState.userAgentToResults = {};
-            // Return the results
-            return res;
-        };
-
         console.log("Starting reduction of " + fileState.fileName);
         // First, send the original code to the browsers to have results for the comparison
-        var originalResults = testInBrowsers(fileState.rawCode);
+        var originalResults = testInBrowsers(fileState.rawCode, fileState);
         var cmpWith = JSON.stringify(originalResults);
         console.log("Got initial results: " + cmpWith);
 
+        // Test function that just expects code, so we can pass it to DD
         var test = function(c) {
-            var res = testInBrowsers(c);
-            var s = JSON.stringify(res);
-            //console.log("Got more results: " + s);
-            if(s === cmpWith) {
-                // Same inconsistency
-                return "fail"
-            }
-            // All other cases, we do not care further
-            return "?";
+          return testOracle(c, cmpWith, fileState);
         };
 
         fileState.minCode = ddReducer.executeWithCode(ddReducer.hdd, fileState.rawCode, test);
