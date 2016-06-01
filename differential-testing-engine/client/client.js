@@ -62,6 +62,7 @@
         worker.onerror = function (eevent) {
             console.log("Error during execution of the worker " + eevent.message + " Line no: " +
                 eevent.lineno);
+            // FIXME here we must ruten an object in result, not a String
             var errobj = {result: "Error", isCrashing: true};
             sendResultReloadPage(errobj, fileNameForDifferentialTesting);
         };

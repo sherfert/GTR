@@ -229,7 +229,7 @@
      * @returns {String} "fail" or "?"
      */
     function advancedTestOracle(c, cmpWith, fileState) {
-        console.log("TESTING");
+        //console.log("TESTING");
         // Obtain results for the given code
         var res = testInBrowsers(c, fileState);
         // Get diff to compare with original results
@@ -262,7 +262,8 @@
             result[agent1] = {};
             return result;
         }
-
+        console.log(traces);
+        console.log(JSON.stringify(traces));
         var trace0 = JSON.parse(traces[agent0]);
         var trace1 = JSON.parse(traces[agent1]);
 
@@ -332,14 +333,14 @@
         //fileState.minCode = ddReducer.ddminLine(fileState.rawCode, test);
 
         // Apply the more advanced oracle in a second run
-        // console.log("Further reduction with advanced oracle.");
-        // var originalResults2 = testInBrowsers(fileState.minCode, fileState);
-        // var cmpWith2 = getExecutionDifferences(originalResults2);
-        // console.log("Got initial results: " + JSON.stringify(cmpWith2));
-        // var test2 = function(c) {
-        //     return advancedTestOracle(c, cmpWith2, fileState);
-        // };
-        // fileState.minCode2 = ddReducer.executeWithCode(ddReducer.hdd, fileState.minCode, test2);
+        console.log("Further reduction with advanced oracle.");
+        var originalResults2 = testInBrowsers(fileState.minCode, fileState);
+        var cmpWith2 = getExecutionDifferences(originalResults2);
+        console.log("Got initial results: " + JSON.stringify(cmpWith2));
+        var test2 = function(c) {
+            return advancedTestOracle(c, cmpWith2, fileState);
+        };
+        fileState.minCode2 = ddReducer.executeWithCode(ddReducer.hdd, fileState.minCode, test2);
 
 
         // Restore original results
