@@ -28,20 +28,21 @@
     } catch (e) {\
         __diffTestingEngineState__.isCrashing=true;\
         if (e instanceof TypeError) {\
-            __diffTestingEngineState__.result = "TypeError";\
+            __diffTestingEngineState__.state.push({key: "Error", value: "TypeError"});\
         } else if (e instanceof RangeError) {\
-            __diffTestingEngineState__.result = "RangeError";\
+            __diffTestingEngineState__.state.push({key: "Error", value: "RangeError"});\
         } else if (e instanceof EvalError) {\
-            __diffTestingEngineState__.result = "EvalError";\
+            __diffTestingEngineState__.state.push({key: "Error", value: "EvalError"});\
         } else if (e instanceof ReferenceError) {\
-            __diffTestingEngineState__.result = "ReferenceError";\
+            __diffTestingEngineState__.state.push({key: "Error", value: "ReferenceError"});\
         }\
         else if (e instanceof URIError) {\
-            __diffTestingEngineState__.result = "URIError";\
+            __diffTestingEngineState__.state.push({key: "Error", value: "URIError"});\
         }\
         else {\
-            __diffTestingEngineState__.result = "crash";\
+            __diffTestingEngineState__.state.push({key: "Error", value: "crash"});\
         }\
+        __diffTestingEngineState__.result = JSON.stringify(__diffTestingEngineState__.state);\
     } __diffTestingEngineState__.result;';
 
     function preProcess(code) {

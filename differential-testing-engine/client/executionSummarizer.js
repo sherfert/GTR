@@ -17,8 +17,8 @@
             else return t;
         }
 
-        function addToState(value) {
-            __diffTestingEngineState__.state.push(toString(value));
+        function addToState(key, value) {
+            __diffTestingEngineState__.state.push({key: key, value: toString(value)});
         }
         this.invokeFunPre = function (iid, f, base, args, isConstructor, isMethod, functionIid) {
             return {
@@ -39,10 +39,9 @@
 
         this.literal = function (iid, val, hasGetterSetter) {
             if (val === "__diffTestingEndOfCode__") {
-                __diffTestingEngineState__.result = __diffTestingEngineState__.state.toString();
+                __diffTestingEngineState__.result = JSON.stringify(__diffTestingEngineState__.state);
             } else {
-                addToState("Literal: ");
-                addToState(val);
+                addToState("Literal", val);
             }
             return {
                 result: val
@@ -89,8 +88,7 @@
         };
 
         this.putField = function (iid, base, offset, val, isComputed, isOpAssign) {
-            addToState("Putfield: ");
-            addToState(val);
+            addToState("Putfield", val);
             return {
                 result: val
             };
@@ -103,24 +101,21 @@
         };
 
         this.write = function (iid, name, val, lhs, isGlobal, isScriptLocal) {
-            addToState("Write: ");
-            addToState(val);
+            addToState("Write", val);
             return {
                 result: val
             };
         };
 
         this._return = function (iid, val) {
-            addToState("Return: ");
-            addToState(val);
+            addToState("Return", val);
             return {
                 result: val
             };
         };
 
         this._throw = function (iid, val) {
-            addToState("Throw: ");
-            addToState(val);
+            addToState("Throw", val);
             return {
                 result: val
             };
@@ -163,8 +158,7 @@
         };
 
         this.binary = function (iid, op, left, right, result, isOpAssign, isSwitchCaseComparison, isComputed) {
-            addToState("Binary: ");
-            addToState(result);
+            addToState("Binary", result);
             return {
                 result: result
             };
@@ -179,16 +173,14 @@
         };
 
         this.unary = function (iid, op, left, result) {
-            addToState("Unary: ");
-            addToState(op);
+            addToState("Unary", op);
             return {
                 result: result
             };
         };
 
         this.conditional = function (iid, result) {
-            addToState("Conditional: ");
-            addToState(result);
+            addToState("Conditional", result);
             return {
                 result: result
             };
