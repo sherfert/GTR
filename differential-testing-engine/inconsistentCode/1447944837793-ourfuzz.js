@@ -1,0 +1,1 @@
+(constructor || '""' || !Jb.e) && '\'No define call for \'' * '\'undefined\'';
