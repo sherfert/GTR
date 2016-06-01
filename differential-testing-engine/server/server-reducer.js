@@ -39,9 +39,12 @@
     function JSFileState(fileName, rawCode) {
         this.fileName = fileName;
         this.rawCode = rawCode;
-        this.testCode; // Current instrumented code
-        this.minCode; // Minimized code
         this.userAgentToResults = {}; // user agent string --> result
+        // Listings fields here that are used later
+        this.testCode = undefined; // Current instrumented code
+        this.minCode = undefined; // Minimized code
+        this.minCode2 = undefined; // Further minimized code (some improvements over minCode)
+
     }
 
     /**
@@ -127,7 +130,7 @@
         if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) {
             fileState.userAgentToResults[userAgent] = result['result'];
         }
-        /* If it crashes in atleast one of the browsers then set it to true */
+        /* If it crashes in at least one of the browsers then set it to true */
         if (JSON.parse(result['isCrashing'])) {
             fileState.isCrashing = result['isCrashing'];
         }
@@ -158,11 +161,11 @@
      * This functions tests given code in browsers
      * and waits until all have returned a result
      *
-     * @param c the code to test
-     * @param fileState the fileState of the file to test.
+     * @param {String} c the code to test
+     * @param {JSFileState} fileState the fileState of the file to test.
      * @returns {object} (user agent string --> result) for all browsers
      */
-    var testInBrowsers = function(c, fileState) {
+    function testInBrowsers(c, fileState) {
         // Update the code
         fileState.testCode = preprocessor.preProcess(c);
         // Instrumentation can fail. In that case we have undefined results
@@ -190,17 +193,17 @@
         fileState.userAgentToResults = {};
         // Return the results
         return res;
-    };
+    }
 
     /**
      * Oracle for delta debugging. Uses the given filestate to compare the results.
      *
-     * @param c the code to evaluate using the oracle
-     * @param cmpWith the result to comparse with (JSON of browser results)
-     * @param fileState the fileState of the file to test
-     * @returns {String}
+     * @param {String} c the code to evaluate using the oracle
+     * @param {String} cmpWith the result to compare with (JSON of browser results)
+     * @param {JSFileState} fileState the fileState of the file to test
+     * @returns {String} "fail" or "?"
      */
-    var testOracle = function(c, cmpWith, fileState) {
+    function testOracle(c, cmpWith, fileState) {
         // Obtain results for the given code
         var res = testInBrowsers(c, fileState);
         // Convert to JSON to compare with original results
@@ -211,14 +214,108 @@
         }
         // All other cases, we do not care further
         return "?";
-    };
+    }
 
+    /**
+     * Advanced oracle for delta debugging. Uses the given filestate to compare the results.
+     *
+     * In comparison to the basic version this:
+     * - Ignores R/W when having a crash vs. non-crash difference
+     * - TODO more improvements
+     *
+     * @param {String} c the code to evaluate using the oracle
+     * @param {object} cmpWith the result to compare with (object obtained from invoking getExecutionDifferences)
+     * @param {JSFileState} fileState the fileState of the file to test
+     * @returns {String} "fail" or "?"
+     */
+    function advancedTestOracle(c, cmpWith, fileState) {
+        console.log("TESTING");
+        // Obtain results for the given code
+        var res = testInBrowsers(c, fileState);
+        // Get diff to compare with original results
+        var s = getExecutionDifferences(res);
+        if(equalDiffObjects(s,cmpWith)) {
+            // Same inconsistency
+            return "fail";
+        }
+        // All other cases, we do not care further
+        return "?";
+    }
+
+    /**
+     * XXX This function assumes exactly two traces to compare. Not more, not less.
+     *
+     * It looks at the two execution traces obtainted by jalangi and isolates the first
+     * difference. In the case where only one of the traces ends with a crash, the other
+     * trace is irrelevant.
+     *
+     * @param traces
+     */
+    function getExecutionDifferences(traces) {
+        var agent0 = listOfAgents[0];
+        var agent1 = listOfAgents[1];
+
+        var result = {};
+        // The traces may be undefined, in which case we don't have a difference
+        if(!traces) {
+            result[agent0] = {};
+            result[agent1] = {};
+            return result;
+        }
+
+        var trace0 = JSON.parse(traces[agent0]);
+        var trace1 = JSON.parse(traces[agent1]);
+
+        // Iterate through the entries
+        for(let i = 0; i < Math.max(trace0.length, trace1.length); i++) {
+            let elem0 = trace0[i];
+            let elem1 = trace1[i];
+            // Replace undefined with dummy objects (lists can have different lengths)
+            if(!elem0) { elem0 = {};}
+            if(!elem1) { elem1 = {};}
+
+            if(!equalTraceElements(elem0, elem1)) {
+                // Test if it is Error vs. non-Error
+                if(elem0.key == "Error" && elem1.key != "Error") {
+                    result[agent0] = elem0;
+                    result[agent1] = {};
+                } else if(elem0.key != "Error" && elem1.key == "Error") {
+                    result[agent0] = {};
+                    result[agent1] = elem1;
+                } else {
+                    result[agent0] = elem0;
+                    result[agent1] = elem1;
+                }
+                return result;
+            }
+        }
+
+        // If we reach that point, no difference was found
+        result[agent0] = {};
+        result[agent1] = {};
+        return result;
+    }
+
+    /**
+     * Compares two trace elements (key value pairs) and return true if they are equal.
+     */
+    function equalTraceElements(e0, e1) {
+        return JSON.stringify(e0) === JSON.stringify(e1);
+    }
+
+    /**
+     * Compares two diff objects obtained from getExecutionDifferences
+     * TODO is the order deterministic!?
+     */
+    function equalDiffObjects(e0, e1) {
+        return JSON.stringify(e0) === JSON.stringify(e1);
+    }
 
     /**
      * Reduces the code of one file using HDD to a hopefully smaller piece of code
      * that exposes the same inconsistency.
      *
-     * @param fileState the fileState of the file to minimize.
+     * @param {JSFileState} fileState the fileState of the file to minimize.
      */
     function reduce(fileState) {
         console.log("Starting reduction of " + fileState.fileName);
@@ -231,9 +328,20 @@
         var test = function(c) {
           return testOracle(c, cmpWith, fileState);
         };
-
         fileState.minCode = ddReducer.executeWithCode(ddReducer.hdd, fileState.rawCode, test);
         //fileState.minCode = ddReducer.ddminLine(fileState.rawCode, test);
+
+        // Apply the more advanced oracle in a second run
+        // console.log("Further reduction with advanced oracle.");
+        // var originalResults2 = testInBrowsers(fileState.minCode, fileState);
+        // var cmpWith2 = getExecutionDifferences(originalResults2);
+        // console.log("Got initial results: " + JSON.stringify(cmpWith2));
+        // var test2 = function(c) {
+        //     return advancedTestOracle(c, cmpWith2, fileState);
+        // };
+        // fileState.minCode2 = ddReducer.executeWithCode(ddReducer.hdd, fileState.minCode, test2);
+
+
         // Restore original results
         fileState.userAgentToResults = originalResults;
         // Write to file
