@@ -13,7 +13,9 @@
     var endOfCodeMarker = "__diffTestingEndOfCode__";
 
     /* jshint multistr: true */
-    var template = '__diffTestingEngineState__ = { state: [], result: "noResultYet", isCrashing: false };\
+    // The state gets an initial init element, because empty arrays do not get serialized
+    // when sent back to the server.
+    var template = '__diffTestingEngineState__ = { state: [{key: "init", value: "init"}], result: "noResultYet", isCrashing: false };\
     var print = function (ip) {\n\
         return console.log(ip);\
     };\
@@ -42,7 +44,7 @@
         else {\
             __diffTestingEngineState__.state.push({key: "Error", value: "crash"});\
         }\
-        __diffTestingEngineState__.result = JSON.stringify(__diffTestingEngineState__.state);\
+        __diffTestingEngineState__.result = __diffTestingEngineState__.state;\
     } __diffTestingEngineState__.result;';
 
     function preProcess(code) {

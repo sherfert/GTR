@@ -39,7 +39,7 @@
 
         this.literal = function (iid, val, hasGetterSetter) {
             if (val === "__diffTestingEndOfCode__") {
-                __diffTestingEngineState__.result = JSON.stringify(__diffTestingEngineState__.state);
+                __diffTestingEngineState__.result = __diffTestingEngineState__.state;
             } else {
                 addToState("Literal", val);
             }

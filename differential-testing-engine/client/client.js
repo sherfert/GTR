@@ -1,6 +1,5 @@
 // Author: Michael Pradel
 
-// TODO why are we sending the result as a String? It gets serialized anyhow - so this is duplicate
 (function () {
 
     var pollTimeout = 3600 * 1000; // milliseconds
@@ -63,7 +62,7 @@
         worker.onerror = function (eevent) {
             console.log("Error during execution of the worker " + eevent.message + " Line no: " +
                 eevent.lineno);
-            var errobj = {result: '[{"key": "Error", "value": "web worker crash"}]', isCrashing: true};
+            var errobj = {result: [{key: "Error", value: "web worker crash"}], isCrashing: true};
             sendResultReloadPage(errobj, fileNameForDifferentialTesting);
         };
         /* Reload the page upon message from the worker */
@@ -83,7 +82,7 @@
             worker.terminate();
             worker = null;
             console.log("Killing the worker. It timed out...");
-            var errobj = {result: '[{"key": "Error", "value": "web worker timed out"}]', isCrashing: false};
+            var errobj = {result: [{key: "Error", value: "web worker timed out"}], isCrashing: false};
             sendResultReloadPage(errobj, fileNameForDifferentialTesting);
         }, 5000);
     }

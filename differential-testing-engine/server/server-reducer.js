@@ -130,6 +130,7 @@
         if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) {
             fileState.userAgentToResults[userAgent] = result['result'];
         }
+        
         /* If it crashes in at least one of the browsers then set it to true */
         if (JSON.parse(result['isCrashing'])) {
             fileState.isCrashing = result['isCrashing'];
@@ -210,7 +211,7 @@
         var s = JSON.stringify(res);
         if(s === cmpWith) {
             // Same inconsistency
-            return "fail"
+            return "fail";
         }
         // All other cases, we do not care further
         return "?";
@@ -265,9 +266,9 @@
             result[agent1] = {};
             return result;
         }
-        
-        var trace0 = JSON.parse(traces[agent0]);
-        var trace1 = JSON.parse(traces[agent1]);
+
+        var trace0 = traces[agent0];
+        var trace1 = traces[agent1];
 
         // Iterate through the entries
         for(let i = 0; i < Math.max(trace0.length, trace1.length); i++) {
