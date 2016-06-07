@@ -229,7 +229,6 @@
      * @returns {String} "fail" or "?"
      */
     function advancedTestOracle(c, cmpWith, fileState) {
-        //console.log("TESTING");
         // Obtain results for the given code
         var res = testInBrowsers(c, fileState);
         // Get diff to compare with original results
@@ -244,6 +243,10 @@
 
     /**
      * XXX This function assumes exactly two traces to compare. Not more, not less.
+     * XXX This function compares execution difference by serializing two maps
+     * of traces ("agent" -> trace) and comparing the JSON strings. This is not very
+     * effective and only works if the agents are always listed in the same order, which
+     * seems to hold.
      *
      * It looks at the two execution traces obtainted by jalangi and isolates the first
      * difference. In the case where only one of the traces ends with a crash, the other
@@ -262,8 +265,7 @@
             result[agent1] = {};
             return result;
         }
-        console.log(traces);
-        console.log(JSON.stringify(traces));
+        
         var trace0 = JSON.parse(traces[agent0]);
         var trace1 = JSON.parse(traces[agent1]);
 
@@ -306,7 +308,6 @@
 
     /**
      * Compares two diff objects obtained from getExecutionDifferences
-     * TODO is the order deterministic!?
      */
     function equalDiffObjects(e0, e1) {
         return JSON.stringify(e0) === JSON.stringify(e1);
@@ -347,8 +348,9 @@
         fileState.userAgentToResults = originalResults;
         // Write to file
         util.writeResult(codeDir, fileState);
-        // Also write minimized code
+        // Also write minimized code and ultra-minimized code
         fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
+        fs.writeFileSync(codeDir + "/min/min2-" + fileState.fileName, fileState.minCode2);
         console.log("Reduction done of " + fileState.fileName);
     }
 
