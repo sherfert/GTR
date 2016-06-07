@@ -30,19 +30,19 @@
     } catch (e) {\
         __diffTestingEngineState__.isCrashing=true;\
         if (e instanceof TypeError) {\
-            __diffTestingEngineState__.state.push({key: "Error", value: "TypeError"});\
+            __diffTestingEngineState__.state.push({key: "Error", value: "TypeError: " + e.message});\
         } else if (e instanceof RangeError) {\
-            __diffTestingEngineState__.state.push({key: "Error", value: "RangeError"});\
+            __diffTestingEngineState__.state.push({key: "Error", value: "RangeError: " + e.message});\
         } else if (e instanceof EvalError) {\
-            __diffTestingEngineState__.state.push({key: "Error", value: "EvalError"});\
+            __diffTestingEngineState__.state.push({key: "Error", value: "EvalError: " + e.message});\
         } else if (e instanceof ReferenceError) {\
-            __diffTestingEngineState__.state.push({key: "Error", value: "ReferenceError"});\
+            __diffTestingEngineState__.state.push({key: "Error", value: "ReferenceError: " + e.message});\
         }\
         else if (e instanceof URIError) {\
-            __diffTestingEngineState__.state.push({key: "Error", value: "URIError"});\
+            __diffTestingEngineState__.state.push({key: "Error", value: "URIError: " + e.message});\
         }\
         else {\
-            __diffTestingEngineState__.state.push({key: "Error", value: "crash"});\
+            __diffTestingEngineState__.state.push({key: "Error", value: "crash: " + e.message});\
         }\
         __diffTestingEngineState__.result = __diffTestingEngineState__.state;\
     } __diffTestingEngineState__.result;';

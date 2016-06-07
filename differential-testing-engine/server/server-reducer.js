@@ -130,6 +130,7 @@
         if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) {
             fileState.userAgentToResults[userAgent] = result['result'];
         }
+        //console.log("RES: \n" + JSON.stringify(result, 0, 2));
         
         /* If it crashes in at least one of the browsers then set it to true */
         if (JSON.parse(result['isCrashing'])) {
