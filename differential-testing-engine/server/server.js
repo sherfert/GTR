@@ -208,7 +208,8 @@
     }
 
     function twoResultsAreConsistent(result1, result2) {
-        return result1 === result2; // to revise if we have a richer representation of results
+        // to revise if we have a richer representation of results
+        return JSON.stringify(result1) === JSON.stringify(result2);
     }
 
     startServer();
