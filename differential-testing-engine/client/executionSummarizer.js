@@ -17,8 +17,14 @@
             else return t;
         }
 
-        function addToState(key, value) {
-            __diffTestingEngineState__.state.push({key: key, value: toString(value)});
+        // name is optional string
+        function addToState(key, value, name) {
+            if(!name) {
+                name = "";
+            } else {
+                name = name + ":= ";
+            }
+            __diffTestingEngineState__.state.push({key: key, value: name + toString(value)});
         }
         this.invokeFunPre = function (iid, f, base, args, isConstructor, isMethod, functionIid) {
             return {
@@ -101,7 +107,7 @@
         };
 
         this.write = function (iid, name, val, lhs, isGlobal, isScriptLocal) {
-            addToState("Write", val);
+            addToState("Write", val, name);
             return {
                 result: val
             };

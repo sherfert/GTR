@@ -149,7 +149,6 @@
             onelog("Have read " + nbNewFiles + " new files.");
         }
 
-
         setTimeout(readCodeFromFiles, fileRefreshSleep);
     }
 
@@ -182,10 +181,13 @@
 
     function handleResponse(fileName, userAgent, result) {
         var fileState = fileNameToState[fileName];
-        if (!fileState)
+        if (!fileState) {
             throw "Error: Received response for unknown file " + fileName;
+        }
 
-        if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) fileState.userAgentToResults[userAgent] = [];
+        if (!fileState.userAgentToResults.hasOwnProperty(userAgent)) {
+            fileState.userAgentToResults[userAgent] = [];
+        }
         fileState.userAgentToResults[userAgent].push(result['result']);
         /* If it crashes in atleast one of the browsers then set it to true */
         if (JSON.parse(result['isCrashing'])) {
