@@ -12,8 +12,11 @@
         var code = dataReceivedForExecution.code;
         var fileNameForDifferentialTesting = dataReceivedForExecution.fileName;
         console.log("Executing received code " + fileNameForDifferentialTesting);
-        // executeInWebWorker(code, fileNameForDifferentialTesting);
-        executeUsingEval(code, fileNameForDifferentialTesting);
+        if(dataReceivedForExecution.useEval) {
+            executeUsingEval(code, fileNameForDifferentialTesting);
+        } else {
+            executeInWebWorker(code, fileNameForDifferentialTesting);
+        }
     }
 
     function executeInWebWorker(code, fileNameForDifferentialTesting) {

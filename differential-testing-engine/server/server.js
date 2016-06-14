@@ -32,6 +32,7 @@
     var fileRefreshSleep = config.fileRefreshSleep; // milliseconds between re-scans of codeDir
     var repetitionsPerBrowser = config.repetitionsPerBrowser;
     var port = config.port;
+    var useEval = config.useEval;
 
 
     var fileNameToState = {};
@@ -172,7 +173,8 @@
             fileState.haveSentTo[userAgent] = oldHaveSentTo + 1;
             response.send({
                 code: fileState.code,
-                fileName: fileState.fileName
+                fileName: fileState.fileName,
+                useEval: useEval
             });
         } else {
             setTimeout(sendNewFileOnceAvailable.bind(null, userAgent, response), fileRefreshSleep);

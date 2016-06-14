@@ -29,6 +29,7 @@
     var reduceRefreshSleep = config.reduceRefreshSleep; // milliseconds between re-scans of the the queue
     var nbBrowsers = config.reduceBrowsersExpected;
     var port = config.port;
+    var useEval = config.useEval;
 
     var fileNameToState = {};
     var listOfAgents = [];
@@ -155,7 +156,8 @@
         var fileState = fileNameToState[request.name];
         response.send({
             code: fileState.testCode,
-            fileName: fileState.fileName
+            fileName: fileState.fileName,
+            useEval: useEval
         });
     }
 
