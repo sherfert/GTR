@@ -52,6 +52,9 @@
             type: 'application/javascript'
         });
 
+        // Used to check if a worker is done. Like this we prevent duplicate reponses to the server
+        var workerDone = false;
+
         var worker = new Worker(URL.createObjectURL(blob));
         /*
          *        There are three cases when the current page needs to be reloaded.
@@ -63,6 +66,7 @@
         /* In case of uncaught (Some ES6 syntax errors that jalangi can't catch. Nor does the try-catch net) errors in
          the generated code, avoid crash of the engine. Reload and get the next code */
         worker.onerror = function (eevent) {
+            workerDone = true;
             console.log("Error during execution of the worker " + eevent.message + " Line no: " +
                 eevent.lineno);
             var errobj = {result: [{key: "Error", value: "web worker crash"}], isCrashing: true};
@@ -70,6 +74,7 @@
         };
         /* Reload the page upon message from the worker */
         worker.onmessage = function (eevent) {
+            workerDone = true;
             console.log("Result for " + fileNameForDifferentialTesting + " is " + eevent.data.result + " from " + userAgent);
             delete eevent.data.state;
             var pattern = new RegExp("error");
@@ -82,6 +87,9 @@
         worker.postMessage("Send me results..."); // send a message to the worker (The content of the message does not matter)
         /* Kill the worker if it does not return in 5 seconds. Then reload the page and get the next code */
         setTimeout(function () {
+            if(workerDone) {
+                return;
+            }
             worker.terminate();
             worker = null;
             console.log("Killing the worker. It timed out...");
@@ -144,12 +152,12 @@
     }
 
     function sendResultReloadPage(executionResult, filename) {
+        console.log("Sending results");
         $.post("reportResult", {
             result: executionResult,
             fileName: filename
             //library: "nil"
         }, function () {
-            console.log("Reloading..");
             //document.location.reload(true);
             setTimeout(pollForCode, 0);
         });
