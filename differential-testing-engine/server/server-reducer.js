@@ -44,8 +44,7 @@
         // Listings fields here that are used later
         this.testCode = undefined; // Current instrumented code
         this.minCode = undefined; // Minimized code
-        this.minCode2 = undefined; // Further minimized code (some improvements over minCode)
-
+        this.diff = undefined; // The differene extracted from the oracle
     }
 
     /**
@@ -225,6 +224,7 @@
      *
      * In comparison to the basic version this:
      * - Ignores R/W when having a crash vs. non-crash difference
+     * - Only considers the first encountered difference in the traces.
      * - TODO more improvements
      *
      * @param {String} c the code to evaluate using the oracle
@@ -327,34 +327,23 @@
         console.log("Starting reduction of " + fileState.fileName);
         // First, send the original code to the browsers to have results for the comparison
         var originalResults = testInBrowsers(fileState.rawCode, fileState);
-        var cmpWith = JSON.stringify(originalResults);
-        console.log("Got initial results: " + cmpWith);
+        var cmpWith = getExecutionDifferences(originalResults);
+        console.log("Got initial results: " + JSON.stringify(cmpWith));
+        fileState.diff = cmpWith;
 
         // Test function that just expects code, so we can pass it to DD
         var test = function(c) {
-          return testOracle(c, cmpWith, fileState);
+          return advancedTestOracle(c, cmpWith, fileState);
         };
-        fileState.minCode = ddReducer.executeWithCode(ddReducer.hdd, fileState.rawCode, test);
+        fileState.minCode = ddReducer.executeWithCode(ddReducer.hddStar, fileState.rawCode, test);
         //fileState.minCode = ddReducer.ddminLine(fileState.rawCode, test);
-
-        // Apply the more advanced oracle in a second run
-        console.log("Further reduction with advanced oracle.");
-        var originalResults2 = testInBrowsers(fileState.minCode, fileState);
-        var cmpWith2 = getExecutionDifferences(originalResults2);
-        console.log("Got initial results: " + JSON.stringify(cmpWith2));
-        var test2 = function(c) {
-            return advancedTestOracle(c, cmpWith2, fileState);
-        };
-        fileState.minCode2 = ddReducer.executeWithCode(ddReducer.hdd, fileState.minCode, test2);
-
 
         // Restore original results
         fileState.userAgentToResults = originalResults;
         // Write to file
         util.writeResult(codeDir, fileState);
-        // Also write minimized code and ultra-minimized code
+        // Also write minimized code
         fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
-        fs.writeFileSync(codeDir + "/min/min2-" + fileState.fileName, fileState.minCode2);
         console.log("Reduction done of " + fileState.fileName);
     }
 
