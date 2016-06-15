@@ -96,7 +96,8 @@
         var jalangiFolder = "/jalangiRuntime/";
         var pathToJalangi = currentHost + jalangiFolder;
 
-        var jalangiRuntime = ['esotope.js', 'acorn.js', 'Constants.js', 'Config.js', 'astUtil.js', 'esnstrument.js', 'iidToLocation.js', 'analysis.js', 'executionSummarizer.js'];
+        var jalangiRuntime = ['esotope.js', 'acorn.js', 'Constants.js', 'Config.js', 'astUtil.js', 'esnstrument.js',
+         'iidToLocation.js', 'analysis.js', 'executionSummarizer.js'];
 
         jalangiRuntime.forEach(function (filename) {
             console.log("Appending");
@@ -127,6 +128,9 @@
         console.log("Polling for code");
         $.ajax({
             url: "getCode",
+            headers: {
+                'Cache-Control': 'no-cache'
+            },
             success: executeCode,
             error: ajaxFailed,
             dataType: "json",
@@ -146,7 +150,8 @@
             //library: "nil"
         }, function () {
             console.log("Reloading..");
-            document.location.reload(true);
+            //document.location.reload(true);
+            setTimeout(pollForCode, 0);
         });
     }
 
