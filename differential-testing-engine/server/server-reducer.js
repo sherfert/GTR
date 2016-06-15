@@ -19,7 +19,8 @@
         process.exit(1);
     }
     var fs = require('fs');
-    var ddReducer = require('../../program-generation/tree-reducer/deltaDebuggingReducer');
+    var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
+    var ddmin = require("../../program-generation/tree-reducer/hdd");
     var util = require('./util-server');
 
     /* Configurations */
@@ -335,8 +336,7 @@
         var test = function(c) {
           return advancedTestOracle(c, cmpWith, fileState);
         };
-        fileState.minCode = ddReducer.executeWithCode(ddReducer.hddStar, fileState.rawCode, test);
-        //fileState.minCode = ddReducer.ddminLine(fileState.rawCode, test);
+        fileState.minCode = execWithCode(ddmin.hdd, fileState.rawCode, test);
 
         // Restore original results
         fileState.userAgentToResults = originalResults;
