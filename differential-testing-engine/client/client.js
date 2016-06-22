@@ -6,12 +6,15 @@
 
     var userAgent = navigator.userAgent;
 
+    var useEval = false;
+
     console.log("Loaded.");
 
     function executeCode(dataReceivedForExecution) {
         var code = dataReceivedForExecution.code;
         var fileNameForDifferentialTesting = dataReceivedForExecution.fileName;
         console.log("Executing received code " + fileNameForDifferentialTesting);
+        useEval = dataReceivedForExecution.useEval;
         if(dataReceivedForExecution.useEval) {
             executeUsingEval(code, fileNameForDifferentialTesting);
         } else {
@@ -158,8 +161,13 @@
             fileName: filename
             //library: "nil"
         }, function () {
-            //document.location.reload(true);
-            setTimeout(pollForCode, 0);
+            // The set timeout version yields inconsistencies with web workers.
+            // The reload version yields inconsistencies with eval
+            if(useEval) {
+                setTimeout(pollForCode, 0);
+            } else {
+                document.location.reload(true);
+            }
         });
     }
 
