@@ -1,0 +1,73 @@
+{
+  "fileName": "1447944837793-ourfuzz.js",
+  "rawCode": "(constructor || '\"\"' || !Jb.e) && '\\'No define call for \\'' * '\\'undefined\\'';",
+  "userAgentToResults": {
+    "Firefox 25.0 (Linux)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Conditional",
+        "value": "function"
+      },
+      {
+        "key": "Conditional",
+        "value": "function"
+      },
+      {
+        "key": "Conditional",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "'No define call for '"
+      },
+      {
+        "key": "Literal",
+        "value": "'undefined'"
+      },
+      {
+        "key": "Binary",
+        "value": "NaN"
+      }
+    ],
+    "Chromium 50.0.2661.102 (Ubuntu)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Conditional",
+        "value": "function"
+      },
+      {
+        "key": "Conditional",
+        "value": "function"
+      },
+      {
+        "key": "Conditional",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "'No define call for '"
+      },
+      {
+        "key": "Literal",
+        "value": "'undefined'"
+      },
+      {
+        "key": "Binary",
+        "value": "NaN"
+      }
+    ]
+  },
+  "testCode": "__diffTestingEngineState__ = { state: [{key: \"init\", value: \"init\"}], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":6,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116515-23983-1334thn.d3wczkhuxr.js\"};\njalangiLabel25:\n    while (true) {\n        try {\n            J$.Se(81, '/tmp/116515-23983-1334thn.d3wczkhuxr.js', 'evalIndirect');\n            J$.X1(57, J$.C(24, J$.C(16, J$.C(8, J$.R(9, 'constructor', constructor, 2)) ? J$._() : J$.T(17, '\"\"', 21, false)) ? J$._() : J$.U(10, '!', J$.G(33, J$.R(25, 'Jb', Jb, 2), 'undefined', 0))) ? J$.B(18, '*', J$.T(41, '\\'No define call for \\'', 21, false), J$.T(49, '\\'undefined\\'', 21, false), 0) : J$._());\n            J$.X1(73, J$.T(65, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(89, J$e);\n        } finally {\n            if (J$.Sr(97)) {\n                J$.L();\n                continue jalangiLabel25;\n            } else {\n                J$.L();\n                break jalangiLabel25;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"TypeError: \" + e.message});        } else if (e instanceof RangeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"RangeError: \" + e.message});        } else if (e instanceof EvalError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"EvalError: \" + e.message});        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"ReferenceError: \" + e.message});        }        else if (e instanceof URIError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"URIError: \" + e.message});        }        else {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"crash: \" + e.message});        }        __diffTestingEngineState__.result = __diffTestingEngineState__.state;    } __diffTestingEngineState__.result;",
+  "minCode": "(constructor || '\"\"' || !Jb.undefined) && '\\'No define call for \\'' * '\\'undefined\\'';",
+  "diff": {
+    "Chromium 50.0.2661.102 (Ubuntu)": {},
+    "Firefox 25.0 (Linux)": {}
+  },
+  "lastTested": "6/15/2016, 3:38:28 PM"
+}

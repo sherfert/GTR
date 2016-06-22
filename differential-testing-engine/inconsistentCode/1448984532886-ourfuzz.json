@@ -1,0 +1,65 @@
+{
+  "fileName": "1448984532886-ourfuzz.js",
+  "rawCode": "location = {\n    '\\'isLessThanOrEqualTo\\'': '\\'\\'',\n    23: function (a, src) {\n        patch.b = this.location.files(arguments.location(patch), '0', this, '\\'submit\\'').location;\n    }\n};",
+  "userAgentToResults": {
+    "Firefox 25.0 (Linux)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Literal",
+        "value": "''"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "object"
+      },
+      {
+        "key": "Write",
+        "value": "location:= object"
+      },
+      {
+        "key": "Error",
+        "value": "TypeError: setting a property that has only a getter"
+      }
+    ],
+    "Chromium 50.0.2661.102 (Ubuntu)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Literal",
+        "value": "''"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "object"
+      },
+      {
+        "key": "Write",
+        "value": "location:= object"
+      }
+    ]
+  },
+  "testCode": "__diffTestingEngineState__ = { state: [{key: \"init\", value: \"init\"}], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":0,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116515-23983-s2pjgl.178llq5mi.js\"};\njalangiLabel238:\n    while (true) {\n        try {\n            J$.Se(49, '/tmp/116515-23983-s2pjgl.178llq5mi.js', 'evalIndirect');\n            J$.X1(25, location = J$.W(17, 'location', J$.T(9, {}, 11, false), J$.I(typeof location === 'undefined' ? undefined : location), 4));\n            J$.X1(41, J$.T(33, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(57, J$e);\n        } finally {\n            if (J$.Sr(65)) {\n                J$.L();\n                continue jalangiLabel238;\n            } else {\n                J$.L();\n                break jalangiLabel238;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"TypeError: \" + e.message});        } else if (e instanceof RangeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"RangeError: \" + e.message});        } else if (e instanceof EvalError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"EvalError: \" + e.message});        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"ReferenceError: \" + e.message});        }        else if (e instanceof URIError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"URIError: \" + e.message});        }        else {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"crash: \" + e.message});        }        __diffTestingEngineState__.result = __diffTestingEngineState__.state;    } __diffTestingEngineState__.result;",
+  "minCode": "location = {};",
+  "diff": {
+    "Chromium 50.0.2661.102 (Ubuntu)": {},
+    "Firefox 25.0 (Linux)": {
+      "key": "Error",
+      "value": "TypeError: setting a property that has only a getter"
+    }
+  },
+  "isCrashing": "true",
+  "lastTested": "6/15/2016, 3:38:59 PM"
+}

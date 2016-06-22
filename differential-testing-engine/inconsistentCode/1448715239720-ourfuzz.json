@@ -1,0 +1,40 @@
+{
+  "fileName": "1448715239720-ourfuzz.js",
+  "rawCode": "this.scrollBy();",
+  "userAgentToResults": {
+    "Firefox 25.0 (Linux)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Error",
+        "value": "TypeError: f is undefined"
+      }
+    ],
+    "Chromium 50.0.2661.102 (Ubuntu)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Error",
+        "value": "TypeError: Cannot read property '*J$IID*' of undefined"
+      }
+    ]
+  },
+  "testCode": "__diffTestingEngineState__ = { state: [{key: \"init\", value: \"init\"}], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":0,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116515-23983-1v093s9.zy5vpr2j4i.js\"};\njalangiLabel234:\n    while (true) {\n        try {\n            J$.Se(49, '/tmp/116515-23983-1v093s9.zy5vpr2j4i.js', 'evalIndirect');\n            J$.X1(25, J$.M(17, J$.R(9, 'this', this, 0), 'scrollBy', 0)());\n            J$.X1(41, J$.T(33, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(57, J$e);\n        } finally {\n            if (J$.Sr(65)) {\n                J$.L();\n                continue jalangiLabel234;\n            } else {\n                J$.L();\n                break jalangiLabel234;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"TypeError: \" + e.message});        } else if (e instanceof RangeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"RangeError: \" + e.message});        } else if (e instanceof EvalError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"EvalError: \" + e.message});        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"ReferenceError: \" + e.message});        }        else if (e instanceof URIError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"URIError: \" + e.message});        }        else {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"crash: \" + e.message});        }        __diffTestingEngineState__.result = __diffTestingEngineState__.state;    } __diffTestingEngineState__.result;",
+  "minCode": "this.scrollBy();",
+  "diff": {
+    "Chromium 50.0.2661.102 (Ubuntu)": {
+      "key": "Error",
+      "value": "TypeError: Cannot read property '*J$IID*' of undefined"
+    },
+    "Firefox 25.0 (Linux)": {
+      "key": "Error",
+      "value": "TypeError: f is undefined"
+    }
+  },
+  "isCrashing": "true",
+  "lastTested": "6/15/2016, 3:38:59 PM"
+}

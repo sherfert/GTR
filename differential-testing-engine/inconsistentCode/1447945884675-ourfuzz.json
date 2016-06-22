@@ -1,0 +1,73 @@
+{
+  "fileName": "1447945884675-ourfuzz.js",
+  "rawCode": "var color = o;\nfunction evalStr(sc_Vector) {\n    size('755');\n}\nfunction v(i) {\n    while (true)\n        o('1940');\n    v('986');\n    this.msg = w + '11';\n}\nfunction entry(Array) {\n    msg('877');\n    jsStr('561');\n    name('1036');\n}\nfunction o(e) {\n    Int8Array = '8';\n}\nInt8Array();",
+  "userAgentToResults": {
+    "Firefox 25.0 (Linux)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Write",
+        "value": "color:= function"
+      }
+    ],
+    "Chromium 50.0.2661.102 (Ubuntu)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Literal",
+        "value": "function"
+      },
+      {
+        "key": "Write",
+        "value": "color:= function"
+      },
+      {
+        "key": "Error",
+        "value": "TypeError: Constructor Int8Array requires 'new'"
+      }
+    ]
+  },
+  "testCode": "__diffTestingEngineState__ = { state: [{key: \"init\", value: \"init\"}], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":0,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116515-23983-k3kmu7.54dfwjc3di.js\"};\njalangiLabel40:\n    while (true) {\n        try {\n            J$.Se(49, '/tmp/116515-23983-k3kmu7.54dfwjc3di.js', 'evalIndirect');\n            J$.X1(25, J$.F(17, J$.R(9, 'Int8Array', Int8Array, 2), 0)());\n            J$.X1(41, J$.T(33, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(57, J$e);\n        } finally {\n            if (J$.Sr(65)) {\n                J$.L();\n                continue jalangiLabel40;\n            } else {\n                J$.L();\n                break jalangiLabel40;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"TypeError: \" + e.message});        } else if (e instanceof RangeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"RangeError: \" + e.message});        } else if (e instanceof EvalError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"EvalError: \" + e.message});        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"ReferenceError: \" + e.message});        }        else if (e instanceof URIError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"URIError: \" + e.message});        }        else {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"crash: \" + e.message});        }        __diffTestingEngineState__.result = __diffTestingEngineState__.state;    } __diffTestingEngineState__.result;",
+  "minCode": "Int8Array();",
+  "diff": {
+    "Chromium 50.0.2661.102 (Ubuntu)": {
+      "key": "Error",
+      "value": "TypeError: Constructor Int8Array requires 'new'"
+    },
+    "Firefox 25.0 (Linux)": {}
+  },
+  "isCrashing": "true",
+  "lastTested": "6/15/2016, 3:38:34 PM"
+}

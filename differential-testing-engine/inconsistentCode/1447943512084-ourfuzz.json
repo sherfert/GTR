@@ -1,0 +1,65 @@
+{
+  "fileName": "1447943512084-ourfuzz.js",
+  "rawCode": "setInterval(!'0' && (setInterval = function () {\n    var resIndex = e.rep(callback()).n(resIndex, this.undefined());\n}) && callback.resIndex.$$setClassImmediately);",
+  "userAgentToResults": {
+    "Chromium 50.0.2661.102 (Ubuntu)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Literal",
+        "value": "0"
+      },
+      {
+        "key": "Unary",
+        "value": "!"
+      },
+      {
+        "key": "Conditional",
+        "value": "false"
+      },
+      {
+        "key": "Conditional",
+        "value": "false"
+      }
+    ],
+    "Firefox 25.0 (Linux)": [
+      {
+        "key": "init",
+        "value": "init"
+      },
+      {
+        "key": "Literal",
+        "value": "0"
+      },
+      {
+        "key": "Unary",
+        "value": "!"
+      },
+      {
+        "key": "Conditional",
+        "value": "false"
+      },
+      {
+        "key": "Conditional",
+        "value": "false"
+      },
+      {
+        "key": "Error",
+        "value": "crash: Useless setInterval call (missing quotes around argument?)"
+      }
+    ]
+  },
+  "testCode": "__diffTestingEngineState__ = { state: [{key: \"init\", value: \"init\"}], result: \"noResultYet\", isCrashing: false };    var print = function (ip) {\n        return console.log(ip);    };    var alert = function(ip) {        return console.log(ip);    };    var uneval = function(code) {        return code;    };    try {        J$.iids = {\"nBranches\":4,\"originalCodeFileName\":\"evalIndirect\",\"instrumentedCodeFileName\":\"/tmp/116515-23983-144z0gs.bb3f28olxr.js\"};\njalangiLabel21:\n    while (true) {\n        try {\n            J$.Se(121, '/tmp/116515-23983-144z0gs.bb3f28olxr.js', 'evalIndirect');\n            J$.X1(97, J$.F(89, J$.R(9, 'setInterval', setInterval, 2), 0)(J$.C(16, J$.C(8, J$.U(10, '!', J$.T(17, '0', 21, false))) ? setInterval = J$.W(57, 'setInterval', J$.T(49, function () {\n                jalangiLabel20:\n                    while (true) {\n                        try {\n                            J$.Fe(25, arguments.callee, this, arguments);\n                            arguments = J$.N(33, 'arguments', arguments, 4);\n                            J$.N(41, 'resIndex', resIndex, 0);\n                            var resIndex;\n                        } catch (J$e) {\n                            J$.Ex(129, J$e);\n                        } finally {\n                            if (J$.Fr(137))\n                                continue jalangiLabel20;\n                            else\n                                return J$.Ra();\n                        }\n                    }\n            }, 12, false, 25), J$.I(typeof setInterval === 'undefined' ? undefined : setInterval), 4) : J$._()) ? J$.G(81, J$.G(73, J$.R(65, 'callback', callback, 2), 'undefined', 0), 'undefined', 0) : J$._()));\n            J$.X1(113, J$.T(105, '__diffTestingEndOfCode__', 21, false));\n        } catch (J$e) {\n            J$.Ex(145, J$e);\n        } finally {\n            if (J$.Sr(153)) {\n                J$.L();\n                continue jalangiLabel21;\n            } else {\n                J$.L();\n                break jalangiLabel21;\n            }\n        }\n    }\n// JALANGI DO NOT INSTRUMENT\n    } catch (e) {        __diffTestingEngineState__.isCrashing=true;        if (e instanceof TypeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"TypeError: \" + e.message});        } else if (e instanceof RangeError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"RangeError: \" + e.message});        } else if (e instanceof EvalError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"EvalError: \" + e.message});        } else if (e instanceof ReferenceError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"ReferenceError: \" + e.message});        }        else if (e instanceof URIError) {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"URIError: \" + e.message});        }        else {            __diffTestingEngineState__.state.push({key: \"Error\", value: \"crash: \" + e.message});        }        __diffTestingEngineState__.result = __diffTestingEngineState__.state;    } __diffTestingEngineState__.result;",
+  "minCode": "setInterval(!'0' && (setInterval = function () {\n    var resIndex;\n}) && callback.undefined.undefined);",
+  "diff": {
+    "Chromium 50.0.2661.102 (Ubuntu)": {},
+    "Firefox 25.0 (Linux)": {
+      "key": "Error",
+      "value": "crash: Useless setInterval call (missing quotes around argument?)"
+    }
+  },
+  "isCrashing": "true",
+  "lastTested": "6/15/2016, 3:38:28 PM"
+}

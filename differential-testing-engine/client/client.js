@@ -173,6 +173,7 @@
 
     $(document).ajaxError(function (evt, xhr, settings, error) {
         console.log("ajax error: " + evt + " -- " + error);
+        document.location.reload(true);
     });
 
     pollForCode();
