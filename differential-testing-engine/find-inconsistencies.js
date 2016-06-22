@@ -10,7 +10,7 @@ var jsonfile = require('jsonfile');
 function runner(argument) {
     var path = require('path');
     var currentDir = process.cwd();
-    var pathToread = currentDir + "/ourfuzz-3250-2/old/";
+    var pathToread = currentDir + "/gen20160622/";
     var pathToWrite = './differential-testing-results/';
     createWorkingDirectory(pathToWrite);
     //var pathToread = currentDir + "/generatedCode-tr-catch/";
@@ -27,7 +27,7 @@ function runner(argument) {
         in_consistent: {
             crashing: 0,
             non_crashing: 0
-        },
+        }
     };
 
 
@@ -41,69 +41,52 @@ function runner(argument) {
             var filenameInJSON = json.fileName;
             var resultsummary = json.resultSummary;
             var isCrashing = JSON.parse(json.isCrashing);
-            if (resultsummary === "SYNTAX_ERROR") {
-                createWorkingDirectory(pathToWrite + 'syntax-error/');
-                fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWrite + 'syntax-error/' + filenameInJSON));
-                fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWrite + 'syntax-error/' + filenameInJSON + "on"));
-            }
-            if (resultsummary === "CONSISTENT") {
-                if (isCrashing) {
-                    crashingNonCrashing.consistent.crashing++;
-                    createWorkingDirectory(pathToWrite + 'consistent-crashing/');
-                    fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWrite + 'consistent-crashing/' + filenameInJSON));
-                    fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWrite + 'consistent-crashing/' + filenameInJSON + "on"));
-                } else {
-                    crashingNonCrashing.consistent.non_crashing++;
-                    createWorkingDirectory(pathToWrite + 'consistent-non-crashing/');
-                    fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWrite + 'consistent-non-crashing/' + filenameInJSON));
-                    fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWrite + 'consistent-non-crashing/' + filenameInJSON + "on"));
-                }
-            }
+            let pathToWriteFile;
 
             if (filenameInJSON.indexOf("funfuzz") === -1) {
                 nooffile++;
-                recordResultSummary["ourfuzz"].hasOwnProperty(resultsummary) ? recordResultSummary["ourfuzz"][resultsummary] += 1 : recordResultSummary["ourfuzz"][resultsummary] = 1;
+                recordResultSummary["ourfuzz"].hasOwnProperty(resultsummary) ? recordResultSummary["ourfuzz"][resultsummary] += 1 :
+                                                                               recordResultSummary["ourfuzz"][resultsummary] = 1;
             } else {
                 nooffunfuzzfiles++;
-                recordResultSummary["funfuzz"].hasOwnProperty(resultsummary) ? recordResultSummary["funfuzz"][resultsummary] += 1 : recordResultSummary["funfuzz"][resultsummary] = 1;
+                recordResultSummary["funfuzz"].hasOwnProperty(resultsummary) ? recordResultSummary["funfuzz"][resultsummary] += 1 :
+                                                                               recordResultSummary["funfuzz"][resultsummary] = 1;
             }
 
-            /* Write the JS & JSON files to interesting programs if inconsistent */
-            if (resultsummary === "INCONSISTENT" && isCrashing) {
-                crashingNonCrashing.in_consistent.crashing++;
-                // if (!skipFile(filenameInJSON)) {
-                /* Source --> Destination */
-                createWorkingDirectory(pathToWrite + 'inconsistent-crashing/');
-                fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWrite + 'inconsistent-crashing/' + filenameInJSON));
-                fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWrite + 'inconsistent-crashing/' + filenameInJSON + "on"));
-                //fs.writeFileSync("./differential-testing-results/inconsistent/" + filenameInJSON, json.code);
-                console.log("Inconsistent --> " + filenameInJSON);
-                incosistent = true;
-                /*   } else {
-                 console.log("Skipping file " + filenameInJSON);
-                 }*/
-            } else if (resultsummary === "INCONSISTENT" && !isCrashing) {
-                crashingNonCrashing.in_consistent.non_crashing++;
-                createWorkingDirectory(pathToWrite + 'inconsistent-non-crashing/');
-                fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWrite + 'inconsistent-non-crashing/' + filenameInJSON));
-                fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWrite + 'inconsistent-non-crashing/' + filenameInJSON + "on"));
-                //fs.writeFileSync("./differential-testing-results/inconsistent/" + filenameInJSON, json.code);
-                console.log("Inconsistent --> " + filenameInJSON);
-                incosistent = true;
-            }
-            /* Write the JS file if non-deterministic */
-            else if (resultsummary === "NON-DETERMINISTIC") {
-                if (!skipFile(filenameInJSON)) {
-                    //fs.writeFileSync("./differential-testing-results/non-deterministic/" + filenameInJSON, json.code);
-                    createWorkingDirectory(pathToWrite + 'non-deterministic/');
-                    fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWrite + 'non-deterministic/' + filenameInJSON));
-                    fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWrite + 'non-deterministic/' + filenameInJSON + "on"));
-                    console.log("Non-deterministic --> " + filenameInJSON);
-                    incosistent = true;
+
+            if (resultsummary === "SYNTAX_ERROR") {
+                pathToWriteFile = pathToWrite + 'syntax-error/';
+            } else if (resultsummary === "CONSISTENT") {
+                if (isCrashing) {
+                    crashingNonCrashing.consistent.crashing++;
+                    pathToWriteFile = pathToWrite + 'consistent-crashing/';
                 } else {
-                    console.log("Skipping file " + filenameInJSON);
+                    crashingNonCrashing.consistent.non_crashing++;
+                    pathToWriteFile = pathToWrite + 'consistent-non-crashing/';
                 }
+            } else if (resultsummary === "INCONSISTENT") {
+                incosistent = true;
+                console.log("Inconsistent --> " + filenameInJSON);
+
+                if (isCrashing) {
+                    crashingNonCrashing.in_consistent.crashing++;
+                    pathToWriteFile = pathToWrite + 'inconsistent-crashing/';
+                } else {
+                    crashingNonCrashing.in_consistent.non_crashing++;
+                    pathToWriteFile = pathToWrite + 'inconsistent-non-crashing/';
+                }
+            } else if (resultsummary === "NON-DETERMINISTIC") {
+                incosistent = true;
+                console.log("Non-deterministic --> " + filenameInJSON);
+
+                pathToWriteFile = pathToWrite + 'non-deterministic/';
             }
+
+            // Write the files to the corresponding folders
+            createWorkingDirectory(pathToWriteFile);
+            fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWriteFile+ filenameInJSON));
+            fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWriteFile + filenameInJSON + "on"));
+
         }
     });
     // console.log("\n" + tryin++ + ".");
