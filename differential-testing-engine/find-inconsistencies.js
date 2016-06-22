@@ -4,7 +4,7 @@
  */
 tryin = 0;
 
-var fs = require('fs');
+var fs = require('fs-extra');
 var jsonfile = require('jsonfile');
 
 function runner(argument) {
@@ -82,11 +82,17 @@ function runner(argument) {
                 pathToWriteFile = pathToWrite + 'non-deterministic/';
             }
 
-            // Write the files to the corresponding folders
-            createWorkingDirectory(pathToWriteFile);
-            fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWriteFile+ filenameInJSON));
-            fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWriteFile + filenameInJSON + "on"));
-
+            if(!pathToWriteFile) {
+                // File was probably not executed
+                console.log("(NO RESULTS) " + resultsummary + " --> " + filenameInJSON);
+            } else {
+                // Write the files to the corresponding folders
+                createWorkingDirectory(pathToWriteFile);
+                fs.copy(pathToread + filenameInJSON, pathToWriteFile+ filenameInJSON);
+                fs.copy(pathToread + filenameInJSON + "on", pathToWriteFile + filenameInJSON + "on");
+                //fs.createReadStream(pathToread + filenameInJSON).pipe(fs.createWriteStream(pathToWriteFile+ filenameInJSON));
+                //fs.createReadStream(pathToread + filenameInJSON + "on").pipe(fs.createWriteStream(pathToWriteFile + filenameInJSON + "on"));
+            }
         }
     });
     // console.log("\n" + tryin++ + ".");

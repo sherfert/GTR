@@ -9,6 +9,7 @@
 **/corpusForTesting*/*
 */generatedCode/*
 */gen*/*
+*/differential-testing-results/**
 */inconsistentCode/*
 */results/**
 **/valid-*
