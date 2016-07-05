@@ -6,23 +6,50 @@
     var syntaxTester = require("../js-ast/validityCheck-JS");
     var treeGenerator = require("../" + config.treeGenerator);
 
+
     /**
-     * A generalized tester for some kind of testable input.
+     * The most general tester that takes care of connecting the oracle and the DD algorithm,
+     * and keeps track of the number of invocations of the test method.
      */
     class Tester {
+
+        constructor(ddTestMethod, ddAlgo) {
+            // The oracle that tells whether the invocation of an input passed or failed
+            this.ddTestMethod = ddTestMethod;
+            // The DD algorithm that is used to reduce the input
+            this.ddAlgo = ddAlgo;
+            // This counter stores the number of tests run so far.
+            this.testsRun = 0;
+        }
+
+        runTest(initialInput) {
+            var that = this;
+            var countingTest = function(input) {
+                that.testsRun++;
+                return that.ddTestMethod(input);
+            };
+            return this.ddAlgo(initialInput, countingTest);
+        }
+    }
+
+    /**
+     * A generalized tester for some kind of testable input, that compares error messages.
+     */
+    class ErrorMessageComparingTester extends Tester {
         /**
          *
          * @param {function(string) : string} testMethod A method that executes the input and returns
          *      an error message obtained from the execution.
          * @param initialInput the input for an initial execution to obtain an error message to compare with
+         * @param ddAlgo the DD algorithm
          */
-        constructor(testMethod, initialInput) {
+        constructor(testMethod, initialInput, ddAlgo) {
+            super(function(x) {return this.test(x);}, ddAlgo);
             this.testMethod = testMethod;
             // Run the initial code and save error message
+            this.initialInput = initialInput;
             this.errorMessage = testMethod(initialInput);
             console.log("Error obtained: " + this.errorMessage);
-            // This counter stores the number of tests run so far.
-            this.testsRun = 0;
         }
 
         /**
@@ -33,7 +60,6 @@
          */
         test(input) {
             var errmsg = this.testMethod(input);
-            this.testsRun++;
             console.log("Error obtained: " + errmsg);
             if(errmsg == this.errorMessage) {
                 // The same error is triggered
@@ -46,17 +72,26 @@
                 return "?";
             }
         }
+
+        /**
+         * Runs the test with the provided algorithm and initialInput. Returns the minimized input.
+         * @returns {*} the minimized input
+         */
+        runTestWithInitialInput() {
+            return this.runTest(this.initialInput);
+        }
     }
 
     /**
      * Tester for trees that can be converted to executable JavaScript code.
      */
-    class JSTreeTester extends Tester {
+    class JSTreeTester extends ErrorMessageComparingTester {
         /**
          * @param initialInput the input for an initial execution to obtain an error message to compare with
+         * @param ddAlgo the DD algorithm
          */
-        constructor(initialInput) {
-            super(testJSTreeWithChildProcess, initialInput);
+        constructor(initialInput, ddAlgo) {
+            super(testJSTreeWithChildProcess, initialInput, ddAlgo);
         }
     }
 
@@ -78,12 +113,13 @@
     /**
      * Tester for exetubale JavaScript code.
      */
-    class CodeTester extends Tester {
+    class CodeTester extends ErrorMessageComparingTester {
         /**
          * @param initialInput the input for an initial execution to obtain an error message to compare with
+         * @param ddAlgo the DD algorithm
          */
-        constructor(initialInput) {
-            super(testJSWithChildProcess, initialInput);
+        constructor(initialInput, ddAlgo) {
+            super(testJSWithChildProcess, initialInput, ddAlgo);
         }
     }
 
