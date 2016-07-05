@@ -19,6 +19,7 @@
         process.exit(1);
     }
     var fs = require('fs');
+    var Tester = require("../../program-generation/tree-reducer/inputTester").Tester;
     var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
     var ddmin = require("../../program-generation/tree-reducer/hdd");
     var util = require('./util-server');
@@ -45,6 +46,7 @@
         // Listings fields here that are used later
         this.testCode = undefined; // Current instrumented code
         this.minCode = undefined; // Minimized code
+        this.testsRun = undefined; // # of tests run until result
         this.diff = undefined; // The differene extracted from the oracle
     }
 
@@ -332,11 +334,20 @@
         console.log("Got initial results: " + JSON.stringify(cmpWith));
         fileState.diff = cmpWith;
 
+        // DD algorithm
+        var ddAlgo = function(code, test) {
+            return execWithCode(ddmin.hdd, code, test);
+        };
         // Test function that just expects code, so we can pass it to DD
         var test = function(c) {
-          return advancedTestOracle(c, cmpWith, fileState);
+            //console.log("TESTING: " + c);
+            return advancedTestOracle(c, cmpWith, fileState);
         };
-        fileState.minCode = execWithCode(ddmin.hdd, fileState.rawCode, test);
+
+        var tester = new Tester(test, ddAlgo);
+        fileState.minCode  = tester.runTest(fileState.rawCode);
+        fileState.testsRun = tester.testsRun;
+        console.log("Num tests: " + tester.testsRun);
 
         // Restore original results
         fileState.userAgentToResults = originalResults;

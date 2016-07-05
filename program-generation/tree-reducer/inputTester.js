@@ -174,6 +174,7 @@
         return "";
     }
 
+    exports.Tester = Tester;
     exports.CodeTester = CodeTester;
     exports.JSTreeTester = JSTreeTester;
 })();
