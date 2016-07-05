@@ -40,22 +40,26 @@
             type:tree.label
         };
         var propNameToTargets = {};
-        for (var i = 0; i < tree.outgoing.length; i++) {
+        for (let i = 0; i < tree.outgoing.length; i++) {
             var edge = tree.outgoing[i];
             var targetsWithThisName = propNameToTargets[edge.label] || [];
             targetsWithThisName.push(edge.target);
             propNameToTargets[edge.label] = targetsWithThisName;
         }
         var propNames = Object.keys(propNameToTargets);
-        for (var i = 0; i < propNames.length; i++) {
+        for (let i = 0; i < propNames.length; i++) {
             var propName = propNames[i];
             var targets = propNameToTargets[propName];
             if (targets.length > 1 || needsArray(tree.label, propName)) {
                 astNode[propName] = [];
-                for (var j = 0; j < targets.length; j++) {
+                for (let j = 0; j < targets.length; j++) {
                     var target = targets[j];
                     if (target.label !== "") {
-                        astNode[propName].push(treeToAST(target));
+                        // Do not push undefined nodes
+                        let child = treeToAST(target);
+                        if(child) {
+                            astNode[propName].push(child);
+                        }
                     }
                 }
             } else {
@@ -74,6 +78,18 @@
         // special case: RegExp isn't a "type" actually --> remove the "type" property
         if (astNode.type === "RegExp") {
             delete astNode.type;
+        }
+
+        // TODO testing
+        // Check that all mandatory child nodes exist and are not undefined, otherwise return undefined
+        if(mandatoryChildProperties[astNode.type]) {
+            for (let i = 0; i < mandatoryChildProperties[astNode.type].length; i++) {
+                let requiredChild = mandatoryChildProperties[astNode.type][i];
+                if(!astNode[requiredChild]) {
+                    console.log("Removing AST node since it is missing a required child.");
+                    return undefined;
+                }
+            }
         }
 
         return astNode;
@@ -102,6 +118,11 @@
         ObjectPattern:{properties:true},
         ArrayPattern:{elements:true},
         SwitchCase:{consequent:true}
+    };
+
+    var mandatoryChildProperties = {
+        CallExpression:["callee"],
+        ExpressionStatement:["expression"]
     };
 
     function needsArray(type, prop) {
@@ -144,8 +165,8 @@
      */
     function treeToCodeNoFileIO(tree) {
         var ast = treeToAST(tree);
-        //console.log("Trying:");
-        //console.log(JSON.stringify(ast, null, 2));
+        console.log("Trying:");
+        console.log(JSON.stringify(ast, null, 2));
 
         try {
             return escodegen.generate(ast);

@@ -57,6 +57,9 @@
 
         /**
          * Tree with all inactive childs of a level removed, including the corresponding subtrees.
+         *
+         * No knowledge about the tree is used to reduce its size, the nodes are simply removed.
+         *
          * @return {Node} a smaller tree.
          */
         get currentCode() {
@@ -69,6 +72,8 @@
             newTree.applyToLevel(this.level - 1, function(node) {
                 for (var i = 0; i < node.outgoing.length; i++) {
                     if(ti.activeTokens.indexOf(currentChild) == -1) {
+                        // FIXME debug message
+                        console.log("Removing " + node.outgoing[i].label + " from " + node.label);
                         // Remove this node
                         node.outgoing.splice(i, 1);
                         // Repeat this index
