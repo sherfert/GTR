@@ -101,6 +101,8 @@
         // In the original they start with level 0, but we skip the root.
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in HDD.");
+            // XXX Here we are calling currentCode again (ddmin called it before with the same result
+            // in the last iteration.) Caching the result would be an optimization.
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
         }
 

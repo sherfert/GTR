@@ -92,10 +92,26 @@
             }
         }
 
+        // Check for missing child nodes that require special handling
+        if(specialChildProperties[astNode.type]) {
+            for (var key in specialChildProperties[astNode.type]) {
+                if (specialChildProperties[astNode.type].hasOwnProperty(key)) {
+                    let handler = specialChildProperties[astNode.type][key];
+                    if(!astNode[key]) {
+                        console.log("Handling AST node since it is missing a special child.");
+                        return handler(astNode);
+                    }
+                }
+            }
+        }
+
         return astNode;
     }
 
-    // based on https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API
+
+    // All these maps are based on https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API
+
+    // Some nodes have properties that must be an array
     var mandatoryArrayProperties = {
         Program:{body:true},
         Function:{params:true, defaults:true},
@@ -120,10 +136,31 @@
         SwitchCase:{consequent:true}
     };
 
+    // Some child properties are mandatory
     var mandatoryChildProperties = {
         CallExpression:["callee"],
-        ExpressionStatement:["expression"]
+        ExpressionStatement:["expression"],
+        LogicalExpression:["operator"],
+        BinaryExpression:["operator"],
+        Identifier:["name"]
     };
+
+    // Some nodes need special handling if certain childs are missing
+    var specialChildProperties = {
+        LogicalExpression:{left:returnOtherChild, right: returnOtherChild},
+        BinaryExpression:{left:returnOtherChild, right: returnOtherChild}
+    };
+
+    // TODO comment
+    function returnOtherChild(node) {
+        if(node.left) {
+            return node.left;
+        } else if(node.right) {
+            return node.right;
+        } else {
+            return undefined;
+        }
+    }
 
     function needsArray(type, prop) {
         var props = mandatoryArrayProperties[type];
