@@ -60,13 +60,16 @@
             delete astNode.type;
         }
 
-        // TODO testing
+        // -------------------------------------------------------------------------------------------------------------
+        // These checks have been introduces to ensure that all ASTs can be subsequently transformed to code with
+        // escodegen.
+
         // Check that all mandatory child nodes exist and are not undefined or empty, otherwise return undefined
         if(mandatoryChildProperties[astNode.type]) {
             for (let i = 0; i < mandatoryChildProperties[astNode.type].length; i++) {
                 let requiredChild = mandatoryChildProperties[astNode.type][i];
                 if(!astNode[requiredChild] || astNode[requiredChild].length == 0) {
-                    console.log("Removing AST node since it is missing a required child.");
+                    console.log("Removing AST node " + astNode.type + " since it is missing a required child " + requiredChild);
                     return undefined;
                 }
             }
@@ -78,12 +81,13 @@
                 if (specialChildProperties[astNode.type].hasOwnProperty(key)) {
                     let handler = specialChildProperties[astNode.type][key];
                     if(!astNode[key]) {
-                        console.log("Handling AST node since it is missing a special child.");
+                        console.log("Handling AST node " + astNode.type + " since it is missing a special child " + key);
                         return handler(astNode);
                     }
                 }
             }
         }
+        // -------------------------------------------------------------------------------------------------------------
 
         var mandatoryArrayTypes = Object.keys(mandatoryArrayProperties);
         /* TODO: This is a temporary workaround. To check if tree.outgoing.length is always = 0 in the corpus
@@ -143,7 +147,7 @@
         LogicalExpression:["operator"],
         BinaryExpression:["operator"],
         AssignmentExpression:["operator"],
-        UpdateExpression:["agument"],
+        UpdateExpression:["argument"],
         Identifier:["name"],
         UnaryExpression:["argument"],
         IfStatement:["consequent", "test"],
@@ -156,12 +160,11 @@
         ForStatement:["body"],
         TryStatement:["block"],
         CatchClause:["param", "body"],
-        Literal:["value"],
         WithStatement:["object", "body"],
         SwitchStatement:["discriminant"],
         ThrowStatement:["argument"],
-        WhileStatememt:["test", "body"],
-        DoWhileStatememt:["test", "body"],
+        WhileStatement:["test", "body"],
+        DoWhileStatement:["test", "body"],
         ForInStatement:["left", "right", "body"],
         ForOfStatement:["left", "right", "body"],
         ConditionalExpression:["test"],
@@ -177,7 +180,9 @@
             alternate: (node) => (node.consequent || node.alternate)},
         UnaryExpression:{operator: (node) => node.argument},
         UpdateExpression:{operator: (node) => node.argument},
-        MemberExpression:{property: (node) => node.object}
+        MemberExpression:{property: (node) => node.object},
+        // Literal.value allows null but not undefined
+        Literal:{value: (node) => node.value === undefined ? undefined : node}
     };
 
     function needsArray(type, prop) {
@@ -220,8 +225,8 @@
      */
     function treeToCodeNoFileIO(tree) {
         var ast = treeToAST(tree);
-        console.log("Trying:");
-        console.log(JSON.stringify(ast, null, 2));
+        //console.log("Trying:");
+        //console.log(JSON.stringify(ast, null, 2));
 
         try {
             return escodegen.generate(ast);

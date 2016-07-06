@@ -50,7 +50,7 @@
                 //console.log("Using cached value");
                 result = cache[key];
             } else {
-                console.log("Testing subset: " + key);
+                //console.log("Testing subset: " + key);
                 // No cached value available
                 result = test(subset.currentCode);
                 // Cache the result
@@ -77,7 +77,7 @@
                 //console.log("Using cached value");
                 result = cache[key];
             } else {
-                console.log("Testing complm: " + key);
+                //console.log("Testing complm: " + key);
                 // No cached value available
                 result = test(subset.currentCode);
                 // Cache the result

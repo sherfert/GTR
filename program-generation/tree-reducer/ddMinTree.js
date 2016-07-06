@@ -168,11 +168,6 @@
         var internalTest = function(t) {
             var c = treeGenerator.treeToCodeNoFileIO(t);
             if(c instanceof Error) {
-                // FIXME Debug messages
-                console.log("Tree: ");
-                console.log(t.toString());
-                console.log("Could not convert tree to code: " + c);
-                process.exit(1);
                 // Return "?" if the tree is not convertable
                 return "?";
             }
