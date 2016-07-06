@@ -16,26 +16,6 @@
     function treeToAST(tree) {
         util.assert(tree instanceof loTrees.Node);
 
-        var mandatoryArrayTypes = Object.keys(mandatoryArrayProperties);
-        /* TODO: This is a temporary workaround. To check if tree.outgoing.length is always = 0 in the corpus
-         * FIXME: Remove 'ThisExpression' and 'EmptyStatement' from this check.
-         * */
-        if (tree.outgoing.length === 0 && mandatoryArrayTypes.indexOf(tree.label) === -1
-                && tree.label !== "ThisExpression" && tree.label !== "EmptyStatement") {
-            /* Special case for RegExp. Test if the string is a RegExp. This tests if the first
-             *  and the last character of a string is a /
-             * */
-
-            if (/^[/].*[/]$/.test(tree.label)) {
-                return new RegExp(tree.label);
-            }
-            try {
-                return JSON.parse(tree.label);
-            } catch (err) {
-                return tree.label;
-            }
-        }
-
         var astNode = {
             type:tree.label
         };
@@ -81,11 +61,11 @@
         }
 
         // TODO testing
-        // Check that all mandatory child nodes exist and are not undefined, otherwise return undefined
+        // Check that all mandatory child nodes exist and are not undefined or empty, otherwise return undefined
         if(mandatoryChildProperties[astNode.type]) {
             for (let i = 0; i < mandatoryChildProperties[astNode.type].length; i++) {
                 let requiredChild = mandatoryChildProperties[astNode.type][i];
-                if(!astNode[requiredChild]) {
+                if(!astNode[requiredChild] || astNode[requiredChild].length == 0) {
                     console.log("Removing AST node since it is missing a required child.");
                     return undefined;
                 }
@@ -102,6 +82,26 @@
                         return handler(astNode);
                     }
                 }
+            }
+        }
+
+        var mandatoryArrayTypes = Object.keys(mandatoryArrayProperties);
+        /* TODO: This is a temporary workaround. To check if tree.outgoing.length is always = 0 in the corpus
+         * FIXME: Remove 'ThisExpression' and 'EmptyStatement' from this check.
+         * */
+        if (tree.outgoing.length === 0 && mandatoryArrayTypes.indexOf(tree.label) === -1
+            && tree.label !== "ThisExpression" && tree.label !== "EmptyStatement") {
+            /* Special case for RegExp. Test if the string is a RegExp. This tests if the first
+             *  and the last character of a string is a /
+             * */
+
+            if (/^[/].*[/]$/.test(tree.label)) {
+                return new RegExp(tree.label);
+            }
+            try {
+                return JSON.parse(tree.label);
+            } catch (err) {
+                return tree.label;
             }
         }
 
@@ -142,25 +142,43 @@
         ExpressionStatement:["expression"],
         LogicalExpression:["operator"],
         BinaryExpression:["operator"],
-        Identifier:["name"]
+        AssignmentExpression:["operator"],
+        UpdateExpression:["agument"],
+        Identifier:["name"],
+        UnaryExpression:["argument"],
+        IfStatement:["consequent", "test"],
+        FunctionDeclaration:["id","body"],
+        FunctionExpression:["body"],
+        ArrowFunctionExpression:["body"],
+        MemberExpression:["object"],
+        VariableDeclaration:["declarations"],
+        VariableDeclarator:["id"],
+        ForStatement:["body"],
+        TryStatement:["block"],
+        CatchClause:["param", "body"],
+        Literal:["value"],
+        WithStatement:["object", "body"],
+        SwitchStatement:["discriminant"],
+        ThrowStatement:["argument"],
+        WhileStatememt:["test", "body"],
+        DoWhileStatememt:["test", "body"],
+        ForInStatement:["left", "right", "body"],
+        ForOfStatement:["left", "right", "body"],
+        ConditionalExpression:["test"],
+        NewExpression:["callee"]
     };
 
-    // Some nodes need special handling if certain childs are missing
+    // Some nodes need special handling if certain childs are missing or empty
     var specialChildProperties = {
-        LogicalExpression:{left:returnOtherChild, right: returnOtherChild},
-        BinaryExpression:{left:returnOtherChild, right: returnOtherChild}
+        LogicalExpression:{left: (node) => (node.left || node.right), right: (node) => (node.left || node.right)},
+        BinaryExpression:{left: (node) => (node.left || node.right), right: (node) => (node.left || node.right)},
+        AssignmentExpression:{left: (node) => (node.left || node.right), right: (node) => (node.left || node.right)},
+        ConditionalExpression:{consequent: (node) => (node.consequent || node.alternate),
+            alternate: (node) => (node.consequent || node.alternate)},
+        UnaryExpression:{operator: (node) => node.argument},
+        UpdateExpression:{operator: (node) => node.argument},
+        MemberExpression:{property: (node) => node.object}
     };
-
-    // TODO comment
-    function returnOtherChild(node) {
-        if(node.left) {
-            return node.left;
-        } else if(node.right) {
-            return node.right;
-        } else {
-            return undefined;
-        }
-    }
 
     function needsArray(type, prop) {
         var props = mandatoryArrayProperties[type];
