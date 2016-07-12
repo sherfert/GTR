@@ -9,12 +9,14 @@
     var treeGenerator = require(config.treeGenerator);
     var inputTester = require("./tree-reducer/inputTester");
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
-    var ddmin = require("./tree-reducer/hdd");
+    var hdd = require("./tree-reducer/hdd");
+    var rdd = require("./tree-reducer/rdd");
 
-    var code = "" + fs.readFileSync("tree-reducer/input/test.js");
+    var code = "" + fs.readFileSync("tree-reducer/input/test3.js");
 
     var ddAlgo = function(code, test) {
-        return execWithCode(ddmin.hddStar, code, test);
+        //return execWithCode(hdd.hddStar, code, test);
+        return execWithCode(rdd.rddStar, code, test);
         //return ddmin.ddminLine(code, test);
     };
 
