@@ -347,7 +347,8 @@
         var tester = new Tester(test, ddAlgo);
         fileState.minCode  = tester.runTest(fileState.rawCode);
         fileState.testsRun = tester.testsRun;
-        console.log("Num tests: " + tester.testsRun);
+        fileState.timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
+        console.log("Num tests: " + tester.testsRun + ` in ${fileState.timeTaken} nanoseconds`);
 
         // Restore original results
         fileState.userAgentToResults = originalResults;
@@ -362,11 +363,15 @@
      * Reducing all files found, one after the other.
      */
     function reduceAllFiles() {
+        var totalTimeMS = 0;
         for (var key in fileNameToState) {
             if (fileNameToState.hasOwnProperty(key)) {
                 reduce(fileNameToState[key]);
+                // Accumulate total time taken
+                totalTimeMS += (fileNameToState[key].timeTaken / 1000000);
             }
         }
+        console.log(`Total time: ${totalTimeMS.toFixed(0)} milliseconds`);
     }
 
     startServer();

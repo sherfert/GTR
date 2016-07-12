@@ -28,7 +28,13 @@
                 that.testsRun++;
                 return that.ddTestMethod(input);
             };
-            return this.ddAlgo(initialInput, countingTest);
+
+
+            var startTime = process.hrtime();
+            var res = this.ddAlgo(initialInput, countingTest);
+            this.timeTaken = process.hrtime(startTime);
+            
+            return res;
         }
     }
 
