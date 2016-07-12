@@ -61,32 +61,32 @@
         }
 
         // -------------------------------------------------------------------------------------------------------------
-        // These checks have been introduces to ensure that all ASTs can be subsequently transformed to code with
+        // These checks have been introduced to ensure that all ASTs can be subsequently transformed to code with
         // escodegen.
 
         // Check that all mandatory child nodes exist and are not undefined or empty, otherwise return undefined
-        if(mandatoryChildProperties[astNode.type]) {
-            for (let i = 0; i < mandatoryChildProperties[astNode.type].length; i++) {
-                let requiredChild = mandatoryChildProperties[astNode.type][i];
-                if(!astNode[requiredChild] || astNode[requiredChild].length == 0) {
-                    console.log("Removing AST node " + astNode.type + " since it is missing a required child " + requiredChild);
-                    return undefined;
-                }
-            }
-        }
-
-        // Check for missing child nodes that require special handling
-        if(specialChildProperties[astNode.type]) {
-            for (var key in specialChildProperties[astNode.type]) {
-                if (specialChildProperties[astNode.type].hasOwnProperty(key)) {
-                    let handler = specialChildProperties[astNode.type][key];
-                    if(!astNode[key]) {
-                        console.log("Handling AST node " + astNode.type + " since it is missing a special child " + key);
-                        return handler(astNode);
-                    }
-                }
-            }
-        }
+        // if(mandatoryChildProperties[astNode.type]) {
+        //     for (let i = 0; i < mandatoryChildProperties[astNode.type].length; i++) {
+        //         let requiredChild = mandatoryChildProperties[astNode.type][i];
+        //         if(!astNode[requiredChild] || astNode[requiredChild].length == 0) {
+        //             //console.log("Removing AST node " + astNode.type + " since it is missing a required child " + requiredChild);
+        //             return undefined;
+        //         }
+        //     }
+        // }
+        //
+        // // Check for missing child nodes that require special handling
+        // if(specialChildProperties[astNode.type]) {
+        //     for (var key in specialChildProperties[astNode.type]) {
+        //         if (specialChildProperties[astNode.type].hasOwnProperty(key)) {
+        //             let handler = specialChildProperties[astNode.type][key];
+        //             if(!astNode[key]) {
+        //                 //console.log("Handling AST node " + astNode.type + " since it is missing a special child " + key);
+        //                 return handler(astNode);
+        //             }
+        //         }
+        //     }
+        // }
         // -------------------------------------------------------------------------------------------------------------
 
         var mandatoryArrayTypes = Object.keys(mandatoryArrayProperties);
@@ -142,33 +142,33 @@
 
     // Some child properties are mandatory
     var mandatoryChildProperties = {
-        CallExpression:["callee"],
-        ExpressionStatement:["expression"],
-        LogicalExpression:["operator"],
-        BinaryExpression:["operator"],
-        AssignmentExpression:["operator"],
-        UpdateExpression:["argument"],
-        Identifier:["name"],
-        UnaryExpression:["argument"],
-        IfStatement:["consequent", "test"],
-        FunctionDeclaration:["id","body"],
-        FunctionExpression:["body"],
         ArrowFunctionExpression:["body"],
-        MemberExpression:["object"],
-        VariableDeclaration:["declarations"],
-        VariableDeclarator:["id"],
-        ForStatement:["body"],
-        TryStatement:["block"],
+        AssignmentExpression:["operator"],
+        BinaryExpression:["operator"],
+        CallExpression:["callee"],
         CatchClause:["param", "body"],
-        WithStatement:["object", "body"],
-        SwitchStatement:["discriminant"],
-        ThrowStatement:["argument"],
-        WhileStatement:["test", "body"],
+        ConditionalExpression:["test"],
         DoWhileStatement:["test", "body"],
+        ExpressionStatement:["expression"],
         ForInStatement:["left", "right", "body"],
         ForOfStatement:["left", "right", "body"],
-        ConditionalExpression:["test"],
-        NewExpression:["callee"]
+        ForStatement:["body"],
+        FunctionDeclaration:["id","body"],
+        FunctionExpression:["body"],
+        Identifier:["name"],
+        IfStatement:["consequent", "test"],
+        LogicalExpression:["operator"],
+        MemberExpression:["object"],
+        NewExpression:["callee"],
+        SwitchStatement:["discriminant"],
+        ThrowStatement:["argument"],
+        TryStatement:["block"],
+        UnaryExpression:["argument"],
+        UpdateExpression:["argument"],
+        VariableDeclaration:["declarations"],
+        VariableDeclarator:["id"],
+        WhileStatement:["test", "body"],
+        WithStatement:["object", "body"]
     };
 
     // Some nodes need special handling if certain childs are missing or empty
