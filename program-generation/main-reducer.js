@@ -10,13 +10,15 @@
     var inputTester = require("./tree-reducer/inputTester");
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("./tree-reducer/hdd");
+    var modelhdd = require("./tree-reducer/modelHdd");
     var rdd = require("./tree-reducer/rdd");
 
-    var code = "" + fs.readFileSync("tree-reducer/input/test.js");
+    var code = "" + fs.readFileSync("tree-reducer/input/input2.js");
 
     var ddAlgo = function(code, test) {
         //return execWithCode(hdd.hdd, code, test);
-        return execWithCode(rdd.rdd, code, test);
+        //return execWithCode(rdd.rdd, code, test);
+        return execWithCode(modelhdd.postTransformationHdd, code, test);
         //return ddmin.ddminLine(code, test);
     };
 

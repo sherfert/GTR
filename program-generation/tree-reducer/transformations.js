@@ -85,6 +85,10 @@
         "in": new Node("SequenceExpression", new Edge("expressions", "E")),
         "out": "E"
     };
+    var T11c = {
+        "in": new Node("BlockStatement", new Edge("body", "B")),
+        "out": "B"
+    };
     var T12 = {
         "in": new Node("ObjectExpression", new Edge("properties", new Node("Property", new Edge("value", "V")))),
         "out": "V"
@@ -122,7 +126,7 @@
         "out": "R"
     };
 
-    var transformations = [T1, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b,
+    var transformations = [T1, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b, T11c,
         T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f];
 
 
@@ -194,13 +198,36 @@
         return tree;
     }
 
-    // var code = "a ? b : c";
-    // var tree = treeProvider.astToTree(esprima.parse(code)).outgoing[0].target.outgoing[0].target;
+
+    /**
+     * Returns an array of all possible transformations of a subtree.
+     * @param subtree the subtree
+     * @returns {Array} all possible transformations
+     */
+    function possibleTransformations(subtree) {
+        // Try all transformations
+        var res = [];
+        for(let i = 0; i < transformations.length; i++) {
+            var transformed = match(subtree, transformations[i]);
+            if(transformed) {
+                // There is a possible replacement
+                res.push(transformed);
+            }
+        }
+        return res;
+    }
+
+    // var code = "if('you' == true) {console.log('p')} else {foo(bar);}";
+    // var tree = treeProvider.astToTree(esprima.parse(code)).outgoing[0].target;
     //
-    // var res = match(tree, T3b);
-    // if(res) {
-    //     var resCode = treeGenerator.treeToCodeNoFileIO(res);
-    //     console.log(resCode);
+    // var res = possibleTransformations(tree);
+    // for(let i = 0; i < res.length; i++) {
+    //
+    //     var resCode = treeGenerator.treeToCodeNoFileIO(res[i]);
+    //     console.log(i + ": " + resCode);
     // }
+
+
+    exports.possibleTransformations = possibleTransformations;
 
 })();

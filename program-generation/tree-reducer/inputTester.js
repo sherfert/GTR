@@ -55,7 +55,7 @@
             // Run the initial code and save error message
             this.initialInput = initialInput;
             this.errorMessage = testMethod(initialInput);
-            console.log("Error obtained: " + this.errorMessage);
+            console.log("Initial Error obtained: " + this.errorMessage);
         }
 
         /**
