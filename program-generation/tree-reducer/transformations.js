@@ -12,8 +12,12 @@
     var Edge = loTrees.Edge;
     
 
-    var T1 = {
+    var T1a = {
         "in": new Node("WhileStatement", new Edge("body", "B")),
+        "out": "B"
+    };
+    var T1b = {
+        "in": new Node("DoWhileStatement", new Edge("body", "B")),
         "out": "B"
     };
     var T2a = {
@@ -126,8 +130,8 @@
         "out": "R"
     };
 
-    var transformations = [T1, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b, T11c,
-        T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f];
+    var transformations = [T1a, T1b, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b,
+        T11c, T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f];
 
 
     function match(tree, rule) {

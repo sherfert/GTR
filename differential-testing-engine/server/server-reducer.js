@@ -22,6 +22,7 @@
     var Tester = require("../../program-generation/tree-reducer/inputTester").Tester;
     var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("../../program-generation/tree-reducer/hdd");
+    var modelHdd = require("../../program-generation/tree-reducer/modelHdd");
     var rdd = require("../../program-generation/tree-reducer/rdd");
     var util = require('./util-server');
 
@@ -382,6 +383,7 @@
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
     reduceAllFiles(hdd.hdd, "hdd");
+    reduceAllFiles(modelHdd.postTransformationHdd, "modelHdd");
     //reduceAllFiles(hdd.hddStar, "hddStar");
     //reduceAllFiles(rdd.rdd, "rdd");
     //reduceAllFiles(rdd.rddStar, "rddStar");
