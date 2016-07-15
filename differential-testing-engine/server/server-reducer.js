@@ -21,7 +21,8 @@
     var fs = require('fs');
     var Tester = require("../../program-generation/tree-reducer/inputTester").Tester;
     var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
-    var ddmin = require("../../program-generation/tree-reducer/hdd");
+    var hdd = require("../../program-generation/tree-reducer/hdd");
+    var rdd = require("../../program-generation/tree-reducer/rdd");
     var util = require('./util-server');
 
     /* Configurations */
@@ -43,11 +44,6 @@
         this.fileName = fileName;
         this.rawCode = rawCode;
         this.userAgentToResults = {}; // user agent string --> result
-        // Listings fields here that are used later
-        this.testCode = undefined; // Current instrumented code
-        this.minCode = undefined; // Minimized code
-        this.testsRun = undefined; // # of tests run until result
-        this.diff = undefined; // The differene extracted from the oracle
     }
 
     /**
@@ -325,8 +321,10 @@
      * that exposes the same inconsistency.
      *
      * @param {JSFileState} fileState the fileState of the file to minimize.
+     * @param algorithm a function reference to the algorithm to use
+     * @param {String} algoPrefix the prefix to use for the given algorithm for the JSON file
      */
-    function reduce(fileState) {
+    function reduce(fileState, algorithm, algoPrefix) {
         console.log("Starting reduction of " + fileState.fileName);
         // First, send the original code to the browsers to have results for the comparison
         var originalResults = testInBrowsers(fileState.rawCode, fileState);
@@ -336,7 +334,7 @@
 
         // DD algorithm
         var ddAlgo = function(code, test) {
-            return execWithCode(ddmin.hdd, code, test);
+            return execWithCode(algorithm, code, test);
         };
         // Test function that just expects code, so we can pass it to DD
         var test = function(c) {
@@ -345,33 +343,37 @@
         };
 
         var tester = new Tester(test, ddAlgo);
-        fileState.minCode  = tester.runTest(fileState.rawCode);
-        fileState.testsRun = tester.testsRun;
-        fileState.timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
-        console.log("Num tests: " + tester.testsRun + ` in ${fileState.timeTaken} nanoseconds`);
+        fileState[algoPrefix] = {};
+        fileState[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
+        fileState[algoPrefix].testsRun = tester.testsRun;
+        fileState[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
+        console.log("Num tests: " + tester.testsRun + ` in ${fileState[algoPrefix].timeTaken} nanoseconds`);
 
         // Restore original results
         fileState.userAgentToResults = originalResults;
         // Write to file
         util.writeResult(codeDir, fileState);
         // Also write minimized code
-        fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
+        //fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
         console.log("Reduction done of " + fileState.fileName);
     }
 
     /**
      * Reducing all files found, one after the other.
+     *
+     * @param algorithm a function reference to the algorithm to use
+     * @param {String} algoPrefix the prefix to use for the given algorithm for the JSON file
      */
-    function reduceAllFiles() {
+    function reduceAllFiles(algorithm, algoPrefix) {
         var totalTimeMS = 0;
         for (var key in fileNameToState) {
             if (fileNameToState.hasOwnProperty(key)) {
-                reduce(fileNameToState[key]);
+                reduce(fileNameToState[key], algorithm, algoPrefix);
                 // Accumulate total time taken
-                totalTimeMS += (fileNameToState[key].timeTaken / 1000000);
+                totalTimeMS += (fileNameToState[key][algoPrefix].timeTaken / 1000000);
             }
         }
-        console.log(`Total time: ${totalTimeMS.toFixed(0)} milliseconds`);
+        console.log(`Total time: ${totalTimeMS.toFixed(0)} milliseconds with ${algoPrefix}`);
     }
 
     startServer();
@@ -379,7 +381,9 @@
     // Invoke reduce as soon as n browsers have connected.
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
-    reduceAllFiles();
-
+    reduceAllFiles(hdd.hdd, "hdd");
+    //reduceAllFiles(hdd.hddStar, "hddStar");
+    //reduceAllFiles(rdd.rdd, "rdd");
+    //reduceAllFiles(rdd.rddStar, "rddStar");
 
 })();
