@@ -64,7 +64,7 @@
             for (var i = 0; i < newTree.outgoing.length; i++) {
                 if(this.activeTokens.indexOf(currentChild) == -1) {
                     // Debug message
-                    //console.log("Removing " + node.outgoing[i].label + " from " + node.label);
+                    //console.log("Removing " + newTree.outgoing[i].label + " from " + newTree.label);
                     // Remove this node
                     newTree.outgoing.splice(i, 1);
                     // Repeat this index
@@ -86,6 +86,11 @@
      * @returns {Node} the minimized tree.
      */
     function rdd(tree, test) {
+        // If the tree is only one node, we can return immediately
+        if(tree.outgoing.length == 0) {
+            return tree;
+        }
+
         // Start with the immediate children
         var smallerTree = ddmin(new SubTreeInput(tree), test).currentCode;
 

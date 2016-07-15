@@ -12,11 +12,11 @@
     var hdd = require("./tree-reducer/hdd");
     var rdd = require("./tree-reducer/rdd");
 
-    var code = "" + fs.readFileSync("tree-reducer/input/test3.js");
+    var code = "" + fs.readFileSync("tree-reducer/input/test.js");
 
     var ddAlgo = function(code, test) {
-        //return execWithCode(hdd.hddStar, code, test);
-        return execWithCode(rdd.rddStar, code, test);
+        //return execWithCode(hdd.hdd, code, test);
+        return execWithCode(rdd.rdd, code, test);
         //return ddmin.ddminLine(code, test);
     };
 
