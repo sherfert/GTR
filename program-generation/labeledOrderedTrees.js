@@ -12,6 +12,10 @@
         util.assert(typeof label === "string", typeof label);
         this.label = label;
         this.outgoing = [];
+        // In case edges were passed to the constructor
+        for(var i = 1; i < arguments.length; i++) {
+            this.outgoing.push(arguments[i]);
+        }
     }
 
     Node.prototype = {
