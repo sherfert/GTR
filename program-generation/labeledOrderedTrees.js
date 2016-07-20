@@ -2,6 +2,7 @@
 (function() {
 
     var util = require("./util");
+    var sha256 = require('sha256');
 
     /**
      * A tree or node of a tree, including its subtree.
@@ -41,6 +42,12 @@
             return res;
 
 
+        },
+        /**
+         * Returns a hash value of the tree. The value is the SHA-256 of tree.toString()
+         */
+        hash:function() {
+            return sha256(this.toString());
         },
         /**
          * @returns {number} the number of nodes in the tree.

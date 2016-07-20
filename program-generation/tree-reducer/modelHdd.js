@@ -7,6 +7,7 @@
     var ddmin = require('./ddMin').ddmin;
     var hdd = hddScript.hdd;
     var TreeLevelInput = hddScript.TreeLevelInput;
+    var treeCache = require('./treeCache');
 
     function applyTransformationsToChildren(node, tree, test) {
         var transformationApplied = false;
@@ -21,7 +22,7 @@
             for (let j = 0; j < transformations.length; j++) {
                 node.outgoing[i].target = transformations[j];
                 if (test(tree) == "fail") {
-                    console.log(`replaced ${target} with ${transformations[j]}`);
+                    //console.log(`replaced ${target} with ${transformations[j]}`);
                     replaced = true;
                     transformationApplied = true;
                     break;
@@ -65,7 +66,8 @@
 
     // Repeats postTransformationHdd
     function postTransformationHddStar(tree, test) {
-        return hddScript.doWhileTreeShrinks(tree, test, postTransformationHdd);
+        var cachedTest = treeCache.cachedTest(test);
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, postTransformationHdd);
     }
 
     /**
@@ -93,11 +95,43 @@
 
     // Repeats postLevelTransformationHdd
     function postLevelTransformationHddStar(tree, test) {
-        return hddScript.doWhileTreeShrinks(tree, test, postLevelTransformationHdd);
+        var cachedTest = treeCache.cachedTest(test);
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, postLevelTransformationHdd);
+    }
+
+    /**
+     * Applies on each level first ddmin and then possible transformations.
+     *
+     * Transformations without combinations, as above.
+     *
+     * @param {Node} tree the tree obtained from the AST.
+     * @param {function(Node): string} test see ddmin
+     * @returns {Node} the minimized tree.
+     */
+    function preLevelTransformationHdd(tree, test) {
+        var currentTree = tree;
+
+        // In the original they start with level 0, but we skip the root.
+        for(var level = 1; level <= currentTree.depth() ; level++) {
+            console.log("Testing level " + level + " in PreLT-HDD.");
+            // Previous level, since transformations are applied to children
+            currentTree.applyToLevel(level - 1, node => applyTransformationsToChildren(node, currentTree, test));
+            currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
+        }
+
+        return currentTree;
+    }
+
+    // Repeats postLevelTransformationHdd
+    function preLevelTransformationHddStar(tree, test) {
+        var cachedTest = treeCache.cachedTest(test);
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, preLevelTransformationHdd);
     }
 
     exports.postTransformationHdd = postTransformationHdd;
     exports.postTransformationHddStar = postTransformationHddStar;
     exports.postLevelTransformationHdd = postLevelTransformationHdd;
     exports.postLevelTransformationHddStar = postLevelTransformationHddStar;
+    exports.preLevelTransformationHdd = preLevelTransformationHdd;
+    exports.preLevelTransformationHddStar = preLevelTransformationHddStar;
 })();
