@@ -45,6 +45,7 @@
         this.fileName = fileName;
         this.rawCode = rawCode;
         this.userAgentToResults = {}; // user agent string --> result
+        this.results = {}; // minimization results with different algorithms
     }
 
     /**
@@ -344,11 +345,11 @@
         };
 
         var tester = new Tester(test, ddAlgo);
-        fileState[algoPrefix] = {};
-        fileState[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
-        fileState[algoPrefix].testsRun = tester.testsRun;
-        fileState[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
-        console.log("Num tests: " + tester.testsRun + ` in ${fileState[algoPrefix].timeTaken} nanoseconds`);
+        fileState.results[algoPrefix] = {};
+        fileState.results[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
+        fileState.results[algoPrefix].testsRun = tester.testsRun;
+        fileState.results[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
+        console.log("Num tests: " + tester.testsRun + ` in ${fileState.results[algoPrefix].timeTaken} nanoseconds`);
 
         // Restore original results
         fileState.userAgentToResults = originalResults;
@@ -371,7 +372,7 @@
             if (fileNameToState.hasOwnProperty(key)) {
                 reduce(fileNameToState[key], algorithm, algoPrefix);
                 // Accumulate total time taken
-                totalTimeMS += (fileNameToState[key][algoPrefix].timeTaken / 1000000);
+                totalTimeMS += (fileNameToState[key].results[algoPrefix].timeTaken / 1000000);
             }
         }
         console.log(`Total time: ${totalTimeMS.toFixed(0)} milliseconds with ${algoPrefix}`);
