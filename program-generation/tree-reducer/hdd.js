@@ -118,6 +118,18 @@
      * @returns {Node} the minimized tree.
      */
     function hddStar(tree, test) {
+        return doWhileTreeShrinks(tree, test, hdd);
+    }
+
+    /**
+     * Repreats a reduction step until the tree does not get smaller in size any more.
+     *
+     * @param {Node} tree the tree obtained from the AST.
+     * @param {function(Node): string} test see ddmin
+     * @param reduction the recution machanism, expecting the current tree and the test function
+     * @returns {Node} the minimized tree.
+     */
+    function doWhileTreeShrinks(tree, test, reduction) {
         var currentTree = tree;
         var nbNodesBefore;
         var nbNodesAfter = currentTree.nbNodes();
@@ -126,7 +138,7 @@
         do {
             console.log("Iteration " + ++i + " of HDD*");
             nbNodesBefore = nbNodesAfter;
-            currentTree = hdd(currentTree, test);
+            currentTree = reduction(currentTree, test);
             nbNodesAfter = currentTree.nbNodes();
         } while(nbNodesAfter < nbNodesBefore);
 
@@ -135,4 +147,6 @@
     
     exports.hdd = hdd;
     exports.hddStar = hddStar;
+    exports.TreeLevelInput = TreeLevelInput;
+    exports.doWhileTreeShrinks = doWhileTreeShrinks;
 })();
