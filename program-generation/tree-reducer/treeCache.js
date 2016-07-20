@@ -8,7 +8,7 @@
         return function(tree) {
             let key = tree.hash();
             if(cache.hasOwnProperty(key)) {
-                console.log("Using cached value");
+                //console.log("Using tree cached value");
                 result = cache[key];
             } else {
                 // No cached value available

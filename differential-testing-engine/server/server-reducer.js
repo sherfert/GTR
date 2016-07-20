@@ -382,8 +382,9 @@
     // Invoke reduce as soon as n browsers have connected.
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
-    reduceAllFiles(hdd.hdd, "hdd");
-    reduceAllFiles(modelHdd.postTransformationHdd, "modelHdd");
+    reduceAllFiles(hdd.hdd, "HDD");
+    reduceAllFiles(modelHdd.postTransformationHddStar, "PT-HDD*");
+    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PTL-HDD*");
     //reduceAllFiles(hdd.hddStar, "hddStar");
     //reduceAllFiles(rdd.rdd, "rdd");
     //reduceAllFiles(rdd.rddStar, "rddStar");
