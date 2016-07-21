@@ -83,7 +83,7 @@
         var colors = ["red", "green", "blue", "yellow", "violet", "orange"];
 
         let plotcommand =
-            "set terminal png size 1280,768\n" +
+            "set terminal png size 2048,1200\n" +
             "set output '" + codeDir + "/stats/graph.png'\n" +
             "set datafile separator ','\n" +
             "set xtics rotate by -45\n" +
