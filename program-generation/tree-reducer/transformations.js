@@ -130,10 +130,16 @@
         "out": "R"
     };
 
+    // All manually identified transformations
     var transformations = [T1a, T1b, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b,
         T11c, T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f];
 
-
+    /**
+     * Tries to apply a certain transformation to a tree
+     * @param tree the tree
+     * @param rule the transformation
+     * @returns the transformed tree, if the transformation applies, undefined otherwise.
+     */
     function match(tree, rule) {
         // Store named nodes
         var map = {};
@@ -161,7 +167,7 @@
         if(tree.label != inTree.label) {
             return false;
         }
-        // Ensure that each edge if inTree is present in tree
+        // Ensure that each edge of inTree is present in tree
         for (let i = 0; i < inTree.outgoing.length; i++) {
             let found = false;
             for (let j = 0; j < tree.outgoing.length; j++) {
@@ -220,17 +226,6 @@
         }
         return res;
     }
-
-    // var code = "if('you' == true) {console.log('p')} else {foo(bar);}";
-    // var tree = treeProvider.astToTree(esprima.parse(code)).outgoing[0].target;
-    //
-    // var res = possibleTransformations(tree);
-    // for(let i = 0; i < res.length; i++) {
-    //
-    //     var resCode = treeGenerator.treeToCodeNoFileIO(res[i]);
-    //     console.log(i + ": " + resCode);
-    // }
-
 
     exports.possibleTransformations = possibleTransformations;
 

@@ -6,10 +6,10 @@
 (function () {
     "use strict";
     /**
-     * Writes the inferred rules inferences to disk. For each rule, it takes data in form of Map, Set or Array and converts
-     * them to a object. Finally it dumps this object in form JSON
+     * Writes the inferred rule inferences to disk. For each rule, it takes data in form of Map, Set or Array and converts
+     * them to an object. Finally it dumps this object in JSON form
      * @param {string} fileName - Name of the file
-     * @param {string} currentRuleInferences - An object, whose properties are contains inference data for each rule
+     * @param {object} currentRuleInferences - An object, whose properties contain inference data for each rule
      * */
     function writeToDisk(fileName, currentRuleInferences) {
         let util = require('./util');
@@ -17,8 +17,10 @@
 
         for (let dataStructure in currentRuleInferences) {
             if (currentRuleInferences.hasOwnProperty(dataStructure)) {
-                /* Check if instanceof an internal data-structure or built-in Map */
-                let mapData = currentRuleInferences[dataStructure] instanceof Set || currentRuleInferences[dataStructure] instanceof Map ? currentRuleInferences[dataStructure] : currentRuleInferences[dataStructure].map;
+                // Use the Map of Histograms and otherwise the object itself
+                let mapData = currentRuleInferences[dataStructure].map instanceof Map ?
+                              currentRuleInferences[dataStructure].map : currentRuleInferences[dataStructure];
+                // convert to JSON
                 writableData[dataStructure] = util.toJSON(mapData);
             }
         }

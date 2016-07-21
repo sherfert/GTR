@@ -74,7 +74,7 @@
     }
 
     /**
-     * Plots the statistics. Gnuplot must be installed for this.     *
+     * Plots the statistics. Gnuplot must be installed for this.
      *
      * @param {number} numAlgos the number of different algorithms
      * @returns {Object} the result from child_process.spawnSync called with gnuplot

@@ -177,40 +177,28 @@
         return convertObjectToMap(json);
     }
 
-    /* The idea is to convert a map to an object while writing to disk doing the opposite while reading from disk
-     * TODO: The conversion is kind of ugly. It has to perform a lot of checks. Can we do better.
-     * */
+    /** The idea is to convert a map to an object while writing to disk doing the opposite while reading from disk
+     *  TODO This implementation works only if an object, array, or Set does not have a nested Set/Map. It only
+     *  iterates into the children for Maps.
+     */
     function convertToStorableFormat(inferredData) {
-
         if (inferredData instanceof Set) {
             return [...inferredData];
-        }
-
-        const obj = Object.create(null);
-        for (let entry of inferredData) {
-            let key = entry[0];
-            /* TODO The following block trims the map further. Check if this is correct?
-             if (entry[1].size === 0) {
-             return obj;
-             }*/
-            let value = entry[1] instanceof Map ? convertToStorableFormat(entry[1]) : entry[1];
-            if (entry[1] instanceof Set) {
-                value = [...entry[1]]; // Get the values of the set in form of an array
-            } else {
-                for (let nextEntry in entry[1]) {
-                    if (entry[1][nextEntry] instanceof Set) {
-                        value = convertToStorableFormat(entry[1][nextEntry]);
-                    }
-                }
+        } else if(inferredData instanceof  Map) {
+            const obj = Object.create(null);
+            for (let [key, value] of inferredData) {
+                obj[key] = convertToStorableFormat(value);
             }
-            obj[key] = value;
+            return obj;
+        } else {
+            // Hopefully we are dealing with an object or array
+            return inferredData;
         }
-        return obj;
     }
 
     function writeToJSONfile(fileName, writableData) {
         try {
-            jsonfile.writeFileSync(fileName, writableData);
+            jsonfile.writeFileSync(fileName, writableData, {spaces: 2});
         } catch (err) {
             console.log("Could not write to JSON file " + err);
         }
