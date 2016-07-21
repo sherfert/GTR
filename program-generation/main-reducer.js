@@ -18,7 +18,8 @@
     var ddAlgo = function(code, test) {
         //return execWithCode(hdd.hddStar, code, test);
         //return execWithCode(rdd.rdd, code, test);
-        return execWithCode(modelhdd.postTransformationHddStar, code, test);
+        modelhdd.setUseInferredKnowledge(true);
+        return execWithCode(modelhdd.postLevelTransformationHddStar, code, test);
         //return ddmin.ddminLine(code, test);
     };
 

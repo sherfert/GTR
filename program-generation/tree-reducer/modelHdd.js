@@ -3,11 +3,22 @@
 (function() {
     var Input = require('./ddInput').Input;
     var hddScript = require('./hdd');
-    var possibleTransformations = require('./transformations').possibleTransformations;
+    var transformations = require('./transformations');
     var ddmin = require('./ddMin').ddmin;
     var hdd = hddScript.hdd;
     var TreeLevelInput = hddScript.TreeLevelInput;
     var treeCache = require('./treeCache');
+
+    // Change from outside to modify hebavior
+    var useInferredKnowledge = false;
+    function setUseInferredKnowledge(val) {
+        useInferredKnowledge = val;
+    }
+    // Uses the corresponding transformations depending whether the model schould be used or not
+    function possibleTransformations(subtree) {
+        return useInferredKnowledge ? transformations.possibleTransformationsWithModel(subtree) :
+            transformations.possibleTransformationsManual(subtree);
+    }
 
     function applyTransformationsToChildren(node, tree, test) {
         var transformationApplied = false;
@@ -128,6 +139,7 @@
         return hddScript.doWhileTreeShrinks(tree, cachedTest, preLevelTransformationHdd);
     }
 
+    exports.setUseInferredKnowledge = setUseInferredKnowledge;
     exports.postTransformationHdd = postTransformationHdd;
     exports.postTransformationHddStar = postTransformationHddStar;
     exports.postLevelTransformationHdd = postLevelTransformationHdd;

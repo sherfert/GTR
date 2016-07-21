@@ -3,8 +3,11 @@
 (function () {
     "use strict";
     var ruleProvider = require("./ruleProvider");
-    var jsonfile = require('jsonfile');
     var writeToDisk = require('../saveRuleInferencesToDisk').writeToDisk;
+    var loTrees = require("../labeledOrderedTrees");
+    var Node = loTrees.Node;
+    var Edge = loTrees.Edge;
+
     var currentRuleInferences = {
         children: new Map(),
         parents: new Map(),
@@ -80,14 +83,30 @@
                         let parentEdgeLabel = hasPossibleChild(parentLabel, parentEdgeSet, childLabel);
                         if(parentEdgeLabel) {
                             // We found a transformation
-                            console.log(`Replace ${nodeLabel} with child of ${edgeLabel}(${childLabel})`);
-                            console.log(`\tSince ${parentLabel} can have ${parentEdgeLabel}(${nodeLabel}|${childLabel})`);
+                            //console.log(`Replace ${nodeLabel} with child of ${edgeLabel}(${childLabel})`);
+                            //console.log(`\tSince ${parentLabel} can have ${parentEdgeLabel}(${nodeLabel}|${childLabel})`);
+                            currentRuleInferences.transformations.push(createTransformation(nodeLabel, edgeLabel));
                             break childLoop;
                         }
                     }
                 }
             }
         }
+    }
+
+    /**
+     * Create a transformation rule for modelHdd algorithms. The rule consist of replacing
+     * the node with its child found with the given edge label.
+     *
+     * @param nodeLabel the nodeLabel
+     * @param edgeLabel the edgeLabel
+     * @returns a transformation usable by modelHdd
+     */
+    function createTransformation(nodeLabel, edgeLabel) {
+        return {
+            "in": new Node(nodeLabel, new Edge(edgeLabel, "X")),
+            "out": "X"
+        };
     }
 
     /**
