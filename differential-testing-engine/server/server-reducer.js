@@ -384,8 +384,14 @@
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
     reduceAllFiles(hdd.hdd, "HDD");
-    reduceAllFiles(modelHdd.postTransformationHddStar, "PT-HDD*");
-    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PTL-HDD*");
+
+    modelHdd.setUseInferredKnowledge(false);
+    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLT");
+
+    // Set to use inferred knowledge
+    modelHdd.setUseInferredKnowledge(true);
+    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM");
+
     //reduceAllFiles(hdd.hddStar, "hddStar");
     //reduceAllFiles(rdd.rdd, "rdd");
     //reduceAllFiles(rdd.rddStar, "rddStar");
