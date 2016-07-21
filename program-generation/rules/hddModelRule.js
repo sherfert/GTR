@@ -35,6 +35,11 @@
             for(let i = 0; i < node.outgoing.length; i++) {
                 let edge = node.outgoing[i];
                 let child = edge.target;
+                // Only store children that have children themselves
+                // (Avoids putting literals and identifiers into the sets)
+                if(child.outgoing.length == 0) {
+                    continue;
+                }
 
                 // Create Set for the particular edge if not created yet
                 if(!childMap.has(edge.label)) {
@@ -49,7 +54,44 @@
     }
 
     function finalizeLearning() {
-        // nothing to return here
+        // go through each node label in the children map
+        for (let [nodeLabel, childMap] of currentRuleInferences.children) {
+            // Abort if the node does not have parents associated
+            if(!currentRuleInferences.parents.has(nodeLabel)) {
+                continue;
+            }
+
+            // go through all edges
+            for (let [edgeLabel, childSet] of childMap) {
+                // Go through all children
+                childLoop: for(let childLabel of childSet) {
+                    // Go through the parents
+                    for(let parentLabel of currentRuleInferences.parents.get(nodeLabel)) {
+                        // At least one of the children needs to appear as a child in one of the parents children
+                        if(hasPossibleChild(parentLabel, childLabel)) {
+                            // We found a transformation
+                            console.log(`Replace ${nodeLabel} with child of ${edgeLabel}`);
+                            console.log(`\tSince ${parentLabel} also can have ${childLabel}`);
+                            break childLoop;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function hasPossibleChild(nodeLabel, childLabel) {
+        let childMap = currentRuleInferences.children.get(nodeLabel);
+        // go through all edges
+        for (let [edgeLabel, childSet] of childMap) {
+            // Go through all children
+            for(let child of childSet) {
+                if(child == childLabel) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     function pickLabelOfNode(node, context, candidates) {
