@@ -129,6 +129,14 @@
         "in": new Node("LogicalExpression", new Edge("right", "R")),
         "out": "R"
     };
+    var T15a = {
+        "in": new Node("MemberExpression", new Edge("object", "O")),
+        "out": "O"
+    };
+    var T15b = {
+        "in": new Node("MemberExpression", new Edge("property", "P")),
+        "out": "P"
+    };
 
     // All manually identified transformations
     var transformations = [T1a, T1b, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b,
