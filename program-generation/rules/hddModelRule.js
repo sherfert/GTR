@@ -16,13 +16,22 @@
         if(node.outgoing.length > 0) {
             // Save the parent
             if(context.parent()) {
-                // Create Set if not created yet
+                // Create Map if not created yet
                 if(!currentRuleInferences.parents.has(node.label)) {
-                    currentRuleInferences.parents.set(node.label, new Set());
+                    currentRuleInferences.parents.set(node.label, new Map());
                 }
-                let parentSet = currentRuleInferences.parents.get(node.label);
-                // Add parent to Set
-                parentSet.add(context.parent().label);
+                let parentMap = currentRuleInferences.parents.get(node.label);
+
+
+                // Create a Set for the parent edges that lead to this node if not created yet
+                let parent = context.parent();
+                if(!parentMap.has(parent.label)) {
+                    parentMap.set(parent.label, new Set())
+                }
+                let parentEdgeSet = parentMap.get(parent.label);
+
+                // Add parent edge to Set
+                parentEdgeSet.add(context.lastEdge().label);
             }
 
             // Create Map for children if not created yet
@@ -66,9 +75,9 @@
                 // Go through all children
                 childLoop: for(let childLabel of childSet) {
                     // Go through the parents
-                    for(let parentLabel of currentRuleInferences.parents.get(nodeLabel)) {
+                    for(let [parentLabel, parentEdgeSet] of currentRuleInferences.parents.get(nodeLabel)) {
                         // At least one of the children needs to appear as a child in one of the parents children
-                        if(hasPossibleChild(parentLabel, childLabel)) {
+                        if(hasPossibleChild(parentLabel, parentEdgeSet, childLabel)) {
                             // We found a transformation
                             console.log(`Replace ${nodeLabel} with child of ${edgeLabel}`);
                             console.log(`\tSince ${parentLabel} also can have ${childLabel}`);
@@ -80,14 +89,25 @@
         }
     }
 
-    function hasPossibleChild(nodeLabel, childLabel) {
+    /**
+     * Checks if a node allows a child. The edge leasing to the child must be included in the given set.
+     *
+     * @param nodeLabel the label of the node
+     * @param nodeEdgeSet all allowed edge labels that may lead to the child
+     * @param childLabel the label of the child node
+     * @returns {boolean} s.a.
+     */
+    function hasPossibleChild(nodeLabel, nodeEdgeSet, childLabel) {
         let childMap = currentRuleInferences.children.get(nodeLabel);
         // go through all edges
         for (let [edgeLabel, childSet] of childMap) {
-            // Go through all children
-            for(let child of childSet) {
-                if(child == childLabel) {
-                    return true;
+            // The edge label must be in the given set
+            if(nodeEdgeSet.has(edgeLabel)) {
+                // Go through all children
+                for (let child of childSet) {
+                    if (child == childLabel) {
+                        return true;
+                    }
                 }
             }
         }
