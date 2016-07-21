@@ -77,10 +77,11 @@
                     // Go through the parents
                     for(let [parentLabel, parentEdgeSet] of currentRuleInferences.parents.get(nodeLabel)) {
                         // At least one of the children needs to appear as a child in one of the parents children
-                        if(hasPossibleChild(parentLabel, parentEdgeSet, childLabel)) {
+                        let parentEdgeLabel = hasPossibleChild(parentLabel, parentEdgeSet, childLabel);
+                        if(parentEdgeLabel) {
                             // We found a transformation
-                            console.log(`Replace ${nodeLabel} with child of ${edgeLabel}`);
-                            console.log(`\tSince ${parentLabel} also can have ${childLabel}`);
+                            console.log(`Replace ${nodeLabel} with child of ${edgeLabel}(${childLabel})`);
+                            console.log(`\tSince ${parentLabel} can have ${parentEdgeLabel}(${nodeLabel}|${childLabel})`);
                             break childLoop;
                         }
                     }
@@ -95,7 +96,7 @@
      * @param nodeLabel the label of the node
      * @param nodeEdgeSet all allowed edge labels that may lead to the child
      * @param childLabel the label of the child node
-     * @returns {boolean} s.a.
+     * @returns {boolean} the edge label that leads to the child, undefined otherwise
      */
     function hasPossibleChild(nodeLabel, nodeEdgeSet, childLabel) {
         let childMap = currentRuleInferences.children.get(nodeLabel);
@@ -106,12 +107,12 @@
                 // Go through all children
                 for (let child of childSet) {
                     if (child == childLabel) {
-                        return true;
+                        return edgeLabel;
                     }
                 }
             }
         }
-        return false;
+        return undefined;
     }
 
     function pickLabelOfNode(node, context, candidates) {
