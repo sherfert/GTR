@@ -74,8 +74,7 @@
             var document = treeToHTMLNode(tree);
             //util.print(document);
             //console.log("---------");
-            var htmlString = parse5.serialize(document);
-            return htmlString
+            return parse5.serialize(document);
         } catch (e) {
             console.log("Pretty printing HTML failed: " + e);
 

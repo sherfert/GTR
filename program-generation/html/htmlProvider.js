@@ -88,6 +88,7 @@
         }
     }
 
+    exports.htmlNodeToTree = htmlNodeToTree;
     exports.init = init;
     exports.nextTree = nextTree;
 

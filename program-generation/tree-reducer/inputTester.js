@@ -1,10 +1,9 @@
 // Author: Satia Herfert
 
 (function() {
-    var config = require("./../config").config;
     var crashTester = require("../js-ast/crashTest-JS");
     var syntaxTester = require("../js-ast/validityCheck-JS");
-    var treeGenerator = require("../" + config.treeGenerator);
+    var treeGenerator = require("../js-ast/jsAstGenerator");
 
 
     /**

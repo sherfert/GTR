@@ -1,11 +1,7 @@
 // Author: Satia Herfert
 
 (function() {
-    var Input = require('./ddInput').Input;
-    var ddmin = require('./ddMin').ddmin;
     var config = require("../config").config;
-    var treeProvider = require("../" + config.treeProvider);
-    var treeGenerator = require("../" + config.treeGenerator);
     var esprima = require('esprima');
     var jsonfile = require('jsonfile');
     var fs = require('fs');
@@ -233,7 +229,7 @@
     /**
      * Returns an array of all possible transformations of a subtree.
      * @param subtree the subtree
-     * @param transformations the list of general transformations
+     * @param ts the list of general transformations
      * @returns {Array} all possible transformations
      */
     function possibleTransformations(subtree, ts) {

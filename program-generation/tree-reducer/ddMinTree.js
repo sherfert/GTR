@@ -2,9 +2,8 @@
 
 (function() {
     var esprima = require('esprima');
-    var config = require("../config").config;
-    var treeProvider = require("../" + config.treeProvider);
-    var treeGenerator = require("../" + config.treeGenerator);
+    var treeProvider = require("../js-ast/jsAstProvider");
+    var treeGenerator = require("../js-ast/jsAstGenerator");
     var Input = require('./ddInput').Input;
     var ddmin = require('./ddMin').ddmin;
 
