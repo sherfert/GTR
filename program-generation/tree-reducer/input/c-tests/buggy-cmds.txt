@@ -1,10 +1,10 @@
 gcc-4.9 -c -O3 orwl_proc_symbols-prepro.c	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65395
 gcc-5 -v -save-temps crash.cpp	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=71569
-g++-5 -fsanitize=undefined  -Wall -Wextra -g segfault_ubsan.cpp && ./a.out	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70035
-g++-4.8 -g -O --std=c++11 bug.cc && ./a.out e4 e4 e4	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56973
+//g++-5 -fsanitize=undefined  -Wall -Wextra -g segfault_ubsan.cpp && ./a.out	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70035
+//g++-4.8 -g -O --std=c++11 bug.cc && ./a.out e4 e4 e4	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56973
 gcc-4.8 -g -fopenmp -O0 -gdwarf-2 -femit-struct-debug-baseonly ./debug-1.c	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=57737
-g++-4.9 -std=c++11 -fmerge-all-constants -flto gcc_crash.cpp -o gcc_crash.o	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67699
+g++-4.9 -std=c++11 -fmerge-all-constants -flto gcc_crash.cpp	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67699
 g++-4.7 -c -std=c++11 test.cpp	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56260
 gcc-5 --std=c++14 assert.cpp	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70353
 g++-4.8 -mavx2 -O2 -c simd.cpp	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70499
-g++-4.8 -std=c++11 y.cpp https://gcc.gnu.org/bugzilla/show_bug.cgi?id=54080
+g++-4.8 -std=c++11 y.cpp	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=54080

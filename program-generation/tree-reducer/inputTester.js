@@ -4,6 +4,9 @@
     var crashTester = require("../js-ast/crashTest-JS");
     var syntaxTester = require("../js-ast/validityCheck-JS");
     var treeGenerator = require("../js-ast/jsAstGenerator");
+    var tmp = require('tmp');
+    var fs = require('fs');
+    var child_process = require('child_process');
 
 
     /**
@@ -179,7 +182,55 @@
         return "";
     }
 
+    /**
+     *  Tests gcc/g++ for crashes.
+     */
+    class GCCCrashTester extends Tester {
+
+        /**
+         * @param command: The shell command to invoke to compile the file
+         * @param ddAlgo the DD algorithm
+         */
+        constructor(command, ddAlgo) {
+            super(function(x) {return this.test(x);}, ddAlgo);
+            this.command = command;
+        }
+
+        /**
+         * Tests an input by executing it and checking if GCC/G++ crashes.
+         * @param {object} input the input to execute
+         * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the error
+         */
+        test(input) {
+            var result = this.runGcc(input);
+            console.log(result.error);
+            if(result.status != 0) {
+                // The same error is triggered
+                return "fail";
+            } else {
+                // No compiler crash
+                return "pass";
+            }
+        }
+
+        runGcc(code) {
+            var commandSuffix = " 2>&1 | grep -i 'internal compiler error'";
+            // Write the code to a temporary file (will be removed by library)
+            let file = tmp.fileSync();
+            fs.writeFileSync(file.name, code);
+            // Return the result of spawning a child process
+            var finalCmd = this.command + " " + file.name + " " + commandSuffix;
+            return child_process.spawnSync(finalCmd, [], {
+                encoding: 'utf8',
+                shell: false,
+                timeout: 500,
+                killSignal: 'SIGKILL'
+            });
+        }
+    }
+
     exports.Tester = Tester;
     exports.CodeTester = CodeTester;
     exports.JSTreeTester = JSTreeTester;
+    exports.GCCCrashTester = GCCCrashTester;
 })();
