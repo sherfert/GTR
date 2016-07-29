@@ -161,8 +161,7 @@
      * @returns {String} the minimized code.
      */
     function executeWithCode(algorithm, code, test) {
-        var ast = esprima.parse(code);
-        var tree = treeProvider.astToTree(ast);
+        var tree = treeProvider.codeToTree(code);
 
         var internalTest = function(t) {
             var c = treeGenerator.treeToCodeNoFileIO(t);

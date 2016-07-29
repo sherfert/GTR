@@ -94,6 +94,11 @@
         return node;
     }
 
+    function codeToTree(code) {
+        var ast = esprima.parse(code);
+        return astToTree(ast);
+    }
+
     function nextTree() {
         currentIndex++;
         if (currentIndex < trees.length) {
@@ -104,5 +109,6 @@
     exports.init = init;
     exports.nextTree = nextTree;
     exports.astToTree = astToTree;
+    exports.codeToTree = codeToTree;
 
 })();
