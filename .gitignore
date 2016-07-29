@@ -3,13 +3,13 @@
 *.iml
 *.log
 *.fuse_hidden*
-*.txt
 **/jalangi2
 **/node_modules
 **/corpusForTesting*/*
 */generatedCode/*
 */gen*/*
 */differential-testing-results/**
+differential-testing-engine/last-read.txt
 */inconsistentCode/*
 */results/**
 **/valid-*
