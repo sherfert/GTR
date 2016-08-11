@@ -203,9 +203,8 @@
          */
         test(input) {
             var result = this.runGcc(input);
-            console.log(result.error);
-            if(result.status != 0) {
-                // The same error is triggered
+            if(result.status == 0) {
+                // The same error is triggered (grep was successful)
                 return "fail";
             } else {
                 // No compiler crash
@@ -214,18 +213,31 @@
         }
 
         runGcc(code) {
-            var commandSuffix = " 2>&1 | grep -i 'internal compiler error'";
+            //console.log(code);
+            var commandSuffix = "2>&1 | grep -i 'internal compiler error'";
             // Write the code to a temporary file (will be removed by library)
-            let file = tmp.fileSync();
+            let file = tmp.fileSync({ prefix: 'gcctest-', postfix: '.c' });
             fs.writeFileSync(file.name, code);
             // Return the result of spawning a child process
             var finalCmd = this.command + " " + file.name + " " + commandSuffix;
-            return child_process.spawnSync(finalCmd, [], {
+            var result = child_process.spawnSync(finalCmd, [], {
                 encoding: 'utf8',
-                shell: false,
+                shell: true,
+                cwd: "/tmp",
                 timeout: 500,
                 killSignal: 'SIGKILL'
             });
+
+            // We have to cleap up files in the tmp folder, otherwise we produce a lot of garbage
+            child_process.spawnSync("rm *.o *.out *.c", [], {
+                encoding: 'utf8',
+                shell: true,
+                cwd: "/tmp",
+                timeout: 500,
+                killSignal: 'SIGKILL'
+            });
+
+            return result;
         }
     }
 

@@ -12,7 +12,8 @@
     var hdd = require("./tree-reducer/hdd");
     var modelhdd = require("./tree-reducer/modelHdd");
     var rdd = require("./tree-reducer/rdd");
-    var ddmin = require("./tree-reducer/ddMinLine");
+    var ddminLine = require("./tree-reducer/ddMinLine").ddminLine;
+    var ddminChar = require("./tree-reducer/ddMinChar").ddminChar;
 
     var code = "" + fs.readFileSync("tree-reducer/input/test3.js");
 
@@ -21,7 +22,7 @@
         //return execWithCode(rdd.rdd, code, test);
         //modelhdd.setUseInferredKnowledge(true);
         //return execWithCode(modelhdd.postLevelTransformationHddStar, code, test);
-        return ddmin.ddminLine(code, test);
+        return ddminLine(code, test);
     };
 
     //var tester = new inputTester.CodeTester(code, ddAlgo);
