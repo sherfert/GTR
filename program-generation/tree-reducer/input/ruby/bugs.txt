@@ -12,3 +12,5 @@ https://bugs.ruby-lang.org/issues/11352		ruby2.2.0 crash9.rb
 https://bugs.ruby-lang.org/issues/10966		ruby2.2.0 crash10.rb
 
 https://bugs.ruby-lang.org/search?all_words=1&changesets=1&documents=1&issues=1&messages=1&news=1&page=15&projects=1&q=crash&submit=Submit&titles_only=&utf8=%E2%9C%93&wiki_pages=1
+https://github.com/whitequark/parser
+https://github.com/seattlerb/ruby2ruby
