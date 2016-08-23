@@ -192,8 +192,7 @@ def as_ast(dct):
     else:
         return dct
 
-with open(sys.argv[1], 'r') as content_file:
-    content = content_file.read()
+content = sys.stdin.read()
 
 tree = json.loads(content, object_hook=as_ast)
 print astor.to_source(tree)

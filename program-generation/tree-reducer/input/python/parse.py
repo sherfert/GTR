@@ -31,12 +31,11 @@ def get_value(attr_value):
     else:
         raise Exception("unknow case for '%s' of type '%s'" % (attr_value, type(attr_value)))
 
-with open(sys.argv[1], 'r') as content_file:
-    content = content_file.read()
+content = sys.stdin.read()
 
 tree = parse(content)
 
 str = ast2json(tree)
-js = json.dumps(str, indent=4)
+js = json.dumps(str)
 print(js)
 
