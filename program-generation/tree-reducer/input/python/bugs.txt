@@ -1,0 +1,10 @@
+https://bugs.python.org/issue25455		python3.4 bug1.py	(V3.4.3) (OK)
+https://bugs.python.org/issue27195		python2.7 bug2.py	(V2.7.6)
+https://bugs.python.org/issue15994		python3.4 bug3.py	(OK)
+https://bugs.python.org/issue22898		python3.4 bug4.py	(OK)
+https://bugs.python.org/issue24100		python2.7 bug5.py
+https://bugs.python.org/issue24828		python2.7 bug6.py
+https://bugs.python.org/issue24098		python3.4 bug7.py	(OK)
+https://bugs.python.org/issue24482		python2.7 bug8.py
+https://bugs.python.org/issue6717		python3.4 bug10.py	(OK)
+https://bugs.python.org/issue15251		python2.7 bug11.py
