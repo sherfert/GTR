@@ -29,9 +29,29 @@
     //var newCode = tester.runTestWithInitialInput();
 
 
-    var ccode = "" + fs.readFileSync("tree-reducer/input/c-tests/orwl_proc_symbols-prepro.c");
-    var tester = new inputTester.GCCCrashTester("gcc-4.9 -c -O3", ddAlgo);
-    var newCode = tester.runTest(ccode);
+    var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug1.py");
+    var tester = new inputTester.PyCrashTester("python3.4", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug2.py");
+    // var tester = new inputTester.PyCrashTester("python2.7", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug3.py"); // Non-deterministic!
+    // var tester = new inputTester.PyCrashTester("python3.4", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug4.py");
+    // var tester = new inputTester.PyCrashTester("python3.4", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug5.py");
+    // var tester = new inputTester.PyCrashTester("python2.7", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug6.py");
+    // var tester = new inputTester.PyCrashTester("python2.7", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug7.py");
+    // var tester = new inputTester.PyCrashTester("python3.4", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug8.py"); // Slightly nonde
+    // var tester = new inputTester.PyCrashTester("python2.7", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug9.py");
+    // var tester = new inputTester.PyCrashTester("python3.4", ddAlgo);
+    // var pycode = "" + fs.readFileSync("tree-reducer/input/python/bug10.py");
+    // var tester = new inputTester.PyCrashTester("python2.7", ddAlgo);
+
+
+    var newCode = tester.runTest(pycode);
     
     console.log("RESULT:\n" + newCode);
     console.log("TESTS RUN: " + tester.testsRun);

@@ -1,21 +1,31 @@
-import sys
+from marshal import loads, dumps
+from itertools import chain
+import new
 
-def x():
-	pass
+def fun(x):
+    return lambda : x + 5
 
-def g(*args):
-	if True: # change to True to crash interpreter
-		try:			
-			x()
-		except:
-			pass
-	return g
+code_args = [ getattr(fun.func_code, a)
+              for a in ( 'co_argcount', 
+                         'co_nlocals',
+                         'co_stacksize',
+                         'co_flags',
+                         'co_code',
+                         'co_consts', 
+                         'co_names',
+                         'co_varnames',
+                         'co_filename',
+                         'co_name',
+                         'co_firstlineno',
+                         'co_lnotab'       ) ]
 
-def f():
-	sys.getrecursionlimit()
-	f()
+from pprint import pprint
+# Strangely, the crash went away when I comment out the call to pprint
+# below.
+pprint(code_args)
 
-import sys
-sys.settrace(g)
+code = new.code(*code_args)
+mcopy_code = loads(dumps(code))
 
-f()
+new_fun = new.function(mcopy_code, globals())
+print new_fun(5)()

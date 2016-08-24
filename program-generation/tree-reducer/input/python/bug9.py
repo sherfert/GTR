@@ -1,38 +1,21 @@
-#! /usr/bin/python
+import sys
 
-import argparse
+def x():
+	pass
 
+def g(*args):
+	if True: # change to True to crash interpreter
+		try:			
+			x()
+		except:
+			pass
+	return g
 
-with open('simple','w') as argfile:
-    argfile.write('-egg\nspam\n')
+def f():
+	sys.getrecursionlimit()
+	f()
 
-parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
-parser.add_argument('-egg')
-ns = parser.parse_args(['@simple'])
+import sys
+sys.settrace(g)
 
-print ns
-
-
-with open('empty_string_value','w') as argfile:
-    argfile.write('-zyxxy\n\n-xyzzy\n\n-magic\nword\n')
-
-parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
-parser.add_argument('-zyxxy')
-parser.add_argument('-xyzzy')
-parser.add_argument('-magic')
-
-ns = parser.parse_args(['@empty_string_value'])
-
-print ns
-
-with open('ends_with_blank_line','w') as argfile:
-    argfile.write('-foo\nbar\n-baz\nquux\n\n')
-
-parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
-parser.add_argument('-foo')
-parser.add_argument('-baz')
-
-ns = parser.parse_args(['@ends_with_blank_line'])
-
-print ns
-
+f()

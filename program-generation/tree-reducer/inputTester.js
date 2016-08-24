@@ -183,6 +183,53 @@
     }
 
     /**
+     *  Tests any python command for crashes.
+     */
+    class PyCrashTester extends Tester {
+
+        /**
+         * @param command The shell command to invoke
+         * @param ddAlgo he DD algorithm
+         */
+        constructor(command, ddAlgo) {
+            super(function(x) {return this.test(x);}, ddAlgo);
+            this.command = command;
+        }
+
+        /**
+         * Tests an input by executing it and checking if the command crashes.
+         * @param {object} input the input to execute
+         * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the error
+         */
+        test(input) {
+            var result = this.runCommand(input);
+            // Stack overflow or segmentation fault
+            if(result.status == 134 || result.status == 139) {
+                // The same error is triggered (grep was successful)
+                return "fail";
+            } else {
+                // No compiler crash
+                return "pass";
+            }
+        }
+
+        runCommand(code) {
+            // Write the code to a temporary file (will be removed by library)
+            let file = tmp.fileSync({ prefix: 'crashtest-', postfix: '.py' });
+            fs.writeFileSync(file.name, code);
+            // Return the result of spawning a child process
+            var finalCmd = this.command + " " + file.name;
+            return child_process.spawnSync(finalCmd, [], {
+                encoding: 'utf8',
+                shell: true,
+                cwd: "/tmp",
+                timeout: 500,
+                killSignal: 'SIGKILL'
+            });
+        }
+    }
+
+    /**
      *  Tests gcc/g++ for crashes.
      */
     class GCCCrashTester extends Tester {
@@ -213,7 +260,6 @@
         }
 
         runGcc(code) {
-            //console.log(code);
             var commandSuffix = "2>&1 | grep -i 'internal compiler error'";
             // Write the code to a temporary file (will be removed by library)
             let file = tmp.fileSync({ prefix: 'gcctest-', postfix: '.c' });
@@ -244,5 +290,6 @@
     exports.Tester = Tester;
     exports.CodeTester = CodeTester;
     exports.JSTreeTester = JSTreeTester;
+    exports.PyCrashTester = PyCrashTester;
     exports.GCCCrashTester = GCCCrashTester;
 })();
