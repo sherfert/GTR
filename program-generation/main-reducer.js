@@ -5,8 +5,8 @@
     var esprima = require('esprima');
     var escodegen = require('escodegen');
     var config = require("./config").config;
-    var jsTreeProvider = require(config.treeProvider);
-    var jsTreeGenerator = require(config.treeGenerator);
+    var jsTreeProvider = require('./js-ast/jsAstProvider');
+    var jsTreeGenerator = require('./js-ast/jsAstGenerator');
     var pyTreeProvider = require('./py-ast/pyAstProvider');
     var pyTreeGenerator = require('./py-ast/pyAstGenerator');
     var inputTester = require("./tree-reducer/inputTester");

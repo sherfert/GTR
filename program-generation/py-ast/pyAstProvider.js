@@ -6,6 +6,11 @@
     var loTrees = require("./../labeledOrderedTrees");
     var child_process = require('child_process');
 
+    var config = require("./../config").config;
+
+    var trees = [];
+    var currentIndex = -1;
+
     var ignoredASTProps = {
         type: true,
         raw: true,
@@ -26,6 +31,40 @@
         return loTrees.createTree(obj, "ast_type", ["col_offset", "lineno"]);
     }
 
+
+    /**
+     * Initialize this tree provider for the corpus learning process
+     */
+    function init() {
+        var filepath = config.corpusDir;
+        var files = fs.readdirSync(filepath);
+        const maxFiles = config.maxNoOfFilesToLearnFrom;
+        /* Selecting only top number of files to learn from */
+        if (maxFiles > 0) {
+            files = files.slice(0, maxFiles);
+        }
+        fileLoop: for (var i = 0; i < files.length; i++) {
+            var file = filepath + "/" + files[i];
+            if (!fs.lstatSync(file).isDirectory()) { // Skip directories
+                var content = fs.readFileSync(file);
+                var tree = codeToTree(content);
+                trees.push(tree);
+            }
+        }
+    }
+
+    /**
+     * Return the next tree during the corpus learning process
+     */
+    function nextTree() {
+        currentIndex++;
+        if (currentIndex < trees.length) {
+            return trees[currentIndex];
+        }
+    }
+
     exports.codeToTree = codeToTree;
+    exports.init = init;
+    exports.nextTree = nextTree;
 
 })();

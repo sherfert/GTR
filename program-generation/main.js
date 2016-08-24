@@ -12,7 +12,7 @@
     learning.learn();
     //timer.stopTask("learning");
     //timer.startTask("generation");
-    generation.generate();
+    //generation.generate();
     //timer.stopTask("generation");
 
 })();

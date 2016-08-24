@@ -103,6 +103,7 @@
         return result.stdout;
     }
 
+    // Just to be compatible with the previous archticture... (jsAstGenerator)
     function treeToCodeNoFileIO(tree) {
         return treeToCode(tree);
     }

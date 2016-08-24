@@ -110,7 +110,7 @@
     }
 
     /**
-     * Checks if a node allows a child. The edge leasing to the child must be included in the given set.
+     * Checks if a node allows a child. The edge leading to the child must be included in the given set.
      *
      * @param nodeLabel the label of the node
      * @param nodeEdgeSet all allowed edge labels that may lead to the child

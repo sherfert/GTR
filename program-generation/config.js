@@ -6,13 +6,14 @@
     *  There could be chained dependence among rules.
     * */
     var ruleNames = [
-        "ancestorConstraintRule",
-        "rootRule",
-        "commonSequenceRule",
-        "edgeLabelRule",
-        "ancestorBasedNodeLabelRule",
-        "parentBasedNodeLabelRule"
+        // "ancestorConstraintRule",
+        // "rootRule",
+        // "commonSequenceRule",
+        // "edgeLabelRule",
+        // "ancestorBasedNodeLabelRule",
+        // "parentBasedNodeLabelRule"
         // "edgeToedgeTargetConstrain"
+        "hddModelRule"
     ];
 
     var generatorDefaults = {
@@ -23,8 +24,10 @@
 
     exports.config = {
         ruleNames: ruleNames,
-        treeProvider: "./js-ast/jsAstProvider",
-        treeGenerator: "./js-ast/jsAstGenerator",
+        // treeProvider: "./js-ast/jsAstProvider",
+        // treeGenerator: "./js-ast/jsAstGenerator",
+        treeProvider: "./py-ast/pyAstProvider",
+        treeGenerator: "./py-ast/pyAstGenerator",
         //treeProvider: "./html/htmlProvider",
         //treeGenerator: "./html/htmlGenerator",
 
@@ -34,10 +37,10 @@
          *  TODO Make all directories relative to main.js
          /* Mandatory directories */
 
-        fileType: "JS", // also change treeProvider, treeGenerator
-        corpusDir: "./corpusForTestingJS",
+        fileType: "Py", // also change treeProvider, treeGenerator
+        corpusDir: "./corpusForTestingPy",
 
-        maxNoOfFilesToLearnFrom: 1, // 0 for all files in the directory
+        maxNoOfFilesToLearnFrom: 0, // 0 for all files in the directory
         //differentialTestingDirectory: "/nknkjn",
         /* If this (usePersistentKnowledge) is set to 'true' then the corpus is ignored. inferredKnowledgeDir is used to search
          for knowledge. For each rule, if the corresponding file is not found, then the program terminates.
@@ -59,7 +62,7 @@
         maxNbGeneratedTrees: 10, // Maximum tries to generate the required valid. Ideally, maxNbGeneratedTrees > nbValidTrees
         nbValidTrees: 10,
         forceSameProgramGeneration: false, // If the seed is fixed and useRandomSeed is set to 'true'. The the program will generate the same program over and over. Prevent this?
-        nodePath: "/usr/bin/node", // This is necessary for testing if a generated program crashes while execution
+        nodePath: "/home/satia/.nvm/versions/node/v6.0.0/bin/node", // This is necessary for testing if a generated program crashes while execution
         generationLogFile: "generation.log",
 
         /* Stats and Plots */
