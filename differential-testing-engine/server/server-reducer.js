@@ -20,6 +20,8 @@
     }
     var fs = require('fs');
     var Tester = require("../../program-generation/tree-reducer/inputTester").Tester;
+    var treeProvider = require("../../program-generation/js-ast/jsAstProvider");
+    var treeGenerator = require("../../program-generation/js-ast/jsAstGenerator");
     var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("../../program-generation/tree-reducer/hdd");
     var modelHdd = require("../../program-generation/tree-reducer/modelHdd");
@@ -336,7 +338,7 @@
 
         // DD algorithm
         var ddAlgo = function(code, test) {
-            return execWithCode(algorithm, code, test);
+            return execWithCode(treeProvider, treeGenerator, algorithm, code, test);
         };
         // Test function that just expects code, so we can pass it to DD
         var test = function(c) {

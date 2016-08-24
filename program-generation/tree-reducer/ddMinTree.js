@@ -1,9 +1,6 @@
 // Author: Satia Herfert
 
 (function() {
-    var esprima = require('esprima');
-    var treeProvider = require("../js-ast/jsAstProvider");
-    var treeGenerator = require("../js-ast/jsAstGenerator");
     var Input = require('./ddInput').Input;
     var ddmin = require('./ddMin').ddmin;
 
@@ -155,12 +152,14 @@
      * It can be used at the moment with ddminTree, hdd and hddStar as the first
      * parameter.
      *
+     * @param treeProvider the tree provider
+     * @param treeGenerator the tree generator
      * @param {function(Node,function(Node): string):Node} algorithm the tree-based algorithm to use
      * @param {String} code the code to minimize
      * @param {function(string): string} test see below
      * @returns {String} the minimized code.
      */
-    function executeWithCode(algorithm, code, test) {
+    function executeWithCode(treeProvider, treeGenerator, algorithm, code, test) {
         var tree = treeProvider.codeToTree(code);
 
         var internalTest = function(t) {

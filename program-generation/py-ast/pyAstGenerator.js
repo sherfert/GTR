@@ -103,6 +103,11 @@
         return result.stdout;
     }
 
+    function treeToCodeNoFileIO(tree) {
+        return treeToCode(tree);
+    }
+
     exports.treeToCode = treeToCode;
+    exports.treeToCodeNoFileIO = treeToCodeNoFileIO;
 
 })();
