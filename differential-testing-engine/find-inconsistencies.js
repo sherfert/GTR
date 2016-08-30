@@ -10,7 +10,7 @@ var jsonfile = require('jsonfile');
 function runner(argument) {
     var path = require('path');
     var currentDir = process.cwd();
-    var pathToread = currentDir + "/gen20160622/";
+    var pathToread = currentDir + "/generatedCode/";
     var pathToWrite = './differential-testing-results/';
     createWorkingDirectory(pathToWrite);
     //var pathToread = currentDir + "/generatedCode-tr-catch/";

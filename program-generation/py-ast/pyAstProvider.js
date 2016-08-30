@@ -43,11 +43,16 @@
         if (maxFiles > 0) {
             files = files.slice(0, maxFiles);
         }
-        fileLoop: for (var i = 0; i < files.length; i++) {
+        for (var i = 0; i < files.length; i++) {
             var file = filepath + "/" + files[i];
             if (!fs.lstatSync(file).isDirectory()) { // Skip directories
+
                 var content = fs.readFileSync(file);
-                var tree = codeToTree(content);
+                try {
+                    var tree = codeToTree(content);
+                } catch (e) {
+                    continue; // ignore files with errors
+                }
                 trees.push(tree);
             }
         }
