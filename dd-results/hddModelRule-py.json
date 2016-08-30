@@ -1,0 +1,3279 @@
+{
+  "children": {
+    "Module": {
+      "body": [
+        "ImportFrom",
+        "ClassDef",
+        "Import",
+        "TryExcept",
+        "FunctionDef",
+        "Assign",
+        "Expr",
+        "If",
+        "Raise",
+        "Print",
+        "Delete",
+        "For",
+        "With",
+        "AugAssign"
+      ]
+    },
+    "ImportFrom": {
+      "names": [
+        "alias"
+      ]
+    },
+    "alias": {},
+    "ClassDef": {
+      "body": [
+        "Assign",
+        "FunctionDef",
+        "Expr",
+        "ClassDef",
+        "If"
+      ],
+      "bases": [
+        "Attribute",
+        "Name",
+        "Call"
+      ],
+      "decorator_list": [
+        "Call",
+        "Attribute",
+        "Name"
+      ]
+    },
+    "Assign": {
+      "value": [
+        "Name",
+        "List",
+        "Call",
+        "Attribute",
+        "BinOp",
+        "BoolOp",
+        "ListComp",
+        "Tuple",
+        "Str",
+        "Dict",
+        "Num",
+        "Subscript",
+        "IfExp",
+        "SetComp",
+        "Compare",
+        "DictComp",
+        "UnaryOp",
+        "Lambda",
+        "GeneratorExp",
+        "Set"
+      ],
+      "targets": [
+        "Name",
+        "Attribute",
+        "Tuple",
+        "Subscript"
+      ]
+    },
+    "Name": {},
+    "List": {
+      "elts": [
+        "Call",
+        "Tuple",
+        "Attribute",
+        "IfExp",
+        "Str",
+        "Name",
+        "BinOp",
+        "Dict",
+        "Num",
+        "List",
+        "BoolOp",
+        "Subscript",
+        "UnaryOp",
+        "Lambda",
+        "Set"
+      ]
+    },
+    "Attribute": {
+      "value": [
+        "Name",
+        "Attribute",
+        "Call",
+        "Str",
+        "Subscript",
+        "BoolOp",
+        "BinOp",
+        "Dict"
+      ]
+    },
+    "Import": {
+      "names": [
+        "alias"
+      ]
+    },
+    "Call": {
+      "args": [
+        "Attribute",
+        "Str",
+        "List",
+        "Name",
+        "Call",
+        "BinOp",
+        "BoolOp",
+        "Tuple",
+        "Dict",
+        "IfExp",
+        "Num",
+        "Subscript",
+        "GeneratorExp",
+        "SetComp",
+        "ListComp",
+        "UnaryOp",
+        "Lambda",
+        "Compare",
+        "Set"
+      ],
+      "func": [
+        "Attribute",
+        "Name",
+        "Call",
+        "Subscript",
+        "BinOp"
+      ],
+      "keywords": [
+        "keyword"
+      ],
+      "starargs": [
+        "Name",
+        "ListComp",
+        "Subscript",
+        "Attribute",
+        "Call",
+        "BinOp",
+        "List"
+      ],
+      "kwargs": [
+        "Name",
+        "Dict",
+        "Call",
+        "Attribute",
+        "Subscript",
+        "BoolOp"
+      ]
+    },
+    "Tuple": {
+      "elts": [
+        "Str",
+        "Call",
+        "Attribute",
+        "Name",
+        "Tuple",
+        "Dict",
+        "BinOp",
+        "List",
+        "ListComp",
+        "DictComp",
+        "Subscript",
+        "BoolOp",
+        "Num",
+        "IfExp",
+        "Lambda",
+        "Compare",
+        "Set"
+      ]
+    },
+    "Str": {},
+    "keyword": {
+      "value": [
+        "Str",
+        "List",
+        "Name",
+        "Num",
+        "Attribute",
+        "Dict",
+        "Tuple",
+        "Call",
+        "Subscript",
+        "ListComp",
+        "BinOp",
+        "BoolOp",
+        "UnaryOp",
+        "IfExp",
+        "Compare",
+        "Set",
+        "Lambda",
+        "DictComp"
+      ]
+    },
+    "Num": {},
+    "Dict": {
+      "keys": [
+        "Str",
+        "Name",
+        "Attribute",
+        "Num",
+        "BinOp",
+        "Tuple",
+        "Call",
+        "Subscript"
+      ],
+      "values": [
+        "Tuple",
+        "Str",
+        "Name",
+        "Call",
+        "Attribute",
+        "BinOp",
+        "BoolOp",
+        "Num",
+        "Compare",
+        "IfExp",
+        "Dict",
+        "List",
+        "ListComp",
+        "Subscript",
+        "UnaryOp",
+        "Set",
+        "Lambda"
+      ]
+    },
+    "TryExcept": {
+      "body": [
+        "ImportFrom",
+        "Assign",
+        "Expr",
+        "Return",
+        "If",
+        "Import",
+        "Delete",
+        "With",
+        "For",
+        "While",
+        "TryExcept",
+        "TryFinally",
+        "AugAssign",
+        "Raise",
+        "Exec"
+      ],
+      "handlers": [
+        "ExceptHandler"
+      ],
+      "orelse": [
+        "If",
+        "Expr",
+        "Assign",
+        "With",
+        "AugAssign",
+        "Return",
+        "Raise",
+        "TryExcept",
+        "FunctionDef",
+        "Import",
+        "ImportFrom",
+        "For"
+      ]
+    },
+    "ExceptHandler": {
+      "body": [
+        "ImportFrom",
+        "Assign",
+        "Raise",
+        "Print",
+        "Return",
+        "If",
+        "Expr",
+        "For",
+        "AugAssign",
+        "TryExcept",
+        "Import",
+        "ClassDef",
+        "FunctionDef",
+        "With",
+        "Assert"
+      ],
+      "type": [
+        "Name",
+        "Attribute",
+        "Tuple"
+      ],
+      "name": [
+        "Name"
+      ]
+    },
+    "FunctionDef": {
+      "body": [
+        "Expr",
+        "TryExcept",
+        "Return",
+        "Assign",
+        "For",
+        "If",
+        "TryFinally",
+        "FunctionDef",
+        "Print",
+        "With",
+        "Raise",
+        "While",
+        "Global",
+        "AugAssign",
+        "Import",
+        "ImportFrom",
+        "ClassDef",
+        "Delete",
+        "Assert",
+        "Exec"
+      ],
+      "args": [
+        "arguments"
+      ],
+      "decorator_list": [
+        "Name",
+        "Attribute",
+        "Call"
+      ]
+    },
+    "Expr": {
+      "value": [
+        "Call",
+        "Str",
+        "Yield",
+        "Attribute",
+        "Subscript",
+        "Name",
+        "ListComp",
+        "Compare",
+        "BinOp",
+        "Tuple"
+      ]
+    },
+    "arguments": {
+      "args": [
+        "Name"
+      ],
+      "defaults": [
+        "Name",
+        "Str",
+        "Num",
+        "Lambda",
+        "Tuple",
+        "Attribute",
+        "List",
+        "Call",
+        "Set",
+        "BinOp"
+      ]
+    },
+    "If": {
+      "body": [
+        "Assign",
+        "Raise",
+        "Expr",
+        "Return",
+        "If",
+        "For",
+        "TryExcept",
+        "AugAssign",
+        "FunctionDef",
+        "ImportFrom",
+        "Delete",
+        "While",
+        "Print",
+        "Assert",
+        "With",
+        "ClassDef",
+        "Import",
+        "Exec"
+      ],
+      "test": [
+        "Compare",
+        "UnaryOp",
+        "Attribute",
+        "BoolOp",
+        "Name",
+        "Call",
+        "Subscript",
+        "BinOp"
+      ],
+      "orelse": [
+        "If",
+        "FunctionDef",
+        "Assign",
+        "Return",
+        "Expr",
+        "For",
+        "TryExcept",
+        "TryFinally",
+        "With",
+        "Raise",
+        "While",
+        "ImportFrom",
+        "Print",
+        "Assert",
+        "AugAssign",
+        "Import",
+        "ClassDef",
+        "Delete"
+      ]
+    },
+    "BinOp": {
+      "right": [
+        "Attribute",
+        "Name",
+        "Dict",
+        "Tuple",
+        "Call",
+        "Num",
+        "Subscript",
+        "BinOp",
+        "Str",
+        "ListComp",
+        "IfExp",
+        "List",
+        "BoolOp",
+        "Set",
+        "UnaryOp"
+      ],
+      "left": [
+        "Attribute",
+        "Name",
+        "Call",
+        "Str",
+        "List",
+        "BinOp",
+        "IfExp",
+        "BoolOp",
+        "Subscript",
+        "Num",
+        "UnaryOp",
+        "Tuple",
+        "ListComp"
+      ]
+    },
+    "Compare": {
+      "comparators": [
+        "Num",
+        "Str",
+        "Call",
+        "Attribute",
+        "Name",
+        "BinOp",
+        "Subscript",
+        "List",
+        "Tuple",
+        "Set",
+        "ListComp",
+        "IfExp",
+        "SetComp"
+      ],
+      "left": [
+        "Name",
+        "Attribute",
+        "Call",
+        "Str",
+        "Subscript",
+        "BinOp",
+        "Tuple",
+        "Num",
+        "UnaryOp"
+      ]
+    },
+    "Return": {
+      "value": [
+        "Call",
+        "Name",
+        "BoolOp",
+        "Attribute",
+        "BinOp",
+        "Str",
+        "Dict",
+        "Compare",
+        "Tuple",
+        "Subscript",
+        "ListComp",
+        "DictComp",
+        "List",
+        "IfExp",
+        "Lambda",
+        "Num",
+        "GeneratorExp",
+        "UnaryOp"
+      ]
+    },
+    "For": {
+      "body": [
+        "TryExcept",
+        "Expr",
+        "Assign",
+        "If",
+        "FunctionDef",
+        "For",
+        "AugAssign",
+        "Assert",
+        "Return",
+        "While",
+        "With",
+        "TryFinally",
+        "Print",
+        "Delete",
+        "ClassDef"
+      ],
+      "target": [
+        "Name",
+        "Tuple"
+      ],
+      "iter": [
+        "Call",
+        "Name",
+        "Attribute",
+        "Subscript",
+        "Tuple",
+        "BinOp",
+        "List",
+        "Str",
+        "ListComp"
+      ],
+      "orelse": [
+        "Expr",
+        "Return",
+        "Assign",
+        "If"
+      ]
+    },
+    "Raise": {
+      "type": [
+        "Call",
+        "Name",
+        "Attribute"
+      ]
+    },
+    "UnaryOp": {
+      "operand": [
+        "Call",
+        "Name",
+        "Attribute",
+        "BoolOp",
+        "Subscript",
+        "BinOp",
+        "Compare"
+      ]
+    },
+    "IfExp": {
+      "body": [
+        "Call",
+        "Str",
+        "BinOp",
+        "Name",
+        "Dict",
+        "Attribute",
+        "Tuple",
+        "Num",
+        "List",
+        "Subscript",
+        "ListComp",
+        "Set"
+      ],
+      "test": [
+        "Attribute",
+        "Compare",
+        "Name",
+        "Call",
+        "Subscript",
+        "UnaryOp",
+        "BoolOp"
+      ],
+      "orelse": [
+        "Call",
+        "Str",
+        "Name",
+        "Attribute",
+        "Num",
+        "List",
+        "BinOp",
+        "IfExp",
+        "Tuple",
+        "ListComp"
+      ]
+    },
+    "BoolOp": {
+      "values": [
+        "Call",
+        "Attribute",
+        "Compare",
+        "UnaryOp",
+        "Name",
+        "List",
+        "Str",
+        "BoolOp",
+        "Subscript",
+        "Num",
+        "BinOp",
+        "Tuple",
+        "ListComp",
+        "IfExp"
+      ]
+    },
+    "ListComp": {
+      "generators": [
+        "comprehension"
+      ],
+      "elt": [
+        "Call",
+        "Dict",
+        "BinOp",
+        "Attribute",
+        "Name",
+        "Tuple",
+        "Subscript",
+        "IfExp",
+        "Compare",
+        "ListComp"
+      ]
+    },
+    "comprehension": {
+      "target": [
+        "Name",
+        "Tuple"
+      ],
+      "iter": [
+        "Name",
+        "Subscript",
+        "Call",
+        "Attribute",
+        "Tuple",
+        "BinOp",
+        "List",
+        "Set"
+      ],
+      "ifs": [
+        "Compare",
+        "Call",
+        "UnaryOp",
+        "BoolOp",
+        "Name",
+        "Attribute",
+        "Subscript"
+      ]
+    },
+    "TryFinally": {
+      "body": [
+        "TryExcept",
+        "Assign",
+        "Expr",
+        "TryFinally",
+        "With",
+        "While",
+        "Return",
+        "For",
+        "FunctionDef",
+        "If"
+      ],
+      "finalbody": [
+        "Expr",
+        "Return",
+        "If",
+        "Assign",
+        "Delete",
+        "With"
+      ]
+    },
+    "Subscript": {
+      "slice": [
+        "Index",
+        "Slice",
+        "ExtSlice"
+      ],
+      "value": [
+        "Name",
+        "Attribute",
+        "Dict",
+        "Call",
+        "Subscript",
+        "Tuple",
+        "ListComp"
+      ]
+    },
+    "Index": {
+      "value": [
+        "Str",
+        "Name",
+        "Attribute",
+        "Num",
+        "Tuple",
+        "Subscript",
+        "Call",
+        "UnaryOp",
+        "BinOp"
+      ]
+    },
+    "Yield": {
+      "value": [
+        "Dict",
+        "Call",
+        "Name",
+        "Subscript",
+        "Tuple",
+        "Num",
+        "BinOp",
+        "Str"
+      ]
+    },
+    "AugAssign": {
+      "target": [
+        "Name",
+        "Subscript",
+        "Attribute"
+      ],
+      "value": [
+        "Num",
+        "Name",
+        "Attribute",
+        "BinOp",
+        "Subscript",
+        "Call",
+        "List",
+        "Tuple",
+        "Str",
+        "ListComp"
+      ]
+    },
+    "Print": {
+      "values": [
+        "BinOp",
+        "Call",
+        "Str",
+        "Tuple",
+        "Name"
+      ]
+    },
+    "With": {
+      "body": [
+        "Expr",
+        "Return",
+        "Assign",
+        "TryExcept",
+        "With",
+        "For",
+        "ClassDef",
+        "If",
+        "AugAssign",
+        "TryFinally",
+        "Exec",
+        "While",
+        "Delete",
+        "Raise"
+      ],
+      "optional_vars": [
+        "Name"
+      ],
+      "context_expr": [
+        "Call",
+        "Attribute",
+        "IfExp",
+        "Name"
+      ]
+    },
+    "GeneratorExp": {
+      "generators": [
+        "comprehension"
+      ],
+      "elt": [
+        "Attribute",
+        "BinOp",
+        "Call",
+        "Tuple",
+        "Compare",
+        "Name",
+        "Subscript",
+        "UnaryOp",
+        "BoolOp",
+        "Num",
+        "IfExp"
+      ]
+    },
+    "Slice": {
+      "lower": [
+        "Num",
+        "BinOp",
+        "Call",
+        "Name",
+        "Attribute",
+        "UnaryOp"
+      ],
+      "upper": [
+        "Num",
+        "Call",
+        "Name",
+        "BinOp",
+        "Attribute",
+        "UnaryOp",
+        "BoolOp"
+      ],
+      "step": [
+        "Num",
+        "Name"
+      ]
+    },
+    "SetComp": {
+      "generators": [
+        "comprehension"
+      ],
+      "elt": [
+        "Call",
+        "Name",
+        "Subscript",
+        "BinOp",
+        "Attribute",
+        "Tuple"
+      ]
+    },
+    "DictComp": {
+      "value": [
+        "Call",
+        "Name",
+        "Subscript",
+        "List",
+        "BinOp"
+      ],
+      "generators": [
+        "comprehension"
+      ],
+      "key": [
+        "Name",
+        "Call",
+        "Attribute",
+        "BinOp",
+        "Subscript"
+      ]
+    },
+    "Delete": {
+      "targets": [
+        "Subscript",
+        "Name",
+        "Attribute"
+      ]
+    },
+    "While": {
+      "body": [
+        "For",
+        "Assign",
+        "If",
+        "Expr",
+        "TryExcept",
+        "Return",
+        "AugAssign",
+        "While",
+        "Assert",
+        "Print"
+      ],
+      "test": [
+        "Name",
+        "Compare",
+        "BoolOp",
+        "Num",
+        "Call"
+      ],
+      "orelse": [
+        "Raise"
+      ]
+    },
+    "Assert": {
+      "test": [
+        "Call",
+        "Name",
+        "Compare",
+        "UnaryOp",
+        "BoolOp"
+      ],
+      "msg": [
+        "Str",
+        "BinOp"
+      ]
+    },
+    "Global": {},
+    "Lambda": {
+      "body": [
+        "Name",
+        "BinOp",
+        "Call",
+        "Tuple",
+        "Attribute",
+        "GeneratorExp",
+        "Subscript",
+        "UnaryOp",
+        "BoolOp",
+        "Compare",
+        "Str",
+        "ListComp",
+        "Num",
+        "Dict",
+        "List",
+        "Set",
+        "IfExp"
+      ],
+      "args": [
+        "arguments"
+      ]
+    },
+    "Set": {
+      "elts": [
+        "Str",
+        "Name",
+        "Call",
+        "BinOp",
+        "Attribute",
+        "Tuple",
+        "Num"
+      ]
+    },
+    "ExtSlice": {
+      "dims": [
+        "Index",
+        "Slice"
+      ]
+    },
+    "Exec": {
+      "body": [
+        "Tuple",
+        "Subscript",
+        "Str"
+      ]
+    }
+  },
+  "parents": {
+    "ImportFrom": {
+      "Module": [
+        "body"
+      ],
+      "TryExcept": [
+        "body",
+        "orelse"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "FunctionDef": [
+        "body"
+      ]
+    },
+    "alias": {
+      "ImportFrom": [
+        "names"
+      ],
+      "Import": [
+        "names"
+      ]
+    },
+    "ClassDef": {
+      "Module": [
+        "body"
+      ],
+      "ClassDef": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "For": [
+        "body"
+      ]
+    },
+    "Assign": {
+      "ClassDef": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "TryExcept": [
+        "body",
+        "orelse"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "For": [
+        "body",
+        "orelse"
+      ],
+      "While": [
+        "body"
+      ],
+      "TryFinally": [
+        "body",
+        "finalbody"
+      ],
+      "With": [
+        "body"
+      ]
+    },
+    "Name": {
+      "Assign": [
+        "value",
+        "targets"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Call": [
+        "func",
+        "args",
+        "starargs",
+        "kwargs"
+      ],
+      "ExceptHandler": [
+        "type",
+        "name"
+      ],
+      "arguments": [
+        "args",
+        "defaults"
+      ],
+      "Compare": [
+        "left",
+        "comparators"
+      ],
+      "For": [
+        "target",
+        "iter"
+      ],
+      "Return": [
+        "value"
+      ],
+      "comprehension": [
+        "target",
+        "iter",
+        "ifs"
+      ],
+      "BinOp": [
+        "right",
+        "left"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Raise": [
+        "type"
+      ],
+      "If": [
+        "test"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "List": [
+        "elts"
+      ],
+      "ClassDef": [
+        "bases",
+        "decorator_list"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "FunctionDef": [
+        "decorator_list"
+      ],
+      "Index": [
+        "value"
+      ],
+      "IfExp": [
+        "test",
+        "body",
+        "orelse"
+      ],
+      "AugAssign": [
+        "target",
+        "value"
+      ],
+      "With": [
+        "optional_vars",
+        "context_expr"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "SetComp": [
+        "elt"
+      ],
+      "DictComp": [
+        "key",
+        "value"
+      ],
+      "While": [
+        "test"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "Yield": [
+        "value"
+      ],
+      "Delete": [
+        "targets"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "Assert": [
+        "test"
+      ],
+      "Slice": [
+        "upper",
+        "lower",
+        "step"
+      ],
+      "Set": [
+        "elts"
+      ],
+      "Print": [
+        "values"
+      ]
+    },
+    "List": {
+      "Assign": [
+        "value"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Call": [
+        "args",
+        "starargs"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Compare": [
+        "comparators"
+      ],
+      "IfExp": [
+        "body",
+        "orelse"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "List": [
+        "elts"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "comprehension": [
+        "iter"
+      ],
+      "DictComp": [
+        "value"
+      ],
+      "For": [
+        "iter"
+      ],
+      "Lambda": [
+        "body"
+      ]
+    },
+    "Attribute": {
+      "ClassDef": [
+        "bases",
+        "decorator_list"
+      ],
+      "Call": [
+        "args",
+        "func",
+        "starargs",
+        "kwargs"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Assign": [
+        "value",
+        "targets"
+      ],
+      "BinOp": [
+        "right",
+        "left"
+      ],
+      "ExceptHandler": [
+        "type"
+      ],
+      "Compare": [
+        "left",
+        "comparators"
+      ],
+      "IfExp": [
+        "test",
+        "body",
+        "orelse"
+      ],
+      "If": [
+        "test"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "FunctionDef": [
+        "decorator_list"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "Index": [
+        "value"
+      ],
+      "For": [
+        "iter"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "comprehension": [
+        "iter",
+        "ifs"
+      ],
+      "AugAssign": [
+        "value",
+        "target"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "With": [
+        "context_expr"
+      ],
+      "Delete": [
+        "targets"
+      ],
+      "Raise": [
+        "type"
+      ],
+      "Slice": [
+        "upper",
+        "lower"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "DictComp": [
+        "key"
+      ],
+      "Set": [
+        "elts"
+      ],
+      "SetComp": [
+        "elt"
+      ]
+    },
+    "Import": {
+      "Module": [
+        "body"
+      ],
+      "TryExcept": [
+        "body",
+        "orelse"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ]
+    },
+    "Call": {
+      "List": [
+        "elts"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "Call": [
+        "args",
+        "func",
+        "kwargs",
+        "starargs"
+      ],
+      "Return": [
+        "value"
+      ],
+      "For": [
+        "iter"
+      ],
+      "Raise": [
+        "type"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "IfExp": [
+        "body",
+        "orelse",
+        "test"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "Compare": [
+        "comparators",
+        "left"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "ClassDef": [
+        "decorator_list",
+        "bases"
+      ],
+      "If": [
+        "test"
+      ],
+      "FunctionDef": [
+        "decorator_list"
+      ],
+      "Yield": [
+        "value"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "With": [
+        "context_expr"
+      ],
+      "comprehension": [
+        "iter",
+        "ifs"
+      ],
+      "SetComp": [
+        "elt"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "DictComp": [
+        "value",
+        "key"
+      ],
+      "Assert": [
+        "test"
+      ],
+      "Index": [
+        "value"
+      ],
+      "Slice": [
+        "upper",
+        "lower"
+      ],
+      "Print": [
+        "values"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "While": [
+        "test"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "Set": [
+        "elts"
+      ]
+    },
+    "Tuple": {
+      "List": [
+        "elts"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "ExceptHandler": [
+        "type"
+      ],
+      "Assign": [
+        "targets",
+        "value"
+      ],
+      "BinOp": [
+        "right",
+        "left"
+      ],
+      "Call": [
+        "args"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "For": [
+        "target",
+        "iter"
+      ],
+      "Return": [
+        "value"
+      ],
+      "comprehension": [
+        "target",
+        "iter"
+      ],
+      "Index": [
+        "value"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "Print": [
+        "values"
+      ],
+      "Compare": [
+        "comparators",
+        "left"
+      ],
+      "IfExp": [
+        "body",
+        "orelse"
+      ],
+      "Yield": [
+        "value"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "Exec": [
+        "body"
+      ],
+      "Set": [
+        "elts"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "SetComp": [
+        "elt"
+      ]
+    },
+    "Str": {
+      "Tuple": [
+        "elts"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Dict": [
+        "keys",
+        "values"
+      ],
+      "Call": [
+        "args"
+      ],
+      "Compare": [
+        "comparators",
+        "left"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "Index": [
+        "value"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "Return": [
+        "value"
+      ],
+      "IfExp": [
+        "body",
+        "orelse"
+      ],
+      "Print": [
+        "values"
+      ],
+      "Assert": [
+        "msg"
+      ],
+      "Set": [
+        "elts"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "Exec": [
+        "body"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "For": [
+        "iter"
+      ],
+      "Yield": [
+        "value"
+      ]
+    },
+    "keyword": {
+      "Call": [
+        "keywords"
+      ]
+    },
+    "Num": {
+      "keyword": [
+        "value"
+      ],
+      "Compare": [
+        "comparators",
+        "left"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "BinOp": [
+        "right",
+        "left"
+      ],
+      "Call": [
+        "args"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "Index": [
+        "value"
+      ],
+      "Slice": [
+        "lower",
+        "upper",
+        "step"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "Return": [
+        "value"
+      ],
+      "List": [
+        "elts"
+      ],
+      "IfExp": [
+        "body",
+        "orelse"
+      ],
+      "While": [
+        "test"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "Yield": [
+        "value"
+      ],
+      "Set": [
+        "elts"
+      ]
+    },
+    "Dict": {
+      "keyword": [
+        "value"
+      ],
+      "BinOp": [
+        "right"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "Call": [
+        "args",
+        "kwargs"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Yield": [
+        "value"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "List": [
+        "elts"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "IfExp": [
+        "body"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "Lambda": [
+        "body"
+      ]
+    },
+    "TryExcept": {
+      "Module": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "For": [
+        "body"
+      ],
+      "TryFinally": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "While": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "TryExcept": [
+        "orelse",
+        "body"
+      ],
+      "With": [
+        "body"
+      ]
+    },
+    "ExceptHandler": {
+      "TryExcept": [
+        "handlers"
+      ]
+    },
+    "FunctionDef": {
+      "Module": [
+        "body"
+      ],
+      "ClassDef": [
+        "body"
+      ],
+      "If": [
+        "orelse",
+        "body"
+      ],
+      "For": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "TryExcept": [
+        "orelse"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "TryFinally": [
+        "body"
+      ]
+    },
+    "Expr": {
+      "FunctionDef": [
+        "body"
+      ],
+      "For": [
+        "body",
+        "orelse"
+      ],
+      "Module": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "TryExcept": [
+        "body",
+        "orelse"
+      ],
+      "TryFinally": [
+        "finalbody",
+        "body"
+      ],
+      "ClassDef": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ],
+      "While": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ]
+    },
+    "arguments": {
+      "FunctionDef": [
+        "args"
+      ],
+      "Lambda": [
+        "args"
+      ]
+    },
+    "If": {
+      "TryExcept": [
+        "orelse",
+        "body"
+      ],
+      "If": [
+        "orelse",
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "For": [
+        "body",
+        "orelse"
+      ],
+      "TryFinally": [
+        "finalbody",
+        "body"
+      ],
+      "While": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ],
+      "ClassDef": [
+        "body"
+      ]
+    },
+    "BinOp": {
+      "Assign": [
+        "value"
+      ],
+      "Call": [
+        "args",
+        "starargs",
+        "func"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "Compare": [
+        "comparators",
+        "left"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "Print": [
+        "values"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "IfExp": [
+        "body",
+        "orelse"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "If": [
+        "test"
+      ],
+      "Assert": [
+        "msg"
+      ],
+      "Slice": [
+        "lower",
+        "upper"
+      ],
+      "Index": [
+        "value"
+      ],
+      "For": [
+        "iter"
+      ],
+      "comprehension": [
+        "iter"
+      ],
+      "Set": [
+        "elts"
+      ],
+      "SetComp": [
+        "elt"
+      ],
+      "DictComp": [
+        "value",
+        "key"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "Yield": [
+        "value"
+      ]
+    },
+    "Compare": {
+      "If": [
+        "test"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "IfExp": [
+        "test"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "Return": [
+        "value"
+      ],
+      "comprehension": [
+        "ifs"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "While": [
+        "test"
+      ],
+      "Assert": [
+        "test"
+      ],
+      "Call": [
+        "args"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "Expr": [
+        "value"
+      ]
+    },
+    "Return": {
+      "FunctionDef": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "TryFinally": [
+        "finalbody",
+        "body"
+      ],
+      "TryExcept": [
+        "body",
+        "orelse"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ],
+      "For": [
+        "body",
+        "orelse"
+      ],
+      "While": [
+        "body"
+      ]
+    },
+    "For": {
+      "FunctionDef": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "For": [
+        "body"
+      ],
+      "While": [
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "TryExcept": [
+        "body",
+        "orelse"
+      ],
+      "With": [
+        "body"
+      ],
+      "TryFinally": [
+        "body"
+      ]
+    },
+    "Raise": {
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "Module": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "TryExcept": [
+        "orelse",
+        "body"
+      ],
+      "With": [
+        "body"
+      ],
+      "While": [
+        "orelse"
+      ]
+    },
+    "UnaryOp": {
+      "If": [
+        "test"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "Call": [
+        "args"
+      ],
+      "comprehension": [
+        "ifs"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "IfExp": [
+        "test"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Index": [
+        "value"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Assert": [
+        "test"
+      ],
+      "Slice": [
+        "upper",
+        "lower"
+      ],
+      "Compare": [
+        "left"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "List": [
+        "elts"
+      ]
+    },
+    "IfExp": {
+      "List": [
+        "elts"
+      ],
+      "Call": [
+        "args"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "IfExp": [
+        "orelse"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "With": [
+        "context_expr"
+      ],
+      "Compare": [
+        "comparators"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "Lambda": [
+        "body"
+      ]
+    },
+    "BoolOp": {
+      "Assign": [
+        "value"
+      ],
+      "If": [
+        "test"
+      ],
+      "Call": [
+        "args",
+        "kwargs"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "BinOp": [
+        "left",
+        "right"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "While": [
+        "test"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "IfExp": [
+        "test"
+      ],
+      "comprehension": [
+        "ifs"
+      ],
+      "Assert": [
+        "test"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "Slice": [
+        "upper"
+      ]
+    },
+    "ListComp": {
+      "Assign": [
+        "value"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Call": [
+        "args",
+        "starargs"
+      ],
+      "BinOp": [
+        "right",
+        "left"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "IfExp": [
+        "orelse",
+        "body"
+      ],
+      "Compare": [
+        "comparators"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "AugAssign": [
+        "value"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "For": [
+        "iter"
+      ],
+      "ListComp": [
+        "elt"
+      ]
+    },
+    "comprehension": {
+      "ListComp": [
+        "generators"
+      ],
+      "GeneratorExp": [
+        "generators"
+      ],
+      "SetComp": [
+        "generators"
+      ],
+      "DictComp": [
+        "generators"
+      ]
+    },
+    "TryFinally": {
+      "FunctionDef": [
+        "body"
+      ],
+      "If": [
+        "orelse"
+      ],
+      "TryExcept": [
+        "body"
+      ],
+      "TryFinally": [
+        "body"
+      ],
+      "For": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ]
+    },
+    "Subscript": {
+      "Assign": [
+        "targets",
+        "value"
+      ],
+      "BinOp": [
+        "right",
+        "left"
+      ],
+      "Attribute": [
+        "value"
+      ],
+      "Call": [
+        "args",
+        "starargs",
+        "func",
+        "kwargs"
+      ],
+      "BoolOp": [
+        "values"
+      ],
+      "For": [
+        "iter"
+      ],
+      "comprehension": [
+        "iter",
+        "ifs"
+      ],
+      "Return": [
+        "value"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Delete": [
+        "targets"
+      ],
+      "Subscript": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Compare": [
+        "left",
+        "comparators"
+      ],
+      "Index": [
+        "value"
+      ],
+      "UnaryOp": [
+        "operand"
+      ],
+      "AugAssign": [
+        "target",
+        "value"
+      ],
+      "Expr": [
+        "value"
+      ],
+      "If": [
+        "test"
+      ],
+      "Yield": [
+        "value"
+      ],
+      "IfExp": [
+        "test",
+        "body"
+      ],
+      "GeneratorExp": [
+        "elt"
+      ],
+      "ListComp": [
+        "elt"
+      ],
+      "SetComp": [
+        "elt"
+      ],
+      "Dict": [
+        "values",
+        "keys"
+      ],
+      "DictComp": [
+        "value",
+        "key"
+      ],
+      "Lambda": [
+        "body"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Exec": [
+        "body"
+      ]
+    },
+    "Index": {
+      "Subscript": [
+        "slice"
+      ],
+      "ExtSlice": [
+        "dims"
+      ]
+    },
+    "Yield": {
+      "Expr": [
+        "value"
+      ]
+    },
+    "AugAssign": {
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "For": [
+        "body"
+      ],
+      "TryExcept": [
+        "orelse",
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "While": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ]
+    },
+    "Print": {
+      "FunctionDef": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "For": [
+        "body"
+      ],
+      "While": [
+        "body"
+      ]
+    },
+    "With": {
+      "FunctionDef": [
+        "body"
+      ],
+      "TryExcept": [
+        "orelse",
+        "body"
+      ],
+      "If": [
+        "orelse",
+        "body"
+      ],
+      "With": [
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "For": [
+        "body"
+      ],
+      "TryFinally": [
+        "body",
+        "finalbody"
+      ],
+      "ExceptHandler": [
+        "body"
+      ]
+    },
+    "GeneratorExp": {
+      "Call": [
+        "args"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "Lambda": [
+        "body"
+      ]
+    },
+    "Slice": {
+      "Subscript": [
+        "slice"
+      ],
+      "ExtSlice": [
+        "dims"
+      ]
+    },
+    "SetComp": {
+      "Call": [
+        "args"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "Compare": [
+        "comparators"
+      ]
+    },
+    "DictComp": {
+      "Return": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "keyword": [
+        "value"
+      ]
+    },
+    "Delete": {
+      "If": [
+        "body",
+        "orelse"
+      ],
+      "TryExcept": [
+        "body"
+      ],
+      "Module": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "For": [
+        "body"
+      ],
+      "TryFinally": [
+        "finalbody"
+      ],
+      "With": [
+        "body"
+      ]
+    },
+    "While": {
+      "FunctionDef": [
+        "body"
+      ],
+      "If": [
+        "orelse",
+        "body"
+      ],
+      "TryExcept": [
+        "body"
+      ],
+      "For": [
+        "body"
+      ],
+      "While": [
+        "body"
+      ],
+      "TryFinally": [
+        "body"
+      ],
+      "With": [
+        "body"
+      ]
+    },
+    "Assert": {
+      "For": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "If": [
+        "orelse",
+        "body"
+      ],
+      "While": [
+        "body"
+      ],
+      "ExceptHandler": [
+        "body"
+      ]
+    },
+    "Global": {
+      "FunctionDef": [
+        "body"
+      ]
+    },
+    "Lambda": {
+      "Call": [
+        "args"
+      ],
+      "Return": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Dict": [
+        "values"
+      ]
+    },
+    "Set": {
+      "Compare": [
+        "comparators"
+      ],
+      "arguments": [
+        "defaults"
+      ],
+      "BinOp": [
+        "right"
+      ],
+      "comprehension": [
+        "iter"
+      ],
+      "keyword": [
+        "value"
+      ],
+      "Assign": [
+        "value"
+      ],
+      "Tuple": [
+        "elts"
+      ],
+      "IfExp": [
+        "body"
+      ],
+      "Call": [
+        "args"
+      ],
+      "Dict": [
+        "values"
+      ],
+      "List": [
+        "elts"
+      ],
+      "Lambda": [
+        "body"
+      ]
+    },
+    "ExtSlice": {
+      "Subscript": [
+        "slice"
+      ]
+    },
+    "Exec": {
+      "With": [
+        "body"
+      ],
+      "If": [
+        "body"
+      ],
+      "FunctionDef": [
+        "body"
+      ],
+      "TryExcept": [
+        "body"
+      ]
+    }
+  },
+  "transformations": [
+    {
+      "in": {
+        "label": "ClassDef",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "List",
+        "outgoing": [
+          {
+            "label": "elts",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Attribute",
+        "outgoing": [
+          {
+            "label": "value",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Call",
+        "outgoing": [
+          {
+            "label": "args",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Call",
+        "outgoing": [
+          {
+            "label": "func",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Call",
+        "outgoing": [
+          {
+            "label": "starargs",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Call",
+        "outgoing": [
+          {
+            "label": "kwargs",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Tuple",
+        "outgoing": [
+          {
+            "label": "elts",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Dict",
+        "outgoing": [
+          {
+            "label": "keys",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Dict",
+        "outgoing": [
+          {
+            "label": "values",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "TryExcept",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "TryExcept",
+        "outgoing": [
+          {
+            "label": "orelse",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "FunctionDef",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "If",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "If",
+        "outgoing": [
+          {
+            "label": "orelse",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "BinOp",
+        "outgoing": [
+          {
+            "label": "right",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "BinOp",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Compare",
+        "outgoing": [
+          {
+            "label": "comparators",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Compare",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "For",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "For",
+        "outgoing": [
+          {
+            "label": "orelse",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "UnaryOp",
+        "outgoing": [
+          {
+            "label": "operand",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "IfExp",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "IfExp",
+        "outgoing": [
+          {
+            "label": "test",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "IfExp",
+        "outgoing": [
+          {
+            "label": "orelse",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "BoolOp",
+        "outgoing": [
+          {
+            "label": "values",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ListComp",
+        "outgoing": [
+          {
+            "label": "elt",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "TryFinally",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "TryFinally",
+        "outgoing": [
+          {
+            "label": "finalbody",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Subscript",
+        "outgoing": [
+          {
+            "label": "value",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Yield",
+        "outgoing": [
+          {
+            "label": "value",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "With",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "GeneratorExp",
+        "outgoing": [
+          {
+            "label": "elt",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "SetComp",
+        "outgoing": [
+          {
+            "label": "elt",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "DictComp",
+        "outgoing": [
+          {
+            "label": "value",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "DictComp",
+        "outgoing": [
+          {
+            "label": "key",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "While",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "While",
+        "outgoing": [
+          {
+            "label": "orelse",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Lambda",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "Set",
+        "outgoing": [
+          {
+            "label": "elts",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ExtSlice",
+        "outgoing": [
+          {
+            "label": "dims",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    }
+  ]
+}

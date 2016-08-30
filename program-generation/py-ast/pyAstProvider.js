@@ -22,9 +22,9 @@
             encoding: 'utf8',
             cwd: './tree-reducer/input/python',
             input: code,
-            shell: true,
-            timeout: 500,
-            killSignal: 'SIGKILL'
+            //shell: true,
+            //timeout: 500,
+            //killSignal: 'SIGKILL'
         });
         var json = result.stdout;
         var obj = JSON.parse(json);

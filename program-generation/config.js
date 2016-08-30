@@ -62,7 +62,7 @@
         maxNbGeneratedTrees: 10, // Maximum tries to generate the required valid. Ideally, maxNbGeneratedTrees > nbValidTrees
         nbValidTrees: 10,
         forceSameProgramGeneration: false, // If the seed is fixed and useRandomSeed is set to 'true'. The the program will generate the same program over and over. Prevent this?
-        nodePath: "/home/satia/.nvm/versions/node/v6.0.0/bin/node", // This is necessary for testing if a generated program crashes while execution
+        nodePath: "/home/satia/.nvm/versions/node/v6.5.0/bin/node", // This is necessary for testing if a generated program crashes while execution
         generationLogFile: "generation.log",
 
         /* Stats and Plots */

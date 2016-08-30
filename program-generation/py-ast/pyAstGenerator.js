@@ -91,14 +91,13 @@
     function treeToCode(tree) {
         var obj = tree.createObj("ast_type", emptyNodeNames, mandatoryArrayProperties);
         var json = JSON.stringify(obj);
-
         var result = child_process.spawnSync("python", ["unparse.py"], {
             encoding: 'utf8',
             cwd: './tree-reducer/input/python',
             input: json,
-            shell: true,
-            timeout: 500,
-            killSignal: 'SIGKILL'
+            //shell: true,
+            //timeout: 500,
+            //killSignal: 'SIGKILL'
         });
         return result.stdout;
     }

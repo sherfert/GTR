@@ -26,6 +26,8 @@
     var hdd = require("../../program-generation/tree-reducer/hdd");
     var modelHdd = require("../../program-generation/tree-reducer/modelHdd");
     var rdd = require("../../program-generation/tree-reducer/rdd");
+    var ddminLine = require("../../program-generation/tree-reducer/ddMinLine").ddminLine;
+    var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
     var util = require('./util-server');
 
     /* Configurations */
@@ -321,15 +323,17 @@
     }
 
     /**
-     * Reduces the code of one file using HDD to a hopefully smaller piece of code
+     * Reduces the code of one file using HDD (or other tree algorithm) to a hopefully smaller piece of code
      * that exposes the same inconsistency.
      *
      * @param {JSFileState} fileState the fileState of the file to minimize.
      * @param algorithm a function reference to the algorithm to use
      * @param {String} algoPrefix the prefix to use for the given algorithm for the JSON file
+     * @param treeAlgo true, if algorithm refers to a tree-based algorith; false, if it refers to a code-based algorithm
      */
-    function reduce(fileState, algorithm, algoPrefix) {
+    function reduce(fileState, algorithm, algoPrefix, treeAlgo) {
         console.log("Starting reduction of " + fileState.fileName);
+
         // First, send the original code to the browsers to have results for the comparison
         var originalResults = testInBrowsers(fileState.rawCode, fileState);
         var cmpWith = getExecutionDifferences(originalResults);
@@ -337,9 +341,17 @@
         fileState.diff = cmpWith;
 
         // DD algorithm
-        var ddAlgo = function(code, test) {
-            return execWithCode(treeProvider, treeGenerator, algorithm, code, test);
-        };
+        var ddAlgo;
+        if(treeAlgo) {
+            ddAlgo = function(code, test) {
+                return execWithCode(treeProvider, treeGenerator, algorithm, code, test);
+            };
+        } else {
+            ddAlgo = function(code, test) {
+                return algorithm(code, test);
+            };
+        }
+
         // Test function that just expects code, so we can pass it to DD
         var test = function(c) {
             //console.log("TESTING: " + c);
@@ -367,12 +379,13 @@
      *
      * @param algorithm a function reference to the algorithm to use
      * @param {String} algoPrefix the prefix to use for the given algorithm for the JSON file
+     * @param treeAlgo true, if algorithm refers to a tree-based algorith; false, if it refers to a code-based algorithm
      */
-    function reduceAllFiles(algorithm, algoPrefix) {
+    function reduceAllFiles(algorithm, algoPrefix, treeAlgo) {
         var totalTimeMS = 0;
         for (var key in fileNameToState) {
             if (fileNameToState.hasOwnProperty(key)) {
-                reduce(fileNameToState[key], algorithm, algoPrefix);
+                reduce(fileNameToState[key], algorithm, algoPrefix, treeAlgo);
                 // Accumulate total time taken
                 totalTimeMS += (fileNameToState[key].results[algoPrefix].timeTaken / 1000000);
             }
@@ -385,17 +398,24 @@
     // Invoke reduce as soon as n browsers have connected.
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
-    reduceAllFiles(hdd.hdd, "HDD");
 
-    modelHdd.setUseInferredKnowledge(false);
-    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLT");
 
-    // Set to use inferred knowledge
+    // HDD
+    //reduceAllFiles(hdd.hdd, "HDD", true);
+
+    // DDMin line
+    reduceAllFiles(ddminLine, "ddmin", false);
+
+    // Model-HDD with hand-written rules
+    //modelHdd.setUseInferredKnowledge(false);
+    //reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLT", true);
+
+    // Model-HDD with inferred knowledge
     modelHdd.setUseInferredKnowledge(true);
-    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM");
+    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
 
-    //reduceAllFiles(hdd.hddStar, "hddStar");
-    //reduceAllFiles(rdd.rdd, "rdd");
-    //reduceAllFiles(rdd.rddStar, "rddStar");
+    //reduceAllFiles(hdd.hddStar, "hddStar", true);
+    //reduceAllFiles(rdd.rdd, "rdd", true);
+    //reduceAllFiles(rdd.rddStar, "rddStar", true);
 
 })();

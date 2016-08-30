@@ -205,7 +205,7 @@
             var result = this.runCommand(input);
             // Stack overflow or segmentation fault
             if(result.status == 134 || result.status == 139) {
-                // The same error is triggered (grep was successful)
+                // The same error is triggered
                 return "fail";
             } else {
                 // No compiler crash
@@ -219,13 +219,21 @@
             fs.writeFileSync(file.name, code);
             // Return the result of spawning a child process
             var finalCmd = this.command + " " + file.name;
-            return child_process.spawnSync(finalCmd, [], {
-                encoding: 'utf8',
+            var result = child_process.spawnSync(finalCmd, [], {
+                //encoding: 'utf8',
                 shell: true,
                 cwd: "/tmp",
                 timeout: 500,
                 killSignal: 'SIGKILL'
             });
+
+            // We have to cleap up files in the tmp folder, otherwise we produce a lot of garbage
+            child_process.spawnSync("rm *.py ", [], {
+                shell: true,
+                cwd: "/tmp",
+            });
+
+            return result;
         }
     }
 

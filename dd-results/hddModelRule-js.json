@@ -1,0 +1,2282 @@
+{
+  "children": {
+    "Program": {
+      "body": [
+        "ExpressionStatement",
+        "VariableDeclaration",
+        "IfStatement",
+        "ForStatement",
+        "FunctionDeclaration",
+        "BlockStatement",
+        "TryStatement"
+      ]
+    },
+    "ExpressionStatement": {
+      "expression": [
+        "AssignmentExpression",
+        "Literal",
+        "CallExpression",
+        "UnaryExpression",
+        "SequenceExpression",
+        "ConditionalExpression",
+        "LogicalExpression",
+        "UpdateExpression",
+        "NewExpression",
+        "MemberExpression"
+      ]
+    },
+    "AssignmentExpression": {
+      "left": [
+        "MemberExpression",
+        "Identifier"
+      ],
+      "right": [
+        "FunctionExpression",
+        "MemberExpression",
+        "BinaryExpression",
+        "Literal",
+        "CallExpression",
+        "Identifier",
+        "NewExpression",
+        "ObjectExpression",
+        "LogicalExpression",
+        "UnaryExpression",
+        "ConditionalExpression",
+        "AssignmentExpression",
+        "ArrayExpression",
+        "UpdateExpression",
+        "SequenceExpression"
+      ]
+    },
+    "MemberExpression": {
+      "object": [
+        "Identifier",
+        "MemberExpression",
+        "CallExpression",
+        "ArrayExpression",
+        "ConditionalExpression",
+        "BinaryExpression",
+        "Literal",
+        "NewExpression",
+        "AssignmentExpression",
+        "LogicalExpression",
+        "FunctionExpression"
+      ],
+      "property": [
+        "Identifier",
+        "Literal",
+        "UpdateExpression",
+        "CallExpression",
+        "MemberExpression",
+        "BinaryExpression",
+        "AssignmentExpression",
+        "LogicalExpression"
+      ]
+    },
+    "Identifier": {},
+    "FunctionExpression": {
+      "params": [
+        "Identifier"
+      ],
+      "body": [
+        "BlockStatement"
+      ],
+      "id": [
+        "Identifier"
+      ]
+    },
+    "BlockStatement": {
+      "body": [
+        "ExpressionStatement",
+        "FunctionDeclaration",
+        "IfStatement",
+        "VariableDeclaration",
+        "ReturnStatement",
+        "ForStatement",
+        "ForOfStatement",
+        "ContinueStatement",
+        "LabeledStatement",
+        "BreakStatement",
+        "SwitchStatement",
+        "DoWhileStatement",
+        "ThrowStatement",
+        "TryStatement",
+        "WhileStatement",
+        "ClassDeclaration",
+        "ForInStatement",
+        "BlockStatement"
+      ]
+    },
+    "Literal": {},
+    "CallExpression": {
+      "callee": [
+        "MemberExpression",
+        "FunctionExpression",
+        "Identifier",
+        "CallExpression",
+        "LogicalExpression",
+        "AssignmentExpression"
+      ],
+      "arguments": [
+        "ObjectExpression",
+        "Literal",
+        "ArrayExpression",
+        "LogicalExpression",
+        "Identifier",
+        "FunctionExpression",
+        "MemberExpression",
+        "ArrowFunctionExpression",
+        "CallExpression",
+        "BinaryExpression",
+        "NewExpression",
+        "ConditionalExpression",
+        "UnaryExpression",
+        "UpdateExpression",
+        "SequenceExpression",
+        "AssignmentExpression",
+        "SpreadElement"
+      ]
+    },
+    "ObjectExpression": {
+      "properties": [
+        "Property"
+      ]
+    },
+    "Property": {
+      "key": [
+        "Identifier",
+        "Literal"
+      ],
+      "value": [
+        "CallExpression",
+        "ObjectExpression",
+        "Literal",
+        "ArrayExpression",
+        "NewExpression",
+        "FunctionExpression",
+        "Identifier",
+        "BinaryExpression",
+        "MemberExpression",
+        "ConditionalExpression",
+        "UnaryExpression",
+        "ArrowFunctionExpression",
+        "LogicalExpression"
+      ]
+    },
+    "ArrayExpression": {
+      "elements": [
+        "Literal",
+        "MemberExpression",
+        "Identifier",
+        "NewExpression",
+        "CallExpression",
+        "BinaryExpression",
+        "ConditionalExpression",
+        "LogicalExpression",
+        "ObjectExpression",
+        "FunctionExpression",
+        "ArrayExpression",
+        "UnaryExpression",
+        "UpdateExpression",
+        "SpreadElement"
+      ]
+    },
+    "FunctionDeclaration": {
+      "id": [
+        "Identifier"
+      ],
+      "params": [
+        "Identifier"
+      ],
+      "body": [
+        "BlockStatement"
+      ]
+    },
+    "VariableDeclaration": {
+      "declarations": [
+        "VariableDeclarator"
+      ]
+    },
+    "VariableDeclarator": {
+      "id": [
+        "Identifier",
+        "ArrayPattern"
+      ],
+      "init": [
+        "CallExpression",
+        "BinaryExpression",
+        "NewExpression",
+        "LogicalExpression",
+        "MemberExpression",
+        "Literal",
+        "FunctionExpression",
+        "ObjectExpression",
+        "Identifier",
+        "UnaryExpression",
+        "AssignmentExpression",
+        "ConditionalExpression",
+        "ArrayExpression",
+        "UpdateExpression"
+      ]
+    },
+    "BinaryExpression": {
+      "left": [
+        "BinaryExpression",
+        "Literal",
+        "MemberExpression",
+        "Identifier",
+        "CallExpression",
+        "UnaryExpression",
+        "UpdateExpression",
+        "AssignmentExpression",
+        "ConditionalExpression",
+        "SequenceExpression",
+        "LogicalExpression"
+      ],
+      "right": [
+        "BinaryExpression",
+        "MemberExpression",
+        "Literal",
+        "AssignmentExpression",
+        "Identifier",
+        "CallExpression",
+        "UnaryExpression",
+        "ConditionalExpression",
+        "UpdateExpression",
+        "LogicalExpression"
+      ]
+    },
+    "ReturnStatement": {
+      "argument": [
+        "AssignmentExpression",
+        "Identifier",
+        "BinaryExpression",
+        "CallExpression",
+        "SequenceExpression",
+        "NewExpression",
+        "MemberExpression",
+        "Literal",
+        "LogicalExpression",
+        "FunctionExpression",
+        "ConditionalExpression",
+        "ObjectExpression",
+        "UnaryExpression",
+        "UpdateExpression",
+        "ArrayExpression"
+      ]
+    },
+    "IfStatement": {
+      "test": [
+        "BinaryExpression",
+        "Identifier",
+        "LogicalExpression",
+        "CallExpression",
+        "UnaryExpression",
+        "MemberExpression",
+        "AssignmentExpression",
+        "Literal",
+        "SequenceExpression"
+      ],
+      "consequent": [
+        "BlockStatement",
+        "ExpressionStatement",
+        "ReturnStatement",
+        "BreakStatement",
+        "ForStatement",
+        "IfStatement",
+        "ThrowStatement",
+        "ContinueStatement",
+        "SwitchStatement",
+        "VariableDeclaration",
+        "ForInStatement"
+      ],
+      "alternate": [
+        "IfStatement",
+        "BlockStatement",
+        "ExpressionStatement",
+        "BreakStatement",
+        "ReturnStatement",
+        "ForStatement",
+        "ThrowStatement"
+      ]
+    },
+    "NewExpression": {
+      "callee": [
+        "Identifier",
+        "MemberExpression"
+      ],
+      "arguments": [
+        "Identifier",
+        "ArrayExpression",
+        "CallExpression",
+        "BinaryExpression",
+        "Literal",
+        "MemberExpression",
+        "UnaryExpression",
+        "ConditionalExpression",
+        "NewExpression",
+        "SequenceExpression",
+        "FunctionExpression",
+        "LogicalExpression",
+        "ObjectExpression"
+      ]
+    },
+    "LogicalExpression": {
+      "left": [
+        "Identifier",
+        "BinaryExpression",
+        "CallExpression",
+        "LogicalExpression",
+        "UnaryExpression",
+        "AssignmentExpression",
+        "MemberExpression"
+      ],
+      "right": [
+        "MemberExpression",
+        "Identifier",
+        "AssignmentExpression",
+        "SequenceExpression",
+        "CallExpression",
+        "NewExpression",
+        "BinaryExpression",
+        "Literal",
+        "UnaryExpression",
+        "LogicalExpression",
+        "FunctionExpression",
+        "ArrayExpression",
+        "ObjectExpression"
+      ]
+    },
+    "UnaryExpression": {
+      "argument": [
+        "Identifier",
+        "CallExpression",
+        "Literal",
+        "BinaryExpression",
+        "MemberExpression",
+        "LogicalExpression",
+        "ConditionalExpression",
+        "UnaryExpression",
+        "AssignmentExpression",
+        "NewExpression"
+      ]
+    },
+    "ForStatement": {
+      "init": [
+        "VariableDeclaration",
+        "AssignmentExpression",
+        "CallExpression",
+        "UpdateExpression",
+        "SequenceExpression",
+        "LogicalExpression"
+      ],
+      "test": [
+        "BinaryExpression",
+        "LogicalExpression",
+        "Identifier",
+        "MemberExpression",
+        "UpdateExpression"
+      ],
+      "update": [
+        "UpdateExpression",
+        "AssignmentExpression",
+        "SequenceExpression",
+        "Identifier"
+      ],
+      "body": [
+        "BlockStatement",
+        "ExpressionStatement",
+        "IfStatement",
+        "ForStatement"
+      ]
+    },
+    "UpdateExpression": {
+      "argument": [
+        "Identifier",
+        "MemberExpression"
+      ]
+    },
+    "SequenceExpression": {
+      "expressions": [
+        "AssignmentExpression",
+        "LogicalExpression",
+        "Identifier",
+        "UpdateExpression",
+        "CallExpression",
+        "ConditionalExpression",
+        "MemberExpression",
+        "BinaryExpression",
+        "Literal"
+      ]
+    },
+    "ConditionalExpression": {
+      "test": [
+        "LogicalExpression",
+        "BinaryExpression",
+        "MemberExpression",
+        "Identifier",
+        "CallExpression",
+        "UnaryExpression"
+      ],
+      "consequent": [
+        "AssignmentExpression",
+        "CallExpression",
+        "MemberExpression",
+        "BinaryExpression",
+        "ConditionalExpression",
+        "Identifier",
+        "UnaryExpression",
+        "Literal",
+        "SequenceExpression",
+        "LogicalExpression",
+        "ArrayExpression",
+        "NewExpression",
+        "UpdateExpression",
+        "ObjectExpression"
+      ],
+      "alternate": [
+        "ConditionalExpression",
+        "AssignmentExpression",
+        "MemberExpression",
+        "BinaryExpression",
+        "Literal",
+        "UnaryExpression",
+        "Identifier",
+        "CallExpression",
+        "NewExpression",
+        "SequenceExpression",
+        "ArrayExpression",
+        "FunctionExpression",
+        "ObjectExpression",
+        "LogicalExpression",
+        "UpdateExpression"
+      ]
+    },
+    "ArrowFunctionExpression": {
+      "params": [
+        "Identifier"
+      ],
+      "body": [
+        "BlockStatement",
+        "LogicalExpression",
+        "MemberExpression",
+        "ConditionalExpression",
+        "CallExpression"
+      ]
+    },
+    "ForOfStatement": {
+      "left": [
+        "VariableDeclaration"
+      ],
+      "right": [
+        "CallExpression",
+        "Identifier"
+      ],
+      "body": [
+        "BlockStatement"
+      ]
+    },
+    "ContinueStatement": {
+      "label": [
+        "Identifier"
+      ]
+    },
+    "LabeledStatement": {
+      "label": [
+        "Identifier"
+      ],
+      "body": [
+        "ForOfStatement",
+        "ForStatement",
+        "WhileStatement",
+        "DoWhileStatement"
+      ]
+    },
+    "BreakStatement": {
+      "label": [
+        "Identifier"
+      ]
+    },
+    "SwitchStatement": {
+      "discriminant": [
+        "MemberExpression",
+        "CallExpression",
+        "Identifier",
+        "UpdateExpression",
+        "BinaryExpression"
+      ],
+      "cases": [
+        "SwitchCase"
+      ]
+    },
+    "SwitchCase": {
+      "test": [
+        "Literal",
+        "MemberExpression",
+        "UnaryExpression",
+        "Identifier"
+      ],
+      "consequent": [
+        "BreakStatement",
+        "ExpressionStatement",
+        "ReturnStatement",
+        "VariableDeclaration",
+        "IfStatement",
+        "ForStatement",
+        "SwitchStatement",
+        "WhileStatement",
+        "ThrowStatement",
+        "BlockStatement",
+        "LabeledStatement",
+        "ContinueStatement"
+      ]
+    },
+    "DoWhileStatement": {
+      "body": [
+        "BlockStatement",
+        "VariableDeclaration"
+      ],
+      "test": [
+        "BinaryExpression",
+        "Identifier",
+        "LogicalExpression",
+        "Literal",
+        "CallExpression",
+        "UnaryExpression"
+      ]
+    },
+    "ThrowStatement": {
+      "argument": [
+        "Literal",
+        "CallExpression",
+        "NewExpression",
+        "Identifier",
+        "BinaryExpression",
+        "MemberExpression"
+      ]
+    },
+    "TryStatement": {
+      "block": [
+        "BlockStatement"
+      ],
+      "handlers": [
+        "CatchClause"
+      ],
+      "handler": [
+        "CatchClause"
+      ],
+      "finalizer": [
+        "BlockStatement"
+      ]
+    },
+    "CatchClause": {
+      "param": [
+        "Identifier"
+      ],
+      "body": [
+        "BlockStatement"
+      ]
+    },
+    "WhileStatement": {
+      "test": [
+        "BinaryExpression",
+        "LogicalExpression",
+        "UnaryExpression",
+        "CallExpression",
+        "Literal",
+        "Identifier",
+        "UpdateExpression",
+        "MemberExpression"
+      ],
+      "body": [
+        "BlockStatement",
+        "ExpressionStatement",
+        "IfStatement"
+      ]
+    },
+    "ClassDeclaration": {
+      "id": [
+        "Identifier"
+      ],
+      "body": [
+        "ClassBody"
+      ],
+      "superClass": [
+        "Identifier"
+      ]
+    },
+    "ClassBody": {
+      "body": [
+        "MethodDefinition"
+      ]
+    },
+    "MethodDefinition": {
+      "key": [
+        "Identifier"
+      ],
+      "value": [
+        "FunctionExpression"
+      ]
+    },
+    "ForInStatement": {
+      "left": [
+        "VariableDeclaration",
+        "Identifier"
+      ],
+      "right": [
+        "Identifier",
+        "MemberExpression"
+      ],
+      "body": [
+        "BlockStatement",
+        "ExpressionStatement",
+        "TryStatement"
+      ]
+    },
+    "SpreadElement": {
+      "argument": [
+        "MemberExpression",
+        "Identifier"
+      ]
+    },
+    "ArrayPattern": {
+      "elements": [
+        "Identifier"
+      ]
+    }
+  },
+  "parents": {
+    "ExpressionStatement": {
+      "Program": [
+        "body"
+      ],
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "consequent",
+        "alternate"
+      ],
+      "ForStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ],
+      "WhileStatement": [
+        "body"
+      ],
+      "ForInStatement": [
+        "body"
+      ]
+    },
+    "AssignmentExpression": {
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "BinaryExpression": [
+        "right",
+        "left"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "LogicalExpression": [
+        "right",
+        "left"
+      ],
+      "ConditionalExpression": [
+        "consequent",
+        "alternate"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "ForStatement": [
+        "init",
+        "update"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "MemberExpression": [
+        "object",
+        "property"
+      ],
+      "CallExpression": [
+        "arguments",
+        "callee"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ]
+    },
+    "MemberExpression": {
+      "AssignmentExpression": [
+        "left",
+        "right"
+      ],
+      "CallExpression": [
+        "callee",
+        "arguments"
+      ],
+      "MemberExpression": [
+        "object",
+        "property"
+      ],
+      "BinaryExpression": [
+        "right",
+        "left"
+      ],
+      "LogicalExpression": [
+        "right",
+        "left"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "NewExpression": [
+        "callee",
+        "arguments"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "ConditionalExpression": [
+        "consequent",
+        "alternate",
+        "test"
+      ],
+      "UpdateExpression": [
+        "argument"
+      ],
+      "SwitchStatement": [
+        "discriminant"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "SwitchCase": [
+        "test"
+      ],
+      "ForStatement": [
+        "test"
+      ],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "Property": [
+        "value"
+      ],
+      "ArrowFunctionExpression": [
+        "body"
+      ],
+      "ForInStatement": [
+        "right"
+      ],
+      "SpreadElement": [
+        "argument"
+      ],
+      "WhileStatement": [
+        "test"
+      ]
+    },
+    "Identifier": {
+      "MemberExpression": [
+        "object",
+        "property"
+      ],
+      "FunctionExpression": [
+        "params",
+        "id"
+      ],
+      "Property": [
+        "key",
+        "value"
+      ],
+      "FunctionDeclaration": [
+        "id",
+        "params"
+      ],
+      "VariableDeclarator": [
+        "id",
+        "init"
+      ],
+      "CallExpression": [
+        "callee",
+        "arguments"
+      ],
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "AssignmentExpression": [
+        "left",
+        "right"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "NewExpression": [
+        "callee",
+        "arguments"
+      ],
+      "LogicalExpression": [
+        "left",
+        "right"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "UpdateExpression": [
+        "argument"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ArrowFunctionExpression": [
+        "params"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "LabeledStatement": [
+        "label"
+      ],
+      "BreakStatement": [
+        "label"
+      ],
+      "ConditionalExpression": [
+        "consequent",
+        "alternate",
+        "test"
+      ],
+      "DoWhileStatement": [
+        "test"
+      ],
+      "ForStatement": [
+        "test",
+        "update"
+      ],
+      "SwitchStatement": [
+        "discriminant"
+      ],
+      "CatchClause": [
+        "param"
+      ],
+      "ClassDeclaration": [
+        "id",
+        "superClass"
+      ],
+      "MethodDefinition": [
+        "key"
+      ],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "ForInStatement": [
+        "right",
+        "left"
+      ],
+      "ForOfStatement": [
+        "right"
+      ],
+      "ContinueStatement": [
+        "label"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "SwitchCase": [
+        "test"
+      ],
+      "SpreadElement": [
+        "argument"
+      ],
+      "ArrayPattern": [
+        "elements"
+      ]
+    },
+    "FunctionExpression": {
+      "AssignmentExpression": [
+        "right"
+      ],
+      "CallExpression": [
+        "callee",
+        "arguments"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "Property": [
+        "value"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "MethodDefinition": [
+        "value"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "ConditionalExpression": [
+        "alternate"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "LogicalExpression": [
+        "right"
+      ],
+      "MemberExpression": [
+        "object"
+      ]
+    },
+    "BlockStatement": {
+      "FunctionExpression": [
+        "body"
+      ],
+      "FunctionDeclaration": [
+        "body"
+      ],
+      "IfStatement": [
+        "consequent",
+        "alternate"
+      ],
+      "ForStatement": [
+        "body"
+      ],
+      "ArrowFunctionExpression": [
+        "body"
+      ],
+      "ForOfStatement": [
+        "body"
+      ],
+      "DoWhileStatement": [
+        "body"
+      ],
+      "TryStatement": [
+        "block",
+        "finalizer"
+      ],
+      "CatchClause": [
+        "body"
+      ],
+      "WhileStatement": [
+        "body"
+      ],
+      "ForInStatement": [
+        "body"
+      ],
+      "Program": [
+        "body"
+      ],
+      "BlockStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ]
+    },
+    "Literal": {
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "Property": [
+        "value",
+        "key"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "MemberExpression": [
+        "property",
+        "object"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "LogicalExpression": [
+        "right"
+      ],
+      "ConditionalExpression": [
+        "alternate",
+        "consequent"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "SwitchCase": [
+        "test"
+      ],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "DoWhileStatement": [
+        "test"
+      ]
+    },
+    "CallExpression": {
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "Property": [
+        "value"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "LogicalExpression": [
+        "right",
+        "left"
+      ],
+      "ConditionalExpression": [
+        "consequent",
+        "alternate",
+        "test"
+      ],
+      "MemberExpression": [
+        "object",
+        "property"
+      ],
+      "CallExpression": [
+        "arguments",
+        "callee"
+      ],
+      "ForOfStatement": [
+        "right"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "SwitchStatement": [
+        "discriminant"
+      ],
+      "ForStatement": [
+        "init"
+      ],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ArrowFunctionExpression": [
+        "body"
+      ],
+      "DoWhileStatement": [
+        "test"
+      ]
+    },
+    "ObjectExpression": {
+      "CallExpression": [
+        "arguments"
+      ],
+      "Property": [
+        "value"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "ConditionalExpression": [
+        "alternate",
+        "consequent"
+      ],
+      "LogicalExpression": [
+        "right"
+      ],
+      "NewExpression": [
+        "arguments"
+      ]
+    },
+    "Property": {
+      "ObjectExpression": [
+        "properties"
+      ]
+    },
+    "ArrayExpression": {
+      "Property": [
+        "value"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "MemberExpression": [
+        "object"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "ConditionalExpression": [
+        "consequent",
+        "alternate"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "LogicalExpression": [
+        "right"
+      ]
+    },
+    "FunctionDeclaration": {
+      "BlockStatement": [
+        "body"
+      ],
+      "Program": [
+        "body"
+      ]
+    },
+    "VariableDeclaration": {
+      "BlockStatement": [
+        "body"
+      ],
+      "ForStatement": [
+        "init"
+      ],
+      "ForOfStatement": [
+        "left"
+      ],
+      "Program": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ],
+      "ForInStatement": [
+        "left"
+      ],
+      "IfStatement": [
+        "consequent"
+      ],
+      "DoWhileStatement": [
+        "body"
+      ]
+    },
+    "VariableDeclarator": {
+      "VariableDeclaration": [
+        "declarations"
+      ]
+    },
+    "BinaryExpression": {
+      "VariableDeclarator": [
+        "init"
+      ],
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "ForStatement": [
+        "test"
+      ],
+      "LogicalExpression": [
+        "left",
+        "right"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "ConditionalExpression": [
+        "test",
+        "consequent",
+        "alternate"
+      ],
+      "DoWhileStatement": [
+        "test"
+      ],
+      "MemberExpression": [
+        "property",
+        "object"
+      ],
+      "Property": [
+        "value"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "SwitchStatement": [
+        "discriminant"
+      ]
+    },
+    "ReturnStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "consequent",
+        "alternate"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ]
+    },
+    "IfStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "alternate",
+        "consequent"
+      ],
+      "Program": [
+        "body"
+      ],
+      "ForStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ],
+      "WhileStatement": [
+        "body"
+      ]
+    },
+    "NewExpression": {
+      "VariableDeclarator": [
+        "init"
+      ],
+      "LogicalExpression": [
+        "right"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "Property": [
+        "value"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "MemberExpression": [
+        "object"
+      ],
+      "ConditionalExpression": [
+        "alternate",
+        "consequent"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ]
+    },
+    "LogicalExpression": {
+      "VariableDeclarator": [
+        "init"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "CallExpression": [
+        "arguments",
+        "callee"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ConditionalExpression": [
+        "test",
+        "consequent",
+        "alternate"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "LogicalExpression": [
+        "left",
+        "right"
+      ],
+      "ForStatement": [
+        "test",
+        "init"
+      ],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "MemberExpression": [
+        "object",
+        "property"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "DoWhileStatement": [
+        "test"
+      ],
+      "ArrowFunctionExpression": [
+        "body"
+      ],
+      "Property": [
+        "value"
+      ]
+    },
+    "UnaryExpression": {
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "IfStatement": [
+        "test"
+      ],
+      "LogicalExpression": [
+        "left",
+        "right"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "ConditionalExpression": [
+        "alternate",
+        "consequent",
+        "test"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "Property": [
+        "value"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "SwitchCase": [
+        "test"
+      ],
+      "DoWhileStatement": [
+        "test"
+      ]
+    },
+    "ForStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "consequent",
+        "alternate"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ],
+      "ForStatement": [
+        "body"
+      ],
+      "Program": [
+        "body"
+      ],
+      "LabeledStatement": [
+        "body"
+      ]
+    },
+    "UpdateExpression": {
+      "ForStatement": [
+        "update",
+        "init",
+        "test"
+      ],
+      "MemberExpression": [
+        "property"
+      ],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "BinaryExpression": [
+        "right",
+        "left"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "SwitchStatement": [
+        "discriminant"
+      ],
+      "WhileStatement": [
+        "test"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "ConditionalExpression": [
+        "consequent",
+        "alternate"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ]
+    },
+    "SequenceExpression": {
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "LogicalExpression": [
+        "right"
+      ],
+      "ForStatement": [
+        "update",
+        "init"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "ConditionalExpression": [
+        "alternate",
+        "consequent"
+      ],
+      "BinaryExpression": [
+        "left"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "IfStatement": [
+        "test"
+      ]
+    },
+    "ConditionalExpression": {
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "ConditionalExpression": [
+        "alternate",
+        "consequent"
+      ],
+      "MemberExpression": [
+        "object"
+      ],
+      "CallExpression": [
+        "arguments"
+      ],
+      "AssignmentExpression": [
+        "right"
+      ],
+      "BinaryExpression": [
+        "right",
+        "left"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "VariableDeclarator": [
+        "init"
+      ],
+      "NewExpression": [
+        "arguments"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ],
+      "Property": [
+        "value"
+      ],
+      "ArrowFunctionExpression": [
+        "body"
+      ]
+    },
+    "ArrowFunctionExpression": {
+      "CallExpression": [
+        "arguments"
+      ],
+      "Property": [
+        "value"
+      ]
+    },
+    "ForOfStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "LabeledStatement": [
+        "body"
+      ]
+    },
+    "ContinueStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "consequent"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ]
+    },
+    "LabeledStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ]
+    },
+    "BreakStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "alternate",
+        "consequent"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ]
+    },
+    "SwitchStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ],
+      "IfStatement": [
+        "consequent"
+      ]
+    },
+    "SwitchCase": {
+      "SwitchStatement": [
+        "cases"
+      ]
+    },
+    "DoWhileStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "LabeledStatement": [
+        "body"
+      ]
+    },
+    "ThrowStatement": {
+      "IfStatement": [
+        "consequent",
+        "alternate"
+      ],
+      "BlockStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ]
+    },
+    "TryStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "Program": [
+        "body"
+      ],
+      "ForInStatement": [
+        "body"
+      ]
+    },
+    "CatchClause": {
+      "TryStatement": [
+        "handlers",
+        "handler"
+      ]
+    },
+    "WhileStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "SwitchCase": [
+        "consequent"
+      ],
+      "LabeledStatement": [
+        "body"
+      ]
+    },
+    "ClassDeclaration": {
+      "BlockStatement": [
+        "body"
+      ]
+    },
+    "ClassBody": {
+      "ClassDeclaration": [
+        "body"
+      ]
+    },
+    "MethodDefinition": {
+      "ClassBody": [
+        "body"
+      ]
+    },
+    "ForInStatement": {
+      "BlockStatement": [
+        "body"
+      ],
+      "IfStatement": [
+        "consequent"
+      ]
+    },
+    "SpreadElement": {
+      "CallExpression": [
+        "arguments"
+      ],
+      "ArrayExpression": [
+        "elements"
+      ]
+    },
+    "ArrayPattern": {
+      "VariableDeclarator": [
+        "id"
+      ]
+    }
+  },
+  "transformations": [
+    {
+      "in": {
+        "label": "AssignmentExpression",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "AssignmentExpression",
+        "outgoing": [
+          {
+            "label": "right",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "MemberExpression",
+        "outgoing": [
+          {
+            "label": "object",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "MemberExpression",
+        "outgoing": [
+          {
+            "label": "property",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "FunctionExpression",
+        "outgoing": [
+          {
+            "label": "params",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "FunctionExpression",
+        "outgoing": [
+          {
+            "label": "id",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "BlockStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "CallExpression",
+        "outgoing": [
+          {
+            "label": "callee",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "CallExpression",
+        "outgoing": [
+          {
+            "label": "arguments",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ArrayExpression",
+        "outgoing": [
+          {
+            "label": "elements",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "FunctionDeclaration",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "BinaryExpression",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "BinaryExpression",
+        "outgoing": [
+          {
+            "label": "right",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "IfStatement",
+        "outgoing": [
+          {
+            "label": "consequent",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "IfStatement",
+        "outgoing": [
+          {
+            "label": "alternate",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "NewExpression",
+        "outgoing": [
+          {
+            "label": "callee",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "NewExpression",
+        "outgoing": [
+          {
+            "label": "arguments",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "LogicalExpression",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "LogicalExpression",
+        "outgoing": [
+          {
+            "label": "right",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "UnaryExpression",
+        "outgoing": [
+          {
+            "label": "argument",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ForStatement",
+        "outgoing": [
+          {
+            "label": "init",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ForStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "UpdateExpression",
+        "outgoing": [
+          {
+            "label": "argument",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "SequenceExpression",
+        "outgoing": [
+          {
+            "label": "expressions",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ConditionalExpression",
+        "outgoing": [
+          {
+            "label": "test",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ConditionalExpression",
+        "outgoing": [
+          {
+            "label": "consequent",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ConditionalExpression",
+        "outgoing": [
+          {
+            "label": "alternate",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ArrowFunctionExpression",
+        "outgoing": [
+          {
+            "label": "params",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ArrowFunctionExpression",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ForOfStatement",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ForOfStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "LabeledStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "DoWhileStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "TryStatement",
+        "outgoing": [
+          {
+            "label": "block",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "TryStatement",
+        "outgoing": [
+          {
+            "label": "finalizer",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "WhileStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ForInStatement",
+        "outgoing": [
+          {
+            "label": "left",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ForInStatement",
+        "outgoing": [
+          {
+            "label": "body",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "SpreadElement",
+        "outgoing": [
+          {
+            "label": "argument",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    },
+    {
+      "in": {
+        "label": "ArrayPattern",
+        "outgoing": [
+          {
+            "label": "elements",
+            "target": "X"
+          }
+        ]
+      },
+      "out": "X"
+    }
+  ]
+}

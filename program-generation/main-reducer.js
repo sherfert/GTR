@@ -1,5 +1,8 @@
 // Author: Satia Herfert
 
+/**
+ * This file contains a lot of test code that can be easily modified to reduce JS or PY files.
+ */
 (function() {
     var fs = require('fs');
     var esprima = require('esprima');
@@ -12,7 +15,7 @@
     var inputTester = require("./tree-reducer/inputTester");
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("./tree-reducer/hdd");
-    var modelhdd = require("./tree-reducer/modelHdd");
+    var modelHdd = require("./tree-reducer/modelHdd");
     var rdd = require("./tree-reducer/rdd");
     var ddminLine = require("./tree-reducer/ddMinLine").ddminLine;
     var ddminChar = require("./tree-reducer/ddMinChar").ddminChar;
@@ -37,7 +40,7 @@
         return execWithCode(pyTreeProvider, pyTreeGenerator, hdd.hdd, code, test);
         //return execWithCode(rdd.rdd, code, test);
         //modelhdd.setUseInferredKnowledge(true);
-        //return execWithCode(modelhdd.postLevelTransformationHddStar, code, test);
+        //return execWithCode(modelHdd.postLevelTransformationHddStar, code, test);
         //return ddminLine(code, test);
     };
 
