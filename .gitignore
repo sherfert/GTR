@@ -11,6 +11,8 @@
 */differential-testing-results/**
 differential-testing-engine/last-read.txt
 */inconsistentCode/*
+**/stats/*
+**/input/python/*.json
 */results/**
 **/valid-*
 **/syntactically-*
