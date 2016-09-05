@@ -4,8 +4,6 @@
  * Using the JSON files that were created, this file creates two csv files,
  * comparing minimal code sizes and tests run for the different reduction algorithms, and one plot
  * file showing both statistics as an histogram.
- *
- * FIXME not working if first file has less algorithms or if the order is different
  */
 (function () {
     var jsonfile = require('jsonfile');
@@ -15,16 +13,16 @@
     /**
      * Creates the CSV files
      * @param {String} codeDir the code directory
-     * @returns {number} the number of different algorithms
+     * @returns {Array} the different algorithms
      */
     function createCSV(codeDir) {
         var csvSize = "";
         var csvTests = "";
         var csvTime = "";
         var allFiles = fs.readdirSync(codeDir);
-        var numAlgos = 0;
 
-        let headerCreated = false;
+        // All encountered algorithms are listed here (as Strings)
+        var algorithms = [];
 
         // Go through all JSON files
         for (var i = 0; i < allFiles.length; i++) {
@@ -35,36 +33,28 @@
 
                     let results = jsonfile.readFileSync(codeDir + "/" + file).results;
 
-                    // Create header line
-                    if(!headerCreated) {
-                        headerCreated = true;
-
-                        csvSize += "File,";
-                        csvTests += "File,";
-                        csvTime += "File,";
-                        // Header line
-                        for (var algo in results) {
-                            if (results.hasOwnProperty(algo)) {
-                                numAlgos++;
-                                csvSize += algo + " size,";
-                                csvTests += algo + " tests,";
-                                csvTime += algo + " time,";
-                            }
-                        }
-                        csvSize += "\n";
-                        csvTests += "\n";
-                        csvTime += "\n";
-                    }
-
                     csvSize += file + ",";
                     csvTests += file + ",";
                     csvTime += file + ",";
                     // Go through all algorithms
-                    for (var algo in results) {
+                    for (let algo in results) {
+                        if (results.hasOwnProperty(algo)) {
+                            // Add to the list of algorithms
+                            if(algorithms.indexOf(algo) == -1) {
+                                algorithms.push(algo);
+                            }
+                        }
+                    }
+                    for (let i = 0; i < algorithms.length; i++) {
+                        let algo = algorithms[i];
                         if (results.hasOwnProperty(algo)) {
                             csvSize += results[algo].minCode.length + ",";
                             csvTests += results[algo].testsRun + ",";
                             csvTime += (results[algo].timeTaken / 1000000).toFixed(0) + ",";
+                        } else {
+                            csvSize += ",";
+                            csvTests += ",";
+                            csvTime += ",";
                         }
                     }
                     csvSize += "\n";
@@ -74,22 +64,32 @@
             }
         }
 
-        fs.writeFileSync(codeDir + "/stats/stats-size.csv", csvSize);
-        fs.writeFileSync(codeDir + "/stats/stats-tests.csv", csvTests);
-        fs.writeFileSync(codeDir + "/stats/stats-time.csv", csvTime);
+        fs.writeFileSync(codeDir + "/stats/stats-size.csv", createHeader(algorithms, "size") + csvSize);
+        fs.writeFileSync(codeDir + "/stats/stats-tests.csv", createHeader(algorithms, "tests") + csvTests);
+        fs.writeFileSync(codeDir + "/stats/stats-time.csv", createHeader(algorithms, "time") + csvTime);
 
-        return numAlgos;
+        return algorithms;
+    }
+
+    function createHeader(algorithms, property) {
+        var header = "File,";
+        // Header line
+        for (let i = 0; i < algorithms.length; i++) {
+            header += algorithms[i] + " " + property + ",";
+        }
+        header += "\n";
+        return header;
     }
 
     /**
      * Plots the statistics. Gnuplot must be installed for this.
      *
-     * @param {number} numAlgos the number of different algorithms
+     * @param {Array} algorithms the different algorithms
      * @param {String} codeDir the code directory
      * @param {String} property "size", "tests", or "time"
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
-    function plot(numAlgos, codeDir, property) {
+    function plot(algorithms, codeDir, property) {
         var colors = ["red", "green", "blue", "yellow", "violet", "orange"];
 
         let plotcommand =
@@ -104,7 +104,7 @@
             "plot ";
 
         // The data
-        for(let i = 0; i < numAlgos; i++) {
+        for(let i = 0; i < algorithms.length; i++) {
             plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
                 + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i] + "', ";
         }
@@ -116,12 +116,12 @@
     }
 
     function createStats(codeDir) {
-        var numAlgos = createCSV(codeDir);
-        var result = plot(numAlgos, codeDir, "size");
+        var algorithms = createCSV(codeDir);
+        var result = plot(algorithms, codeDir, "size");
         console.log(result.stderr);
-        var result = plot(numAlgos, codeDir, "tests");
+        var result = plot(algorithms, codeDir, "tests");
         console.log(result.stderr);
-        var result = plot(numAlgos, codeDir, "time");
+        var result = plot(algorithms, codeDir, "time");
         console.log(result.stderr);
     }
 
