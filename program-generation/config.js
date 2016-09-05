@@ -47,7 +47,8 @@
          */
         usePersistentKnowledge: false,
         resultsDir: "./results",
-        inferredKnowledgeDir: "results/inferredKnowledge",
+        // TODO this is very nasty:
+        inferredKnowledgeDir: "../program-generation/results/inferredKnowledge",
         generatedProgramsDir: "./results/generatedPrograms",
         invalidASTsDir: "./results/invalidASTs", // Needed for debugging purposes, where escodegen fails to convert a tree to AST
         invalidProgramsDir: "./results/invalidPrograms", // Syntactically invalid programs. Detected only by esprima

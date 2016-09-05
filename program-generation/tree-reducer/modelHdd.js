@@ -1,7 +1,6 @@
 // Author: Satia Herfert
 
 (function() {
-    var Input = require('./ddInput').Input;
     var hddScript = require('./hdd');
     var transformations = require('./transformations');
     var ddmin = require('./ddMin').ddmin;

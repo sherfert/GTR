@@ -399,12 +399,11 @@
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
 
-
-    // HDD
-    //reduceAllFiles(hdd.hdd, "HDD", true);
-
     // DDMin line
-    reduceAllFiles(ddminLine, "ddmin", false);
+    //reduceAllFiles(ddminLine, "ddmin", false);
+
+    // DDMin char
+    //reduceAllFiles(ddminChar, "ddminChar", false);
 
     // Model-HDD with hand-written rules
     //modelHdd.setUseInferredKnowledge(false);
@@ -412,12 +411,11 @@
 
     // Model-HDD with inferred knowledge
     modelHdd.setUseInferredKnowledge(true);
-    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
+    //reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
 
+    // HDD and the like
+    reduceAllFiles(hdd.hdd, "HDD", true);
     //reduceAllFiles(hdd.hddStar, "hddStar", true);
     //reduceAllFiles(rdd.rdd, "rdd", true);
     //reduceAllFiles(rdd.rddStar, "rddStar", true);
-
-    // --------------------------------- EXPORTS -----------------------------------------
-    exports.JSFileState = JSFileState;
 })();

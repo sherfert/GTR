@@ -138,18 +138,20 @@
 
     // All manually identified transformations
     var transformations = [T1a, T1b, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b,
-        T11c, T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f];
+        T11c, T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f, T15a, T15b];
     var inferredTransformations = [];
 
     // Read inferred transformations from JSON file
     let modelRuleFileName = config.inferredKnowledgeDir + "/hddModelRule.json";
     try {
         inferredTransformations = jsonfile.readFileSync(modelRuleFileName).transformations;
-        // TODO as soon as the "out" part of the inferred transformations is more than a
+        // XXX as soon as the "out" part of the inferred transformations is more than a
         // replacement label (like in T3), these objects need to be converted to Nodes
         // from the labeledOrderedTrees module.
     } catch(e) {
         // No model
+        console.log("NO MODEL OF INFERRED RULES");
+        console.log(e);
     }
 
     /**

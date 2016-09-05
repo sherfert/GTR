@@ -18,6 +18,7 @@
     function createCSV(codeDir) {
         var csvSize = "";
         var csvTests = "";
+        var csvTime = "";
         var allFiles = fs.readdirSync(codeDir);
         var numAlgos = 0;
 
@@ -38,35 +39,42 @@
 
                         csvSize += "File,";
                         csvTests += "File,";
+                        csvTime += "File,";
                         // Header line
                         for (var algo in results) {
                             if (results.hasOwnProperty(algo)) {
                                 numAlgos++;
                                 csvSize += algo + " size,";
                                 csvTests += algo + " tests,";
+                                csvTime += algo + " time,";
                             }
                         }
                         csvSize += "\n";
                         csvTests += "\n";
+                        csvTime += "\n";
                     }
 
                     csvSize += file + ",";
                     csvTests += file + ",";
+                    csvTime += file + ",";
                     // Go through all algorithms
                     for (var algo in results) {
                         if (results.hasOwnProperty(algo)) {
                             csvSize += results[algo].minCode.length + ",";
                             csvTests += results[algo].testsRun + ",";
+                            csvTime += (results[algo].timeTaken / 1000000).toFixed(0) + ",";
                         }
                     }
                     csvSize += "\n";
                     csvTests += "\n";
+                    csvTime += "\n";
                 }
             }
         }
 
         fs.writeFileSync(codeDir + "/stats/stats-size.csv", csvSize);
         fs.writeFileSync(codeDir + "/stats/stats-tests.csv", csvTests);
+        fs.writeFileSync(codeDir + "/stats/stats-time.csv", csvTime);
 
         return numAlgos;
     }
@@ -76,31 +84,27 @@
      *
      * @param {number} numAlgos the number of different algorithms
      * @param {String} codeDir the code directory
+     * @param {String} property "size", "tests", or "time"
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
-    function plot(numAlgos, codeDir) {
+    function plot(numAlgos, codeDir, property) {
         var colors = ["red", "green", "blue", "yellow", "violet", "orange"];
 
         let plotcommand =
             "set terminal png size 2048,1200\n" +
-            "set output '" + codeDir + "/stats/graph.png'\n" +
+            "set output '" + codeDir + "/stats/graph-" + property + ".png'\n" +
             "set datafile separator ','\n" +
             "set xtics rotate by -45\n" +
             "set style data histogram\n" +
             "set style fill solid border -1\n" +
             "set style histogram clustered\n" +
-            "set boxwidth 0.8 relative\n" +
+            "set logscale y\n" +
             "plot ";
 
-        // The sizes
+        // The data
         for(let i = 0; i < numAlgos; i++) {
-            plotcommand += "'" + codeDir + "/stats/stats-size.csv' using "
+            plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
                 + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i] + "', ";
-        }
-        // The tests
-        for(let i = 0; i < numAlgos; i++) {
-            plotcommand += "'" + codeDir + "/stats/stats-tests.csv' using "
-                + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i] + "' fillstyle pattern 1, ";
         }
 
         return child_process.spawnSync("gnuplot", [], {
@@ -111,7 +115,11 @@
 
     function createStats(codeDir) {
         var numAlgos = createCSV(codeDir);
-        var result = plot(numAlgos, codeDir);
+        var result = plot(numAlgos, codeDir, "size");
+        console.log(result.stderr);
+        var result = plot(numAlgos, codeDir, "tests");
+        console.log(result.stderr);
+        var result = plot(numAlgos, codeDir, "time");
         console.log(result.stderr);
     }
 
