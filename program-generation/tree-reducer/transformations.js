@@ -141,6 +141,7 @@
         T11c, T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f, T15a, T15b];
     var inferredTransformations = [];
 
+    // TODO introduce a parameter and use some file of tree-reducer/inferredRules/...
     // Read inferred transformations from JSON file
     let modelRuleFileName = config.inferredKnowledgeDir + "/hddModelRule.json";
     try {
