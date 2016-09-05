@@ -72,7 +72,7 @@
             workerDone = true;
             console.log("Error during execution of the worker " + eevent.message + " Line no: " +
                 eevent.lineno);
-            var errobj = {result: [{key: "Error", value: "web worker crash"}], isCrashing: true};
+            var errobj = {result: [{key: "Error", value: eevent.message}], isCrashing: true};
             sendResultReloadPage(errobj, fileNameForDifferentialTesting);
         };
         /* Reload the page upon message from the worker */

@@ -4,10 +4,19 @@
     var jsonfile = require('jsonfile');
     var parser = require('ua-parser-js');
 
-    function getFileState(dir, fileName) {
+    function getFileState(dir, fileName, rawCode) {
         var resultFileName = fileName + "on"; // .js --> .json
         try {
-            return jsonfile.readFileSync(dir + "/" + resultFileName)
+            var res = jsonfile.readFileSync(dir + "/" + resultFileName);
+            // Override some fields
+            res.fileName = fileName;
+            res.rawCode = rawCode;
+            res.userAgentToResults = {};
+            res.testCode = undefined;
+            res.diff = undefined;
+            res.lastTested = undefined;
+
+            return res;
         } catch(e) {
             return undefined;
         }

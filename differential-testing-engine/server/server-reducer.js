@@ -115,7 +115,7 @@
                             encoding: "utf8"
                         });
                         // Obtain the old fileState or create a new one
-                        fileNameToState[file] = util.getFileState(codeDir, file) || new JSFileState(file, rawCode);
+                        fileNameToState[file] = util.getFileState(codeDir, file, rawCode) || new JSFileState(file, rawCode);
                         nbNewFiles++;
                     }
                 }
@@ -400,7 +400,7 @@
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
 
     // DDMin line
-    //reduceAllFiles(ddminLine, "ddmin", false);
+    reduceAllFiles(ddminLine, "ddmin", false);
 
     // DDMin char
     //reduceAllFiles(ddminChar, "ddminChar", false);
@@ -411,11 +411,11 @@
 
     // Model-HDD with inferred knowledge
     modelHdd.setUseInferredKnowledge(true);
-    //reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
+    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
 
     // HDD and the like
     reduceAllFiles(hdd.hdd, "HDD", true);
-    //reduceAllFiles(hdd.hddStar, "hddStar", true);
+    reduceAllFiles(hdd.hddStar, "hddStar", true);
     //reduceAllFiles(rdd.rdd, "rdd", true);
     //reduceAllFiles(rdd.rddStar, "rddStar", true);
 })();
