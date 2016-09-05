@@ -82,7 +82,7 @@
     }
 
     /**
-     * Plots the statistics. Gnuplot must be installed for this.
+     * Plots a histogram. Gnuplot must be installed for this.
      *
      * @param {Array} algorithms the different algorithms
      * @param {String} codeDir the code directory
@@ -103,6 +103,71 @@
             "set logscale y\n" +
             "plot ";
 
+        // To print statstics:
+        //"stats '" + codeDir + "/stats/stats-" + property + ".csv' using 3 name 'A'\n" +
+
+        // The data
+        for(let i = 0; i < algorithms.length; i++) {
+            plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
+                + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i] + "', ";
+        }
+
+        return child_process.spawnSync("gnuplot", [], {
+            input: plotcommand,
+            encoding: 'utf8',
+        });
+    }
+
+    /**
+     * Creates a boxplot. Gnuplot must be installed for this.
+     *
+     * @param {Array} algorithms the different algorithms
+     * @param {String} codeDir the code directory
+     * @param {String} property "size", "tests", or "time"
+     * @returns {Object} the result from child_process.spawnSync called with gnuplot
+     */
+    function boxplot(algorithms, codeDir, property) {
+        var colors = ["red", "green", "blue", "yellow", "violet", "orange"];
+
+        let plotcommand =
+            "set terminal png size 2048,1200\n" +
+            "set output '" + codeDir + "/stats/box-" + property + ".png'\n" +
+            "set datafile separator ','\n" +
+            "set style data boxplot\n" +
+            "set style boxplot outliers pointtype 7\n" +
+            "set style boxplot fraction 0.95\n" +
+            "set boxwidth  0.5\n" +
+            "set pointsize 1.5\n" +
+            "set style fill solid border -1\n" +
+            "set xtics ('' 1) scale 0.0\n";
+
+        // For printing the statistics
+        for(let i = 0; i < algorithms.length; i++) {
+            let prefix = algorithms[i] + "_" + property;
+            plotcommand += "print sprintf('" + prefix + "')\n";
+            plotcommand +="stats '" + codeDir + "/stats/stats-" + property + ".csv' using " + (i+2) + " name '"
+                + prefix +  "'\n";
+        }
+
+        plotcommand +=  "set logscale y\n" +
+            "plot ";
+        for(let i = 0; i < algorithms.length; i++) {
+
+            plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
+                + "(" + (i+1) + "):"+ (i+2) +" title columnheader linecolor rgb '" + colors[i] + "', ";
+        }
+
+        return child_process.spawnSync("gnuplot", [], {
+            input: plotcommand,
+            encoding: 'utf8',
+        });
+    }
+
+    function printStats() {
+        let plotcommand =
+            "set datafile separator ','\n" +
+            "stats '" + codeDir + "/stats/stats-" + property + ".csv' using 3 name 'A'\n";
+
         // The data
         for(let i = 0; i < algorithms.length; i++) {
             plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
@@ -119,10 +184,21 @@
         var algorithms = createCSV(codeDir);
         var result = plot(algorithms, codeDir, "size");
         console.log(result.stderr);
-        var result = plot(algorithms, codeDir, "tests");
+        result = boxplot(algorithms, codeDir, "size");
         console.log(result.stderr);
-        var result = plot(algorithms, codeDir, "time");
+
+
+        result = plot(algorithms, codeDir, "tests");
         console.log(result.stderr);
+        result = boxplot(algorithms, codeDir, "tests");
+        console.log(result.stderr);
+
+
+        result = plot(algorithms, codeDir, "time");
+        console.log(result.stderr);
+        result = boxplot(algorithms, codeDir, "time");
+        console.log(result.stderr);
+
     }
 
     exports.createStats = createStats;
