@@ -5,6 +5,8 @@
  */
 (function() {
     var fs = require('fs');
+    var jsonfile = require('jsonfile');
+
     var pyTreeProvider = require('./py-ast/pyAstProvider');
     var pyTreeGenerator = require('./py-ast/pyAstGenerator');
     var createStats = require("./tree-reducer/createStats").createStats;
@@ -73,7 +75,7 @@
      */
     function reduceAllFiles(algorithm, algoPrefix, treeAlgo) {
         var totalTimeMS = 0;
-        for(let i = 0; i < allPyTests.length; i++) {
+        for(var i = 0; i < allPyTests.length; i++) {
             reduce(allPyTests[i], algorithm, algoPrefix, treeAlgo);
             // Accumulate total time taken
             totalTimeMS += (allPyTests[i].results[algoPrefix].timeTaken / 1000000);
@@ -88,29 +90,44 @@
     // node crashes. Sadly, I am the only one on the Internet
     // with this particular failure.
     var allPyTests = [
-        // { fileName: codeDir + "/bug1.py", command: "python3.4"},
-        // { fileName: codeDir + "/bug2.py", command: "python2.7"},
-        // //{ fileName: codeDir + "/bug3.py", command: "python3.4"}, // Non-detetministic
-        // { fileName: codeDir + "/bug4.py", command: "python3.4"},
-        // { fileName: codeDir + "/bug5.py", command: "python2.7"},
-        // { fileName: codeDir + "/bug6.py", command: "python2.7"},
-        // { fileName: codeDir + "/bug7.py", command: "python3.4"},
-        // { fileName: codeDir + "/bug8.py", command: "python2.7"},
-        // { fileName: codeDir + "/bug9.py", command: "python3.4"},
-        { fileName: codeDir + "/bug10.py", command: "python2.7"}
+        getFileState(codeDir + "/bug1.py", "python3.4"),
+        getFileState(codeDir + "/bug2.py", "python2.7"),
+        getFileState(codeDir + "/bug3.py", "python3.4"), // Non-detetministic
+        getFileState(codeDir + "/bug4.py", "python3.4"),
+        getFileState(codeDir + "/bug5.py", "python2.7"),
+        getFileState(codeDir + "/bug6.py", "python2.7"),
+        getFileState(codeDir + "/bug7.py", "python3.4"),
+        getFileState(codeDir + "/bug8.py", "python2.7"),
+        getFileState(codeDir + "/bug9.py", "python3.4"),
+        getFileState(codeDir + "/bug10.py", "python2.7")
     ];
+
+    /**
+     * Gets a fileState by reading the JSON, or creates a new one.
+     * @param fileName the name of the python file
+     * @param command the python command
+     * @returns {*} the FileState
+     */
+    function getFileState(fileName, command) {
+        var resultFileName = fileName.replace(new RegExp('py$'), 'json');// .py --> .json
+        try {
+            return jsonfile.readFileSync(resultFileName)
+        } catch(e) {
+            return { fileName: fileName, command: command};
+        }
+    }
 
     /**
      * Compares all files with different algorithms and saves statistics.
      */
     function runTests() {
         // DDMin line
-        //reduceAllFiles(ddminLine, "ddmin", false);
+        reduceAllFiles(ddminLine, "ddmin", false);
         // HDD
-        reduceAllFiles(hdd.hdd, "HDD", true);
+        //reduceAllFiles(hdd.hdd, "HDD", true);
         // Model-HDD with inferred knowledge
         modelHdd.setUseInferredKnowledge(true);
-        reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
+        //reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
 
         // Create statistics
         createStats(codeDir);

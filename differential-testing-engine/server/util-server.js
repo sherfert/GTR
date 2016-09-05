@@ -1,7 +1,17 @@
 (function () {
 
     var fs = require('fs');
+    var jsonfile = require('jsonfile');
     var parser = require('ua-parser-js');
+
+    function getFileState(dir, fileName) {
+        var resultFileName = fileName + "on"; // .js --> .json
+        try {
+            return jsonfile.readFileSync(dir + "/" + resultFileName)
+        } catch(e) {
+            return undefined;
+        }
+    }
 
     /**
      * Writes the result of the fileState into a json file in the given directory.
@@ -37,6 +47,7 @@
         }
     }
 
+    exports.getFileState = getFileState;
     exports.writeResult = writeResult;
     exports.parsedUserAgent = parsedUserAgent;
 })();

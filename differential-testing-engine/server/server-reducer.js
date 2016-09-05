@@ -114,8 +114,8 @@
                         var rawCode = fs.readFileSync(codeDir + "/" + file, {
                             encoding: "utf8"
                         });
-                        var state = new JSFileState(file, rawCode);
-                        fileNameToState[file] = state;
+                        // Obtain the old fileState or create a new one
+                        fileNameToState[file] = util.getFileState(codeDir, file) || new JSFileState(file, rawCode);
                         nbNewFiles++;
                     }
                 }
@@ -418,4 +418,6 @@
     //reduceAllFiles(rdd.rdd, "rdd", true);
     //reduceAllFiles(rdd.rddStar, "rddStar", true);
 
+    // --------------------------------- EXPORTS -----------------------------------------
+    exports.JSFileState = JSFileState;
 })();
