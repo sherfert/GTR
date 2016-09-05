@@ -24,21 +24,20 @@
 
     exports.config = {
         ruleNames: ruleNames,
-        // treeProvider: "./js-ast/jsAstProvider",
-        // treeGenerator: "./js-ast/jsAstGenerator",
-        treeProvider: "./py-ast/pyAstProvider",
-        treeGenerator: "./py-ast/pyAstGenerator",
-        //treeProvider: "./html/htmlProvider",
-        //treeGenerator: "./html/htmlGenerator",
+        // treeProvider: __dirname + "/js-ast/jsAstProvider",
+        // treeGenerator: __dirname + "/js-ast/jsAstGenerator",
+        treeProvider: __dirname + "/py-ast/pyAstProvider",
+        treeGenerator: __dirname + "/py-ast/pyAstGenerator",
+        //treeProvider: __dirname + "/html/htmlProvider",
+        //treeGenerator: __dirname + "/html/htmlGenerator",
 
 
         /*  Working Directories.
          *  While creating or deleting a directory, also update checkWorkingDirectories() in main.js
-         *  TODO Make all directories relative to main.js
          /* Mandatory directories */
 
         fileType: "Py", // also change treeProvider, treeGenerator
-        corpusDir: "./corpusForTestingPy",
+        corpusDir: __dirname + "/corpusForTestingPy",
 
         maxNoOfFilesToLearnFrom: 0, // 0 for all files in the directory
         //differentialTestingDirectory: "/nknkjn",
@@ -46,14 +45,13 @@
          for knowledge. For each rule, if the corresponding file is not found, then the program terminates.
          */
         usePersistentKnowledge: false,
-        resultsDir: "./results",
-        // TODO this is very nasty:
-        inferredKnowledgeDir: "../program-generation/results/inferredKnowledge",
-        generatedProgramsDir: "./results/generatedPrograms",
-        invalidASTsDir: "./results/invalidASTs", // Needed for debugging purposes, where escodegen fails to convert a tree to AST
-        invalidProgramsDir: "./results/invalidPrograms", // Syntactically invalid programs. Detected only by esprima
-        correctSyntaxProgramsDir: "./results/syntacticallyCorrectPrograms", // Filter syntactically correct programs using esprima
-        statsandPlotsDir: "./results/stats-and-plots",
+        resultsDir: __dirname + "/results",
+        inferredKnowledgeDir: __dirname + "/results/inferredKnowledge",
+        generatedProgramsDir: __dirname + "/results/generatedPrograms",
+        invalidASTsDir: __dirname + "/results/invalidASTs", // Needed for debugging purposes, where escodegen fails to convert a tree to AST
+        invalidProgramsDir: __dirname + "/results/invalidPrograms", // Syntactically invalid programs. Detected only by esprima
+        correctSyntaxProgramsDir: __dirname + "/results/syntacticallyCorrectPrograms", // Filter syntactically correct programs using esprima
+        statsandPlotsDir: __dirname + "/results/stats-and-plots",
         /* End of working directories */
 
         generatorDefaults: generatorDefaults,
@@ -68,11 +66,11 @@
 
         /* Stats and Plots */
         /* The plot function is called from jsAstProvider.js, learning.js, generation.js */
-        generatedNode_vs_generationTime: "./results/stats-and-plots/generated-nodes-vs-generation-time.json",
-        corpusFiles_vs_numberOfnodes: "/results/stats-and-plots/corpus-files-vs-nodes.json", //learning.js
-        generatedFiles_vs_numberOfnodes: "./results/stats-and-plots/generated-files-vs-nodes.json",
-        corpusFiles_vs_Size: "/results/stats-and-plots/corpus-files-vs-size.json",
-        generatedFiles_vs_Size: "./results/stats-and-plots/generated-files-vs-size.json"
+        generatedNode_vs_generationTime: __dirname + "/results/stats-and-plots/generated-nodes-vs-generation-time.json",
+        corpusFiles_vs_numberOfnodes: __dirname + "/results/stats-and-plots/corpus-files-vs-nodes.json", //learning.js
+        generatedFiles_vs_numberOfnodes: __dirname + "/results/stats-and-plots/generated-files-vs-nodes.json",
+        corpusFiles_vs_Size: __dirname + "/results/stats-and-plots/corpus-files-vs-size.json",
+        generatedFiles_vs_Size: __dirname + "/results/stats-and-plots/generated-files-vs-size.json"
     };
 
 })();

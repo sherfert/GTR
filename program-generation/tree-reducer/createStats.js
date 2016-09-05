@@ -4,6 +4,8 @@
  * Using the JSON files that were created, this file creates two csv files,
  * comparing minimal code sizes and tests run for the different reduction algorithms, and one plot
  * file showing both statistics as an histogram.
+ *
+ * FIXME not working if first file has less algorithms or if the order is different
  */
 (function () {
     var jsonfile = require('jsonfile');
