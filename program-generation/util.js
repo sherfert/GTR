@@ -165,8 +165,7 @@
     function getCompletePath(directory) {
         "use strict";
         let currentDirectory = process.cwd();
-        let absolutePath = currentDirectory + "/" + directory;
-        return absolutePath;
+        return currentDirectory + "/" + directory;
     }
 
     function toJSON(map) {

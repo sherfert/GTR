@@ -40,7 +40,6 @@
         corpusDir: __dirname + "/corpusForTestingPy",
 
         maxNoOfFilesToLearnFrom: 0, // 0 for all files in the directory
-        //differentialTestingDirectory: "/nknkjn",
         /* If this (usePersistentKnowledge) is set to 'true' then the corpus is ignored. inferredKnowledgeDir is used to search
          for knowledge. For each rule, if the corresponding file is not found, then the program terminates.
          */

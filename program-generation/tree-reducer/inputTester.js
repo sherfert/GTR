@@ -165,24 +165,6 @@
     }
 
     /**
-     * Runs arbitrary code in eval and returns the error, if any.
-     * FIXME hangs if the code contains an endless loop.
-     * FIXME can create global variables, in which case consecutive executions depend on previous ones
-     * @param {string} code the code to execute
-     * @returns {string} the error message or {@code "" } if the code runs without exception.
-     */
-    function testCodeWithTryCatchEval(code) {
-        console.log("Testing:");
-        console.log(code);
-        try {
-            eval(code);
-        } catch(e) {
-            return e.toString();
-        }
-        return "";
-    }
-
-    /**
      *  Tests any python command for crashes.
      */
     class PyCrashTester extends Tester {

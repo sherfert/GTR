@@ -51,8 +51,7 @@
         var instrumented = jalangi.instrumentString(code + "\n'" + endOfCodeMarker + "'");
         if (instrumented.instAST === undefined) return; // instrumentation failed; probably code is syntactically incorrect
         /* Using String.prototype.replace() will break if the insturmented code contains '$' which has special meaning */
-        var transformedCode = template.split("CODE").join(instrumented.code);
-        return transformedCode;
+        return template.split("CODE").join(instrumented.code);
     }
 
     exports.preProcess = preProcess;

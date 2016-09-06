@@ -102,21 +102,6 @@
     }
 
     function executeUsingEval(code, fileNameForDifferentialTesting) {
-       /* var currentHost = window.location.host;
-        currentHost = "http://" + currentHost;
-        var jalangiFolder = "/jalangiRuntime/";
-        var pathToJalangi = currentHost + jalangiFolder;
-
-        var jalangiRuntime = ['esotope.js', 'acorn.js', 'Constants.js', 'Config.js', 'astUtil.js', 'esnstrument.js',
-         'iidToLocation.js', 'analysis.js', 'executionSummarizer.js'];
-
-        jalangiRuntime.forEach(function (filename) {
-            console.log("Appending");
-            var script = document.createElement('script');
-            script.setAttribute('src', pathToJalangi + filename);
-            document.head.appendChild(script);
-        });*/
-
         var result = sandboxExecution(code);
         sendResultReloadPage({result: result, isCrashing: false}, fileNameForDifferentialTesting);
     }

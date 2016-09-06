@@ -24,7 +24,6 @@
         annotation: true // for plotting mean and max
     }; // For plotting
 
-    var plot = require('../utilities/plotter').plot;
     var trees = [];
     var currentIndex = -1;
 
@@ -37,7 +36,7 @@
         if (maxFiles > 0) {
             files = files.slice(0, maxFiles);
         }
-        fileLoop: for (var i = 0; i < files.length; i++) {
+        for (var i = 0; i < files.length; i++) {
             var file = filepath + "/" + files[i];
             if (!fs.lstatSync(file).isDirectory()) { // Skip directories
                 //singleLinelog.clear();
@@ -48,7 +47,7 @@
                 try {
                     var ast = esprima.parse(content);
                 } catch (e) {
-                    continue fileLoop; // ignore files with parse errors
+                    continue; // ignore files with parse errors
                 }
                 try {
                     var tree = astToTree(ast);
@@ -61,7 +60,6 @@
         }
         /* Plotting each corpus file Vs its size in KB */
         util.writeToJSONfile(process.cwd()+config.corpusFiles_vs_Size, corpusFiletoSize);
-        //plot(corpusFiletoSize, config.corpusFiles_vs_Size.split(".json")[0] + ".eps");
     }
 
     function astToTree(astNode) {

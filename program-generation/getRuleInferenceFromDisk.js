@@ -9,7 +9,6 @@
      * Writes the inferred rules inferences to disk. For each rule, it takes data in form of Map, Set or Array and converts
      * them to a object. Finally it dumps this object in form JSON
      * @param {string} fileName - Name of the file
-     * @param {string} currentRuleInferences - An object, whose properties are contains inference data for each rule
      * */
     function getFromDisk(fileName) {
         let toMap = require('./util').JSONtoMap;
@@ -28,8 +27,7 @@
             var data = jsonfile.readFileSync(fileName);
             for (var dataStructure in data) {
                 if (data.hasOwnProperty(dataStructure)) {
-                    let convertedData = toMap(data[dataStructure]);
-                    currentRuleInferences[dataStructure] = convertedData;
+                    currentRuleInferences[dataStructure] = toMap(data[dataStructure]);
                 }
             }
         }

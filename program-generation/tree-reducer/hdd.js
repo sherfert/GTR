@@ -113,6 +113,8 @@
      * HDD* algorithm. Applies HDD repeatedly until no more nodes are removed.
      * This algorithm ensures 1-minimality, unlike HDD.
      *
+     * TODO use tree cache
+     *
      * @param {Node} tree the tree obtained from the AST.
      * @param {function(Node): string} test see ddmin
      * @returns {Node} the minimized tree.

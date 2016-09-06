@@ -105,9 +105,6 @@
             "set logscale y\n" +
             "plot ";
 
-        // To print statstics:
-        //"stats '" + codeDir + "/stats/stats-" + property + ".csv' using 3 name 'A'\n" +
-
         // The data
         for(let i = 0; i < algorithms.length; i++) {
             plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "

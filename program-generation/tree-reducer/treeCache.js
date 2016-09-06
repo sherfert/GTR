@@ -15,6 +15,7 @@
      */
     function cachedTest(test) {
         var cache = {};
+        var result;
 
         return function(tree) {
             let key = tree.hash();

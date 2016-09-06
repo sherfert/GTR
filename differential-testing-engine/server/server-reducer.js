@@ -5,7 +5,7 @@
  * inconsistent results to minimize them. It is important that
  * the (EXACTLY TWO) browsers exposing the inconsistency connect to this server.
  *
- * TODO forbid more than nbBrowsers connections?
+ * XXX forbid more than nbBrowsers connections.
  */
 (function () {
     try {
@@ -230,7 +230,6 @@
      * In comparison to the basic version this:
      * - Ignores R/W when having a crash vs. non-crash difference
      * - Only considers the first encountered difference in the traces.
-     * - TODO more improvements
      *
      * @param {String} c the code to evaluate using the oracle
      * @param {object} cmpWith the result to compare with (object obtained from invoking getExecutionDifferences)

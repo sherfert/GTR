@@ -165,8 +165,7 @@
                     obj[propName].push(propObj);
                 } else {
                     // Properties without required arrays
-                    let propObj = this.outgoing[i].target.createObj(nameProperty, emptyNodes, mandatoryArrayProperties);
-                    obj[propName] = propObj;
+                    obj[propName] = this.outgoing[i].target.createObj(nameProperty, emptyNodes, mandatoryArrayProperties);
                 }
             }
             return obj;

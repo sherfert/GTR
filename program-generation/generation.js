@@ -48,8 +48,7 @@
             y_title: "size (KB)",
             plotmean: false,
             annotation: true // for plotting mean and max
-        }; // For plotting
-        var plot = require('./utilities/plotter').plot;
+        };
     } catch (err) {
         console.log(err + "\n  Correct it to continue");
         process.exit(0);
@@ -58,13 +57,10 @@
     /* TODO: Use node 'path' module instead of split() */
     function plotData() {
         util.writeToJSONfile(config.generatedNode_vs_generationTime, numberOfNodeToGenerationTime);
-        //plot(numberOfNodeToGenerationTime, config.generatedNode_vs_generationTime.split(".json")[0] + ".eps");
 
         util.writeToJSONfile(config.generatedFiles_vs_Size, generatedFilesvsSize);
-        //plot(generatedFilesvsSize, config.generatedFiles_vs_Size.split(".json")[0] + ".eps");
 
         util.writeToJSONfile(config.generatedFiles_vs_numberOfnodes, generatedFilesvsNodes);
-        //plot(generatedFilesvsNodes, config.generatedFiles_vs_numberOfnodes.split(".json")[0] + ".eps");
     }
 
 
@@ -89,8 +85,7 @@
             var node = nodeToExpand.node;
             var context = nodeToExpand.context;
             // label this node
-            var nodeLabel = pickLabelOfNode(node, context);
-            node.label = nodeLabel;
+            node.label = pickLabelOfNode(node, context);
 
             // create edges that lead to not-yet-expanded nodes
             var edgeLabels = [];

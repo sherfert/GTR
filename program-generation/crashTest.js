@@ -13,8 +13,7 @@
         return "pass"; // Temporarily not crash-testing until isCrashingJS is fixed
         switch (fileExtension) {
             case "js":
-                var result = isCrashingJS(filename + ".js", directory);
-                return result;
+                return isCrashingJS(filename + ".js", directory);
                 break;
             case "html":
                 return isCrashingHTML(filename, directory);

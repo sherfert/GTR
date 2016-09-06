@@ -11,7 +11,6 @@
     var getCompletePath = require("./util").getCompletePath;
     var context = require("./context");
     var getText = require('./getText').getText;
-    var plot = require('./utilities/plotter').plot;
     var corpus = require('./corpus');
     var corpusFilesAndNodes = {
         title: "Files vs Number of nodes",
@@ -21,7 +20,7 @@
         y_title: "number of nodes",
         plotmean: false,
         annotation: true
-    }; // for plotting
+    };
 
     var nbTraversed = 0, numberOfNodes = 0;
 
@@ -39,7 +38,6 @@
         corpus.setCorpusSize(nbTraversed);
         let filetoWrite = process.cwd() + config.corpusFiles_vs_numberOfnodes;
         util.writeToJSONfile(filetoWrite, corpusFilesAndNodes);
-        //plot(corpusFilesAndNodes, config.corpusFiles_vs_numberOfnodes.split(".json")[0] + ".eps"); // Please only specify PNG format
     }
 
     /**

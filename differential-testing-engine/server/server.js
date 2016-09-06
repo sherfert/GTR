@@ -113,20 +113,6 @@
     function readCodeFromFiles() {
         var nbNewFiles = 0;
         var allFiles = fs.readdirSync(codeDir);
-        /* TODO
-         /!* Pre-process the readfiles and select only JS files *!/
-
-         /!* Sort the files by names *!/
-         allFiles.sort(function (i, j) {
-         return i < j ? -1 : 1;
-         });
-         var lastReadFile = fs.readFileSync("last-read.txt", "utf8");
-         /!* Remove files that has already been processed *!/
-         var idx = allFiles.indexOf(lastReadFile);
-         if (idx !== -1) {
-         allFiles.slice(idx + 1);
-         }*/
-        //console.log("Not processing " + idx + " files before " + lastReadFile);
         for (var i = 0; i < allFiles.length; i++) {
             var file = allFiles[i];
             if (file.indexOf(".js") === file.length - 3) {

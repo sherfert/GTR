@@ -196,8 +196,7 @@
         //util.print(ast);
         //console.log("AST:\n" + JSON.stringify(ast, 0, 2) + "\n");
         try {
-            var code = escodegen.generate(ast);
-            return code;
+            return escodegen.generate(ast);
         } catch (e) {
             //console.log("\nPretty printing AST failed: " + e);
 
