@@ -400,7 +400,7 @@
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
 
     // DDMin line
-    reduceAllFiles(ddminLine, "ddmin", false);
+    //reduceAllFiles(ddminLine, "ddmin", false);
 
     // DDMin char
     //reduceAllFiles(ddminChar, "ddminChar", false);
@@ -410,12 +410,12 @@
     //reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLT", true);
 
     // Model-HDD with inferred knowledge
-    modelHdd.setUseInferredKnowledge(true);
-    reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
+    var plt = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest);
+    reduceAllFiles(plt, "PLTM", true);
 
     // HDD and the like
-    reduceAllFiles(hdd.hdd, "HDD", true);
-    reduceAllFiles(hdd.hddStar, "hddStar", true);
+    //reduceAllFiles(hdd.hdd, "HDD", true);
+    //reduceAllFiles(hdd.hddStar, "hddStar", true);
     //reduceAllFiles(rdd.rdd, "rdd", true);
     //reduceAllFiles(rdd.rddStar, "rddStar", true);
 })();

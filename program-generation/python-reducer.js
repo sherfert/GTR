@@ -126,8 +126,8 @@
         // HDD
         //reduceAllFiles(hdd.hdd, "HDD", true);
         // Model-HDD with inferred knowledge
-        modelHdd.setUseInferredKnowledge(true);
-        //reduceAllFiles(modelHdd.postLevelTransformationHddStar, "PLTM", true);
+        var plt = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("PY", pTree, pTest);
+        reduceAllFiles(plt, "PLTM", true);
 
         // Create statistics
         createStats(codeDir);

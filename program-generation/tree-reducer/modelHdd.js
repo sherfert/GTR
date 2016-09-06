@@ -2,30 +2,27 @@
 
 (function() {
     var hddScript = require('./hdd');
-    var transformations = require('./transformations');
+    var tfs= require('./transformations');
     var ddmin = require('./ddMin').ddmin;
-    var hdd = hddScript.hdd;
     var TreeLevelInput = hddScript.TreeLevelInput;
     var treeCache = require('./treeCache');
 
-    // Change from outside to modify hebavior
-    var useInferredKnowledge = false;
-    function setUseInferredKnowledge(val) {
-        useInferredKnowledge = val;
-    }
-    // Uses the corresponding transformations depending whether the model schould be used or not
-    function possibleTransformations(subtree) {
-        return useInferredKnowledge ? transformations.possibleTransformationsWithModel(subtree) :
-            transformations.possibleTransformationsManual(subtree);
-    }
-
-    function applyTransformationsToChildren(node, tree, test) {
+    /**
+     * Applies transformation to the children of a node.
+     *
+     * @param {String} pl the programming language
+     * @param node the parent node
+     * @param tree the whole tree
+     * @param test the oracle
+     * @returns {boolean} if at least one transformation could be applied.
+     */
+    function applyTransformationsToChildren(pl, node, tree, test) {
         var transformationApplied = false;
 
         //Iterate through the children.
         for (let i = 0; i < node.outgoing.length; i++) {
             var target = node.outgoing[i].target;
-            var transformations = possibleTransformations(target);
+            var transformations = tfs.possibleTransformationsWithModel(target, pl);
 
             // Try each transformation by replacing the child and calling test
             let replaced = false;
@@ -54,42 +51,16 @@
     }
 
     /**
-     * Applies HDD and the transformations in turn, until no more changes are registered.
-     *
-     * The transformations are done on a per-node bases: The tree is traversed in preorder,
-     * and for all nodes, all possible transformations are checked. If a node can be transformed,
-     * the new node is also checked for transformations.
+     * Applies on each level first ddmin and then possible transformations.
      *
      * There is no DD like checking of combinations of transformations, if single ones do not work.
      *
+     * @param {String} pl the programming language
      * @param {Node} tree the tree obtained from the AST.
      * @param {function(Node): string} test see ddmin
      * @returns {Node} the minimized tree.
      */
-    function postTransformationHdd(tree, test) {
-        // First do the normal hdd
-        var currentTree = hdd(tree, test);
-        // Now go through all nodes, and try applying transformations
-        currentTree.preorder(node => applyTransformationsToChildren(node, currentTree, test));
-        return currentTree;
-    }
-
-    // Repeats postTransformationHdd
-    function postTransformationHddStar(tree, test) {
-        var cachedTest = treeCache.cachedTest(test);
-        return hddScript.doWhileTreeShrinks(tree, cachedTest, postTransformationHdd);
-    }
-
-    /**
-     * Applies on each level first ddmin and then possible transformations.
-     *
-     * Transformations without combinations, as above.
-     *
-     * @param {Node} tree the tree obtained from the AST.
-     * @param {function(Node): string} test see ddmin
-     * @returns {Node} the minimized tree.
-     */
-    function postLevelTransformationHdd(tree, test) {
+    function postLevelTransformationHdd(pl, tree, test) {
         var currentTree = tree;
 
         // In the original they start with level 0, but we skip the root.
@@ -97,52 +68,24 @@
             console.log("Testing level " + level + " in PLT-HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
             // Previous level, since transformations are applied to children
-            currentTree.applyToLevel(level - 1, node => applyTransformationsToChildren(node, currentTree, test));
+            currentTree.applyToLevel(level - 1, node => applyTransformationsToChildren(pl, node, currentTree, test));
         }
 
         return currentTree;
     }
 
-    // Repeats postLevelTransformationHdd
-    function postLevelTransformationHddStar(tree, test) {
-        var cachedTest = treeCache.cachedTest(test);
-        return hddScript.doWhileTreeShrinks(tree, cachedTest, postLevelTransformationHdd);
-    }
-
     /**
-     * Applies on each level first ddmin and then possible transformations.
-     *
-     * Transformations without combinations, as above.
-     *
+     * Repeats PLT-HDD until nothing changes any more.
+     * @param {String} pl the programming language
      * @param {Node} tree the tree obtained from the AST.
      * @param {function(Node): string} test see ddmin
      * @returns {Node} the minimized tree.
      */
-    function preLevelTransformationHdd(tree, test) {
-        var currentTree = tree;
-
-        // In the original they start with level 0, but we skip the root.
-        for(var level = 1; level <= currentTree.depth() ; level++) {
-            console.log("Testing level " + level + " in PreLT-HDD.");
-            // Previous level, since transformations are applied to children
-            currentTree.applyToLevel(level - 1, node => applyTransformationsToChildren(node, currentTree, test));
-            currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
-        }
-
-        return currentTree;
-    }
-
-    // Repeats postLevelTransformationHdd
-    function preLevelTransformationHddStar(tree, test) {
+    function postLevelTransformationHddStar(pl, tree, test) {
         var cachedTest = treeCache.cachedTest(test);
-        return hddScript.doWhileTreeShrinks(tree, cachedTest, preLevelTransformationHdd);
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => postLevelTransformationHdd(pl, pTree, pTest));
     }
 
-    exports.setUseInferredKnowledge = setUseInferredKnowledge;
-    exports.postTransformationHdd = postTransformationHdd;
-    exports.postTransformationHddStar = postTransformationHddStar;
     exports.postLevelTransformationHdd = postLevelTransformationHdd;
     exports.postLevelTransformationHddStar = postLevelTransformationHddStar;
-    exports.preLevelTransformationHdd = preLevelTransformationHdd;
-    exports.preLevelTransformationHddStar = preLevelTransformationHddStar;
 })();

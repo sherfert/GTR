@@ -1,154 +1,17 @@
 // Author: Satia Herfert
 
 (function() {
-    var config = require("../config").config;
-    var esprima = require('esprima');
     var jsonfile = require('jsonfile');
-    var fs = require('fs');
-    var loTrees = require("../labeledOrderedTrees");
-    var Node = loTrees.Node;
-    var Edge = loTrees.Edge;
     
+    // Map of programming language (String) -> Array of Transformations
+    var inferredTransformations = {};
 
-    var T1a = {
-        "in": new Node("WhileStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T1b = {
-        "in": new Node("DoWhileStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T2a = {
-        "in": new Node("IfStatement", new Edge("consequent", "C")),
-        "out": "C"
-    };
-    var T2b = {
-        "in": new Node("IfStatement", new Edge("consequent", "C"), new Edge("alternate", "A")),
-        "out": "A"
-    };
-    var T2c = {
-        "in": new Node("ConditionalExpression", new Edge("consequent", "C")),
-        "out": "C"
-    };
-    var T2d = {
-        "in": new Node("ConditionalExpression", new Edge("consequent", "C"), new Edge("alternate", "A")),
-        "out": "A"
-    };
-    var T3 = {
-        "in": new Node("IfStatement", new Edge("test", "T"), new Edge("alternate", "A")),
-        "out": new Node("IfStatement", new Edge("test", "T"), new Edge("consequent", "A"))
-    };
-    var T4 = {
-        "in": new Node("WithStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T6a = {
-        "in": new Node("ThrowStatement", new Edge("argument", "A")),
-        "out": "A"
-    };
-    var T6b = {
-        "in": new Node("ReturnStatement", new Edge("argument", "A")),
-        "out": "A"
-    };
-    var T7a = {
-        "in": new Node("TryStatement", new Edge("block", "B")),
-        "out": "B"
-    };
-    var T7b = {
-        "in": new Node("TryStatement", new Edge("handler", new Node("CatchClause", new Edge("body", "B")))),
-        "out": "B"
-    };
-    var T7c = {
-        "in": new Node("TryStatement", new Edge("finalizer", "B")),
-        "out": "B"
-    };
-    var T8 = {
-        "in": new Node("ForStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T9a = {
-        "in": new Node("ForInStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T9b = {
-        "in": new Node("ForOfStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T10 = {
-        "in": new Node("ExpressionStatement", new Edge("expression", new Node("CallExpression",
-            new Edge("callee", new Node("FunctionExpression", new Edge("body", "B")))))),
-        "out": "B"
-    };
-    var T11a = {
-        "in": new Node("ArrayExpression", new Edge("elements", "E")),
-        "out": "E"
-    };
-    var T11b = {
-        "in": new Node("SequenceExpression", new Edge("expressions", "E")),
-        "out": "E"
-    };
-    var T11c = {
-        "in": new Node("BlockStatement", new Edge("body", "B")),
-        "out": "B"
-    };
-    var T12 = {
-        "in": new Node("ObjectExpression", new Edge("properties", new Node("Property", new Edge("value", "V")))),
-        "out": "V"
-    };
-    var T13a = {
-        "in": new Node("UnaryExpression", new Edge("argument", "A")),
-        "out": "A"
-    };
-    var T13b = {
-        "in": new Node("UpdateExpression", new Edge("argument", "A")),
-        "out": "A"
-    };
-    var T14a = {
-        "in": new Node("BinaryExpression", new Edge("left", "L")),
-        "out": "L"
-    };
-    var T14b = {
-        "in": new Node("BinaryExpression", new Edge("right", "R")),
-        "out": "R"
-    };
-    var T14c = {
-        "in": new Node("AssignmentExpression", new Edge("left", "L")),
-        "out": "L"
-    };
-    var T14d = {
-        "in": new Node("AssignmentExpression", new Edge("right", "R")),
-        "out": "R"
-    };
-    var T14e = {
-        "in": new Node("LogicalExpression", new Edge("left", "L")),
-        "out": "L"
-    };
-    var T14f = {
-        "in": new Node("LogicalExpression", new Edge("right", "R")),
-        "out": "R"
-    };
-    var T15a = {
-        "in": new Node("MemberExpression", new Edge("object", "O")),
-        "out": "O"
-    };
-    var T15b = {
-        "in": new Node("MemberExpression", new Edge("property", "P")),
-        "out": "P"
-    };
-
-    // All manually identified transformations
-    var transformations = [T1a, T1b, T2a, T2b, T2c, T2d, T3, T4, T6a, T6b, T7a, T7b, T7c, T8, T9a, T9b, T10, T11a, T11b,
-        T11c, T12, T13a, T13b, T14a, T14b, T14c, T14d, T14e, T14f, T15a, T15b];
-    var inferredTransformations = [];
-
-    // TODO introduce a parameter and use some file of tree-reducer/inferredRules/...
-    // Read inferred transformations from JSON file
-    let modelRuleFileName = config.inferredKnowledgeDir + "/hddModelRule.json";
+    // Read inferred transformations from JSON files
     try {
-        inferredTransformations = jsonfile.readFileSync(modelRuleFileName).transformations;
-        // XXX as soon as the "out" part of the inferred transformations is more than a
-        // replacement label (like in T3), these objects need to be converted to Nodes
-        // from the labeledOrderedTrees module.
+        inferredTransformations["JS"] =
+            jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-js.json").transformations;
+        inferredTransformations["PY"] =
+            jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-py.json").transformations;
     } catch(e) {
         // No model
         console.log("NO MODEL OF INFERRED RULES");
@@ -230,6 +93,12 @@
     }
 
     /**
+     * TODO given that we know which parents allow which children, it
+     * would be even more suitable checking if that particular parent P of N,
+     * allows the child C of N (under the same edge label) as a child; instead
+     * of doing it rule based just on N and C.
+     * TODO also consider root replacement
+     *
      * Returns an array of all possible transformations of a subtree.
      * @param subtree the subtree
      * @param ts the list of general transformations
@@ -248,15 +117,17 @@
         return res;
     }
 
-    function possibleTransformationsManual(subtree) {
-        return possibleTransformations(subtree, transformations);
+    /**
+     * Returns all possible transformations for that subtree and the passed programming language.
+     *
+     * @param subtree the subtree
+     * @param {String} pl the programming language. "JS" or "PY"
+     * @returns {Array} all possible transformations
+     */
+    function possibleTransformationsWithModel(subtree, pl) {
+        return possibleTransformations(subtree, inferredTransformations[pl]);
     }
 
-    function possibleTransformationsWithModel(subtree) {
-        return possibleTransformations(subtree, inferredTransformations);
-    }
-
-    exports.possibleTransformationsManual = possibleTransformationsManual;
     exports.possibleTransformationsWithModel = possibleTransformationsWithModel;
 
 })();
