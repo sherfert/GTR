@@ -5,39 +5,23 @@
     var singleLinelog = require('single-line-log').stdout;
     var config = require("./config").config;
     var treeProvider = require(config.treeProvider);
-    treeProvider.init();
     var rules = require("./rules/ruleProvider").rules();
     var util = require("./util");
     var getCompletePath = require("./util").getCompletePath;
     var context = require("./context");
     var getText = require('./getText').getText;
     var corpus = require('./corpus');
-    var corpusFilesAndNodes = {
-        title: "Files vs Number of nodes",
-        x: [],
-        x_title: "files",
-        y: [],
-        y_title: "number of nodes",
-        plotmean: false,
-        annotation: true
-    };
 
-    var nbTraversed = 0, numberOfNodes = 0;
+    var nbTraversed = 0;
 
     function traverseTrees() {
         var tree = treeProvider.nextTree();
         while (tree) {
             traverseTree(tree);
             tree = treeProvider.nextTree();
-            nbTraversed++;
-            corpusFilesAndNodes.x.push(nbTraversed);
-            corpusFilesAndNodes.y.push(numberOfNodes);
-            //singleLinelog.clear();
-            singleLinelog("Traversed " + nbTraversed + " trees\n");
+
         }
         corpus.setCorpusSize(nbTraversed);
-        let filetoWrite = process.cwd() + config.corpusFiles_vs_numberOfnodes;
-        util.writeToJSONfile(filetoWrite, corpusFilesAndNodes);
     }
 
     /**
@@ -45,7 +29,6 @@
      * @param root Root node of a tree.
      */
     function traverseTree(root) {
-        numberOfNodes = 0;
         var currentNodePath = [root];
         var currentEdgePath = [];
         var currentChildIndices = [-1];
@@ -69,10 +52,11 @@
                 currentChildIndices.pop();
             }
         }
+
+        nbTraversed++;
     }
 
     function visitNode(node, context) {
-        numberOfNodes++;
         for (var i = 0; i < rules.length; i++) {
             var rule = rules[i];
             //console.log("Visiting node "+node.label+" with "+rule.name);
@@ -89,7 +73,7 @@
     }
 
     function writeLearningToDisk() {
-        let directory = getCompletePath(config.inferredKnowledgeDir);
+        let directory = config.inferredKnowledgeDir;
         for (let i = 0; i < rules.length; i++) {
             let rule = rules[i];
             let fileName = directory + "/" + rule.name + ".json";
@@ -97,13 +81,13 @@
         }
     }
 
-
     function learn() {
         let logfile = config.generationLogFile;
         if (config.usePersistentKnowledge) {
             singleLinelog("Using previously learned knowledge from the disk\n");
             return;
         }
+        treeProvider.init();
         util.writelog(logfile, getText("Traversal_start"));
         traverseTrees();
         util.writelog(logfile, getText("Traversal_end"));
@@ -116,4 +100,7 @@
     }
 
     exports.learn = learn;
+    exports.traverseTree = traverseTree;
+    exports.finalizeRules = finalizeRules;
+    exports.writeLearningToDisk = writeLearningToDisk;
 })();

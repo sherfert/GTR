@@ -28,18 +28,20 @@
     var currentIndex = -1;
 
     function init() {
+        trees = [];
+        currentIndex = -1;
+
         util.writelog(config.generationLogFile, getText("Processing_files"));
         var filepath = config.corpusDir;
         var files = fs.readdirSync(filepath);
+        var treesRead = 0;
         const maxFiles = config.maxNoOfFilesToLearnFrom;
-        /* Selecting only top number of files to learn from */
         if (maxFiles > 0) {
             files = files.slice(0, maxFiles);
-        }
+         }
         for (var i = 0; i < files.length; i++) {
             var file = filepath + "/" + files[i];
             if (!fs.lstatSync(file).isDirectory()) { // Skip directories
-                //singleLinelog.clear();
                 singleLinelog("Remaining >> " + parseInt(((files.length - i) / files.length) * 100) + "%  Processing: " + files[i]);
                 corpusFiletoSize.x.push(i);
                 corpusFiletoSize.y.push(util.getFileSizeinKB(file));
@@ -52,14 +54,13 @@
                 try {
                     var tree = astToTree(ast);
                     trees.push(tree);
-
+                    treesRead++;
                 } catch (e) {
                     //console.log("Ignoring a tree because of exceptions");
                 }
             }
         }
-        /* Plotting each corpus file Vs its size in KB */
-        util.writeToJSONfile(process.cwd()+config.corpusFiles_vs_Size, corpusFiletoSize);
+        console.log("Read " + treesRead + " trees.");
     }
 
     function astToTree(astNode) {
@@ -98,8 +99,8 @@
     }
 
     function nextTree() {
-        currentIndex++;
-        if (currentIndex < trees.length) {
+        if (currentIndex < trees.length - 1) {
+            currentIndex++;
             return trees[currentIndex];
         }
     }

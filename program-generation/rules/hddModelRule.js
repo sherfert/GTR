@@ -66,6 +66,8 @@
     }
 
     function finalizeLearning() {
+        // Reset found transformations
+        currentRuleInferences.transformations = [];
         // go through each node label in the children map
         for (let [nodeLabel, childMap] of currentRuleInferences.children) {
             // Abort if the node does not have parents associated
