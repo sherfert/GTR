@@ -146,16 +146,22 @@
         for(let i = 0; i < algorithms.length; i++) {
             let prefix = algorithms[i] + "_" + property;
             plotcommand += "print sprintf('" + prefix + "')\n";
-            plotcommand +="stats '" + codeDir + "/stats/stats-" + property + ".csv' using " + (i+2) + "\n";
+            plotcommand += "stats '" + codeDir + "/stats/stats-" + property + ".csv' using " + (i+2) +
+                "prefix 'A" + (i+1) + "'\n";
+            plotcommand += "set label " + (i+1) + " gprintf('Avg = %g', A" + (i+1) + "_mean)at "
+                + (i+1) + ", A" + (i+1) + "_min*0.75 center font 'Verdana,20'\n"
         }
 
-        plotcommand +=  "set logscale y\n" +
+        plotcommand += "show label\n" +
+            "set logscale y\n" +
             "plot ";
         for(let i = 0; i < algorithms.length; i++) {
 
             plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
                 + "(" + (i+1) + "):"+ (i+2) +" title columnheader linecolor rgb '" + colors[i] + "', ";
         }
+
+        //console.log(plotcommand);
 
         return child_process.spawnSync("gnuplot", [], {
             input: plotcommand,
