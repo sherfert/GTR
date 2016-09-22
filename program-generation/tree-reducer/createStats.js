@@ -2,7 +2,7 @@
 
 /**
  * Using the JSON files that were created, this file creates csv files
- * comparing minimal code sizes tests run and time for the different reduction algorithms, and histograms and boxplots.
+ * comparing minimal code sizes, tests run and time for the different reduction algorithms; and histograms and boxplots.
  */
 (function () {
     var jsonfile = require('jsonfile');

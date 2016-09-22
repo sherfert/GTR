@@ -33,12 +33,12 @@
                 node.outgoing = replacement.outgoing;
 
                 if (test(tree) == "fail") {
-                    //console.log(`replaced ${target} with ${transformations[j]}`);
+                    //console.log(`replaced ${origLabel} with ${transformations[j]}`);
                     replaced = true;
                     transformationApplied = true;
                     break;
                 } else {
-                    //console.log(`could not replace ${target} with ${transformations[j]}`)
+                    //console.log(`could not replace ${origLabel} with ${transformations[j]}`)
                 }
             }
 
@@ -64,8 +64,11 @@
      */
     function postLevelTransformationHdd(pl, tree, test) {
         var currentTree = tree;
+        //console.log(`Original tree:\n${tree}`);
 
-        // In the original they start with level 0, but we skip the root.
+        // For level 0 only transformation
+        currentTree.applyToLevel(0, node => applyTransformationsToNode(pl, node, currentTree, test));
+
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in PLT-HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
