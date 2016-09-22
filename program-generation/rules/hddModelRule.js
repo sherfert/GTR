@@ -1,4 +1,4 @@
-// Author: Michael Pradel
+// Author: Satia Herfert
 
 (function () {
     "use strict";

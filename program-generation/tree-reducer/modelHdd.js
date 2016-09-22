@@ -8,26 +8,30 @@
     var treeCache = require('./treeCache');
 
     /**
-     * Applies transformation to the children of a node.
+     * Applies transformations to a node.
      *
      * @param {String} pl the programming language
-     * @param node the parent node
+     * @param node the node
      * @param tree the whole tree
      * @param test the oracle
      * @returns {boolean} if at least one transformation could be applied.
      */
-    function applyTransformationsToChildren(pl, node, tree, test) {
-        var transformationApplied = false;
+    function applyTransformationsToNode(pl, node, tree, test) {
+        let transformationApplied = false;
+        let replaced = false;
 
-        //Iterate through the children.
-        for (let i = 0; i < node.outgoing.length; i++) {
-            var target = node.outgoing[i].target;
-            var transformations = tfs.possibleTransformationsWithModel(target, pl);
+        do {
+            let origLabel = node.label;
+            let origOutgoing = node.outgoing;
+            let transformations = tfs.possibleTransformationsWithModel(node, pl);
+            replaced = false;
 
-            // Try each transformation by replacing the child and calling test
-            let replaced = false;
+            // Try each transformation by replacing the label and children and calling test
             for (let j = 0; j < transformations.length; j++) {
-                node.outgoing[i].target = transformations[j];
+                var replacement = transformations[j];
+                node.label = replacement.label;
+                node.outgoing = replacement.outgoing;
+
                 if (test(tree) == "fail") {
                     //console.log(`replaced ${target} with ${transformations[j]}`);
                     replaced = true;
@@ -38,15 +42,13 @@
                 }
             }
 
-            // Put the original child in place if we found no replacement
+            // Put the original label in children in place if we found no replacement
             if (!replaced) {
-                node.outgoing[i].target = target;
-            } else {
-                // If we found a transformation, the replacement might have more
-                // transformations, so we must repeat the index
-                i--;
+                node.label = origLabel;
+                node.outgoing = origOutgoing;
             }
-        }
+        } while(replaced);
+
         return transformationApplied;
     }
 
@@ -67,8 +69,7 @@
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in PLT-HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
-            // Previous level, since transformations are applied to children
-            currentTree.applyToLevel(level - 1, node => applyTransformationsToChildren(pl, node, currentTree, test));
+            currentTree.applyToLevel(level, node => applyTransformationsToNode(pl, node, currentTree, test));
         }
 
         return currentTree;
