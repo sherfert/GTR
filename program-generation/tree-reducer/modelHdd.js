@@ -8,46 +8,49 @@
     var treeCache = require('./treeCache');
 
     /**
-     * Applies transformations to a node.
+     * Applies PNC transformations to a node.
      *
      * @param {String} pl the programming language
-     * @param node the node
+     * @param p the P node
      * @param tree the whole tree
      * @param test the oracle
      * @returns {boolean} if at least one transformation could be applied.
      */
-    function applyTransformationsToNode(pl, node, tree, test) {
+    function applyPNCTransformationsToNode(pl, p, tree, test) {
         let transformationApplied = false;
-        let replaced = false;
 
-        do {
-            let origLabel = node.label;
-            let origOutgoing = node.outgoing;
-            let transformations = tfs.possibleTransformationsWithModel(node, pl);
-            replaced = false;
+        // Go through all children of p
+        for(let i = 0; i < p.outgoing.length; i++) {
+            let l1 = p.outgoing[i].label;
+            let n = p.outgoing[i].target;
+            let replaced = false;
 
-            // Try each transformation by replacing the label and children and calling test
-            for (let j = 0; j < transformations.length; j++) {
-                var replacement = transformations[j];
-                node.label = replacement.label;
-                node.outgoing = replacement.outgoing;
+            // Go through all children of n
+            for(let j = 0; j < n.outgoing.length; j++) {
+                let c = n.outgoing[j].target;
 
-                if (test(tree) == "fail") {
-                    //console.log(`replaced ${origLabel} with ${transformations[j]}`);
-                    replaced = true;
-                    transformationApplied = true;
-                    break;
-                } else {
-                    //console.log(`could not replace ${origLabel} with ${transformations[j]}`)
+                // Test, if a PNC transformation is allowed
+                if(tfs.pncTransformationAllowedForPL(p.label, l1, c.label, pl)) {
+
+                    //console.log(`\tTry: ${p.label} -${l1}-> ${n.label} --> ${c.label}`);
+                    // Replace n with c
+                    p.outgoing[i].target = c;
+                    if (test(tree) == "fail") {
+                        replaced = true;
+                        transformationApplied = true;
+                        break;
+                    } else {
+                        // Revert the replacement
+                        p.outgoing[i].target = n;
+                    }
                 }
             }
 
-            // Put the original label in children in place if we found no replacement
-            if (!replaced) {
-                node.label = origLabel;
-                node.outgoing = origOutgoing;
+            if(replaced) {
+                // We need to repeat with the new "n"
+                i--;
             }
-        } while(replaced);
+        }
 
         return transformationApplied;
     }
@@ -66,13 +69,11 @@
         var currentTree = tree;
         //console.log(`Original tree:\n${tree}`);
 
-        // For level 0 only transformation
-        currentTree.applyToLevel(0, node => applyTransformationsToNode(pl, node, currentTree, test));
-
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in PLT-HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
-            currentTree.applyToLevel(level, node => applyTransformationsToNode(pl, node, currentTree, test));
+            // Previous level, since the the replacements take place for p's children
+            currentTree.applyToLevel(level - 1, p => applyPNCTransformationsToNode(pl, p, currentTree, test));
         }
 
         return currentTree;
