@@ -169,8 +169,7 @@
     }
 
     function createStats(codeDir) {
-        // TODO uncomment createCSV again
-        var algorithms = ["DD line-based","DD char-based","HDD","HDD*","HDD with child substitution"];// createCSV(codeDir);
+        var algorithms = createCSV(codeDir); //["DD line-based","DD char-based","HDD","HDD*","HDD with child substitution"];
         var result = plot(algorithms, codeDir, "size", "File size in characters (log)");
         console.log(result.stderr);
         result = boxplot(algorithms, codeDir, "size", "File size in characters (log)");

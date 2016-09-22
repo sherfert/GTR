@@ -7,7 +7,6 @@
     var treeProvider = require(config.treeProvider);
     var rules = require("./rules/ruleProvider").rules();
     var util = require("./util");
-    var getCompletePath = require("./util").getCompletePath;
     var context = require("./context");
     var getText = require('./getText').getText;
     var corpus = require('./corpus');
