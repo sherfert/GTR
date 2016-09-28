@@ -14,9 +14,10 @@
      * @param p the P node
      * @param tree the whole tree
      * @param test the oracle
+     * @param tryAll if all child replacements should be tested, regardless if they are deemed OK from the corpus
      * @returns {boolean} if at least one transformation could be applied.
      */
-    function applyPNCTransformationsToNode(pl, p, tree, test) {
+    function applyPNCTransformationsToNode(pl, p, tree, test, tryAll) {
         let transformationApplied = false;
 
         // Go through all children of p
@@ -30,7 +31,7 @@
                 let c = n.outgoing[j].target;
 
                 // Test, if a PNC transformation is allowed
-                if(tfs.pncTransformationAllowedForPL(p.label, l1, c.label, pl)) {
+                if(tryAll || tfs.pncTransformationAllowedForPL(p.label, l1, c.label, pl)) {
 
                     //console.log(`\tTry: ${p.label} -${l1}-> ${n.label} --> ${c.label}`);
                     // Replace n with c
@@ -63,9 +64,10 @@
      * @param {String} pl the programming language
      * @param {Node} tree the tree obtained from the AST.
      * @param {function(Node): string} test see ddmin
+     * @param tryAll if all child replacements should be tested, regardless if they are deemed OK from the corpus
      * @returns {Node} the minimized tree.
      */
-    function postLevelTransformationHdd(pl, tree, test) {
+    function postLevelTransformationHdd(pl, tree, test, tryAll) {
         var currentTree = tree;
         //console.log(`Original tree:\n${tree}`);
 
@@ -73,7 +75,7 @@
             console.log("Testing level " + level + " in PLT-HDD.");
             currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
             // Previous level, since the the replacements take place for p's children
-            currentTree.applyToLevel(level - 1, p => applyPNCTransformationsToNode(pl, p, currentTree, test));
+            currentTree.applyToLevel(level - 1, p => applyPNCTransformationsToNode(pl, p, currentTree, test, tryAll));
         }
 
         return currentTree;
@@ -84,11 +86,12 @@
      * @param {String} pl the programming language
      * @param {Node} tree the tree obtained from the AST.
      * @param {function(Node): string} test see ddmin
+     * @param tryAll if all child replacements should be tested, regardless if they are deemed OK from the corpus
      * @returns {Node} the minimized tree.
      */
-    function postLevelTransformationHddStar(pl, tree, test) {
+    function postLevelTransformationHddStar(pl, tree, test, tryAll) {
         var cachedTest = treeCache.cachedTest(test);
-        return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => postLevelTransformationHdd(pl, pTree, pTest));
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => postLevelTransformationHdd(pl, pTree, pTest, tryAll));
     }
 
     exports.postLevelTransformationHdd = postLevelTransformationHdd;

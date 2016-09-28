@@ -17,15 +17,15 @@
 
     var csv = "Number of files,Found transformations\n";
 
-    // Repeat learning until learningGraphMax is reached and save data in CSV
+    // Repeat and save data in CSV
     treeProvider.init();
-    for(let i = 0, tree = treeProvider.nextTree(); tree; i++, tree = treeProvider.nextTree()) {
+    for(let i = 1, tree = treeProvider.nextTree(); tree; i++, tree = treeProvider.nextTree()) {
         learning.traverseTree(tree);
         learning.finalizeRules();
         learning.writeLearningToDisk();
-        var transformations =
-            jsonfile.readFileSync(config.inferredKnowledgeDir + "/hddModelRule.json").transformations;
-        csv += i + "," + transformations.length + "\n";
+        var numTransformations =
+            jsonfile.readFileSync(config.inferredKnowledgeDir + "/hddModelRule.json").numTransformations;
+        csv += i + "," + numTransformations + "\n";
 
     }
 

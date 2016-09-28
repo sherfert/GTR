@@ -1,5 +1,6 @@
-// Author: Michael Pradel, Jibesh Patra
+// Author: Satia Herfert
 
+// TODO adapt tp jsAstProvider
 (function () {
 
     var fs = require("fs");

@@ -1,4 +1,4 @@
-// Author: Michael Pradel, Jibesh Patra
+// Author: Michael Pradel, Jibesh Patra, Satia Herfert
 
 (function () {
 
@@ -14,27 +14,17 @@
         raw: true,
         sourceType: true
     };
-    var corpusFiletoSize = {
-        title: "Corpus file vs size",
-        x: [],
-        x_title: "files",
-        y: [],
-        y_title: "size (KB)",
-        plotmean: false,
-        annotation: true // for plotting mean and max
-    }; // For plotting
 
-    var trees = [];
+    var fileNames = [];
     var currentIndex = -1;
 
     function init() {
-        trees = [];
+        fileNames = [];
         currentIndex = -1;
 
         util.writelog(config.generationLogFile, getText("Processing_files"));
         var filepath = config.corpusDir;
         var files = fs.readdirSync(filepath);
-        var treesRead = 0;
         const maxFiles = config.maxNoOfFilesToLearnFrom;
         if (maxFiles > 0) {
             files = files.slice(0, maxFiles);
@@ -42,25 +32,10 @@
         for (var i = 0; i < files.length; i++) {
             var file = filepath + "/" + files[i];
             if (!fs.lstatSync(file).isDirectory()) { // Skip directories
-                singleLinelog("Remaining >> " + parseInt(((files.length - i) / files.length) * 100) + "%  Processing: " + files[i]);
-                corpusFiletoSize.x.push(i);
-                corpusFiletoSize.y.push(util.getFileSizeinKB(file));
-                var content = fs.readFileSync(file);
-                try {
-                    var ast = esprima.parse(content);
-                } catch (e) {
-                    continue; // ignore files with parse errors
-                }
-                try {
-                    var tree = astToTree(ast);
-                    trees.push(tree);
-                    treesRead++;
-                } catch (e) {
-                    //console.log("Ignoring a tree because of exceptions");
-                }
+
+                fileNames.push(file);
             }
         }
-        console.log("Read " + treesRead + " trees.");
     }
 
     function astToTree(astNode) {
@@ -99,9 +74,17 @@
     }
 
     function nextTree() {
-        if (currentIndex < trees.length - 1) {
+        while (currentIndex < fileNames.length - 1) {
             currentIndex++;
-            return trees[currentIndex];
+            singleLinelog("Remaining >> " + parseInt(((fileNames.length - currentIndex) / fileNames.length) * 100) +
+                "%  Processing: " + fileNames[currentIndex]);
+            var content = fs.readFileSync(fileNames[currentIndex]);
+            try {
+                var ast = esprima.parse(content);
+                return astToTree(ast);
+            } catch (e) {
+                // Will repeat while loop until a file can be parsed successfully
+            }
         }
     }
 

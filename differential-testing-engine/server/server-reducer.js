@@ -409,10 +409,11 @@
     //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
     // Model-HDD(*)
-    var plt = (pTree, pTest) => modelHdd.postLevelTransformationHdd("JS", pTree, pTest);
-    reduceAllFiles(plt, "HDD with child substitution", true);
-    var pltS = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest);
+    // var plt = (pTree, pTest) => modelHdd.postLevelTransformationHdd("JS", pTree, pTest, false);
+    // reduceAllFiles(plt, "HDD with child substitution", true);
+    var pltS = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, false);
     reduceAllFiles(pltS, "HDD* with child substitution", true);
-
+    // var pltSA = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, true);
+    // reduceAllFiles(pltSA, "HDD* with any substitution", true);
 
 })();

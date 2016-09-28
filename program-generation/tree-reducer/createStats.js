@@ -9,6 +9,9 @@
     var fs = require('fs');
     var child_process = require('child_process');
 
+
+    var colors = ["red", "green", "blue", "yellow", "violet", "orange", "magenta"];
+
     /**
      * Creates the CSV files
      * @param {String} codeDir the code directory
@@ -89,7 +92,6 @@
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
     function plot(algorithms, codeDir, property, ylabel) {
-        var colors = ["red", "green", "blue", "yellow", "violet", "orange"];
 
         let plotcommand =
             "set terminal png size 2048,1200\n" +
@@ -125,7 +127,6 @@
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
     function boxplot(algorithms, codeDir, property, ylabel) {
-        var colors = ["red", "green", "blue", "yellow", "violet", "orange"];
 
         let plotcommand =
             "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
