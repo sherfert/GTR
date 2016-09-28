@@ -1,0 +1,135 @@
+%-----------------------------------------------------------------------------
+%
+%               Template for sigplanconf LaTeX Class
+%
+% Name:         sigplanconf-template.tex
+%
+% Purpose:      A template for sigplanconf.cls, which is a LaTeX 2e class
+%               file for SIGPLAN conference proceedings.
+%
+% Guide:        Refer to "Author's Guide to the ACM SIGPLAN Class,"
+%               sigplanconf-guide.pdf
+%
+% Author:       Paul C. Anagnostopoulos
+%               Windfall Software
+%               978 371-2316
+%               paul@windfall.com
+%
+% Created:      15 February 2005
+%
+%-----------------------------------------------------------------------------
+
+
+\documentclass[numbers]{sigplanconf}
+
+% The following \documentclass options may be useful:
+
+% preprint      Remove this option only once the paper is in final form.
+% 10pt          To set in 10-point type instead of 9-point.
+% 11pt          To set in 11-point type instead of 9-point.
+% numbers       To obtain numeric citation style instead of author/year.
+
+\usepackage{amsmath}
+\newcommand{\cL}{{\cal L}}
+
+\usepackage{url}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage[nolist,nohyperlinks]{acronym}
+\usepackage[table]{xcolor}
+\usepackage[sharp]{easylist}
+
+\hyphenation{op-tical net-works semi-conduc-tor a-na-ly-sis}
+
+%glossaries package and acronym definitions
+\usepackage{glossaries}
+\setacronymstyle{long-short}
+%\newacronym{frp}{FRP}{functional reactive programming}
+
+
+\definecolor{mygreen}{rgb}{0,0.3,0}
+\definecolor{myyellow}{rgb}{0.3,0.3,0}
+\definecolor{mygrey}{rgb}{0.9,0.9,0.9}
+
+\usepackage{listings}
+
+\lstset{
+    frameround=fttt,
+    language=Java,
+    numbers=left,
+    numbersep=3pt,
+    breaklines=true,
+    breakatwhitespace=true,
+    captionpos=b,
+    keywordstyle=\color{blue}, 
+    ndkeywordstyle=\color{purple},
+    basicstyle=\scriptsize\ttfamily\color{black},
+    numberstyle=\color{black},    
+    stringstyle=\color{myyellow},
+    commentstyle=\color{mygreen},
+    backgroundcolor=\color{mygrey}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.multipart}
+
+\begin{document}
+
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\conferenceinfo{SOLA '06}{Darmstadt, Germany}
+\copyrightyear{2016}
+%\copyrightdata{978-1-nnnn-nnnn-n/yy/mm}%\copyrightdoi{nnnnnnn.nnnnnnn}
+
+% Uncomment the publication rights you want to use.
+%\publicationrights{transferred}
+%\publicationrights{licensed}     % this is the default
+%\publicationrights{author-pays}
+
+\titlebanner{}        % These are ignored unless
+\preprintfooter{footer}   % 'preprint' option specified.
+
+\title{Language-independent Property Isolation in Tree-like Documents}
+\subtitle{}
+
+\authorinfo{Satia Herfert}
+           {SOLA, TU Darmstadt}
+           {satia.herfert@stud.tu-darmstadt.de}
+           
+\authorinfo{Jibesh Patra}
+           {SOLA, TU Darmstadt}
+           {jibesh.patra@gmail.com}
+          
+\authorinfo{Michael Pradel}
+           {SOLA, TU Darmstadt}
+           {michael@binaervarianz.de}
+
+\maketitle
+
+\begin{abstract}
+le abstract
+\end{abstract}
+
+%\category{CR-number}{subcategory}{third-level}
+
+% general terms are not compulsory anymore,
+% you may leave them out
+%\terms
+%term1, term2
+
+%\keywords
+%keyword1, keyword2
+
+\section{Introduction}
+\label{sec_introduction}
+
+We are like \cite{hdd} but better.
+
+
+% We recommend abbrvnat bibliography style.
+
+\bibliographystyle{plainnat}
+\bibliography{bibliography}
+
+\end{document}
