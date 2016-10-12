@@ -28,6 +28,7 @@
     var rdd = require("../../program-generation/tree-reducer/rdd");
     var ddminLine = require("../../program-generation/tree-reducer/ddMinLine").ddminLine;
     var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
+    var btLine = require("../../program-generation/tree-reducer/btLine").btLine;
     var util = require('./util-server');
 
     /* Configurations */
@@ -404,6 +405,9 @@
     // DDMin char
     //reduceAllFiles(ddminChar, "DD char-based", false);
 
+    // BT line
+    reduceAllFiles(btLine, "BT line-based", false);
+
     // HDD and the like
     //reduceAllFiles(hdd.hdd, "HDD", true);
     //reduceAllFiles(hdd.hddStar, "HDD*", true);
@@ -411,8 +415,8 @@
     // Model-HDD(*)
     // var plt = (pTree, pTest) => modelHdd.postLevelTransformationHdd("JS", pTree, pTest, false);
     // reduceAllFiles(plt, "HDD with child substitution", true);
-    var pltS = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, false);
-    reduceAllFiles(pltS, "HDD* with child substitution", true);
+    //var pltS = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, false);
+    //reduceAllFiles(pltS, "HDD* with child substitution", true);
     // var pltSA = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, true);
     // reduceAllFiles(pltSA, "HDD* with any substitution", true);
 
