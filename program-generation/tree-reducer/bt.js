@@ -28,7 +28,7 @@
      * Another function getNewAssignment MAY be defined. This function is called each time the bt algorithm finds a
      * valid assignment for a variable that is better than the current one. It MUST return an array of new assignments,
      * that became possible through the current re-assignment. The function MUST accept one argument, which is the current
-     * assignment. The returned assignments are stored in the domain directly before the last entry!
+     * assignment. The returned assignments are stored in the domain after the last entry!
      */
     class BTInput {
         constructor(domains, convertToInput, getNewAssignments) {
@@ -128,14 +128,14 @@
                         // See if new assignments became available
                         var newAssignments = btInput.getNewAssignments(btInput.domains[i][j]);
                         if(newAssignments) {
-                            // Insert the new assignments before the last entry (insert array into another)
+                            // Insert the new assignments after the last entry (insert array into another)
                             Array.prototype.splice.apply(btInput.domains[i],
-                                [btInput.domains[i].length - 1, 0].concat(newAssignments));
+                                [btInput.domains[i].length, 0].concat(newAssignments));
 
                             // We have to start over to test the new assignments
-                            // Set to last element (already tested), so that after the loop decrement it will point to
+                            // Set to after last element, so that after the loop decrement it will point to
                             // the last of the newly inserted elements
-                            j = btInput.domains[i].length - 1;
+                            j = btInput.domains[i].length;
                         }
                     } else {
                         // If not, we revert to the original assignment

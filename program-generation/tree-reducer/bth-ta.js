@@ -3,7 +3,10 @@
 (function() {
     var bt = require('./bt');
     var hddScript = require('./hdd');
+    var TreeLevelInput = hddScript.TreeLevelInput;
     var tfs= require('./transformations');
+    var ddmin = require('./ddMin').ddmin;
+    var treeCache = require('./treeCache');
 
     /**
      * An input for the BT algorithm that uses a level of a tree as input, and includes tree transformations.
@@ -48,7 +51,7 @@
                     }
 
                     // "Discard the node" assignment (maximum gain)
-                    assignments.push(new bt.Assignment(undefined, Number.MAX_SAFE_INTEGER));
+                    //assignments.push(new bt.Assignment(undefined, Number.MAX_SAFE_INTEGER));
 
                     domains.push(assignments);
                 }
@@ -125,6 +128,7 @@
 
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in BTH-TA.");
+            currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
             currentTree = bt.bt(new TreeLevelTransformationBTInput(pl, currentTree, level, tryAll), test);
         }
         return currentTree;
@@ -141,7 +145,8 @@
      * @returns {Node} the minimized tree.
      */
     function bthtaStar(pl, tree, test, tryAll) {
-        return hddScript.doWhileTreeShrinks(tree, test, (pTree, pTest) => bthta(pl, pTree, pTest, tryAll));
+        var cachedTest = treeCache.cachedTest(test);
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => bthta(pl, pTree, pTest, tryAll));
     }
     
     exports.bthta = bthta;
