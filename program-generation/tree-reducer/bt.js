@@ -24,11 +24,23 @@
      * configuration. From these objects it builds an object that can be passed to the testInput function of bt.
      * Given a configuration where each variable is asigned the first value of its domain, convertToInput MUST return
      * exactly the original input.
+     *
+     * Another function getNewAssignment MAY be defined. This function is called each time the bt algorithm finds a
+     * valid assignment for a variable that is better than the current one. It MUST return an array of new assignments,
+     * that became possible through the current re-assignment. The function MUST accept one argument, which is the current
+     * assignment. The returned assignments are stored in the domain directly before the last entry!
      */
     class BTInput {
-        constructor(domains, convertToInput) {
+        constructor(domains, convertToInput, getNewAssignments) {
             this.domains = domains;
             this.convertToInput = convertToInput;
+
+            // Assign a default function if none is provided
+            if(getNewAssignments) {
+                this.getNewAssignments = getNewAssignments;
+            } else {
+                this.getNewAssignments = (a) => undefined;
+            }
         }
 
         /**
@@ -74,7 +86,7 @@
      * The result is the object obtained from converToInput given the final configuration in the algorithm.
      *
      * @param {BTInput} btInput a subclass of BTInput that defines the domains and a convertToInput function.
-     * @param {function(object): string} testInput a function that tests a current assignment
+     * @param {function(*): string} testInput a function that tests a current assignment
      *                  (converted with convertToInput) and returns "fail" if the test fails, "pass" if
      *                  the test passes, and "?" if the test is undecidable.
      * @returns {object}       The minimized input converted with convertToInput.
@@ -86,7 +98,6 @@
             // For each domain the first possible assignment
             conf.push(0);
         }
-
 
         let improvementFound = false;
         do {
@@ -103,6 +114,7 @@
                         continue;
                     }
 
+                    // Assign that value
                     conf[i] = j;
                     // Test the current assignment
                     var result = testInput(btInput.toInput(conf));
@@ -112,6 +124,18 @@
                         improvementFound = true;
                         // Save the new current assignment
                         currentAssignment = conf[i];
+
+                        // See if new assignments became available
+
+                        var newAssignments = btInput.getNewAssignments(btInput.domains[i][j]);
+                        if(newAssignments) {
+                            console.log("Got some");
+                            console.log(newAssignments);
+                            // Insert the new assignments before the last entry (insert array into another)
+                            Array.prototype.splice.apply(btInput.domains[i],
+                                [btInput.domains[i].length - 1, 0].concat(newAssignments));
+                        }
+
                     } else {
                         // If not, we revert to the original assignment
                         conf[i] = currentAssignment;

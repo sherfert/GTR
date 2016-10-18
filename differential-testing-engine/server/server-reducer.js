@@ -30,6 +30,7 @@
     var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
     var btLine = require("../../program-generation/tree-reducer/btLine").btLine;
     var bth = require("../../program-generation/tree-reducer/bth");
+    var bthta = require("../../program-generation/tree-reducer/bth-ta");
     var util = require('./util-server');
 
     /* Configurations */
@@ -413,7 +414,7 @@
     //reduceAllFiles(hdd.hdd, "HDD", true);
     //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-    reduceAllFiles(bth.bth, "BTH", true);
+    //reduceAllFiles(bth.bth, "BTH", true);
 
     // Model-HDD(*)
     // var plt = (pTree, pTest) => modelHdd.postLevelTransformationHdd("JS", pTree, pTest, false);
@@ -422,5 +423,8 @@
     //reduceAllFiles(pltS, "HDD* with child substitution", true);
     // var pltSA = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, true);
     // reduceAllFiles(pltSA, "HDD* with any substitution", true);
+
+    var bthtaalgo = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
+    reduceAllFiles(bthtaalgo, "BTH-TA", true);
 
 })();

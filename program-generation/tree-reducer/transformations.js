@@ -28,7 +28,7 @@
      * @returns {boolean} if the transformation is allowed
      */
     function pncTransformationAllowed(p, l1, c, parents) {
-        // We assume this is only called if the current substree contains p -l1-> n -l2-> c
+        // We assume this is only called if the current subtree contains p -l1-> n -l2-> c
         // Therefore, we only need to test if: p -l1-> c is allowed
         var cParentMap = parents[c];
         if(cParentMap) {
