@@ -107,8 +107,8 @@
             for(let i = 0; i < btInput.domains.length; i++) {
 
                 var currentAssignment = conf[i];
-                // Check each assignment that is right of the current assignment
-                for(let j = currentAssignment + 1; j < btInput.domains[i].length; j++) {
+                // Check each assignment that is right of the current assignment (by starting with the last one)
+                for(let j = btInput.domains[i].length - 1; j > currentAssignment; j--){
                     // Only check the assingment if its gain is better
                     if(btInput.domains[i][j].gain <= btInput.domains[i][currentAssignment].gain) {
                         continue;
@@ -126,16 +126,17 @@
                         currentAssignment = conf[i];
 
                         // See if new assignments became available
-
                         var newAssignments = btInput.getNewAssignments(btInput.domains[i][j]);
                         if(newAssignments) {
-                            console.log("Got some");
-                            console.log(newAssignments);
                             // Insert the new assignments before the last entry (insert array into another)
                             Array.prototype.splice.apply(btInput.domains[i],
                                 [btInput.domains[i].length - 1, 0].concat(newAssignments));
-                        }
 
+                            // We have to start over to test the new assignments
+                            // Set to last element (already tested), so that after the loop decrement it will point to
+                            // the last of the newly inserted elements
+                            j = btInput.domains[i].length - 1;
+                        }
                     } else {
                         // If not, we revert to the original assignment
                         conf[i] = currentAssignment;

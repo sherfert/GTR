@@ -124,7 +124,7 @@
         var currentTree = tree;
 
         for(var level = 1; level <= currentTree.depth() ; level++) {
-            console.log("Testing level " + level + " in BTH.");
+            console.log("Testing level " + level + " in BTH-TA.");
             currentTree = bt.bt(new TreeLevelTransformationBTInput(pl, currentTree, level, tryAll), test);
         }
         return currentTree;
