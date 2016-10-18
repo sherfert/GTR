@@ -8,7 +8,6 @@
      */
     class LineBTInput extends bt.BTInput {
         /**
-         *
          * @param {string} text The text that comprises this input
          */
         constructor(text) {

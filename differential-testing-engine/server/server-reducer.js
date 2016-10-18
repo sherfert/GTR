@@ -29,6 +29,7 @@
     var ddminLine = require("../../program-generation/tree-reducer/ddMinLine").ddminLine;
     var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
     var btLine = require("../../program-generation/tree-reducer/btLine").btLine;
+    var bth = require("../../program-generation/tree-reducer/bth");
     var util = require('./util-server');
 
     /* Configurations */
@@ -406,11 +407,13 @@
     //reduceAllFiles(ddminChar, "DD char-based", false);
 
     // BT line
-    reduceAllFiles(btLine, "BT line-based", false);
+    //reduceAllFiles(btLine, "BT line-based", false);
 
     // HDD and the like
     //reduceAllFiles(hdd.hdd, "HDD", true);
     //reduceAllFiles(hdd.hddStar, "HDD*", true);
+
+    reduceAllFiles(bth.bth, "BTH", true);
 
     // Model-HDD(*)
     // var plt = (pTree, pTest) => modelHdd.postLevelTransformationHdd("JS", pTree, pTest, false);

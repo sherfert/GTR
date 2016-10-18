@@ -3,6 +3,7 @@
 (function() {
     var Input = require('./ddInput').Input;
     var ddmin = require('./ddMin').ddmin;
+    var treeCache = require('./treeCache');
     
     /**
      * An input for the ddmin algorithm that uses a tree as input and uses the nodes of
@@ -113,14 +114,13 @@
      * HDD* algorithm. Applies HDD repeatedly until no more nodes are removed.
      * This algorithm ensures 1-minimality, unlike HDD.
      *
-     * TODO use tree cache
-     *
      * @param {Node} tree the tree obtained from the AST.
      * @param {function(Node): string} test see ddmin
      * @returns {Node} the minimized tree.
      */
     function hddStar(tree, test) {
-        return doWhileTreeShrinks(tree, test, hdd);
+        var cachedTest = treeCache.cachedTest(test);
+        return doWhileTreeShrinks(tree, cachedTest, hdd);
     }
 
     /**
