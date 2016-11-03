@@ -39,7 +39,7 @@
         fileType: "JS", // also change treeProvider, treeGenerator
         corpusDir: __dirname + "/corpusForTestingJS",
 
-        maxNoOfFilesToLearnFrom: 2500, // 0 for all files in the directory
+        maxNoOfFilesToLearnFrom: 0, // 0 for all files in the directory
         /* If this (usePersistentKnowledge) is set to 'true' then the corpus is ignored. inferredKnowledgeDir is used to search
          for knowledge. For each rule, if the corresponding file is not found, then the program terminates.
          */

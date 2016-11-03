@@ -1,22 +1,44 @@
 // Author: Satia Herfert
 
-// TODO adapt tp jsAstProvider
 (function () {
 
     var fs = require("fs");
     var loTrees = require("./../labeledOrderedTrees");
     var child_process = require('child_process');
+    var singleLinelog = require('single-line-log').stdout;
 
     var config = require("./../config").config;
-
-    var trees = [];
-    var currentIndex = -1;
 
     var ignoredASTProps = {
         type: true,
         raw: true,
         sourceType: true
     };
+
+    var fileNames = [];
+    var currentIndex = -1;
+
+    /**
+     * Initialize this tree provider for the corpus learning process
+     */
+    function init() {
+        fileNames = [];
+        currentIndex = -1;
+
+        var filepath = config.corpusDir;
+        var files = fs.readdirSync(filepath);
+        const maxFiles = config.maxNoOfFilesToLearnFrom;
+        if (maxFiles > 0) {
+            files = files.slice(0, maxFiles);
+        }
+        for (var i = 0; i < files.length; i++) {
+            var file = filepath + "/" + files[i];
+            if (!fs.lstatSync(file).isDirectory()) { // Skip directories
+
+                fileNames.push(file);
+            }
+        }
+    }
 
     function codeToTree(code) {
         var result = child_process.spawnSync("python", ["parse.py"], {
@@ -32,45 +54,25 @@
         return loTrees.createTree(obj, "ast_type", ["col_offset", "lineno"]);
     }
 
-
-    /**
-     * Initialize this tree provider for the corpus learning process
-     */
-    function init() {
-        var filepath = config.corpusDir;
-        var files = fs.readdirSync(filepath);
-        const maxFiles = config.maxNoOfFilesToLearnFrom;
-        /* Selecting only top number of files to learn from */
-        if (maxFiles > 0) {
-            files = files.slice(0, maxFiles);
-        }
-        for (var i = 0; i < files.length; i++) {
-            var file = filepath + "/" + files[i];
-            if (!fs.lstatSync(file).isDirectory()) { // Skip directories
-
-                var content = fs.readFileSync(file);
-                try {
-                    var tree = codeToTree(content);
-                } catch (e) {
-                    continue; // ignore files with errors
-                }
-                trees.push(tree);
-            }
-        }
-    }
-
     /**
      * Return the next tree during the corpus learning process
      */
     function nextTree() {
-        currentIndex++;
-        if (currentIndex < trees.length) {
-            return trees[currentIndex];
+        while (currentIndex < fileNames.length - 1) {
+            currentIndex++;
+            singleLinelog("Remaining >> " + parseInt(((fileNames.length - currentIndex) / fileNames.length) * 100) +
+                "%  Processing: " + fileNames[currentIndex]);
+            var content = fs.readFileSync(fileNames[currentIndex]);
+            try {
+                return codeToTree(content);
+            } catch (e) {
+                // Will repeat while loop until a file can be parsed successfully
+            }
         }
     }
 
-    exports.codeToTree = codeToTree;
     exports.init = init;
     exports.nextTree = nextTree;
+    exports.codeToTree = codeToTree;
 
 })();

@@ -80,8 +80,7 @@
                 "%  Processing: " + fileNames[currentIndex]);
             var content = fs.readFileSync(fileNames[currentIndex]);
             try {
-                var ast = esprima.parse(content);
-                return astToTree(ast);
+                return codeToTree(content);
             } catch (e) {
                 // Will repeat while loop until a file can be parsed successfully
             }
