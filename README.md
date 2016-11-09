@@ -1,3 +1,30 @@
+Reducing JS files
+=================
+1. Change the __config.js__ file so that it includes these lines, which may be currently commented or different:
+- treeProvider: __dirname + "/js-ast/jsAstProvider",
+- treeGenerator: __dirname + "/js-ast/jsAstGenerator",
+- fileType: "JS",
+- corpusDir: __dirname + "/corpusForTestingJS",
+2. All programs that will be reduced are placed in differential-testing-engine/inconsistentCode/
+3. Adapt differential-testing-engine/server/server-reducer.js at the bottom to run those algorithms of interest.
+4. Open Firefox 25 and Chrome 48
+5. Run in ./differential-testing-engine/: node server/server-reducer
+6. To gather statistics after the reductions are done, run in ./differential-testing-engine/: node util/createStats
+   The statistics are placed in differential-testing-engine/inconsistentCode/stats
+
+Reducing PY files
+=================
+1. Change the __config.js__ file so that it includes these lines, which may be currently commented or different:
+- treeProvider: __dirname + "/py-ast/pyAstProvider",
+- treeGenerator: __dirname + "/py-ast/pyAstGenerator",
+- fileType: "PY",
+- corpusDir: __dirname + "/corpusForTestingPy",
+2. Adapt program-generation/python-reducer.js  to run those algorithms of interest, and for those files of interest.
+   The files that can be used are placed in program-generation/tree-reducer/input/python/
+   There is a strange bug that makes this crash if two many child processes are spawned. Therefore, do not choose too many algorithms/files at once.
+3. Run in ./program-generation: node python-reducer
+4. This already gathers statistics that are placed in program-generation/tree-reducer/input/python/stats
+
 Random program generation
 ===========================
 Given a corpus of code, the approach extracts probabilistic relations and uses them to generate new code.
