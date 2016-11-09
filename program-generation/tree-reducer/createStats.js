@@ -10,7 +10,7 @@
     var child_process = require('child_process');
 
 
-    var colors = ["red", "green", "blue", "yellow", "violet", "orange", "magenta"];
+    var colors = ["#b7b7b7", "#5b60e5", "#383c8c", "#5cd6a1", "#337a5b", "orange", "magenta"];
 
     /**
      * Creates the CSV files
@@ -33,11 +33,16 @@
                 var stats = fs.statSync(codeDir + "/" + file);
                 if (stats.isFile()) {
 
-                    let results = jsonfile.readFileSync(codeDir + "/" + file).results;
+                    let json = jsonfile.readFileSync(codeDir + "/" + file);
+                    let results = json.results;
 
                     csvSize += file + ",";
                     csvTests += file + ",";
                     csvTime += file + ",";
+
+                    // Save original size
+                    csvSize += json.origSize + ",";
+
                     // Go through all algorithms
                     for (let algo in results) {
                         if (results.hasOwnProperty(algo)) {
@@ -66,7 +71,7 @@
             }
         }
 
-        fs.writeFileSync(codeDir + "/stats/stats-size.csv", createHeader(algorithms, "size") + csvSize);
+        fs.writeFileSync(codeDir + "/stats/stats-size.csv", createHeader(["Original"].concat(algorithms), "size") + csvSize);
         fs.writeFileSync(codeDir + "/stats/stats-tests.csv", createHeader(algorithms, "tests") + csvTests);
         fs.writeFileSync(codeDir + "/stats/stats-time.csv", createHeader(algorithms, "time") + csvTime);
 
@@ -93,8 +98,11 @@
      */
     function plot(algorithms, codeDir, property, ylabel) {
 
+
+        var coloroffset = property == "size" ? 0 : 1;
+
         let plotcommand =
-            "set terminal png size 2048,1200\n" +
+            "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
             "set output '" + codeDir + "/stats/graph-" + property + ".png'\n" +
             "set datafile separator ','\n" +
             "set xtics rotate by -45\n" +
@@ -109,7 +117,7 @@
         // The data
         for(let i = 0; i < algorithms.length; i++) {
             plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
-                + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i] + "', ";
+                + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i+ coloroffset] + "', ";
         }
 
         return child_process.spawnSync("gnuplot", [], {
@@ -127,6 +135,8 @@
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
     function boxplot(algorithms, codeDir, property, ylabel) {
+
+        var coloroffset = property == "size" ? 0 : 1;
 
         let plotcommand =
             "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
@@ -158,7 +168,7 @@
         for(let i = 0; i < algorithms.length; i++) {
 
             plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
-                + "(" + (i+1) + "):"+ (i+2) +" title columnheader linecolor rgb '" + colors[i] + "', ";
+                + "(" + (i+1) + "):"+ (i+2) +" title columnheader linecolor rgb '" + colors[i + coloroffset] + "', ";
         }
 
         //console.log(plotcommand);
@@ -171,9 +181,9 @@
 
     function createStats(codeDir) {
         var algorithms = createCSV(codeDir); //["DD line-based","DD char-based","HDD","HDD*","HDD with child substitution"];
-        var result = plot(algorithms, codeDir, "size", "File size in characters (log)");
+        var result = plot(["Original"].concat(algorithms), codeDir, "size", "File size in characters (log)");
         console.log(result.stderr);
-        result = boxplot(algorithms, codeDir, "size", "File size in characters (log)");
+        result = boxplot(["Original"].concat(algorithms), codeDir, "size", "File size in characters (log)");
         console.log(result.stderr);
 
 

@@ -14,6 +14,7 @@
 
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("./tree-reducer/hdd");
+    var bth_ta = require("./tree-reducer/bth-ta");
     var modelHdd = require("./tree-reducer/modelHdd");
     var rdd = require("./tree-reducer/rdd");
     var ddminLine = require("./tree-reducer/ddMinLine").ddminLine;
@@ -45,6 +46,8 @@
         }
 
         var pycode = "" + fs.readFileSync(fileState.fileName);
+        fileState.origSize = pycode.length;
+
         var tester = new inputTester.PyCrashTester(fileState.command, ddAlgo);
         var newCode = tester.runTest(pycode);
 
@@ -55,6 +58,7 @@
 
         fileState.results[algoPrefix] = {};
         fileState.results[algoPrefix].minCode  = newCode;
+        fileState.results[algoPrefix].size  = newCode.length;
         fileState.results[algoPrefix].testsRun = tester.testsRun;
         fileState.results[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
         console.log("Num tests: " + tester.testsRun + ` in ${fileState.results[algoPrefix].timeTaken} nanoseconds`);
@@ -90,16 +94,16 @@
     // node crashes. Sadly, I am the only one on the Internet
     // with this particular failure.
     var allPyTests = [
-        getFileState(codeDir + "/bug1.py", "python3.4"),
-        getFileState(codeDir + "/bug2.py", "python2.7"),
-        getFileState(codeDir + "/bug3.py", "python3.4"), // Non-detetministic
-        getFileState(codeDir + "/bug4.py", "python3.4"),
-        getFileState(codeDir + "/bug5.py", "python2.7"),
-        getFileState(codeDir + "/bug6.py", "python2.7"),
-        getFileState(codeDir + "/bug7.py", "python3.4"),
-        getFileState(codeDir + "/bug8.py", "python2.7"),
-        getFileState(codeDir + "/bug9.py", "python3.4"),
-        getFileState(codeDir + "/bug10.py", "python2.7")
+        // getFileState(codeDir + "/bug1.py", "python3.4"), // No reduction at all
+        // getFileState(codeDir + "/bug2.py", "python2.7"),
+        // getFileState(codeDir + "/bug3.py", "python3.4"), // Non-detetministic
+        // getFileState(codeDir + "/bug4.py", "python3.4"),
+        // getFileState(codeDir + "/bug5.py", "python2.7"),
+        // getFileState(codeDir + "/bug6.py", "python2.7"),  // No reduction at all
+        // getFileState(codeDir + "/bug7.py", "python3.4"),
+        // getFileState(codeDir + "/bug8.py", "python2.7"),
+        // getFileState(codeDir + "/bug9.py", "python3.4"),
+        // getFileState(codeDir + "/bug10.py", "python2.7")
     ];
 
     /**
@@ -121,13 +125,19 @@
      * Compares all files with different algorithms and saves statistics.
      */
     function runTests() {
+        // DDMin char
+        //reduceAllFiles(ddminChar, "DD char-based", false);
         // DDMin line
-        reduceAllFiles(ddminLine, "ddmin", false);
-        // HDD
+        //reduceAllFiles(ddminLine, "DD line-based", false);
+
+        // HDD and the like
         //reduceAllFiles(hdd.hdd, "HDD", true);
-        // Model-HDD with inferred knowledge
-        var plt = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("PY", pTree, pTest);
-        reduceAllFiles(plt, "PLTM", true);
+        //reduceAllFiles(hdd.hddStar, "HDD*", true);
+
+        // var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
+        // reduceAllFiles(gtr, "GTR", true);
+        // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
+        // reduceAllFiles(gtrS, "GTR*", true);
 
         // Create statistics
         createStats(codeDir);
