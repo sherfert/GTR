@@ -101,7 +101,7 @@
         // getFileState(codeDir + "/bug5.py", "python2.7"),
         // getFileState(codeDir + "/bug6.py", "python2.7"),  // No reduction at all
         // getFileState(codeDir + "/bug7.py", "python3.4"),
-        // getFileState(codeDir + "/bug8.py", "python2.7"),
+         getFileState(codeDir + "/bug8.py", "python2.7"),
         // getFileState(codeDir + "/bug9.py", "python3.4"),
         // getFileState(codeDir + "/bug10.py", "python2.7")
     ];
@@ -136,8 +136,8 @@
 
         // var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
         // reduceAllFiles(gtr, "GTR", true);
-        // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
-        // reduceAllFiles(gtrS, "GTR*", true);
+        //var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
+        //reduceAllFiles(gtrS, "GTR*", true);
 
         // Create statistics
         createStats(codeDir);

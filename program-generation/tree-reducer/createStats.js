@@ -19,6 +19,7 @@
      */
     function createCSV(codeDir) {
         var csvSize = "";
+        var csvReduction = "";
         var csvTests = "";
         var csvTime = "";
         var allFiles = fs.readdirSync(codeDir);
@@ -37,6 +38,7 @@
                     let results = json.results;
 
                     csvSize += file + ",";
+                    csvReduction += file + ",";
                     csvTests += file + ",";
                     csvTime += file + ",";
 
@@ -55,9 +57,10 @@
                     for (let i = 0; i < algorithms.length; i++) {
                         let algo = algorithms[i];
                         if (results.hasOwnProperty(algo)) {
-                            csvSize += results[algo].minCode.length + ",";
+                            csvSize += results[algo].size + ",";
+                            csvReduction += 100 * (1 - results[algo].size / json.origSize) + ",";
                             csvTests += results[algo].testsRun + ",";
-                            csvTime += (results[algo].timeTaken / 1000000).toFixed(0) + ",";
+                            csvTime += (results[algo].timeTaken / 1000000000).toFixed(3) + ",";
                         } else {
                             csvSize += ",";
                             csvTests += ",";
@@ -65,6 +68,7 @@
                         }
                     }
                     csvSize += "\n";
+                    csvReduction += "\n";
                     csvTests += "\n";
                     csvTime += "\n";
                 }
@@ -72,6 +76,7 @@
         }
 
         fs.writeFileSync(codeDir + "/stats/stats-size.csv", createHeader(["Original"].concat(algorithms), "size") + csvSize);
+        fs.writeFileSync(codeDir + "/stats/stats-reduction.csv", createHeader(algorithms, "reduction") + csvReduction);
         fs.writeFileSync(codeDir + "/stats/stats-tests.csv", createHeader(algorithms, "tests") + csvTests);
         fs.writeFileSync(codeDir + "/stats/stats-time.csv", createHeader(algorithms, "time") + csvTime);
 
@@ -94,24 +99,25 @@
      * @param {Array} algorithms the different algorithms
      * @param {String} codeDir the code directory
      * @param {String} property "size", "tests", or "time"
+     * @param {String} ylabel the label for the y-axis
+     * @param {boolean} logscale if a logarithmic scale should be used
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
-    function plot(algorithms, codeDir, property, ylabel) {
-
-
+    function plot(algorithms, codeDir, property, ylabel, logscale) {
         var coloroffset = property == "size" ? 0 : 1;
 
         let plotcommand =
             "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
             "set output '" + codeDir + "/stats/graph-" + property + ".png'\n" +
             "set datafile separator ','\n" +
+            "set key top left\n" +
             "set xtics rotate by -45\n" +
             "set style data histogram\n" +
             "set style fill solid border -1\n" +
             "set xlabel 'Files'\n" +
             "set ylabel '" + ylabel + "'\n" +
             "set style histogram clustered\n" +
-            "set logscale y\n" +
+            (logscale ? "set logscale y\n" : "") +
             "plot ";
 
         // The data
@@ -131,17 +137,20 @@
      *
      * @param {Array} algorithms the different algorithms
      * @param {String} codeDir the code directory
-     * @param {String} property "size", "tests", or "time"
+     * @param {String} property "size", "tests", "time", or "reduction
+     * @param {String} ylabel the label for the y-axis
+     * @param {boolean} logscale if a logarithmic scale should be used
      * @returns {Object} the result from child_process.spawnSync called with gnuplot
      */
-    function boxplot(algorithms, codeDir, property, ylabel) {
-
+    function boxplot(algorithms, codeDir, property, ylabel, logscale) {
         var coloroffset = property == "size" ? 0 : 1;
 
         let plotcommand =
             "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
             "set output '" + codeDir + "/stats/box-" + property + ".png'\n" +
             "set datafile separator ','\n" +
+            "set key bottom right\n" +
+            // "set yrange [0:100]\n" +
             "set style data boxplot\n" +
             "set style boxplot outliers pointtype 7\n" +
             "set style boxplot fraction 0.95\n" +
@@ -163,7 +172,7 @@
         }
 
         plotcommand += "show label\n" +
-            "set logscale y\n" +
+            (logscale ? "set logscale y\n" : "") +
             "plot ";
         for(let i = 0; i < algorithms.length; i++) {
 
@@ -180,22 +189,22 @@
     }
 
     function createStats(codeDir) {
-        var algorithms = createCSV(codeDir); //["DD line-based","DD char-based","HDD","HDD*","HDD with child substitution"];
-        var result = plot(["Original"].concat(algorithms), codeDir, "size", "File size in characters (log)");
+        var algorithms = createCSV(codeDir);
+        var result = plot(["Original"].concat(algorithms), codeDir, "size", "File size in characters", false);
         console.log(result.stderr);
-        result = boxplot(["Original"].concat(algorithms), codeDir, "size", "File size in characters (log)");
-        console.log(result.stderr);
-
-
-        result = plot(algorithms, codeDir, "tests", "Number of oracle executions (log)");
-        console.log(result.stderr);
-        result = boxplot(algorithms, codeDir, "tests", "Number of oracle executions (log)");
+        result = boxplot(algorithms, codeDir, "reduction", "Reduction in %", false);
         console.log(result.stderr);
 
 
-        result = plot(algorithms, codeDir, "time", "Execution time in ms (log)");
+        //result = plot(algorithms, codeDir, "tests", "Number of oracle executions", false);
+        //console.log(result.stderr);
+        result = boxplot(algorithms, codeDir, "tests", "Number of oracle executions (log)", true);
         console.log(result.stderr);
-        result = boxplot(algorithms, codeDir, "time", "Execution time in ms (log)");
+
+
+        // result = plot(algorithms, codeDir, "time", "Execution time in s", false);
+        // console.log(result.stderr);
+        result = boxplot(algorithms, codeDir, "time", "Execution time in s (log)", true);
         console.log(result.stderr);
 
     }

@@ -51,6 +51,7 @@
     function JSFileState(fileName, rawCode) {
         this.fileName = fileName;
         this.rawCode = rawCode;
+        this.origSize = rawCode.length;
         this.userAgentToResults = {}; // user agent string --> result
         this.results = {}; // minimization results with different algorithms
     }
@@ -363,6 +364,7 @@
         var tester = new Tester(test, ddAlgo);
         fileState.results[algoPrefix] = {};
         fileState.results[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
+        fileState.results[algoPrefix].size  = fileState.results[algoPrefix].minCode.length;
         fileState.results[algoPrefix].testsRun = tester.testsRun;
         fileState.results[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
         console.log("Num tests: " + tester.testsRun + ` in ${fileState.results[algoPrefix].timeTaken} nanoseconds`);
@@ -411,8 +413,8 @@
     //reduceAllFiles(btLine, "BT line-based", false);
 
     // HDD and the like
-    //reduceAllFiles(hdd.hdd, "HDD", true);
-    //reduceAllFiles(hdd.hddStar, "HDD*", true);
+    // reduceAllFiles(hdd.hdd, "HDD", true);
+     reduceAllFiles(hdd.hddStar, "HDD*", true);
 
     //reduceAllFiles(bth.bth, "BTH", true);
 
@@ -424,7 +426,9 @@
     // var pltSA = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, true);
     // reduceAllFiles(pltSA, "HDD* with any substitution", true);
 
-    var bthtaalgo = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
-    reduceAllFiles(bthtaalgo, "BTH-TA", true);
+    // var gtr = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
+    // reduceAllFiles(gtr, "GTR", true);
+    // var gtrS = (pTree, pTest) => bthta.bthtaStar("JS", pTree, pTest, false);
+    // reduceAllFiles(gtrS, "GTR*", true);
 
 })();

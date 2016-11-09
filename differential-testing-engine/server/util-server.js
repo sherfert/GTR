@@ -11,6 +11,7 @@
             // Override some fields
             res.fileName = fileName;
             res.rawCode = rawCode;
+            res.origSize = rawCode.length;
             res.userAgentToResults = {};
             res.testCode = undefined;
             res.diff = undefined;
