@@ -7,7 +7,8 @@
 
     var currentRuleInferences = {
         parents: new Map(),
-        numTransformations: 0
+        //mandatoryChildren: new Map(),
+        numParents: 0
     };
 
     function visitNode(node, context) {
@@ -32,42 +33,36 @@
                 // Add parent edge to Set
                 parentEdgeSet.add(context.lastEdge().label);
             }
+            // Save mandatory children
+            // FIXME: This finds also all nodes that may be null in a JS AST. This is undesired.
+            // var childrenSet = new Set();
+            // // Add all children
+            // for(let i = 0; i < node.outgoing.length; i++) {
+            //     childrenSet.add(node.outgoing[i].label);
+            // }
+            // if(currentRuleInferences.mandatoryChildren.has(node.label)) {
+            //     // Intersect with so far mandatory children
+            //     var intersection = new Set([...childrenSet].filter(x =>
+            //         currentRuleInferences.mandatoryChildren.get(node.label).has(x)));
+            //
+            //     currentRuleInferences.mandatoryChildren.set(node.label, intersection);
+            // } else {
+            //     //Put the set in the map
+            //     currentRuleInferences.mandatoryChildren.set(node.label, childrenSet);
+            // }
         }
     }
 
-    // This just counts possible transformations. The information is for statistics only.
+    // This just counts parents. The information is for statistics only.
     function finalizeLearning() {
-        // Reset found transformations
-        currentRuleInferences.numTransformations = 0;
+        // Reset found parents
+        currentRuleInferences.numParents = 0;
 
         // Go through each node label in the parent map
-        for (let [cLabel, cParentMap] of currentRuleInferences.parents) {
-            for (let [nLabel, nParentMap] of currentRuleInferences.parents) {
-                // Collect all l1 such that n -l2-> c is allowed
-                if(cParentMap.has(nLabel)) {
-                    var l2Set = cParentMap.get(nLabel);
-                } else {
-                    // We contonie with the next possible parent of c
-                    continue;
-                }
-
-                // Check if there is a p such that
-                // p -l1-> n and p -l1-> c are allowed
-                for(let [pLabel, nParentEdgeSet] of nParentMap) {
-                    //console.log(`Testing ${pLabel} -> ${nLabel} -> ${cLabel}`);
-                    if(cParentMap.has(pLabel)) {
-                        // Find the intersection
-                        for(let l1 of nParentEdgeSet) {
-                            if(cParentMap.get(pLabel).has(l1)) {
-                                // Go through all l2 and create transformations
-                                for(let l2 of l2Set) {
-                                    // Transformation
-                                    // p -l1-> n -l2-> c ==> p -l1-> c
-                                    currentRuleInferences.numTransformations++;
-                                }
-                            }
-                        }
-                    }
+        for (let [childNodeLabel, parentMap] of currentRuleInferences.parents) {
+            for (let [parentLabel, edgeNameSet] of parentMap) {
+                for(let edgeName of edgeNameSet) {
+                    currentRuleInferences.numParents++;
                 }
             }
         }

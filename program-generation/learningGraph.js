@@ -15,7 +15,7 @@
 
     checkWorkingDirectories();
 
-    var csv = "Number of files,Found transformations\n";
+    var csv = "Number of files,Found parents\n";
 
     // Repeat and save data in CSV
     treeProvider.init();
@@ -23,9 +23,9 @@
         learning.traverseTree(tree);
         learning.finalizeRules();
         learning.writeLearningToDisk();
-        var numTransformations =
-            jsonfile.readFileSync(config.inferredKnowledgeDir + "/hddModelRule.json").numTransformations;
-        csv += i + "," + numTransformations + "\n";
+        var numParents =
+            jsonfile.readFileSync(config.inferredKnowledgeDir + "/hddModelRule.json").numParents;
+        csv += i + "," + numParents + "\n";
 
     }
 
@@ -39,7 +39,7 @@
         "unset key\n" +
         "set datafile separator ','\n" +
         "set xlabel 'Number of files'\n" +
-        "set ylabel 'Number of transformations found'\n" +
+        "set ylabel 'Number of parents found'\n" +
         "plot '" + config.inferredKnowledgeDir + "/learning-graph.csv' using 1:2 with lines title columnheader";
 
     var result = child_process.spawnSync("gnuplot", [], {
