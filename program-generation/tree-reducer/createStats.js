@@ -190,6 +190,7 @@
 
     function createStats(codeDir) {
         var algorithms = createCSV(codeDir);
+        //algorithms = ["GTR", "GTR (no language information)"];
         var result = plot(["Original"].concat(algorithms), codeDir, "size", "File size in characters", false);
         console.log(result.stderr);
         result = boxplot(algorithms, codeDir, "reduction", "Reduction in %", false);

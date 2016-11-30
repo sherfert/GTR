@@ -374,7 +374,9 @@
         // Write to file
         util.writeResult(codeDir, fileState);
         // Also write minimized code
-        //fs.writeFileSync(codeDir + "/min/min-" + fileState.fileName, fileState.minCode);
+        fs.writeFileSync(codeDir + "/min/" +
+            fileState.fileName.substr(0, fileState.fileName.length - 3) + "-" + algoPrefix + ".js",
+            fileState.results[algoPrefix].minCode);
         console.log("Reduction done of " + fileState.fileName);
     }
 
@@ -413,8 +415,8 @@
     //reduceAllFiles(btLine, "BT line-based", false);
 
     // HDD and the like
-    // reduceAllFiles(hdd.hdd, "HDD", true);
-     reduceAllFiles(hdd.hddStar, "HDD*", true);
+    reduceAllFiles(hdd.hdd, "HDD", true);
+    reduceAllFiles(hdd.hddStar, "HDD*", true);
 
     //reduceAllFiles(bth.bth, "BTH", true);
 
@@ -426,9 +428,11 @@
     // var pltSA = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, true);
     // reduceAllFiles(pltSA, "HDD* with any substitution", true);
 
-    // var gtr = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
-    // reduceAllFiles(gtr, "GTR", true);
-    // var gtrS = (pTree, pTest) => bthta.bthtaStar("JS", pTree, pTest, false);
-    // reduceAllFiles(gtrS, "GTR*", true);
+     var gtr = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
+     reduceAllFiles(gtr, "GTR", true);
+     var gtr2 = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, true);
+     reduceAllFiles(gtr2, "GTR (no language information)", true);
+     var gtrS = (pTree, pTest) => bthta.bthtaStar("JS", pTree, pTest, false);
+     reduceAllFiles(gtrS, "GTR*", true);
 
 })();
