@@ -1,5 +1,7 @@
 // Author: Satia Herfert
 
+
+// WARNING: This Algorithm is not used anymore. Use bta-ta.js instead!
 (function() {
     var hddScript = require('./hdd');
     var tfs= require('./transformations');

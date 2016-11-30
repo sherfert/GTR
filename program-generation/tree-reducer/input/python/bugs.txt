@@ -1,10 +1,12 @@
-bug1.py		python3.4	https://bugs.python.org/issue25455		 (V3.4.3) (OK)
-bug2.py		python2.7	https://bugs.python.org/issue27195		 (V2.7.6)
-bug3.py		python3.4	https://bugs.python.org/issue15994		 (OK)
-bug4.py		python3.4	https://bugs.python.org/issue22898		 (OK)
-bug5.py		python2.7	https://bugs.python.org/issue24100		 
-bug6.py		python2.7	https://bugs.python.org/issue24828		 
-bug7.py		python3.4	https://bugs.python.org/issue24098		 (OK)
-bug8.py		python2.7	https://bugs.python.org/issue24482		 
-bug9.py		python3.4	https://bugs.python.org/issue6717		 (OK)
-bug10.py	python2.7	https://bugs.python.org/issue15251		 
+bug1.py		python3.4	https://bugs.python.org/issue25455		0% better
+bug2.py		python2.7	https://bugs.python.org/issue27195		0% better 
+bug3.py		python3.4	https://bugs.python.org/issue15994		0% better
+bug4.py		python3.4	https://bugs.python.org/issue22898		2% better 
+bug5.py		python2.7	https://bugs.python.org/issue24100		0% better
+bug6.py		python2.7	https://bugs.python.org/issue24828		0% better
+bug7.py		python3.4	https://bugs.python.org/issue24098		0.5% better
+bug8.py		python2.7	https://bugs.python.org/issue24482		20-25% better 
+bug9.py		python3.4	https://bugs.python.org/issue6717		15% better
+bug10.py	python2.7	https://bugs.python.org/issue15251		2% better
+alloc.py	python2.7	https://bugs.python.org/issue26595		10-12% better
+show_ctypes_bug	python2.7	https://bugs.python.org/issue20893		2% better
