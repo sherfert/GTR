@@ -23,9 +23,9 @@ def tee(iterable, n=2):
     deques = [deque() for i in range(n)]
     def gen(mydeque):
         while True:
-            if not mydeque:             # when the local deque is empty
-                newval = next(it)       # fetch a new value and
-                for d in deques:        # load it to all the deques
+            if not mydeque:
+                newval = next(it)
+                for d in deques:
                     d.append(newval)
             yield mydeque.popleft()
     return tuple(gen(d) for d in deques)
@@ -67,11 +67,7 @@ q = IterableQueue()
 for i in xrange(number_of_items):
     q.put(i)
 
-# this causes segfault
 a, b = itertools.tee(LockedIterator(q))
-
-# but this works fine
-# a, b = tee(LockedIterator(q))
 
 Thread(target=printer, args=(a,"a:")).start()
 Thread(target=printer, args=(b,"b:")).start()

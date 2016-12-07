@@ -94,18 +94,10 @@
     // node crashes. Sadly, I am the only one on the Internet
     // with this particular failure.
     var allPyTests = [
-        // getFileState(codeDir + "/bug1.py", "python3.4"), // No reduction at all
-        // getFileState(codeDir + "/bug2.py", "python2.7"),
-        // getFileState(codeDir + "/bug3.py", "python3.4"), // Non-detetministic
-        // getFileState(codeDir + "/bug4.py", "python3.4"),
-        // getFileState(codeDir + "/bug5.py", "python2.7"),
-        // getFileState(codeDir + "/bug6.py", "python2.7"),  // No reduction at all
-        // getFileState(codeDir + "/bug7.py", "python3.4"),
-        // getFileState(codeDir + "/bug8.py", "python2.7"),
-        // getFileState(codeDir + "/bug9.py", "python3.4"),
-        // getFileState(codeDir + "/bug10.py", "python2.7")
-        //getFileState(codeDir + "/alloc.py", "python2.7")
-        getFileState(codeDir + "/show_ctypes_bug.py", "python2.7")
+        getFileState(codeDir + "/alloc.py", "python2.7"),
+        getFileState(codeDir + "/dict.py", "python2.7"),
+        getFileState(codeDir + "/itertools.py", "python2.7"),
+        getFileState(codeDir + "/recursion.py", "python3.4")
 
     ];
 
@@ -131,16 +123,16 @@
         // DDMin char
         //reduceAllFiles(ddminChar, "DD char-based", false);
         // DDMin line
-        //reduceAllFiles(ddminLine, "DD line-based", false);
+        reduceAllFiles(ddminLine, "DD line-based", false);
 
         // HDD and the like
-        reduceAllFiles(hdd.hdd, "HDD", true);
-        reduceAllFiles(hdd.hddStar, "HDD*", true);
+        //reduceAllFiles(hdd.hdd, "HDD", true);
+        //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-        var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
-        reduceAllFiles(gtr, "GTR", true);
-        var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
-        reduceAllFiles(gtrS, "GTR*", true);
+        // var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
+        // reduceAllFiles(gtr, "GTR", true);
+        // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
+        // reduceAllFiles(gtrS, "GTR*", true);
 
         // Create statistics
         createStats(codeDir);
