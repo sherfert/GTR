@@ -9,6 +9,7 @@ Reducing JS files
 3. Adapt differential-testing-engine/server/server-reducer.js at the bottom to run those algorithms of interest.
 4. Open Firefox 25 and Chrome 48
 5. Run in ./differential-testing-engine/: node server/server-reducer
+   Always double-check the result. There is some non-determinism stemming from the browsers.
 6. To gather statistics after the reductions are done, run in ./differential-testing-engine/: node util/createStats
    The statistics are placed in differential-testing-engine/inconsistentCode/stats
 
@@ -24,6 +25,16 @@ Reducing PY files
    There is a strange bug that makes this crash if two many child processes are spawned. Therefore, do not choose too many algorithms/files at once.
 3. Run in ./program-generation: node python-reducer
 4. This already gathers statistics that are placed in program-generation/tree-reducer/input/python/stats
+
+
+Inferring knowledge
+===================
+1. Configure the __config.js__ to use either JavaScript or Python
+2. Run in ./program-generation: node learningGraph.js
+   This places the inferred knowledge in ./program-generation/results/inferredKnowledge/
+   It also places a learning curve graph there
+3. To combine the csv files from both JS and PY, use ./dd-results/plot-combined.gnuplot
+   You have to move the two csv files to that folder and rename them appropriately
 
 Random program generation
 ===========================
