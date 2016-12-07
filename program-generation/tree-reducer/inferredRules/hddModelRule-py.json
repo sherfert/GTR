@@ -1844,23 +1844,18 @@
     }
   },
   "mandatoryChildren": {
-    "Module": [
-      "body"
-    ],
+    "Module": [],
     "ImportFrom": [
-      "level",
-      "names"
+      "level"
     ],
     "alias": [
       "name"
     ],
     "ClassDef": [
-      "body",
       "name"
     ],
     "Assign": [
-      "value",
-      "targets"
+      "value"
     ],
     "Name": [
       "ctx",
@@ -1874,9 +1869,7 @@
       "ctx",
       "value"
     ],
-    "Import": [
-      "names"
-    ],
+    "Import": [],
     "Call": [
       "func"
     ],
@@ -1893,19 +1886,10 @@
     "Num": [
       "n"
     ],
-    "Dict": [
-      "keys",
-      "values"
-    ],
-    "TryExcept": [
-      "body",
-      "handlers"
-    ],
-    "ExceptHandler": [
-      "body"
-    ],
+    "Dict": [],
+    "TryExcept": [],
+    "ExceptHandler": [],
     "FunctionDef": [
-      "body",
       "name",
       "args"
     ],
@@ -1914,7 +1898,6 @@
     ],
     "arguments": [],
     "If": [
-      "body",
       "test"
     ],
     "BinOp": [
@@ -1923,13 +1906,10 @@
       "op"
     ],
     "Compare": [
-      "ops",
-      "comparators",
       "left"
     ],
     "Return": [],
     "For": [
-      "body",
       "target",
       "iter"
     ],
@@ -1944,7 +1924,6 @@
       "orelse"
     ],
     "BoolOp": [
-      "values",
       "op"
     ],
     "ListComp": [
@@ -1955,10 +1934,7 @@
       "target",
       "iter"
     ],
-    "TryFinally": [
-      "body",
-      "finalbody"
-    ],
+    "TryFinally": [],
     "Subscript": [
       "slice",
       "ctx",
@@ -1978,11 +1954,9 @@
       "values"
     ],
     "With": [
-      "body",
       "context_expr"
     ],
     "GeneratorExp": [
-      "generators",
       "elt"
     ],
     "Slice": [],
@@ -1995,29 +1969,20 @@
       "generators",
       "key"
     ],
-    "Delete": [
-      "targets"
-    ],
+    "Delete": [],
     "While": [
-      "body",
       "test"
     ],
     "Assert": [
       "test"
     ],
-    "Global": [
-      "names"
-    ],
+    "Global": [],
     "Lambda": [
       "body",
       "args"
     ],
-    "Set": [
-      "elts"
-    ],
-    "ExtSlice": [
-      "dims"
-    ],
+    "Set": [],
+    "ExtSlice": [],
     "Exec": [
       "body"
     ]

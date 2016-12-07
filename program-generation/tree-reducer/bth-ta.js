@@ -3,10 +3,118 @@
 (function() {
     var bt = require('./bt');
     var hddScript = require('./hdd');
+    var Input = require('./ddInput').Input;
     var TreeLevelInput = hddScript.TreeLevelInput;
     var tfs= require('./transformations');
     var ddmin = require('./ddMin').ddmin;
     var treeCache = require('./treeCache');
+
+    /**
+     * An input for the ddmin algorithm that uses a tree as input and uses the nodes of
+     * a given level as tokens.
+     *
+     * Compared to TreeLevelInput for HDD, this TreeLevelALTInput
+     * only deletes nodes that were found to be not mandatoyr using the corpus.
+     */
+    class TreeLevelALTInput extends Input {
+        /**
+         *
+         * @param {String} pl pl the programming language
+         * @param {Node} tree The tree that comprises this input
+         * @param {number} level the of the tree at which to consider nodes. Must be >= 1.
+         * @param tryAll if all child replacements should be tested, regardless if they are deemed OK from the corpus
+         * @param {Array.<number>} activeTokens optional list of indices of tokens
+         *                                      in the tokens list that are active. Set to all tokens if omitted.
+         * @param {Array} nodesMandatory optional array of boolean values describing for each node of the level
+         *                                        whether it is mandatory.
+         */
+        constructor(pl, tree, level, tryAll, activeTokens, nodesMandatory) {
+            if(activeTokens === undefined) {
+                // Construct a array of nodes and whether they are mandatory.
+                var numToks = 0;
+                nodesMandatory = [];
+                activeTokens = [];
+                tree.applyToLevel(level - 1, function(parent) {
+                    for (var i = 0; i < parent.outgoing.length; i++) {
+                        // If tryAll is true, we assume no children are mandatory.
+                        // Otherwise we use the inferred knowledge
+                        var isMandatory = (!tryAll) &&
+                            tfs.isMandatoryChildForPL(parent.label, parent.outgoing[i].label, pl);
+                        nodesMandatory.push(isMandatory);
+                        if(!isMandatory) {
+                            // This node may be deleted during the algorithm.
+                            // Hence we create a token for it
+                            activeTokens.push(numToks);
+                            numToks++;
+                        }
+                    }
+                });
+            }
+            super(activeTokens);
+            this.pl = pl;
+            this.tree = tree;
+            this.level = level;
+            this.tryAll = tryAll;
+            this.nodesMandatory = nodesMandatory;
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the subset to obtain
+         * @return {TreeLevelALTInput} a new input object that has the same tokens, but only
+         * those of the specified subset are active
+         */
+        getSubset(num) {
+            return new TreeLevelALTInput(this.pl, this.tree, this.level, this.tryAll, this.chunks[num], this.nodesMandatory);
+        }
+
+        /**
+         *
+         * @param  {number} num the number of the complement to obtain
+         * @return {TreeLevelALTInput} a new input object that has the same tokens, but only
+         * those of the specified complement are active
+         */
+        getComplement(num) {
+            return new TreeLevelALTInput(this.pl, this.tree, this.level, this.tryAll, super.getComplementChunks(num), this.nodesMandatory);
+        }
+
+        /**
+         * Tree with all inactive childs of a level removed, including the corresponding subtrees.
+         *
+         * No knowledge about the tree is used to reduce its size, the nodes are simply removed.
+         *
+         * @return {Node} a smaller tree.
+         */
+        get currentCode() {
+            // Create a copy of the tree
+            var newTree = this.tree.deepCopy();
+
+            var currentChild = 0;
+            var currentNonMandatoryChild = 0;
+            var ti = this;
+            // Go through the previous level and remove the children
+            newTree.applyToLevel(this.level - 1, function(node) {
+                for (var i = 0; i < node.outgoing.length; i++) {
+                    if(!ti.nodesMandatory[currentChild]) {
+                        if(ti.activeTokens.indexOf(currentNonMandatoryChild) == -1) {
+                            // Debug message
+                            //console.log("Removing " + node.outgoing[i].label + " from " + node.label);
+                            // Remove this node
+                            node.outgoing.splice(i, 1);
+                            // Repeat this index
+                            i--;
+                        }
+                        // Increment the child number for all non-mandatory nodes visited
+                        currentNonMandatoryChild++;
+                    }
+                    // Increment the child number for all nodes visited
+                    currentChild++;
+                }
+            });
+
+            return newTree;
+        }
+    }
 
     /**
      * An input for the BT algorithm that uses a level of a tree as input, and includes tree transformations.
@@ -128,7 +236,10 @@
 
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in BTH-TA.");
-            currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
+            // Inclusion of the new ddmin that uses inferred knowledge
+            //currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
+            currentTree = ddmin(new TreeLevelALTInput(pl, currentTree, level, tryAll), test).currentCode;
+
             currentTree = bt.bt(new TreeLevelTransformationBTInput(pl, currentTree, level, tryAll), test);
         }
         return currentTree;

@@ -1895,15 +1895,12 @@
     }
   },
   "mandatoryChildren": {
-    "Program": [
-      "body"
-    ],
+    "Program": [],
     "ExpressionStatement": [
       "expression"
     ],
     "Literal": [],
     "VariableDeclaration": [
-      "declarations",
       "kind"
     ],
     "VariableDeclarator": [
@@ -1930,9 +1927,7 @@
       "generator",
       "expression"
     ],
-    "BlockStatement": [
-      "body"
-    ],
+    "BlockStatement": [],
     "ConditionalExpression": [
       "test",
       "consequent",
@@ -1977,9 +1972,7 @@
     "TryStatement": [
       "block"
     ],
-    "ObjectExpression": [
-      "properties"
-    ],
+    "ObjectExpression": [],
     "Property": [
       "key",
       "computed",
@@ -2013,9 +2006,7 @@
     ],
     "SwitchCase": [],
     "BreakStatement": [],
-    "SequenceExpression": [
-      "expressions"
-    ],
+    "SequenceExpression": [],
     "DoWhileStatement": [
       "body",
       "test"
@@ -2028,9 +2019,7 @@
       "id",
       "body"
     ],
-    "ClassBody": [
-      "body"
-    ],
+    "ClassBody": [],
     "MethodDefinition": [
       "key",
       "computed",
@@ -2043,9 +2032,7 @@
       "generator",
       "expression"
     ],
-    "ObjectPattern": [
-      "properties"
-    ],
+    "ObjectPattern": [],
     "ArrayPattern": [],
     "SpreadElement": [
       "argument"

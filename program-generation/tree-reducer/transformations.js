@@ -5,13 +5,19 @@
     
     // Map of programming language (String) -> Map of Parents
     var inferredParents = {};
+    // Map of programming language (String) -> Map of mandatory children
+    var mandatoryChildren = {};
 
     // Read inferred transformations from JSON files
     try {
-        inferredParents["JS"] =
-            jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-js.json").parents;
-        inferredParents["PY"] =
-            jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-py.json").parents;
+        let js = jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-js.json");
+        let py = jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-py.json");
+
+        inferredParents["JS"] = js.parents;
+        inferredParents["PY"] = py.parents;
+        mandatoryChildren["JS"] = js.mandatoryChildren;
+        mandatoryChildren["PY"] = py.mandatoryChildren;
+
     } catch(e) {
         // No model
         console.log("NO MODEL OF INFERRED RULES");
@@ -43,6 +49,23 @@
     }
 
     /**
+     * Tells wheter an outgoing edge of a node is a mandatory edge.
+     * @param nodeLabel the label of the node
+     * @param edgeLabel the label of the edge
+     * @param mC the mandatoryChildren map
+     * @returns {boolean} if the child is mandatory
+     */
+    function isMandatoryChild(nodeLabel, edgeLabel, mC) {
+        var edgeSet = mC[nodeLabel];
+        if(edgeSet) {
+            if(edgeSet.indexOf(edgeLabel) != -1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Tells whether a PNC transformation is allowed with the given arguments.
      *
      * @param p the label of the P node
@@ -55,6 +78,18 @@
         return pncTransformationAllowed(p, l1, c, inferredParents[pl]);
     }
 
+    /**
+     * Tells wheter an outgoing edge of a node is a mandatory edge.
+     * @param nodeLabel the label of the node
+     * @param edgeLabel the label of the edge
+     * @param pl the programming language. Either 'JS' or 'PY'
+     * @returns {boolean} if the child is mandatory
+     */
+    function isMandatoryChildForPL(nodeLabel, edgeLabel, pl) {
+        return isMandatoryChild(nodeLabel, edgeLabel, mandatoryChildren[pl])
+    }
+
     exports.pncTransformationAllowedForPL = pncTransformationAllowedForPL;
+    exports.isMandatoryChildForPL = isMandatoryChildForPL;
 
 })();
