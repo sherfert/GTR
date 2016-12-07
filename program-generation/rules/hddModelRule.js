@@ -7,7 +7,7 @@
 
     var currentRuleInferences = {
         parents: new Map(),
-        //mandatoryChildren: new Map(),
+        mandatoryChildren: new Map(),
         numParents: 0
     };
 
@@ -34,22 +34,24 @@
                 parentEdgeSet.add(context.lastEdge().label);
             }
             // Save mandatory children
-            // FIXME: This finds also all nodes that may be null in a JS AST. This is undesired.
-            // var childrenSet = new Set();
-            // // Add all children
-            // for(let i = 0; i < node.outgoing.length; i++) {
-            //     childrenSet.add(node.outgoing[i].label);
-            // }
-            // if(currentRuleInferences.mandatoryChildren.has(node.label)) {
-            //     // Intersect with so far mandatory children
-            //     var intersection = new Set([...childrenSet].filter(x =>
-            //         currentRuleInferences.mandatoryChildren.get(node.label).has(x)));
-            //
-            //     currentRuleInferences.mandatoryChildren.set(node.label, intersection);
-            // } else {
-            //     //Put the set in the map
-            //     currentRuleInferences.mandatoryChildren.set(node.label, childrenSet);
-            // }
+            var childrenSet = new Set();
+            // Add all children...
+            for(let i = 0; i < node.outgoing.length; i++) {
+                //... that are not a null value
+                if(!node.outgoing[i].target.isNull()) {
+                    childrenSet.add(node.outgoing[i].label);
+                }
+            }
+            if(currentRuleInferences.mandatoryChildren.has(node.label)) {
+                // Intersect with so far mandatory children
+                var intersection = new Set([...childrenSet].filter(x =>
+                    currentRuleInferences.mandatoryChildren.get(node.label).has(x)));
+
+                currentRuleInferences.mandatoryChildren.set(node.label, intersection);
+            } else {
+                //Put the set in the map
+                currentRuleInferences.mandatoryChildren.set(node.label, childrenSet);
+            }
         }
     }
 

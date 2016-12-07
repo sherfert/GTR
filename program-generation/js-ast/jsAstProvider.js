@@ -39,7 +39,11 @@
     }
 
     function astToTree(astNode) {
-        if (astNode === null || typeof astNode !== "object") {
+        if (astNode === null) {
+            let node = new loTrees.Node(JSON.stringify(astNode));
+            node.setNull(true);
+            return node;
+        } else if (typeof astNode !== "object") {
             return new loTrees.Node(JSON.stringify(astNode));
         } else if (astNode.pattern !== undefined && astNode.flags !== undefined) {
             return new loTrees.Node("RegExp");

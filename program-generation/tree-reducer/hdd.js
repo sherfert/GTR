@@ -18,13 +18,13 @@
          *                                      in the tokens list that are active. Set to all tokens if omitted.
          */
         constructor(tree, level, activeTokens) {
-            // Obtain number of nodes in the level
-            var numToks = 0;
-            tree.applyToLevel(level, function(node) {
-                numToks++;
-            });
-
             if(activeTokens === undefined) {
+                // Obtain number of nodes in the level
+                var numToks = 0;
+                tree.applyToLevel(level, function(node) {
+                    numToks++;
+                });
+
                 activeTokens = [];
                 // Initially all tokens are active
                 for (var i = 0; i < numToks; i++) {

@@ -1894,5 +1894,180 @@
       ]
     }
   },
-  "numTransformations": 8570
+  "mandatoryChildren": {
+    "Program": [
+      "body"
+    ],
+    "ExpressionStatement": [
+      "expression"
+    ],
+    "Literal": [],
+    "VariableDeclaration": [
+      "declarations",
+      "kind"
+    ],
+    "VariableDeclarator": [
+      "id"
+    ],
+    "Identifier": [
+      "name"
+    ],
+    "CallExpression": [
+      "callee"
+    ],
+    "MemberExpression": [
+      "computed",
+      "object",
+      "property"
+    ],
+    "AssignmentExpression": [
+      "operator",
+      "left",
+      "right"
+    ],
+    "FunctionExpression": [
+      "body",
+      "generator",
+      "expression"
+    ],
+    "BlockStatement": [
+      "body"
+    ],
+    "ConditionalExpression": [
+      "test",
+      "consequent",
+      "alternate"
+    ],
+    "LogicalExpression": [
+      "operator",
+      "left",
+      "right"
+    ],
+    "FunctionDeclaration": [
+      "id",
+      "body",
+      "generator",
+      "expression"
+    ],
+    "IfStatement": [
+      "test",
+      "consequent"
+    ],
+    "BinaryExpression": [
+      "operator",
+      "left",
+      "right"
+    ],
+    "ReturnStatement": [],
+    "UnaryExpression": [
+      "operator",
+      "argument",
+      "prefix"
+    ],
+    "NewExpression": [
+      "callee"
+    ],
+    "ForInStatement": [
+      "left",
+      "right",
+      "body",
+      "each"
+    ],
+    "ContinueStatement": [],
+    "TryStatement": [
+      "block"
+    ],
+    "ObjectExpression": [
+      "properties"
+    ],
+    "Property": [
+      "key",
+      "computed",
+      "value",
+      "kind",
+      "method",
+      "shorthand"
+    ],
+    "CatchClause": [
+      "param",
+      "body"
+    ],
+    "ThrowStatement": [
+      "argument"
+    ],
+    "UpdateExpression": [
+      "operator",
+      "argument",
+      "prefix"
+    ],
+    "ArrayExpression": [],
+    "ForStatement": [
+      "body"
+    ],
+    "WhileStatement": [
+      "test",
+      "body"
+    ],
+    "SwitchStatement": [
+      "discriminant"
+    ],
+    "SwitchCase": [],
+    "BreakStatement": [],
+    "SequenceExpression": [
+      "expressions"
+    ],
+    "DoWhileStatement": [
+      "body",
+      "test"
+    ],
+    "LabeledStatement": [
+      "label",
+      "body"
+    ],
+    "ClassDeclaration": [
+      "id",
+      "body"
+    ],
+    "ClassBody": [
+      "body"
+    ],
+    "MethodDefinition": [
+      "key",
+      "computed",
+      "value",
+      "kind",
+      "static"
+    ],
+    "ArrowFunctionExpression": [
+      "body",
+      "generator",
+      "expression"
+    ],
+    "ObjectPattern": [
+      "properties"
+    ],
+    "ArrayPattern": [],
+    "SpreadElement": [
+      "argument"
+    ],
+    "RestElement": [
+      "argument"
+    ],
+    "ForOfStatement": [
+      "left",
+      "right",
+      "body"
+    ],
+    "AssignmentPattern": [
+      "left",
+      "right"
+    ],
+    "YieldExpression": [
+      "delegate"
+    ],
+    "ClassExpression": [
+      "body"
+    ]
+  },
+  "numParents": 699
 }

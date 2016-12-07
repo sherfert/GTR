@@ -13,6 +13,8 @@
         util.assert(typeof label === "string", typeof label);
         this.label = label;
         this.outgoing = [];
+        // Determines if this node is the equivalent of a null value in the target language
+        this.isNullValue = false;
         // In case edges were passed to the constructor
         for(var i = 1; i < arguments.length; i++) {
             this.outgoing.push(arguments[i]);
@@ -128,6 +130,20 @@
             return node;
         },
         /**
+         * Checks if this node is a null value node
+         * @returns {boolean}
+         */
+        isNull:function() {
+            return this.isNullValue;
+        },
+        /**
+         * Sets if this node is a null value node or not.
+         * @param val {boolean}
+         */
+        setNull:function(val) {
+            this.isNullValue = val;
+        },
+        /**
          * Creates an JS object from this tree
          *
          * @param nameProperty {String} the name of the property that denotes the name of a node
@@ -202,7 +218,11 @@
      * @returns {Node} the Node
      */
     var createTree = function(obj, nameProperty, ignoreProperties) {
-        if (obj === null || typeof obj !== "object" || obj instanceof String) {
+        if(obj === null) {
+            let node = new Node(JSON.stringify(obj));
+            node.setNull(true);
+            return node;
+        } else if (typeof obj !== "object" || obj instanceof String) {
             return new Node(JSON.stringify(obj));
         }
 

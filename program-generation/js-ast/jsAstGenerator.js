@@ -171,7 +171,7 @@
         WithStatement:["object", "body"]
     };
 
-    // Some nodes need special handling if certain childs are missing or empty
+    // Some nodes need special handling if certain children are missing or empty
     var specialChildProperties = {
         LogicalExpression:{left: (node) => (node.left || node.right), right: (node) => (node.left || node.right)},
         BinaryExpression:{left: (node) => (node.left || node.right), right: (node) => (node.left || node.right)},

@@ -1843,5 +1843,184 @@
       ]
     }
   },
-  "numTransformations": 5868
+  "mandatoryChildren": {
+    "Module": [
+      "body"
+    ],
+    "ImportFrom": [
+      "level",
+      "names"
+    ],
+    "alias": [
+      "name"
+    ],
+    "ClassDef": [
+      "body",
+      "name"
+    ],
+    "Assign": [
+      "value",
+      "targets"
+    ],
+    "Name": [
+      "ctx",
+      "id"
+    ],
+    "List": [
+      "ctx"
+    ],
+    "Attribute": [
+      "attr",
+      "ctx",
+      "value"
+    ],
+    "Import": [
+      "names"
+    ],
+    "Call": [
+      "func"
+    ],
+    "Tuple": [
+      "ctx"
+    ],
+    "Str": [
+      "s"
+    ],
+    "keyword": [
+      "value",
+      "arg"
+    ],
+    "Num": [
+      "n"
+    ],
+    "Dict": [
+      "keys",
+      "values"
+    ],
+    "TryExcept": [
+      "body",
+      "handlers"
+    ],
+    "ExceptHandler": [
+      "body"
+    ],
+    "FunctionDef": [
+      "body",
+      "name",
+      "args"
+    ],
+    "Expr": [
+      "value"
+    ],
+    "arguments": [],
+    "If": [
+      "body",
+      "test"
+    ],
+    "BinOp": [
+      "right",
+      "left",
+      "op"
+    ],
+    "Compare": [
+      "ops",
+      "comparators",
+      "left"
+    ],
+    "Return": [],
+    "For": [
+      "body",
+      "target",
+      "iter"
+    ],
+    "Raise": [],
+    "UnaryOp": [
+      "operand",
+      "op"
+    ],
+    "IfExp": [
+      "body",
+      "test",
+      "orelse"
+    ],
+    "BoolOp": [
+      "values",
+      "op"
+    ],
+    "ListComp": [
+      "generators",
+      "elt"
+    ],
+    "comprehension": [
+      "target",
+      "iter"
+    ],
+    "TryFinally": [
+      "body",
+      "finalbody"
+    ],
+    "Subscript": [
+      "slice",
+      "ctx",
+      "value"
+    ],
+    "Index": [
+      "value"
+    ],
+    "Yield": [],
+    "AugAssign": [
+      "target",
+      "value",
+      "op"
+    ],
+    "Print": [
+      "nl",
+      "values"
+    ],
+    "With": [
+      "body",
+      "context_expr"
+    ],
+    "GeneratorExp": [
+      "generators",
+      "elt"
+    ],
+    "Slice": [],
+    "SetComp": [
+      "generators",
+      "elt"
+    ],
+    "DictComp": [
+      "value",
+      "generators",
+      "key"
+    ],
+    "Delete": [
+      "targets"
+    ],
+    "While": [
+      "body",
+      "test"
+    ],
+    "Assert": [
+      "test"
+    ],
+    "Global": [
+      "names"
+    ],
+    "Lambda": [
+      "body",
+      "args"
+    ],
+    "Set": [
+      "elts"
+    ],
+    "ExtSlice": [
+      "dims"
+    ],
+    "Exec": [
+      "body"
+    ]
+  },
+  "numParents": 668
 }
