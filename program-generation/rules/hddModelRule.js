@@ -33,15 +33,28 @@
                 // Add parent edge to Set
                 parentEdgeSet.add(context.lastEdge().label);
             }
+
             // Save mandatory children
             var childrenSet = new Set();
+            // All children that appear more than once
+            var arrayChildrenSet = new Set();
             // Add all children...
             for(let i = 0; i < node.outgoing.length; i++) {
                 //... that are not a null value
                 if(!node.outgoing[i].target.isNull()) {
-                    childrenSet.add(node.outgoing[i].label);
+                    if(childrenSet.has(node.outgoing[i].label)) {
+                        // An array child
+                        arrayChildrenSet.add(node.outgoing[i].label);
+                    } else {
+                        childrenSet.add(node.outgoing[i].label);
+                    }
                 }
             }
+
+            // The children we are interested in are NOT array children, as they cannot
+            // be mandatory. So we build the set difference.
+            childrenSet = new Set([...childrenSet].filter(x => !arrayChildrenSet.has(x)));
+
             if(currentRuleInferences.mandatoryChildren.has(node.label)) {
                 // Intersect with so far mandatory children
                 var intersection = new Set([...childrenSet].filter(x =>
