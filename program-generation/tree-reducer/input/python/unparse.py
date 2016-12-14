@@ -92,7 +92,8 @@ def as_ast(dct):
     elif dct['ast_type'] == "Num":
         return ast.Num(dct["n"])
     elif dct['ast_type'] == "Str":
-        return ast.Str(dct["s"])
+	# Converting to ASCII
+        return ast.Str(dct["s"].encode('ascii','ignore'))
     elif dct['ast_type'] == "Attribute":
         return ast.Attribute(dct["value"], dct["attr"], dct["ctx"])
     elif dct['ast_type'] == "Subscript":
@@ -195,4 +196,5 @@ def as_ast(dct):
 content = sys.stdin.read()
 
 tree = json.loads(content, object_hook=as_ast)
+#print ast.dump(tree)
 print astor.to_source(tree)
