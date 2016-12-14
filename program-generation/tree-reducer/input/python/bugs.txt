@@ -8,10 +8,16 @@ bug7.py		python3.4	https://bugs.python.org/issue24098		0.5% better
 bug10.py	python2.7	https://bugs.python.org/issue15251		2% better
 show_ctypes_bug	python2.7	https://bugs.python.org/issue20893		2% better
 
+				https://bugs.python.org/issue23985		0% better
+				https://bugs.python.org/issue27826		0% better
+				https://bugs.python.org/issue24407		~2% better
+				https://bugs.python.org/issue22849		~2% better
+
 itertools.py	python2.7	https://bugs.python.org/issue24482		20-25% better 
 recursion.py	python3.4	https://bugs.python.org/issue6717		15% better
 alloc.py	python2.7	https://bugs.python.org/issue26595		10-12% better
 dict.py		python2.7	https://bugs.python.org/issue28818		25% better
 				https://hg.python.org/cpython/file/default/Lib/test/crashers/underlying_dict.py
+so.py		python2.7	http://stackoverflow.com/questions/19127777/a-python-segmentation-fault		~22% better
 				
-https://bugs.python.org/issue?@startwith=400&@pagesize=50&@columns=title,id,activity,status&@sort=-activity&@filter=versions,type&type=1&versions=14
+https://bugs.python.org/issue?@startwith=500&@pagesize=50&@columns=title,id,activity,status&@sort=-activity&@filter=type&type=1

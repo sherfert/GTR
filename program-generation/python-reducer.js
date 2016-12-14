@@ -48,7 +48,14 @@
         var pycode = "" + fs.readFileSync(fileState.fileName);
         fileState.origSize = pycode.length;
 
+
         var tester = new inputTester.PyCrashTester(fileState.command, ddAlgo);
+        var code2tree2code = pyTreeGenerator.treeToCode(pyTreeProvider.codeToTree(pycode));
+        if(tester.test(code2tree2code) == "pass") {
+            console.log("The crash cannot be reproduced after code->tree->code conversion. Aborting.");
+            return;
+        }
+
         var newCode = tester.runTest(pycode);
 
         // Create an results object if inexistant
@@ -94,11 +101,11 @@
     // node crashes. Sadly, I am the only one on the Internet
     // with this particular failure.
     var allPyTests = [
-        getFileState(codeDir + "/alloc.py", "python2.7"),
-        getFileState(codeDir + "/dict.py", "python2.7"),
-        getFileState(codeDir + "/itertools.py", "python2.7"),
-        getFileState(codeDir + "/recursion.py", "python3.4")
-
+        //getFileState(codeDir + "/alloc.py", "python2.7"),
+        //getFileState(codeDir + "/dict.py", "python2.7"),
+        //getFileState(codeDir + "/itertools.py", "python2.7"),
+        //getFileState(codeDir + "/recursion.py", "python3.4")
+        getFileState(codeDir + "/so.py", "python2.7")
     ];
 
     /**
@@ -126,13 +133,13 @@
         reduceAllFiles(ddminLine, "DD line-based", false);
 
         // HDD and the like
-        //reduceAllFiles(hdd.hdd, "HDD", true);
-        //reduceAllFiles(hdd.hddStar, "HDD*", true);
+        reduceAllFiles(hdd.hdd, "HDD", true);
+        reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-        // var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
-        // reduceAllFiles(gtr, "GTR", true);
-        // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
-        // reduceAllFiles(gtrS, "GTR*", true);
+        var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
+        reduceAllFiles(gtr, "GTR", true);
+        var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
+        reduceAllFiles(gtrS, "GTR*", true);
 
         // Create statistics
         createStats(codeDir);
