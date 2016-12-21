@@ -41,7 +41,7 @@
     }
 
     function codeToTree(code) {
-        var result = child_process.spawnSync("python", ["parse.py"], {
+        var result = child_process.spawnSync("python2.7", ["parse.py"], {
             encoding: 'utf8',
             cwd: './tree-reducer/input/python',
             input: code,
@@ -51,7 +51,10 @@
         });
         var json = result.stdout;
         var obj = JSON.parse(json);
-        return loTrees.createTree(obj, "ast_type", ["col_offset", "lineno"]);
+        //console.log(JSON.stringify(obj, null, 2));
+        var t = loTrees.createTree(obj, "ast_type", ["col_offset", "lineno"]);
+        //console.log(t.toString());
+        return t;
     }
 
     /**

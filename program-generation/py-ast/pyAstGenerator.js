@@ -45,6 +45,7 @@
         "Pass",
         "Break",
         "Continue",
+        "Dict",
         "Load",
         "Store",
         "Del",
@@ -90,8 +91,9 @@
      */
     function treeToCode(tree) {
         var obj = tree.createObj("ast_type", emptyNodeNames, mandatoryArrayProperties);
+        //console.log(JSON.stringify(obj, null, 2));
         var json = JSON.stringify(obj);
-        var result = child_process.spawnSync("python", ["unparse.py"], {
+        var result = child_process.spawnSync("python2.7", ["unparse.py"], {
             encoding: 'utf8',
             cwd: './tree-reducer/input/python',
             input: json,
@@ -99,6 +101,7 @@
             //timeout: 500,
             //killSignal: 'SIGKILL'
         });
+        //console.log(result);
         return result.stdout;
     }
 

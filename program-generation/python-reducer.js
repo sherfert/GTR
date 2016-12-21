@@ -104,8 +104,10 @@
         //getFileState(codeDir + "/alloc.py", "python2.7"),
         //getFileState(codeDir + "/dict.py", "python2.7"),
         //getFileState(codeDir + "/itertools.py", "python2.7"),
-        //getFileState(codeDir + "/recursion.py", "python3.4")
-        getFileState(codeDir + "/so.py", "python2.7")
+        //getFileState(codeDir + "/recursion.py", "python3.4"),
+        //getFileState(codeDir + "/so.py", "python2.7"),
+        //getFileState(codeDir + "/mroref.py", "python2.7")
+        getFileState(codeDir + "/ackermann.py", "python3.4")
     ];
 
     /**
@@ -130,16 +132,16 @@
         // DDMin char
         //reduceAllFiles(ddminChar, "DD char-based", false);
         // DDMin line
-        reduceAllFiles(ddminLine, "DD line-based", false);
+        //reduceAllFiles(ddminLine, "DD line-based", false);
 
         // HDD and the like
         reduceAllFiles(hdd.hdd, "HDD", true);
-        reduceAllFiles(hdd.hddStar, "HDD*", true);
+        //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-        var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
-        reduceAllFiles(gtr, "GTR", true);
-        var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
-        reduceAllFiles(gtrS, "GTR*", true);
+        // var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
+        // reduceAllFiles(gtr, "GTR", true);
+        // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
+        // reduceAllFiles(gtrS, "GTR*", true);
 
         // Create statistics
         createStats(codeDir);

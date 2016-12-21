@@ -18,6 +18,7 @@ recursion.py	python3.4	https://bugs.python.org/issue6717		15% better
 alloc.py	python2.7	https://bugs.python.org/issue26595		10-12% better
 dict.py		python2.7	https://bugs.python.org/issue28818		25% better
 				https://hg.python.org/cpython/file/default/Lib/test/crashers/underlying_dict.py
+mroref.py	python2.7	http://svn.python.org/view/*checkout*/python/trunk/Lib/test/crashers/loosing_mro_ref.py		6% better
 so.py		python2.7	http://stackoverflow.com/questions/19127777/a-python-segmentation-fault		~22% better
 				
 https://bugs.python.org/issue?@startwith=500&@pagesize=50&@columns=title,id,activity,status&@sort=-activity&@filter=type&type=1
