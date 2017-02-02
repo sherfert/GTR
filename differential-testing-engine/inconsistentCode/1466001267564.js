@@ -1,10 +1,3 @@
-/* 
-* Randomly generated JS program on Wed Jun 15 2016 16:34:27 GMT+0200 (CEST)
-* Corpus: corpusForTestingJS/js_dataset/data selected top 100000 valid file/s 
-* Random seed: true
-* Seed: 99393321889979
-*/
-
 var minArgs, ast, left, options = /\/^margin\//;
 minArgs.left = +(i instanceof this);
 minArgs = left.hasOwnProperty(this);

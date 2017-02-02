@@ -11,7 +11,7 @@
 
     /**
      * The most general tester that takes care of connecting the oracle and the DD algorithm,
-     * and keeps track of the number of invocations of the test method.
+     * and keeps track of the number of invocations of the test method and the time taken.
      */
     class Tester {
 
@@ -28,13 +28,18 @@
             var that = this;
             var countingTest = function(input) {
                 that.testsRun++;
-                return that.ddTestMethod(input);
+                var startTimeO = process.hrtime();
+                var res = that.ddTestMethod(input);
+                var timeTakenO = process.hrtime(startTimeO);
+                that.timeInOracle += timeTakenO[0] * 1e9 + timeTakenO[1];
+                return res;
             };
 
-
+            this.timeInOracle = 0;
             var startTime = process.hrtime();
             var res = this.ddAlgo(initialInput, countingTest);
-            this.timeTaken = process.hrtime(startTime);
+            var timeArray = process.hrtime(startTime);
+            this.timeTaken = timeArray[0] * 1e9 + timeArray[1];
             
             return res;
         }
@@ -171,7 +176,7 @@
 
         /**
          * @param command The shell command to invoke
-         * @param ddAlgo he DD algorithm
+         * @param ddAlgo the DD algorithm
          */
         constructor(command, ddAlgo) {
             super(function(x) {return this.test(x);}, ddAlgo);

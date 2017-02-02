@@ -1,10 +1,3 @@
-/* 
-* Randomly generated JS program on Wed Jun 15 2016 21:17:58 GMT+0200 (CEST)
-* Corpus: corpusForTestingJS/js_dataset/data selected top 100000 valid file/s 
-* Random seed: true
-* Seed: 96043899871329
-*/
-
 Array.constructor(function () {
     var Array = function (context) {
             function secondWalk() {

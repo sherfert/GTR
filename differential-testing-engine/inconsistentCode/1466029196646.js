@@ -1,10 +1,3 @@
-/* 
-* Randomly generated JS program on Thu Jun 16 2016 00:19:56 GMT+0200 (CEST)
-* Corpus: corpusForTestingJS/js_dataset/data selected top 100000 valid file/s 
-* Random seed: true
-* Seed: 58682341296273
-*/
-
 function unbuild_(input) {
     if (unbuild_(input) && !input(SVGElementWrappingImplementation) && this.input.input.SVGElementWrappingImplementation.x === 3 && SVGElementWrappingImplementation() > false && !unbuild_.unbuild_.getAttribute) {
         if (this.length === 'px') {

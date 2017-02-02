@@ -9,7 +9,6 @@
 
     var pyTreeProvider = require('./py-ast/pyAstProvider');
     var pyTreeGenerator = require('./py-ast/pyAstGenerator');
-    var createStats = require("./tree-reducer/createStats").createStats;
     var inputTester = require("./tree-reducer/inputTester");
 
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
@@ -67,7 +66,8 @@
         fileState.results[algoPrefix].minCode  = newCode;
         fileState.results[algoPrefix].size  = newCode.length;
         fileState.results[algoPrefix].testsRun = tester.testsRun;
-        fileState.results[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
+        fileState.results[algoPrefix].timeTaken = tester.timeTaken;
+        fileState.results[algoPrefix].timeInOracle = tester.timeInOracle;
         console.log("Num tests: " + tester.testsRun + ` in ${fileState.results[algoPrefix].timeTaken} nanoseconds`);
 
         // Write to file
@@ -101,13 +101,13 @@
     // node crashes. Sadly, I am the only one on the Internet
     // with this particular failure.
     var allPyTests = [
-        //getFileState(codeDir + "/alloc.py", "python2.7"),
-        //getFileState(codeDir + "/dict.py", "python2.7"),
-        //getFileState(codeDir + "/itertools.py", "python2.7"),
-        //getFileState(codeDir + "/recursion.py", "python3.4"),
-        //getFileState(codeDir + "/so.py", "python2.7"),
-        //getFileState(codeDir + "/mroref.py", "python2.7")
-        getFileState(codeDir + "/ackermann.py", "python3.4")
+        getFileState(codeDir + "/ackermann.py", "python3.4"),
+        getFileState(codeDir + "/alloc.py", "python2.7"),
+        getFileState(codeDir + "/dict.py", "python2.7"),
+        getFileState(codeDir + "/itertools.py", "python2.7"),
+        getFileState(codeDir + "/mroref.py", "python2.7"),
+        getFileState(codeDir + "/recursion.py", "python3.4"),
+        getFileState(codeDir + "/so.py", "python2.7")
     ];
 
     /**
@@ -126,25 +126,24 @@
     }
 
     /**
-     * Compares all files with different algorithms and saves statistics.
+     * Compares all files with different algorithms.
      */
     function runTests() {
         // DDMin char
         //reduceAllFiles(ddminChar, "DD char-based", false);
         // DDMin line
-        //reduceAllFiles(ddminLine, "DD line-based", false);
+        reduceAllFiles(ddminLine, "DD line-based", false);
 
         // HDD and the like
-        reduceAllFiles(hdd.hdd, "HDD", true);
+        //reduceAllFiles(hdd.hdd, "HDD", true);
         //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-        // var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
-        // reduceAllFiles(gtr, "GTR", true);
+        //var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
+        //reduceAllFiles(gtr, "GTR", true);
         // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
         // reduceAllFiles(gtrS, "GTR*", true);
-
-        // Create statistics
-        createStats(codeDir);
+        //var gtr2 = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, true);
+        //reduceAllFiles(gtr2, "GTR (no language information)", true);
     }
 
     runTests();

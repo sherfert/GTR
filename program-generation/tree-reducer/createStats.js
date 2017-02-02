@@ -1,27 +1,22 @@
 // Author: Satia Herfert
 
 /**
- * Using the JSON files that were created, this file creates csv files
- * comparing minimal code sizes, tests run and time for the different reduction algorithms; and histograms and boxplots.
+ * Using the JSON files that were created, this file creates csv files with statistics.
  */
 (function () {
     var jsonfile = require('jsonfile');
     var fs = require('fs');
-    var child_process = require('child_process');
-
-
-    var colors = ["#b7b7b7", "#5b60e5", "#383c8c", "#5cd6a1", "#337a5b", "orange", "magenta"];
 
     /**
      * Creates the CSV files
      * @param {String} codeDir the code directory
-     * @returns {Array} the different algorithms
      */
-    function createCSV(codeDir) {
+    function createStats(codeDir) {
         var csvSize = "";
         var csvReduction = "";
         var csvTests = "";
         var csvTime = "";
+        var csvInOracle = "";
         var allFiles = fs.readdirSync(codeDir);
 
         // All encountered algorithms are listed here (as Strings)
@@ -41,6 +36,7 @@
                     csvReduction += file + ",";
                     csvTests += file + ",";
                     csvTime += file + ",";
+                    csvInOracle += file + ",";
 
                     // Save original size
                     csvSize += json.origSize + ",";
@@ -61,16 +57,19 @@
                             csvReduction += 100 * (1 - results[algo].size / json.origSize) + ",";
                             csvTests += results[algo].testsRun + ",";
                             csvTime += (results[algo].timeTaken / 1000000000).toFixed(3) + ",";
+                            csvInOracle += (results[algo].timeInOracle / results[algo].timeTaken * 100).toFixed(3) + ",";
                         } else {
                             csvSize += ",";
                             csvTests += ",";
                             csvTime += ",";
+                            csvInOracle += ",";
                         }
                     }
                     csvSize += "\n";
                     csvReduction += "\n";
                     csvTests += "\n";
                     csvTime += "\n";
+                    csvInOracle += "\n";
                 }
             }
         }
@@ -79,8 +78,7 @@
         fs.writeFileSync(codeDir + "/stats/stats-reduction.csv", createHeader(algorithms, "reduction") + csvReduction);
         fs.writeFileSync(codeDir + "/stats/stats-tests.csv", createHeader(algorithms, "tests") + csvTests);
         fs.writeFileSync(codeDir + "/stats/stats-time.csv", createHeader(algorithms, "time") + csvTime);
-
-        return algorithms;
+        fs.writeFileSync(codeDir + "/stats/stats-inoracle.csv", createHeader(algorithms, "inOracle") + csvInOracle);
     }
 
     function createHeader(algorithms, property) {
@@ -93,122 +91,6 @@
         return header;
     }
 
-    /**
-     * Plots a histogram. Gnuplot must be installed for this.
-     *
-     * @param {Array} algorithms the different algorithms
-     * @param {String} codeDir the code directory
-     * @param {String} property "size", "tests", or "time"
-     * @param {String} ylabel the label for the y-axis
-     * @param {boolean} logscale if a logarithmic scale should be used
-     * @returns {Object} the result from child_process.spawnSync called with gnuplot
-     */
-    function plot(algorithms, codeDir, property, ylabel, logscale) {
-        var coloroffset = property == "size" ? 0 : 1;
-
-        let plotcommand =
-            "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
-            "set output '" + codeDir + "/stats/graph-" + property + ".png'\n" +
-            "set datafile separator ','\n" +
-            "set key top left\n" +
-            "set xtics rotate by -45\n" +
-            "set style data histogram\n" +
-            "set style fill solid border -1\n" +
-            "set xlabel 'Files'\n" +
-            "set ylabel '" + ylabel + "'\n" +
-            "set style histogram clustered\n" +
-            (logscale ? "set logscale y\n" : "") +
-            "plot ";
-
-        // The data
-        for(let i = 0; i < algorithms.length; i++) {
-            plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
-                + (i+2) +":xticlabels(1) title columnheader linecolor rgb '" + colors[i+ coloroffset] + "', ";
-        }
-
-        return child_process.spawnSync("gnuplot", [], {
-            input: plotcommand,
-            encoding: 'utf8',
-        });
-    }
-
-    /**
-     * Creates a boxplot. Gnuplot must be installed for this.
-     *
-     * @param {Array} algorithms the different algorithms
-     * @param {String} codeDir the code directory
-     * @param {String} property "size", "tests", "time", or "reduction
-     * @param {String} ylabel the label for the y-axis
-     * @param {boolean} logscale if a logarithmic scale should be used
-     * @returns {Object} the result from child_process.spawnSync called with gnuplot
-     */
-    function boxplot(algorithms, codeDir, property, ylabel, logscale) {
-        var coloroffset = property == "size" ? 0 : 1;
-
-        let plotcommand =
-            "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
-            "set output '" + codeDir + "/stats/box-" + property + ".png'\n" +
-            "set datafile separator ','\n" +
-            "set key bottom right\n" +
-            // "set yrange [0:100]\n" +
-            "set style data boxplot\n" +
-            "set style boxplot outliers pointtype 7\n" +
-            "set style boxplot fraction 0.95\n" +
-            "set boxwidth  0.5\n" +
-            "set pointsize 1.5\n" +
-            "set style fill solid border -1\n" +
-            "set xlabel 'Algorithms'\n" +
-            "set ylabel '" + ylabel + "'\n" +
-            "set xtics ('' 1) scale 0.0\n";
-
-        // For printing the statistics
-        for(let i = 0; i < algorithms.length; i++) {
-            let prefix = algorithms[i] + "_" + property;
-            plotcommand += "print sprintf('" + prefix + "')\n";
-            plotcommand += "stats '" + codeDir + "/stats/stats-" + property + ".csv' using " + (i+2) +
-                "prefix 'A" + (i+1) + "'\n";
-            plotcommand += "set label " + (i+1) + " gprintf('Avg = %g', A" + (i+1) + "_mean)at "
-                + (i+1) + ", A" + (i+1) + "_min*0.75 center font 'Verdana,20'\n"
-        }
-
-        plotcommand += "show label\n" +
-            (logscale ? "set logscale y\n" : "") +
-            "plot ";
-        for(let i = 0; i < algorithms.length; i++) {
-
-            plotcommand += "'" + codeDir + "/stats/stats-" + property + ".csv' using "
-                + "(" + (i+1) + "):"+ (i+2) +" title columnheader linecolor rgb '" + colors[i + coloroffset] + "', ";
-        }
-
-        //console.log(plotcommand);
-
-        return child_process.spawnSync("gnuplot", [], {
-            input: plotcommand,
-            encoding: 'utf8',
-        });
-    }
-
-    function createStats(codeDir) {
-        var algorithms = createCSV(codeDir);
-        //algorithms = ["GTR", "GTR (no language information)"];
-        var result = plot(["Original"].concat(algorithms), codeDir, "size", "File size in characters", false);
-        console.log(result.stderr);
-        result = boxplot(algorithms, codeDir, "reduction", "Reduction in %", false);
-        console.log(result.stderr);
-
-
-        //result = plot(algorithms, codeDir, "tests", "Number of oracle executions", false);
-        //console.log(result.stderr);
-        result = boxplot(algorithms, codeDir, "tests", "Number of oracle executions (log)", true);
-        console.log(result.stderr);
-
-
-        // result = plot(algorithms, codeDir, "time", "Execution time in s", false);
-        // console.log(result.stderr);
-        result = boxplot(algorithms, codeDir, "time", "Execution time in s (log)", true);
-        console.log(result.stderr);
-
-    }
 
     exports.createStats = createStats;
 

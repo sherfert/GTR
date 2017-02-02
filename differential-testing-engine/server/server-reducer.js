@@ -24,8 +24,6 @@
     var treeGenerator = require("../../program-generation/js-ast/jsAstGenerator");
     var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("../../program-generation/tree-reducer/hdd");
-    var modelHdd = require("../../program-generation/tree-reducer/modelHdd");
-    var rdd = require("../../program-generation/tree-reducer/rdd");
     var ddminLine = require("../../program-generation/tree-reducer/ddMinLine").ddminLine;
     var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
     var btLine = require("../../program-generation/tree-reducer/btLine").btLine;
@@ -366,7 +364,8 @@
         fileState.results[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
         fileState.results[algoPrefix].size  = fileState.results[algoPrefix].minCode.length;
         fileState.results[algoPrefix].testsRun = tester.testsRun;
-        fileState.results[algoPrefix].timeTaken = `${tester.timeTaken[0] * 1e9 + tester.timeTaken[1]}`;
+        fileState.results[algoPrefix].timeTaken = tester.timeTaken;
+        fileState.results[algoPrefix].timeInOracle = tester.timeInOracle;
         console.log("Num tests: " + tester.testsRun + ` in ${fileState.results[algoPrefix].timeTaken} nanoseconds`);
 
         // Restore original results
@@ -411,27 +410,14 @@
     // DDMin char
     //reduceAllFiles(ddminChar, "DD char-based", false);
 
-    // BT line
-    //reduceAllFiles(btLine, "BT line-based", false);
-
     // HDD and the like
-    reduceAllFiles(hdd.hdd, "HDD", true);
-    reduceAllFiles(hdd.hddStar, "HDD*", true);
-
-    //reduceAllFiles(bth.bth, "BTH", true);
-
-    // Model-HDD(*)
-    // var plt = (pTree, pTest) => modelHdd.postLevelTransformationHdd("JS", pTree, pTest, false);
-    // reduceAllFiles(plt, "HDD with child substitution", true);
-    //var pltS = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, false);
-    //reduceAllFiles(pltS, "HDD* with child substitution", true);
-    // var pltSA = (pTree, pTest) => modelHdd.postLevelTransformationHddStar("JS", pTree, pTest, true);
-    // reduceAllFiles(pltSA, "HDD* with any substitution", true);
+    //reduceAllFiles(hdd.hdd, "HDD", true);
+    //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
      var gtr = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
      reduceAllFiles(gtr, "GTR", true);
-     var gtr2 = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, true);
-     reduceAllFiles(gtr2, "GTR (no language information)", true);
+     // var gtr2 = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, true);
+     // reduceAllFiles(gtr2, "GTR (no language information)", true);
      var gtrS = (pTree, pTest) => bthta.bthtaStar("JS", pTree, pTest, false);
      reduceAllFiles(gtrS, "GTR*", true);
 

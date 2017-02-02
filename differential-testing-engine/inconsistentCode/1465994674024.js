@@ -1,10 +1,3 @@
-/* 
-* Randomly generated JS program on Wed Jun 15 2016 14:44:34 GMT+0200 (CEST)
-* Corpus: corpusForTestingJS/js_dataset/data selected top 100000 valid file/s 
-* Random seed: true
-* Seed: 87786486056521
-*/
-
 options = null;
 this[length] = {
     options: isSuccess = {

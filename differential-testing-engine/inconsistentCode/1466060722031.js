@@ -1,10 +1,3 @@
-/* 
-* Randomly generated JS program on Thu Jun 16 2016 09:05:22 GMT+0200 (CEST)
-* Corpus: corpusForTestingJS/js_dataset/data selected top 100000 valid file/s 
-* Random seed: true
-* Seed: 12121181746543
-*/
-
 delete b.speeds;
 b = true;
 inputGroupCtrl.win = actor.style;
