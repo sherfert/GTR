@@ -1,7 +1,7 @@
 // Author: Satia Herfert
 
 /**
- * Prints a line graph comparing the number of rules found vs. the number of files traversed.
+ * Creates a CSV for the numbe rof rules found vs. the number of files traversed.
  */
 (function() {
     var jsonfile = require('jsonfile');
@@ -31,22 +31,5 @@
 
     // Save csv file
     fs.writeFileSync(config.inferredKnowledgeDir + "/learning-graph.csv", csv);
-
-    // Plot
-    let plotcommand =
-        "set terminal png size 2048,1200 enhanced font 'Verdana,30'\n" +
-        "set output '" + config.inferredKnowledgeDir + "/learning-graph.png'\n" +
-        "unset key\n" +
-        "set datafile separator ','\n" +
-        "set xlabel 'Number of files'\n" +
-        "set ylabel 'Number of parents found'\n" +
-        "plot '" + config.inferredKnowledgeDir + "/learning-graph.csv' using 1:2 with lines title columnheader";
-
-    var result = child_process.spawnSync("gnuplot", [], {
-        input: plotcommand,
-        encoding: 'utf8',
-    });
-
-    console.log(result.stderr);
 
 })();

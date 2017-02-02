@@ -14,7 +14,7 @@
      * a given level as tokens.
      *
      * Compared to TreeLevelInput for HDD, this TreeLevelALTInput
-     * only deletes nodes that were found to be not mandatoyr using the corpus.
+     * only deletes nodes that were found to be not mandatory using the corpus.
      */
     class TreeLevelALTInput extends Input {
         /**
@@ -223,7 +223,7 @@
     }
 
     /**
-     * Hierarchical backtracking with transformations.
+     * GTR
      *
      * @param {String} pl the programming language
      * @param {Node} tree the tree obtained from the AST.
@@ -231,13 +231,12 @@
      * @param tryAll if all child replacements should be tested, regardless if they are deemed OK from the corpus
      * @returns {Node} the minimized tree.
      */
-    function bthta(pl, tree, test, tryAll) {
+    function gtr(pl, tree, test, tryAll) {
         var currentTree = tree;
 
         for(var level = 1; level <= currentTree.depth() ; level++) {
             console.log("Testing level " + level + " in BTH-TA.");
-            // Inclusion of the new ddmin that uses inferred knowledge
-            //currentTree = ddmin(new TreeLevelInput(currentTree, level), test).currentCode;
+            // Inclusion of the ddmin that uses inferred knowledge
             currentTree = ddmin(new TreeLevelALTInput(pl, currentTree, level, tryAll), test).currentCode;
 
             currentTree = bt.bt(new TreeLevelTransformationBTInput(pl, currentTree, level, tryAll), test);
@@ -246,7 +245,7 @@
     }
 
     /**
-     * BTHTA* algorithm. Applies BTHTA repeatedly until no more nodes are removed.
+     * GTR* algorithm. Applies GTR repeatedly until no more nodes are removed.
      * This algorithm ensures 1-minimality, unlike BTHTA.
      *
      * @param {String} pl the programming language
@@ -255,11 +254,11 @@
      * @param tryAll if all child replacements should be tested, regardless if they are deemed OK from the corpus
      * @returns {Node} the minimized tree.
      */
-    function bthtaStar(pl, tree, test, tryAll) {
+    function gtrStar(pl, tree, test, tryAll) {
         var cachedTest = treeCache.cachedTest(test);
         return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => bthta(pl, pTree, pTest, tryAll));
     }
     
-    exports.bthta = bthta;
-    exports.bthtaStar = bthtaStar;
+    exports.gtr = gtr;
+    exports.gtrStar = gtrStar;
 })();

@@ -1,5 +1,0 @@
--------------------------------------------------------------------
-Isolating failure-inducing inputs that can be represented as a tree
--------------------------------------------------------------------
-
-Simplifying failing test cases is a mayor challenge when creating bug reports. In order to isolate and subsequently deal with the bug, the failure-inducing input should be minimal. Delta debugging automates the process of obtaining such a minimal input. Based on this, hierarchical delta debugging (HDD) exploits the tree structure of code to remove unnecessary parts earlier. However, it fails to simplify trees with a high depth. We propose a novel algorithm that uses knowledge about a programming language and its syntax trees solely obtained by analyzing a large code base. Unlike HDD, it is language independent and generates smaller isolated inputs, by restructuring the tree.

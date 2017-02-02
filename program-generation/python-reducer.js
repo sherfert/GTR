@@ -13,9 +13,7 @@
 
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
     var hdd = require("./tree-reducer/hdd");
-    var bth_ta = require("./tree-reducer/bth-ta");
-    var modelHdd = require("./tree-reducer/modelHdd");
-    var rdd = require("./tree-reducer/rdd");
+    var gtrAlgo = require("./tree-reducer/gtr");
     var ddminLine = require("./tree-reducer/ddMinLine").ddminLine;
     var ddminChar = require("./tree-reducer/ddMinChar").ddminChar;
 
@@ -138,11 +136,11 @@
         //reduceAllFiles(hdd.hdd, "HDD", true);
         //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-        //var gtr = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, false);
+        //var gtr = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
         //reduceAllFiles(gtr, "GTR", true);
-        // var gtrS = (pTree, pTest) => bth_ta.bthtaStar("PY", pTree, pTest, false);
+        // var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
         // reduceAllFiles(gtrS, "GTR*", true);
-        //var gtr2 = (pTree, pTest) => bth_ta.bthta("PY", pTree, pTest, true);
+        //var gtr2 = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
         //reduceAllFiles(gtr2, "GTR (no language information)", true);
     }
 

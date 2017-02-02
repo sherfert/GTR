@@ -26,9 +26,7 @@
     var hdd = require("../../program-generation/tree-reducer/hdd");
     var ddminLine = require("../../program-generation/tree-reducer/ddMinLine").ddminLine;
     var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
-    var btLine = require("../../program-generation/tree-reducer/btLine").btLine;
-    var bth = require("../../program-generation/tree-reducer/bth");
-    var bthta = require("../../program-generation/tree-reducer/bth-ta");
+    var gtrAlgo = require("../../program-generation/tree-reducer/gtr");
     var util = require('./util-server');
 
     /* Configurations */
@@ -414,11 +412,11 @@
     //reduceAllFiles(hdd.hdd, "HDD", true);
     //reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-     var gtr = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, false);
+     var gtr = (pTree, pTest) => gtrAlgo.gtr("JS", pTree, pTest, false);
      reduceAllFiles(gtr, "GTR", true);
-     // var gtr2 = (pTree, pTest) => bthta.bthta("JS", pTree, pTest, true);
+     // var gtr2 = (pTree, pTest) => gtrAlgo.gtr("JS", pTree, pTest, true);
      // reduceAllFiles(gtr2, "GTR (no language information)", true);
-     var gtrS = (pTree, pTest) => bthta.bthtaStar("JS", pTree, pTest, false);
-     reduceAllFiles(gtrS, "GTR*", true);
+     //var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("JS", pTree, pTest, false);
+     //reduceAllFiles(gtrS, "GTR*", true);
 
 })();
