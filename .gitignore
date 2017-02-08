@@ -9,6 +9,7 @@
 */gen*/*
 */differential-testing-results/**
 differential-testing-engine/last-read.txt
+differential-testing-browsers/
 */inconsistentCode/*
 **/stats/*
 **/input/python/*.json

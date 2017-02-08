@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Untaring the browsers
+cat browsers.tar.gz.* | tar xzvf -
+
 # Initializig submodules
 git submodule init
 git submodule update
