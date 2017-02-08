@@ -19,14 +19,15 @@
         process.exit(1);
     }
     var fs = require('fs');
-    var Tester = require("../../program-generation/tree-reducer/inputTester").Tester;
+    var child_process = require('child_process');
+    var Tester = require("../../gtr/tree-reducer/inputTester").Tester;
     var treeProvider = require("../../program-generation/js-ast/jsAstProvider");
     var treeGenerator = require("../../program-generation/js-ast/jsAstGenerator");
-    var execWithCode = require("../../program-generation/tree-reducer/ddMinTree").executeWithCode;
-    var hdd = require("../../program-generation/tree-reducer/hdd");
-    var ddminLine = require("../../program-generation/tree-reducer/ddMinLine").ddminLine;
-    var ddminChar = require("../../program-generation/tree-reducer/ddMinChar").ddminChar;
-    var gtrAlgo = require("../../program-generation/tree-reducer/gtr");
+    var execWithCode = require("../../gtr/tree-reducer/ddMinTree").executeWithCode;
+    var hdd = require("../../gtr/tree-reducer/hdd");
+    var ddminLine = require("../../gtr/tree-reducer/ddMinLine").ddminLine;
+    var ddminChar = require("../../gtr/tree-reducer/ddMinChar").ddminChar;
+    var gtrAlgo = require("../../gtr/tree-reducer/gtr");
     var util = require('./util-server');
 
     /* Configurations */
@@ -322,7 +323,7 @@
     }
 
     /**
-     * Reduces the code of one file using HDD (or other tree algorithm) to a hopefully smaller piece of code
+     * Reduces the code of one file using a reduction algorithm to a hopefully smaller piece of code
      * that exposes the same inconsistency.
      *
      * @param {JSFileState} fileState the fileState of the file to minimize.
@@ -370,10 +371,6 @@
         fileState.userAgentToResults = originalResults;
         // Write to file
         util.writeResult(codeDir, fileState);
-        // Also write minimized code
-        fs.writeFileSync(codeDir + "/min/" +
-            fileState.fileName.substr(0, fileState.fileName.length - 3) + "-" + algoPrefix + ".js",
-            fileState.results[algoPrefix].minCode);
         console.log("Reduction done of " + fileState.fileName);
     }
 
@@ -396,27 +393,51 @@
         console.log(`Total time: ${totalTimeMS.toFixed(0)} milliseconds with ${algoPrefix}`);
     }
 
+    var chrome, firefox;
+    /**
+     * Opens Chrome 48 and Firefox 25.
+     */
+    function openBrowsers() {
+        chrome = child_process.spawn("./chrome-runner.sh", [], {
+            encoding: 'utf8',
+            shell: true,
+            cwd: "../differential-testing-browsers",
+        });
+
+        firefox = child_process.spawn("./firefox -profile testing-profile http://localhost:4000", [], {
+            encoding: 'utf8',
+            shell: true,
+            cwd: "../differential-testing-browsers/firefox25.0.1",
+        });
+    }
+
     startServer();
     readCodeFromFiles();
+    openBrowsers();
+
     // Invoke reduce as soon as n browsers have connected.
     console.log("Waiting for browsers to connect");
     deasync.loopWhile(function() { return listOfAgents.length < nbBrowsers; });
 
-    // DDMin line
-    //reduceAllFiles(ddminLine, "DD line-based", false);
-
-    // DDMin char
+    //DDMin char
     //reduceAllFiles(ddminChar, "DD char-based", false);
 
-    // HDD and the like
-    //reduceAllFiles(hdd.hdd, "HDD", true);
-    //reduceAllFiles(hdd.hddStar, "HDD*", true);
+    //DDMin line
+    reduceAllFiles(ddminLine, "DD line-based", false);
 
-     var gtr = (pTree, pTest) => gtrAlgo.gtr("JS", pTree, pTest, false);
-     reduceAllFiles(gtr, "GTR", true);
-     // var gtr2 = (pTree, pTest) => gtrAlgo.gtr("JS", pTree, pTest, true);
-     // reduceAllFiles(gtr2, "GTR (no language information)", true);
-     //var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("JS", pTree, pTest, false);
-     //reduceAllFiles(gtrS, "GTR*", true);
+
+
+    //HDD and the like
+    reduceAllFiles(hdd.hdd, "HDD", true);
+    reduceAllFiles(hdd.hddStar, "HDD*", true);
+
+    var gtr = (pTree, pTest) => gtrAlgo.gtr("JS", pTree, pTest, false);
+    reduceAllFiles(gtr, "GTR", true);
+    var gtr2 = (pTree, pTest) => gtrAlgo.gtr("JS", pTree, pTest, true);
+    reduceAllFiles(gtr2, "GTR (no language information)", true);
+    var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("JS", pTree, pTest, false);
+    reduceAllFiles(gtrS, "GTR*", true);
+
+    console.log("Hit CTRIL+C to finish");
 
 })();

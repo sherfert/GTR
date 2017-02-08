@@ -1,7 +1,7 @@
 // Author: Satia Herfert
 
 /**
- * Compares all python test files with different algorithms and saves statistics.
+ * Compares all python test files with different algorithms.
  */
 (function() {
     var fs = require('fs');
@@ -133,15 +133,15 @@
         reduceAllFiles(ddminLine, "DD line-based", false);
 
         // HDD and the like
-        //reduceAllFiles(hdd.hdd, "HDD", true);
-        //reduceAllFiles(hdd.hddStar, "HDD*", true);
+        reduceAllFiles(hdd.hdd, "HDD", true);
+        reduceAllFiles(hdd.hddStar, "HDD*", true);
 
-        //var gtr = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
-        //reduceAllFiles(gtr, "GTR", true);
-        // var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
-        // reduceAllFiles(gtrS, "GTR*", true);
-        //var gtr2 = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
-        //reduceAllFiles(gtr2, "GTR (no language information)", true);
+        var gtr = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
+        reduceAllFiles(gtr, "GTR", true);
+         var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
+        reduceAllFiles(gtrS, "GTR*", true);
+        var gtr2 = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
+        reduceAllFiles(gtr2, "GTR (no language information)", true);
     }
 
     runTests();

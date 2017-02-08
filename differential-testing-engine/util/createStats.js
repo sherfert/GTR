@@ -5,7 +5,7 @@
     var config = jsonfile.readFileSync("config.json");
     var codeDir = config.reduceCodeDirectory;
 
-    var createStats = require("../../program-generation/tree-reducer/createStats").createStats;
+    var createStats = require("../../gtr/tree-reducer/createStats").createStats;
 
     createStats(codeDir);
 })();

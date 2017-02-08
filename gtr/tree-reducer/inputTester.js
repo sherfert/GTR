@@ -94,6 +94,15 @@
                 cwd: "/tmp",
             });
 
+            // We have to kill remaining python processes (not handled properly)
+            child_process.spawnSync("pkill python", [], {
+                encoding: 'utf8',
+                shell: true,
+                cwd: "/tmp",
+                timeout: 500,
+                killSignal: 'SIGKILL'
+            });
+
             return result;
         }
     }
