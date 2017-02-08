@@ -1,13 +1,22 @@
 // Author: Satia Herfert
 
 /**
- * Creates a CSV for the number of rules found vs. the number of files traversed.
+ * Learn the information required for GTR from a corpus.
+ * This creates a file ../program-generation/results/inferredKnowledge/gtrModelRule.json
+ *
+ * Creates also CSV in the same directory. Compares the number of rules found vs. the number of files traversed.
  */
 (function() {
     var config = require("../program-generation/config").config;
     var treeProvider;
 
-    if(true) {
+    var languageArg = process.argv[2];
+
+    if(!languageArg || (languageArg != "PY" && languageArg != "JS")) {
+        console.log("Usage: 'node analyzeCorpus.js [lang]'");
+        console.log("Supported languages: 'JS', 'PY'");
+        return;
+    } else if(languageArg == "PY") {
         // Reconfigure for Python
         config.treeProvider = config.directory + "/py-ast/pyAstProvider";
         config.treeGenerator = config.directory + "/py-ast/pyAstGenerator";

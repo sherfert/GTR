@@ -95,7 +95,7 @@
         var json = JSON.stringify(obj);
         var result = child_process.spawnSync("python2.7", ["unparse.py"], {
             encoding: 'utf8',
-            cwd: './tree-reducer/input/python',
+            cwd: '../program-generation/py-ast',
             input: json,
             //shell: true,
             //timeout: 500,

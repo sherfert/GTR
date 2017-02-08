@@ -45,7 +45,7 @@
     function codeToTree(code) {
         var result = child_process.spawnSync("python2.7", ["parse.py"], {
             encoding: 'utf8',
-            cwd: '../program-generation/tree-reducer/input/python',
+            cwd: '../program-generation/py-ast',
             input: code,
             //shell: true,
             //timeout: 500,

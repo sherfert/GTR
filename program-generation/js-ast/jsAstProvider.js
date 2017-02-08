@@ -36,6 +36,8 @@
                 fileNames.push(file);
             }
         }
+
+        console.log("Found " + fileNames.length + " files.");
     }
 
     function astToTree(astNode) {
