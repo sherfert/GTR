@@ -38,12 +38,14 @@
                 fileNames.push(file);
             }
         }
+
+        console.log("Found " + fileNames.length + " files.");
     }
 
     function codeToTree(code) {
         var result = child_process.spawnSync("python2.7", ["parse.py"], {
             encoding: 'utf8',
-            cwd: './tree-reducer/input/python',
+            cwd: '../program-generation/tree-reducer/input/python',
             input: code,
             //shell: true,
             //timeout: 500,
@@ -51,9 +53,7 @@
         });
         var json = result.stdout;
         var obj = JSON.parse(json);
-        //console.log(JSON.stringify(obj, null, 2));
         var t = loTrees.createTree(obj, "ast_type", ["col_offset", "lineno"]);
-        //console.log(t.toString());
         return t;
     }
 

@@ -1,0 +1,30 @@
+{
+  "name": "gtr",
+  "version": "1.0.0",
+  "description": "Reduce trees",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sherfert/GTR.git"
+  },
+  "keywords": [
+    "fuzzer",
+    "JS"
+  ],
+  "author": "Satia Herfert, Jibesh Patra, Michael Pradel",
+  "license": "MIT",
+  "dependencies": {
+    "escodegen": "^1.8.0",
+    "esprima": "^2.7.2",
+    "jsonfile": "^2.2.3",
+    "parse5": "^2.1.5",
+    "plotly": "^1.0.6",
+    "seedrandom": "^2.4.2",
+    "sha256": "^0.2.0",
+    "single-line-log": "^1.1.1",
+    "tmp": "~0.0.28"
+  }
+}

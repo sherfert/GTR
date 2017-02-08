@@ -8,10 +8,10 @@
     // Map of programming language (String) -> Map of mandatory children
     var mandatoryChildren = {};
 
-    // Read inferred transformations from JSON files
+    // Read inferred information from JSON files
     try {
-        let js = jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-js.json");
-        let py = jsonfile.readFileSync(__dirname + "/inferredRules/hddModelRule-py.json");
+        let js = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-js.json");
+        let py = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-py.json");
 
         inferredParents["JS"] = js.parents;
         inferredParents["PY"] = py.parents;

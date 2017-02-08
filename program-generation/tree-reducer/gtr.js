@@ -158,13 +158,12 @@
                         }
                     }
 
-                    // "Discard the node" assignment (maximum gain)
-                    //assignments.push(new bt.Assignment(undefined, Number.MAX_SAFE_INTEGER));
-
                     domains.push(assignments);
                 }
             });
 
+            //returns a copy of the tree where the nodes assigned "discard" are deleted, and
+            //other nodes are replaced.
             var convertToInput = function(objects) {
                 // Create a copy of the tree
                 var newTree = tree.deepCopy();
@@ -190,6 +189,9 @@
                 return newTree;
             };
 
+            // After a transformation new assignments can be possible.
+            // (e.g., after replace with child, THAT child can also be replaced with one of its children)
+            // This function obtains them.
             var getNewAssignments = function(currentAssignment) {
                 if(!currentAssignment.obj) {
                     return undefined;

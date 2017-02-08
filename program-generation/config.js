@@ -4,7 +4,7 @@
 (function() {
 
     /* List of rules to be used by the current run. Comment out the rules you do not want to use.
-    *  There could be chained dependence among rules.
+    *  There could be chained dependences among rules.
     * */
     var ruleNames = [
         // "ancestorConstraintRule",
@@ -14,7 +14,7 @@
         // "ancestorBasedNodeLabelRule",
         // "parentBasedNodeLabelRule"
         // "edgeToedgeTargetConstrain"
-        "hddModelRule"
+        "gtrModelRule"
     ];
 
     var generatorDefaults = {
@@ -24,11 +24,12 @@
     };
 
     exports.config = {
+        directory: __dirname,
         ruleNames: ruleNames,
-        treeProvider: __dirname + "/js-ast/jsAstProvider",
-        treeGenerator: __dirname + "/js-ast/jsAstGenerator",
-        //treeProvider: __dirname + "/py-ast/pyAstProvider",
-        //treeGenerator: __dirname + "/py-ast/pyAstGenerator",
+        //treeProvider: __dirname + "/js-ast/jsAstProvider",
+        //treeGenerator: __dirname + "/js-ast/jsAstGenerator",
+        treeProvider: __dirname + "/py-ast/pyAstProvider",
+        treeGenerator: __dirname + "/py-ast/pyAstGenerator",
         //treeProvider: __dirname + "/html/htmlProvider",
         //treeGenerator: __dirname + "/html/htmlGenerator",
 
@@ -37,8 +38,8 @@
          *  While creating or deleting a directory, also update checkWorkingDirectories() in main.js
          /* Mandatory directories */
 
-        fileType: "JS", // also change treeProvider, treeGenerator
-        corpusDir: __dirname + "/corpusForTestingJS",
+        fileType: "PY", // also change treeProvider, treeGenerator
+        corpusDir: __dirname + "/corpusForTestingPy",
 
         maxNoOfFilesToLearnFrom: 0, // 0 for all files in the directory
         /* If this (usePersistentKnowledge) is set to 'true' then the corpus is ignored. inferredKnowledgeDir is used to search
