@@ -1,0 +1,3 @@
+[submodule "differential-testing-engine/jalangi2"]
+	path = differential-testing-engine/jalangi2
+	url = https://github.com/Samsung/jalangi2.git

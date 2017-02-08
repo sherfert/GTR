@@ -3,7 +3,6 @@
 *.iml
 *.log
 *.fuse_hidden*
-**/jalangi2
 **/node_modules
 **/corpusForTesting*/*
 */generatedCode/*
