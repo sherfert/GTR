@@ -237,7 +237,7 @@
         var currentTree = tree;
 
         for(var level = 1; level <= currentTree.depth() ; level++) {
-            console.log("Testing level " + level + " in BTH-TA.");
+            console.log("Testing level " + level + " in GTR.");
             // Inclusion of the ddmin that uses inferred knowledge
             currentTree = ddmin(new TreeLevelALTInput(pl, currentTree, level, tryAll), test).currentCode;
 
@@ -258,7 +258,7 @@
      */
     function gtrStar(pl, tree, test, tryAll) {
         var cachedTest = treeCache.cachedTest(test);
-        return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => bthta(pl, pTree, pTest, tryAll));
+        return hddScript.doWhileTreeShrinks(tree, cachedTest, (pTree, pTest) => gtr(pl, pTree, pTest, tryAll));
     }
     
     exports.gtr = gtr;
