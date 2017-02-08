@@ -1,6 +1,5 @@
 // Author: Michael Pradel, Jibesh Patra
 
-// TODO make JS and PY specific files independent of config
 (function() {
 
     /* List of rules to be used by the current run. Comment out the rules you do not want to use.

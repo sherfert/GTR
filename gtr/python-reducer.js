@@ -7,8 +7,8 @@
     var fs = require('fs');
     var jsonfile = require('jsonfile');
 
-    var pyTreeProvider = require('./py-ast/pyAstProvider');
-    var pyTreeGenerator = require('./py-ast/pyAstGenerator');
+    var pyTreeProvider = require('../program-generation//py-ast/pyAstProvider');
+    var pyTreeGenerator = require('../program-generation//py-ast/pyAstGenerator');
     var inputTester = require("./tree-reducer/inputTester");
 
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
