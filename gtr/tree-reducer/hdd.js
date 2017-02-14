@@ -138,7 +138,7 @@
 
         var i = 0;
         do {
-            console.log("Iteration " + ++i + " of HDD*");
+            console.log("Iteration " + ++i + " of HDD*/GTR*");
             nbNodesBefore = nbNodesAfter;
             currentTree = reduction(currentTree, test);
             nbNodesAfter = currentTree.nbNodes();

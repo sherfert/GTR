@@ -42,6 +42,59 @@
         }
     }
 
+    /**
+     *  Tests any python or javascript code with a user provided shell script as an oracle.
+     */
+    class ShellOracleTester extends Tester {
+
+        /**
+         * @param command The shell command to invoke
+         * @param ddAlgo the DD algorithm
+         * @param postfix ".py" or ".js"
+         */
+        constructor(command, ddAlgo, postfix) {
+            super(function(x) {return this.test(x);}, ddAlgo);
+            this.command = command;
+            this.postfix = postfix;
+        }
+
+        /**
+         * Tests an input by executing it and checking if the command crashes.
+         * @param {object} input the input to execute
+         * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the error
+         */
+        test(input) {
+            var result = this.runCommand(input, this.postfix);
+            if(result.status == 0) {
+                return "fail";
+            } else {
+                return "pass";
+            }
+        }
+
+        runCommand(code, postfix) {
+            // Write the code to a temporary file (will be removed by library)
+            let file = tmp.fileSync({ prefix: 'crashtest-', postfix: postfix});
+            fs.writeFileSync(file.name, code);
+            // Return the result of spawning a child process
+            var finalCmd = this.command + " " + file.name;
+            var result = child_process.spawnSync(finalCmd, [], {
+                shell: true,
+                //cwd: "/tmp",
+                timeout: 500,
+                killSignal: 'SIGKILL'
+            });
+
+            // We have to cleap up files in the tmp folder, otherwise we produce a lot of garbage
+            child_process.spawnSync("rm *" + postfix, [], {
+                shell: true,
+                cwd: "/tmp",
+            });
+
+            return result;
+        }
+    }
+
 
     /**
      *  Tests any python command for crashes.
@@ -166,6 +219,7 @@
     }
 
     exports.Tester = Tester;
+    exports.ShellOracleTester = ShellOracleTester;
     exports.PyCrashTester = PyCrashTester;
     exports.GCCCrashTester = GCCCrashTester;
 })();

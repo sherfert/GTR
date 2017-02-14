@@ -7,8 +7,8 @@
     var fs = require('fs');
     var jsonfile = require('jsonfile');
 
-    var pyTreeProvider = require('../program-generation//py-ast/pyAstProvider');
-    var pyTreeGenerator = require('../program-generation//py-ast/pyAstGenerator');
+    var pyTreeProvider = require('../program-generation/py-ast/pyAstProvider');
+    var pyTreeGenerator = require('../program-generation/py-ast/pyAstGenerator');
     var inputTester = require("./tree-reducer/inputTester");
 
     var execWithCode = require("./tree-reducer/ddMinTree").executeWithCode;
@@ -19,7 +19,7 @@
 
 
     /**
-     * Reduces the code of one file using HDD (or other tree algorithm) to a hopefully smaller piece of code
+     * Reduces the code of one file a reduction algorithm to a hopefully smaller piece of code
      * that exposes the same bug.
      *
      * @param fileState the fileState of the file to minimize.
@@ -55,7 +55,7 @@
 
         var newCode = tester.runTest(pycode);
 
-        // Create an results object if inexistant
+        // Create a results object if inexistant
         if(!fileState.results) {
             fileState.results = {};
         }
