@@ -24,7 +24,7 @@ Reducing files with your own oracle
 2. Navigate to the folder 'gtr'
 3. Example 1 'node shell-reducer.js -a HDD -l PY examples/grepOracle.sh examples/ex1.py examples/output.py' reduces ex1.py with HDD using the grep oracle.
 4. Example 2 'node shell-reducer.js -a GTR -l JS examples/grepOracle.sh examples/ex2.js examples/output.js' reduces ex2.js with GTR using the grep oracle.
-5. You can vary which algorithm to use ('DDC', 'DDL', 'HDD', 'HDD*', 'GTR', 'GTR*') and use your own files and oracles.
+5. You can vary which algorithm to use and use your own files and oracles.
 
 
 Inferring knowledge
