@@ -4,6 +4,8 @@
     var tmp = require('tmp');
     var fs = require('fs');
     var child_process = require('child_process');
+    var request = require('request');
+    var deasync = require('deasync');
 
 
     /**
@@ -160,6 +162,65 @@
     }
 
     /**
+     *  Tests any python command for crashes, by sending HTTP requests to a server that
+     *  executes the files.
+     *
+     *  The server must have been started. Port 9000.
+     */
+    class PyServerCrashTester extends Tester {
+
+        /**
+         * @param command The shell command to invoke
+         * @param ddAlgo the DD algorithm
+         */
+        constructor(command, ddAlgo) {
+            super(function(x) {return this.test(x);}, ddAlgo);
+            this.command = command;
+        }
+
+        /**
+         * Tests an input by executing it and checking if the command crashes.
+         * @param {object} input the input to execute
+         * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the error
+         */
+        test(input) {
+            var result = this.runCommand(input);
+            // Stack overflow or segmentation fault
+            if(result == -11 || result == -6) {
+                // The same error is triggered
+                return "fail";
+            } else {
+                // No compiler crash
+                return "pass";
+            }
+        }
+
+        runCommand(code) {
+            // Write the code to a temporary file (will be removed by library)
+            let file = tmp.fileSync({ prefix: 'crashtest-', postfix: '.py' });
+            fs.writeFileSync(file.name, code);
+            let shortName = (file.name + "").slice(5);
+
+            // Launch a HTTP request to get the result.
+            var done = false;
+            var data = "1";
+            request('http://localhost:9000/run/' + this.command + '/' + shortName,
+                function(err, res, body) {
+                    done = true;
+                    if (!err && res.statusCode == 200) {
+                        data = body;
+                    }
+                });
+            deasync.loopWhile(function(){return !done;});
+
+
+            var resInt = parseInt(data + "");
+
+            return resInt;
+        }
+    }
+
+    /**
      *  Tests gcc/g++ for crashes.
      */
     class GCCCrashTester extends Tester {
@@ -220,5 +281,6 @@
     exports.Tester = Tester;
     exports.ShellOracleTester = ShellOracleTester;
     exports.PyCrashTester = PyCrashTester;
+    exports.PyServerCrashTester = PyServerCrashTester;
     exports.GCCCrashTester = GCCCrashTester;
 })();

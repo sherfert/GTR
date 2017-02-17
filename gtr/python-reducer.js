@@ -6,6 +6,7 @@
 (function() {
     var fs = require('fs');
     var jsonfile = require('jsonfile');
+    var minimist = require('minimist');
 
     var pyTreeProvider = require('../program-generation/py-ast/pyAstProvider');
     var pyTreeGenerator = require('../program-generation/py-ast/pyAstGenerator');
@@ -123,25 +124,90 @@
         }
     }
 
+    function getFileStateFromName(name) {
+        if(name == "ackermann.py") {
+            return getFileState(codeDir + "/ackermann.py", "python3.4");
+        } else if(name == "alloc.py") {
+            return getFileState(codeDir + "/alloc.py", "python2.7");
+        } else if(name == "dict.py") {
+            return getFileState(codeDir + "/dict.py", "python2.7");
+        } else if(name == "itertools.py") {
+            return getFileState(codeDir + "/itertools.py", "python2.7");
+        } else if(name == "mroref.py") {
+            return getFileState(codeDir + "/mroref.py", "python2.7");
+        } else if(name == "recursion.py") {
+            return getFileState(codeDir + "/recursion.py", "python3.4");
+        } else if(name == "so.py") {
+            return getFileState(codeDir + "/so.py", "python2.7");
+        }
+    }
+
     /**
      * Compares all files with different algorithms.
      */
     function runTests() {
+        var argv = minimist(process.argv.slice(2));
+        var algoArg = argv.a;
+        var fileArg = argv.f;
+
+        if(!fileArg || !algoArg || (algoArg != "DDC" && algoArg != "DDL" && algoArg != "HDD" && algoArg != "HDD*"
+            && algoArg != "GTR" && algoArg != "GTR*" && algoArg != "GTRX")) {
+            console.log("Usage: 'node python-reducer.js -a algo -f file'");
+            console.log("Supported algorithms: 'DDC', 'DDL', 'HDD', 'HDD*', 'GTR', 'GTR*', 'GTRX'. Default: 'GTR'");
+            console.log("Supported files: ackermann.py, alloc.py, dict.py, itertools.py, mroref.py, recursion.py, so.py");
+            return;
+        }
+
+        var algo;
+        var name;
+        var treeAlgo;
+        if(algoArg == "DDC") {
+            algo = ddminChar;
+            name = "DD char-based";
+            treeAlgo = false;
+        } else if(algoArg == "DDL") {
+            algo = ddminLine;
+            name = "DD line-based";
+            treeAlgo = false;
+        } else if(algoArg == "HDD") {
+            algo = hdd.hdd;
+            name = "HDD";
+            treeAlgo = true;
+        } else if(algoArg == "HDD*") {
+            algo = hdd.hddStar;
+            name = "HDD*";
+            treeAlgo = true;
+        } else if(algoArg == "GTR") {
+            algo = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
+            treeAlgo = true;
+            name = "GTR";
+        } else if(algoArg == "GTR*") {
+            algo = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
+            treeAlgo = true;
+            name = "GTR*";
+        } else if(algoArg == "GTRX") {
+            algo = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
+            treeAlgo = true;
+            name = "GTR (no language information)";
+        }
+
+        reduce(getFileStateFromName(fileArg), algo, name, treeAlgo);
+
         // DDMin char
         //reduceAllFiles(ddminChar, "DD char-based", false);
         // DDMin line
-        reduceAllFiles(ddminLine, "DD line-based", false);
-
-        // HDD and the like
-        reduceAllFiles(hdd.hdd, "HDD", true);
-        reduceAllFiles(hdd.hddStar, "HDD*", true);
-
-        var gtr = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
-        reduceAllFiles(gtr, "GTR", true);
-         var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
-        reduceAllFiles(gtrS, "GTR*", true);
-        var gtr2 = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
-        reduceAllFiles(gtr2, "GTR (no language information)", true);
+        // reduceAllFiles(ddminLine, "DD line-based", false);
+        //
+        // // HDD and the like
+        // reduceAllFiles(hdd.hdd, "HDD", true);
+        // reduceAllFiles(hdd.hddStar, "HDD*", true);
+        //
+        // var gtr = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
+        // reduceAllFiles(gtr, "GTR", true);
+        //  var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
+        // reduceAllFiles(gtrS, "GTR*", true);
+        // var gtr2 = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
+        // reduceAllFiles(gtr2, "GTR (no language information)", true);
     }
 
     runTests();
