@@ -30,6 +30,8 @@
     var gtrAlgo = require("../../gtr/tree-reducer/gtr");
     var util = require('./util-server');
 
+    var stringify = require('json-stable-stringify');
+
     /* Configurations */
     var config = jsonfile.readFileSync("config.json");
     var preprocessor = require(config.preprocessor);
@@ -205,27 +207,6 @@
     }
 
     /**
-     * Oracle for delta debugging. Uses the given filestate to compare the results.
-     *
-     * @param {String} c the code to evaluate using the oracle
-     * @param {String} cmpWith the result to compare with (JSON of browser results)
-     * @param {JSFileState} fileState the fileState of the file to test
-     * @returns {String} "fail" or "?"
-     */
-    function testOracle(c, cmpWith, fileState) {
-        // Obtain results for the given code
-        var res = testInBrowsers(c, fileState);
-        // Convert to JSON to compare with original results
-        var s = JSON.stringify(res);
-        if(s === cmpWith) {
-            // Same inconsistency
-            return "fail";
-        }
-        // All other cases, we do not care further
-        return "?";
-    }
-
-    /**
      * Advanced oracle for delta debugging. Uses the given filestate to compare the results.
      *
      * In comparison to the basic version this:
@@ -239,11 +220,33 @@
      */
     function advancedTestOracle(c, cmpWith, fileState) {
         // Obtain results for the given code
-        var res = testInBrowsers(c, fileState);
+        var resArr = [];
+        for(var i = 0; i < 3; i++) {
+            let res = testInBrowsers(c, fileState);
+            resArr.push(res)
+        }
+
+        var res = resArr[0];
+        if(stringify(resArr[0]) != stringify(resArr[1])
+            || stringify(resArr[0]) != stringify(resArr[2])) {
+
+            console.log("Inconsistency!");
+            console.log("0: " + stringify(resArr[0]));
+            console.log("1: " + stringify(resArr[1]));
+            console.log("2: " + stringify(resArr[2]));
+
+            if(stringify(resArr[1]) == stringify(resArr[2])) {
+                res = resArr[1];
+            }
+        }
+
+
         // Get diff to compare with original results
         var s = getExecutionDifferences(res);
+
         if(equalDiffObjects(s,cmpWith)) {
             // Same inconsistency
+
             return "fail";
         }
         // All other cases, we do not care further
@@ -252,12 +255,10 @@
 
     /**
      * XXX This function assumes exactly two traces to compare. Not more, not less.
-     * XXX This function compares execution difference by serializing two maps
-     * of traces ("agent" -> trace) and comparing the JSON strings. This is not very
-     * effective and only works if the agents are always listed in the same order, which
-     * seems to hold.
+     * XXX This function compares execution difference by serializing JSON strings. This is not very
+     * effective.
      *
-     * It looks at the two execution traces obtainted by jalangi and isolates the first
+     * It looks at the two execution traces obtained by jalangi and isolates the first
      * difference. In the case where only one of the traces ends with a crash, the other
      * trace is irrelevant.
      *
@@ -361,7 +362,7 @@
         var tester = new Tester(test, ddAlgo);
         fileState.results[algoPrefix] = {};
         fileState.results[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
-        fileState.results[algoPrefix].size  = fileState.results[algoPrefix].minCode.length;
+        fileState.results[algoPrefix].size = fileState.results[algoPrefix].minCode.length;
         fileState.results[algoPrefix].testsRun = tester.testsRun;
         fileState.results[algoPrefix].timeTaken = tester.timeTaken;
         fileState.results[algoPrefix].timeInOracle = tester.timeInOracle;
@@ -425,8 +426,6 @@
     //DDMin line
     reduceAllFiles(ddminLine, "DD line-based", false);
 
-
-
     //HDD and the like
     reduceAllFiles(hdd.hdd, "HDD", true);
     reduceAllFiles(hdd.hddStar, "HDD*", true);
@@ -438,6 +437,6 @@
     var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("JS", pTree, pTest, false);
     reduceAllFiles(gtrS, "GTR*", true);
 
-    console.log("Hit CTRIL+C to finish");
+    console.log("Hit CTRL+C to finish");
 
 })();

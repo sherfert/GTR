@@ -80,7 +80,6 @@
             var finalCmd = this.command + " " + file.name;
             var result = child_process.spawnSync(finalCmd, [], {
                 shell: true,
-                //cwd: "/tmp",
                 timeout: 500,
                 killSignal: 'SIGKILL'
             });
