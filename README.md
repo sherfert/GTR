@@ -3,7 +3,8 @@ Prerequisites
 1. Clone the repository
 2. Have node v6.0.0a and npm v3.8.6 or newer installed
 3. Have python 3.4.3 and 2.7.6 installed
-4. Run './init.sh'
+4. Install the following Python modules (recommended through pip): astor, numpy
+5. Run './init.sh'
 
 Folder structure
 ================
@@ -32,7 +33,7 @@ the median reduction. The following statistics are gathered:
 Reducing PY files
 =================
 1. Navigate to the folder 'gtr'
-2. Run './python-loop.sh'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/python'
+2. Run './python-loop.sh'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/python'. This will take up to a couple of hours.
 3. To gather statistics, run 'node createPyStats.js'. They will be placed in 'gtr/tree-reducer/input/python/stats'
 
 
@@ -40,6 +41,7 @@ Reducing JS files
 =================
 1. Navigate to the folder 'differential-testing-engine'
 2. Run 'node server/server-reducer.js'. This creates JSON files with information for each algoritm in 'differential-testing-engine/inconsistentCode/'
+   When prompted by chrome before it launches, hit OK. This will take a long time in a VM (calculate multiple hours).
 3. To gather statistics, run 'node util/createStats.js'. They will be placed in 'differential-testing-engine/inconsistentCode/stats'
 
 
