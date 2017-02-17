@@ -2,12 +2,37 @@ Prerequisites
 =============
 1. Clone the repository
 2. Have node v6.0.0a and npm v3.8.6 or newer installed
-3. Run './init.sh'
+3. Have python 3.4.3 and 2.7.6 installed
+4. Run './init.sh'
+
+Folder structure
+================
+- **differential-testing-engine** Needed to run the JavaScript experiment, 
+  testing for inconsitent behavior across browsers. 
+  - **inconsistentCode** Files for the JavaScript experiment
+- **gtr** Implementation of GTR and other reduction algorithms.
+  - **examples** Two exmaple files that can be reduced and an exmaple oracle
+  - **tree-reducer** The algorithms
+    - **input/python** Files for the Python experiment
+- **program-generation** Part of TreeFuzz. Needed to infer knowledge
+  and to convert JavaScript and Python files to trees.
+  
+Result presentation
+===================
+When executing one of our two experiment (reducing PY files or reducing JS files), the result
+is presented with CSV-files. The folder where these are placed is indicated below. The CSV
+files are the ones we used to create the graphs in our paper and to calculate statistics like
+the median reduction. The following statistics are gathered:
+- **stats-inoracle.csv** For each file and algorithm, the time percent of time spent inside the oracle
+- **stats-reduction.csv** For each file and algorithm, the percent reduction.
+- **stats-size.csv** For each file and algorithm, the file size after running the algorithm.
+- **stats-tests.csv** For each file and algorithm, the number of oracle invocations.
+- **stats-time.csv** For each file and algorithm, the actual runtime.
 
 Reducing PY files
 =================
 1. Navigate to the folder 'gtr'
-2. Run 'node python-reducer.js'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/python'
+2. Run './python-loop.sh'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/python'
 3. To gather statistics, run 'node createPyStats.js'. They will be placed in 'gtr/tree-reducer/input/python/stats'
 
 
