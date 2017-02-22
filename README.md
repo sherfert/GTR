@@ -18,6 +18,14 @@ JavaScript files that cause browser inconsistencies. The algorithm
 reduces these files by 50% and 96%, respectively, outperforming
 both Delta Debugging and another state-of-the-art algorithm.
 
+Prerequisites
+=============
+1. Clone the repository
+2. Have node v6.0.0a and npm v3.8.6 or newer installed
+3. Have python 3.4.3 and 2.7.6 installed
+4. Install the following Python modules (recommended through pip): astor, numpy
+5. Run './init.sh'
+
 
 Folder structure
 ================
