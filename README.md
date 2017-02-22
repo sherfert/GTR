@@ -2,18 +2,18 @@ Generalized Reduction of Tree-Structured Test-Inputs
 ====================================================
 Localizing a fault triggered by a given test input is a time-consuming
 task. The well-known delta debugging algorithm and its derivatives
-automate this task by repeatedly reducing the given input. Unfor-
-tunately, these approaches are limited to blindly removing parts
+automate this task by repeatedly reducing the given input. Unfortunately,
+these approaches are limited to blindly removing parts
 of the input and cannot reduce the input by restructuring it. This
-paper presents the Generalized Tree Reduction algorithm, an effec-
-tive and efficient technique to reduce arbitrary test inputs that can
+paper presents the Generalized Tree Reduction algorithm, an effective
+and efficient technique to reduce arbitrary test inputs that can
 be represented as a tree, such as program code, HTML pages, and
 XML documents. The algorithm combines an extensible set of tree
 transformations with delta debugging and a greedy backtracking
-algorithm. To reduce the size of the considered search space, the ap-
-proach automatically specializes the tree transformations applied by
-the algorithm based on examples of input trees. We evaluate the ap-
-proach by reducing Python files that cause interpreter crashes and
+algorithm. To reduce the size of the considered search space, the approach
+automatically specializes the tree transformations applied by
+the algorithm based on examples of input trees. We evaluate the approach
+by reducing Python files that cause interpreter crashes and
 JavaScript files that cause browser inconsistencies. The algorithm
 reduces these files by 50% and 96%, respectively, outperforming
 both Delta Debugging and another state-of-the-art algorithm.
@@ -67,7 +67,6 @@ Sections 5.2, 5.3, 5.4 contain the results.
 Reducing JS files (experiment 2)
 ================================
 This experiment reduces JavaScript files that expose browser inconsistencies. All 41 files mentioned in the paper
-
 are included. Experiment setup is detailed in Section 5.1, Sections 5.2, 5.3, 5.4 contain the results.
 
 1. Navigate to the folder 'differential-testing-engine'
