@@ -23,7 +23,7 @@ Prerequisites
 1. Clone the repository
 2. Have node v6.0.0a and npm v3.8.6 or newer installed
 3. Have python 3.4.3 and 2.7.6 installed
-4. Install the following Python modules (recommended through pip): astor, numpy
+4. Install the following Python modules (recommended through pip): astor, numpy, pdfminer
 5. Run './init.sh'
 
 
@@ -39,6 +39,8 @@ Folder structure
     - **input/python** Files for the Python experiment
 - **program-generation** Part of TreeFuzz. Needed to infer knowledge
   and to convert JavaScript and Python files to trees.
+- **pdf2tree** Independent library. A shell script that uses pdfminer's dumppdf can convert PDF to XML files. A Java executable
+  can convert these XML files back to PDFs.
   
 Result presentation
 ===================
@@ -47,8 +49,10 @@ is presented with CSV-files. The folder where these are placed is indicated belo
 files are the ones we used to create the graphs in our paper and to calculate statistics like
 the median reduction. The following statistics are gathered:
 - **stats-inoracle.csv** For each file and algorithm, the percentage of time spent inside the oracle (See Section 5.3)
-- **stats-reduction.csv** For each file and algorithm, the reduction (in percent). (See Figure 3c)
+- **stats-reduction.csv** For each file and algorithm, the reduction (in percent) in terms of file size. (See Figure 3c)
+- **stats-reduction-nodes.csv** For each file and algorithm, the reduction (in percent) in terms of number of nodes.
 - **stats-size.csv** For each file and algorithm, the file size after running the algorithm. (See Figure 3a, 3b)
+- **stats-size-nodes.csv** For each file and algorithm, the number of nodes in the tree after running the algorithm.
 - **stats-tests.csv** For each file and algorithm, the number of oracle invocations. (See Figure 4)
 - **stats-time.csv** For each file and algorithm, the actual runtime. (No associated graph in the paper)
 
