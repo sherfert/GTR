@@ -21,8 +21,6 @@ import java.util.Arrays;
  */
 public class XML2PDFParser {
 
-    // TODO pdf2xml: (echo '<?xml version="1.1"?>' ; dumppdf.py -a -t gtr.pdf) | sed -e 's/&#0;//g' > testgtr.xml
-
     /**
      * Usage: parser infile outfile
      * @param args
@@ -118,6 +116,11 @@ public class XML2PDFParser {
     }
 
 
+    /**
+     * Processes the xml "<pdf>" note, representing the whole PDF.
+     * @param xmlNode
+     * @throws IOException
+     */
     private void processPDF(Node xmlNode) throws IOException {
         if (!(xmlNode instanceof Element)) {
             return;
@@ -206,7 +209,7 @@ public class XML2PDFParser {
             return processKeyword(xmlElem);
         } else {
             String message = "Unknown tag name: " + xmlElem.getTagName();
-            throw new RuntimeException("message");
+            throw new RuntimeException(message);
         }
     }
 
