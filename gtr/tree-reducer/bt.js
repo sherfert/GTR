@@ -83,7 +83,7 @@
      * The algorithm iterates over all variables and tries assigning values with a better gain. The iteration is
      * repeated as long as at least one variable could be re-assigned in the previous iteration.
      *
-     * The result is the object obtained from converToInput given the final configuration in the algorithm.
+     * The result is the object obtained from convertToInput given the final configuration in the algorithm.
      *
      * @param {BTInput} btInput a subclass of BTInput that defines the domains and a convertToInput function.
      * @param {function(*): string} testInput a function that tests a current assignment

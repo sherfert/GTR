@@ -246,7 +246,6 @@
 
         if(equalDiffObjects(s,cmpWith)) {
             // Same inconsistency
-
             return "fail";
         }
         // All other cases, we do not care further
@@ -355,14 +354,18 @@
 
         // Test function that just expects code, so we can pass it to DD
         var test = function(c) {
-            //console.log("TESTING: " + c);
             return advancedTestOracle(c, cmpWith, fileState);
         };
+
+        var c2t = treeProvider.codeToTree(fileState.rawCode);
+        fileState.origSizeNodes = c2t.nbNodes();
 
         var tester = new Tester(test, ddAlgo);
         fileState.results[algoPrefix] = {};
         fileState.results[algoPrefix].minCode  = tester.runTest(fileState.rawCode);
         fileState.results[algoPrefix].size = fileState.results[algoPrefix].minCode.length;
+        var newTree = treeProvider.codeToTree(fileState.results[algoPrefix].minCode);
+        fileState.results[algoPrefix].sizeNodes  = newTree.nbNodes();
         fileState.results[algoPrefix].testsRun = tester.testsRun;
         fileState.results[algoPrefix].timeTaken = tester.timeTaken;
         fileState.results[algoPrefix].timeInOracle = tester.timeInOracle;

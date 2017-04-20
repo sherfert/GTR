@@ -48,13 +48,16 @@
 
 
         var tester = new inputTester.PyCrashTester(fileState.command, ddAlgo);
-        var code2tree2code = pyTreeGenerator.treeToCode(pyTreeProvider.codeToTree(pycode));
+        var c2t = pyTreeProvider.codeToTree(pycode);
+        fileState.origSizeNodes = c2t.nbNodes();
+        var code2tree2code = pyTreeGenerator.treeToCode(c2t);
         if(tester.test(code2tree2code) == "pass") {
             console.log("The crash cannot be reproduced after code->tree->code conversion. Aborting.");
             return;
         }
 
         var newCode = tester.runTest(pycode);
+        var newTree = pyTreeProvider.codeToTree(newCode);
 
         // Create a results object if inexistant
         if(!fileState.results) {
@@ -64,6 +67,7 @@
         fileState.results[algoPrefix] = {};
         fileState.results[algoPrefix].minCode  = newCode;
         fileState.results[algoPrefix].size  = newCode.length;
+        fileState.results[algoPrefix].sizeNodes  = newTree.nbNodes();
         fileState.results[algoPrefix].testsRun = tester.testsRun;
         fileState.results[algoPrefix].timeTaken = tester.timeTaken;
         fileState.results[algoPrefix].timeInOracle = tester.timeInOracle;
@@ -192,22 +196,6 @@
         }
 
         reduce(getFileStateFromName(fileArg), algo, name, treeAlgo);
-
-        // DDMin char
-        //reduceAllFiles(ddminChar, "DD char-based", false);
-        // DDMin line
-        // reduceAllFiles(ddminLine, "DD line-based", false);
-        //
-        // // HDD and the like
-        // reduceAllFiles(hdd.hdd, "HDD", true);
-        // reduceAllFiles(hdd.hddStar, "HDD*", true);
-        //
-        // var gtr = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, false);
-        // reduceAllFiles(gtr, "GTR", true);
-        //  var gtrS = (pTree, pTest) => gtrAlgo.gtrStar("PY", pTree, pTest, false);
-        // reduceAllFiles(gtrS, "GTR*", true);
-        // var gtr2 = (pTree, pTest) => gtrAlgo.gtr("PY", pTree, pTest, true);
-        // reduceAllFiles(gtr2, "GTR (no language information)", true);
     }
 
     runTests();
