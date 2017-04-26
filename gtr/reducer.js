@@ -53,6 +53,7 @@
                 };
             }
 
+            // TODO here we want buffer encoding for PDFs
             var code = "" + fs.readFileSync(fileState.fileName);
             fileState.origSize = code.length;
 
