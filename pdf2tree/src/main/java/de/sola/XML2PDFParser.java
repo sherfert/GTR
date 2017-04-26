@@ -130,6 +130,10 @@ public class XML2PDFParser {
             return;
         }
 
+
+        // The count of indirect objects added to the body
+        int objectCount = 0;
+
         // the root, add all children
         NodeList children = xmlNode.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
@@ -138,6 +142,7 @@ public class XML2PDFParser {
                 Element childElem = (Element) child;
                 if (childElem.getTagName().equals("object")) {
                     processObject(childElem);
+                    objectCount++;
                 } else if (childElem.getTagName().equals("trailer") && !trailerAdded) {
                     trailerAdded = true;
 
@@ -150,11 +155,13 @@ public class XML2PDFParser {
                     PdfIndirectReference info = (PdfIndirectReference) trailerDict.get(new PdfName("Info"));
                     PdfIndirectReference root = (PdfIndirectReference) trailerDict.get(new PdfName("Root"));
 
+                    System.out.printf("Size %d vs count %d\n", size, objectCount);
+
                     // Right before the trailer comes the Xref table
                     produceXrefTable(body, os, root, info);
 
-                    // FIXME the actual size (number of objects counted) would be better?
-                    PdfWriter.PdfTrailer trailer = new PdfWriter.PdfTrailer(size,
+                    PdfWriter.PdfTrailer trailer = new PdfWriter.PdfTrailer(
+                            objectCount, // was previously size
                             body.offset(),
                             root,
                             info,
