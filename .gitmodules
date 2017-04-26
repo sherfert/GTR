@@ -1,3 +1,6 @@
 [submodule "differential-testing-engine/jalangi2"]
 	path = differential-testing-engine/jalangi2
 	url = https://github.com/Samsung/jalangi2.git
+[submodule "pdf-scrutinizer"]
+	path = pdf-scrutinizer
+	url = https://bitbucket.org/florianschmitt/pdf-scrutinizer.git
