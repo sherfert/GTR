@@ -7,10 +7,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import javax.xml.parsers.*;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
@@ -27,15 +24,20 @@ public class XML2PDFParser {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        if(args.length != 2) {
+        XML2PDFParser parser = null;
+        if(args.length == 0) {
+            parser = new XML2PDFParser(System.in, System.out);
+        } else if(args.length == 2) {
+            File in = new File(args[0]);
+            File out = new File(args[1]);
+            parser = new XML2PDFParser(in, out);
+        } else {
             System.err.println("Usage: parser infile outfile");
             System.err.println(Arrays.asList(args));
             System.exit(1);
         }
-        File in = new File(args[0]);
-        File out = new File(args[1]);
 
-        new XML2PDFParser(in, out).parse();
+        parser.parse();
     }
 
     /**
@@ -74,6 +76,22 @@ public class XML2PDFParser {
     private Document document;
     // Whether a trailer has been added already. This is needed, because dumppdf.py duplicates the trailer
     private boolean trailerAdded = false;
+
+    /**
+     * A new parser
+     * @param in the stream to read from
+     * @param out the stream to write to
+     * @throws Exception
+     */
+    public XML2PDFParser(InputStream in, OutputStream out) throws Exception  {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        this.document = builder.parse(in);
+        Element root = document.getDocumentElement();
+
+        this.pdfDoc = new com.itextpdf.text.Document();
+        this.w = PdfWriter.getInstance(this.pdfDoc, out);
+    }
 
     /**
      * A new parser
