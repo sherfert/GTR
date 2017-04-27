@@ -41,6 +41,7 @@ Folder structure
   and to convert JavaScript and Python files to trees.
 - **pdf2tree** Independent library. A shell script that uses pdfminer's dumppdf can convert PDF to XML files. A Java executable
   can convert these XML files back to PDFs.
+- **pdf-scrutinizer** A command line tool that detects malicious contents in PDF files.
   
 Result presentation
 ===================
