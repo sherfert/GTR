@@ -41,3 +41,8 @@ git clone https://github.com/joelhockey/jcodings.git
 cd ..
 mvn package assembly:single -DskipTests
 cd ..
+
+# Compile pdf2tree
+cd pdf2tree
+mvn clean compile assembly:single
+cd ..
