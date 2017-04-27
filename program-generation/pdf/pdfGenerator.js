@@ -1,19 +1,19 @@
-const tmp = require('tmp');
-var child_process = require('child_process');
-
+const child_process = require('child_process');
 const xmlGenerator = require('../xml/xmlGenerator');
+const fs = require('fs');
 
 function treeToCode(tree) {
     let xmlStr = xmlGenerator.treeToCode(tree);
-    // TODO XML -> PDF
-    let file = tmp.fileSync({prefix: 'conversion-', postfix: '.xml'});
-    fs.writeFileSync(file.name, code);
-    var result = child_process.spawnSync("(echo '<?xml version=\"1.1\"?>' ; dumppdf -a -t " + file.name + ") | sed -e 's/&#0;//g' ", [], {
+    fs.writeFileSync("GTR-another.xml", xmlStr);
+    // XML -> PDF
+    var result = child_process.spawnSync("java -jar ../pdf2tree/target/pdf2tree-1.0-SNAPSHOT-jar-with-dependencies.jar", [], {
+        input: xmlStr,
         shell: true,
         timeout: 500,
         killSignal: 'SIGKILL'
     });
-    return null;
+    console.log(result.stderr + '');
+    return result.stdout;
 }
 
 // Just to be compatible with the previous archticture...
@@ -21,7 +21,13 @@ function treeToCodeNoFileIO(tree) {
     return treeToCode(tree);
 }
 
-
+(function() {
+    let pdfProvider = require('./pdfProvider');
+    pdfProvider.init();
+    let tree = pdfProvider.nextTree();
+    let pdf = treeToCode(tree);
+    //fs.writeFileSync("newfile.pdf", pdf);
+})();
 
 exports.treeToCode = treeToCode;
 exports.treeToCodeNoFileIO = treeToCodeNoFileIO;

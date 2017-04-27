@@ -3,6 +3,7 @@
  */
 
 const fs = require('fs');
+var tmp = require('tmp');
 var child_process = require('child_process');
 const config = require("./../config").config;
 const xmlProvider = require('../xml/xmlProvider');
@@ -30,7 +31,10 @@ function init() {
 
 
 function codeToTree(code) {
-    var result = child_process.spawnSync("(echo '<?xml version=\"1.1\"?>' ; dumppdf -a -t " + file.name + ") | sed -e 's/&#0;//g' ", [], {
+    let file = tmp.fileSync({ prefix: 'conversion-', postfix: '.pdf' });
+    fs.writeFileSync(file.name, code);
+    // TODO inconsistency with .py
+    var result = child_process.spawnSync("(echo '<?xml version=\"1.1\"?>' ; dumppdf.py -a -t " + file.name + ") | sed -e 's/&#0;//g' ", [], {
         shell: true,
         timeout: 500,
         killSignal: 'SIGKILL'

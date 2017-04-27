@@ -6,6 +6,7 @@ const fs = require('fs');
 const DOMParser = require('xmldom').DOMParser;
 const config = require("./../config").config;
 const loTrees = require("./../labeledOrderedTrees");
+var entities = require("entities");
 
 let fileNames = [];
 let currentIndex = -1;
@@ -37,7 +38,7 @@ function xmlObjToTree(obj) {
     } else if (typeof obj !== "object") {
         return new loTrees.Node(JSON.stringify(obj));
     } else if (obj.nodeType === TEXT_NODE) {
-        return new loTrees.Node(obj.data);
+        return new loTrees.Node(entities.encodeXML(obj.data));
     }
 
     var node = new loTrees.Node("NODE_" + obj.nodeName);
