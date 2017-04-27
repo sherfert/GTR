@@ -41,6 +41,7 @@ Folder structure
   and to convert JavaScript and Python files to trees.
 - **pdf2tree** Independent library. A shell script that uses pdfminer's dumppdf can convert PDF to XML files. A Java executable
   can convert these XML files back to PDFs.
+- **pdf-scrutinizer** A command line tool that detects malicious contents in PDF files.
   
 Result presentation
 ===================
@@ -95,8 +96,8 @@ and one example oracle.
 
 1. Checkout the example oracle 'gtr/example/grepOracle.sh'.
 2. Navigate to the folder 'gtr'
-3. Example 1 'node shell-reducer.js -a HDD -l PY examples/grepOracle.sh examples/ex1.py examples/output.py' reduces ex1.py with HDD using the grep oracle.
-4. Example 2 'node shell-reducer.js -a GTR -l JS examples/grepOracle.sh examples/ex2.js examples/output.js' reduces ex2.js with GTR using the grep oracle.
+3. Example 1 'node shell-reducer.js -a HDD -l PY -f examples/ex1.py examples/grepOracle.sh examples/output.py' reduces ex1.py with HDD using the grep oracle.
+4. Example 2 'node shell-reducer.js -a GTR -l JS -f examples/ex2.js examples/grepOracle.sh examples/output.js' reduces ex2.js with GTR using the grep oracle.
 5. You can vary which algorithm to use and use your own files and oracles.
 
 

@@ -30,3 +30,19 @@ cd ..
 cd program-generation
 npm install
 cd ..
+
+# Prepare pdf-scrutinizer
+mkdir pdf-scrutinizer/lib/
+cd pdf-scrutinizer/lib/
+git clone https://github.com/florianschmitt/pdfbox.git
+wget -P pdfbox/pdfbox/src/main/resources/org/apache/pdfbox/resources/ http://partners.adobe.com/public/developer/en/opentype/glyphlist.txt
+git clone https://github.com/florianschmitt/rhino-mirror.git
+git clone https://github.com/joelhockey/jcodings.git
+cd ..
+mvn package assembly:single -DskipTests
+cd ..
+
+# Compile pdf2tree
+cd pdf2tree
+mvn clean compile assembly:single
+cd ..

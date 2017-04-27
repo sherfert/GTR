@@ -45,6 +45,57 @@
     }
 
     /**
+     * Tests whether PDFs are classified as malicious according to PDF scrutinizer.
+     */
+    class PDFMaliciousnessTester extends Tester {
+        /**
+         * @param ddAlgo the DD algorithm
+         */
+        constructor(ddAlgo) {
+            super(function(x) {return this.test(x);}, ddAlgo);
+            this.commandPre = "(cd ../pdf-scrutinizer && exec ./run.sh -pdf";
+            this.commandPost = "| tail -1 | grep 'malicious')";
+        }
+
+        /**
+         * Tests an input by executing it and checking if the status code
+         * @param {object} input the input to execute
+         * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the error
+         */
+        test(input) {
+            var result = this.runCommand(input);
+            // For debugging:
+            //console.log("" +result.stderr);
+            if(result.status == 0) {
+                return "fail";
+            } else {
+                return "pass";
+            }
+        }
+
+        runCommand(code) {
+            // Write the code to a temporary file (will be removed by library)
+            let file = tmp.fileSync({ prefix: 'crashtest-', postfix: '.pdf' });
+            fs.writeFileSync(file.name, code);
+            // Return the result of spawning a child process
+            var finalCmd = this.commandPre + " " + file.name + " " + this.commandPost;
+            var result = child_process.spawnSync(finalCmd, [], {
+                shell: true,
+                timeout: 5000,
+                killSignal: 'SIGKILL'
+            });
+
+            // We have to clean up files in the tmp folder, otherwise we produce a lot of garbage
+            child_process.spawnSync("rm *.pdf", [], {
+                shell: true,
+                cwd: "/tmp",
+            });
+
+            return result;
+        }
+    }
+
+    /**
      *  Tests any python or javascript code with a user provided shell script as an oracle.
      */
     class ShellOracleTester extends Tester {
@@ -86,7 +137,7 @@
                 killSignal: 'SIGKILL'
             });
 
-            // We have to cleap up files in the tmp folder, otherwise we produce a lot of garbage
+            // We have to clean up files in the tmp folder, otherwise we produce a lot of garbage
             child_process.spawnSync("rm *" + postfix, [], {
                 shell: true,
                 cwd: "/tmp",
@@ -142,7 +193,7 @@
                 killSignal: 'SIGKILL'
             });
 
-            // We have to cleap up files in the tmp folder, otherwise we produce a lot of garbage
+            // We have to clean up files in the tmp folder, otherwise we produce a lot of garbage
             child_process.spawnSync("rm *.py ", [], {
                 shell: true,
                 cwd: "/tmp",
@@ -265,7 +316,7 @@
                 killSignal: 'SIGKILL'
             });
 
-            // We have to cleap up files in the tmp folder, otherwise we produce a lot of garbage
+            // We have to clean up files in the tmp folder, otherwise we produce a lot of garbage
             child_process.spawnSync("rm *.o *.out *.c", [], {
                 encoding: 'utf8',
                 shell: true,
@@ -279,6 +330,7 @@
     }
 
     exports.Tester = Tester;
+    exports.PDFMaliciousnessTester = PDFMaliciousnessTester;
     exports.ShellOracleTester = ShellOracleTester;
     exports.PyCrashTester = PyCrashTester;
     exports.PyServerCrashTester = PyServerCrashTester;

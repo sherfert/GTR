@@ -155,8 +155,6 @@ public class XML2PDFParser {
                     PdfIndirectReference info = (PdfIndirectReference) trailerDict.get(new PdfName("Info"));
                     PdfIndirectReference root = (PdfIndirectReference) trailerDict.get(new PdfName("Root"));
 
-                    System.out.printf("Size %d vs count %d\n", size, objectCount);
-
                     // Right before the trailer comes the Xref table
                     produceXrefTable(body, os, root, info);
 
