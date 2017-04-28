@@ -12,7 +12,7 @@ function treeToCode(tree) {
         timeout: 500,
         killSignal: 'SIGKILL'
     });
-    console.log(result.stderr + '');
+    //console.log(result.stderr + '');
     return result.stdout;
 }
 
@@ -20,14 +20,6 @@ function treeToCode(tree) {
 function treeToCodeNoFileIO(tree) {
     return treeToCode(tree);
 }
-
-(function() {
-    let pdfProvider = require('./pdfProvider');
-    pdfProvider.init();
-    let tree = pdfProvider.nextTree();
-    let pdf = treeToCode(tree);
-    //fs.writeFileSync("newfile.pdf", pdf);
-})();
 
 exports.treeToCode = treeToCode;
 exports.treeToCodeNoFileIO = treeToCodeNoFileIO;

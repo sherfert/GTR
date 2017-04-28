@@ -32,8 +32,7 @@ public class XML2PDFParser {
             File out = new File(args[1]);
             parser = new XML2PDFParser(in, out);
         } else {
-            System.err.println("Usage: parser infile outfile");
-            System.err.println(Arrays.asList(args));
+            System.err.println("Usage: parser [infile outfile]");
             System.exit(1);
         }
 

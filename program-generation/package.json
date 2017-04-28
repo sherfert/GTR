@@ -17,7 +17,6 @@
   "author": "Michael Pradel, Jibesh Patra",
   "license": "MIT",
   "dependencies": {
-    "entities": "^1.1.1",
     "escodegen": "^1.8.0",
     "esprima": "^2.7.2",
     "jsonfile": "^2.2.3",

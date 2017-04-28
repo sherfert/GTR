@@ -37,7 +37,8 @@ function treeToCode(tree) {
     let xmlobj = treeToxmlObj(tree, xmldoc);
     xmldoc.appendChild(xmlobj);
 
-    return new XMLSerializer().serializeToString(xmldoc).slice("<__OWN__/>".length);
+    let xmlStr = '<?xml version="1.1"?>' + new XMLSerializer().serializeToString(xmldoc).slice("<__OWN__/>".length);
+    return encodeString(xmlStr);
 }
 
 // Just to be compatible with the previous archticture...
@@ -45,14 +46,39 @@ function treeToCodeNoFileIO(tree) {
     return treeToCode(tree);
 }
 
-/*(function () {
- getlotree.init();
- let tree = getlotree.nextTree();
- console.log(tree.toString());
- console.log(treeToCode(tree));
- let xml = treeToCode(tree);
- fs.writeFileSync("newfile.xml", xml);
- })();*/
+/**
+ * Escapes invalid XML 1.1 characters in Strings
+ * @param str
+ * @returns {string}
+ */
+function encodeString(str) {
+    let res = "";
+    for(let i = 0; i < str.length; i++) {
+        res += encodeChar(str[i], str.charCodeAt(i))
+    }
+    return res;
+}
+
+/**
+ * Escapes invalid XML 1.1 characters
+ * @param char
+ * @param charCode
+ * @returns {*}
+ */
+function encodeChar(char, charCode) {
+    // RestrictedChar::=[#x1-#x8] | [#xB-#xC] |
+    // [#xE-#x1F] | [#x7F-#x84] | [#x86-#x9F]
+    if((charCode >= 0x1 && charCode <= 0x8) ||
+        (charCode >= 0xB && charCode <= 0xC) ||
+        (charCode >= 0xE && charCode <= 0x1F) ||
+        (charCode >= 0x7F && charCode <= 0x84) ||
+        (charCode >= 0x86 && charCode <= 0x9F)
+    ) {
+        return "&#" + charCode + ";";
+    } else {
+        return char;
+    }
+}
 
 exports.treeToCode = treeToCode;
 exports.treeToCodeNoFileIO = treeToCodeNoFileIO;
