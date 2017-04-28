@@ -23,6 +23,7 @@
      * getInputTester(command, ddAlgo)
      * getEnding() : String
      * getFileStateFromName(name: String)
+     * getEncoding() : String or null
      */
     class Reducer {
         /**
@@ -53,8 +54,7 @@
                 };
             }
 
-            // TODO here we want buffer encoding for PDFs
-            var code = "" + fs.readFileSync(fileState.fileName);
+            var code = fs.readFileSync(fileState.fileName, {encoding: this.getEncoding()});
             fileState.origSize = code.length;
 
 
@@ -67,7 +67,9 @@
                 return;
             }
 
-            var newCode = tester.runTest(code);
+            // For non-tree algorithms, we must convert the code always to a String.
+            // (Might be a Buffer, depending on this.getEncoding())
+            var newCode = tester.runTest(treeAlgo? code : "" + code);
             var newTree = treeProvider.codeToTree(newCode);
 
             // Create a results object if inexistant
@@ -76,8 +78,9 @@
             }
 
             fileState.results[algoPrefix] = {};
-            fileState.results[algoPrefix].minCode = newCode;
-            fileState.results[algoPrefix].size = newCode.length;
+            // Always convert Buffers to a string here
+            fileState.results[algoPrefix].minCode = "" + newCode;
+            fileState.results[algoPrefix].size = ("" + newCode).length;
             fileState.results[algoPrefix].sizeNodes = newTree.nbNodes();
             fileState.results[algoPrefix].testsRun = tester.testsRun;
             fileState.results[algoPrefix].timeTaken = tester.timeTaken;
@@ -85,7 +88,7 @@
             console.log("Num tests: " + tester.testsRun + ` in ${fileState.results[algoPrefix].timeTaken} nanoseconds`);
 
             // Write to file
-            var resultFileName = fileState.fileName.replace(new RegExp(this.getEnding().toLowerCase() + '$'), 'json');// .* --> .json
+            var resultFileName = fileState.fileName + '.json';
             fs.writeFileSync(resultFileName, JSON.stringify(fileState, 0, 2));
 
             console.log("Reduction done of " + fileState.fileName);
@@ -99,7 +102,7 @@
          * @returns {*} the FileState
          */
         getFileState(fileName, command) {
-            var resultFileName = fileName.replace(new RegExp(this.getEnding().toLowerCase()+'$'), 'json');// .* --> .json
+            var resultFileName = fileName + '.json';
             try {
                 return jsonfile.readFileSync(resultFileName)
             } catch (e) {

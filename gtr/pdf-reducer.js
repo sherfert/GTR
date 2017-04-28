@@ -10,16 +10,18 @@
 
     var Reducer = require('./reducer').Reducer;
 
+    var pdfTreeProvider = require('../program-generation/pdf/pdfProvider');
+    var pdfTreeGenerator = require('../program-generation/pdf/pdfGenerator');
     var inputTester = require("./tree-reducer/inputTester");
 
     var codeDir = "tree-reducer/input/pdf";
 
     class PDFReducer extends Reducer {
         getTreeProvider() {
-            // TODO
+            return pdfTreeProvider;
         }
         getTreeGenerator() {
-            // TODO
+            return pdfTreeGenerator;
         }
         getInputTester(command, ddAlgo) {
             return new inputTester.PDFMaliciousnessTester(ddAlgo);
@@ -27,17 +29,14 @@
         getEnding() {
             return "PDF";
         }
+        getEncoding() {
+            return null;
+        }
         getFileStateFromName(name) {
-            return this.getFileState(name, "");
+            return this.getFileState(codeDir + "/" + name, "");
         }
     }
 
-    // TODO
-    //new PDFReducer().runTest();
-
-    var code = fs.readFileSync(codeDir + "/CVE-2009-4324_PDF_2009-11-30_note200911.pdf=1ST0DAYFILE");
-    var code2 = fs.readFileSync(codeDir + "/gtr-paper.pdf");
-    var result = new PDFReducer().getInputTester("", null).test(code2);
-    console.log(result);
+    new PDFReducer().runTest();
 
 })();

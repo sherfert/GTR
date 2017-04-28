@@ -16,6 +16,7 @@
     var jsTreeGenerator = require('../program-generation/js-ast/jsAstGenerator');
     var ShellOracleTester = require("./tree-reducer/inputTester").ShellOracleTester;
 
+    // TODO adapt for PDF (e.g. encoding)
     class ShellReducer extends Reducer {
         /**
          * @param shellCommand the shell command that servers as an oracle
@@ -48,6 +49,9 @@
         }
         getEnding() {
             return this.language;
+        }
+        getEncoding() {
+            return "utf8";
         }
         getFileStateFromName(name) {
             return this.getFileState(name, this.shellCommand);

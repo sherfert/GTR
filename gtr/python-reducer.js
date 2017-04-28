@@ -29,6 +29,9 @@
         getEnding() {
             return "PY";
         }
+        getEncoding() {
+            return "utf8";
+        }
         getFileStateFromName(name) {
             if(name == "ackermann.py") {
                 return this.getFileState(codeDir + "/ackermann.py", "python3.4");

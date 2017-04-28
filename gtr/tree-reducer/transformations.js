@@ -12,11 +12,14 @@
     try {
         let js = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-js.json");
         let py = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-py.json");
+        let pdf = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-pdf.json");
 
         inferredParents["JS"] = js.parents;
         inferredParents["PY"] = py.parents;
+        inferredParents["PDF"] = pdf.parents;
         mandatoryChildren["JS"] = js.mandatoryChildren;
         mandatoryChildren["PY"] = py.mandatoryChildren;
+        mandatoryChildren["PDF"] = pdf.mandatoryChildren;
 
     } catch(e) {
         // No model

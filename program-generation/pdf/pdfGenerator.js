@@ -4,7 +4,6 @@ const fs = require('fs');
 
 function treeToCode(tree) {
     let xmlStr = xmlGenerator.treeToCode(tree);
-    fs.writeFileSync("GTR-another.xml", xmlStr);
     // XML -> PDF
     var result = child_process.spawnSync("java -jar ../pdf2tree/target/pdf2tree-1.0-SNAPSHOT-jar-with-dependencies.jar", [], {
         input: xmlStr,
