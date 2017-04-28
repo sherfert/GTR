@@ -37,6 +37,7 @@ Folder structure
   - **examples** Two example files that can be reduced and an example oracle
   - **tree-reducer** The algorithms
     - **input/python** Files for the Python experiment
+    - **input/pdf** Files for the PDF experiment
 - **program-generation** Part of TreeFuzz. Needed to infer knowledge
   and to convert JavaScript and Python files to trees.
 - **pdf2tree** Independent library. A shell script that uses pdfminer's dumppdf can convert PDF to XML files. A Java executable
@@ -87,6 +88,13 @@ are included. Experiment setup is detailed in Section 5.1, Sections 5.2, 5.3, 5.
    When prompted by chrome before it launches, hit OK. This will take a long time in a VM (expect multiple hours).
 3. To gather statistics, run 'node util/createStats.js'. They will be placed in 'differential-testing-engine/inconsistentCode/stats'
 
+Reducing PDF files (experiment 3)
+================================
+This experiment reduces PDF files that are classified as malicious according to PDF-scrutinizer.
+
+1. Navigate to the folder 'gtr'
+2. Run './pdf-loop.sh'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/pdf'. This will take up to a couple of hours.
+
 
 Reducing files with your own oracle
 ===================================
@@ -107,8 +115,9 @@ This step is not necessary to reproduce our results. The knowledge we inferred i
 in the algorithm, placed in the folder 'gtr/tree-reducer/inferredRules'. If you want to use your own
 corpus to infer knowledge, like described in Section 4.2, follow these steps.
 
-1. Place your corpus files in 'program-generation/corpusForTestingJS' for JavaScript or 'program-generation/corpusForTestingPy' for Python. Do not use subfolders.
+1. Place your corpus files in 'program-generation/corpusForTestingJS' for JavaScript or 'program-generation/corpusForTestingPy' for Python
+   or 'program-generation/corpusForTestingPDF' for PDF. Do not use subfolders.
 2. Navigate to the folder 'gtr'
-3. Run 'node analyzeCorpus.js PY' or 'node analyzeCorpus.js JS'
+3. Run 'node analyzeCorpus.js PY' or 'node analyzeCorpus.js JS' or 'node analyzeCorpus.js PDF'
    This places the inferred knowledge in ./program-generation/results/inferredKnowledge/
    It also places a learning curve CSV there. (See Figure 5)
