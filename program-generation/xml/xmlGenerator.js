@@ -20,6 +20,7 @@ function treeToxmlObj(tree, xmldoc) {
                 let attribname = edgeLabel.split("attrib_")[1];
                 element.setAttribute(attribname, child.label);
             } else {
+                // a child edge
                 let childobj = treeToxmlObj(child, xmldoc);
                 element.appendChild(childobj);
             }

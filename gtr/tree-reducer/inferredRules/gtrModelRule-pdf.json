@@ -1,0 +1,158 @@
+{
+  "parents": {
+    "NODE_object": {
+      "NODE_pdf": [
+        "child_object"
+      ]
+    },
+    "NODE_dict": {
+      "NODE_object": [
+        "child_dict"
+      ],
+      "NODE_props": [
+        "child_dict"
+      ],
+      "NODE_trailer": [
+        "child_dict"
+      ],
+      "NODE_value": [
+        "child_dict"
+      ],
+      "NODE_list": [
+        "child_dict"
+      ]
+    },
+    "NODE_key": {
+      "NODE_dict": [
+        "child_key"
+      ]
+    },
+    "NODE_value": {
+      "NODE_dict": [
+        "child_value"
+      ]
+    },
+    "NODE_literal": {
+      "NODE_value": [
+        "child_literal"
+      ],
+      "NODE_list": [
+        "child_literal"
+      ],
+      "NODE_object": [
+        "child_literal"
+      ]
+    },
+    "NODE_ref": {
+      "NODE_value": [
+        "child_ref"
+      ],
+      "NODE_list": [
+        "child_ref"
+      ]
+    },
+    "NODE_number": {
+      "NODE_value": [
+        "child_number"
+      ],
+      "NODE_list": [
+        "child_number"
+      ],
+      "NODE_object": [
+        "child_number"
+      ]
+    },
+    "NODE_list": {
+      "NODE_value": [
+        "child_list"
+      ],
+      "NODE_object": [
+        "child_list"
+      ],
+      "NODE_list": [
+        "child_list"
+      ]
+    },
+    "NODE_stream": {
+      "NODE_object": [
+        "child_stream"
+      ]
+    },
+    "NODE_props": {
+      "NODE_stream": [
+        "child_props"
+      ]
+    },
+    "NODE_data": {
+      "NODE_stream": [
+        "child_data"
+      ]
+    },
+    "NODE_trailer": {
+      "NODE_pdf": [
+        "child_trailer"
+      ]
+    },
+    "NODE_string": {
+      "NODE_value": [
+        "child_string"
+      ],
+      "NODE_list": [
+        "child_string"
+      ],
+      "NODE_object": [
+        "child_string"
+      ]
+    },
+    "NODE_keyword": {
+      "NODE_list": [
+        "child_keyword"
+      ]
+    }
+  },
+  "mandatoryChildren": {
+    "NODE_pdf": [],
+    "NODE_object": [
+      "attrib_id"
+    ],
+    "NODE_dict": [
+      "attrib_size"
+    ],
+    "NODE_key": [
+      "child_#text"
+    ],
+    "NODE_value": [],
+    "NODE_literal": [
+      "child_#text"
+    ],
+    "NODE_ref": [
+      "attrib_id"
+    ],
+    "NODE_number": [
+      "child_#text"
+    ],
+    "NODE_list": [
+      "attrib_size"
+    ],
+    "NODE_stream": [
+      "child_props",
+      "child_data"
+    ],
+    "NODE_props": [
+      "child_dict"
+    ],
+    "NODE_data": [
+      "attrib_size"
+    ],
+    "NODE_trailer": [
+      "child_dict"
+    ],
+    "NODE_string": [
+      "attrib_size"
+    ],
+    "NODE_keyword": [
+      "child_#text"
+    ]
+  },
+  "numParents": 27
+}

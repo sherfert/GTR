@@ -53,7 +53,7 @@ function xmlObjToTree(obj) {
             continue;
         }
         let childNode = xmlObjToTree(child);
-        node.outgoing.push(new loTrees.Edge("child", childNode));
+        node.outgoing.push(new loTrees.Edge("child_" + child.nodeName, childNode));
 
     }
     return node;
