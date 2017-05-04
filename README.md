@@ -93,7 +93,8 @@ Reducing PDF files (experiment 3)
 This experiment reduces PDF files that are classified as malicious according to PDF-scrutinizer.
 
 1. Navigate to the folder 'gtr'
-2. Run './pdf-loop.sh'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/pdf'. This will take up to a couple of hours.
+2. Run './pdf-loop.sh'. This creates JSON files with information for each algoritm in 'gtr/tree-reducer/input/pdf'. This will take around 1 hour per file.
+3. To gather statistics, run 'node createPDFStats.js'. They will be placed in 'gtr/tree-reducer/input/pdf/stats'
 
 
 Reducing files with your own oracle
