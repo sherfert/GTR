@@ -79,8 +79,8 @@
             // For debugging:
             // TODO: JP continue from here. The return value of the following should be line and branch coverage separated by a ','
             //console.log(JSON.stringify(result, 0, 2));
-            console.log(branch_cov + " vs " + this.initial_branch_cov);
-            console.log(line_cov + " vs " + this.initial_line_cov);
+            // console.log(branch_cov + " vs " + this.initial_branch_cov);
+            // console.log(line_cov + " vs " + this.initial_line_cov);
 
             /* Right now the property we are tying to preserve is same coverage */
             if (/*branch_cov === this.initial_branch_cov &&*/ Number(line_cov) >= Number(this.initial_line_cov)) {
