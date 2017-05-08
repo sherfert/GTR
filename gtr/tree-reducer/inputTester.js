@@ -54,7 +54,7 @@
             }, ddAlgo);
 
             this.commandPre = "../program-generation/xml/libxml2-2.9.4/xmllint";
-            this.commandPost = "> /dev/null && ../program-generation/xml/gcovr/scripts/gcovr -s -r ../program-generation/xml/libxml2-2.9.4/ | tail -2 | cut -d '(' -f 2 | cut -d ' ' -f 1";
+            this.commandPost = "> /dev/null ; ../program-generation/xml/gcovr/scripts/gcovr -s -r ../program-generation/xml/libxml2-2.9.4/ | tail -2 | cut -d '(' -f 2 | cut -d ' ' -f 1";
 
             /* Converted the original XML to tree back and forth to have a consistent coverage measurement */
             let originalXML = fs.readFileSync(filename, {encoding: "utf8"});
@@ -79,12 +79,11 @@
             // For debugging:
             // TODO: JP continue from here. The return value of the following should be line and branch coverage separated by a ','
             //console.log(JSON.stringify(result, 0, 2));
-            //console.log("" + result.stderr);
             console.log(branch_cov + " vs " + this.initial_branch_cov);
             console.log(line_cov + " vs " + this.initial_line_cov);
 
             /* Right now the property we are tying to preserve is same coverage */
-            if (branch_cov === this.initial_branch_cov && line_cov === this.initial_line_cov) {
+            if (/*branch_cov === this.initial_branch_cov &&*/ Number(line_cov) >= Number(this.initial_line_cov)) {
                 return "fail"; // property OK
             } else {
                 return "pass"; // property not OK
