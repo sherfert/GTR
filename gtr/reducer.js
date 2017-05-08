@@ -58,7 +58,7 @@
             fileState.origSize = code.length;
 
 
-            var tester = this.getInputTester(fileState.command, ddAlgo);
+            var tester = this.getInputTester(fileState.command, ddAlgo, fileState.fileName);
             var c2t = treeProvider.codeToTree(code);
             fileState.origSizeNodes = c2t.nbNodes();
             var code2tree2code = treeGenerator.treeToCode(c2t);

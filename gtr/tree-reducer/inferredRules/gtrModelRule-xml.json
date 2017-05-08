@@ -1,0 +1,1170 @@
+{
+  "parents": {
+    "NODE_front": {
+      "NODE_article": [
+        "child_front"
+      ]
+    },
+    "NODE_journal-meta": {
+      "NODE_front": [
+        "child_journal-meta"
+      ]
+    },
+    "NODE_journal-id": {
+      "NODE_journal-meta": [
+        "child_journal-id"
+      ]
+    },
+    "NODE_journal-title-group": {
+      "NODE_journal-meta": [
+        "child_journal-title-group"
+      ]
+    },
+    "NODE_journal-title": {
+      "NODE_journal-title-group": [
+        "child_journal-title"
+      ]
+    },
+    "NODE_issn": {
+      "NODE_journal-meta": [
+        "child_issn"
+      ]
+    },
+    "NODE_publisher": {
+      "NODE_journal-meta": [
+        "child_publisher"
+      ]
+    },
+    "NODE_publisher-name": {
+      "NODE_publisher": [
+        "child_publisher-name"
+      ],
+      "NODE_nlm-citation": [
+        "child_publisher-name"
+      ]
+    },
+    "NODE_article-meta": {
+      "NODE_front": [
+        "child_article-meta"
+      ]
+    },
+    "NODE_article-id": {
+      "NODE_article-meta": [
+        "child_article-id"
+      ]
+    },
+    "NODE_article-categories": {
+      "NODE_article-meta": [
+        "child_article-categories"
+      ]
+    },
+    "NODE_subj-group": {
+      "NODE_article-categories": [
+        "child_subj-group"
+      ]
+    },
+    "NODE_subject": {
+      "NODE_subj-group": [
+        "child_subject"
+      ]
+    },
+    "NODE_title-group": {
+      "NODE_article-meta": [
+        "child_title-group"
+      ]
+    },
+    "NODE_article-title": {
+      "NODE_title-group": [
+        "child_article-title"
+      ],
+      "NODE_nlm-citation": [
+        "child_article-title"
+      ]
+    },
+    "NODE_contrib-group": {
+      "NODE_article-meta": [
+        "child_contrib-group"
+      ]
+    },
+    "NODE_contrib": {
+      "NODE_contrib-group": [
+        "child_contrib"
+      ]
+    },
+    "NODE_name": {
+      "NODE_contrib": [
+        "child_name"
+      ],
+      "NODE_person-group": [
+        "child_name"
+      ]
+    },
+    "NODE_surname": {
+      "NODE_name": [
+        "child_surname"
+      ]
+    },
+    "NODE_given-names": {
+      "NODE_name": [
+        "child_given-names"
+      ]
+    },
+    "NODE_xref": {
+      "NODE_contrib": [
+        "child_xref"
+      ],
+      "NODE_p": [
+        "child_xref"
+      ]
+    },
+    "NODE_sup": {
+      "NODE_xref": [
+        "child_sup"
+      ],
+      "NODE_aff": [
+        "child_sup"
+      ],
+      "NODE_p": [
+        "child_sup"
+      ]
+    },
+    "NODE_aff": {
+      "NODE_article-meta": [
+        "child_aff"
+      ],
+      "NODE_person-group": [
+        "child_aff"
+      ]
+    },
+    "NODE_addr-line": {
+      "NODE_aff": [
+        "child_addr-line"
+      ]
+    },
+    "NODE_country": {
+      "NODE_aff": [
+        "child_country"
+      ]
+    },
+    "NODE_ext-link": {
+      "NODE_aff": [
+        "child_ext-link"
+      ],
+      "NODE_comment": [
+        "child_ext-link"
+      ]
+    },
+    "NODE_pub-date": {
+      "NODE_article-meta": [
+        "child_pub-date"
+      ]
+    },
+    "NODE_year": {
+      "NODE_pub-date": [
+        "child_year"
+      ],
+      "NODE_date": [
+        "child_year"
+      ],
+      "NODE_nlm-citation": [
+        "child_year"
+      ]
+    },
+    "NODE_day": {
+      "NODE_pub-date": [
+        "child_day"
+      ],
+      "NODE_date": [
+        "child_day"
+      ]
+    },
+    "NODE_month": {
+      "NODE_pub-date": [
+        "child_month"
+      ],
+      "NODE_date": [
+        "child_month"
+      ]
+    },
+    "NODE_volume": {
+      "NODE_article-meta": [
+        "child_volume"
+      ],
+      "NODE_nlm-citation": [
+        "child_volume"
+      ]
+    },
+    "NODE_history": {
+      "NODE_article-meta": [
+        "child_history"
+      ]
+    },
+    "NODE_date": {
+      "NODE_history": [
+        "child_date"
+      ]
+    },
+    "NODE_permissions": {
+      "NODE_article-meta": [
+        "child_permissions"
+      ]
+    },
+    "NODE_copyright-year": {
+      "NODE_permissions": [
+        "child_copyright-year"
+      ]
+    },
+    "NODE_copyright-holder": {
+      "NODE_permissions": [
+        "child_copyright-holder"
+      ]
+    },
+    "NODE_license": {
+      "NODE_permissions": [
+        "child_license"
+      ]
+    },
+    "NODE_license-p": {
+      "NODE_license": [
+        "child_license-p"
+      ]
+    },
+    "NODE_abstract": {
+      "NODE_article-meta": [
+        "child_abstract"
+      ]
+    },
+    "NODE_p": {
+      "NODE_abstract": [
+        "child_p"
+      ],
+      "NODE_sec": [
+        "child_p"
+      ],
+      "NODE_caption": [
+        "child_p"
+      ],
+      "NODE_list-item": [
+        "child_p"
+      ],
+      "NODE_ack": [
+        "child_p"
+      ],
+      "NODE_statement": [
+        "child_p"
+      ],
+      "NODE_body": [
+        "child_p"
+      ]
+    },
+    "NODE_counts": {
+      "NODE_article-meta": [
+        "child_counts"
+      ]
+    },
+    "NODE_ref-count": {
+      "NODE_counts": [
+        "child_ref-count"
+      ]
+    },
+    "NODE_page-count": {
+      "NODE_counts": [
+        "child_page-count"
+      ]
+    },
+    "NODE_body": {
+      "NODE_article": [
+        "child_body"
+      ]
+    },
+    "NODE_sec": {
+      "NODE_body": [
+        "child_sec"
+      ],
+      "NODE_sec": [
+        "child_sec"
+      ],
+      "NODE_app": [
+        "child_sec"
+      ]
+    },
+    "NODE_title": {
+      "NODE_sec": [
+        "child_title"
+      ],
+      "NODE_ack": [
+        "child_title"
+      ],
+      "NODE_statement": [
+        "child_title"
+      ],
+      "NODE_app": [
+        "child_title"
+      ]
+    },
+    "NODE_fig": {
+      "NODE_sec": [
+        "child_fig"
+      ],
+      "NODE_fig-group": [
+        "child_fig"
+      ]
+    },
+    "NODE_label": {
+      "NODE_fig": [
+        "child_label"
+      ],
+      "NODE_table-wrap": [
+        "child_label"
+      ],
+      "NODE_disp-formula": [
+        "child_label"
+      ],
+      "NODE_list-item": [
+        "child_label"
+      ],
+      "NODE_ref": [
+        "child_label"
+      ]
+    },
+    "NODE_caption": {
+      "NODE_fig": [
+        "child_caption"
+      ],
+      "NODE_table-wrap": [
+        "child_caption"
+      ],
+      "NODE_fig-group": [
+        "child_caption"
+      ]
+    },
+    "NODE_graphic": {
+      "NODE_fig": [
+        "child_graphic"
+      ]
+    },
+    "NODE_inline-formula": {
+      "NODE_p": [
+        "child_inline-formula"
+      ],
+      "NODE_td": [
+        "child_inline-formula"
+      ],
+      "NODE_title": [
+        "child_inline-formula"
+      ],
+      "NODE_article-title": [
+        "child_inline-formula"
+      ],
+      "NODE_th": [
+        "child_inline-formula"
+      ],
+      "NODE_italic": [
+        "child_inline-formula"
+      ]
+    },
+    "NODE_mml:math": {
+      "NODE_inline-formula": [
+        "child_mml:math"
+      ],
+      "NODE_disp-formula": [
+        "child_mml:math"
+      ],
+      "NODE_p": [
+        "child_mml:math"
+      ]
+    },
+    "NODE_mml:mrow": {
+      "NODE_mml:math": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:mfrac": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:msub": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:mover": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:mrow": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:mstyle": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:msubsup": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:msup": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:munder": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:msqrt": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:munderover": [
+        "child_mml:mrow"
+      ],
+      "NODE_mml:mfenced": [
+        "child_mml:mrow"
+      ]
+    },
+    "NODE_mml:mi": {
+      "NODE_mml:mrow": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:msub": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:mstyle": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:mover": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:munder": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:msubsup": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:msup": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:munderover": [
+        "child_mml:mi"
+      ],
+      "NODE_mml:math": [
+        "child_mml:mi"
+      ]
+    },
+    "NODE_table-wrap": {
+      "NODE_sec": [
+        "child_table-wrap"
+      ]
+    },
+    "NODE_table": {
+      "NODE_table-wrap": [
+        "child_table"
+      ]
+    },
+    "NODE_thead": {
+      "NODE_table": [
+        "child_thead"
+      ]
+    },
+    "NODE_tr": {
+      "NODE_thead": [
+        "child_tr"
+      ],
+      "NODE_tbody": [
+        "child_tr"
+      ]
+    },
+    "NODE_th": {
+      "NODE_tr": [
+        "child_th"
+      ]
+    },
+    "NODE_tbody": {
+      "NODE_table": [
+        "child_tbody"
+      ]
+    },
+    "NODE_td": {
+      "NODE_tr": [
+        "child_td"
+      ]
+    },
+    "NODE_italic": {
+      "NODE_p": [
+        "child_italic"
+      ],
+      "NODE_th": [
+        "child_italic"
+      ],
+      "NODE_td": [
+        "child_italic"
+      ],
+      "NODE_source": [
+        "child_italic"
+      ],
+      "NODE_sup": [
+        "child_italic"
+      ],
+      "NODE_comment": [
+        "child_italic"
+      ],
+      "NODE_italic": [
+        "child_italic"
+      ]
+    },
+    "NODE_sub": {
+      "NODE_italic": [
+        "child_sub"
+      ],
+      "NODE_p": [
+        "child_sub"
+      ]
+    },
+    "NODE_disp-formula": {
+      "NODE_p": [
+        "child_disp-formula"
+      ]
+    },
+    "NODE_mml:msub": {
+      "NODE_mml:mrow": [
+        "child_mml:msub"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:msub"
+      ]
+    },
+    "NODE_mml:mo": {
+      "NODE_mml:mrow": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:mover": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:math": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:munder": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:munderover": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:msup": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:mstyle": [
+        "child_mml:mo"
+      ],
+      "NODE_mml:msubsup": [
+        "child_mml:mo"
+      ]
+    },
+    "NODE_mml:mfrac": {
+      "NODE_mml:mrow": [
+        "child_mml:mfrac"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mfrac"
+      ]
+    },
+    "NODE_fig-group": {
+      "NODE_sec": [
+        "child_fig-group"
+      ]
+    },
+    "NODE_list": {
+      "NODE_p": [
+        "child_list"
+      ]
+    },
+    "NODE_list-item": {
+      "NODE_list": [
+        "child_list-item"
+      ]
+    },
+    "NODE_back": {
+      "NODE_article": [
+        "child_back"
+      ]
+    },
+    "NODE_ack": {
+      "NODE_back": [
+        "child_ack"
+      ]
+    },
+    "NODE_ref-list": {
+      "NODE_back": [
+        "child_ref-list"
+      ]
+    },
+    "NODE_ref": {
+      "NODE_ref-list": [
+        "child_ref"
+      ]
+    },
+    "NODE_nlm-citation": {
+      "NODE_ref": [
+        "child_nlm-citation"
+      ]
+    },
+    "NODE_person-group": {
+      "NODE_nlm-citation": [
+        "child_person-group"
+      ]
+    },
+    "NODE_source": {
+      "NODE_nlm-citation": [
+        "child_source"
+      ]
+    },
+    "NODE_fpage": {
+      "NODE_nlm-citation": [
+        "child_fpage"
+      ]
+    },
+    "NODE_lpage": {
+      "NODE_nlm-citation": [
+        "child_lpage"
+      ]
+    },
+    "NODE_issue": {
+      "NODE_nlm-citation": [
+        "child_issue"
+      ]
+    },
+    "NODE_pub-id": {
+      "NODE_nlm-citation": [
+        "child_pub-id"
+      ]
+    },
+    "NODE_conf-name": {
+      "NODE_nlm-citation": [
+        "child_conf-name"
+      ]
+    },
+    "NODE_conf-date": {
+      "NODE_nlm-citation": [
+        "child_conf-date"
+      ]
+    },
+    "NODE_conf-loc": {
+      "NODE_nlm-citation": [
+        "child_conf-loc"
+      ]
+    },
+    "NODE_email": {
+      "NODE_aff": [
+        "child_email"
+      ]
+    },
+    "NODE_publisher-loc": {
+      "NODE_nlm-citation": [
+        "child_publisher-loc"
+      ]
+    },
+    "NODE_statement": {
+      "NODE_sec": [
+        "child_statement"
+      ]
+    },
+    "NODE_mml:mover": {
+      "NODE_mml:mrow": [
+        "child_mml:mover"
+      ],
+      "NODE_mml:msub": [
+        "child_mml:mover"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mover"
+      ],
+      "NODE_mml:msup": [
+        "child_mml:mover"
+      ]
+    },
+    "NODE_mml:mstyle": {
+      "NODE_mml:mrow": [
+        "child_mml:mstyle"
+      ],
+      "NODE_mml:msub": [
+        "child_mml:mstyle"
+      ],
+      "NODE_mml:msubsup": [
+        "child_mml:mstyle"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mstyle"
+      ],
+      "NODE_mml:msup": [
+        "child_mml:mstyle"
+      ],
+      "NODE_mml:munderover": [
+        "child_mml:mstyle"
+      ]
+    },
+    "NODE_mml:mn": {
+      "NODE_mml:mrow": [
+        "child_mml:mn"
+      ],
+      "NODE_mml:msub": [
+        "child_mml:mn"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mn"
+      ],
+      "NODE_mml:msup": [
+        "child_mml:mn"
+      ],
+      "NODE_mml:msubsup": [
+        "child_mml:mn"
+      ]
+    },
+    "NODE_mml:msubsup": {
+      "NODE_mml:mrow": [
+        "child_mml:msubsup"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:msubsup"
+      ],
+      "NODE_mml:mstyle": [
+        "child_mml:msubsup"
+      ]
+    },
+    "NODE_mml:msup": {
+      "NODE_mml:mrow": [
+        "child_mml:msup"
+      ],
+      "NODE_mml:munder": [
+        "child_mml:msup"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:msup"
+      ],
+      "NODE_mml:mstyle": [
+        "child_mml:msup"
+      ]
+    },
+    "NODE_mml:munder": {
+      "NODE_mml:mrow": [
+        "child_mml:munder"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:munder"
+      ]
+    },
+    "NODE_mml:mtable": {
+      "NODE_mml:mrow": [
+        "child_mml:mtable"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mtable"
+      ],
+      "NODE_mml:math": [
+        "child_mml:mtable"
+      ]
+    },
+    "NODE_mml:mtr": {
+      "NODE_mml:mtable": [
+        "child_mml:mtr"
+      ]
+    },
+    "NODE_mml:mtd": {
+      "NODE_mml:mtr": [
+        "child_mml:mtd"
+      ]
+    },
+    "NODE_mml:msqrt": {
+      "NODE_mml:mtd": [
+        "child_mml:msqrt"
+      ],
+      "NODE_mml:mrow": [
+        "child_mml:msqrt"
+      ]
+    },
+    "NODE_mml:mtext": {
+      "NODE_mml:mrow": [
+        "child_mml:mtext"
+      ],
+      "NODE_mml:msub": [
+        "child_mml:mtext"
+      ],
+      "NODE_mml:mtd": [
+        "child_mml:mtext"
+      ]
+    },
+    "NODE_inline-graphic": {
+      "NODE_td": [
+        "child_inline-graphic"
+      ]
+    },
+    "NODE_suffix": {
+      "NODE_name": [
+        "child_suffix"
+      ]
+    },
+    "NODE_comment": {
+      "NODE_nlm-citation": [
+        "child_comment"
+      ]
+    },
+    "NODE_series": {
+      "NODE_nlm-citation": [
+        "child_series"
+      ]
+    },
+    "NODE_mml:munderover": {
+      "NODE_mml:mstyle": [
+        "child_mml:munderover"
+      ],
+      "NODE_mml:mrow": [
+        "child_mml:munderover"
+      ]
+    },
+    "NODE_named-content": {
+      "NODE_p": [
+        "child_named-content"
+      ]
+    },
+    "NODE_mml:mfenced": {
+      "NODE_mml:math": [
+        "child_mml:mfenced"
+      ]
+    },
+    "NODE_edition": {
+      "NODE_nlm-citation": [
+        "child_edition"
+      ]
+    },
+    "NODE_app-group": {
+      "NODE_back": [
+        "child_app-group"
+      ]
+    },
+    "NODE_app": {
+      "NODE_app-group": [
+        "child_app"
+      ]
+    }
+  },
+  "mandatoryChildren": {
+    "NODE_article": [
+      "attrib_xsi:noNamespaceSchemaLocation",
+      "attrib_dtd-version",
+      "attrib_xmlns:xsi",
+      "attrib_xmlns:mml",
+      "attrib_xmlns:xlink",
+      "child_front",
+      "child_body",
+      "child_back"
+    ],
+    "NODE_front": [
+      "child_journal-meta",
+      "child_article-meta"
+    ],
+    "NODE_journal-meta": [
+      "child_journal-id",
+      "child_journal-title-group",
+      "child_publisher"
+    ],
+    "NODE_journal-id": [
+      "attrib_journal-id-type",
+      "child_#text"
+    ],
+    "NODE_journal-title-group": [
+      "child_journal-title"
+    ],
+    "NODE_journal-title": [
+      "child_#text"
+    ],
+    "NODE_issn": [
+      "attrib_pub-type",
+      "child_#text"
+    ],
+    "NODE_publisher": [
+      "child_publisher-name"
+    ],
+    "NODE_publisher-name": [
+      "child_#text"
+    ],
+    "NODE_article-meta": [
+      "child_article-categories",
+      "child_title-group",
+      "child_contrib-group",
+      "child_volume",
+      "child_history",
+      "child_permissions",
+      "child_counts"
+    ],
+    "NODE_article-id": [
+      "attrib_pub-id-type",
+      "child_#text"
+    ],
+    "NODE_article-categories": [
+      "child_subj-group"
+    ],
+    "NODE_subj-group": [
+      "attrib_subj-group-type",
+      "child_subject"
+    ],
+    "NODE_subject": [
+      "child_#text"
+    ],
+    "NODE_title-group": [
+      "child_article-title"
+    ],
+    "NODE_article-title": [],
+    "NODE_contrib-group": [],
+    "NODE_contrib": [
+      "attrib_contrib-type",
+      "attrib_id",
+      "child_name"
+    ],
+    "NODE_name": [
+      "child_surname"
+    ],
+    "NODE_surname": [
+      "child_#text"
+    ],
+    "NODE_given-names": [
+      "child_#text"
+    ],
+    "NODE_xref": [
+      "attrib_ref-type",
+      "attrib_rid"
+    ],
+    "NODE_sup": [],
+    "NODE_aff": [],
+    "NODE_addr-line": [
+      "child_#text"
+    ],
+    "NODE_country": [
+      "child_#text"
+    ],
+    "NODE_ext-link": [
+      "attrib_ext-link-type",
+      "child_#text"
+    ],
+    "NODE_pub-date": [
+      "attrib_pub-type",
+      "child_year"
+    ],
+    "NODE_year": [
+      "child_#text"
+    ],
+    "NODE_day": [
+      "child_#text"
+    ],
+    "NODE_month": [
+      "child_#text"
+    ],
+    "NODE_volume": [
+      "child_#text"
+    ],
+    "NODE_history": [],
+    "NODE_date": [
+      "attrib_date-type",
+      "child_day",
+      "child_month",
+      "child_year"
+    ],
+    "NODE_permissions": [
+      "child_copyright-year",
+      "child_copyright-holder",
+      "child_license"
+    ],
+    "NODE_copyright-year": [
+      "child_#text"
+    ],
+    "NODE_copyright-holder": [
+      "child_#text"
+    ],
+    "NODE_license": [
+      "attrib_xlink:href",
+      "child_license-p"
+    ],
+    "NODE_license-p": [
+      "child_#text"
+    ],
+    "NODE_abstract": [
+      "child_p"
+    ],
+    "NODE_p": [],
+    "NODE_counts": [
+      "child_ref-count",
+      "child_page-count"
+    ],
+    "NODE_ref-count": [
+      "attrib_count"
+    ],
+    "NODE_page-count": [
+      "attrib_count"
+    ],
+    "NODE_body": [],
+    "NODE_sec": [
+      "attrib_sec-type",
+      "attrib_id",
+      "child_title"
+    ],
+    "NODE_title": [],
+    "NODE_fig": [
+      "child_graphic"
+    ],
+    "NODE_label": [
+      "child_#text"
+    ],
+    "NODE_caption": [
+      "child_p"
+    ],
+    "NODE_graphic": [
+      "attrib_xlink:href"
+    ],
+    "NODE_inline-formula": [
+      "child_mml:math"
+    ],
+    "NODE_mml:math": [
+      "attrib_xmlns:mml",
+      "attrib_id"
+    ],
+    "NODE_mml:mrow": [],
+    "NODE_mml:mi": [
+      "child_#text"
+    ],
+    "NODE_table-wrap": [
+      "attrib_id",
+      "child_label",
+      "child_caption",
+      "child_table"
+    ],
+    "NODE_table": [
+      "child_tbody"
+    ],
+    "NODE_thead": [],
+    "NODE_tr": [],
+    "NODE_th": [],
+    "NODE_tbody": [],
+    "NODE_td": [],
+    "NODE_italic": [],
+    "NODE_sub": [
+      "child_#text"
+    ],
+    "NODE_disp-formula": [
+      "attrib_id",
+      "child_label",
+      "child_mml:math"
+    ],
+    "NODE_mml:msub": [],
+    "NODE_mml:mo": [
+      "child_#text"
+    ],
+    "NODE_mml:mfrac": [],
+    "NODE_fig-group": [
+      "attrib_id",
+      "child_caption"
+    ],
+    "NODE_list": [],
+    "NODE_list-item": [
+      "child_label",
+      "child_p"
+    ],
+    "NODE_back": [
+      "child_ref-list"
+    ],
+    "NODE_ack": [
+      "child_title",
+      "child_p"
+    ],
+    "NODE_ref-list": [],
+    "NODE_ref": [
+      "attrib_id",
+      "attrib_content-type",
+      "child_label",
+      "child_nlm-citation"
+    ],
+    "NODE_nlm-citation": [
+      "attrib_publication-type"
+    ],
+    "NODE_person-group": [
+      "attrib_person-group-type"
+    ],
+    "NODE_source": [
+      "child_italic"
+    ],
+    "NODE_fpage": [
+      "child_#text"
+    ],
+    "NODE_lpage": [
+      "child_#text"
+    ],
+    "NODE_issue": [
+      "child_#text"
+    ],
+    "NODE_pub-id": [
+      "attrib_pub-id-type",
+      "child_#text"
+    ],
+    "NODE_conf-name": [
+      "child_#text"
+    ],
+    "NODE_conf-date": [
+      "child_#text"
+    ],
+    "NODE_conf-loc": [
+      "child_#text"
+    ],
+    "NODE_email": [
+      "child_#text"
+    ],
+    "NODE_publisher-loc": [
+      "child_#text"
+    ],
+    "NODE_statement": [
+      "attrib_id",
+      "child_title"
+    ],
+    "NODE_mml:mover": [],
+    "NODE_mml:mstyle": [],
+    "NODE_mml:mn": [
+      "child_#text"
+    ],
+    "NODE_mml:msubsup": [],
+    "NODE_mml:msup": [],
+    "NODE_mml:munder": [],
+    "NODE_mml:mtable": [],
+    "NODE_mml:mtr": [],
+    "NODE_mml:mtd": [],
+    "NODE_mml:msqrt": [
+      "child_mml:mrow"
+    ],
+    "NODE_mml:mtext": [
+      "child_#text"
+    ],
+    "NODE_inline-graphic": [
+      "attrib_xlink:href"
+    ],
+    "NODE_suffix": [
+      "child_#text"
+    ],
+    "NODE_comment": [],
+    "NODE_series": [
+      "child_#text"
+    ],
+    "NODE_mml:munderover": [],
+    "NODE_named-content": [
+      "attrib_content-type",
+      "child_#text"
+    ],
+    "NODE_mml:mfenced": [
+      "attrib_separators",
+      "child_mml:mrow"
+    ],
+    "NODE_edition": [
+      "child_#text"
+    ],
+    "NODE_app-group": [
+      "child_app"
+    ],
+    "NODE_app": [
+      "child_title",
+      "child_sec"
+    ]
+  },
+  "numParents": 209
+}

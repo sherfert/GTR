@@ -1,10 +1,10 @@
 // Author: Michael Pradel, Jibesh Patra
 
-(function() {
+(function () {
 
     /* List of rules to be used by the current run. Comment out the rules you do not want to use.
-    *  There could be chained dependences among rules.
-    * */
+     *  There could be chained dependences among rules.
+     * */
     var ruleNames = [
         // "ancestorConstraintRule",
         // "rootRule",
@@ -27,18 +27,19 @@
         ruleNames: ruleNames,
         //treeProvider: __dirname + "/js-ast/jsAstProvider",
         //treeGenerator: __dirname + "/js-ast/jsAstGenerator",
-        treeProvider: __dirname + "/py-ast/pyAstProvider",
-        treeGenerator: __dirname + "/py-ast/pyAstGenerator",
+        // treeProvider: __dirname + "/py-ast/pyAstProvider",
+        // treeGenerator: __dirname + "/py-ast/pyAstGenerator",
         //treeProvider: __dirname + "/html/htmlProvider",
         //treeGenerator: __dirname + "/html/htmlGenerator",
-
+        treeProvider: __dirname + "/xml/xmlProvider",
+        treeGenerator: __dirname + "/xml/xmlGenerator",
 
         /*  Working Directories.
          *  While creating or deleting a directory, also update checkWorkingDirectories() in main.js
          /* Mandatory directories */
 
-        fileType: "PY", // also change treeProvider, treeGenerator
-        corpusDir: __dirname + "/corpusForTestingPy",
+        fileType: "XML", // also change treeProvider, treeGenerator
+        corpusDir: __dirname + "/corpusForTestingXML",
 
         maxNoOfFilesToLearnFrom: 0, // 0 for all files in the directory
         /* If this (usePersistentKnowledge) is set to 'true' then the corpus is ignored. inferredKnowledgeDir is used to search

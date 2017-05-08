@@ -6,30 +6,37 @@
  *
  * Creates also CSV in the same directory. Compares the number of rules found vs. the number of files traversed.
  */
-(function() {
+(function () {
     var config = require("../program-generation/config").config;
     var treeProvider;
 
     var languageArg = process.argv[2];
 
-    if(!languageArg || (languageArg != "PY" && languageArg != "JS" && languageArg != "PDF")) {
+    if (!languageArg || (languageArg != "PY" && languageArg != "JS" && languageArg != "PDF" && languageArg != "XML")) {
         console.log("Usage: 'node analyzeCorpus.js [lang]'");
-        console.log("Supported languages: 'JS', 'PY', 'PDF'");
+        console.log("Supported languages: 'JS', 'PY', 'PDF', 'XML'");
         return;
-    } else if(languageArg == "PY") {
+    } else if (languageArg == "PY") {
         // Reconfigure for Python
         config.treeProvider = config.directory + "/py-ast/pyAstProvider";
         config.treeGenerator = config.directory + "/py-ast/pyAstGenerator";
         config.corpusDir = config.directory + "/corpusForTestingPy";
         config.fileType = "PY";
         treeProvider = require("../program-generation/py-ast/pyAstProvider");
-    } else if(languageArg == "JS") {
+    } else if (languageArg == "JS") {
         // Reconfigure for JS
         config.treeProvider = config.directory + "/js-ast/jsAstProvider";
         config.treeGenerator = config.directory + "/js-ast/jsAstGenerator";
         config.corpusDir = config.directory + "/corpusForTestingJS";
         config.fileType = "JS";
         treeProvider = require("../program-generation/js-ast/jsAstProvider");
+    } else if (languageArg == "XML") {
+        // Reconfigure for XML
+        config.treeProvider = config.directory + "/xml/xmlProvider";
+        config.treeGenerator = config.directory + "/xml/xmlGenerator";
+        config.corpusDir = config.directory + "/corpusForTestingXML";
+        config.fileType = "XML";
+        treeProvider = require("../program-generation/xml/xmlProvider");
     } else {
         // Reconfigure for PDF
         config.treeProvider = config.directory + "/pdf/pdfProvider";
@@ -61,7 +68,7 @@
 
         // Save csv file
         // FIXME actually we do'nt want this inside the loop
-        fs.writeFileSync(config.inferredKnowledgeDir + "/learning-graph.csv", csv);
+        //fs.writeFileSync(config.inferredKnowledgeDir + "/learning-graph.csv", csv);
     }
 
     // Save csv file
