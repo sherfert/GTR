@@ -1,0 +1,74 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">AAV</journal-id><journal-title-group><journal-title>Advances in Acoustics and Vibration</journal-title></journal-title-group><issn pub-type="epub">1687-627X</issn><issn pub-type="ppub">1687-6261</issn><publisher><publisher-name>Hindawi Publishing Corporation</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="other">2008.350943</article-id><article-id pub-id-type="doi">10.1155/2008/350943</article-id><article-id pub-id-type="publisher-id">350943</article-id><article-categories><subj-group subj-group-type="heading"><subject>Editorial</subject></subj-group></article-categories><title-group><article-title>Active Noise Control</article-title></title-group><contrib-group><contrib contrib-type="author" id="U38196095" corresp="yes"><name><surname>Pawelczyk</surname><given-names>Marek</given-names></name><xref ref-type="aff" rid="I1" /></contrib></contrib-group><aff id="I1"><addr-line>Institute of Automatic Control</addr-line><addr-line>Silesian University of Technology</addr-line><addr-line>Akademicka 16 Street</addr-line><addr-line>44-101 Gliwice</addr-line><country>Poland</country><ext-link ext-link-type="domain-name">polsl.pl</ext-link></aff><pub-date pub-type="publication-year"><year>2008</year></pub-date><pub-date pub-type="archival-date"><day>17</day><month>06</month><year>2008</year></pub-date><volume>2008</volume><history><date date-type="received"><day>16</day><month>06</month><year>2008</year></date><date date-type="accepted"><day>16</day><month>06</month><year>2008</year></date></history><permissions><copyright-year>2008</copyright-year><copyright-holder>Copyright &#xA9; 2008</copyright-holder><license xlink:href="http://creativecommons.org/licenses/by/4.0/"><license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><counts><ref-count count="0" /><page-count count="2" /></counts></article-meta></front><body><p>Active noise control generally aims at reducing an unwanted and unpleasant sound referred to
+as the noise. The general idea is very simple. However, there are many problems
+related to the acoustic phenomena as well as control limitations. Thus, the
+problem is still exciting and attracts attention of a number of scientists
+originating from different scientific disciplines. Rapid development of
+technology and extensive research allow for manufacturing sensors and actuators
+of more advantegous properties, designing more robust and effective algorithms,
+and finally performing succesful applications in different noise
+pollutted areas.</p><p>The aim of the special issue is just to present recent advances in active noise control
+and its applications. I would like to thank all the authors who accepted my
+invitation and decided to share their work with a wide circle of readers, what
+the open-access journal offers. The papers published in this issue were
+peer-reviewed by independent experts. I appreciate help of the experts very
+much. Even four reviews per paper where made. Therefore, the eight papers which
+are finally included in the issue are of very high quality. Below I am barely
+announcing main topics discussed in the issue.</p><p>A novel audiointegrated approach to achieving active
+noise control for incubators is proposed by L. Liu et al. The system reduces
+excessive broadband noise in neonatal care units and in incubators, which is
+generally due to ventillation or breathing equipment. Therefore, the system
+tries to protect against auditory damage to preterm infants both due to
+short-term and long-term effects. At the same time, the system recreates
+prenatal ambience for premature infants. In particular, an efficient robust
+nonlinear FXLMS-based adaptive control algorithm is presented. It allows for
+stable operation of the ANC system in the presence of impulsive interference in
+the input.</p><p>An integrated control system is designed by L. Wang et al. to
+improve bass reproduction of the audio equippment and cancel engine noise in
+the cabins of automobiles. The problem is difficult because of the frequency
+overlap of the bass audio sound and engine noise. On the other hand, small
+volume of the cabin and poor low-frequency performance of loudspeakers need
+special approach. The proposed system equalizes the engine-noise harmonics
+based on the bass information to enhance the low-frequency part of the audio
+signal. The system responses also to variations of engine-noise frequencies.
+Multifrequency approaches to active noise equalization with frequency-sampling
+filters are used.</p><p>A system with a pair of loudspeakers is designed by D.
+Bismor to create a virtual unidirectional sound source. It enables successful
+cancellation of the acoustic feedback effect and, if supplemented by an active control
+system, efficient cancellation of the acoustic noise propagating downstream.
+Both fixed parameter and adaptive solutions are used. In the latter case, the
+problem of a hazard in tuning the virtual unidirectional sound source and
+active noise control algorithm is disclosed and guidelines for scheduling those
+operations are given. The overall system has been validated for noise control
+in an acoustic duct.</p><p>An active noise control system with online modelling of
+time-varying acoustic paths is designed by J. Yuan. Contrary to most publications, any
+external signal and thus persistent excitation is not required. Instead,
+orthogonal adaptation is used to cancel the acoustic feedback in order to
+recover the reference signal. The proposed system&#x2019;s behavior is stable and
+converges quickly even in case of significant and rapid changes of the acoustic
+path inside a duct.</p><p>A Hinf optimal control system with a pair of
+loudspeakers is proposed by Y. Kobayashi and H. Fujioka. As a fixed parameter
+solution it requires significantly less computations than an adaptive solution
+and still recovers benefits of the Swinbanks&#x2019; source. However, by considering
+the pair of loudspeakers as two independent actuators, it gives more
+flexibility and better noise control results are possible. The system is
+suitable for ventilation ducts in houses.</p><p>A modification of the FXLMS algorithm is proposed by S. P. Lovstedt et al. in order to compensate
+for its frequency dependent convergence behavior, which is particularly severe
+for plants responding with high peaks and deep valleys. Magnitude of the
+frequency response of the secondary path model is modified using a genetic
+algorithm to equalize eigenvalues of the autocorrelation matrix of the
+filtered-reference signal, while preserving phase of the frequency response of
+the model. As a result, higher attenuation and faster convergence are observed.
+In the experiments, swept tone noise and multiple tone noise, important in
+terms of many practical applications, are considered.</p><p>An active sound intensity probe consisting of a sound hard tube terminated
+by aloudspeaker and equipped with a pair of microphones is designed by T. Kletschkowski and D.Sachau. Active control
+techniques are used to generate acoustic free field conditions in the tube.
+Thus, the probe acts as a local sound absorber and therefore the effect of the
+device on a source is reduced. The probe can be used for sound source
+localization, especially in weakly damped interior noise fields at low
+frequencies.</p><p>A state-feedback control system is proposed by V. Lhuillier et al. in
+order to reduce sound transmission through a panel excited by an acoustic wave.
+The effect of decreasing eigen frequencies of high-radiation modes and thus
+reducing vibration amplitudes at resonance frequencies by adding active modal
+masses is used. This effect can also be considered as virtual transformations
+of structures that can be used in the field of sound quality.</p><p>I believe that this special issue will
+be found interesting by the active noise control community.</p><p content-type="signature-group"><named-content content-type="signature">Marek Pawelczyk</named-content></p></body><back /></article>
