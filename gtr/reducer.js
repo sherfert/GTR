@@ -55,7 +55,7 @@
             }
 
             var code = fs.readFileSync(fileState.fileName, {encoding: this.getEncoding()});
-            fileState.origSize = code.length;
+
 
 
             var tester = this.getInputTester(fileState.command, ddAlgo);
@@ -66,10 +66,13 @@
                 console.log("The crash cannot be reproduced after code->tree->code conversion. Aborting.");
                 return;
             }
+            fileState.origSize = code2tree2code.length;
 
             // For non-tree algorithms, we must convert the code always to a String.
             // (Might be a Buffer, depending on this.getEncoding())
-            var newCode = tester.runTest(treeAlgo? code : "" + code);
+            // Also, we run non-tree algorithms on code2tree2code, for comparable
+            // filesize reductions
+            var newCode = tester.runTest(treeAlgo? code : "" + code2tree2code);
             var newTree = treeProvider.codeToTree(newCode);
 
             // Create a results object if inexistant
