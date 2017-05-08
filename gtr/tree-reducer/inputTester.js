@@ -53,8 +53,8 @@
                 return this.test(x);
             }, ddAlgo);
 
-            this.commandPre = "../program-generation/xml/xmlcoverage/libxml2-2.9.4/xmllint";
-            this.commandPost = "> /dev/null && ../program-generation/xml/xmlcoverage/gcovr/scripts/gcovr -s -r ../program-generation/xml/xmlcoverage/libxml2-2.9.4/ | tail -2 | cut -d '(' -f 2 | cut -d ' ' -f 1";
+            this.commandPre = "../program-generation/xml/libxml2-2.9.4/xmllint";
+            this.commandPost = "> /dev/null && ../program-generation/xml/gcovr/scripts/gcovr -s -r ../program-generation/xml/libxml2-2.9.4/ | tail -2 | cut -d '(' -f 2 | cut -d ' ' -f 1";
 
             /* Converted the original XML to tree back and forth to have a consistent coverage measurement */
             let originalXML = fs.readFileSync(filename, {encoding: "utf8"});
@@ -101,7 +101,7 @@
             // Reset coverage
             child_process.spawnSync('find . -name "*.gcda" -type f -delete', [], {
                 shell: true,
-                cwd: "../program-generation/xml/xmlcoverage/libxml2-2.9.4"
+                cwd: "../program-generation/xml/libxml2-2.9.4"
             });
 
             // Return the result of spawning a child process
