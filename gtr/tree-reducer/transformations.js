@@ -7,6 +7,8 @@
     var inferredParents = {};
     // Map of programming language (String) -> Map of mandatory children
     var mandatoryChildren = {};
+	// This is to allow all transformations if we could not find the model/inferred knowledge
+	var modelMissing = false;
 
     // Read inferred information from JSON files
     try {
@@ -28,6 +30,7 @@
         // No model
         console.log("NO MODEL OF INFERRED RULES");
         console.log(e);
+		modelMissing = true;
     }
 
     /**
@@ -81,6 +84,10 @@
      * @returns {boolean} if the transformation is allowed
      */
     function pncTransformationAllowedForPL(p, l1, c, pl) {
+		if(modelMissing) {
+			return true;
+		}
+		
         return pncTransformationAllowed(p, l1, c, inferredParents[pl]);
     }
 
@@ -92,6 +99,10 @@
      * @returns {boolean} if the child is mandatory
      */
     function isMandatoryChildForPL(nodeLabel, edgeLabel, pl) {
+		if(modelMissing) {
+			return false;
+		}
+		
         return isMandatoryChild(nodeLabel, edgeLabel, mandatoryChildren[pl])
     }
 
