@@ -1,0 +1,888 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">BIOTECHNOLOGY</journal-id>
+      <journal-title-group>
+        <journal-title>ISRN Biotechnology</journal-title></journal-title-group>
+      <issn pub-type="epub">2090-9403</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="other">515091</article-id>
+      <article-id pub-id-type="doi">10.5402/2013/515091</article-id>
+      <article-id pub-id-type="publisher-id">515091</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Biosynthesis of Gold Nanoparticles Using <italic>Fusarium oxysporum</italic> f. sp. <italic>cubense</italic> JT1, a Plant Pathogenic Fungus</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U20281648">
+          <name>
+            <surname>Thakker</surname>
+            <given-names>Janki N.</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U25961304">
+          <name>
+            <surname>Dalwadi</surname>
+            <given-names>Pranay</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U97256053" corresp="yes">
+          <name>
+            <surname>Dhandhukia</surname>
+            <given-names>Pinakin C.</given-names></name>
+          
+          <xref ref-type="aff" rid="I2">
+            <sup>2</sup></xref>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U18213643">
+          <name>
+            <surname>Castiglioni</surname>
+            <given-names>B.</given-names></name>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U47160981">
+          <name>
+            <surname>Formentin</surname>
+            <given-names>E.</given-names></name>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U80458340">
+          <name>
+            <surname>Garcia</surname>
+            <given-names>H. S.</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <sup>1</sup>
+        <addr-line>Department of Biotechnology</addr-line>
+        <addr-line>P. D. Patel Institute of Applied Science</addr-line>
+        <addr-line>Charotar University of Science &#x26; Technology</addr-line>
+        <addr-line>Education Campus Changa</addr-line>
+        <addr-line>Changa 388421</addr-line>
+        <country>India</country>
+        <ext-link ext-link-type="domain-name">charusat.ac.in</ext-link></aff>
+      <aff id="I2">
+        <sup>2</sup>
+        <addr-line>Ashok and Rita Patel Institute of Integrated Study &#x26; Research in Biotechnology and Allied Sciences</addr-line>
+        <addr-line>New Vallabh Vidyanagar 388 121</addr-line>
+        <country>India</country></aff>
+      <pub-date pub-type="publication-year">
+        <year>2013</year></pub-date>
+      <pub-date pub-type="archival-date">
+        <day>11</day>
+        <month>11</month>
+        <year>2012</year></pub-date>
+      <volume>2013</volume>
+      <history>
+        <date date-type="received">
+          <day>06</day>
+          <month>09</month>
+          <year>2012</year></date>
+        <date date-type="accepted">
+          <day>15</day>
+          <month>10</month>
+          <year>2012</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2013</copyright-year>
+        <copyright-holder>Copyright &#xa9; 2013 Janki N. Thakker et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>The development of reliable processes for the synthesis of gold nanoparticles is an important aspect of current nanotechnology research. Recently, reports are published on the extracellular as well as intracellular biosynthesis of gold nanoparticles using microorganisms. However, these methods of synthesis are rather slow. In present study, rapid and extracellular synthesis of gold nanoparticles using a plant pathogenic fungus <italic>F. oxysporum</italic> f. sp. <italic>cubense</italic> JT1 (FocJT1) is reported. Incubation of FocJT1 mycelium with auric chloride solution produces gold nanoparticles in 60&#x2009;min. Gold nanoparticles were characterized by UV-Vis spectroscopy, FTIR, and particle size analysis. The particles synthesized were of 22&#x2009;nm sized, capped by proteins, and posed antimicrobial activity against <italic>Pseudomonas</italic> sp.</p></abstract>
+      <counts>
+        <ref-count count="24" />
+        <page-count count="5" /></counts></article-meta>
+  </front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>Metal nanoparticles exhibit unique electronic, magnetic, catalytic, and optical properties that are different from bulk metals and dependent on their size and shape [<xref ref-type="bibr" rid="B1">1</xref>&#x2013;<xref ref-type="bibr" rid="B5">5</xref>]. Gold is often considered the most inert of all metals; however, methods for preparing catalysts having nanoparticles of gold on oxide supports have opened up this new area of opportunity [<xref ref-type="bibr" rid="B6">6</xref>]. Gold nanoparticles are of interest mainly due to their stability under atmospheric conditions, resistance to oxidation, and biocompatibility [<xref ref-type="bibr" rid="B7">7</xref>, <xref ref-type="bibr" rid="B8">8</xref>]. Therefore, development of techniques for synthesis of gold nanoparticles, of well-defined size and shape, is of great challenge. Different chemical methods developed to control the physical properties of the particles for their different applications. Most of these methods are still in the development stage, and problems are often experienced with stability of the nanoparticle preparations, control of the crystal growth, and aggregation of the particles [<xref ref-type="bibr" rid="B9">9</xref>, <xref ref-type="bibr" rid="B10">10</xref>]. There is an increasing pressure to develop clean, nontoxic, and environmentally benign synthetic technologies. Microbial resistance against heavy metal ions has been exploited for biological metal recovery via reduction of the metal ions or formation of metal sulfides [<xref ref-type="bibr" rid="B7">7</xref>]. Recently, microorganisms such as bacteria and fungi were shown to be attractive alternative to synthesize gold nanoparticles [<xref ref-type="bibr" rid="B11">11</xref>, <xref ref-type="bibr" rid="B12">12</xref>]. However, there is a limited amount of information on the extracellular biosynthesis of gold nanoparticles. </p>
+      <p>Metal nanoparticle synthesis depends on the reducing agent, which reduces Au<sup>3+</sup> in to Au<sup>0</sup> state [<xref ref-type="bibr" rid="B12">12</xref>]. During plant-pathogen interaction, plants are known to produce reactive oxygen species as a defense mechanism against pathogens. For successful infection, pathogen must have high reducing capabilities to counteract plant&#x2019;s defense. Therefore, plant pathogenic organism could be an excellent source for generation of extracellular metal nanoparticles. A plant pathogenic fungus, <italic>Fusarium oxysporum </italic>f. sp. <italic>cubense</italic> JT1 (FocJT1) isolated from infected banana plants causing Panama disease was characterized for its ability to cause successful infection in previous studies [<xref ref-type="bibr" rid="B13">13</xref>, <xref ref-type="bibr" rid="B14">14</xref>]. Therefore, present study was aimed to access the ability of a plant pathogenic fungus FocJT1 and to reduce Au<sup>3+</sup> ions extracellular at room temperature with a single-step process for synthesis of gold nanoparticles. </p></sec>
+    <sec id="sec2">
+      <title>2. Materials and Methods</title>
+      <sec id="sec2.1">
+        <title>2.1. Microorganism</title>
+        <p>Previously isolated <italic>Fusarium oxysporum </italic>f. sp. <italic>cubense </italic>JT1 (FocJT1) was maintained on potato dextrose agar (PDA) at 4&#xb0;C. Mycelial fragments were transferred from PDA slant to PDA plates and incubated for four days at 27&#xb0;C. </p></sec>
+      <sec id="sec2.2">
+        <title>2.2. Cultural Technique</title>
+        <p>Using a sterile cork borer, 8&#x2009;mm agar plug was cut from four-day old culture and inoculated in 250&#x2009;mL Erlenmeyer flasks containing 100&#x2009;mL of PDB. The flasks were incubated at 27&#xb0;C for 21 days in static condition. For analyzing biosynthesis of gold nanoparticles by FocJT1, one set was augmented with 10&#x2009;mM final concentration of HAuCl<sub>4</sub> and other served as control. Periodically, samples were withdrawn and analyzed for nanoparticle synthesis.</p></sec>
+      <sec id="sec2.3">
+        <title>2.3. Microscopic Observation of Biomass from Control and Experimental Flasks</title>
+        <p>Mycelial fragments from control and experimental flasks were kept on a clean glass slide and covered with cover slip. Microscopic observations for difference in both were recorded using Olympus CH20i Microscope (BIMF, CIAS).</p></sec>
+      <sec id="sec2.4">
+        <title>2.4. UV-Visible Spectroscopy</title>
+        <p>Samples were collected at time intervals of 0&#x2009;min, 30&#x2009;min, 60&#x2009;min, 90&#x2009;min, 24&#x2009;h, and 48&#x2009;h from experimental and control flasks. Synthesis of gold nanoparticles was analyzed using UV-visible spectroscopy (Cyberlab spectrophotometer) operated at a resolution of 1&#x2009;nm from 340 to 700&#x2009;nm range in a 1&#x2009;cm path quartz cell.</p></sec>
+      <sec id="sec2.5">
+        <title>2.5. Fourier Transform Infrared Spectrometry</title>
+        <p>KBr Pellets with mycelial mat of control and experimental were prepared. Pellets formed were analyzed with FTIR (NICOLET Thermo Scientific) spectroscopy at K. C. Patel R&#x26;D Center, CHARUSAT, Changa, India.</p></sec>
+      <sec id="sec2.6">
+        <title>2.6. Particle Size Analysis</title>
+        <p>For particle size analysis of gold nanoparticles, the gold nanoparticle-fungus reaction solution was filtered with Whatman filter paper followed by filtration using 0.2&#x2009;<italic>&#x3bc;</italic> filter to remove any spores or mycelia. Filtrate collected was dried, scraped with scalpel, and suspended in ethanol. Particle size was determined using Particle Size Analyzer (MALVERN Instruments) at K. C. Patel R&#x26;D center, CHARUSAT, Changa, India.</p></sec>
+      <sec id="sec2.7">
+        <title>2.7. Antibacterial Activity</title>
+        <p>Antibacterial activity of gold nanoparticles was evaluated against Gram negative test organism <italic>Pseudomonas </italic>sp. In sterile condition, prior sterilized and dried cotton cloth (2 &#xd7; 2&#x2009;cm) was immersed in flask containing FocJT1and FocJT1 augmented with HAuCl<sub>4</sub> for one hour at room temperature. The cloth was collected and dried. From overnight grown culture of <italic>Pseudomonas </italic>sp., 0.1&#x2009;mL was spread on PDA plates and allowed to dry for 10&#x2009;min. Au nanoparticle impregnated cloth was kept in the centre of inoculated plate and incubated at 37&#xb0;C for 24 hours. Plates were observed for zone of inhibition.</p></sec>
+    </sec>
+    <sec id="sec3">
+      <title>3. Results and Discussion</title>
+      <sec id="sec3.1">
+        <title>3.1. Gold Reduction</title>
+        <p>Plant pathogenic fungus, FocJT1, isolated from wilt infected banana plants, was investigated for its ability to synthesize gold nanoparticles. Change in appearance of mycelia and culture filtrate was observed by incubating mycelial mat with auric chloride solution.</p>
+        <p>The mycelium exhibited a pale yellow color before reaction with the auric ion, which changed to a purple color upon completion of the reaction (Figure <xref ref-type="fig" rid="fig1">1</xref>). Appearance of a burgundy red color in solution containing the biomass was a clear indication of the formation of gold nanoparticles in the reaction mixture and was due to the excitation of surface plasmon vibrations in the nanoparticles [<xref ref-type="bibr" rid="B15">15</xref>].</p>
+        <fig id="fig1">
+          <label>Figure 1</label>
+          <caption>
+            <p>(a) FocJT1 control and (b) incubated with the 10&#x2009;mM HAuCl<sub>4</sub> solution.</p></caption>
+          <graphic xlink:href="515091.fig.001" /></fig>
+        <p>Reports on several hydroquinones with excellent redox properties that could act as electron shuttles in metal reductions are in [<xref ref-type="bibr" rid="B16">16</xref>, <xref ref-type="bibr" rid="B17">17</xref>]. Thus, evidently electron shuttles or other reducing agents released by Foc are capable of reducing gold ions to gold nanoparticles.</p>
+        <p>Additionally, metal reduction ability is strain-specific. Ahmad et al. [<xref ref-type="bibr" rid="B15">15</xref>] suggested that reductase specific to <italic>F. oxysporum </italic>and prolonged reaction of Ag<sup>+</sup> ions with another fungus, <italic>F. moniliforme</italic>, did not result in the formation of silver nanoparticles, neither intracellularly nor extracellular.</p></sec>
+      <sec id="sec3.2">
+        <title>3.2. UV-Visible Spectroscopy</title>
+        <p>Gold nanoparticles exhibit new optical properties, which are not observed neither in molecules nor in the bulk metals [<xref ref-type="bibr" rid="B18">18</xref>]. One example is the presence of absorption band in visible region. This band appears due to the surface plasmon-oscillation modes of conduction electrons, which coupled through the surface to external electromagnetic fields [<xref ref-type="bibr" rid="B19">19</xref>]. The surface plasmon resonance and large effective scattering cross-section of individual metal nanoparticles make them ideal candidate for molecular labeling [<xref ref-type="bibr" rid="B20">20</xref>].</p>
+        <p>Therefore, synthesis of gold nanoparticles was assayed using spectral scan by UV-visible spectroscopy in the spectral region 340&#x2013;700&#x2009;nm. This technique outlined above has proved to be very useful for the analysis of nanoparticles [<xref ref-type="bibr" rid="B21">21</xref>]. As illustrated in Figure <xref ref-type="fig" rid="fig2a">2(a)</xref>, the UV-Visible spectra recorded as a function of time of reaction of control having fungal biomass in medium (control) whereas Figure <xref ref-type="fig" rid="fig2b">2(b)</xref> shows the UV-Vis spectra of an aqueous solution of 10&#x2009;mM HAuCl<sub>4</sub> with the fungal biomass and medium.  A broad peak located between 500 and 580&#x2009;nm was found to increase with time representing the gold nanoparticles synthesis. The peak was developed in 60&#x2009;min of reaction sample indicating that the synthesis of gold nanoparticles starts rapidly using FocJT1. The peak reached to near saturation at 90&#x2009;min reaction time. In earlier studies on the synthesis of silver and gold nanoparticles using bacteria [<xref ref-type="bibr" rid="B11">11</xref>] and fungi [<xref ref-type="bibr" rid="B12">12</xref>], the time required for completion of the reaction (i.e., complete reduction of the metal ions) ranges from 24 to 120&#x2009;h.</p>
+        <fig-group id="fig2">
+          <caption>
+            <p>UV-visible spectra recorded as a function of time of reaction of control with fungal biomass in (a) media and (b) media augmented with 10&#x2009;mM HAuCl<sub>4</sub>.</p></caption>
+          <fig id="fig2a">
+            <label>(a)</label>
+            <graphic xlink:href="515091.fig.002a" /></fig>
+          <fig id="fig2b">
+            <label>(b)</label>
+            <graphic xlink:href="515091.fig.002b" /></fig></fig-group>
+      </sec>
+      <sec id="sec3.3">
+        <title>3.3. FTIR Spectra of Gold Nanoparticles</title>
+        <p>FTIR measurement carried out shows the amide bands, which were due to &#x2013;N&#x2013;H stretch and carbonyl stretch vibration in the amide linkages of the protein. The bands at 1634 and 1560&#x2009;cm<sup>&#x2212;1</sup> were identified as the amide I and II bands [<xref ref-type="bibr" rid="B22">22</xref>] and arise due to carbonyl stretch and &#x2013;N&#x2013;H stretch vibrations in the amide linkages of the proteins, respectively [<xref ref-type="bibr" rid="B23">23</xref>]. The positions of these bands are close to those reported for native proteins. The FTIR results thus indicate that secondary structure of the proteins is not affected because of reaction with the Au<sup>3+</sup> ions or binding with the gold nanoparticles. The band at ca. 1458&#x2009;cm<sup>&#x2212;1</sup> is assigned to methylene scissoring vibrations from the proteins in the solution (Figure <xref ref-type="fig" rid="fig3">3</xref>). On comparison of the IR spectra of FocJT1 control and experimental mat with gold nanoparticle, it was observed that 1654 and 1460&#x2009;cm<sup>&#x2212;1</sup> bands were masked. This indicated that the gold particle formed were in conjugation with protein. Intensity of band 3385&#x2009;cm<sup>&#x2212;1</sup> was reduced indicating that &#x2013;OH stretching of alcohol and phenol present on the surface of the mycelial mat might be involved either in the formation or the attachment.</p>
+        <fig-group id="fig3">
+          <caption>
+            <p>FTIR spectra of (a) dried mycelial mat and (b) mycelia mat incubated with 10&#x2009;mM HAuCl<sub>4</sub> solution. Mycelia mat collected are shown in inset.</p></caption>
+          <fig id="fig3a">
+            <label>(a)</label>
+            <graphic xlink:href="515091.fig.003a" /></fig>
+          <fig id="fig3b">
+            <label>(b)</label>
+            <graphic xlink:href="515091.fig.003b" /></fig></fig-group>
+      </sec>
+      <sec id="sec3.4">
+        <title>3.4. Particle Size Analysis</title>
+        <p>Biosynthesized gold nanoparticles were found to be of 22&#x2009;nm size using particle size analyzer (Figure <xref ref-type="fig" rid="fig4">4</xref>). Extracellular reduction of the metal ions by Foc resulted in the rapid formation of the highly stable gold nanoparticles of 22&#x2009;nm dimensions. The nanoparticles were not in direct contact within the aggregates, indicating stabilization of the nanoparticles by capping agents. The solution of gold nanoparticles synthesized by the reaction of Au<sup>3+</sup> ions with FocJT1 was exceptionally stable.</p>
+        <fig id="fig4">
+          <label>Figure 4</label>
+          <caption>
+            <p>Particle size distribution of the biosynthesized gold nanoparticles.</p></caption>
+          <graphic xlink:href="515091.fig.004" /></fig></sec>
+      <sec id="sec3.5">
+        <title>3.5. Antimicrobial Assay</title>
+        <p>Gold nanoparticles synthesized by FocJT1 strain incorporated in cotton cloth exhibited antibacterial activity against <italic>Pseudomonas</italic> sp. (Figure <xref ref-type="fig" rid="fig5">5</xref>). The mechanism of the inhibitory effects of Au ions on microorganisms is partially known. Some studies have reported that the positive charge on the Au ion is crucial for its antimicrobial activity through the electrostatic attraction between negative-charged cell membrane of microorganism and positive-charged nanoparticles [<xref ref-type="bibr" rid="B24">24</xref>]. </p>
+        <fig id="fig5">
+          <label>Figure 5</label>
+          <caption>
+            <p>Antimicrobial activity of gold nanoparticles coated on cotton cloth against <italic>Pseudomonas</italic> sp. (a) control (b) experimental.</p></caption>
+          <graphic xlink:href="515091.fig.005" /></fig></sec>
+    </sec>
+    <sec id="sec4">
+      <title>4. Conclusion</title>
+      <p>The present study proved a rapid and extracellular biosynthesis of gold nanoparticles by a fungus, FocJT1<italic>, </italic>isolated from wilt infected banana plants. Upon addition of the gold ion (10&#x2009;mM) into the flask containing the mycelial mat, the color of the medium changed very rapidly to burgundy red, which could be due to the excitation of surface plasmon vibrations, typical of the gold nanoparticles. This indicated the presence of gold nanoparticles. The FTIR spectra suggested the capping of gold nanoparticles by protein. A biological process with the ability to strictly control the shape of the particles produced would therefore be an exciting prospect. However, the cellular mechanism leading to the biosynthesis of gold nanoparticles is not yet fully understood. Further research will therefore focus on the development of a fundamental understanding of the process mechanism on -cellular and molecular levels, including isolation and identification of the compounds responsible for the reduction of auric ions.</p></sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="B1" content-type="article">
+        <label>1</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kumar</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Mandal</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Selvakannan</surname>
+              <given-names>P. R.</given-names></name>
+            <name>
+              <surname>Pasricha</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Mandale</surname>
+              <given-names>A. B.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Investigation into the interaction between surface-bound alkylamines and gold nanoparticles</article-title>
+          <source>
+            <italic>Langmuir</italic></source>
+          <year>2003</year>
+          <volume>19</volume>
+          <issue>15</issue>
+          <fpage>6277</fpage>
+          <lpage>6282</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0042843570</pub-id>
+          <pub-id pub-id-type="doi">10.1021/la034209c</pub-id></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lengke</surname>
+              <given-names>M. F.</given-names></name>
+            <name>
+              <surname>Fleet</surname>
+              <given-names>M. E.</given-names></name>
+            <name>
+              <surname>Southam</surname>
+              <given-names>G.</given-names></name>
+          </person-group>
+          <article-title>Morphology of gold nanoparticles synthesized by filamentous cyanobacteria from gold(I)-Thiosulfate and gold(III)-chloride complexes</article-title>
+          <source>
+            <italic>Langmuir</italic></source>
+          <year>2006</year>
+          <volume>22</volume>
+          <issue>6</issue>
+          <fpage>2780</fpage>
+          <lpage>2787</lpage>
+          <pub-id pub-id-type="other">2-s2.0-33645521375</pub-id>
+          <pub-id pub-id-type="doi">10.1021/la052652c</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="article">
+        <label>3</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Klaus-Joerger</surname>
+              <given-names>T. R.</given-names></name>
+            <name>
+              <surname>Joerger</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Olsson</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Granqvist</surname>
+              <given-names>C. G.</given-names></name>
+          </person-group>
+          <article-title>Bacteria as workers in the living factory: metal-accumulating bacteria and their potential for materials science</article-title>
+          <source>
+            <italic>Trends in Biotechnology</italic></source>
+          <year>2001</year>
+          <volume>19</volume>
+          <issue>1</issue>
+          <fpage>15</fpage>
+          <lpage>20</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0035176850</pub-id>
+          <pub-id pub-id-type="doi">10.1016/S0167-7799(00)01514-6</pub-id></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ankamwar</surname>
+              <given-names>B.</given-names></name>
+            <name>
+              <surname>Chaudhary</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Gold nanotriangles biologically synthesized using tamarind leaf extract and potential application in vapor sensing</article-title>
+          <source>
+            <italic>Synthesis and Reactivity in Inorganic, Metal-Organic and Nano-Metal Chemistry</italic></source>
+          <year>2005</year>
+          <volume>35</volume>
+          <issue>1</issue>
+          <fpage>19</fpage>
+          <lpage>26</lpage>
+          <pub-id pub-id-type="other">2-s2.0-18244376862</pub-id>
+          <pub-id pub-id-type="doi">10.1081/SIM-200047527</pub-id></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="article">
+        <label>5</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mandal</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Bolander</surname>
+              <given-names>M. E.</given-names></name>
+            <name>
+              <surname>Mukhopadhyay</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Sarkar</surname>
+              <given-names>G.</given-names></name>
+            <name>
+              <surname>Mukherjee</surname>
+              <given-names>P.</given-names></name>
+          </person-group>
+          <article-title>The use of microorganisms for the formation of metal nanoparticles and their application</article-title>
+          <source>
+            <italic>Applied Microbiology and Biotechnology</italic></source>
+          <year>2006</year>
+          <volume>69</volume>
+          <issue>5</issue>
+          <fpage>485</fpage>
+          <lpage>492</lpage>
+          <pub-id pub-id-type="other">2-s2.0-29244440123</pub-id>
+          <pub-id pub-id-type="doi">10.1007/s00253-005-0179-3</pub-id></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Carabineiro</surname>
+              <given-names>S. A. C.</given-names></name>
+            <name>
+              <surname>Tavares</surname>
+              <given-names>P. B.</given-names></name>
+            <name>
+              <surname>Figueired</surname>
+              <given-names>J. L.</given-names></name>
+          </person-group>
+          <article-title>Gold on oxide-doped alumina supports as catalysts for CO oxidation</article-title>
+          <source>
+            <italic>Applied Nanoscience</italic></source>
+          <year>2012</year>
+          <volume>2</volume>
+          <fpage>35</fpage>
+          <lpage>46</lpage></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gericke</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Pinches</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Microbial production of gold nanoparticles</article-title>
+          <source>
+            <italic>Gold Bulletin</italic></source>
+          <year>2006</year>
+          <volume>39</volume>
+          <issue>1</issue>
+          <fpage>22</fpage>
+          <lpage>28</lpage>
+          <pub-id pub-id-type="other">2-s2.0-34249043128</pub-id></nlm-citation>
+      </ref>
+      <ref id="B8" content-type="article">
+        <label>8</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huang</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Li</surname>
+              <given-names>Q.</given-names></name>
+            <name>
+              <surname>Sun</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Lu</surname>
+              <given-names>Y.</given-names></name>
+            <name>
+              <surname>Su</surname>
+              <given-names>Y.</given-names></name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>X.</given-names></name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>Y.</given-names></name>
+            <name>
+              <surname>Shao</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>He</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Hong</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>C.</given-names></name>
+          </person-group>
+          <article-title>Biosynthesis of silver and gold nanoparticles by novel sundried Cinnamomum camphora leaf</article-title>
+          <source>
+            <italic>Nanotechnology</italic></source>
+          <year>2007</year>
+          <volume>18</volume>
+          <issue>10</issue>
+          <pub-id pub-id-type="other">2-s2.0-33947542108</pub-id>
+          <pub-id pub-id-type="doi">10.1088/0957-4484/18/10/105104</pub-id>
+          <pub-id pub-id-type="publisher-id">105104</pub-id></nlm-citation>
+      </ref>
+      <ref id="B9" content-type="article">
+        <label>9</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chandran</surname>
+              <given-names>S. P.</given-names></name>
+            <name>
+              <surname>Chaudhary</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Pasricha</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Ahmad</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Synthesis of gold nanotriangles and silver nanoparticles using Aloe vera plant extract</article-title>
+          <source>
+            <italic>Biotechnology Progress</italic></source>
+          <year>2006</year>
+          <volume>22</volume>
+          <issue>2</issue>
+          <fpage>577</fpage>
+          <lpage>583</lpage>
+          <pub-id pub-id-type="other">2-s2.0-33646033744</pub-id>
+          <pub-id pub-id-type="doi">10.1021/bp0501423</pub-id></nlm-citation>
+      </ref>
+      <ref id="B10" content-type="article">
+        <label>10</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Shankar</surname>
+              <given-names>S. S.</given-names></name>
+            <name>
+              <surname>Rai</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Ahmad</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Rapid synthesis of Au, Ag, and bimetallic Au core-Ag shell nanoparticles using Neem (Azadirachta indica) leaf broth</article-title>
+          <source>
+            <italic>Journal of Colloid and Interface Science</italic></source>
+          <year>2004</year>
+          <volume>275</volume>
+          <issue>2</issue>
+          <fpage>496</fpage>
+          <lpage>502</lpage>
+          <pub-id pub-id-type="other">2-s2.0-2942564380</pub-id>
+          <pub-id pub-id-type="doi">10.1016/j.jcis.2004.03.003</pub-id></nlm-citation>
+      </ref>
+      <ref id="B11" content-type="article">
+        <label>11</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Klaus-Joerger</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Olsson</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Granqvist</surname>
+              <given-names>C. G.</given-names></name>
+          </person-group>
+          <article-title>Silver-based crystalline nanoparticles, microbially fabricated</article-title>
+          <source>
+            <italic>Proceedings of the National Academy of Sciences of the United States of America</italic></source>
+          <year>1999</year>
+          <volume>96</volume>
+          <issue>24</issue>
+          <fpage>13611</fpage>
+          <lpage>13614</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0033598764</pub-id>
+          <pub-id pub-id-type="doi">10.1073/pnas.96.24.13611</pub-id></nlm-citation>
+      </ref>
+      <ref id="B12" content-type="article">
+        <label>12</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mukherjee</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Ahmad</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Mandal</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Senapati</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Sainkar</surname>
+              <given-names>S. R.</given-names></name>
+            <name>
+              <surname>Khan</surname>
+              <given-names>M. I.</given-names></name>
+            <name>
+              <surname>Parishcha</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Ajaykumar</surname>
+              <given-names>P. V.</given-names></name>
+            <name>
+              <surname>Alam</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Kumar</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Fungus-mediated synthesis of silver nanoparticles and their immobilization in the mycelial matrix: a novel biological approach to nanoparticle Synthesis</article-title>
+          <source>
+            <italic>Nano Letters</italic></source>
+          <year>2001</year>
+          <volume>1</volume>
+          <issue>10</issue>
+          <fpage>515</fpage>
+          <lpage>519</lpage>
+          <pub-id pub-id-type="other">2-s2.0-18044404509</pub-id>
+          <pub-id pub-id-type="doi">10.1021/nl0155274</pub-id></nlm-citation>
+      </ref>
+      <ref id="B13" content-type="article">
+        <label>13</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Thakker</surname>
+              <given-names>J. N.</given-names></name>
+            <name>
+              <surname>Patel</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Kothari</surname>
+              <given-names>I. L.</given-names></name>
+          </person-group>
+          <article-title>
+            <italic>Fusarium oxysporum</italic>derived elicitor induced enzymological changes in banana leaves against Fusarium wilt disease</article-title>
+          <source>
+            <italic>Journal of Mycology and Plant Pathology</italic></source>
+          <year>2007</year>
+          <volume>37</volume>
+          <fpage>510</fpage>
+          <lpage>513</lpage></nlm-citation>
+      </ref>
+      <ref id="B14" content-type="article">
+        <label>14</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Thakker</surname>
+              <given-names>J. N.</given-names></name>
+            <name>
+              <surname>Patel</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Dhandhukia</surname>
+              <given-names>P. C.</given-names></name>
+          </person-group>
+          <article-title>Induction of defense related enzymes in susceptible variety of bananas: role of Fusarium derived elictors</article-title>
+          <source>
+            <italic>Archives Of Phytopathology And Plant Protection</italic></source>
+          <year>2011</year>
+          <volume>44</volume>
+          <fpage>1976</fpage>
+          <lpage>1984</lpage></nlm-citation>
+      </ref>
+      <ref id="B15" content-type="article">
+        <label>15</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ahmad</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Mukherjee</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Senapati</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Mandal</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Khan</surname>
+              <given-names>M. I.</given-names></name>
+            <name>
+              <surname>Kumar</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Extracellular biosynthesis of silver nanoparticles using the fungus Fusarium oxysporum</article-title>
+          <source>
+            <italic>Colloids and Surfaces B</italic></source>
+          <year>2003</year>
+          <volume>28</volume>
+          <issue>4</issue>
+          <fpage>313</fpage>
+          <lpage>318</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0037401125</pub-id>
+          <pub-id pub-id-type="doi">10.1016/S0927-7765(02)00174-1</pub-id></nlm-citation>
+      </ref>
+      <ref id="B16" content-type="article">
+        <label>16</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Baker</surname>
+              <given-names>R. A.</given-names></name>
+            <name>
+              <surname>Tatum</surname>
+              <given-names>J. H.</given-names></name>
+          </person-group>
+          <article-title>Novel anthraquinones from stationary cultures of <italic>Fusarium oxysporum</italic></article-title>
+          <source>
+            <italic>Journal of Fermentation and Bioengineering</italic></source>
+          <year>1998</year>
+          <volume>85</volume>
+          <issue>4</issue>
+          <fpage>359</fpage>
+          <lpage>361</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0031903012</pub-id>
+          <pub-id pub-id-type="doi">10.1016/S0922-338X(98)80077-9</pub-id></nlm-citation>
+      </ref>
+      <ref id="B17" content-type="article">
+        <label>17</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dur&#xe1;n</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Marcato</surname>
+              <given-names>P. D.</given-names></name>
+            <name>
+              <surname>Alves</surname>
+              <given-names>O. L.</given-names></name>
+            <name>
+              <surname>De Souza</surname>
+              <given-names>G. I. H.</given-names></name>
+            <name>
+              <surname>Esposito</surname>
+              <given-names>E.</given-names></name>
+          </person-group>
+          <article-title>Mechanistic aspects of biosynthesis of silver nanoparticles by several Fusarium oxysporum strains</article-title>
+          <source>
+            <italic>Journal of Nanobiotechnology</italic></source>
+          <year>2005</year>
+          <volume>3, article 8</volume>
+          <pub-id pub-id-type="other">2-s2.0-26844467301</pub-id>
+          <pub-id pub-id-type="doi">10.1186/1477-3155-3-8</pub-id></nlm-citation>
+      </ref>
+      <ref id="B18" content-type="article">
+        <label>18</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sileikaite</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Prosycevas</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Pulso</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Juraitis</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Guobiene</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Analysis of silver nanoparticles produced by chemical reduction of silver salt solution</article-title>
+          <source>
+            <italic>Journal of Materials Science</italic></source>
+          <year>2006</year>
+          <volume>12</volume>
+          <fpage>287</fpage>
+          <lpage>291</lpage></nlm-citation>
+      </ref>
+      <ref id="B19" content-type="article">
+        <label>19</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hutter</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Fendler</surname>
+              <given-names>J. H.</given-names></name>
+          </person-group>
+          <article-title>Exploitation of localized surface plasmon resonance</article-title>
+          <source>
+            <italic>Advanced Materials</italic></source>
+          <year>2004</year>
+          <volume>16</volume>
+          <issue>19</issue>
+          <fpage>1685</fpage>
+          <lpage>1706</lpage>
+          <pub-id pub-id-type="other">2-s2.0-9144249834</pub-id>
+          <pub-id pub-id-type="doi">10.1002/adma.200400271</pub-id></nlm-citation>
+      </ref>
+      <ref id="B20" content-type="article">
+        <label>20</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tkachenko</surname>
+              <given-names>A. G.</given-names></name>
+            <name>
+              <surname>Xie</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Coleman</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Glomm</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>Ryan</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Anderson</surname>
+              <given-names>M. F.</given-names></name>
+            <name>
+              <surname>Franzen</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Feldheim</surname>
+              <given-names>D. L.</given-names></name>
+          </person-group>
+          <article-title>Multifunctional gold nanoparticle-peptide complexes for nuclear targeting</article-title>
+          <source>
+            <italic>Journal of the American Chemical Society</italic></source>
+          <year>2003</year>
+          <volume>125</volume>
+          <issue>16</issue>
+          <fpage>4700</fpage>
+          <lpage>4701</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0037462130</pub-id>
+          <pub-id pub-id-type="doi">10.1021/ja0296935</pub-id></nlm-citation>
+      </ref>
+      <ref id="B21" content-type="article">
+        <label>21</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Henglein</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Physicochemical properties of small metal particles in solution: &#x201c;Microelectrode&#x201d; reactions, chemisorption, composite metal particles, and the atom-to-metal transition</article-title>
+          <source>
+            <italic>Journal of Physical Chemistry</italic></source>
+          <year>1993</year>
+          <volume>97</volume>
+          <issue>21</issue>
+          <fpage>5457</fpage>
+          <lpage>5471</lpage>
+          <pub-id pub-id-type="other">2-s2.0-33751385260</pub-id></nlm-citation>
+      </ref>
+      <ref id="B22" content-type="book">
+        <label>22</label>
+        <nlm-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Upadhyay</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Upadhyay</surname>
+              <given-names>K.</given-names></name>
+            <name>
+              <surname>Nath</surname>
+              <given-names>N.</given-names></name>
+          </person-group>
+          <source>
+            <italic>Biophysical Chemistry Principles &#x26; Techniques Handbook</italic></source>
+          <year>2003</year>
+          <publisher-loc>New Delhi, India</publisher-loc>
+          <publisher-name>Himalaya Publishing House</publisher-name></nlm-citation>
+      </ref>
+      <ref id="B23" content-type="article">
+        <label>23</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gole</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Dash</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Sainkar</surname>
+              <given-names>S. R.</given-names></name>
+            <name>
+              <surname>Mandale</surname>
+              <given-names>A. B.</given-names></name>
+            <name>
+              <surname>Rao</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Sastry</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Extracellular biosynthesis of silver nanoparticles using the fungus <italic>Fusarium oxysporum</italic></article-title>
+          <source>
+            <italic>Analytical Chemistry</italic></source>
+          <year>2000</year>
+          <volume>72</volume>
+          <fpage>1401</fpage>
+          <lpage>1403</lpage></nlm-citation>
+      </ref>
+      <ref id="B24" content-type="article">
+        <label>24</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hamouda</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Myc</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Donovan</surname>
+              <given-names>B.</given-names></name>
+            <name>
+              <surname>Shih</surname>
+              <given-names>A. Y.</given-names></name>
+            <name>
+              <surname>Reuter</surname>
+              <given-names>J. D.</given-names></name>
+            <name>
+              <surname>Baker</surname>
+              <given-names>J. R.</given-names></name>
+          </person-group>
+          <article-title>A novel surfactant nanoemulsion with a unique non-irritant topical antimicrobial activity against bacteria, enveloped viruses and fungi</article-title>
+          <source>
+            <italic>Microbiological Research</italic></source>
+          <year>2001</year>
+          <volume>156</volume>
+          <issue>1</issue>
+          <fpage>1</fpage>
+          <lpage>7</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0035001751</pub-id></nlm-citation>
+      </ref></ref-list>
+  </back></article>

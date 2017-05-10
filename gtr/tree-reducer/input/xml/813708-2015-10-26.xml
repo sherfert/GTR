@@ -1,0 +1,525 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="publisher-id">CRIS</journal-id>
+			<journal-title-group>
+				<journal-title>Case Reports in Surgery</journal-title></journal-title-group>
+			<issn pub-type="epub">2090-6919</issn>
+			<issn pub-type="ppub">2090-6900</issn>
+			<publisher>
+				<publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="doi">10.1155/2015/813708</article-id>
+			<article-id pub-id-type="publisher-id">813708</article-id>
+			<article-categories>
+				<subj-group subj-group-type="heading">
+					<subject>Case Report</subject></subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Primary Gallbladder Lymphoma in a Male Patient with No Risk Factors Detected Incidentally by CT Colonography</article-title></title-group>
+			<contrib-group>
+				<contrib contrib-type="author" id="U36147403" corresp="yes">
+					<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-2205-7924</contrib-id>
+					<name>
+						<surname>Karia</surname>
+						<given-names>Monil</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U71034693">
+					<name>
+						<surname>Mitsopoulos</surname>
+						<given-names>Grigorios</given-names></name>
+					
+					<xref ref-type="aff" rid="I2">
+						<sup>2</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U25926451">
+					<name>
+						<surname>Patel</surname>
+						<given-names>Ketan</given-names></name>
+					
+					<xref ref-type="aff" rid="I3">
+						<sup>3</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U95164683">
+					<name>
+						<surname>Rafique</surname>
+						<given-names>Akkib</given-names></name>
+					
+					<xref ref-type="aff" rid="I4">
+						<sup>4</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U38104754">
+					<name>
+						<surname>Sheth</surname>
+						<given-names>Hemant</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="Academic Editor" id="U68125924">
+					<name>
+						<surname>Mantas</surname>
+						<given-names>Dimitrios</given-names></name>
+				</contrib></contrib-group>
+			<aff id="I1">
+				<sup>1</sup>
+				<addr-line>Department of Surgery</addr-line>
+				<addr-line>Ealing Hospital</addr-line>
+				<addr-line>London UB1 3HW</addr-line>
+				<country>UK</country>
+				<ext-link ext-link-type="domain-name">nhs.uk</ext-link></aff>
+			<aff id="I2">
+				<sup>2</sup>
+				<addr-line>Department of Pathology</addr-line>
+				<addr-line>Ealing Hospital</addr-line>
+				<addr-line>London UB1 3HW</addr-line>
+				<country>UK</country>
+				<ext-link ext-link-type="domain-name">nhs.uk</ext-link></aff>
+			<aff id="I3">
+				<sup>3</sup>
+				<addr-line>Department of Haematology</addr-line>
+				<addr-line>Hillingdon Hospital</addr-line>
+				<addr-line>London UB8 3NN</addr-line>
+				<country>UK</country>
+				<ext-link ext-link-type="domain-name">nhs.uk</ext-link></aff>
+			<aff id="I4">
+				<sup>4</sup>
+				<addr-line>Department of Radiology</addr-line>
+				<addr-line>Ealing Hospital</addr-line>
+				<addr-line>London UB1 3HW</addr-line>
+				<country>UK</country>
+				<ext-link ext-link-type="domain-name">nhs.uk</ext-link></aff>
+			<pub-date pub-type="publication-year">
+				<year>2015</year></pub-date>
+			<pub-date pub-type="archival-date"><day>26</day><month>10</month><year>2015</year></pub-date>
+			<volume>2015</volume>
+			<history>
+				<date date-type="received">
+					<day>11</day>
+					<month>09</month>
+					<year>2015</year></date>
+				<date date-type="rev-recd">
+					<day>07</day>
+					<month>10</month>
+					<year>2015</year></date>
+				<date date-type="accepted">
+					<day>08</day>
+					<month>10</month>
+					<year>2015</year></date>
+				<date date-type="pub"><day>26</day><month>10</month><year>2015</year></date>
+			</history>
+			<permissions>
+				<copyright-year>2015</copyright-year>
+				<copyright-holder>Copyright &#xA9; 2015 Monil Karia et al.</copyright-holder>
+				<license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+					<license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+			</permissions>
+			<abstract>
+				<p>Primary gallbladder lymphoma, although rare, usually presents in females with symptoms mimicking cholecystitis. We present a rare case of primary gallbladder in an 81-year-old male with no risk factors whose only symptom was weight loss. Routine blood tests including liver function tests were unremarkable. A CT colonography was carried out to exclude colonic malignancy. Unilateral gallbladder wall thickening and lymphadenopathy were incidentally detected and confirmed by ultrasound and a decision for the patient to undergo laparoscopic cholecystectomy and intraoperative cholangiogram was made. Histology confirmed extranodal marginal zone lymphoma with follow-up staging and biopsy of the bone marrow not demonstrating spread. Cholecystectomy was therefore deemed curative and no adjuvant therapy was necessary. Thickening of the gallbladder wall on any imaging with or without symptoms should not be ignored or assumed to be cholecystitis, even in males with no risk factors. In these patients urgent cholecystectomy with intraoperative cholangiogram is indicated with histology and haematology follow-up.</p></abstract>
+			<counts>
+				<ref-count count="12" />
+				<page-count count="3" /></counts>
+		</article-meta></front>
+	<body>
+		<sec id="sec1">
+			<title>1. Introduction</title>
+			<p>Malignant lymphomas are considered tumours of lymph nodes although 40&#x25; occur in extranodal tissues, usually from the gastrointestinal tract. As an organ normally devoid of lymphoid tissue primary lymphoma of the gallbladder is exceptionally rare. Usually gallbladder lymphoma is secondary to infiltration from widespread lymphoproliferative disease.</p>
+			<p>Primary gallbladder cancer is of adenocarcinoma type in 96&#x25; of cases with primary lymphoma accounting for only 0.1&#x25;&#x2013;0.2&#x25; of cases, the majority of which are diffuse large B cell lymphomas or extranodal marginal zone lymphomas (EMZL) [<xref ref-type="bibr" rid="B1">1</xref>]. Most of the literature regarding primary gallbladder lymphoma therefore consists of case reports demonstrating a female preponderance and a presentation mimicking cholecystitis commonly with evidence of gallstones.</p>
+			<p>In this report we present a rare case of a primary gallbladder lymphoma in a male patient whose only symptom was weight loss and present the incidental radiological findings correlated with the histology and intraoperative findings.</p></sec>
+		<sec id="sec2">
+			<title>2. Case Report</title>
+			<p>An 81-year-old gentleman with early stage Alzheimer&#x2019;s dementia who is otherwise well presented with gradual ongoing weight loss as his only symptom. The patient&#x2019;s full blood count and liver function tests were unremarkable. He underwent virtual CT colonography to investigate the weight loss. Whilst no colonic pathology was found, the imaging detected a distended gallbladder with a thickened medial wall of 1&#x2009;cm and small volume porta hepatis lymphadenopathy (Figure <xref ref-type="fig" rid="fig1">1</xref>).</p>
+			<fig id="fig1">
+				<label>Figure 1</label>
+				<caption>
+					<p>Computerised tomography colonography demonstrating a grossly distended gallbladder with a thickened medial wall measuring up to 1&#x2009;cm.</p></caption>
+				<graphic xlink:href="813708.fig.001" /></fig>
+			<p>This raised the suspicion of gallbladder cancer reaffirmed by an ultrasound scan which demonstrated the gallbladder to be markedly distended containing sludge, with a thickened posterior wall of 8&#x2009;mm but no gallstones (Figure <xref ref-type="fig" rid="fig2">2</xref>).</p>
+			<fig id="fig2">
+				<label>Figure 2</label>
+				<caption>
+					<p>Ultrasound abdomen demonstrating a grossly distended gallbladder with a thickened posterior wall.</p></caption>
+				<graphic xlink:href="813708.fig.002" /></fig>
+			<p>The decision was made to proceed to urgent laparoscopic cholecystectomy with on-table cholangiogram. Intraoperative laparoscopy revealed a grossly enlarged, thick-walled gallbladder. To aid dissection percutaneous aspiration was carried out draining over 250&#x2009;ml of pus. Extensive adhesiolysis to free the gallbladder from the duodenum and colon was required prior to identification of Calot&#x2019;s triangle. An intraoperative cholangiogram was performed demonstrating normal ductal anatomy with no obvious obstruction. The cystic duct and artery were then ligated. Dissection of the gallbladder off the liver bed was exceptionally difficult as it was firmly attached, with complete obliteration of the plane. Once the gallbladder was freed, diathermy to the liver bed was carried out in case any posterior wall remained adherent. Thorough washout was performed and a large drain placed on the liver bed before removing the gallbladder via the umbilical port in a bag. Postoperative recovery was uncomplicated and the patient was discharged with analgesia 72 hours later following drain removal.</p>
+			<p>Urgent histology revealed replacement of the entire gallbladder by a lymphoid lesion with ulceration of the mucosal surface and transmural infiltration with extension beyond the serosal surface into surrounding adipose tissue. Lymphoid cells were positive for CD 20 and BCL 2 immunostains and negative for CD 3, CD 5, CD 23, CD 10, BCL 6, and cyclin D1 immunostains. CD 21 highlighted expanded follicular dendritic cell MeshWorks. Lymphoid cells showed expression of IgM and were negative for IgD. Overall appearances were those of an extranodal marginal zone lymphoma of the gallbladder (Figure <xref ref-type="fig" rid="fig3">3</xref>).</p>
+			<fig id="fig3">
+				<label>Figure 3</label>
+				<caption>
+					<p>Histology demonstrating lymphoid infiltrate with a diffuse and vaguely nodular growth pattern composed of small, cleaved lymphocytes with centrocyte-like morphology and inconspicuous nucleoli.</p></caption>
+				<graphic xlink:href="813708.fig.003" /></fig>
+			<p>The patient was referred promptly to haematology, where staging via contrast CT of the neck, chest, abdomen, and pelvis as well as bone marrow studies showed no metastatic disease. The laparoscopic cholecystectomy was considered curative with only routine surveillance required.</p></sec>
+		<sec id="sec3">
+			<title>3. Discussion</title>
+			<p>Whilst the pathogenesis of EMZL is unclear, various theories have arisen. Tomori et al. studied bile bacteriology and reported that EMZL may develop in 11&#x25; of gallbladders in association with positive bile cultures and gallstones [<xref ref-type="bibr" rid="B2">2</xref>]. Mani et al. reviewed a small case series and concurred that most gallbladder lymphomas coincide with gallstones and present with cholecystitis secondary to chronic inflammation with cholelithiasis present in over 90&#x25; of cases of primary gallbladder lymphoma [<xref ref-type="bibr" rid="B3">3</xref>]. This chronic inflammation acting as a &#x201c;substrate&#x201d; for primary gallbladder lymphoma causes lymphocytes to migrate to the gallbladder mucosa forming secondary follicles [<xref ref-type="bibr" rid="B4">4</xref>]. The continuous antigenic stimulus may cause a chromosomal translocation resulting in a fusion protein that inhibits apoptosis and causes antigen-independent proliferation [<xref ref-type="bibr" rid="B5">5</xref>]. Furthermore Mani et al. reported 11/13 prior cases of EMZL occurring in women [<xref ref-type="bibr" rid="B3">3</xref>]. This likely reflects the higher prevalence of gallstones in females, which is two to three times higher than in men, attributable to oestrogen increasing biliary cholesterol secretion [<xref ref-type="bibr" rid="B6">6</xref>].</p>
+			<p>In this case our male patient had no evidence of gallstones and lacked any symptoms resembling cholecystitis. Gallbladder lymphoma should not, therefore, be excluded if the patient lacks these findings, since presentations of this condition can vary. Our patient presented indolently with weight loss and the diagnosis was picked up incidentally. Similarly a recent report demonstrated a gallbladder lymphoma which grew to 4&#x2009;cm with relatively little clinical signs and normal serum levels of carcinoembryonic antigen (CEA) and carbohydrate antigen (CA) 19-9 [<xref ref-type="bibr" rid="B7">7</xref>]. Despite the lack of clinical signs, intraoperatively our patient&#x2019;s gallbladder was distended and filled with pus. Friedman et al. also presented a case of gallbladder lymphoma with an empyema but in this case associated with a lung abscess on the same side resulting in severe sepsis which the patient did not survive [<xref ref-type="bibr" rid="B8">8</xref>].</p>
+			<p>As with gallbladder carcinoma, ultrasonography is sufficient for identification of wall thickening, polyps, or masses prior to surgery. More specifically, CT or magnetic resonance imaging (MRI) findings of homogeneous submucosal thickening of the gallbladder wall with a preserved mucosal surface are described as being suggestive of lymphoma [<xref ref-type="bibr" rid="B9">9</xref>]. Fine needle aspiration has also been presented as a potential preoperative diagnostic tool [<xref ref-type="bibr" rid="B10">10</xref>]; however proceeding with urgent cholecystectomy for histological diagnosis is still best practice. Postoperative staging with whole body CT and bone marrow aspiration/trephine biopsy should be completed as per lymphoma work-up. If the cancer is confined to the gallbladder, then, whilst adjuvant irradiation and chemotherapy have been reported to have good effect, more recent evidence from the literature is now largely suggesting that cholecystectomy alone is sufficient for long term disease-free survival [<xref ref-type="bibr" rid="B11">11</xref>]. These tumours therefore have an excellent prognosis with complete resection. We also strongly recommend intraoperative cholangiogram as lymphomas of the extrahepatic ducts have been reported [<xref ref-type="bibr" rid="B12">12</xref>].</p>
+			<p>Primary extranodal marginal zone lymphoma of the gallbladder, whilst rare, has an excellent prognosis if detected early and resected via laparoscopic cholecystectomy. Whilst presentation is most commonly in females with gallstones and symptoms mimicking cholecystitis we present a case in a male with no such findings. Thickening of the gallbladder wall on any imaging with or without symptoms should not be ignored or assumed to be cholecystitis, particularly in the elderly, even when no risk factors are present. With these findings, patients should instead undergo urgent cholecystectomy, with or without stones and even with normal blood results. Moreover, intraoperative cholangiogram is beneficial in excluding bile duct lymphoma and urgent histology should always be requested so that postoperative referral to haematology can be expedited.</p></sec>
+	</body>
+	<back>
+		<sec sec-type="conflict">
+			<title>Conflict of Interests</title>
+			<p>The authors declare that there is no conflict of interests regarding the publication of this paper.</p></sec>
+		<sec>
+			<title>Acknowledgement</title>
+			<p>The authors would like to thank Dr. Raida Ahmad, Consultant Histopathologist at Hammersmith Hospital, for reviewing this case.</p></sec>
+		<ref-list>
+			<ref id="B1" content-type="article">
+				<label>1</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Willen</surname>
+							<given-names>R.</given-names></name>
+						<name>
+							<surname>Willen</surname>
+							<given-names>H.</given-names></name>
+					</person-group>
+					<article-title>Primary sarcoma of the gallbladder. A light and electronmicroscopical study</article-title>
+					<source>
+						<italic>Virchows Archiv A Pathological Anatomy and Histology</italic></source>
+					<year>1982</year>
+					<volume>396</volume>
+					<issue>1</issue>
+					<fpage>91</fpage>
+					<lpage>102</lpage>
+					<pub-id pub-id-type="doi">10.1007/bf00428502</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0019969628</pub-id></nlm-citation>
+			</ref>
+			<ref id="B2" content-type="article">
+				<label>2</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Tomori</surname>
+							<given-names>H.</given-names></name>
+						<name>
+							<surname>Nagahama</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Miyazato</surname>
+							<given-names>H.</given-names></name>
+						<name>
+							<surname>Shiraishi</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Muto</surname>
+							<given-names>Y.</given-names></name>
+						<name>
+							<surname>Toda</surname>
+							<given-names>T.</given-names></name>
+					</person-group>
+					<article-title>Mucosa-associated lymphoid tissue (MALT) of the gallbladder: a clinicopathological correlation</article-title>
+					<source>
+						<italic>International Surgery</italic></source>
+					<year>1999</year>
+					<volume>84</volume>
+					<issue>2</issue>
+					<fpage>144</fpage>
+					<lpage>150</lpage>
+					<pub-id pub-id-type="other">2-s2.0-0033109929</pub-id></nlm-citation>
+			</ref>
+			<ref id="B3" content-type="article">
+				<label>3</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Mani</surname>
+							<given-names>H.</given-names></name>
+						<name>
+							<surname>Climent</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Colomo</surname>
+							<given-names>L.</given-names></name>
+						<name>
+							<surname>Pittaluga</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Raffeld</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Jaffe</surname>
+							<given-names>E. S.</given-names></name>
+					</person-group>
+					<article-title>Gall bladder and extrahepatic bile duct lymphomas: clinicopathological observations and biological implications</article-title>
+					<source>
+						<italic>The American Journal of Surgical Pathology</italic></source>
+					<year>2010</year>
+					<volume>34</volume>
+					<issue>9</issue>
+					<fpage>1277</fpage>
+					<lpage>1286</lpage>
+					<pub-id pub-id-type="doi">10.1097/pas.0b013e3181e9bb8b</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-77956229858</pub-id></nlm-citation>
+			</ref>
+			<ref id="B4" content-type="article">
+				<label>4</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Isaacson</surname>
+							<given-names>P. G.</given-names></name>
+					</person-group>
+					<article-title>Gastrointestinal lymphoma</article-title>
+					<source>
+						<italic>Human Pathology</italic></source>
+					<year>1994</year>
+					<volume>25</volume>
+					<issue>10</issue>
+					<fpage>1020</fpage>
+					<lpage>1029</lpage>
+					<pub-id pub-id-type="doi">10.1016/0046-8177(94)90060-4</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0028019444</pub-id></nlm-citation>
+			</ref>
+			<ref id="B5" content-type="article">
+				<label>5</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Bagwan</surname>
+							<given-names>I. N.</given-names></name>
+						<name>
+							<surname>Ping</surname>
+							<given-names>B.</given-names></name>
+						<name>
+							<surname>Lavender</surname>
+							<given-names>L.</given-names></name>
+						<name>
+							<surname>de Sanctis</surname>
+							<given-names>S.</given-names></name>
+					</person-group>
+					<article-title>Incidental presentation of gall bladder MALT lymphoma</article-title>
+					<source>
+						<italic>Journal of Gastrointestinal Cancer</italic></source>
+					<year>2011</year>
+					<volume>42</volume>
+					<issue>1</issue>
+					<fpage>61</fpage>
+					<lpage>64</lpage>
+					<pub-id pub-id-type="doi">10.1007/s12029-010-9162-z</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-79952536644</pub-id></nlm-citation>
+			</ref>
+			<ref id="B6" content-type="article">
+				<label>6</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Wang</surname>
+							<given-names>H. H.</given-names></name>
+						<name>
+							<surname>Liu</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Clegg</surname>
+							<given-names>D. J.</given-names></name>
+						<name>
+							<surname>Portincasa</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Wang</surname>
+							<given-names>D. Q.-H.</given-names></name>
+					</person-group>
+					<article-title>New insights into the molecular mechanisms underlying effects of estrogen on cholesterol gallstone formation</article-title>
+					<source>
+						<italic>Biochimica et Biophysica Acta&#x2014;Molecular and Cell Biology of Lipids</italic></source>
+					<year>2009</year>
+					<volume>1791</volume>
+					<issue>11</issue>
+					<fpage>1037</fpage>
+					<lpage>1047</lpage>
+					<pub-id pub-id-type="doi">10.1016/j.bbalip.2009.06.006</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-70349427029</pub-id></nlm-citation>
+			</ref>
+			<ref id="B7" content-type="article">
+				<label>7</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Kato</surname>
+							<given-names>H.</given-names></name>
+						<name>
+							<surname>Naganuma</surname>
+							<given-names>T.</given-names></name>
+						<name>
+							<surname>Iizawa</surname>
+							<given-names>Y.</given-names></name>
+						<name>
+							<surname>Kitagawa</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Tanaka</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Isaji</surname>
+							<given-names>S.</given-names></name>
+					</person-group>
+					<article-title>Primary non-Hodgkin's lymphoma of the gallbladder diagnosed by laparoscopic cholecystectomy</article-title>
+					<source>
+						<italic>Journal of Hepato-Biliary-Pancreatic Surgery</italic></source>
+					<year>2008</year>
+					<volume>15</volume>
+					<issue>6</issue>
+					<fpage>659</fpage>
+					<lpage>663</lpage>
+					<pub-id pub-id-type="doi">10.1007/s00534-007-1283-9</pub-id></nlm-citation>
+			</ref>
+			<ref id="B8" content-type="article">
+				<label>8</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Friedman</surname>
+							<given-names>E. P.</given-names></name>
+						<name>
+							<surname>Lazda</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Grant</surname>
+							<given-names>D.</given-names></name>
+						<name>
+							<surname>Davis</surname>
+							<given-names>J.</given-names></name>
+					</person-group>
+					<article-title>Primary lymphoma of the gallbladder</article-title>
+					<source>
+						<italic>Postgraduate Medical Journal</italic></source>
+					<year>1993</year>
+					<volume>69</volume>
+					<issue>813</issue>
+					<fpage>585</fpage>
+					<lpage>587</lpage>
+					<pub-id pub-id-type="doi">10.1136/pgmj.69.813.585</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0027265771</pub-id></nlm-citation>
+			</ref>
+			<ref id="B9" content-type="article">
+				<label>9</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Ono</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Tanoue</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Yamada</surname>
+							<given-names>Y.</given-names></name>
+						<name>
+							<surname>Takaji</surname>
+							<given-names>Y.</given-names></name>
+						<name>
+							<surname>Okada</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Matsumoto</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Mori</surname>
+							<given-names>H.</given-names></name>
+					</person-group>
+					<article-title>Primary malignant lymphoma of the gallbladder: a case report and literature review</article-title>
+					<source>
+						<italic>British Journal of Radiology</italic></source>
+					<year>2009</year>
+					<volume>82</volume>
+					<issue>973</issue>
+					<fpage>e15</fpage>
+					<lpage>e19</lpage>
+					<pub-id pub-id-type="doi">10.1259/bjr/30768802</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-58849102246</pub-id></nlm-citation>
+			</ref>
+			<ref id="B10" content-type="article">
+				<label>10</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Yamamoto</surname>
+							<given-names>T.</given-names></name>
+						<name>
+							<surname>Kawanishi</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Yoshiba</surname>
+							<given-names>H.</given-names></name>
+						<name>
+							<surname>Kanehira</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Itoh</surname>
+							<given-names>H.</given-names></name>
+					</person-group>
+					<article-title>Primary non-Hodgkin's lymphoma of the gallbladder</article-title>
+					<source>
+						<italic>American Journal of Roentgenology</italic></source>
+					<year>2005</year>
+					<volume>184</volume>
+					<issue>3, supplement</issue>
+					<fpage>S86</fpage>
+					<lpage>S87</lpage>
+					<pub-id pub-id-type="doi">10.2214/ajr.184.3&#x5f;supplement.01840s86</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-17144399978</pub-id></nlm-citation>
+			</ref>
+			<ref id="B11" content-type="article">
+				<label>11</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Kojima</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Ishida</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Fujie</surname>
+							<given-names>Y.</given-names></name>
+						<name>
+							<surname>Okabe</surname>
+							<given-names>H.</given-names></name>
+					</person-group>
+					<article-title>Postsurgical long-term disease-free survival in a case of primary diffuse large B-cell lymphoma of the gallbladder without adjuvant therapy</article-title>
+					<source>
+						<italic>The American Surgeon</italic></source>
+					<year>2014</year>
+					<volume>80</volume>
+					<issue>2</issue>
+					<fpage>E58</fpage>
+					<lpage>60</lpage>
+					<pub-id pub-id-type="other">2-s2.0-84897576680</pub-id></nlm-citation>
+			</ref>
+			<ref id="B12" content-type="article">
+				<label>12</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Bernardini</surname>
+							<given-names>D.</given-names></name>
+						<name>
+							<surname>Giovannini</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Monges</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Sahel</surname>
+							<given-names>J.</given-names></name>
+						<name>
+							<surname>Capodano</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Seitz</surname>
+							<given-names>J. F.</given-names></name>
+					</person-group>
+					<article-title>Gallbladder lymphoma: a rare cause of jaundice</article-title>
+					<source>
+						<italic>Gastroent&#xe9;rologie Clinique et Biologique</italic></source>
+					<year>2000</year>
+					<volume>24</volume>
+					<issue>11</issue>
+					<fpage>1132</fpage>
+					<lpage>1133</lpage></nlm-citation>
+			</ref></ref-list>
+	</back></article>

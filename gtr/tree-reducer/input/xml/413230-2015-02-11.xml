@@ -1,0 +1,557 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">CRIM</journal-id>
+      <journal-title-group>
+        <journal-title>Case Reports in Medicine</journal-title></journal-title-group>
+      <issn pub-type="epub">1687-9635</issn>
+      <issn pub-type="ppub">1687-9627</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1155/2015/413230</article-id>
+      <article-id pub-id-type="publisher-id">413230</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Case Report</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Vomiting-Induced Gastric Emphysema and Hepatoportal Venous Gas: A Case Report and Review of the Literature</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U70398016" corresp="yes">
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-9212-9041</contrib-id>
+          <name>
+            <surname>Parikh</surname>
+            <given-names>Malav P.</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U59360427">
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7940-0362</contrib-id>
+          <name>
+            <surname>Sherid</surname>
+            <given-names>Muhammed</given-names></name>
+          
+          <xref ref-type="aff" rid="I2">
+            <sup>2</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U46791062">
+          <name>
+            <surname>Ganipisetti</surname>
+            <given-names>Venu</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U71534818">
+          <name>
+            <surname>Gopalakrishnan</surname>
+            <given-names>Venu</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U48254502">
+          <name>
+            <surname>Habib</surname>
+            <given-names>Maria</given-names></name>
+          
+          <xref ref-type="aff" rid="I3">
+            <sup>3</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U37671520">
+          <name>
+            <surname>Tripathi</surname>
+            <given-names>Monika</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U70732514">
+          <name>
+            <surname>Supinski</surname>
+            <given-names>Gerald S.</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <sup>1</sup>
+        <addr-line>Division of Gastroenterology and Hepatology</addr-line>
+        <addr-line>Department of Internal Medicine</addr-line>
+        <addr-line>Presence Saint Francis Hospital</addr-line>
+        <addr-line>Evanston</addr-line>
+        <addr-line>IL 60202</addr-line>
+        <country>USA</country></aff>
+      <aff id="I2">
+        <sup>2</sup>
+        <addr-line>Department of Gastroenterology and Hepatology</addr-line>
+        <addr-line>Georgia Regents University</addr-line>
+        <addr-line>Augusta</addr-line>
+        <addr-line>GA 30912</addr-line>
+        <country>USA</country>
+        <ext-link ext-link-type="domain-name">gru.edu</ext-link></aff>
+      <aff id="I3">
+        <sup>3</sup>
+        <addr-line>Department of Radiology</addr-line>
+        <addr-line>Presence Saint Francis Hospital</addr-line>
+        <addr-line>Evanston</addr-line>
+        <addr-line>IL 60202</addr-line>
+        <country>USA</country></aff>
+      <pub-date pub-type="publication-year">
+        <year>2015</year></pub-date>
+      <pub-date pub-type="archival-date"><day>11</day><month>2</month><year>2015</year></pub-date>
+      <volume>2015</volume>
+      <history>
+        <date date-type="received">
+          <day>02</day>
+          <month>12</month>
+          <year>2014</year></date>
+        <date date-type="accepted">
+          <day>02</day>
+          <month>02</month>
+          <year>2015</year></date>
+        <date date-type="pub"><day>11</day><month>2</month><year>2015</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2015</copyright-year>
+        <copyright-holder>Copyright &#xA9; 2015 Malav P. Parikh et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>Gastric pneumatosis is the presence of air within the wall of the stomach. It represents a spectrum of conditions ranging from benign disease to septic shock and death. Etiopathologically, it can be classified into emphysematous gastritis or gastric emphysema (GE). Along with hepatoportal venous gas (HPVG), it was considered as an ominous radiological sign and warranted an emergent surgical exploration; however, with widespread use of computerized tomographic (CT) scan, an  increasing number of benign causes of GE and HPVG have been reported in the literature, where patients can be managed by noninvasive and conservative measures. We hereby describe a case where recurrent episodes of vomiting led to development of GE and HPVG and the patient was managed successfully by conservative measures.</p></abstract>
+      <counts>
+        <ref-count count="14" />
+        <page-count count="4" /></counts>
+    </article-meta></front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>Gastric pneumatosis refers to the presence of air within the wall of the stomach. It can be classified into two types: gastric emphysema (GE) and emphysematous gastritis. GE is essentially non-life threatening and can be caused by a variety of iatrogenic and noniatrogenic events [<xref ref-type="bibr" rid="B1">1</xref>&#x2013;<xref ref-type="bibr" rid="B6">6</xref>]. Pulmonary, trauma, and obstruction are the three principal theories proposed to explain its pathogenesis. They have a benign clinical course and patients often have uneventful recovery with conservative treatment [<xref ref-type="bibr" rid="B1">1</xref>].</p>
+      <p>In rare instances, air within the stomach wall can dissect through the tissue planes and reach the portal veins, leading to hepatoportal venous gas (HPVG). Now from a radiological stand point HPVG denotes a catastrophic abdominal event like intestinal necrosis or bowel obstruction mandating urgent surgical intervention. However with growing use of CT scans in recent times, several benign cases of HPVG are described in the literature where invasive surgical approach is often not required and patients can be managed conservatively. CT scan plays an important role in such cases of acute abdomen to identify the underlying etiological process and help the clinician choose conservative over surgical treatment option [<xref ref-type="bibr" rid="B6">6</xref>&#x2013;<xref ref-type="bibr" rid="B8">8</xref>]. We hereby present a case of GE and HPVG induced by vomiting where patient was successfully managed by conservative measures. Also presented is a review of the literature to shed a light on etiology, clinical presentation, and management strategies in cases of GE, emphysematous gastritis, and HPVG.</p></sec>
+    <sec id="sec2">
+      <title>2. Case Presentation</title>
+      <p>A 58-year-old male presented to the emergency room with complaints of abdominal pain, nausea, and multiple episodes of vomiting for last twenty-four hours. Patient described a sharp epigastric pain with 8&#x2013;10 episodes of bilious vomiting and retching. He denied eating unusual food or taking over the counter pain medications. Patient had regular bowel movements and denied any blood in the stool. His past medical history included end stage renal disease requiring hemodialysis and peripheral vascular disease.</p>
+      <p>On physical examination, pulse was 90 beats per minute, blood pressure was 150/90&#x2009;mm of Hg, and temperature was 98.6&#xb0;&#x2009;F. Mild tenderness was present in the epigastric region, but abdomen was otherwise soft and without guarding or rigidity. Fecal occult blood test was negative. The remainder of the physical exam was unremarkable.</p>
+      <p>Patient had an elevated white blood cell (WBC) count to 13.4&#x2009;k/mm<sup>3</sup> (Normal range: 4&#x2013;11 k/mm<sup>3</sup>). Lactic acid level was elevated to 2.7&#x2009;mmol/L (normal range: 0.7&#x2013;2.2&#x2009;mmol/L). Serum amylase, serum lipase, and rest of the comprehensive metabolic panel were within normal limits. Subsequently, a computerized tomography (CT) scan of the abdomen was obtained which revealed air in the wall of the stomach along with large amount of air in the liver, spleen, portal vein, superior mesenteric vein, and splenic vein (Figure <xref ref-type="fig" rid="fig1">1</xref>). However, there was no intestinal obstruction, intra-abdominal free air, or free fluid. Surgery was consulted as gastric pneumatosis and portal venous gas raised the suspicion of intestinal ischemia and bowel necrosis.</p>
+      <fig-group id="fig1">
+        <caption>
+          <p>(a) Blue arrow showing air in the wall of the stomach. (b) Blue arrow showing air in the intrahepatic branches of portal vein. (c) Coronal section of the abdomen with upper arrow showing air in the intrahepatic branch of portal vein and lower arrow showing air in the area of confluence of portal vein. (d) Blue arrow showing air in the stomach wall and red arrow showing air in the spleen.</p></caption>
+        <fig id="fig1a">
+          <label>(a)</label>
+          <graphic xlink:href="413230.fig.001a" /></fig>
+        <fig id="fig1b">
+          <label>(b)</label>
+          <graphic xlink:href="413230.fig.001b" /></fig>
+        <fig id="fig1c">
+          <label>(c)</label>
+          <graphic xlink:href="413230.fig.001c" /></fig>
+        <fig id="fig1d">
+          <label>(d)</label>
+          <graphic xlink:href="413230.fig.001d" /></fig>
+      </fig-group>
+      <p>In spite of the worrisome findings on the CT scan, patient was hemodynamically stable and abdominal examination was completely benign. Therefore, he was treated conservatively with bowel rest, gastric decompression, intravenous fluids, and antibiotics. He improved significantly over the next 2 days. A repeat CT scan of the abdomen (obtained after 48 hours from presentation) showed complete resolution of gastric pneumatosis and portal venous air (Figure <xref ref-type="fig" rid="fig2">2</xref>). The proposed mechanism of these radiologic findings was that repeated episodes of vomiting and retching led to gastric emphysema in our patient, with subsequent dissection of air into the portal venous system. He was started on a clear liquid diet with gradual advancement. Antibiotics were discontinued and he was discharged home in stable condition.</p>
+      <fig-group id="fig2">
+        <caption>
+          <p>Contrast enhanced CT scan of the abdomen (48 hours after presentation) showing resolution of gas in the wall of the stomach, portal veins, and spleen.</p></caption>
+        <fig id="fig2a">
+          <label>(a)</label>
+          <graphic xlink:href="413230.fig.002a" /></fig>
+        <fig id="fig2b">
+          <label>(b)</label>
+          <graphic xlink:href="413230.fig.002b" /></fig>
+      </fig-group></sec>
+    <sec id="sec3">
+      <title>3. Discussion</title>
+      <p>There are two types of gastric pneumatosis, emphysematous gastritis and gastric emphysema [<xref ref-type="bibr" rid="B1">1</xref>]. Emphysematous gastritis may occur by direct inoculation of gas-producing bacteria into the gastric mucosa or by hematogenous spread.<italic> Clostridium perfringens, Escherichia coli, Pseudomonas aeruginosa, Streptococci, Staphylococci,</italic> and<italic> Enterobacter</italic> species are the most frequent causative agents [<xref ref-type="bibr" rid="B9">9</xref>]. Immunosuppression, diabetes mellitus, ingestion of corrosive substances, alcoholism, and nonsteroidal anti-inflammatory drugs ingestion are common predisposing factors. Affected patients are very ill with severe abdominal pain, peritoneal signs, and elevated WBCs, often resulting in a fulminant clinical course, shock, and a high rate of mortality [<xref ref-type="bibr" rid="B9">9</xref>, <xref ref-type="bibr" rid="B10">10</xref>].</p>
+      <p>Unlike emphysematous gastritis, GE is noninfectious in origin and occurs primarily due to entry of intraluminal air into the wall of the stomach. It may be divided into three etiological categories: traumatic, obstructive, and pulmonary [<xref ref-type="bibr" rid="B1">1</xref>].</p>
+      <p>Traumatic GE is caused by transmural diffusion of air after a mucosal injury, which can occur during esophagogastroduodenoscopy (EGD), severe vomiting, cardiopulmonary resuscitation (CPR), or acute gastric dilatation caused by eating disorders [<xref ref-type="bibr" rid="B2">2</xref>&#x2013;<xref ref-type="bibr" rid="B4">4</xref>, <xref ref-type="bibr" rid="B6">6</xref>, <xref ref-type="bibr" rid="B11">11</xref>]. Obstructive GE has been reported in patients with gastric outlet obstruction due to a variety of conditions. The increase in the intragastric pressure accompanied by damaged gastric mucosa permits the entry of air into the wall of the stomach. Gastric carcinoma, gastric volvulus, duodenal obstruction, and hypertrophic pyloric stenosis in children have been reported as causes of obstructive GE [<xref ref-type="bibr" rid="B1">1</xref>, <xref ref-type="bibr" rid="B5">5</xref>]. Pulmonary GE is caused by alveolar rupture and air leaks, which then track through the mediastinum and dissecting downwards to reach the stomach wall [<xref ref-type="bibr" rid="B1">1</xref>].</p>
+      <p>Clinical manifestations in GE are usually nonspecific. Patients may present with nausea, vomiting, epigastric discomfort, or abdominal pain. Importantly, patients are almost always hemodynamically stable and do not show signs of acute abdomen. In general, it has a benign clinical course and resolves spontaneously without any clinical sequel [<xref ref-type="bibr" rid="B1">1</xref>&#x2013;<xref ref-type="bibr" rid="B4">4</xref>, <xref ref-type="bibr" rid="B6">6</xref>].</p>
+      <p>HPVG was frequently seen with bowel necrosis, small bowel obstruction, peptic ulcer disease, and intra-abdominal abscess [<xref ref-type="bibr" rid="B7">7</xref>]. Hence presence of gas in the portal venous system was often considered to represent an intra-abdominal catastrophic event. However, with advances in imaging techniques and increasing availability of CT scans, many benign cases of HPVG have been found. Ulcerative colitis, barium enemas, colonoscopy, liver transplantation, GE, and cardiopulmonary resuscitation represent such benign causes of HPVG. Conservative treatment is successful in many of these cases without surgical intervention [<xref ref-type="bibr" rid="B7">7</xref>, <xref ref-type="bibr" rid="B8">8</xref>, <xref ref-type="bibr" rid="B12">12</xref>, <xref ref-type="bibr" rid="B13">13</xref>].</p>
+      <p>Hussain et al. have classified patients into three broad groups to simplify the treatment approach. First, patients with HPVG and signs of acute abdomen are best treated with emergent surgery. Second, patients with HPVG who lack clinical signs and demonstrate stable hemodynamic parameters should receive conservative management. Finally, patients with HPVG and uncertain clinical features should undergo endoscopy and/or diagnostic laparoscopy to rule out underlying bowel ischemia [<xref ref-type="bibr" rid="B13">13</xref>].</p>
+      <p>We believe that, in our case, repeated episodes of vomiting and retching caused damage to the gastric mucosa and sudden increase in the intragastric pressure. This led to dissection and leaking of air into the intramural layer of the stomach wall and subsequent spread to the portal veins, superior mesenteric vein, and splenic vein (Figure <xref ref-type="fig" rid="fig1">1</xref>). Because the patient presented with benign physical exam and laboratory findings, a conservative treatment approach was chosen. Clinical improvement and spontaneous resolution of air within two days as confirmed by a repeat CT scan of the abdomen (Figure <xref ref-type="fig" rid="fig2">2</xref>) further substantiated our theory that the etiology of visceral air was benign and not due to ischemia of the bowel or stomach. Hence, HPVG does not always indicate serious intra-abdominal pathology. It can be associated with benign conditions as described above. Also HPVG is just a radiological sign and it should not be solely relied upon in deciding between surgical intervention and conservative treatment; rather entire clinical picture including underlying etiology, clinical examination, and laboratory parameters should be taken into consideration [<xref ref-type="bibr" rid="B13">13</xref>, <xref ref-type="bibr" rid="B14">14</xref>].</p></sec>
+    <sec id="sec4">
+      <title>4. Conclusion</title>
+      <p>The presence of air in the wall of stomach may be due to GE, which is often self-resolving, or due to emphysematous gastritis, which heralds worse prognosis. Superimposed occurrence of air in the portal venous system often causes a dilemma when considering surgical options. Historically, presence of gas in the portal venous system was considered as an acute abdominal emergency and warranted urgent surgical intervention but recently many benign causes of GE and HPVG have been described in the literature. These new cases were not associated with serious abdominal pathology and did not require surgical intervention. Therefore, HPVG by itself should no longer be an indication for emergent surgical intervention.</p></sec>
+  </body>
+  <back>
+    <sec sec-type="conflict">
+      <title>Conflict of Interests</title>
+      <p>The authors declare that there is no conflict of interests regarding the publication of this paper.</p></sec>
+    <ref-list>
+      <ref id="B1" content-type="article">
+        <label>1</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Agha</surname>
+              <given-names>F. P.</given-names></name>
+          </person-group>
+          <article-title>Gastric emphysema: an etiologic classification</article-title>
+          <source>
+            <italic>Australasian Radiology</italic></source>
+          <year>1984</year>
+          <volume>28</volume>
+          <issue>4</issue>
+          <fpage>346</fpage>
+          <lpage>352</lpage>
+          <pub-id pub-id-type="doi">10.1111/j.1440-1673.1984.tb02363.x</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-0021708280</pub-id></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Majumder</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Trikudanathan</surname>
+              <given-names>G.</given-names></name>
+            <name>
+              <surname>Moezardalan</surname>
+              <given-names>K.</given-names></name>
+            <name>
+              <surname>Cappa</surname>
+              <given-names>J.</given-names></name>
+          </person-group>
+          <article-title>Vomiting-induced gastric emphysema: a rare self-limiting condition</article-title>
+          <source>
+            <italic>American Journal of the Medical Sciences</italic></source>
+          <year>2012</year>
+          <volume>343</volume>
+          <issue>1</issue>
+          <fpage>92</fpage>
+          <lpage>93</lpage>
+          <pub-id pub-id-type="doi">10.1097/maj.0b013e318232ccc2</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84855281110</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="article">
+        <label>3</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kim</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>H. U.</given-names></name>
+            <name>
+              <surname>Song</surname>
+              <given-names>H. J.</given-names></name>
+          </person-group>
+          <article-title>A case of gastric emphysema in anorexia nervosa presenting as acute gastric distension</article-title>
+          <source>
+            <italic>The Korean Journal of Gastroenterology</italic></source>
+          <year>2012</year>
+          <volume>60</volume>
+          <issue>5</issue>
+          <fpage>315</fpage>
+          <lpage>319</lpage>
+          <pub-id pub-id-type="doi">10.4166/kjg.2012.60.5.315</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84887511253</pub-id></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zenooz</surname>
+              <given-names>N. A.</given-names></name>
+            <name>
+              <surname>Robbin</surname>
+              <given-names>M. R.</given-names></name>
+            <name>
+              <surname>Perez</surname>
+              <given-names>V.</given-names></name>
+          </person-group>
+          <article-title>Gastric pneumatosis following nasogastric tube placement: a case report with literature review</article-title>
+          <source>
+            <italic>Emergency Radiology</italic></source>
+          <year>2007</year>
+          <volume>13</volume>
+          <issue>4</issue>
+          <fpage>205</fpage>
+          <lpage>207</lpage>
+          <pub-id pub-id-type="doi">10.1007/s10140-006-0544-2</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-33846162766</pub-id></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="article">
+        <label>5</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lester</surname>
+              <given-names>P. D.</given-names></name>
+            <name>
+              <surname>Budge</surname>
+              <given-names>A. F.</given-names></name>
+            <name>
+              <surname>Barnes</surname>
+              <given-names>J. C.</given-names></name>
+            <name>
+              <surname>Kirks</surname>
+              <given-names>D. R.</given-names></name>
+          </person-group>
+          <article-title>Gastric emphysema in infants with hypertrophic pyloric stenosis</article-title>
+          <source>
+            <italic>The American Journal of Roentgenology</italic></source>
+          <year>1978</year>
+          <volume>131</volume>
+          <issue>3</issue>
+          <fpage>421</fpage>
+          <lpage>423</lpage>
+          <pub-id pub-id-type="doi">10.2214/ajr.131.3.421</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-0018127076</pub-id></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Reuter</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Bangard</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Gerhardt</surname>
+              <given-names>F.</given-names></name>
+            <name>
+              <surname>Rosenkranz</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Erdmann</surname>
+              <given-names>E.</given-names></name>
+          </person-group>
+          <article-title>Extensive hepatic portal venous gas and gastric emphysema after successful resuscitation</article-title>
+          <source>
+            <italic>Resuscitation</italic></source>
+          <year>2011</year>
+          <volume>82</volume>
+          <issue>2</issue>
+          <fpage>238</fpage>
+          <lpage>239</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.resuscitation.2010.10.028</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-78751591289</pub-id></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Liebman</surname>
+              <given-names>P. R.</given-names></name>
+            <name>
+              <surname>Patten</surname>
+              <given-names>M. T.</given-names></name>
+            <name>
+              <surname>Manny</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Benfield</surname>
+              <given-names>J. R.</given-names></name>
+            <name>
+              <surname>Hechtman</surname>
+              <given-names>H. B.</given-names></name>
+          </person-group>
+          <article-title>Hepatic-portal venous gas in adults: Etiology, pathophysiology and clinical significance</article-title>
+          <source>
+            <italic>Annals of Surgery</italic></source>
+          <year>1978</year>
+          <volume>187</volume>
+          <issue>3</issue>
+          <fpage>281</fpage>
+          <lpage>287</lpage>
+          <pub-id pub-id-type="doi">10.1097/00000658-197803000-00012</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-0018085527</pub-id></nlm-citation>
+      </ref>
+      <ref id="B8" content-type="article">
+        <label>8</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Little</surname>
+              <given-names>A. F.</given-names></name>
+            <name>
+              <surname>Ellis</surname>
+              <given-names>S. J.</given-names></name>
+          </person-group>
+          <article-title>&#x201C;Benign&#x201D; hepatic portal venous gas</article-title>
+          <source>
+            <italic>Australasian Radiology</italic></source>
+          <year>2003</year>
+          <volume>47</volume>
+          <issue>3</issue>
+          <fpage>309</fpage>
+          <lpage>312</lpage>
+          <pub-id pub-id-type="doi">10.1046/j.1440-1673.2003.01184.x</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-0141762675</pub-id></nlm-citation>
+      </ref>
+      <ref id="B9" content-type="article">
+        <label>9</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Al-Jundi</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>Shebl</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Emphysematous gastritis: case report and literature review</article-title>
+          <source>
+            <italic>International Journal of Surgery</italic></source>
+          <year>2008</year>
+          <volume>6</volume>
+          <issue>6</issue>
+          <fpage>e63</fpage>
+          <lpage>e66</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.ijsu.2007.02.007</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-57049147486</pub-id></nlm-citation>
+      </ref>
+      <ref id="B10" content-type="article">
+        <label>10</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Szuchmacher</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Bedford</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Sukharamwala</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Nukala</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Parikh</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Devito</surname>
+              <given-names>P.</given-names></name>
+          </person-group>
+          <article-title>Is surgical intervention avoidable in cases of emphysematous gastritis? A case presentation and literature review</article-title>
+          <source>
+            <italic>International Journal of Surgery Case Reports</italic></source>
+          <year>2013</year>
+          <volume>4</volume>
+          <issue>5</issue>
+          <fpage>456</fpage>
+          <lpage>459</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.ijscr.2012.12.021</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84875705205</pub-id></nlm-citation>
+      </ref>
+      <ref id="B11" content-type="article">
+        <label>11</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Katz</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Cano</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Antonelle</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Benign air dissection of the esophagus and stomach at fiberesophagoscopy</article-title>
+          <source>
+            <italic>Gastrointestinal Endoscopy</italic></source>
+          <year>1972</year>
+          <volume>19</volume>
+          <issue>2</issue>
+          <fpage>72</fpage>
+          <lpage>74</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0016-5107(72)73957-7</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-0015470556</pub-id></nlm-citation>
+      </ref>
+      <ref id="B12" content-type="article">
+        <label>12</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Abboud</surname>
+              <given-names>B.</given-names></name>
+            <name>
+              <surname>El Hachem</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Yazbeck</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Doumit</surname>
+              <given-names>C.</given-names></name>
+          </person-group>
+          <article-title>Hepatic portal venous gas: physiopathology, etiology, prognosis and treatment</article-title>
+          <source>
+            <italic>World Journal of Gastroenterology</italic></source>
+          <year>2009</year>
+          <volume>15</volume>
+          <issue>29</issue>
+          <fpage>3585</fpage>
+          <lpage>3590</lpage>
+          <pub-id pub-id-type="doi">10.3748/wjg.15.3585</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-70349562983</pub-id></nlm-citation>
+      </ref>
+      <ref id="B13" content-type="article">
+        <label>13</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hussain</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Mahmood</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>El-Hasani</surname>
+              <given-names>S.</given-names></name>
+          </person-group>
+          <article-title>Portal vein gas in emergency surgery</article-title>
+          <source>
+            <italic>World Journal of Emergency Surgery</italic></source>
+          <year>2008</year>
+          <volume>3</volume>
+          <issue>1, article 21</issue>
+          <pub-id pub-id-type="doi">10.1186/1749-7922-3-21</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-48849116792</pub-id></nlm-citation>
+      </ref>
+      <ref id="B14" content-type="article">
+        <label>14</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Iannitti</surname>
+              <given-names>D. A.</given-names></name>
+            <name>
+              <surname>Gregg</surname>
+              <given-names>S. C.</given-names></name>
+            <name>
+              <surname>Mayo-Smith</surname>
+              <given-names>W. W.</given-names></name>
+            <name>
+              <surname>Tomolonis</surname>
+              <given-names>R. J.</given-names></name>
+            <name>
+              <surname>Cioffi</surname>
+              <given-names>W. G.</given-names></name>
+            <name>
+              <surname>Pricolo</surname>
+              <given-names>V. E.</given-names></name>
+          </person-group>
+          <article-title>Portal venous gas detected by computed tomography: is surgery imperative?</article-title>
+          <source>
+            <italic>Digestive Surgery</italic></source>
+          <year>2003</year>
+          <volume>20</volume>
+          <issue>4</issue>
+          <fpage>306</fpage>
+          <lpage>315</lpage>
+          <pub-id pub-id-type="doi">10.1159/000071756</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-0038349643</pub-id></nlm-citation>
+      </ref></ref-list>
+  </back></article>

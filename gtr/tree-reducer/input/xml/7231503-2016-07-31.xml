@@ -1,0 +1,768 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="publisher-id">CRIHEM</journal-id>
+			<journal-title-group>
+				<journal-title>Case Reports in Hematology</journal-title></journal-title-group>
+			<issn pub-type="epub">2090-6579</issn>
+			<issn pub-type="ppub">2090-6560</issn>
+			<publisher>
+				<publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="doi">10.1155/2016/7231503</article-id>
+			<article-id pub-id-type="publisher-id">7231503</article-id>
+			<article-categories>
+				<subj-group subj-group-type="heading">
+					<subject>Case Report</subject></subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Pernicious Anemia with Autoimmune Hemolytic Anemia: A Case Report and Literature Review</article-title></title-group>
+			<contrib-group>
+				<contrib contrib-type="author" id="U53648786" corresp="yes">
+					<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8937-0662</contrib-id>
+					<name>
+						<surname>Yeruva</surname>
+						<given-names>Sri Lakshmi Hyndavi</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">1</xref></contrib>
+				<contrib contrib-type="author" id="U97506076">
+					<name>
+						<surname>Manchandani</surname>
+						<given-names>Raj Pal</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">1</xref></contrib>
+				<contrib contrib-type="author" id="U54983179">
+					<name>
+						<surname>Oneal</surname>
+						<given-names>Patricia</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">1</xref></contrib>
+				<contrib contrib-type="Academic Editor" id="U32495827">
+					<name>
+						<surname>Feher</surname>
+						<given-names>Gergely</given-names></name>
+				</contrib></contrib-group>
+			<aff id="I1">
+				<addr-line>Division of Hematology and Oncology</addr-line>
+				<addr-line>Department of Internal Medicine</addr-line>
+				<addr-line>Howard University Hospital</addr-line>
+				<addr-line>Washington</addr-line>
+				<addr-line>DC 20060</addr-line>
+				<country>USA</country>
+      <ext-link ext-link-type="domain-name">howard.edu</ext-link></aff>
+			<pub-date pub-type="publication-year">
+				<year>2016</year></pub-date>
+			<pub-date pub-type="archival-date"><day>31</day><month>7</month><year>2016</year></pub-date>
+			<volume>2016</volume>
+			<history>
+				<date date-type="received">
+					<day>16</day>
+					<month>03</month>
+					<year>2016</year></date>
+				<date date-type="rev-recd">
+					<day>14</day>
+					<month>06</month>
+					<year>2016</year></date>
+				<date date-type="accepted">
+					<day>12</day>
+					<month>07</month>
+					<year>2016</year></date>
+				<date date-type="pub"><day>31</day><month>7</month><year>2016</year></date>
+			</history>
+			<permissions>
+				<copyright-year>2016</copyright-year>
+				<copyright-holder> Copyright &#xa9; 2016 Sri Lakshmi Hyndavi Yeruva et al.</copyright-holder>
+				<license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+					<license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+			</permissions>
+			<abstract>
+				<p>Pernicious anemia is a common cause of vitamin B12 deficiency. Here, we discuss a case of a young woman who presented with severe anemia along with a history of iron deficiency anemia. After a review of her clinical presentation and laboratory data, we identified an autoimmune hemolytic anemia and a concomitant pernicious anemia. The concurrence of both these hematological diagnoses in a patient is rare. </p></abstract>
+			<counts>
+				<ref-count count="20" />
+				<page-count count="4" /></counts>
+		</article-meta></front>
+	<body>
+		<sec id="sec1">
+			<title>1. Introduction</title>
+			<p>Vitamin B12 deficiency is common in the United States and pernicious anemia is one of the most common causes of vitamin B12 deficiency throughout the world [<xref ref-type="bibr" rid="B1">1</xref>]. Patients with vitamin B12 deficiency usually present with hematologic and neurologic findings. The hematologic manifestations can range from megaloblastic anemia to pancytopenia and can be life threatening in approximately 10&#x25; of patients [<xref ref-type="bibr" rid="B2">2</xref>]. In this paper, we present a young female with a history of iron deficiency anemia who came with severe anemia secondary to autoimmune hemolytic anemia (AIHA) and a vitamin B12 deficiency caused by a deficiency in intrinsic factor leading to pernicious anemia.</p></sec>
+		<sec id="sec2">
+			<title>2. Case Report</title>
+			<p>A 22-year-old African American female with past medical history of hypertension and iron deficiency anemia presented with generalized fatigue and new onset dyspnea on exertion of three-week duration. She started having heavy menstrual bleed requiring blood transfusions in last six months and recent transfusion of four units of packed red blood cells (PRBCs) was one month ago at an outside facility. Her last menstrual cycle was also a month ago. She denied any history of autoimmune diseases or history of miscarriages. She is sexually active with no history of sexually transmitted diseases. Her only home medications included iron supplements and oral contraceptive pills.</p>
+			<p>On admission, her vitals and physical examination were normal except for a heart rate of 132 beats/minute, pale conjunctiva with an icteric sclera, and morbid obesity. She did not have any organomegaly and neurologic examination was normal. Further review of labs showed hemoglobin and hematocrit of 4.8&#x2009;g/dL (normal range: 12.1&#x2013;15.9) and 13.4&#x25; (normal range: 34.3&#x2013;46.6), respectively, with platelets of 91,000 (normal range: 177000&#x2013;406000), MCV 87.7&#x2009;fL (normal range: 77.8&#x2013;98), RDW 14.4&#x25;, absolute reticulocyte count of 97,000, and reticulocyte percent of 7.8. Additional labs included serum iron 273&#x2009;mc/dL (normal range: 55&#x2013;185), ferritin 500&#x2009;ng/mL (normal range: 20&#x2013;400), transferrin of 234&#x2009;mg/dL (normal range: 192&#x2013;382), haptoglobin 2&#x2009;mg/dL (normal range: 36&#x2013;195), and LDH 1868&#x2009;IU/L (normal range: 0&#x2013;250). Renal, coagulation, and hepatic function tests were normal except for elevated total bilirubin of 1.5&#x2009;mg/dL (normal range: 0.2&#x2013;1.2). The peripheral smear showed marked anisocytosis, hypochromasia with poikilocytosis, many macrocytes, microcytes, and few schistocytes. Given her recent blood transfusion, we tried to determine if the hemolytic process was secondary to AIHA versus delayed hemolytic transfusion reaction. Her results showed no alloantibodies; however, a direct antiglobin test (Coombs) with IgG was found to be positive which was suggestive of AIHA. Further anemia workup also revealed a vitamin B12 deficiency at 60&#x2009;pg/mL (250&#x2013;950), folate 7.26&#x2009;ng/mL (5.9&#x2013;24.8), and normal thyroid profile. Homocysteine and methylmalonic acid levels were elevated at 22.4&#x2009;<italic>&#x3bc;</italic>mol/L (&#x3c;10.4) and 2300&#x2009;nmol/L (87&#x2013;813), respectively. These laboratory results confirmed a vitamin B12 deficiency. The etiology of the vitamin B12 deficiency was then ascertained with presence of intrinsic factor blocking and anti-parietal cell antibodies as lack of intrinsic factor and loss of parietal cells, resulting in pernicious anemia. Autoimmune workup with anti-centromere antibody, cyclic citrullinated peptide, ANA levels, rheumatoid factor along with serum immunoglobulins, and complements were negative. Her hepatitis panel showed immunity to hepatitis B and nonreactivity to hepatitis C and HIV.</p>
+			<p>After receiving two units of PRBCs for her symptomatic anemia, she was started on prednisone 100&#x2009;mg (1&#x2009;mg/kg of body weight) daily for the treatment of AIHA. Meanwhile, given her concomitant vitamin B12 deficiency, she was also initiated on daily parenteral vitamin B12 supplementation along with iron and folic acid supplementation. With these treatments, her hemoglobin and hematocrit levels improved to 7.1&#x2009;g/dL and 20.9&#x25; with a good reticulocyte response of 345,000 over a course of five days of treatment. Steroids were then decreased to prednisone 40&#x2009;mg and patient was discharged home.</p>
+			<p>Outpatient upper GI endoscopy was performed which showed patchy area of nonerosive gastritis in the antrum and atrophic mucosa in the body of the stomach. Biopsy of the atrophic mucosa revealed chronic active atrophic gastritis with intestinal metaplasia and immunostaining for<italic> Helicobacter pylori</italic> was negative. These findings were consistent with pernicious anemia.</p>
+			<p>On her subsequent clinic visits, we continued her on prednisone 40&#x2009;mg daily and monthly subcutaneous vitamin B12 supplementation until her hemoglobin and hematocrit stabilized. After the direct Coombs test became negative at six months, with a stable hemoglobin more than 10&#x2009;g/dL, normal LDH, and reticulocyte count &#x3c; 100,000, the steroids were gradually tapered off over two months while she was continued on subcutaneous vitamin B12 supplements.</p>
+			<p>Her laboratory data from most recent follow-up in clinic, which was two years after her initial presentation, was hemoglobin and hematocrit of 12.4&#x2009;g/dL and 38&#x25;, respectively, MCV 88&#x2009;fL with a reticulocyte percent of 3.5.</p></sec>
+		<sec id="sec3">
+			<title>3. Discussion</title>
+			<p>Vitamin B12 deficiency varies and increases with age. Prevalence of vitamin B12 deficiency is 3&#x25; in patients aged 20 to 39 years [<xref ref-type="bibr" rid="B3">3</xref>, <xref ref-type="bibr" rid="B4">4</xref>]. Pernicious anemia is an autoimmune disease caused by vitamin B12 deficiency due to atrophic gastritis or loss of parietal cells or lack of intrinsic factor. A diagnosis of pernicious anemia is made when patients have a low vitamin B12 level and positive intrinsic factor antibody or parietal cell antibody or low vitamin B12 level and presence of atrophic gastric mucosa, establishing the autoimmune nature of the disease and presence of vitamin B12 deficiency. Given the difficulty with accurate diagnosing of vitamin B12 deficiency on the currently available methods, patients with low normal vitamin B12 levels could still be deficient in it and in these instances, a diagnosis is made by elevated methylmalonic acid and homocysteine levels [<xref ref-type="bibr" rid="B5">5</xref>].</p>
+			<p>Vitamin B12 deficiency can present with a hemolytic picture in 1.5&#x25; of patients with elevated LDH, low haptoglobin, and elevated indirect bilirubin mostly due to ineffective erythropoiesis and intramedullary destruction [<xref ref-type="bibr" rid="B2">2</xref>, <xref ref-type="bibr" rid="B4">4</xref>]. Managing our patient was challenging as she presented with a severe normocytic anemia and hemolytic picture, none of which were suggesting vitamin B12 deficiency. Further evaluation for causes of anemia revealed a diagnosis of vitamin B12 deficiency due to deficiency of intrinsic factor and subsequently a diagnosis of pernicious anemia was made. As no alloantibodies were detected on further workup, a delayed hemolytic transfusion reaction as a cause for her hemolysis was ruled out.</p>
+			<p>As the management of anemia due to pernicious anemia with hemolysis is different from patients presenting with autoimmune hemolytic anemia (AIHA) with a positive direct Coombs test, differentiating these two conditions early on is important. Although it has been reported that patients with pernicious anemia can transiently have a positive Coombs test which becomes negative on treatment with vitamin B12 supplementation, patients with true AIHA would not respond to vitamin B12 supplementation, unless they are treated with steroids [<xref ref-type="bibr" rid="B6">6</xref>].</p>
+			<p>The autoimmune nature of the pernicious anemia is not fully understood but patients with this disease can have higher incidence of other autoimmune diseases, which might be due to a shared susceptibility in some individuals [<xref ref-type="bibr" rid="B5">5</xref>]. These two autoimmune mediated conditions (pernicious anemia and AIHA) can present concomitantly as in our patient or can be preceded by one another. The presence of autoimmune hemolytic anemia with a positive antiglobin test is not a common finding. In a study by Pirofsky and Vaughn, it was found that, among 103 patients with pernicious anemia, only 5 patients had positive antiglobin test [<xref ref-type="bibr" rid="B7">7</xref>]. In another study involving 865 patients with autoimmune hemolytic anemia, only three patients with pernicious anemia were positive for direct Coombs test [<xref ref-type="bibr" rid="B8">8</xref>].</p>
+			<p>A further literature search was done of published case reports and case series on autoimmune hemolytic anemia with a positive direct Coombs test in patients with pernicious anemia. As seen in Table <xref ref-type="table" rid="tab1">1</xref>, this association was noted mostly in women who were middle aged with other autoimmune conditions.</p>
+			<table-wrap id="tab1">
+				<label>Table 1</label>
+				<caption>
+					<p>Reported cases of pernicious anemia with autoimmune hemolytic anemia.</p></caption>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Serial number </th>
+							<th align="center">Author</th>
+							<th align="center">Year</th>
+							<th align="center">Number of cases</th>
+							<th align="center">Age</th>
+							<th align="center">Sex</th>
+							<th align="center">Other autoimmune diseases</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td align="left">1 </td>
+							<td align="center"> Selwyn and Alexander [<xref ref-type="bibr" rid="B9">9</xref>]</td>
+							<td align="center">1951</td>
+							<td align="center">1</td>
+							<td align="center">38</td>
+							<td align="center">M</td>
+							<td align="center">None</td></tr>
+						<tr>
+							<td align="left">2 </td>
+							<td align="center"> Rubio Jr. and Burgin [<xref ref-type="bibr" rid="B10">10</xref>]</td>
+							<td align="center">1957</td>
+							<td align="center">1</td>
+							<td align="center">64</td>
+							<td align="center">F</td>
+							<td align="center">None</td></tr>
+						<tr>
+							<td align="left">3 </td>
+							<td align="center">Willoughby et al. [<xref ref-type="bibr" rid="B11">11</xref>]</td>
+							<td align="center"> 1961</td>
+							<td align="center">1</td>
+							<td align="center">60</td>
+							<td align="center">F</td>
+							<td align="center">None</td></tr>
+						<tr>
+							<td align="left">4 </td>
+							<td align="center"> Forshaw and Harwood [<xref ref-type="bibr" rid="B12">12</xref>]</td>
+							<td align="center">1965</td>
+							<td align="center">5</td>
+							<td align="center">N/A</td>
+							<td align="center">N/A</td>
+							<td align="center">N/A</td></tr>
+						<tr>
+							<td align="left">5 </td>
+							<td align="center"> Pirofsky and Vaughn [<xref ref-type="bibr" rid="B7">7</xref>]</td>
+							<td align="center"> 1968</td>
+							<td align="center">5</td>
+							<td align="center">77<break />60<break />67<break />60<break />75</td>
+							<td align="center">M<break />M<break />F<break />F<break />M</td>
+							<td align="center">None<break />None<break />None<break />None<break />SLE</td></tr>
+						<tr>
+							<td align="left">6 </td>
+							<td align="center">Salvidio et al. [<xref ref-type="bibr" rid="B13">13</xref>]</td>
+							<td align="center">1975</td>
+							<td align="center">1</td>
+							<td align="center">56</td>
+							<td align="center">F</td>
+							<td align="center">None</td></tr>
+						<tr>
+							<td align="left">7 </td>
+							<td align="center">Nel [<xref ref-type="bibr" rid="B14">14</xref>]</td>
+							<td align="center">1983</td>
+							<td align="center">1</td>
+							<td align="center">16</td>
+							<td align="center">F</td>
+							<td align="center">Primary acquired<break />hypogammaglobulinemia</td></tr>
+						<tr>
+							<td align="left">8 </td>
+							<td align="center"> Baba and Maharaj [<xref ref-type="bibr" rid="B15">15</xref>]</td>
+							<td align="center">1988</td>
+							<td align="center">1</td>
+							<td align="center">71</td>
+							<td align="center">F</td>
+							<td align="center">Hypocalcemia</td></tr>
+						<tr>
+							<td align="left">9 </td>
+							<td align="center">Pelosio et al. [<xref ref-type="bibr" rid="B16">16</xref>]</td>
+							<td align="center">1989</td>
+							<td align="center">1</td>
+							<td align="center">61</td>
+							<td align="center">F</td>
+							<td align="center">Vitiligo</td></tr>
+						<tr>
+							<td align="left">10 </td>
+							<td align="center">Feld et al. [<xref ref-type="bibr" rid="B17">17</xref>]</td>
+							<td align="center">1989</td>
+							<td align="center">1</td>
+							<td align="center">66</td>
+							<td align="center">F</td>
+							<td align="center">SLE, Sj&#xf6;gren,<break />Hashimoto&#x2019;s thyroiditis</td></tr>
+						<tr>
+							<td align="left">11 </td>
+							<td align="center">Rabinowitz et al. [<xref ref-type="bibr" rid="B6">6</xref>]</td>
+							<td align="center">1990</td>
+							<td align="center">1</td>
+							<td align="center">61</td>
+							<td align="center">F</td>
+							<td align="center">None</td></tr>
+						<tr>
+							<td align="left">12 </td>
+							<td align="center">Zafad et al. [<xref ref-type="bibr" rid="B18">18</xref>]</td>
+							<td align="center"> 2007</td>
+							<td align="center">1</td>
+							<td align="center">16</td>
+							<td align="center">M</td>
+							<td align="center">Alopecia areata</td></tr>
+						<tr>
+							<td align="left">13 </td>
+							<td align="center"> Vucelic et al. [<xref ref-type="bibr" rid="B19">19</xref>]</td>
+							<td align="center">2008</td>
+							<td align="center">1</td>
+							<td align="center">55</td>
+							<td align="center">F</td>
+							<td align="center">Rheumatoid arthritis</td></tr>
+						<tr>
+							<td align="left">14 </td>
+							<td align="center">Aziz et al. [<xref ref-type="bibr" rid="B20">20</xref>]</td>
+							<td align="center">2010</td>
+							<td align="center">1</td>
+							<td align="center">80</td>
+							<td align="center">F</td>
+							<td align="center">None</td></tr>
+					</tbody></table>
+			</table-wrap></sec>
+		<sec id="sec4">
+			<title>4. Conclusion</title>
+			<p>Though AIHA and pernicious anemia are not common, clinicians should have a high index of suspicion when patients present with hemolytic picture and severe megaloblastic anemia, as a careful and systematic approach to diagnose the etiology of anemia can prevent patients from undergoing unnecessary procedures and treatments.</p></sec>
+	</body>
+	<back>
+		<sec>
+			<title>Competing Interests</title>
+			<p>The authors declare that they have no competing interests.</p></sec>
+		<ref-list>
+			<ref id="B1" content-type="article">
+				<label>1</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Stabler</surname>
+							<given-names>S. P.</given-names></name>
+						<name>
+							<surname>Allen</surname>
+							<given-names>R. H.</given-names></name>
+					</person-group>
+					<article-title>Vitamin B12 deficiency as a worldwide problem</article-title>
+					<source>
+						<italic>Annual Review of Nutrition</italic></source>
+					<year>2004</year>
+					<volume>24</volume>
+					<fpage>299</fpage>
+					<lpage>326</lpage>
+					<pub-id pub-id-type="doi">10.1146/annurev.nutr.24.012003.132440</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-3142673339</pub-id></nlm-citation>
+			</ref>
+			<ref id="B2" content-type="article">
+				<label>2</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Andr&#xe8;s</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Affenberger</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Zimmer</surname>
+							<given-names>J.</given-names></name>
+						<name>
+							<surname>Vinzio</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Grosu</surname>
+							<given-names>D.</given-names></name>
+						<name>
+							<surname>Pistol</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Maloisel</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Weitten</surname>
+							<given-names>T.</given-names></name>
+						<name>
+							<surname>Kaltenbach</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Blickl&#xe9;</surname>
+							<given-names>J.-F.</given-names></name>
+					</person-group>
+					<article-title>Current hematological findings in cobalamin deficiency. A study of 201 consecutive patients with documented cobalamin deficiency</article-title>
+					<source>
+						<italic>Clinical and Laboratory Haematology</italic></source>
+					<year>2006</year>
+					<volume>28</volume>
+					<issue>1</issue>
+					<fpage>50</fpage>
+					<lpage>56</lpage>
+					<pub-id pub-id-type="doi">10.1111/j.1365-2257.2006.00755.x</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-33645064021</pub-id></nlm-citation>
+			</ref>
+			<ref id="B3" content-type="article">
+				<label>3</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Allen</surname>
+							<given-names>L. H.</given-names></name>
+					</person-group>
+					<article-title>How common is vitamin B-12 deficiency?</article-title>
+					<source>
+						<italic>The American Journal of Clinical Nutrition</italic></source>
+					<year>2009</year>
+					<volume>89</volume>
+					<issue>2</issue>
+					<fpage>693S</fpage>
+					<lpage>696S</lpage></nlm-citation>
+			</ref>
+			<ref id="B4" content-type="article">
+				<label>4</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Andr&#xe8;s</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Loukili</surname>
+							<given-names>N. H.</given-names></name>
+						<name>
+							<surname>Noel</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Kaltenbach</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Ben Abdelgheni</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Perrin</surname>
+							<given-names>A. E.</given-names></name>
+						<name>
+							<surname>Noblet-Dick</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Maloisel</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Schlienger</surname>
+							<given-names>J.-L.</given-names></name>
+						<name>
+							<surname>Blickl&#xe9;</surname>
+							<given-names>J.-F.</given-names></name>
+					</person-group>
+					<article-title>Vitamin B12 (cobalamin) deficiency in elderly patients</article-title>
+					<source>
+						<italic>Canadian Medical Association Journal</italic></source>
+					<year>2004</year>
+					<volume>171</volume>
+					<issue>3</issue>
+					<fpage>251</fpage>
+					<lpage>259</lpage>
+					<pub-id pub-id-type="doi">10.1503/cmaj.1031155</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-4043175633</pub-id></nlm-citation>
+			</ref>
+			<ref id="B5" content-type="article">
+				<label>5</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Osborne</surname>
+							<given-names>D.</given-names></name>
+						<name>
+							<surname>Sobczy&#x144;ska-Malefora</surname>
+							<given-names>A.</given-names></name>
+					</person-group>
+					<article-title>Autoimmune mechanisms in pernicious anaemia &#x26; thyroid disease</article-title>
+					<source>
+						<italic>Autoimmunity Reviews</italic></source>
+					<year>2015</year>
+					<volume>14</volume>
+					<issue>9</issue>
+					<fpage>763</fpage>
+					<lpage>768</lpage>
+					<pub-id pub-id-type="doi">10.1016/j.autrev.2015.04.011</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-84938202074</pub-id></nlm-citation>
+			</ref>
+			<ref id="B6" content-type="article">
+				<label>6</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Rabinowitz</surname>
+							<given-names>A. P.</given-names></name>
+						<name>
+							<surname>Sacks</surname>
+							<given-names>Y.</given-names></name>
+						<name>
+							<surname>Carmel</surname>
+							<given-names>R.</given-names></name>
+					</person-group>
+					<article-title>Autoimmune cytopenias in pernicious anemia: a report of four cases and review of the literature</article-title>
+					<source>
+						<italic>European Journal of Haematology</italic></source>
+					<year>1990</year>
+					<volume>44</volume>
+					<issue>1</issue>
+					<fpage>18</fpage>
+					<lpage>23</lpage>
+					<pub-id pub-id-type="other">2-s2.0-0025230930</pub-id></nlm-citation>
+			</ref>
+			<ref id="B7" content-type="article">
+				<label>7</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Pirofsky</surname>
+							<given-names>B.</given-names></name>
+						<name>
+							<surname>Vaughn</surname>
+							<given-names>M.</given-names></name>
+					</person-group>
+					<article-title>Addisonian pernicious anemia with positive antiglobulin tests. A multiple autoimmune disease syndrome</article-title>
+					<source>
+						<italic>American Journal of Clinical Pathology</italic></source>
+					<year>1968</year>
+					<volume>50</volume>
+					<issue>4</issue>
+					<fpage>459</fpage>
+					<lpage>466</lpage>
+					<pub-id pub-id-type="doi">10.1093/ajcp/50.4.459</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0014338518</pub-id></nlm-citation>
+			</ref>
+			<ref id="B8" content-type="article">
+				<label>8</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Sokol</surname>
+							<given-names>R. J.</given-names></name>
+						<name>
+							<surname>Hewitt</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Stamps</surname>
+							<given-names>B. K.</given-names></name>
+					</person-group>
+					<article-title>Autoimmune haemolysis: an 18-year study of 865 cases referred to a regional transfusion centre</article-title>
+					<source>
+						<italic>British Medical Journal</italic></source>
+					<year>1981</year>
+					<volume>282</volume>
+					<issue>6281</issue>
+					<fpage>2023</fpage>
+					<lpage>2027</lpage>
+					<pub-id pub-id-type="doi">10.1136/bmj.282.6281.2023</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0019421951</pub-id></nlm-citation>
+			</ref>
+			<ref id="B9" content-type="article">
+				<label>9</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Selwyn</surname>
+							<given-names>J. G.</given-names></name>
+						<name>
+							<surname>Alexander</surname>
+							<given-names>S. S.</given-names></name>
+					</person-group>
+					<article-title>A positive Coombs reaction in pernicious anemia</article-title>
+					<source>
+						<italic>British Medical Journal</italic></source>
+					<year>1951</year>
+					<volume>1</volume>
+					<issue>4706</issue>
+					<fpage>564</fpage>
+					<lpage>565</lpage>
+					<pub-id pub-id-type="doi">10.1136/bmj.1.4706.564</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-76549250179</pub-id></nlm-citation>
+			</ref>
+			<ref id="B10" content-type="article">
+				<label>10</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Rubio</surname>
+							<given-names>F.</given-names>
+							<suffix>Jr.</suffix></name>
+						<name>
+							<surname>Burgin</surname>
+							<given-names>L.</given-names></name>
+					</person-group>
+					<article-title>Hemolytic disease complicated by pernicious anemia; report of two cases</article-title>
+					<source>
+						<italic>Bulletin of Tufts-New England Medical Center</italic></source>
+					<year>1957</year>
+					<volume>3</volume>
+					<issue>2</issue>
+					<fpage>77</fpage>
+					<lpage>85</lpage></nlm-citation>
+			</ref>
+			<ref id="B11" content-type="article">
+				<label>11</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Willoughby</surname>
+							<given-names>M. L.</given-names></name>
+						<name>
+							<surname>Pears</surname>
+							<given-names>M. A.</given-names></name>
+						<name>
+							<surname>Sharp</surname>
+							<given-names>A. A.</given-names></name>
+						<name>
+							<surname>Shields</surname>
+							<given-names>M. J.</given-names></name>
+					</person-group>
+					<article-title>Megaloblastic erythropoiesis in acquired hemolytic anemia</article-title>
+					<source>
+						<italic>Blood</italic></source>
+					<year>1961</year>
+					<volume>17</volume>
+					<fpage>351</fpage>
+					<lpage>356</lpage>
+					<pub-id pub-id-type="other">2-s2.0-73049141031</pub-id></nlm-citation>
+			</ref>
+			<ref id="B12" content-type="article">
+				<label>12</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Forshaw</surname>
+							<given-names>J.</given-names></name>
+						<name>
+							<surname>Harwood</surname>
+							<given-names>L.</given-names></name>
+					</person-group>
+					<article-title>The direct antiglobulin (Coombs) test in megaloblastic anaemia</article-title>
+					<source>
+						<italic>Journal of Clinical Pathology</italic></source>
+					<year>1965</year>
+					<volume>18</volume>
+					<fpage>119</fpage>
+					<lpage>120</lpage>
+					<pub-id pub-id-type="doi">10.1136/jcp.18.1.119</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-76549195692</pub-id></nlm-citation>
+			</ref>
+			<ref id="B13" content-type="article">
+				<label>13</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Salvidio</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Venzano</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>Boccaccio</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Ravazzolo</surname>
+							<given-names>R.</given-names></name>
+						<name>
+							<surname>Gaetani</surname>
+							<given-names>G. F.</given-names></name>
+						<name>
+							<surname>Ajmar</surname>
+							<given-names>F.</given-names></name>
+					</person-group>
+					<article-title>Pernicious anaemia followed by autoimmune haemolytic anaemia</article-title>
+					<source>
+						<italic>Proceedings of the Royal Society of Medicine</italic></source>
+					<year>1975</year>
+					<volume>68</volume>
+					<issue>7</issue>
+					<fpage>421</fpage>
+					<lpage>422</lpage>
+					<pub-id pub-id-type="other">2-s2.0-0016531807</pub-id></nlm-citation>
+			</ref>
+			<ref id="B14" content-type="article">
+				<label>14</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Nel</surname>
+							<given-names>A. E.</given-names></name>
+					</person-group>
+					<article-title>Primary acquired hypogammaglobulinaemia complicated by antibody-mediated haemolysis and pernicious anaemia. A case report</article-title>
+					<source>
+						<italic>South African Medical Journal</italic></source>
+					<year>1983</year>
+					<volume>64</volume>
+					<issue>9</issue>
+					<fpage>326</fpage>
+					<lpage>328</lpage>
+					<pub-id pub-id-type="other">2-s2.0-0021113898</pub-id></nlm-citation>
+			</ref>
+			<ref id="B15" content-type="article">
+				<label>15</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Baba</surname>
+							<given-names>A. A.</given-names></name>
+						<name>
+							<surname>Maharaj</surname>
+							<given-names>D.</given-names></name>
+					</person-group>
+					<article-title>Hypocalcaemia in autoimmune haemolytic anaemia and pernicious anaemia</article-title>
+					<source>
+						<italic>Postgraduate Medical Journal</italic></source>
+					<year>1988</year>
+					<volume>64</volume>
+					<issue>747</issue>
+					<fpage>61</fpage>
+					<lpage>62</lpage>
+					<pub-id pub-id-type="doi">10.1136/pgmj.64.747.61</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0023855424</pub-id></nlm-citation>
+			</ref>
+			<ref id="B16" content-type="article">
+				<label>16</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Pelosio</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Girelli</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Arista</surname>
+							<given-names>M. C.</given-names></name>
+						<name>
+							<surname>Galassi</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Longhi</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>Massini</surname>
+							<given-names>R.</given-names></name>
+					</person-group>
+					<article-title>Pernicious anemia, vitiligo and positive antiglobulin test: an unusual association</article-title>
+					<source>
+						<italic>Haematologica</italic></source>
+					<year>1989</year>
+					<volume>74</volume>
+					<issue>5</issue>
+					<fpage>499</fpage>
+					<lpage>501</lpage>
+					<pub-id pub-id-type="other">2-s2.0-0024723227</pub-id></nlm-citation>
+			</ref>
+			<ref id="B17" content-type="article">
+				<label>17</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Feld</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Landau</surname>
+							<given-names>Z.</given-names></name>
+						<name>
+							<surname>Gefel</surname>
+							<given-names>D.</given-names></name>
+						<name>
+							<surname>Green</surname>
+							<given-names>L.</given-names></name>
+						<name>
+							<surname>Resnitzky</surname>
+							<given-names>P.</given-names></name>
+					</person-group>
+					<article-title>Pernicious anemia, Hashimoto's thyroiditis and Sj&#xf6;gren's in a woman with SLE and autoimmune hemolytic anemia</article-title>
+					<source>
+						<italic>Journal of Rheumatology</italic></source>
+					<year>1989</year>
+					<volume>16</volume>
+					<issue>2</issue>
+					<fpage>258</fpage>
+					<lpage>259</lpage>
+					<pub-id pub-id-type="other">2-s2.0-0024609673</pub-id></nlm-citation>
+			</ref>
+			<ref id="B18" content-type="article">
+				<label>18</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Zafad</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Madani</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Harif</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Quessar</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Benchekroun</surname>
+							<given-names>S.</given-names></name>
+					</person-group>
+					<article-title>Pernicious anemia associated with autoimmune hemolytic anemia and alopecia areata</article-title>
+					<source>
+						<italic>Pediatric Blood and Cancer</italic></source>
+					<year>2007</year>
+					<volume>49</volume>
+					<issue>7</issue>
+					<fpage>1017</fpage>
+					<lpage>1018</lpage>
+					<pub-id pub-id-type="doi">10.1002/pbc.20896</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-35648987860</pub-id></nlm-citation>
+			</ref>
+			<ref id="B19" content-type="article">
+				<label>19</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Vucelic</surname>
+							<given-names>V.</given-names></name>
+						<name>
+							<surname>Stancic</surname>
+							<given-names>V.</given-names></name>
+						<name>
+							<surname>Ledinsky</surname>
+							<given-names>M.</given-names></name>
+						<etal /></person-group>
+					<article-title>Combined megaloblastic and immunohemolytic anemia associated&#x2014;a case report</article-title>
+					<source>
+						<italic>Acta Clinica Croatica</italic></source>
+					<year>2008</year>
+					<volume>47</volume>
+					<issue>4</issue>
+					<fpage>239</fpage>
+					<lpage>243</lpage></nlm-citation>
+			</ref>
+			<ref id="B20" content-type="article">
+				<label>20</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Aziz</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Alok</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Reisner</surname>
+							<given-names>M.</given-names></name>
+					</person-group>
+					<article-title>A case report of megaloblastic anemia associated with immuno&#x2014;hemolytic anemia in an old lady</article-title>
+					<source>
+						<italic>Chinese Journal of Lymphology and Oncology</italic></source>
+					<year>2010</year>
+					<volume>9</volume>
+					<fpage>37</fpage>
+					<lpage>39</lpage></nlm-citation>
+			</ref></ref-list>
+	</back></article>
