@@ -72,12 +72,33 @@
          * @returns {string} "pass" if the input runs without exception, "fail" if the input reproduces the error
          */
         test(input) {
-            var result = this.runCommand(input);
-            let splitCov = ("" + result.stdout).split("\n");
+            // Obtain results for the given code
+            // Test three times to avoid inconsistencies
+            let resArr = [];
+            for(let i = 0; i < 3; i++) {
+                let res = "" + this.runCommand(input).stdout;
+                resArr.push(res)
+            }
+
+            let result = resArr[0];
+            if(resArr[0] !== resArr[1]
+                || resArr[0] !== resArr[2]) {
+
+                console.log("Inconsistency!");
+                console.log("0: " + resArr[0]);
+                console.log("1: " + resArr[1]);
+                console.log("2: " + resArr[2]);
+
+                if(resArr[1] === resArr[2]) {
+                    result = resArr[1];
+                }
+            }
+
+            let splitCov = result.split("\n");
             let line_cov = splitCov[0];
             let branch_cov = splitCov[1];
+
             // For debugging:
-            // TODO: JP continue from here. The return value of the following should be line and branch coverage separated by a ','
             //console.log(JSON.stringify(result, 0, 2));
             // console.log(branch_cov + " vs " + this.initial_branch_cov);
             // console.log(line_cov + " vs " + this.initial_line_cov);
@@ -96,9 +117,8 @@
             fs.writeFileSync(file.name, code);
             //fs.writeFileSync("test.xml", code);
 
-
             // Reset coverage
-            child_process.spawnSync('find . -name "*.gcda" -type f -delete', [], {
+            let deleteResult = child_process.spawnSync('find . -name "*.gcda" -type f -delete', [], {
                 shell: true,
                 cwd: "../program-generation/xml/libxml2-2.9.4"
             });

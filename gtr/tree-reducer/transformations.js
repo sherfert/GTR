@@ -29,7 +29,7 @@
     } catch(e) {
         // No model
         console.log("NO MODEL OF INFERRED RULES");
-        console.log(e);
+        // console.log(e);
 		modelMissing = true;
     }
 
