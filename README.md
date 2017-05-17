@@ -22,7 +22,7 @@ Prerequisites
 =============
 1. Clone the repository
 2. Have node v6.0.0a and npm v3.8.6 or newer installed
-3. Have python 3.4.3 and 2.7.6 installed
+3. Have python 3.4.3 and 2.7.6 installed (Here installing python 3.4.3 is important)
 4. Install the following Python modules (recommended through pip): astor, numpy, pdfminer
 5. Run './init.sh'
 

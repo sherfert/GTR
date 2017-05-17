@@ -8,29 +8,45 @@
     // Map of programming language (String) -> Map of mandatory children
     var mandatoryChildren = {};
 	// This is to allow all transformations if we could not find the model/inferred knowledge
-	var modelMissing = false;
+    // Map of programming language (String) -> boolean
+	var modelMissing = {};
 
     // Read inferred information from JSON files
     try {
         let js = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-js.json");
-        let py = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-py.json");
-        let pdf = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-pdf.json");
-        let xml = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-xml.json");
-
         inferredParents["JS"] = js.parents;
-        inferredParents["PY"] = py.parents;
-        inferredParents["PDF"] = pdf.parents;
-        inferredParents["XML"] = xml.parents;
         mandatoryChildren["JS"] = js.mandatoryChildren;
-        mandatoryChildren["PY"] = py.mandatoryChildren;
-        mandatoryChildren["PDF"] = pdf.mandatoryChildren;
-        mandatoryChildren["XML"] = xml.mandatoryChildren;
-
     } catch(e) {
         // No model
-        console.log("NO MODEL OF INFERRED RULES");
-        // console.log(e);
-		modelMissing = true;
+        console.log("NO MODEL OF INFERRED RULES: JS");
+        modelMissing["JS"] = true;
+    }
+    try {
+        let py = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-py.json");
+        inferredParents["PY"] = py.parents;
+        mandatoryChildren["PY"] = py.mandatoryChildren;
+    } catch(e) {
+        // No model
+        console.log("NO MODEL OF INFERRED RULES: PY");
+        modelMissing["PY"] = true;
+    }
+    try {
+        let pdf = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-pdf.json");
+        inferredParents["PDF"] = pdf.parents;
+        mandatoryChildren["PDF"] = pdf.mandatoryChildren;
+    } catch(e) {
+        // No model
+        console.log("NO MODEL OF INFERRED RULES: PDF");
+        modelMissing["PDF"] = true;
+    }
+    try {
+        let xml = jsonfile.readFileSync(__dirname + "/inferredRules/gtrModelRule-xml.json");
+        inferredParents["XML"] = xml.parents;
+        mandatoryChildren["XML"] = xml.mandatoryChildren;
+    } catch(e) {
+        // No model
+        console.log("NO MODEL OF INFERRED RULES: XML");
+        modelMissing["XML"] = true;
     }
 
     /**
@@ -84,7 +100,7 @@
      * @returns {boolean} if the transformation is allowed
      */
     function pncTransformationAllowedForPL(p, l1, c, pl) {
-		if(modelMissing) {
+		if(modelMissing[pl]) {
 			return true;
 		}
 		
@@ -99,7 +115,7 @@
      * @returns {boolean} if the child is mandatory
      */
     function isMandatoryChildForPL(nodeLabel, edgeLabel, pl) {
-		if(modelMissing) {
+		if(modelMissing[pl]) {
 			return false;
 		}
 		
