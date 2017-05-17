@@ -23,7 +23,7 @@
         getTreeGenerator() {
             return pdfTreeGenerator;
         }
-        getInputTester(command, ddAlgo) {
+        getInputTester(command, ddAlgo, fileName) {
             return new inputTester.PDFMaliciousnessTester(ddAlgo);
         }
         getEnding() {

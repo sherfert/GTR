@@ -23,7 +23,7 @@
         getTreeGenerator() {
             return pyTreeGenerator;
         }
-        getInputTester(command, ddAlgo) {
+        getInputTester(command, ddAlgo, fileName) {
             return new inputTester.PyCrashTester(command, ddAlgo);
         }
         getEnding() {

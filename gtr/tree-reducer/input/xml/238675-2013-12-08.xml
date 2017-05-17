@@ -1,0 +1,533 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">CRIM.SURGERY</journal-id>
+      <journal-title-group>
+        <journal-title>Case Reports in Surgery</journal-title></journal-title-group>
+      <issn pub-type="epub">2090-6919</issn>
+      <issn pub-type="ppub">2090-6900</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="other">238675</article-id>
+      <article-id pub-id-type="doi">10.1155/2013/238675</article-id>
+      <article-id pub-id-type="publisher-id">238675</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Case Report</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>
+          <italic>In Situ</italic> Split of the Liver When Portal Venous Embolization Fails to Induce Hypertrophy: A Report of Two Cases</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U74571569" corresp="yes">
+          <name>
+            <surname>Bj&#xf6;rnsson</surname>
+            <given-names>Bergth&#xf3;r</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1, 2</sup></xref>
+          <xref ref-type="aff" rid="I2" /></contrib>
+        <contrib contrib-type="author" id="U74147326">
+          <name>
+            <surname>Gasslander</surname>
+            <given-names>Thomas</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1, 2</sup></xref>
+          <xref ref-type="aff" rid="I2" /></contrib>
+        <contrib contrib-type="author" id="U56537942">
+          <name>
+            <surname>Sandstr&#xf6;m</surname>
+            <given-names>Per</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1, 2</sup></xref>
+          <xref ref-type="aff" rid="I2" /></contrib>
+        <contrib contrib-type="Academic Editor" id="U39029036">
+          <name>
+            <surname>Lal</surname>
+            <given-names>G.</given-names></name>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U78783106">
+          <name>
+            <surname>Santori</surname>
+            <given-names>G.</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <sup>1</sup>
+        <addr-line>Department of Surgery</addr-line>
+        <addr-line>County Council of &#xd6;sterg&#xf6;tland</addr-line>
+        <addr-line>581 85 Link&#xf6;ping</addr-line>
+        <country>Sweden</country>
+        <ext-link ext-link-type="domain-name">lio.se</ext-link></aff>
+      <aff id="I2">
+        <sup>2</sup>
+        <addr-line>Division of Surgery</addr-line>
+        <addr-line>Departmet of Clinical and Experimental Medicine</addr-line>
+        <addr-line>Faculty of Health Sciences</addr-line>
+        <addr-line>Link&#xf6;ping University</addr-line>
+        <addr-line>581 85 Link&#xf6;ping</addr-line>
+        <country>Sweden</country>
+        <ext-link ext-link-type="domain-name">liu.se</ext-link></aff>
+      <pub-date pub-type="publication-year">
+        <year>2013</year></pub-date>
+      <pub-date pub-type="archival-date">
+        <day>8</day>
+        <month>12</month>
+        <year>2013</year></pub-date>
+      <volume>2013</volume>
+      <history>
+        <date date-type="received">
+          <day>06</day>
+          <month>10</month>
+          <year>2013</year></date>
+        <date date-type="accepted">
+          <day>13</day>
+          <month>11</month>
+          <year>2013</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2013</copyright-year>
+        <copyright-holder>Copyright &#xa9; 2013 Bergth&#xf3;r Bj&#xf6;rnsson et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>
+          <italic>Introduction</italic>. Associated liver partition and portal vein ligation for staged hepatectomy (ALPPS) has been reported as an efficient alternative to portal vein embolization (PVE) to induce growth of the future liver remnant (FLR). This method combines portal vein ligation with splitting of the liver parenchyma. Although shown to be efficient in introducing growth of the FLR and allowing for resection of the deportalized part of the liver one to two weeks after the first operation, this approach carries a significant mortality. <italic>Presentation of Case</italic>. ALPPS was applied to two elderly patients where PVE failed to stimulate sufficient growth of the FLR. In both cases, subsequent growth of the FLR allowed for successful resection of the liver lesions. The postoperative course was uneventful for both patients. <italic>Discussion</italic>. In both cases, the growth of the FLR was similar to what was previously reported when ALPPS has been performed, both patients underwent radical resections that would probably not have been safe after only the PVE. <italic>Conclusion</italic>. ALPPS used as rescue technique when PVE fails to stimulate sufficient growth of the FLR can be expected to deliver similar results as ALPPS &#x201c;Up front&#x201d;. These cases also suggest that ALPPS is applicable to the elderly population.</p></abstract>
+      <counts>
+        <ref-count count="9" />
+        <page-count count="4" /></counts></article-meta>
+  </front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>Portal vein embolization (PVE) is the main method used to induce growth of the future liver remnant before large liver resections [<xref ref-type="bibr" rid="B1">1</xref>]. In addition to PVE, portal vein ligation is an important tool in the arsenal when the distribution of liver tumours alone requires a two-stage approach [<xref ref-type="bibr" rid="B2">2</xref>]. Recently ALPPS has been reported to induce accelerated growth of the FLR allowing for two-stage liver resections with short interval between the procedures. ALPPS consists of portal vein ligation and division (<italic>in situ</italic> split) of the liver parenchyma between the surgical specimen and the future liver remnant (FLR) but leaving the liver artery, bile duct, and the liver vein intact until the subsequent operation. At the second operation, (one to two weeks later) the remaining liver artery, bile duct, and liver vein are divided and the surgical specimen was extracted.</p>
+      <p>This new method, however, implies an additional operation and possibly more morbidity and mortality than PVE followed by one-stage liver resection. In addition, its superiority to PVE has been questioned [<xref ref-type="bibr" rid="B3">3</xref>]. So far, only 88 patients have been reported in the six series published on ALPPS and six of those have had ALPPS as a rescue treatment when PVE failed [<xref ref-type="bibr" rid="B4">4</xref>&#x2013;<xref ref-type="bibr" rid="B9">9</xref>]. Additionally, there are some reported successful cases of ALPPS, and it has been suggested that this new approach should be reserved as a rescue treatment for failed PVEs.</p>
+      <p>We present two cases of elderly patients treated primarily with PVE but then operated in two-stage manner with ALPPS as the liver hypertrophy gained with the PVE was insufficient.</p></sec>
+    <sec id="sec2">
+      <title>2. Presentation of Case</title>
+      <sec id="sec2.1">
+        <title>2.1. Case 1</title>
+        <p>A 77-year-old male (72&#x2009;kg) with no history of liver disease presented with nausea and vomiting. After a gastroscopy without pathological finding, a CT scan revealed a 128&#x2009;mm tumour in the right liver lobe extending into segments 4A and 4B (Figure <xref ref-type="fig" rid="fig1">1</xref>). The radiological characteristics of the mass were consistent with a hepatocellular carcinoma (HCC). Alpha fetoprotein was elevated to 3150&#x2009;kU/L. Further radiological workup did not reveal any signs of metastatic disease. The FLR did not show certain radiological signs of cirrhosis and the Child-Pugh score was 5. A multidisciplinary tumour board assessed the mass resectable with a right trisegmentectomy. However, the FLR was found to be insufficient in volume on volumetry done with CT scan (472&#x2009;mL, &#x3c;20&#x25; of total liver volume). In order to stimulate growth of the FLR, PVE on all right-sided portal vein branches was performed with Bead Blocksphere 100&#x2013;300 micrometer and coils (Biocompataibles UK Limited, Surrey, UK). At the time of PVE, the risk of accidental embolisation of the portal branches to segments 2 and 3 was found to be high if PVE was to be applied to segment 4.</p>
+        <fig-group id="fig1">
+          <caption>
+            <p>The liver in a patient with a large HCC on the right side before portal venous embolization (a) and the day after ISS (b). The arrow shows the tumor.</p></caption>
+          <fig id="fig1a">
+            <label>(a)</label>
+            <graphic xlink:href="238675.fig.001a" /></fig>
+          <fig id="fig1b">
+            <label>(b)</label>
+            <graphic xlink:href="238675.fig.001b" /></fig></fig-group>
+        <p>No complications were noted to the PVE and the patient was discharged. At surgical exploration, the FLR was found insufficient in size for the resection. An <italic>in situ</italic> split was therefore performed just to the right of the falciform ligament. Transection of the liver parenchyma was done using an ultrasonic dissector/aspirator (Cavitron Ultrasonic Surgical Aspirtaor, CUSA System, Valleylab Inc., Boulder CO), bipolar diathermy, clips, and sutures without applying the Pringle manoeuvre. The portal branches to segments 4A and 4B were divided and vessel loops were placed around the right portal pedicle and the right liver vein. Operation time was 295 minutes and estimated blood loss was 2000&#x2009;mL.</p>
+        <p>Seven days after the primary operation, a CT scan revealed growth of the FRL to 973&#x2009;mL (106&#x25;). On the 9th day after the ISS procedure, the second procedure was performed (Figure <xref ref-type="fig" rid="fig2">2</xref>). The right portal pedicle was divided using Endo GIA Ultra Universal with vascular stapler (Covidien, Mansfield, MA, USA), and the same method was used to divide the right and median liver veins. The operation time was 90 minutes and estimated blood loss was 100&#x2009;mL. Twelve days later, the patient was discharged after an uneventful hospital stay. INR peaked at 1,5 and bilirubin at 54&#x2009;micromol/L, but both returned to normal before discharge. The pathological examination revealed an 180&#x2009;mm radically resected HCC without signs of vascular invasion.</p>
+        <fig id="fig2">
+          <label>Figure 2</label>
+          <caption>
+            <p>The liver in a patient with large HCC on the right side at the beginning of stage 2 operation; a plastic bag is placed around the right liver half and segment 4.</p></caption>
+          <graphic xlink:href="238675.fig.002" /></fig></sec>
+      <sec id="sec2.2">
+        <title>2.2. Case 2</title>
+        <p>An 80-year-old male (77&#x2009;kg), operated 4 years previously with resection of the sigmoid colon because of a T3N1M0 adenocarcinoma, had been lost to follow up after the colonic surgery. When returning he presented with elevated CEA and a workup including CT scan of the abdomen revealed a 95&#x2009;mm tumour in the right liver lobe. The tumour was located mainly in segments 5 and 6 (Figure <xref ref-type="fig" rid="fig3">3</xref>), but it was extended towards the portal branches to segments 7 and 8. He was presented at a multidisciplinary tumour board. A decision was made to start chemotherapy in order to downsize the tumour. The left liver lobe was noted to be small (348&#x2009;mL, &#x3c;20&#x25; of total liver volume). A follow-up CT scan after 2 months of chemotherapy showed little or no reduction in tumour size. The strategy was changed to a preoperative right-sided PVE followed by a right-sided hemihepatectomy. A new CT scan, after PVE, revealed a 42&#x25; growth of the FLR, but it was still only 23&#x25; of the total liver volume. As the patient had received chemotherapy, this was found to be insufficient for resection. To further stimulate the growth of the FLR, ISS between segment 5/8 and segment 4 was done and vessel loops were placed around the right portal pedicle and the right liver vein at the first operation that lasted 164 minutes with estimated blood loss of 300&#x2009;mL (Figure <xref ref-type="fig" rid="fig4">4</xref>). A CT scan 6 days later showed 95&#x25; growth of the FLR compared to the initial volume and it was now &#x3e;30&#x25; of the total liver volume. On the 7th postoperative day a right-sided liver resection was done in the same manner as described above. That operation took 55 minutes and the estimated blood loss was 200&#x2009;mL. The postoperative course was uneventful and the patient was discharged on the 10th postoperative day. The pathological examination showed a radically resected adenocarcinoma metastasis.</p>
+        <fig-group id="fig3">
+          <caption>
+            <p>The liver in a patient with a large colorectal liver metastases on the right side before (a) and after (b) portal venous embolization.</p></caption>
+          <fig id="fig3a">
+            <label>(a)</label>
+            <graphic xlink:href="238675.fig.003a" /></fig>
+          <fig id="fig3b">
+            <label>(b)</label>
+            <graphic xlink:href="238675.fig.003b" /></fig></fig-group>
+        <fig id="fig4">
+          <label>Figure 4</label>
+          <caption>
+            <p>The liver in a patient with large colorectal liver metastases on the right side at the end of stage 1 operation. Ligaloops are placed around the right hepatic vein, the right portal triad, and the right hepatic artery.</p></caption>
+          <graphic xlink:href="238675.fig.004" /></fig></sec>
+    </sec>
+    <sec id="sec3">
+      <title>3. Discussion</title>
+      <p>The novel ALPPS must be considered one of the major progressing techniques within liver surgery for patients with initially unresectable disease. It seems to be an important option in cases with bilobar disease where two-stage surgery is the only option. However, it remains to be seen if this aggressive treatment could completely replace PVE as a method to induce growth of the FLR. It has to be kept in mind that every surgical procedure carries an inherent risk for complications, and thus PVE followed by one-step resection may be an appropriate approach for some patients. In the two cases presented the initial strategy was to carry out a single step resection after PVE. As the PVE showed to be insufficient for these patients, ISS was added as a rescue treatment allowing for successful resections. These findings are similar to the previously reported use of ALPPS as a rescue treatment after failed PVE [<xref ref-type="bibr" rid="B5">5</xref>].</p></sec>
+    <sec id="sec4">
+      <title>4. Conclusion</title>
+      <p>In patients with the need of extensive growth of the FLR, PVE is rarely enough as a preoperative growth stimulation, and the ALPPS concept is the only alternative today. In patients with a need for 10&#x2013;30&#x25; growth of the FLR, PVE may be the best alternative. In cases where the growth still is not enough after PVE, ISS may be added as a rescue option. Further, these cases suggest that the ALPPS concept is also applicable to the elderly population. As there is no reliable method of knowing in beforehand if PVE will induce the growth needed for one-stage resection, ISS can be used as a second-line treatment for the patients that do not respond adequately to PVE. In this way PVE may avoid unnecessary two-stage resections in patients where resections in the FLR are not needed.</p></sec>
+  </body>
+  <back>
+    <ack>
+      <title>Conflict of Interests</title>
+      <p>The authors declare that they have no conflict of interests.</p></ack>
+    <ref-list>
+      <ref id="B1" content-type="article">
+        <label>1</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Broering</surname>
+              <given-names>D. C.</given-names></name>
+            <name>
+              <surname>Hillert</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Krupski</surname>
+              <given-names>G.</given-names></name>
+            <name>
+              <surname>Fischer</surname>
+              <given-names>L.</given-names></name>
+            <name>
+              <surname>Mueller</surname>
+              <given-names>L.</given-names></name>
+            <name>
+              <surname>Achilles</surname>
+              <given-names>E. G.</given-names></name>
+            <name>
+              <surname>Esch</surname>
+              <given-names>J. S. A.</given-names></name>
+            <name>
+              <surname>Rogiers</surname>
+              <given-names>X.</given-names></name>
+            <name>
+              <surname>Vauthey</surname>
+              <given-names>J. N.</given-names></name>
+            <name>
+              <surname>Klar</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Orozco</surname>
+              <given-names>H.</given-names></name>
+          </person-group>
+          <article-title>Portal vein embolization versus portal vein ligation for induction of hypertrophy of the future liver remnant</article-title>
+          <source>
+            <italic>Journal of Gastrointestinal Surgery</italic></source>
+          <year>2002</year>
+          <volume>6</volume>
+          <issue>6</issue>
+          <fpage>905</fpage>
+          <lpage>913</lpage>
+          <pub-id pub-id-type="other">2-s2.0-19044386233</pub-id>
+          <pub-id pub-id-type="doi">10.1016/S1091-255X(02)00122-1</pub-id></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Narita</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Oussoultzoglou</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Jaeck</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Fuchschuber</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Rosso</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Pessaux</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Marzano</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Bachellier</surname>
+              <given-names>P.</given-names></name>
+          </person-group>
+          <article-title>Two-stage hepatectomy for multiple bilobar colorectal liver metastases</article-title>
+          <source>
+            <italic>The British Journal of Surgery</italic></source>
+          <year>2011</year>
+          <volume>98</volume>
+          <issue>10</issue>
+          <fpage>1463</fpage>
+          <lpage>1475</lpage>
+          <pub-id pub-id-type="other">2-s2.0-80052414471</pub-id>
+          <pub-id pub-id-type="doi">10.1002/bjs.7580</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="article">
+        <label>3</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Shindoh</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Vauthey</surname>
+              <given-names>J. N.</given-names></name>
+            <name>
+              <surname>Zimmitti</surname>
+              <given-names>G.</given-names></name>
+            <name>
+              <surname>Curley</surname>
+              <given-names>S. A.</given-names></name>
+            <name>
+              <surname>Huang</surname>
+              <given-names>S. Y.</given-names></name>
+            <name>
+              <surname>Mahvash</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Gupta</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Wallace</surname>
+              <given-names>M. J.</given-names></name>
+            <name>
+              <surname>Aloia</surname>
+              <given-names>T. A.</given-names></name>
+          </person-group>
+          <article-title>Analysis of the efficacy of portal vein embolization for patients with extensive liver malignancy and very low future liver remnant volume, including a comparison with the associating liver partition with portal vein ligation for staged hepatectomy approach</article-title>
+          <source>
+            <italic>Journal of the American College of Surgeons</italic></source>
+          <year>2013</year>
+          <volume>217</volume>
+          <issue>1</issue>
+          <fpage>126</fpage>
+          <lpage>133</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.jamcollsurg.2013.03.004</pub-id></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alvarez</surname>
+              <given-names>F. A.</given-names></name>
+            <name>
+              <surname>Ardiles</surname>
+              <given-names>V.</given-names></name>
+            <name>
+              <surname>Claria</surname>
+              <given-names>R. S.</given-names></name>
+            <name>
+              <surname>Pekolj</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>de Santibanes</surname>
+              <given-names>E.</given-names></name>
+          </person-group>
+          <article-title>Associating liver partition and portal vein ligation for staged hepatectomy (ALPPS): tips and tricks</article-title>
+          <source>
+            <italic>Journal of Gastrointestinal Surgery</italic></source>
+          <year>2013</year>
+          <volume>17</volume>
+          <issue>4</issue>
+          <fpage>814</fpage>
+          <lpage>821</lpage>
+          <pub-id pub-id-type="doi">10.1007/s11605-012-2092-2</pub-id></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="article">
+        <label>5</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Knoefel</surname>
+              <given-names>W. T.</given-names></name>
+            <name>
+              <surname>Gabor</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Rehders</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Alexander</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Krausch</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Esch</surname>
+              <given-names>J. S. A.</given-names></name>
+            <name>
+              <surname>F&#xfc;rst</surname>
+              <given-names>G.</given-names></name>
+            <name>
+              <surname>Topp</surname>
+              <given-names>S. A.</given-names></name>
+          </person-group>
+          <article-title>In situ liver transection with portal vein ligation for rapid growth of the future liver remnant in two-stage liver resection</article-title>
+          <source>
+            <italic>The British Journal of Surgery</italic></source>
+          <year>2013</year>
+          <volume>100</volume>
+          <issue>3</issue>
+          <fpage>388</fpage>
+          <lpage>394</lpage>
+          <pub-id pub-id-type="doi">10.1002/bjs.8955</pub-id></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Li</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Girotti</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Konigsrainer</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Ladurner</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Konigsrainer</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Nadalin</surname>
+              <given-names>S.</given-names></name>
+          </person-group>
+          <article-title>ALPPS in right trisectionectomy: a safe procedure to avoid postoperative liver failure?</article-title>
+          <source>
+            <italic>Journal of Gastrointestinal Surgery</italic></source>
+          <year>2013</year>
+          <volume>17</volume>
+          <issue>5</issue>
+          <fpage>956</fpage>
+          <lpage>961</lpage>
+          <pub-id pub-id-type="doi">10.1007/s11605-012-2132-y</pub-id></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schnitzbauer</surname>
+              <given-names>A. A.</given-names></name>
+            <name>
+              <surname>Lang</surname>
+              <given-names>S. A.</given-names></name>
+            <name>
+              <surname>Goessmann</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Nadalin</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Baumgart</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Farkas</surname>
+              <given-names>S. A.</given-names></name>
+            <name>
+              <surname>Fichtner-Feigl</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Lorf</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Goralcyk</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>H&#xf6;rbelt</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Kroemer</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Loss</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>R&#xfc;mmele</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Scherer</surname>
+              <given-names>M. N.</given-names></name>
+            <name>
+              <surname>Padberg</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>K&#xf6;nigsrainer</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Lang</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Obed</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Schlitt</surname>
+              <given-names>H. J.</given-names></name>
+          </person-group>
+          <article-title>Right portal vein ligation combined with in situ splitting induces rapid left lateral liver lobe hypertrophy enabling 2-staged extended right hepatic resection in small-for-size settings</article-title>
+          <source>
+            <italic>Annals of Surgery</italic></source>
+          <year>2012</year>
+          <volume>255</volume>
+          <issue>3</issue>
+          <fpage>405</fpage>
+          <lpage>414</lpage>
+          <pub-id pub-id-type="other">2-s2.0-84857656174</pub-id>
+          <pub-id pub-id-type="doi">10.1097/SLA.0b013e31824856f5</pub-id></nlm-citation>
+      </ref>
+      <ref id="B8" content-type="article">
+        <label>8</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Torres</surname>
+              <given-names>O. J.</given-names></name>
+            <name>
+              <surname>Fernandes</surname>
+              <given-names>E. D.</given-names></name>
+            <name>
+              <surname>Oliveira</surname>
+              <given-names>C. V.</given-names></name>
+            <name>
+              <surname>Lima</surname>
+              <given-names>C. X.</given-names></name>
+            <name>
+              <surname>Waechter</surname>
+              <given-names>F. L.</given-names></name>
+            <name>
+              <surname>Moraes-Junior</surname>
+              <given-names>J. M.</given-names></name>
+            <name>
+              <surname>Linhares</surname>
+              <given-names>M. M.</given-names></name>
+            <name>
+              <surname>Pinto</surname>
+              <given-names>R. D.</given-names></name>
+            <name>
+              <surname>Herman</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Machado</surname>
+              <given-names>M. A.</given-names></name>
+          </person-group>
+          <article-title>Associating liver partition and portal vein ligation for staged hepatectomy (ALPPS): the Brazilian experience</article-title>
+          <source>
+            <italic>Arquivos Brasileiros de Cirurgia Digestiva</italic></source>
+          <year>2013</year>
+          <volume>26</volume>
+          <issue>1</issue>
+          <fpage>40</fpage>
+          <lpage>43</lpage></nlm-citation>
+      </ref>
+      <ref id="B9" content-type="article">
+        <label>9</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tschuor</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Croome</surname>
+              <given-names>K. P.</given-names></name>
+            <name>
+              <surname>Sergeant</surname>
+              <given-names>G.</given-names></name>
+            <etal /></person-group>
+          <article-title>Salvage parenchymal liver transection for patients with insufficient volume increase after portal vein occlusion&#x2014;an extension of the ALPPS approach</article-title>
+          <source>
+            <italic>European Journal of Surgical Oncology</italic></source>
+          <year>2013</year>
+          <volume>39</volume>
+          <issue>11</issue>
+          <fpage>1230</fpage>
+          <lpage>1235</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.ejso.2013.08.009</pub-id></nlm-citation>
+      </ref></ref-list>
+  </back></article>

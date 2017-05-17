@@ -54,7 +54,7 @@ function treeToCodeNoFileIO(tree) {
  */
 function encodeString(str) {
     let res = "";
-    for(let i = 0; i < str.length; i++) {
+    for (let i = 0; i < str.length; i++) {
         res += encodeChar(str[i], str.charCodeAt(i))
     }
     return res;
@@ -69,7 +69,7 @@ function encodeString(str) {
 function encodeChar(char, charCode) {
     // RestrictedChar::=[#x1-#x8] | [#xB-#xC] |
     // [#xE-#x1F] | [#x7F-#x84] | [#x86-#x9F]
-    if((charCode >= 0x1 && charCode <= 0x8) ||
+    if ((charCode >= 0x1 && charCode <= 0x8) ||
         (charCode >= 0xB && charCode <= 0xC) ||
         (charCode >= 0xE && charCode <= 0x1F) ||
         (charCode >= 0x7F && charCode <= 0x84) ||

@@ -1,0 +1,466 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">CRIM.VASCULAR.MEDICINE</journal-id>
+      <journal-title-group>
+        <journal-title>Case Reports in Vascular Medicine</journal-title></journal-title-group>
+      <issn pub-type="epub">2090-6994</issn>
+      <issn pub-type="ppub">2090-6986</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="other">570945</article-id>
+      <article-id pub-id-type="doi">10.1155/2013/570945</article-id>
+      <article-id pub-id-type="publisher-id">570945</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Case Report</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Surgical Extirpation of Glomus Tumor from Rare Localization on the Upper Extremity</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U78159485">
+          <name>
+            <surname>Hrub&#xfd;</surname>
+            <given-names>Jan</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U81059737" corresp="yes">
+          <name>
+            <surname>Novotn&#xfd;</surname>
+            <given-names>Robert</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U15838276">
+          <name>
+            <surname>&#x160;pa&#x10d;ek</surname>
+            <given-names>Miroslav</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U87359876">
+          <name>
+            <surname>Mit&#xe1;&#x161;</surname>
+            <given-names>Petr</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U35873496">
+          <name>
+            <surname>Hlubock&#xfd;</surname>
+            <given-names>Jaroslav</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U20575986">
+          <name>
+            <surname>Jan&#xe1;k</surname>
+            <given-names>
+							David</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U91275051">
+          <name>
+            <surname>Pov&#xfd;&#x161;il</surname>
+            <given-names>Ctibor</given-names></name>
+          <xref ref-type="aff" rid="I2">
+            <sup>2</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U79656352">
+          <name>
+            <surname>Lindner</surname>
+            <given-names>Jaroslav</given-names></name>
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U58935683">
+          <name>
+            <surname>Brooke</surname>
+            <given-names>B. S.</given-names></name>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U68395654">
+          <name>
+            <surname>Filis</surname>
+            <given-names>K. A.</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <sup>1</sup>
+        <addr-line>2nd Department of Cardiovascular Surgery</addr-line>
+        <addr-line>General Teaching Hospital</addr-line>
+        <addr-line>Prague and 1st Faculty of Medicine</addr-line>
+        <addr-line>Charles University</addr-line>
+        <addr-line>
+					U Nnemocnice 2, 128 08 Prague 2</addr-line>
+        <country>Czech Republic</country>
+        <ext-link ext-link-type="domain-name">cuni.cz</ext-link></aff>
+      <aff id="I2">
+        <sup>2</sup>
+        <addr-line>Department of Pathology</addr-line>
+        <addr-line>General Teaching Hospital</addr-line>
+        <addr-line>Prague and 1st Faculty of Medicine</addr-line>
+        <addr-line>Charles University</addr-line>
+        <addr-line>U Nemocnice 2</addr-line>
+        <addr-line>Prague 2</addr-line>
+        <country>Czech Republic</country>
+        <ext-link ext-link-type="domain-name">cuni.cz</ext-link></aff>
+      <pub-date pub-type="publication-year">
+        <year>2013</year></pub-date>
+      <pub-date pub-type="archival-date">
+        <day>24</day>
+        <month>9</month>
+        <year>2013</year></pub-date>
+      <volume>2013</volume>
+      <history>
+        <date date-type="received">
+          <day>21</day>
+          <month>07</month>
+          <year>2013</year></date>
+        <date date-type="accepted">
+          <day>28</day>
+          <month>08</month>
+          <year>2013</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2013</copyright-year>
+        <copyright-holder>Copyright &#xa9; 2013 Jan Hrub&#xfd; et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>
+          <italic>Objective</italic>. To report on a very rare case of a glomus tumor manifested on the upper arm in a healthy young male patient. <italic>Case Presentation and Intervention</italic>. A 22-year-old male patient presented with bluish multifocal venous malformation on the left upper arm and was admitted for venous malformation excision. Pain, discomfort, and upper arm paraesthesia had been present for almost 6 years. Ultrasonography revealed septet tumor without blood flow in the subcutaneous region of anterior aspect of the upper arm. A multifocal venous malformation approximately 5&#x2013;10&#x2009;mm in diameter was excised. Histological examination showed dilated vascular area with proliferated glomus cells with round nucleus in the wall of dilated vascular structures. Based on histological examination, the final diagnosis was made as &#x201c;glomangioma.&#x201d; <italic>Conclusion</italic>. Histological examination is the only method that can establish final diagnosis. Currently, the only available treatment for this type of tumor is surgical excision.</p></abstract>
+      <counts>
+        <ref-count count="10" />
+        <page-count count="3" /></counts></article-meta>
+  </front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>  Glomus tumors are rare vascular lesions representing approximately 1&#x25; of all hand tumors [<xref ref-type="bibr" rid="B1">1</xref>]. First clinical description of glomus tumor is dated back to 1924 and was published by Moor et al. [<xref ref-type="bibr" rid="B2">2</xref>].  Typical manifestation of these tumors is in young individuals within the age of 20&#x2013;40 with no sex predilection, except in the subungual lesions which are far more common in women [<xref ref-type="bibr" rid="B3">3</xref>]. They are mainly found at the tip of digits and are presented by classic triad: severe pain, point tenderness, and cold sensitivity. Clinical features include blue discoloration, palpable nodule, and nail deformity in subungual tumors. From histological point of view, glomus tumor and its variants are benign neoplasms requiring only a simple excision as a definite method of treatment. Our case report presents a lesion that was superficial and it was not related to any major blood vessels. Only a couple of cases of extradigital glomus tumors have been found in the upper arm region and have been published (the latest [<xref ref-type="bibr" rid="B4">4</xref>]).</p></sec>
+    <sec id="sec2">
+      <title>2. Clinical Presentation and Intervention</title>
+      <p>   A 22-year-old patient was admitted to the hospital for the excision of painful multifocal vascular deformity on the left upper arm (Figure <xref ref-type="fig" rid="fig1">1</xref>), which was clinically similar to varicose vein malformation. Besides the presence of venous malformation on the left upper arm, the patient was healthy without any additional pathology found during general patient examination upon admission to the hospital. Patient&#x2019;s medical history was insignificant. Pain, discomfort, and upper arm paraesthesia had been present for almost 6 years. When patient performed physical work with his left arm, pain and paraesthesia would occur on the anterior and posterior region of the shoulder and anterior region of the arm, as well as the left pectoral region. Examination performed by ultrasonography described septet tumor without blood flow in the subcutaneous region of the anterior aspect of the upper extremity. The tumor presented itself as a bluish multifocal area 5&#x2013;10&#x2009;mm in diameter, just above biceps muscle (Figure <xref ref-type="fig" rid="fig1">1</xref>). During surgery, the tumor was exposed through a short skin incision on the left upper arm (Figure <xref ref-type="fig" rid="fig2">2</xref>). The operation was followed by permanent and immediate relief of pain. Histological examination showed dilated vascular area with proliferated glomus cells with a round nucleus in the wall of dilated vascular structures (Figures <xref ref-type="fig" rid="fig3">3</xref> and <xref ref-type="fig" rid="fig4">4</xref>). Final diagnosis, based on the histological examination, was glomangioma.</p>
+      <fig id="fig1">
+        <label>Figure 1</label>
+        <caption>
+          <p>Perioperative finding.</p></caption>
+        <graphic xlink:href="570945.fig.001" /></fig>
+      <fig id="fig2">
+        <label>Figure 2</label>
+        <caption>
+          <p>Multifocal location&#x2014;preoperative finding.</p></caption>
+        <graphic xlink:href="570945.fig.002" /></fig>
+      <fig id="fig3">
+        <label>Figure 3</label>
+        <caption>
+          <p>Tumour histology&#x2014;dilated vascular areas.</p></caption>
+        <graphic xlink:href="570945.fig.003" /></fig>
+      <fig id="fig4">
+        <label>Figure 4</label>
+        <caption>
+          <p>Detail&#x2014;proliferated glomus cells with round nuclei in the wall of dilated vascular structures.</p></caption>
+        <graphic xlink:href="570945.fig.004" /></fig></sec>
+    <sec id="sec3">
+      <title>3. Discussion</title>
+      <p>  The glomus tumors are classified as a solitary glomus tumor, glomangioma, or nonchromaffin paraganglioma. Glomangiomas are rare, mainly benign blue-red painful tumors. These tumors account for 1&#x25; of all arm soft tissue tumors [<xref ref-type="bibr" rid="B1">1</xref>]. They belong to a group of tumors called hemangioma. Glomus body is a specialized form of arteriovenous anastomosis which regulates heat [<xref ref-type="bibr" rid="B5">5</xref>]. It is located in the <italic>stratum reticularis</italic> of dermis, and it is most frequently encountered in the subungual region, lateral areas of the digits and palm. The glomus body is made up of an afferent arteriole. This arteriole is derived from the small arterioles that supply dermis. The arteriole branches into two or four preglomic arterioles. These arterioles are endowed with the usual complement of the muscle cells and an internal elastic lamina. They blend gradually into a thick-walled segment well knows as the Sucquet-Hoyer canal. The entire glomic complex is surrounded by a collagenous tissue which is composed of vessels and small nerves [<xref ref-type="bibr" rid="B5">5</xref>].</p>
+      <p>   They are generally manifested as a solitary lesion. In some cases we have seen multiple lesions. The lesions develop as small blue-red nodules and are usually located in the deep dermis or the subcutis of the upper or the lower extremity. The most common location where this tumor presents itself is the subungual region of the finger. Also, extradigital sites have been noted. There are only few extra digital tumors documented on the upper extremity (the latest [<xref ref-type="bibr" rid="B4">4</xref>]). Other anatomical localizations where this tumor was found include urinary bladder, small intestine, stomach, larynx, and other unusual anatomical locations [<xref ref-type="bibr" rid="B6">6</xref>&#x2013;<xref ref-type="bibr" rid="B9">9</xref>]. Tumors located superficially are often presented with paroxysms of pain which radiate away from the lesion. These symptoms are often exacerbated by changes in the temperature, especially the exposure to cold. The deeply seated glomus tumors are not presented with commonly related symptoms [<xref ref-type="bibr" rid="B3">3</xref>].</p>
+      <p>  Extradigital glomus tumors may be encountered in the hand and in the forearm. Surgeons should be aware of this possibility, and they should consider it in the differential diagnoses of such vascular lesions of the upper extremity [<xref ref-type="bibr" rid="B10">10</xref>].</p></sec>
+  </body>
+  <back>
+    <ack>
+      <title>Consent</title>
+      <p>   Written informed consent was obtained from the patient for publication of this case report and accompanying images.</p></ack>
+    <ack>
+      <title>Conflict of Interests</title>
+      <p>The authors declare that there is no conflict of interests regarding the publication of this paper.</p></ack>
+    <ref-list>
+      <ref id="B1" content-type="incollection">
+        <label>1</label>
+        <nlm-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bolognia</surname>
+              <given-names>J. L.</given-names></name>
+            <name>
+              <surname>Jorizzo</surname>
+              <given-names>J. L.</given-names></name>
+            <name>
+              <surname>Rapini</surname>
+              <given-names>R. P.</given-names></name>
+          </person-group>
+          <article-title>Vascular malformation</article-title>
+          <source>
+            <italic>Dermatology</italic></source>
+          <year>2008</year>
+          <edition>2nd</edition>
+          <supplement>section 17</supplement>
+          <publisher-loc>St. Louis, Mo, USA</publisher-loc>
+          <publisher-name>Mosby</publisher-name>
+          <fpage>491</fpage>
+          <lpage>500</lpage></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Moor</surname>
+              <given-names>E. V.</given-names></name>
+            <name>
+              <surname>Goldberg</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Westreich</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Multiple glomus tumor: a case report and review of the literature</article-title>
+          <source>
+            <italic>Annals of Plastic Surgery</italic></source>
+          <year>1999</year>
+          <volume>43</volume>
+          <issue>4</issue>
+          <fpage>436</fpage>
+          <lpage>438</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0032846174</pub-id>
+          <pub-id pub-id-type="doi">10.1097/00000637-199910000-00016</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="incollection">
+        <label>3</label>
+        <nlm-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Folpe</surname>
+              <given-names>A. L.</given-names></name>
+            <name>
+              <surname>Guillou</surname>
+              <given-names>L.</given-names></name>
+          </person-group>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Folpe</surname>
+              <given-names>A. L.</given-names></name>
+            <name>
+              <surname>Inwards</surname>
+              <given-names>C. Y.</given-names></name>
+          </person-group>
+          <article-title>Tumours of the perivascular cells</article-title>
+          <source>
+            <italic>Bone and Soft Tissue Pathology</italic></source>
+          <year>2010</year>
+          <publisher-loc>Philadelphia, Pa, USA</publisher-loc>
+          <publisher-name>Saunders</publisher-name>
+          <fpage>153</fpage>
+          <lpage>157</lpage></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Becce</surname>
+              <given-names>F.</given-names></name>
+            <name>
+              <surname>Uldry</surname>
+              <given-names>E.</given-names></name>
+            <name>
+              <surname>Letovanec</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Theumann</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Meuwly</surname>
+              <given-names>J. Y.</given-names></name>
+          </person-group>
+          <article-title>Painful subcutaneous nodule of the arm. Extradigital glomus tumor (subcutaneous glomus tumor of the arm)</article-title>
+          <source>
+            <italic>Skeletal Radiology</italic></source>
+          <year>2013</year>
+          <volume>42</volume>
+          <issue>4</issue>
+          <fpage>587</fpage>
+          <lpage>588</lpage></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="incollection">
+        <label>5</label>
+        <nlm-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Weiss</surname>
+              <given-names>S. W.</given-names></name>
+            <name>
+              <surname>Goldblum</surname>
+              <given-names>J. R.</given-names></name>
+            <name>
+              <surname>Folpe</surname>
+              <given-names>A. L.</given-names></name>
+          </person-group>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Weiss</surname>
+              <given-names>S. W.</given-names></name>
+            <name>
+              <surname>Goldblum</surname>
+              <given-names>J. R.</given-names></name>
+          </person-group>
+          <article-title>Perivascular tumors</article-title>
+          <source>
+            <italic>Enzinger and Weiss's Soft Tisue Tumours</italic></source>
+          <year>2007</year>
+          <edition>5th</edition>
+          <publisher-loc>Philadelphia, Pa, USA</publisher-loc>
+          <publisher-name>Mosby</publisher-name>
+          <fpage>751</fpage>
+          <lpage>769</lpage></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sergio</surname>
+              <given-names>A. T.</given-names></name>
+            <name>
+              <surname>Bruno</surname>
+              <given-names>J. R.</given-names></name>
+            <name>
+              <surname>Vasileios</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Gabriele</surname>
+              <given-names>B.</given-names></name>
+            <name>
+              <surname>Maurizio</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Maria</surname>
+              <given-names>R. A.</given-names></name>
+          </person-group>
+          <article-title>Benign glomus tumor of the urinary bladder</article-title>
+          <source>
+            <italic>Archives of Pathology and Laboratory Medicine</italic></source>
+          <year>2013</year>
+          <volume>137</volume>
+          <issue>7</issue>
+          <fpage>1005</fpage>
+          <lpage>1008</lpage></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Abu-Zaid</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Azzam</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Amin</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Mohammed</surname>
+              <given-names>S.</given-names></name>
+          </person-group>
+          <article-title>Malignant glomus tumor (glomangio-sarcoma) of intestinal ileum: a rare case report</article-title>
+          <source>
+            <italic>Case Reports in Pathology</italic></source>
+          <year>2013</year>
+          <volume>2013</volume>
+          <lpage>5</lpage>
+          <pub-id pub-id-type="publisher-id">305321</pub-id>
+          <pub-id pub-id-type="doi">10.1155/2013/305321</pub-id></nlm-citation>
+      </ref>
+      <ref id="B8" content-type="article">
+        <label>8</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tang</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Hou</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Han</surname>
+              <given-names>X. Y.</given-names></name>
+            <name>
+              <surname>Zeng</surname>
+              <given-names>M. S.</given-names></name>
+            <name>
+              <surname>Yao</surname>
+              <given-names>X. Z.</given-names></name>
+          </person-group>
+          <article-title>Glomus tumor in the stomach: computed tomography and endoscopic ultrasound findings</article-title>
+          <source>
+            <italic>World Journal of Gastroenterology</italic></source>
+          <year>2013</year>
+          <volume>19</volume>
+          <issue>8</issue>
+          <fpage>1327</fpage>
+          <lpage>1329</lpage></nlm-citation>
+      </ref>
+      <ref id="B9" content-type="article">
+        <label>9</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Aslam</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Qazi</surname>
+              <given-names>Z. U.</given-names></name>
+            <name>
+              <surname>Ahmad</surname>
+              <given-names>A. H.</given-names></name>
+            <name>
+              <surname>Khan</surname>
+              <given-names>R. U.</given-names></name>
+          </person-group>
+          <article-title>Malignant glomus tumour of larynx: first case report and literature review</article-title>
+          <source>
+            <italic>The Journal of Laryngology and Otology</italic></source>
+          <year>2012</year>
+          <volume>126</volume>
+          <issue>7</issue>
+          <fpage>743</fpage>
+          <lpage>746</lpage></nlm-citation>
+      </ref>
+      <ref id="B10" content-type="article">
+        <label>10</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nigam</surname>
+              <given-names>J. S.</given-names></name>
+            <name>
+              <surname>Misra</surname>
+              <given-names>V.</given-names></name>
+            <name>
+              <surname>Singh</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Karuna</surname>
+              <given-names>V.</given-names></name>
+            <name>
+              <surname>Chauhan</surname>
+              <given-names>S.</given-names></name>
+          </person-group>
+          <article-title>A glomus tumour arising from the flexor aspect of the forearm: a case report with review of the literature</article-title>
+          <source>
+            <italic>Journal of Clinical and Diagnostic Research</italic></source>
+          <year>2012</year>
+          <volume>6</volume>
+          <issue>9</issue>
+          <fpage>1559</fpage>
+          <lpage>1561</lpage></nlm-citation>
+      </ref></ref-list>
+  </back></article>

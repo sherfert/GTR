@@ -35,7 +35,7 @@ function xmlObjToTree(obj) {
         node.setNull(true);
         return node;
     } else if (typeof obj !== "object") {
-        return new loTrees.Node(JSON.stringify(obj));
+        return new loTrees.Node(obj);
     } else if (obj.nodeType === TEXT_NODE) {
         return new loTrees.Node(obj.data);
     }
@@ -43,7 +43,7 @@ function xmlObjToTree(obj) {
     var node = new loTrees.Node("NODE_" + obj.nodeName);
     for (let j = 0; j < obj.attributes.length; j++) {
         var child = obj.attributes[j];
-        let childNode = xmlObjToTree(JSON.parse(child.value));
+        let childNode = xmlObjToTree(child.value);
         node.outgoing.push(new loTrees.Edge("attrib_" + child.name, childNode));
     }
 

@@ -1,0 +1,403 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="publisher-id">JNA</journal-id>
+			<journal-title-group>
+				<journal-title>Journal of Nucleic Acids</journal-title></journal-title-group>
+			<issn pub-type="epub">2090-021X</issn>
+			<issn pub-type="ppub">2090-0201</issn>
+			<publisher>
+				<publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="doi">10.1155/2014/412942</article-id>
+			<article-id pub-id-type="publisher-id">412942</article-id>
+			<article-categories>
+				<subj-group subj-group-type="heading">
+					<subject>Erratum</subject></subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Erratum to &#x201C;Analysis of Nucleotide Sequences of the 16S rRNA Gene of Novel <italic>Escherichia coli</italic> Strains Isolated from Feces of Human and Bali Cattle&#x201D;</article-title></title-group>
+			<contrib-group>
+				<contrib contrib-type="author" id="U36701094" corresp="yes">
+					<name>
+						<surname>Suardana</surname>
+						<given-names>I Wayan</given-names></name>
+					
+					<xref ref-type="aff" rid="I1" /></contrib>
+			</contrib-group>
+			<aff id="I1">
+				<addr-line>Department of Veterinary Public Health</addr-line>
+				<addr-line>Faculty of Veterinary Medicine</addr-line>
+				<addr-line>Udayana University</addr-line>
+				<addr-line>Jalan P.B. Sudirman, Denpasar</addr-line>
+				<addr-line>Bali 80232</addr-line>
+				<country>Indonesia</country>
+				<ext-link ext-link-type="domain-name">unud.ac.id</ext-link></aff>
+			<pub-date pub-type="publication-year">
+				<year>2014</year></pub-date>
+			<pub-date pub-type="archival-date"><day>28</day><month>12</month><year>2014</year></pub-date>
+			<volume>2014</volume>
+			<history>
+				<date date-type="received">
+					<day>08</day>
+					<month>05</month>
+					<year>2014</year></date>
+				<date date-type="rev-recd">
+					<day>30</day>
+					<month>07</month>
+					<year>2014</year></date>
+				<date date-type="accepted">
+					<day>30</day>
+					<month>07</month>
+					<year>2014</year></date>
+				<date date-type="pub">
+					<day>29</day>
+					<month>12</month>
+					<year>2014</year></date>
+			</history>
+			<permissions>
+				<copyright-year>2014</copyright-year>
+				<copyright-holder>Copyright &#xA9; 2014 I Wayan Suardana.</copyright-holder>
+				<license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+					<license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+			</permissions>
+			<counts>
+				<ref-count count="0" />
+				<page-count count="4" /></counts>
+		</article-meta></front>
+	<body>
+		<p>In the paper titled &#x201c;Analysis of Nucleotide Sequences of the 16S rRNA Gene of Novel<italic> Escherichia coli</italic> Strains Isolated from Feces of Human and Bali Cattle,&#x201d; according to my data, there are too many nucleotides of both<italic> S. dysenteriae</italic> and<italic> E. coli</italic> O26:H11 different from the other strains. So logically both strains are placed as outgroup. This fact is difficult to explain from the point of view of the evolution. Taking this in mind I submit the erratum, that is, Figures <xref ref-type="fig" rid="fig1">1</xref> and <xref ref-type="fig" rid="fig2">2</xref> and Table <xref ref-type="table" rid="tab1">1</xref> without<italic> Shigella dysenteriae</italic> and<italic> E. coli</italic> O26:H11 as a comparison. It is also completely concerned with the correction of some words in the specified paragraph. Figures <xref ref-type="fig" rid="fig1">1</xref> and <xref ref-type="fig" rid="fig2">2</xref> and Table <xref ref-type="table" rid="tab1">1</xref> are corrected here.</p>
+		<table-wrap id="tab1">
+			<label>Table 1</label>
+			<caption>
+				<p>Similarity analysis and nucleotides different  among 16S rRNA genes using PHYDIT program.</p></caption>
+			<table>
+				<thead>
+					<tr>
+						<th align="left" />
+						<th align="center">
+							<italic>Aeromonas </italic></th>
+						<th align="center">
+							<italic>Vibrio </italic></th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli</italic> EDL 933 W</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli</italic> Sakai</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli</italic> ATCC 43894</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli</italic> O111:H-</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli</italic> O104:H4</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli </italic>O121:H19</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli </italic>SM-25<inline-formula>
+								<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M1">
+									<mml:mrow>
+										<mml:msup>
+											<mml:mrow>
+												<mml:mrow>
+													<mml:mo stretchy="false">(</mml:mo>
+													<mml:mrow>
+														<mml:mn fontstyle="italic">1</mml:mn></mml:mrow>
+													<mml:mo stretchy="false">)</mml:mo></mml:mrow>
+											</mml:mrow>
+											<mml:mrow>
+												<mml:mi>*</mml:mi></mml:mrow>
+										</mml:msup></mml:mrow>
+								</mml:math></inline-formula>
+						</th>
+						<th align="center">
+							<italic>E</italic>. <italic>coli</italic> KL-48<inline-formula>
+								<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M2">
+									<mml:mrow>
+										<mml:msup>
+											<mml:mrow>
+												<mml:mrow>
+													<mml:mo stretchy="false">(</mml:mo>
+													<mml:mrow>
+														<mml:mn fontstyle="italic">2</mml:mn></mml:mrow>
+													<mml:mo stretchy="false">)</mml:mo></mml:mrow>
+											</mml:mrow>
+											<mml:mrow>
+												<mml:mi>*</mml:mi></mml:mrow>
+										</mml:msup></mml:mrow>
+								</mml:math></inline-formula>
+						</th>
+						<th align="center">
+							<italic>Shigella sonnei </italic></th>
+						<th align="center">
+							<italic>Streptomyces</italic> sp.</th>
+						<th align="center">
+							<italic>Bacillus</italic> sp.</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td align="left">
+							<italic>Aeromonas </italic></td>
+						<td align="center">—</td>
+						<td align="center">158/1500</td>
+						<td align="center">151/1376</td>
+						<td align="center">151/1376</td>
+						<td align="center">150/1376</td>
+						<td align="center">154/1503</td>
+						<td align="center">149/1375</td>
+						<td align="center">153/1529</td>
+						<td align="center">147/1376</td>
+						<td align="center">148/1376</td>
+						<td align="center">161/1529</td>
+						<td align="center">329/1445</td>
+						<td align="center">357/1377</td></tr>
+					<tr>
+						<td align="left">
+							<italic>Vibrio</italic> sp.</td>
+						<td align="center">89.47</td>
+						<td align="center">—</td>
+						<td align="center">131/1380</td>
+						<td align="center">131/1380</td>
+						<td align="center">130/1380</td>
+						<td align="center">134/1501</td>
+						<td align="center">141/1379</td>
+						<td align="center">146/1506</td>
+						<td align="center">140/1380</td>
+						<td align="center">138/1380</td>
+						<td align="center">252/1642</td>
+						<td align="center">326/1418</td>
+						<td align="center">458/1528</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli </italic>EDL 933 W</td>
+						<td align="center">89.03</td>
+						<td align="center">90.51</td>
+						<td align="center">—</td>
+						<td align="center">0/1380</td>
+						<td align="center">1/1380</td>
+						<td align="center">6/1380</td>
+						<td align="center">19/1379</td>
+						<td align="center">13/1379</td>
+						<td align="center">12/1380</td>
+						<td align="center">9/1380</td>
+						<td align="center">16/1380</td>
+						<td align="center">282/1346</td>
+						<td align="center">305/1325</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli</italic> Sakai</td>
+						<td align="center">89.03</td>
+						<td align="center">90.51</td>
+						<td align="center">100</td>
+						<td align="center">—</td>
+						<td align="center">1/1380</td>
+						<td align="center">6/1380</td>
+						<td align="center">19/1379</td>
+						<td align="center">13/1379</td>
+						<td align="center">12/1380</td>
+						<td align="center">9/1380</td>
+						<td align="center">16/1380</td>
+						<td align="center">282/1346</td>
+						<td align="center">305/1325</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli</italic> ATCC 43894</td>
+						<td align="center">89.1</td>
+						<td align="center">90.58</td>
+						<td align="center">99.93</td>
+						<td align="center">99.93</td>
+						<td align="center">—</td>
+						<td align="center">5/1380</td>
+						<td align="center">18/1379</td>
+						<td align="center">12/1379</td>
+						<td align="center">11/1380</td>
+						<td align="center">8/1380</td>
+						<td align="center">15/1380</td>
+						<td align="center">282/1346</td>
+						<td align="center">305/1325</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli</italic> O111:H-</td>
+						<td align="center">89.75</td>
+						<td align="center">91.07</td>
+						<td align="center">99.57</td>
+						<td align="center">99.57</td>
+						<td align="center">99.64</td>
+						<td align="center">—</td>
+						<td align="center">15/1379</td>
+						<td align="center">11/1506</td>
+						<td align="center">14/1380</td>
+						<td align="center">11/1380</td>
+						<td align="center">24/1506</td>
+						<td align="center">301/1420</td>
+						<td align="center">338/1378</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli </italic>O104:H4</td>
+						<td align="center">89.16</td>
+						<td align="center">89.78</td>
+						<td align="center">98.62</td>
+						<td align="center">98.62</td>
+						<td align="center">98.69</td>
+						<td align="center">98.91</td>
+						<td align="center">—</td>
+						<td align="center">6/1378</td>
+						<td align="center">7/1379</td>
+						<td align="center">12/1379</td>
+						<td align="center">5/1379</td>
+						<td align="center">280/1345</td>
+						<td align="center">305/1324</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli</italic> O121:H19</td>
+						<td align="center">89.99</td>
+						<td align="center">90.31</td>
+						<td align="center">99.06</td>
+						<td align="center">99.06</td>
+						<td align="center">99.13</td>
+						<td align="center">99.27</td>
+						<td align="center">99.56</td>
+						<td align="center">—</td>
+						<td align="center">5/1379</td>
+						<td align="center">6/1379</td>
+						<td align="center">21/1539</td>
+						<td align="center">309/1447</td>
+						<td align="center">342/1383</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli</italic> SM-25<inline-formula>
+								<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M3">
+									<mml:mrow>
+										<mml:msup>
+											<mml:mrow>
+												<mml:mrow>
+													<mml:mo class="left">(</mml:mo>
+													<mml:mrow>
+														<mml:mn fontstyle="italic">1</mml:mn></mml:mrow>
+													<mml:mo class="right">)</mml:mo></mml:mrow>
+											</mml:mrow>
+											<mml:mrow>
+												<mml:mi>*</mml:mi></mml:mrow>
+										</mml:msup></mml:mrow>
+								</mml:math></inline-formula>
+						</td>
+						<td align="center">89.32</td>
+						<td align="center">89.86</td>
+						<td align="center">99.13</td>
+						<td align="center">99.13</td>
+						<td align="center">99.2</td>
+						<td align="center">98.99</td>
+						<td align="center">99.49</td>
+						<td align="center">99.64</td>
+						<td align="center">—</td>
+						<td align="center">5/1380</td>
+						<td align="center">4/1380</td>
+						<td align="center">284/1346</td>
+						<td align="center">304/1325</td></tr>
+					<tr>
+						<td align="left">
+							<italic>E</italic>. <italic>coli</italic> KL-48<inline-formula>
+								<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M4">
+									<mml:mrow>
+										<mml:msup>
+											<mml:mrow>
+												<mml:mrow>
+													<mml:mo class="left">(</mml:mo>
+													<mml:mrow>
+														<mml:mn fontstyle="italic">2</mml:mn></mml:mrow>
+													<mml:mo class="right">)</mml:mo></mml:mrow>
+											</mml:mrow>
+											<mml:mrow>
+												<mml:mi>*</mml:mi></mml:mrow>
+										</mml:msup></mml:mrow>
+								</mml:math></inline-formula>
+						</td>
+						<td align="center">89.24</td>
+						<td align="center">90</td>
+						<td align="center">99.35</td>
+						<td align="center">99.35</td>
+						<td align="center">99.42</td>
+						<td align="center">99.2</td>
+						<td align="center">99.13</td>
+						<td align="center">99.56</td>
+						<td align="center">99.64</td>
+						<td align="center">—</td>
+						<td align="center">9/1380</td>
+						<td align="center">285/1346</td>
+						<td align="center">307/1325</td></tr>
+					<tr>
+						<td align="left">
+							<italic>Shigella sonnei </italic></td>
+						<td align="center">89.47</td>
+						<td align="center">84.65</td>
+						<td align="center">98.84</td>
+						<td align="center">98.84</td>
+						<td align="center">98.91</td>
+						<td align="center">98.41</td>
+						<td align="center">99.64</td>
+						<td align="center">98.64</td>
+						<td align="center">99.71</td>
+						<td align="center">99.35</td>
+						<td align="center">—</td>
+						<td align="center">314/1449</td>
+						<td align="center">511/1601</td></tr>
+					<tr>
+						<td align="left">
+							<italic>Streptomyces</italic> sp.</td>
+						<td align="center">77.23</td>
+						<td align="center">77.01</td>
+						<td align="center">79.05</td>
+						<td align="center">79.05</td>
+						<td align="center">79.05</td>
+						<td align="center">78.8</td>
+						<td align="center">79.18</td>
+						<td align="center">78.65</td>
+						<td align="center">78.9</td>
+						<td align="center">78.83</td>
+						<td align="center">78.33</td>
+						<td align="center">—</td>
+						<td align="center">278/1298</td></tr>
+					<tr>
+						<td align="left">
+							<italic>Bacillus</italic> sp.</td>
+						<td align="center">74.07</td>
+						<td align="center">70.03</td>
+						<td align="center">76.98</td>
+						<td align="center">76.98</td>
+						<td align="center">76.98</td>
+						<td align="center">75.47</td>
+						<td align="center">76.96</td>
+						<td align="center">75.27</td>
+						<td align="center">77.06</td>
+						<td align="center">76.83</td>
+						<td align="center">68.08</td>
+						<td align="center">78.58</td>
+						<td align="center">—</td></tr>
+				</tbody></table>
+			<table-wrap-foot>
+				<fn>
+					<p>
+						<inline-formula>
+							<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M5">
+								<mml:mrow>
+									<mml:msup>
+										<mml:mrow />
+										<mml:mrow>
+											<mml:mi>*</mml:mi></mml:mrow>
+									</mml:msup></mml:mrow>
+							</mml:math></inline-formula>Strain in this study.</p>
+				</fn></table-wrap-foot>
+		</table-wrap>
+		<fig id="fig1">
+			<label>Figure 1</label>
+			<caption>
+				<p>Nucleotides sequence of the 16S rRNA gene of the isolates<italic> E. coli</italic> SM-25(1) and<italic> E. coli</italic> KL-48(2) among nucleotides sequence of those available in databanks. Data indicated the position of nucleotides different among isolates and identical data for all isolates are not shown.</p></caption>
+			<graphic xlink:href="412942.fig.001" /></fig>
+		<fig id="fig2">
+			<label>Figure 2</label>
+			<caption>
+				<p>Phylogenetic tree was constructed using neighbor-joining algorithm [14] of nucleotides sequence of 16S rRNA gene. The number in the branch of phylogram indicates bootstrap value (%) by 1000-replication multiple and scale indicates one per 1000 substitutions of nucleotides sequence of 16S rRNA gene.</p></caption>
+			<graphic xlink:href="412942.fig.002" /></fig>
+		<p>Paragraph 4 of Results and Discussion is corrected as follows. The analysis of similarity or nucleotides different among<italic> E. coli</italic> SM-25(1) and KL-48(2) strains were studied against some strains of<italic> E. coli</italic>, that is,<italic> E. coli</italic> Sakai (BA000007),<italic> E. coli</italic> EDL 933 (AE005174),<italic> E. coli</italic> O104:H4 (AFOB02000112),<italic> E. coli</italic> O111:H-(GU237022),<italic> E. coli</italic> O121:H19 (JASV01000004), and<italic> E. coli</italic> ATCC 43894 as a bacterial control. The similarity analysis was also conducted on some strains of non-<italic>E. coli</italic>, that is,<italic> Aeromonas</italic> sp. (FM957460),<italic> Vibrio</italic> sp. (FM957459),<italic> Shigella sonnei</italic> (FR870445),<italic> Streptomyces</italic> sp. (AJ391832), and<italic> Bacillus</italic> sp. (AB851799) that are summarized in Table <xref ref-type="table" rid="tab1">1</xref>.</p>
+		<p>Paragraph 5 of Results and Discussion is corrected as follows. The summary of the 16S rRNA similarity analysis in Table <xref ref-type="table" rid="tab1">1</xref> showed that<italic> E. coli</italic> KL-48(2) that originated from human feces has nucleotide similarity to 16S rRNA gene closely against some strains. These strains, that is,<italic> E. coli</italic> SM-25(1),<italic> E. coli</italic> 121:H19,<italic> E. coli</italic> ATCC 43894,<italic> E. coli</italic> Sakai,<italic> E. coli</italic> EDL 933,<italic> Shigella sonnei</italic>,<italic> E. coli</italic> O111:H-, and<italic> E. coli</italic> O104:H4, are as high as 99.64, 99.56, 99.42, 99.35, 99.35, 99.35, 99.20, and 99.13&#x25;, respectively. Furthermore,<italic> E. coli</italic> SM-25(1) that originated from cattle feces also has high nucleotides similarity to the data of 16S rRNA that are available in GenBank also. It has nucleotides similarity to<italic> Shigella sonnei</italic>,<italic> E. coli</italic> O121:H19,<italic> E. coli</italic> O104:H4,<italic> E. coli</italic> ATCC 43894,<italic> E. coli</italic> Sakai, and<italic> E. coli</italic> EDL 933 as high as 99.71, 99.64, 99.49, 99.20, 99.13, and 99.13&#x25;, respectively. On the other hand, both strains showed percentage of nucleotide similarity distinctly to<italic> Bacillus</italic> sp.,<italic> Streptomyces</italic> sp.,<italic> Aeromonas</italic>, and<italic> Vibrio</italic> sp.</p>
+		<p>Paragraph 11 of Results and Discussion is corrected as follows. Phylogenetic tree in Figure <xref ref-type="fig" rid="fig2">2</xref> showed that the<italic> E. coli</italic> KL-48(2) and SM-25(1) made close clade with some strains of pathogenic<italic> E. coli</italic>. On the contrary, both strains also showed distinct clade against some strains that are available in databank. Some of those strains are<italic> Streptomyces</italic> sp. isolated from Yogyakarta,<italic> Bacillus</italic> sp. isolated from Jepara, and<italic> Vibrio</italic> sp. and<italic> Aeromonas</italic> sp. isolated from Lampung. As a result, both strains are proved to be a strain of pathogenic<italic> E. coli</italic> potentially.</p></body>
+</article>

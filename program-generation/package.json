@@ -17,9 +17,10 @@
   "author": "Michael Pradel, Jibesh Patra",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "escodegen": "^1.8.0",
     "esprima": "^2.7.2",
-    "jsonfile": "^2.2.3",
+    "jsonfile": "^2.4.0",
     "parse5": "^2.1.5",
     "plotly": "^1.0.6",
     "seedrandom": "^2.4.2",

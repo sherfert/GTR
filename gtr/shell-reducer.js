@@ -44,7 +44,7 @@
                 return jsTreeGenerator;
             }
         }
-        getInputTester(command, ddAlgo) {
+        getInputTester(command, ddAlgo, fileName) {
             return new ShellOracleTester(command, ddAlgo, "." + this.language.toLowerCase());
         }
         getEnding() {

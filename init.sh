@@ -46,3 +46,17 @@ cd ..
 cd pdf2tree
 mvn clean compile assembly:single
 cd ..
+
+# XML
+cd ./program-generation/xml
+wget ftp://xmlsoft.org/libxml2/libxml2-git-snapshot.tar.gz 
+tar -xvf libxml2-git-snapshot.tar.gz
+rm libxml2-git-snapshot.tar.gz
+cd ./libxml2-2.9.4
+CFLAGS="-fprofile-arcs -ftest-coverage -fPIC --coverage" CXXFLAGS="-fprofile-arcs -ftest-coverage -fPIC --coverage" ./configure --enable-debug && make -j 10 && make all
+cd ..
+wget https://github.com/gcovr/gcovr/archive/3.3.tar.gz
+tar -xvf 3.3.tar.gz && mv gcovr-3.3 gcovr
+rm 3.3.tar.gz
+cd ../../
+

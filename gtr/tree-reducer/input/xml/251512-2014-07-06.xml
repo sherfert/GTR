@@ -1,0 +1,596 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="publisher-id">BMRI</journal-id>
+			<journal-title-group>
+				<journal-title>BioMed Research International</journal-title></journal-title-group>
+			<issn pub-type="epub">2314-6141</issn>
+			<issn pub-type="ppub">2314-6133</issn>
+			<publisher>
+				<publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="doi">10.1155/2014/251512</article-id>
+			<article-id pub-id-type="publisher-id">251512</article-id>
+			<article-categories>
+				<subj-group subj-group-type="heading">
+					<subject>Editorial</subject></subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Emerging Microbial Concerns in Food Safety and New Control Measures</article-title></title-group>
+			<contrib-group>
+				<contrib contrib-type="author" id="U23856967" corresp="yes">
+					<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6652-9148</contrib-id>
+					<name>
+						<surname>Bondi</surname>
+						<given-names>Moreno</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U89543510">
+					<name>
+						<surname>Messi</surname>
+						<given-names>Patrizia</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U48491702">
+					<name>
+						<surname>Halami</surname>
+						<given-names>Prakash M.</given-names></name>
+					
+					<xref ref-type="aff" rid="I2">
+						<sup>2</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U18030721">
+					<name>
+						<surname>Papadopoulou</surname>
+						<given-names>Chrissanthy</given-names></name>
+					
+					<xref ref-type="aff" rid="I3">
+						<sup>3</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U20423037">
+					<name>
+						<surname>de Niederhausern</surname>
+						<given-names>Simona</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib></contrib-group>
+			<aff id="I1">
+				<sup>1</sup>
+				<addr-line>Department of Life Sciences</addr-line>
+				<addr-line>University of Modena and Reggio Emilia</addr-line>
+				<addr-line>Via Campi 287, 41125 Modena</addr-line>
+				<country>Italy</country>
+				<ext-link ext-link-type="domain-name">unimore.it</ext-link></aff>
+			<aff id="I2">
+				<sup>2</sup>
+				<addr-line>Food Microbiology Department</addr-line>
+				<addr-line>CSIR-Central Food Technological Research Institute</addr-line>
+				<addr-line>Mysore 570020</addr-line>
+				<country>India</country>
+				<ext-link ext-link-type="domain-name">cftri.com</ext-link></aff>
+			<aff id="I3">
+				<sup>3</sup>
+				<addr-line>Microbiology Department, Medical School</addr-line>
+				<addr-line>The University of Ioannina</addr-line>
+				<addr-line>451 10 Ioannina</addr-line>
+				<country>Greece</country>
+				<ext-link ext-link-type="domain-name">uoi.gr</ext-link></aff>
+			<pub-date pub-type="publication-year">
+				<year>2014</year></pub-date>
+			<pub-date pub-type="archival-date"><day>6</day><month>7</month><year>2014</year></pub-date>
+			<volume>2014</volume>
+			<history>
+				<date date-type="received">
+					<day>17</day>
+					<month>06</month>
+					<year>2014</year></date>
+				<date date-type="accepted">
+					<day>17</day>
+					<month>06</month>
+					<year>2014</year></date>
+				<date date-type="pub">
+					<day>6</day>
+					<month>7</month>
+					<year>2014</year></date>
+			</history>
+			<permissions>
+				<copyright-year>2014</copyright-year>
+				<copyright-holder>Copyright &#xA9; 2014 Moreno Bondi et al.</copyright-holder>
+				<license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+					<license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+			</permissions>
+			<counts>
+				<ref-count count="16" />
+				<page-count count="3" /></counts>
+		</article-meta></front>
+	<body>
+		<p>Food-borne diseases are a widespread and growing public health and economic problem. Recent modifications in food production and processing practices and ever-changing food habits of the consumer are important factors for the incidence of food-borne infections. Many recognized pathogens are of great concern today and new challenges have appeared in the recent years as the role of the interaction between pathogens during infection.</p>
+		<p>Despite chill chains, chemical preservatives, and a better understanding of microorganisms, food-borne diseases (FBD) represent an important health problem for developed and developing countries. It has been estimated that about 30&#x25; of people in industrialized countries suffer from a food-borne disease each year (about 76 million cases of illness, 325,000 hospitalization cases, and as many as 5000 deaths in the United States annually [<xref ref-type="bibr" rid="B1">1</xref>]) and 25&#x25; of all foods produced globally are lost due to microbial spoilage. The European Food Safety Authority (EFSA) and the European Centers for Disease Control (ECDC), analyzing the information on the occurrence of zoonosis and FBD in 2010 submitted by 27 European Union Member States, reported a total of 5,262 food-borne outbreaks, causing 43,473 human cases, 4,695 hospitalization cases, and 25 deaths. Most of the reported outbreaks were caused by<italic> Salmonella</italic>,<italic> Campylobacter</italic>, bacterial toxins, and viruses. In particular, the scientific report of EFSA and ECDS 2012 [<xref ref-type="bibr" rid="B2">2</xref>] shows the decreasing trend in case numbers of a &#x201c;classic&#x201d; pathogen as<italic> Salmonella</italic> continues, whereas for other etiological agents of FBD a slight or no decrease (<italic>Listeria monocytogenes</italic> and<italic> Campylobacter</italic>, resp.) or an increase (verotoxigenic<italic> Escherichia coli</italic>) in human cases has been observed. Another common cause of FBD worldwide is<italic> Staphylococcus aureus</italic>, responsible of an estimated 241,000 illnesses per year only in the United States [<xref ref-type="bibr" rid="B3">3</xref>].</p>
+		<p>In this special issue you will find an in-depth analysis on the importance of Staphylococcal food-borne disease. Recent findings of high prevalence of<italic> S. aureus</italic> including MRSA in raw retail meat impose a potential hazard to consumers, both as classic FBD and as a potential source of colonization of food handlers. An emerging problem that involves this field is therefore the increase of multidrug resistance in pathogenic, opportunistic, and spoilage bacteria, which can reach humans through the food chain. In recent years, for example, a new strain of<italic> S. aureus</italic>, livestock-associated methicillin-resistant<italic> Staphylococcus aureus</italic> (LA-MRSA), has been recognized as a novel pathogen that has become a rapidly emerging cause of human infections [<xref ref-type="bibr" rid="B4">4</xref>]. As demonstrated by scientific evidence [<xref ref-type="bibr" rid="B5">5</xref>&#x2013;<xref ref-type="bibr" rid="B7">7</xref>], genes for resistance may be transferred by mobile bacterial genetic elements frequently together with those encoding for virulence factors, a phenomenon that may lead to the appearance of microorganisms with increased pathogenicity.</p>
+		<p>This special issue also shows that, in some cases, the same pathogenic microorganisms, as well as representing a direct risk to health, can make the host more receptive to infection by other types of microorganisms, such as food-borne infections by protozoa.<italic> Giardia duodenalis</italic> is often seen as an opportunistic pathogen and one of the major food and waterborne parasites. For example, the<italic> Giardia</italic> coinfection with pathogens like<italic> Vibrio cholerae</italic> and<italic> Rotavirus</italic> seems to play a significant role in the occurrence of this parasite. Some important factors are responsible for the regulation of the diarrheal disease spectrum of a population, as the age distribution of the diarrheal cases that was very much dependent on the coinfection rate of<italic> Giardia</italic> infection.</p>
+		<p>Outbreak investigations have suggested that a lot of risk factors linked to the raw ingredients, improper handling of cooked or processed food, an inadequate cleaning, and disinfection of equipment used in food processing, are the main source of contamination. For this reason, it is important to have new technologies that make it possible to determine such problem in real time. Here you can find a new method to detect food contamination by sensory analysis of foods. A novel electronic nose (EN) represents the tool that provides this capability. The characteristic flavour of volatile organic compounds (VOCs), the so-called fingerprint, may offer information about safety and quality of food, performing sometimes as an indicator of process mistakes as well [<xref ref-type="bibr" rid="B8">8</xref>]. Indeed some volatile compounds can originate from biochemical processes of food as a consequence of technological food chain or product storage. Unwanted smell, the so-called off-flavour, may involve substances originating from the metabolism of spoilage microorganisms, bacteria, and fungi that adulterate naturally or unintentionally the food before or during its production [<xref ref-type="bibr" rid="B9">9</xref>]. This EN could represent a rapid mean for controlling and improving the microbiological quality of food and a potential and useful tool for the early detection of microbial growth.</p>
+		<p>In this special issue a method to determine the actual risk of cereulide toxin production, by<italic> Bacillus cereus</italic>, in different types of food is also reported. Several<italic> B. cereus</italic> strains possess the genetic fittings to produce two different types of toxins, the heat-stable cereulide or different heat-labile proteins with enterotoxigenic potential. Unlike the diarrheal toxins, cereulide is (pre-) formed in food and can cause food-borne intoxication shortly after ingestion of contaminated food. It is possible to use a lux-based real-time monitoring system to assess the significance of the detection of emetic strains and to determine the actual risk of cereulide toxin production in different types of food. Luciferase signals were quantified with software and foods were categorized into three main classes regarding their toxin formation capability: high-risk, risk, and low risk foods. This generalized scheme allows a basic preevaluation of foods and their ingredients concerning their capability to support cereulide formation and should facilitate hazard identification.</p>
+		<p>Even if the use of refrigeration temperature is the most employed preservative method, spoilage and psychrotrophic pathogens can grow at low temperatures, representing a threatening public health concern and shortening the shelf life of raw foods. Many outbreaks associated with fresh ready to-eat produce have been previously reported due to<italic> E. coli, Listeria,</italic> and<italic> Salmonella</italic> [<xref ref-type="bibr" rid="B10">10</xref>]. If bacterial development could be delayed or inhibited, it would be possible to obtain a great advantage relatively to the public health and the shelf life of products. Actually, the consumer preferences are moving towards foods containing lower levels of chemical preservatives, maintaining characteristics of fresh or natural products. Therefore, the preventive measures could be represented by sanitization methods alternative to the use of chemicals. A new microbial challenge in food safety, reported in this special issue, will be the use of physical treatment or the addition of natural preservatives endowed with antimicrobial capability. Recent studies demonstrate the bactericidal efficacy of alternative nonthermal light technologies and their potential as decontamination strategies in the food industry. A range of nonthermal technologies have already been successfully implemented on a number of ready-to-eat fruits and vegetables [<xref ref-type="bibr" rid="B11">11</xref>]. Exposure of microorganisms to visible light, particularly at wavelengths of 405&#x2009;nm, has been shown to be effective in inactivating a range of Gram- positive and Gram-negative bacterial species [<xref ref-type="bibr" rid="B12">12</xref>]. Thus, these alternative nonthermal disinfection light techniques could find potential applications for decontamination in the food industry.</p>
+		<p>The other alternative to chemical food preservatives is the use of lactic acid bacteria (LAB). LAB strains are food-grade organisms that may be used in biopreservation strategies due to their ability to produce several antimicrobial compounds, including organic acids, hydrogen peroxide, and bacteriocins [<xref ref-type="bibr" rid="B13">13</xref>]. These microorganisms and their products could be employed as starter cultures [<xref ref-type="bibr" rid="B14">14</xref>] and natural preservatives [<xref ref-type="bibr" rid="B15">15</xref>] or could be entrapped in a polymeric film for its potential use in the active food packaging field [<xref ref-type="bibr" rid="B16">16</xref>]. The study reported in this special issue has provided the first genetic characterization of bioactive<italic> Leuconostoc</italic> spp. isolated from Algerian raw camel milk because of its beneficial effects on human health.<italic> Leuconostoc</italic> spp. plays a crucial role in food biopreservation through the production of bacteriocins with different inhibition spectra and exerts beneficial effects on the microbiological stability and production of aroma compounds in various food products. This study also represents the first report on the application of MALDI TOF MS analysis for the faster and more reliable identification of<italic> L. mesenteroides</italic> based on their low molecular-weight protein profile. The application of MALDI TOF peptide mass fingerprinting has been successfully applied to this bacterial group and has proven to be a simple, quick, and inexpensive complementary method for bacterial identification at the species level.</p>
+		<p>This editorial collects a brief summary of the topics discussed in the articles that are published in<italic> Emerging Microbial Concerns in Food Safety and New Control Measures</italic>. We hope that readers of this special issue will find some information of interest in order to expand their knowledge in this field and to increase their level of attention on matters here reported.</p>
+		<p content-type="signature-group">
+			<named-content content-type="signature">Moreno Bondi</named-content>
+			<named-content content-type="signature">Patrizia Messi</named-content>
+			<named-content content-type="signature">Prakash M. Halami</named-content>
+			<named-content content-type="signature">Chrissanthy Papadopoulou</named-content>
+			<named-content content-type="signature">Simona de Niederhausern</named-content></p>
+	</body>
+	<back>
+		<ref-list>
+			<ref id="B1" content-type="article">
+				<label>1</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Hileman</surname>
+							<given-names>B.</given-names></name>
+					</person-group>
+					<article-title>Food irradiation</article-title>
+					<source>
+						<italic>Chemical and Engineering News</italic></source>
+					<year>2007</year>
+					<volume>85</volume>
+					<issue>3</issue>
+					<fpage>41</fpage>
+					<lpage>43</lpage>
+					<pub-id pub-id-type="other">2-s2.0-33846618267</pub-id></nlm-citation>
+			</ref>
+			<ref id="B2" content-type="article">
+				<label>2</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>European Food Safety Authority</surname></name>
+					</person-group>
+					<article-title>The European Union summary report on trends and sources of Zoonoses, zoonotic agents and food-borne outbreaks in 2010</article-title>
+					<source>
+						<italic>EFSA Journal</italic></source>
+					<year>2012</year>
+					<volume>10</volume>
+					<issue>3</issue>
+					<fpage>2597</fpage></nlm-citation>
+			</ref>
+			<ref id="B3" content-type="article">
+				<label>3</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Scallan</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Hoekstra</surname>
+							<given-names>R. M.</given-names></name>
+						<name>
+							<surname>Angulo</surname>
+							<given-names>F. J.</given-names></name>
+						<name>
+							<surname>Tauxe</surname>
+							<given-names>R. V.</given-names></name>
+						<name>
+							<surname>Widdowson</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Roy</surname>
+							<given-names>S. L.</given-names></name>
+						<name>
+							<surname>Jones</surname>
+							<given-names>J. L.</given-names></name>
+						<name>
+							<surname>Griffin</surname>
+							<given-names>P. M.</given-names></name>
+					</person-group>
+					<article-title>Foodborne illness acquired in the United States&#x2014;major pathogens</article-title>
+					<source>
+						<italic>Emerging Infectious Diseases</italic></source>
+					<year>2011</year>
+					<volume>17</volume>
+					<issue>1</issue>
+					<fpage>7</fpage>
+					<lpage>15</lpage>
+					<pub-id pub-id-type="doi">10.3201/eid1701.P11101</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-78650979311</pub-id></nlm-citation>
+			</ref>
+			<ref id="B4" content-type="article">
+				<label>4</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Larson</surname>
+							<given-names>K. R. L.</given-names></name>
+						<name>
+							<surname>Harper</surname>
+							<given-names>A. L.</given-names></name>
+						<name>
+							<surname>Hanson</surname>
+							<given-names>B. M.</given-names></name>
+						<name>
+							<surname>Male</surname>
+							<given-names>M. J.</given-names></name>
+						<name>
+							<surname>Wardyn</surname>
+							<given-names>S. E.</given-names></name>
+						<name>
+							<surname>Dressler</surname>
+							<given-names>A. E.</given-names></name>
+						<name>
+							<surname>Wagstrom</surname>
+							<given-names>E. A.</given-names></name>
+						<name>
+							<surname>Tendolkar</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Diekema</surname>
+							<given-names>D. J.</given-names></name>
+						<name>
+							<surname>Donham</surname>
+							<given-names>K. J.</given-names></name>
+						<name>
+							<surname>Smith</surname>
+							<given-names>T. C.</given-names></name>
+					</person-group>
+					<article-title>Methicillin-resistant <italic>Staphylococcus aureus</italic> in pork production shower facilities</article-title>
+					<source>
+						<italic>Applied and Environmental Microbiology</italic></source>
+					<year>2011</year>
+					<volume>77</volume>
+					<issue>2</issue>
+					<fpage>696</fpage>
+					<lpage>698</lpage>
+					<pub-id pub-id-type="doi">10.1128/AEM.01128-10</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-79551483717</pub-id></nlm-citation>
+			</ref>
+			<ref id="B5" content-type="article">
+				<label>5</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>de Niederh&#xe4;usern</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Sabia</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>Messi</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Guerrieri</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Manicardi</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Bondi</surname>
+							<given-names>M.</given-names></name>
+					</person-group>
+					<article-title>Glycopeptide-resistance transferability from vancomycin-resistant enterococci of human and animal source to Listeria spp</article-title>
+					<source>
+						<italic>Letters in Applied Microbiology</italic></source>
+					<year>2004</year>
+					<volume>39</volume>
+					<issue>6</issue>
+					<fpage>483</fpage>
+					<lpage>489</lpage>
+					<pub-id pub-id-type="doi">10.1111/j.1472-765X.2004.01598.x</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-9644262563</pub-id></nlm-citation>
+			</ref>
+			<ref id="B6" content-type="article">
+				<label>6</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>De Niederh&#xe4;usern</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Bondi</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Messi</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Iseppi</surname>
+							<given-names>R.</given-names></name>
+						<name>
+							<surname>Sabia</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>Manicardi</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Anacarso</surname>
+							<given-names>I.</given-names></name>
+					</person-group>
+					<article-title>Vancomycin-resistance transferability from VanA enterococci to <italic>Staphylococcus aureus</italic></article-title>
+					<source>
+						<italic>Current Microbiology</italic></source>
+					<year>2011</year>
+					<volume>62</volume>
+					<issue>5</issue>
+					<fpage>1363</fpage>
+					<lpage>1367</lpage>
+					<pub-id pub-id-type="doi">10.1007/s00284-011-9868-6</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-79954417237</pub-id></nlm-citation>
+			</ref>
+			<ref id="B7" content-type="article">
+				<label>7</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Bennett</surname>
+							<given-names>P. M.</given-names></name>
+					</person-group>
+					<article-title>Plasmid encoded antibiotic resistance: acquisition and transfer of antibiotic resistance genes in bacteria</article-title>
+					<source>
+						<italic>British Journal of Pharmacology</italic></source>
+					<year>2008</year>
+					<volume>153</volume>
+					<supplement>supplement 1</supplement>
+					<fpage>S347</fpage>
+					<lpage>S357</lpage>
+					<pub-id pub-id-type="doi">10.1038/sj.bjp.0707607</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-40349089738</pub-id></nlm-citation>
+			</ref>
+			<ref id="B8" content-type="article">
+				<label>8</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Concina</surname>
+							<given-names>I.</given-names></name>
+						<name>
+							<surname>Falasconi</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Sberveglieri</surname>
+							<given-names>V.</given-names></name>
+					</person-group>
+					<article-title>Electronic noses as flexible tools to assess food quality and safety: should we trust them?</article-title>
+					<source>
+						<italic>IEEE Sensors Journal</italic></source>
+					<year>2012</year>
+					<volume>12</volume>
+					<issue>11</issue>
+					<fpage>3232</fpage>
+					<lpage>3237</lpage>
+					<pub-id pub-id-type="doi">10.1109/JSEN.2012.2195306</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-84867719894</pub-id></nlm-citation>
+			</ref>
+			<ref id="B9" content-type="article">
+				<label>9</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Falasconi</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Concina</surname>
+							<given-names>I.</given-names></name>
+						<name>
+							<surname>Gobbi</surname>
+							<given-names>E.</given-names></name>
+						<name>
+							<surname>Sberveglieri</surname>
+							<given-names>V.</given-names></name>
+						<name>
+							<surname>Pulvienti</surname>
+							<given-names>A.</given-names></name>
+						<name>
+							<surname>Sberveglieri</surname>
+							<given-names>G.</given-names></name>
+					</person-group>
+					<article-title>Electronic nose for microbiological quality control of food products</article-title>
+					<source>
+						<italic>International Journal of Electrochemistry</italic></source>
+					<year>2012</year>
+					<volume>2012</volume>
+					<lpage>12</lpage>
+					<pub-id pub-id-type="publisher-id">715763</pub-id>
+					<pub-id pub-id-type="doi">10.1155/2012/715763</pub-id></nlm-citation>
+			</ref>
+			<ref id="B10" content-type="techreport">
+				<label>10</label>
+				<nlm-citation publication-type="gov">
+					<person-group person-group-type="author">
+						<name>
+							<surname>CDC</surname></name>
+					</person-group>
+					<article-title>Centers for Disease Control and Prevention</article-title>
+					<source>
+						<italic>Reports of Selected Outbreak Investigations</italic></source>
+					<year>2010</year>
+					<comment>
+						<ext-link ext-link-type="url" xlink:href="http://www.cdc.gov/foodsafetyoutbreaks/multistate-outbreaks/outbreaks-list.html">http://www.cdc.gov/foodsafetyoutbreaks/multistate-outbreaks/outbreaks-list.html</ext-link></comment>
+				</nlm-citation></ref>
+			<ref id="B11" content-type="article">
+				<label>11</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Ghate</surname>
+							<given-names>V.</given-names></name>
+						<name>
+							<surname>Ng</surname>
+							<given-names>K. S.</given-names></name>
+						<name>
+							<surname>Zhou</surname>
+							<given-names>W.</given-names></name>
+						<etal /></person-group>
+					<article-title>Antibacterial effect of light emitting diodes of visible wavelengths on selected foodborne pathogens at different illumination temperatures</article-title>
+					<source>
+						<italic>International Journal of Food Microbiology</italic></source>
+					<year>2013</year>
+					<volume>166</volume>
+					<issue>3</issue>
+					<fpage>399</fpage>
+					<lpage>406</lpage>
+					<pub-id pub-id-type="doi">10.1016/j.ijfoodmicro.2013.07.018</pub-id></nlm-citation>
+			</ref>
+			<ref id="B12" content-type="article">
+				<label>12</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Murdoch</surname>
+							<given-names>L. E.</given-names></name>
+						<name>
+							<surname>McKenzie</surname>
+							<given-names>K.</given-names></name>
+						<name>
+							<surname>Maclean</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>MacGregor</surname>
+							<given-names>S. J.</given-names></name>
+						<name>
+							<surname>Anderson</surname>
+							<given-names>J. G.</given-names></name>
+					</person-group>
+					<article-title>Lethal effects of high-intensity violet 405-nm light on <italic>Saccharomyces cerevisiae</italic>, <italic>Candida albicans</italic>, and on dormant and germinating spores of <italic>Aspergillus niger</italic></article-title>
+					<source>
+						<italic>Fungal Biology</italic></source>
+					<year>2013</year>
+					<volume>117</volume>
+					<issue>7-8</issue>
+					<fpage>519</fpage>
+					<lpage>527</lpage>
+					<pub-id pub-id-type="doi">10.1016/j.funbio.2013.05.004</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-84881371924</pub-id></nlm-citation>
+			</ref>
+			<ref id="B13" content-type="article">
+				<label>13</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Holzapfel</surname>
+							<given-names>W. H.</given-names></name>
+					</person-group>
+					<article-title>Biological preservation of foods with reference to protective cultures, bacteriocins and food-grade enzymes</article-title>
+					<source>
+						<italic>International Journal of Food Microbiology</italic></source>
+					<year>1995</year>
+					<volume>24</volume>
+					<issue>3</issue>
+					<fpage>343</fpage>
+					<lpage>362</lpage>
+					<pub-id pub-id-type="doi">10.1016/0168-1605(94)00036-6</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0028876862</pub-id></nlm-citation>
+			</ref>
+			<ref id="B14" content-type="article">
+				<label>14</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Sabia</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>de Niederh&#xe4;usern</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Messi</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Manicardi</surname>
+							<given-names>G.</given-names></name>
+						<name>
+							<surname>Bondi</surname>
+							<given-names>M.</given-names></name>
+					</person-group>
+					<article-title>Bacteriocin-producing <italic>Enterococcus casseliflavus</italic> IM 416K1, a natural antagonist for control of <italic>Listeria monocytogenes</italic> in Italian sausages (&#x201C;cacciatore&#x201D;)</article-title>
+					<source>
+						<italic>International Journal of Food Microbiology</italic></source>
+					<year>2003</year>
+					<volume>87</volume>
+					<issue>1-2</issue>
+					<fpage>173</fpage>
+					<lpage>179</lpage>
+					<pub-id pub-id-type="doi">10.1016/S0168-1605(03)00043-6</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-0042090579</pub-id></nlm-citation>
+			</ref>
+			<ref id="B15" content-type="article">
+				<label>15</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Anacarso</surname>
+							<given-names>I.</given-names></name>
+						<name>
+							<surname>Messi</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Cond&#xf2;</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>Iseppi</surname>
+							<given-names>R.</given-names></name>
+						<name>
+							<surname>Bondi</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Sabia</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>de Niederh&#xe4;usern</surname>
+							<given-names>S.</given-names></name>
+					</person-group>
+					<article-title>A bacteriocin-like substance produced from <italic>Lactobacillus pentosus</italic> 39 is a natural antagonist for the control of <italic>Aeromonas hydrophila</italic> and <italic>Listeria monocytogenes</italic> in fresh salmon fillets</article-title>
+					<source>
+						<italic>LWT&#x2014;Food Science and Technology</italic></source>
+					<year>2014</year>
+					<volume>55</volume>
+					<fpage>604</fpage>
+					<lpage>611</lpage></nlm-citation>
+			</ref>
+			<ref id="B16" content-type="article">
+				<label>16</label>
+				<nlm-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Iseppi</surname>
+							<given-names>R.</given-names></name>
+						<name>
+							<surname>de Niederh&#xe4;usern</surname>
+							<given-names>S.</given-names></name>
+						<name>
+							<surname>Anacarso</surname>
+							<given-names>I.</given-names></name>
+						<name>
+							<surname>Messi</surname>
+							<given-names>P.</given-names></name>
+						<name>
+							<surname>Sabia</surname>
+							<given-names>C.</given-names></name>
+						<name>
+							<surname>Pilati</surname>
+							<given-names>F.</given-names></name>
+						<name>
+							<surname>Toselli</surname>
+							<given-names>M.</given-names></name>
+						<name>
+							<surname>Esposti</surname>
+							<given-names>M. D.</given-names></name>
+						<name>
+							<surname>Bondi</surname>
+							<given-names>M.</given-names></name>
+					</person-group>
+					<article-title>Anti-listerial activity of coatings entrapping living bacteria</article-title>
+					<source>
+						<italic>Soft Matter</italic></source>
+					<year>2011</year>
+					<volume>7</volume>
+					<issue>18</issue>
+					<fpage>8542</fpage>
+					<lpage>8548</lpage>
+					<pub-id pub-id-type="doi">10.1039/c1sm05650f</pub-id>
+					<pub-id pub-id-type="other">2-s2.0-80052524417</pub-id></nlm-citation>
+			</ref></ref-list>
+	</back></article>

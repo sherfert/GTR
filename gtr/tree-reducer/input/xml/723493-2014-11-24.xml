@@ -1,0 +1,571 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">CRIRH</journal-id>
+      <journal-title-group>
+        <journal-title>Case Reports in Rheumatology</journal-title></journal-title-group>
+      <issn pub-type="epub">2090-6897</issn>
+      <issn pub-type="ppub">2090-6889</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1155/2014/723493</article-id>
+      <article-id pub-id-type="publisher-id">723493</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Case Report</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>IgG4-Related Disease: A Multispecialty Condition</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U39026796">
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4002-7094</contrib-id>
+          <name>
+            <surname>Us&#xea;da Santana</surname>
+            <given-names>Iuri</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U27609635">
+          <name>
+            <surname>da Fonseca</surname>
+            <given-names>Emanuela Pimenta</given-names></name>
+          
+          <xref ref-type="aff" rid="I2">
+            <sup>2</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U54289045" corresp="yes">
+          <name>
+            <surname>Santiago</surname>
+            <given-names>Mittermayer Barreto</given-names></name>
+          
+          <xref ref-type="aff" rid="I2">
+            <sup>2</sup></xref>
+        </contrib>
+        <contrib contrib-type="Academic Editor" id="U95431854">
+          <name>
+            <surname>Salazar-Paramo</surname>
+            <given-names>Mario</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <sup>1</sup>
+        <addr-line>Servi&#xe7;o de Cl&#xed;nica M&#xe9;dica do Hospital Geral Roberto Santos, Rua Direta do Saboeiro s/n, Cabula, 41180-900 Salvador, BA</addr-line>
+        <country>Brazil</country></aff>
+      <aff id="I2">
+        <sup>2</sup>
+        <addr-line>Servi&#xe7;os Especializados em Reumatologia (SER) da Bahia, Rua Conde Filho 117, Gra&#xe7;a, 40150-150 Salvador, BA</addr-line>
+        <country>Brazil</country></aff>
+      <pub-date pub-type="publication-year">
+        <year>2014</year></pub-date>
+      <pub-date pub-type="archival-date"><day>24</day><month>11</month><year>2014</year></pub-date>
+      <volume>2014</volume>
+      <history>
+        <date date-type="received">
+          <day>15</day>
+          <month>09</month>
+          <year>2014</year></date>
+        <date date-type="rev-recd">
+          <day>13</day>
+          <month>11</month>
+          <year>2014</year></date>
+        <date date-type="accepted">
+          <day>14</day>
+          <month>11</month>
+          <year>2014</year></date>
+        <date date-type="pub">
+          <day>24</day>
+          <month>11</month>
+          <year>2014</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2014</copyright-year>
+        <copyright-holder>Copyright &#xA9; 2014 Iuri Us&#xea;da Santana et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>IgG4-related disease (IgG4-RD) is a recently recognized group of conditions, characterized by tumor-like swelling of involved organs, lymphoplasmacytic infiltrate rich in IgG4-positive plasma cells, variable degrees of fibrosis, and elevated serum IgG4 concentrations. Currently IgG4-RD is recognized as a systemic condition that can affect several organs and tissues. Herein we report the case of a 34-year-old male patient who was admitted to our hospital with diffuse abdominal pain, weight loss, and painful stiffness in his neck. He had a history of tumoral mass of the left maxillary region, right palpebral ptosis with protrusion of the eyeball, and chronic dry cough for about 6 years. Laboratory tests revealed polyclonal hypergammaglobulinemia and increased serum IgG4 levels. Immunohistochemical staining of the maxillary biopsy was compatible with IgG4-RD. He had an excellent response to corticosteroid therapy. This case highlights that IgG4-RD should be included in the differential diagnosis with multisystem diseases.</p></abstract>
+      <counts>
+        <ref-count count="15" />
+        <page-count count="3" /></counts>
+    </article-meta></front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>IgG4-related disease (IgG4-RD) is a recently recognized fibroinflammatory group of disorders of unknown etiology, characterized by tumor-like swelling of the involved organs, tissue lymphoplasmacytic infiltrate rich in IgG4-positive plasma cells, variable degrees of fibrosis, and, often, elevated serum IgG4 concentrations. It was recognized as a systemic condition in 2003, in patients with autoimmune pancreatitis with extrapancreatic manifestations [<xref ref-type="bibr" rid="B1">1</xref>]. In this context it seems to be analogous to sarcoidosis, another disease in which similar histopathological findings are observed in various affected organs.</p>
+      <p>Several clinical conditions encompass the IgG4-RD: Type 1 autoimmune pancreatitis; sclerosing cholangitis; dacryoadenitis and sclerosing sialadenitis; inflammatory orbital pseudotumor; idiopathic retroperitoneal fibrosis; chronic sclerosing aortitis; Riedel&#x2019;s thyroiditis; IgG4-related interstitial pneumonitis, pulmonary inflammatory pseudotumors, tubulointerstitial nephritis, hypophysitis, and pachymeningitis and many other associations are likely to be revealed [<xref ref-type="bibr" rid="B1">1</xref>&#x2013;<xref ref-type="bibr" rid="B7">7</xref>].</p>
+      <p>The aim of the present report was to illustrate a case, in which diagnosis was delayed for years before IgG4-RD was recognized, drawing attention to the multidisciplinary nature of this condition and the necessity for suspecting its presence in patients with unspecific signs and symptoms, particularly when associated with histological findings of &#x201c;chronic inflammatory process.&#x201d;</p></sec>
+    <sec id="sec2">
+      <title>2. Case Report</title>
+      <p>A 34-year-old man was admitted to our hospital with a 4-month history of diffuse abdominal pain and body weight loss, progressing in 3 months to muscle weakness, abdominal distension, nausea, vomiting, and stiff painful swelling of his neck. His previous history included a fluctuating tumoral mass in the left maxillary region for the last six years, causing mild dysphagia and limiting movement of the temporomandibular joint. The pathological examination was consistent with a chronic inflammatory process. Later on he presented right palpebral ptosis with protrusion of the eyeball and chronic dry cough, with transbronchial biopsy examination revealing chronic pneumonitis and irregular septal fibrosis.</p>
+      <p>On examination he was afebrile, with blood pressure 120/80&#x2009;mmHg, with pale mucous membranes, anterior neck swelling and stiffness with local hyperemia, without palpable lymph nodes, reduced pulmonary expansion, diffuse abdominal pain, and rigidity on palpation. The remainder of the physical examination was unremarkable.</p>
+      <p>On admission laboratory tests revealed the following: hemoglobin 9.0&#x2009;g/dL, white blood cell count 21,390/mm<sup>3</sup>, platelet count 808,000/mm<sup>3</sup>, total bilirubin 2.89&#x2009;mg/dL (direct bilirubin 2.26&#x2009;mg/dL), calcium 8.2&#x2009;mg/dL, creatinine 0.4&#x2009;mg/dL, aspartate transaminase 25.7&#x2009;mg/dL, alanine transaminase 16.6&#x2009;mg/dL, and alkaline phosphatase 417&#x2009;mg/dL. Search for antinuclear antibodies (ANA), anti-SSA/Ro, and ANCA showed negative results. Serum protein electrophoresis and immunofixation showed polyclonal hypergammaglobulinemia. Serum IgG4 was 264&#x2009;mg/dL (reference value &#x2264;140&#x2009;mg/dL). Ultrasonography of the neck showed soft tissues swelling. Abdominal ultrasonography was normal.</p>
+      <p>The patient developed daily fever, asthenia, diarrhea, profuse coughing, and intense dyspnea. Chest radiography revealed bilateral parenchymal infiltration, multiple pulmonary nodules, and consolidation in the lower right hemithorax. As the patient&#x2019;s clinical condition was not improving, despite the use of broad spectrum antibiotics (piperacillin/tazobactam, meropenem) and mechanical ventilation, pulse therapy with methylprednisolone 1&#x2009;g was started and used for three days, with considerable clinical and radiological improvement. After this, prednisone 50&#x2009;mg/day was initiated and he was discharged in good general condition. After two-year follow-up, he has been well on lower dose (5&#x2009;mg/day) of prednisone. In the last few months, after abrupt voluntary discontinuation of his medication, there was a mild relapse of the disease which remitted with the reintroduction of 20&#x2009;mg/day of prednisone. The patient remains asymptomatic with low doses of steroids, maintaining complete resolution of respiratory, eye, and neck symptoms which were assumed to be manifestations of the same disease.</p>
+      <p>A reanalysis (with immunohistochemical staining) of the histological sample from previous maxillary biopsy revealed chronic inflammatory infiltrate rich in plasma cells with areas of fibrosis and erosion. Immunohistochemistry showed mixed population of B and T lymphocytes and an increased amount of positive IgG4 cells (up to 55 IgG4-positive plasma cell per high power field; IgG4/IgG ratio of 45&#x25;) (Figure <xref ref-type="fig" rid="fig1">1</xref>).</p>
+      <fig id="fig1">
+        <label>Figure 1</label>
+        <caption>
+          <p>Histological sample from maxillary biopsy with immunohistochemical staining showing infiltrate rich in plasma cells with increased proportion of positive IgG4 cells.</p></caption>
+        <graphic xlink:href="723493.fig.001" /></fig>
+    </sec>
+    <sec id="sec3">
+      <title>3. Discussion</title>
+      <p>The pathogenesis of IgG4-RD is poorly understood; however some findings are consistent with multiple immune-mediated mechanisms [<xref ref-type="bibr" rid="B8">8</xref>]: class II histocompatibility antigen genotype; autoantibodies to lactoferrin and carbonic anhydrase II; possible molecular mimicry involving<italic> Helicobacter pylori</italic>; immune complex deposition in some affected organs; increased levels of Th2 cytokines, T regulatory cells, interleukin-10, and transforming growth factor; evidences of allergic response with peripheral eosinophilia.</p>
+      <p>The overall epidemiology of the disease remains largely undefined. IgG4-RD is typically described in middle-aged and older men, mostly in autoimmune pancreatitis; the disease prototype and patients usually have a history of atopic disease [<xref ref-type="bibr" rid="B9">9</xref>&#x2013;<xref ref-type="bibr" rid="B11">11</xref>].</p>
+      <p>Multiorgan disease can be evident at diagnosis, but it usually evolves metachronously over a variable time. Estimates of the relative frequency of different manifestations depend upon the perspective of the index illness being analyzed.</p>
+      <p>Sometimes IgG4-RD is a diagnostic challenge, because it has multiple clinical manifestations and a wide spectrum of differential diagnosis. The confirmation of diagnosis is based on histopathological findings of the affected organ with immunohistochemical staining. The serum IgG4 level should be measured as it may strengthen the diagnostic hypothesis, although about 30&#x25; of patients may have normal serum IgG4 concentrations, despite classic histopathological findings of IgG4-RD [<xref ref-type="bibr" rid="B12">12</xref>].</p>
+      <p>This report well illustrates a common clinical situation of delayed diagnosis of IgG4-RD. Many reports of inflammatory pseudotumor in different sites may be examples of undiagnosed IgG4-RD [<xref ref-type="bibr" rid="B13">13</xref>, <xref ref-type="bibr" rid="B14">14</xref>]. In the present case, this condition should have been suspected after the histopathological results indicating &#x201c;chronic inflammatory processes&#x201d; in the tissue specimens. However our patient spent six years before the diagnosis was defined. His clinical findings included an inflammatory pseudotumor of the maxillary region and proptosis, probably secondary to a retro-orbital pseudotumor. Curiously enough, both conditions had periods of spontaneous remission and relapse. In addition, the patient reported a chronic dry cough with transbronchial biopsy revealing chronic pneumonitis and irregular septal fibrosis. Another unique feature of his disease was the presence of neck stiffness. Such atypical manifestation was probably secondary to idiopathic cervical fibrosis regarded as a new member of IgG4-RD [<xref ref-type="bibr" rid="B15">15</xref>]. Apart from the histopathological features, his excellent short and long-term response to the therapy with glucocorticoids, remaining asymptomatic with low doses of steroids, reinforced the diagnosis of IgG4-RD.</p>
+      <p>This case highlights the need to recognize IgG4-RD as an important differential diagnosis with multisystem diseases as the treatment may lead to remission and prevent significant morbidity and mortality.</p></sec>
+  </body>
+  <back>
+    <sec sec-type="conflict">
+      <title>Conflict of Interests</title>
+      <p>The authors declare that there is no conflict of interests regarding the publication of this paper.</p></sec>
+    <ack>
+      <title>Acknowledgment</title>
+      <p>Mittermayer Barreto Santiago is currently receiving a scholarship from Conselho Nacional de Desenvolvimento Cient&#xed;fico e Tecnol&#xf3;gico (CNPq).</p></ack>
+    <ref-list>
+      <ref id="B1" content-type="article">
+        <label>1</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kamisawa</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Funata</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Hayashi</surname>
+              <given-names>Y.</given-names></name>
+            <name>
+              <surname>Eishi</surname>
+              <given-names>Y.</given-names></name>
+            <name>
+              <surname>Koike</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Tsuruta</surname>
+              <given-names>K.</given-names></name>
+            <name>
+              <surname>Okamoto</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Egawa</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Nakajima</surname>
+              <given-names>H.</given-names></name>
+          </person-group>
+          <article-title>A new clinicopathological entity of IgG4-related autoimmune disease</article-title>
+          <source>
+            <italic>Journal of Gastroenterology</italic></source>
+          <year>2003</year>
+          <volume>38</volume>
+          <issue>10</issue>
+          <fpage>982</fpage>
+          <lpage>984</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0344825274</pub-id>
+          <pub-id pub-id-type="doi">10.1007/s00535-003-1175-y</pub-id></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stone</surname>
+              <given-names>J. R.</given-names></name>
+          </person-group>
+          <article-title>Aortitis, periaortitis, and retroperitoneal fibrosis, as manifestations of IgG4-related systemic disease</article-title>
+          <source>
+            <italic>Current Opinion in Rheumatology</italic></source>
+          <year>2011</year>
+          <volume>23</volume>
+          <issue>1</issue>
+          <fpage>88</fpage>
+          <lpage>94</lpage>
+          <pub-id pub-id-type="doi">10.1097/BOR.0b013e3283412f7c</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-78650509691</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="article">
+        <label>3</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dahlgren</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Khosroshahi</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Nielsen</surname>
+              <given-names>G. P.</given-names></name>
+            <name>
+              <surname>Deshpande</surname>
+              <given-names>V.</given-names></name>
+            <name>
+              <surname>Stone</surname>
+              <given-names>J. H.</given-names></name>
+          </person-group>
+          <article-title>Riedel's thyroiditis and multifocal fibrosclerosis are part of the IgG4-related systemic disease spectrum</article-title>
+          <source>
+            <italic>Arthritis Care and Research</italic></source>
+          <year>2010</year>
+          <volume>62</volume>
+          <issue>9</issue>
+          <fpage>1312</fpage>
+          <lpage>1318</lpage>
+          <pub-id pub-id-type="doi">10.1002/acr.20215</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-77956405448</pub-id></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dechoux</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Arriv&#xe9;</surname>
+              <given-names>L.</given-names></name>
+          </person-group>
+          <article-title>IgG4-related sclerosing disease: autoimmune pancreatitis (AIP) and IgG4-related cholangitis</article-title>
+          <source>
+            <italic>Clinics and Research in Hepatology and Gastroenterology</italic></source>
+          <year>2011</year>
+          <volume>35</volume>
+          <issue>10</issue>
+          <fpage>601</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.clinre.2011.06.014</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-80054858189</pub-id></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="article">
+        <label>5</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Teichman</surname>
+              <given-names>J. C.</given-names></name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>A. Y.</given-names></name>
+            <name>
+              <surname>El-Shinnawy</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Harvey</surname>
+              <given-names>J. T.</given-names></name>
+          </person-group>
+          <article-title>A case of orbital involvement in IgG4-related disease</article-title>
+          <source>
+            <italic>Orbit</italic></source>
+          <year>2012</year>
+          <volume>31</volume>
+          <issue>5</issue>
+          <fpage>327</fpage>
+          <lpage>329</lpage>
+          <pub-id pub-id-type="doi">10.3109/01676830.2011.616618</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84867067718</pub-id></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Vlachou</surname>
+              <given-names>P. A.</given-names></name>
+            <name>
+              <surname>Khalili</surname>
+              <given-names>K.</given-names></name>
+            <name>
+              <surname>Jang</surname>
+              <given-names>H.-J.</given-names></name>
+            <name>
+              <surname>Fischer</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Hirschfield</surname>
+              <given-names>G. M.</given-names></name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>T. K.</given-names></name>
+          </person-group>
+          <article-title>IgG4-related sclerosing disease: autoimmune pancreatitis and extrapancreatic manifestations</article-title>
+          <source>
+            <italic>Radiographics</italic></source>
+          <year>2011</year>
+          <volume>31</volume>
+          <issue>5</issue>
+          <fpage>1379</fpage>
+          <lpage>1402</lpage>
+          <pub-id pub-id-type="doi">10.1148/rg.315105735</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-80052891376</pub-id></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cornell</surname>
+              <given-names>L. D.</given-names></name>
+          </person-group>
+          <article-title>IgG4-related kidney disease</article-title>
+          <source>
+            <italic>Current Opinion in Nephrology and Hypertension</italic></source>
+          <year>2012</year>
+          <volume>21</volume>
+          <issue>3</issue>
+          <fpage>279</fpage>
+          <lpage>288</lpage></nlm-citation>
+      </ref>
+      <ref id="B8" content-type="article">
+        <label>8</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stone</surname>
+              <given-names>J. H.</given-names></name>
+            <name>
+              <surname>Zen</surname>
+              <given-names>Y.</given-names></name>
+            <name>
+              <surname>Deshpande</surname>
+              <given-names>V.</given-names></name>
+          </person-group>
+          <article-title>Mechanisms of disease: IgG4-related disease</article-title>
+          <source>
+            <italic>The New England Journal of Medicine</italic></source>
+          <year>2012</year>
+          <volume>366</volume>
+          <issue>6</issue>
+          <fpage>539</fpage>
+          <lpage>551</lpage>
+          <pub-id pub-id-type="doi">10.1056/NEJMra1104650</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84856773788</pub-id></nlm-citation>
+      </ref>
+      <ref id="B9" content-type="article">
+        <label>9</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Raina</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Yadav</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Krasinskas</surname>
+              <given-names>A. M.</given-names></name>
+            <name>
+              <surname>McGrath</surname>
+              <given-names>K. M.</given-names></name>
+            <name>
+              <surname>Khalid</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Sanders</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Whitcomb</surname>
+              <given-names>D. C.</given-names></name>
+            <name>
+              <surname>Slivka</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Evaluation and management of autoimmune pancreatitis: experience at a large us center</article-title>
+          <source>
+            <italic>American Journal of Gastroenterology</italic></source>
+          <year>2009</year>
+          <volume>104</volume>
+          <issue>9</issue>
+          <fpage>2295</fpage>
+          <lpage>2306</lpage>
+          <pub-id pub-id-type="other">2-s2.0-69949161955</pub-id>
+          <pub-id pub-id-type="doi">10.1038/ajg.2009.325</pub-id></nlm-citation>
+      </ref>
+      <ref id="B10" content-type="article">
+        <label>10</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nishimori</surname>
+              <given-names>I.</given-names></name>
+            <name>
+              <surname>Tamakoshi</surname>
+              <given-names>A.</given-names></name>
+            <name>
+              <surname>Otsuki</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Prevalence of autoimmune pancreatitis in Japan from a nationwide survey in 2002</article-title>
+          <source>
+            <italic>Journal of Gastroenterology</italic></source>
+          <year>2007</year>
+          <volume>42</volume>
+          <supplement>supplement 18</supplement>
+          <fpage>6</fpage>
+          <lpage>8</lpage>
+          <pub-id pub-id-type="doi">10.1007/s00535-007-2043-y</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-34249909757</pub-id></nlm-citation>
+      </ref>
+      <ref id="B11" content-type="article">
+        <label>11</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kamisawa</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Anjiki</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Egawa</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Kubota</surname>
+              <given-names>N.</given-names></name>
+          </person-group>
+          <article-title>Allergic manifestations in autoimmune pancreatitis</article-title>
+          <source>
+            <italic>European Journal of Gastroenterology and Hepatology</italic></source>
+          <year>2009</year>
+          <volume>21</volume>
+          <issue>10</issue>
+          <fpage>1136</fpage>
+          <lpage>1139</lpage>
+          <pub-id pub-id-type="doi">10.1097/MEG.0b013e3283297417</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-70349745827</pub-id></nlm-citation>
+      </ref>
+      <ref id="B12" content-type="article">
+        <label>12</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sah</surname>
+              <given-names>R. P.</given-names></name>
+            <name>
+              <surname>Chari</surname>
+              <given-names>S. T.</given-names></name>
+          </person-group>
+          <article-title>Serologic issues in IgG4-related systemic disease and autoimmune pancreatitis</article-title>
+          <source>
+            <italic>Current Opinion in Rheumatology</italic></source>
+          <year>2011</year>
+          <volume>23</volume>
+          <issue>1</issue>
+          <fpage>108</fpage>
+          <lpage>113</lpage>
+          <pub-id pub-id-type="doi">10.1097/BOR.0b013e3283413469</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-78650471809</pub-id></nlm-citation>
+      </ref>
+      <ref id="B13" content-type="article">
+        <label>13</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Leit&#xe3;o</surname>
+              <given-names>B.</given-names></name>
+            <name>
+              <surname>Machado</surname>
+              <given-names>F.</given-names></name>
+            <name>
+              <surname>Soares</surname>
+              <given-names>F.</given-names></name>
+            <name>
+              <surname>Souza</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Queiroz</surname>
+              <given-names>A. C.</given-names></name>
+            <name>
+              <surname>Santiago</surname>
+              <given-names>M. B.</given-names></name>
+          </person-group>
+          <article-title>Myocardial inflammatory pseudotumor and multiple thromboses as a manifestation of Behcet disease</article-title>
+          <source>
+            <italic>Journal of Clinical Rheumatology</italic></source>
+          <year>2009</year>
+          <volume>15</volume>
+          <issue>5</issue>
+          <fpage>252</fpage>
+          <lpage>253</lpage>
+          <pub-id pub-id-type="doi">10.1097/RHU.0b013e3181b082a0</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-69549133886</pub-id></nlm-citation>
+      </ref>
+      <ref id="B14" content-type="article">
+        <label>14</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Andrade</surname>
+              <given-names>D. M. S.</given-names></name>
+            <name>
+              <surname>Martins</surname>
+              <given-names>S. J.</given-names></name>
+            <name>
+              <surname>Paz</surname>
+              <given-names>O.</given-names></name>
+            <name>
+              <surname>Cardozo</surname>
+              <given-names>J. B.</given-names></name>
+            <name>
+              <surname>Novaes</surname>
+              <given-names>A. E.</given-names></name>
+            <name>
+              <surname>Santiago</surname>
+              <given-names>M. B.</given-names></name>
+          </person-group>
+          <article-title>Inflammatory pseudotumor: a diagnostic dilemma</article-title>
+          <source>
+            <italic>European Journal of Internal Medicine</italic></source>
+          <year>2006</year>
+          <volume>17</volume>
+          <issue>7</issue>
+          <fpage>514</fpage>
+          <lpage>516</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.ejim.2006.03.004</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-33750813574</pub-id></nlm-citation>
+      </ref>
+      <ref id="B15" content-type="article">
+        <label>15</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cheuk</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>Tam</surname>
+              <given-names>F. K. Y.</given-names></name>
+            <name>
+              <surname>Chan</surname>
+              <given-names>A. N. H.</given-names></name>
+            <name>
+              <surname>Luk</surname>
+              <given-names>I. S. C.</given-names></name>
+            <name>
+              <surname>Yuen</surname>
+              <given-names>A. P. W.</given-names></name>
+            <name>
+              <surname>Chan</surname>
+              <given-names>W.-K.</given-names></name>
+            <name>
+              <surname>Hung</surname>
+              <given-names>T. C. W.</given-names></name>
+            <name>
+              <surname>Chan</surname>
+              <given-names>J. K. C.</given-names></name>
+          </person-group>
+          <article-title>Idiopathic cervical fibrosis&#x2014;a new member of IgG4-related sclerosing diseases: report of 4 cases, 1 complicated by composite lymphoma</article-title>
+          <source>
+            <italic>The American Journal of Surgical Pathology</italic></source>
+          <year>2010</year>
+          <volume>34</volume>
+          <issue>11</issue>
+          <fpage>1678</fpage>
+          <lpage>1685</lpage>
+          <pub-id pub-id-type="doi">10.1097/PAS.0b013e3181f12c85</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-78049499787</pub-id></nlm-citation>
+      </ref></ref-list>
+  </back></article>

@@ -1,0 +1,410 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">CRIOG</journal-id>
+      <journal-title-group>
+        <journal-title>Case Reports in Obstetrics and Gynecology</journal-title></journal-title-group>
+      <issn pub-type="epub">2090-6692</issn>
+      <issn pub-type="ppub">2090-6684</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1155/2015/456028</article-id>
+      <article-id pub-id-type="publisher-id">456028</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Case Report</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Tracheal Agenesis: A Challenging Prenatal Diagnosis&#x2014;Contribution of Fetal MRI</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U28912486" corresp="yes">
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-9297-5363</contrib-id>
+          <name>
+            <surname>Bertholdt</surname>
+            <given-names>Charline</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U79021828">
+          <name>
+            <surname>Perdriolle-Galet</surname>
+            <given-names>Estelle</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1, 2</sup></xref>
+          <xref ref-type="aff" rid="I2" /></contrib>
+        <contrib contrib-type="author" id="U67962498">
+          <name>
+            <surname>Bach-Segura</surname>
+            <given-names>Pascale</given-names></name>
+          
+          <xref ref-type="aff" rid="I3">
+            <sup>3</sup></xref>
+        </contrib>
+        <contrib contrib-type="author" id="U97089540">
+          <name>
+            <surname>Morel</surname>
+            <given-names>Olivier</given-names></name>
+          
+          <xref ref-type="aff" rid="I1">
+            <sup>1, 2</sup></xref>
+          <xref ref-type="aff" rid="I2" /></contrib>
+        <contrib contrib-type="Academic Editor" id="U78230158">
+          <name>
+            <surname>Cosmi</surname>
+            <given-names>Erich</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <sup>1</sup>
+        <addr-line>P&#xf4;le de Gyn&#xe9;cologie-Obst&#xe9;trique</addr-line>
+        <addr-line>CHU de Nancy</addr-line>
+        <addr-line>Universit&#xe9; de Lorraine</addr-line>
+        <addr-line>10 rue du Docteur Heydenreich</addr-line>
+        <addr-line>54 000 Nancy</addr-line>
+        <country>France</country>
+        <ext-link ext-link-type="domain-name">univ-lorraine.fr</ext-link></aff>
+      <aff id="I2">
+        <sup>2</sup>
+        <addr-line>Unit&#xe9; INSERM U 947</addr-line>
+        <addr-line>Nancy</addr-line>
+        <addr-line>Universit&#xe9; de Lorraine</addr-line>
+        <addr-line>CHU de Brabois</addr-line>
+        <addr-line>Tour Drouet</addr-line>
+        <addr-line>rue du Morvan</addr-line>
+        <addr-line>54511 Vandoeuvre-l&#xe8;s-Nancy</addr-line>
+        <country>France</country>
+        <ext-link ext-link-type="domain-name">univ-lorraine.fr</ext-link></aff>
+      <aff id="I3">
+        <sup>3</sup>
+        <addr-line>P&#xf4;le d&#x2019;Imagerie M&#xe9;dicale</addr-line>
+        <addr-line>CHU de Nancy</addr-line>
+        <addr-line>Universit&#xe9; de Lorraine</addr-line>
+        <addr-line>10 rue du Docteur Heydenreich</addr-line>
+        <addr-line>54 000 Nancy</addr-line>
+        <country>France</country>
+        <ext-link ext-link-type="domain-name">univ-lorraine.fr</ext-link></aff>
+      <pub-date pub-type="publication-year">
+        <year>2015</year></pub-date>
+      <pub-date pub-type="archival-date"><day>2</day><month>3</month><year>2015</year></pub-date>
+      <volume>2015</volume>
+      <history>
+        <date date-type="received">
+          <day>05</day>
+          <month>01</month>
+          <year>2015</year></date>
+        <date date-type="accepted">
+          <day>20</day>
+          <month>02</month>
+          <year>2015</year></date>
+        <date date-type="pub"><day>2</day><month>3</month><year>2015</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2015</copyright-year>
+        <copyright-holder>Copyright &#xA9; 2015 Charline Bertholdt et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>Tracheal agenesis is a rare congenital anomaly. The prevalence is less than 1&#x2009;:&#x2009;50&#x2009;000 with a male to female ratio of 2&#x2009;:&#x2009;1. This anomaly may be isolated but, in 93&#x25; of cases, it is part of polymalformative syndrome. The most evocative diagnosis situation is the ultrasonographic congenital high airway obstruction syndrome. Dilated airways, enlarged lungs with flattened diaphragm, fetal ascites and severe nonimmune hydrops can be observed. In the absence of a congenital high airway obstruction syndrome, the antenatal diagnosis of tracheal agenesis is difficult. Tracheal agenesis should be suspected in the presence of an unexplained polyhydramnios associated with congenital malformations. The fetal airway exploration should then be systematically performed by fetal thoracic magnetic resonance imaging. A case of Floyd&#x2019;s type II tracheal agenesis, detected during the postnatal period, is reported here. The retrospective reexamination of fetal magnetic resonance images showed that the antenatal diagnosis would have been easy if a systematical examination of upper airways had been performed. Prenatal diagnosis of tracheal agenesis is possible with fetal MRI but the really challenge is to think about this pathology.</p></abstract>
+      <counts>
+        <ref-count count="8" />
+        <page-count count="3" /></counts>
+    </article-meta></front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>Tracheal agenesis is a rare congenital anomaly characterized by complete or almost complete failure of trachea development. The prevalence is less than 1&#x2009;:&#x2009;50&#x2009;000 with a male to female ratio of 2&#x2009;:&#x2009;1. A case of Floyd&#x2019;s type II of tracheal agenesis, detected during the postnatal period, is reported here.</p></sec>
+    <sec id="sec2">
+      <title>2. Case Report</title>
+      <p>A 21-year-old women, gravida 1, para 0, was referred at 17 weeks&#x2019; gestation because of the existence of a complex fetal heart anomaly. A double-outlet right ventricle was associated with a malposition of the great arteries, a ventricular septal defect, and a pulmonary artery stenosis.</p>
+      <p>A single umbilical artery and costovertebral abnormalities were also detected at ultrasound.</p>
+      <p>Fetal CT scan (computerized tomography scan) revealed abnormal vertebral angulation, hemivertebra, and rib anomalies.</p>
+      <p>The fetal medicine team, including a cardiopediatrician, discussed both diagnosis and prognosis, and the couple clearly expressed their wish to continue the pregnancy.</p>
+      <p>At fetal MRI (magnetic resonance imaging), performed at 31 weeks of gestation, no craniocerebral anomaly and no evocatory signs of CHARGE syndrome [<xref ref-type="bibr" rid="B1">1</xref>] (mnemonic term for coloboma, heart defects, choanal atresia, retarded growth and development, genital abnormalities, and ear anomalies) were found. Amniocentesis provided a normal XY karyotype. Prenatal ultrasound at 32 weeks showed polyhydramnios and suggested esophageal atresia but it was not confirmed. At 35 weeks, the fetus was eutrophic and the polyhydramnios was stable. Because of fetal heart abnormalities involving any immediate postnatal cardiovascular pediatric care, a C-section was performed at 39 weeks.</p>
+      <p>The newborn, a male infant weighting 2780&#x2009;G, presented a severe respiratory distress immediately after birth. Ventilation was impossible and attempts of tracheal intubation were unsuccessful. The larynx visualization was correct, but the tube did not advance beyond the vocal cords and a high resistance was felt under the glottis. Emergency tracheotomy was performed and a complete tracheal agenesis was found at surgical exploration. A complete interruption of the trachea beyond the vocal cords associated with a tracheoesophageal fistula at the level of the carina was found at fibroscopic examination.</p>
+      <p>The ventilation of the newborn was temporarily possible through the tracheoesophageal fistula via an esophageal intubation. The newborn unfortunately died within 5 hours after birth.</p>
+      <p>The retrospective analysis of fetal MRI images showed complete absence of the trachea.</p>
+      <p>The upper airways, normally visible as high intensity signal in T2-weighted image [<xref ref-type="bibr" rid="B2">2</xref>], were stopped below the glottis and only bronchial bifurcation was present (Figure <xref ref-type="fig" rid="fig1">1</xref>).</p>
+      <fig-group id="fig1">
+        <caption>
+          <p>Case report: fetal MRI. Saggittal (a) and axial (b) view. Absence of continuity between subglottic area and bronchial bifurcation: Floyd&#x2019;s classification of type II.</p></caption>
+        <fig id="fig1a">
+          <label>(a)</label>
+          <graphic xlink:href="456028.fig.001a" /></fig>
+        <fig id="fig1b">
+          <label>(b)</label>
+          <graphic xlink:href="456028.fig.001b" /></fig>
+      </fig-group>
+      <p>The diagnosis of a Floyd&#x2019;s type II [<xref ref-type="bibr" rid="B3">3</xref>] tracheal agenesis was confirmed at pathological examination.</p></sec>
+    <sec id="sec3">
+      <title>3. Discussion</title>
+      <p>Tracheal agenesis is complete or almost complete failure of trachea development. Payne first described this condition in 1900 and less than 200 cases have been published worldwide [<xref ref-type="bibr" rid="B4">4</xref>]. In 1962, Floyd et al. [<xref ref-type="bibr" rid="B3">3</xref>] classified tracheal agenesis in three anatomic types with incidence of 13&#x25;, 65&#x25;, and 22&#x25;, respectively [<xref ref-type="bibr" rid="B5">5</xref>]. Type I is characterized by agenesis of the proximal trachea. In type II, there is complete agenesis of trachea and the carina communicates with the oesophagus before it bifurcates. Type III represents complete agenesis of the trachea and the bronchi originate individually of the distal part of oesophagus.</p>
+      <p>Tracheal agenesis can be suspected in the presence of a CHAOS (congenital high airway obstruction syndrome) [<xref ref-type="bibr" rid="B6">6</xref>]. The syndrome presents with bilaterally enlarged echogenic lungs, which are due to intrapulmonary liquid retention caused by tracheal agenesis. Flattened diaphragm and ascites can be observed. The presence of associated tracheoesophageal fistula, however, allowed here the evacuation of intrapulmonary liquid and therefore the CHAOS was not present.</p>
+      <p>In our case, the antenatal diagnosis could have been realized even in the absence of CHAOS but<italic> a priori</italic> with fetal MRI only. The upper airway, indeed, was visualized till bronchial bifurcation at MRI, presenting with a high intensity signal in T2 because of its liquid content [<xref ref-type="bibr" rid="B2">2</xref>]. The diagnosis could then be proposed in the presence of a lack of continuity. In our images, the trachea was not visible, whereas glottis and bronchial bifurcation were clearly present.</p>
+      <p>In the majority of the cases, a polyhydramnios is observed. The initial bring up diagnosis is usually oesophageal agenesis which displays the same ultrasound appearance.</p>
+      <p>In 93&#x25; of the cases of tracheal agenesis, associated congenital malformations that may correspond to polymalformative syndrome such as VACTERL syndrome (vertebral anomalies, anal atresia, cardiovascular anomalies, tracheoesophageal fistula, renal anomalies, and limb defects), Fraser syndrome (tracheal agenesis, radial anomalies, complex heart malformations, and duodenal atresia), or the TARCD syndrome (cryptophthalmos, syndactyly, laryngeal atresia, and urogenital malformation) are observed [<xref ref-type="bibr" rid="B7">7</xref>].</p>
+      <p>In our case, the combination of polyhydramnios and congenital anomaly was present. Because of the presence of a tracheoesophageal fistula, however, the diagnosis of tracheal agenesis was not evoked. This lethal malformation could have been demonstrated prenatally as shown in retrospective reading of MRI images. MRI interpretation was performed by the study radiologist highly specialized in the field of fetal imaging. The antenatal diagnosis was missed because the eventuality of a tracheal agenesis was not raised.</p>
+      <p>To our knowledge, this is the second reported case of antenatal MRI images of fetal tracheal agenesis without CHAOS [<xref ref-type="bibr" rid="B8">8</xref>].</p>
+      <p>Prenatal diagnosis of tracheal agenesis is feasible with fetal MRI provided that a highly trained fetal radiologist performs the examination. The real challenge, however, remains to think about it in the absence of CHAOS.</p></sec>
+  </body>
+  <back>
+    <sec sec-type="conflict">
+      <title>Conflict of Interests</title>
+      <p>The authors declare that there is no conflict of interests regarding the publication of this paper.</p></sec>
+    <ref-list>
+      <ref id="B1" content-type="article">
+        <label>1</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hoshi</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Matsumiya</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Satsumae</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Takahash</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Sato</surname>
+              <given-names>K.</given-names></name>
+            <name>
+              <surname>Tanaka</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>A case of the CHARGE association with failed tracheal intubation</article-title>
+          <source>
+            <italic>Masui</italic></source>
+          <year>1998</year>
+          <volume>47</volume>
+          <issue>4</issue>
+          <fpage>487</fpage>
+          <lpage>489</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0031897614</pub-id></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Courtier</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Poder</surname>
+              <given-names>L.</given-names></name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>Z. J.</given-names></name>
+            <name>
+              <surname>Westphalen</surname>
+              <given-names>A. C.</given-names></name>
+            <name>
+              <surname>Yeh</surname>
+              <given-names>B. M.</given-names></name>
+            <name>
+              <surname>Coakley</surname>
+              <given-names>F. V.</given-names></name>
+          </person-group>
+          <article-title>Fetal tracheolaryngeal airway obstruction: prenatal evaluation by sonography and MRI</article-title>
+          <source>
+            <italic>Pediatric Radiology</italic></source>
+          <year>2010</year>
+          <volume>40</volume>
+          <issue>11</issue>
+          <fpage>1800</fpage>
+          <lpage>1805</lpage>
+          <pub-id pub-id-type="doi">10.1007/s00247-010-1800-x</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-78650182727</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="article">
+        <label>3</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Floyd</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Campbell</surname>
+              <given-names>D. C.</given-names>
+              <suffix>Jr.</suffix></name>
+            <name>
+              <surname>Dominy</surname>
+              <given-names>D. E.</given-names></name>
+          </person-group>
+          <article-title>Agenesis of the trachea</article-title>
+          <source>
+            <italic>The American Review of Respiratory Disease</italic></source>
+          <year>1962</year>
+          <volume>86</volume>
+          <fpage>557</fpage>
+          <lpage>560</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0001691425</pub-id></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>de Groot-van der Mooren</surname>
+              <given-names>M. D.</given-names></name>
+            <name>
+              <surname>Haak</surname>
+              <given-names>M. C.</given-names></name>
+            <name>
+              <surname>Lakeman</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Cohen-Overbeek</surname>
+              <given-names>T. E.</given-names></name>
+            <name>
+              <surname>van der Voorn</surname>
+              <given-names>J. P.</given-names></name>
+            <name>
+              <surname>Bretschneider</surname>
+              <given-names>J. H.</given-names></name>
+            <name>
+              <surname>van Elburg</surname>
+              <given-names>R. M.</given-names></name>
+          </person-group>
+          <article-title>Tracheal agenesis: approach towards this severe diagnosis. Case report and review of the literature</article-title>
+          <source>
+            <italic>European Journal of Pediatrics</italic></source>
+          <year>2012</year>
+          <volume>171</volume>
+          <issue>3</issue>
+          <fpage>425</fpage>
+          <lpage>431</lpage>
+          <pub-id pub-id-type="doi">10.1007/s00431-011-1563-x</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84860292663</pub-id></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="article">
+        <label>5</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fraser</surname>
+              <given-names>N.</given-names></name>
+            <name>
+              <surname>Stewart</surname>
+              <given-names>R. J.</given-names></name>
+            <name>
+              <surname>Grant</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Martin</surname>
+              <given-names>P.</given-names></name>
+            <name>
+              <surname>Gibbin</surname>
+              <given-names>K. P.</given-names></name>
+            <name>
+              <surname>Padfield</surname>
+              <given-names>C. J. H.</given-names></name>
+          </person-group>
+          <article-title>Tracheal agenesis with unique anatomy</article-title>
+          <source>
+            <italic>Journal of Pediatric Surgery</italic></source>
+          <year>2005</year>
+          <volume>40</volume>
+          <issue>10</issue>
+          <fpage>e7</fpage>
+          <lpage>e10</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.jpedsurg.2005.06.013</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-27444448200</pub-id></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Vaikunth</surname>
+              <given-names>S. S.</given-names></name>
+            <name>
+              <surname>Morris</surname>
+              <given-names>L. M.</given-names></name>
+            <name>
+              <surname>Polzin</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>Gottliebson</surname>
+              <given-names>W.</given-names></name>
+            <name>
+              <surname>Lim</surname>
+              <given-names>F.-Y.</given-names></name>
+            <name>
+              <surname>Kline-Faith</surname>
+              <given-names>B.</given-names></name>
+            <name>
+              <surname>Crombleholme</surname>
+              <given-names>T. M.</given-names></name>
+          </person-group>
+          <article-title>Congenital high airway obstruction syndrome due to complete tracheal agenesis: an accident of nature with clues for tracheal development and lessons in management</article-title>
+          <source>
+            <italic>Fetal Diagnosis and Therapy</italic></source>
+          <year>2009</year>
+          <volume>26</volume>
+          <issue>2</issue>
+          <fpage>93</fpage>
+          <lpage>97</lpage>
+          <pub-id pub-id-type="doi">10.1159/000242454</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-70350764837</pub-id></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ergun</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Tewfik</surname>
+              <given-names>T.</given-names></name>
+            <name>
+              <surname>Daniel</surname>
+              <given-names>S.</given-names></name>
+          </person-group>
+          <article-title>Tracheal agenesis: a rare but fatal congenital anomaly</article-title>
+          <source>
+            <italic>McGill Journal of Medicine</italic></source>
+          <year>2011</year>
+          <volume>13</volume>
+          <issue>1, article 10</issue>
+          <pub-id pub-id-type="other">2-s2.0-79959574794</pub-id></nlm-citation>
+      </ref>
+      <ref id="B8" content-type="article">
+        <label>8</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Coleman</surname>
+              <given-names>A. M.</given-names></name>
+            <name>
+              <surname>Merrow</surname>
+              <given-names>A. C.</given-names></name>
+            <name>
+              <surname>Elluru</surname>
+              <given-names>R. G.</given-names></name>
+            <name>
+              <surname>Polzin</surname>
+              <given-names>W. J.</given-names></name>
+            <name>
+              <surname>Lim</surname>
+              <given-names>F.-Y.</given-names></name>
+          </person-group>
+          <article-title>Tracheal agenesis with tracheoesophageal fistulae: fetal MRI diagnosis with confirmation by ultrasound during an ex utero intrapartum therapy (EXIT) delivery and postdelivery MRI</article-title>
+          <source>
+            <italic>Pediatric Radiology</italic></source>
+          <year>2013</year>
+          <volume>43</volume>
+          <issue>10</issue>
+          <fpage>1385</fpage>
+          <lpage>1390</lpage>
+          <pub-id pub-id-type="doi">10.1007/s00247-013-2679-0</pub-id>
+          <pub-id pub-id-type="other">2-s2.0-84885426374</pub-id></nlm-citation>
+      </ref></ref-list>
+  </back></article>

@@ -1,0 +1,303 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">CRIEM</journal-id>
+      <journal-title-group>
+        <journal-title>Case Reports in Emergency Medicine</journal-title></journal-title-group>
+      <issn pub-type="epub">2090-6498</issn>
+      <issn pub-type="ppub">2090-648X</issn>
+      <publisher>
+        <publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1155/2014/503205</article-id>
+      <article-id pub-id-type="publisher-id">503205</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Case Report</subject></subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Delayed Upper-Airway Injury after Accidental Alkaline Ingestion</article-title></title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="U81940751" corresp="yes">
+          <name>
+            <surname>Ryan</surname>
+            <given-names>Matthew F.</given-names></name>
+          
+          <xref ref-type="aff" rid="I1" /></contrib>
+        <contrib contrib-type="author" id="U74960564">
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4454-4950</contrib-id>
+          <name>
+            <surname>Fernandez</surname>
+            <given-names>Mindy</given-names></name>
+          
+          <xref ref-type="aff" rid="I1" /></contrib>
+        <contrib contrib-type="author" id="U98910727">
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-0889-9009</contrib-id>
+          <name>
+            <surname>Laauwe</surname>
+            <given-names>Karen</given-names></name>
+          
+          <xref ref-type="aff" rid="I1" /></contrib>
+        <contrib contrib-type="Academic Editor" id="U41473062">
+          <name>
+            <surname>Raja&#x2019;a</surname>
+            <given-names>Yahia A.</given-names></name>
+        </contrib></contrib-group>
+      <aff id="I1">
+        <addr-line>Department of Emergency Medicine</addr-line>
+        <addr-line>University of Florida</addr-line>
+        <addr-line>1329 SW 16th Street</addr-line>
+        <addr-line>P.O. Box 1000186</addr-line>
+        <addr-line>Gainesville, FL 32610-0186</addr-line>
+        <country>USA</country>
+        <ext-link ext-link-type="domain-name">ufl.edu</ext-link></aff>
+      <pub-date pub-type="publication-year">
+        <year>2014</year></pub-date>
+      <pub-date pub-type="archival-date"><day>9</day><month>6</month><year>2014</year></pub-date>
+      <volume>2014</volume>
+      <history>
+        <date date-type="received">
+          <day>29</day>
+          <month>01</month>
+          <year>2014</year></date>
+        <date date-type="accepted">
+          <day>25</day>
+          <month>05</month>
+          <year>2014</year></date>
+        <date date-type="pub">
+          <day>9</day>
+          <month>6</month>
+          <year>2014</year></date>
+      </history>
+      <permissions>
+        <copyright-year>2014</copyright-year>
+        <copyright-holder>Copyright &#xA9; 2014 Matthew F. Ryan et al.</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+      </permissions>
+      <abstract>
+        <p>A 62-year-old man presented to the emergency department one week after accidentally drinking an alkaline cleaning agent stored in unlabeled bottle. The day of the incident the patient presented to an outside hospital where he was admitted for an upper endoscopy of the esophagus which was found to be negative for acute injury. An initial chest X-ray taken the day of the incident was also found to be normal. After discharge the patient continued to have a sore throat and marked dysphagia which caused him to vomit repeatedly. Moreover, the patient began to develop chest pain with associated shortness of breath. We present a case of delayed airway injury and tracheal thickening and associated chest pain after alkaline ingestion and we discuss herein the pathophysiology and management of alkaline ingestions.</p></abstract>
+      <counts>
+        <ref-count count="7" />
+        <page-count count="3" /></counts>
+    </article-meta></front>
+  <body>
+    <sec id="sec1">
+      <title>1. Introduction</title>
+      <p>Alkaline ingestion is a particularly concerning presentation for the emergency medicine physician. Alkaline agents can be extremely caustic and thus cause significant tissue damage to both the digestive and pulmonary tracts. The physical and chemical properties of caustic agents play an important role in injury severity and management; the concentration and the pH of the agent, the quantity ingested, the viscosity of the material, the contact time on internal tissues, whether the material was aspirated, whether the agent was solid, foam, or an aqueous solution all are important considerations. For example, household bleach (pH &#x7e;12) rarely causes significant injury if ingested [<xref ref-type="bibr" rid="B1">1</xref>] whereas solid agents such as lye or cleaning agents can lead to significant and permanent tissue injury and even result in death [<xref ref-type="bibr" rid="B2">2</xref>]. A key to alkaline injury is the fact that it causes liquefactive tissue necrosis leading to dissolution of cellular components and saponification of fatty tissues resulting in a liquid-gel amalgamation of dissolved cells and connective tissue. Ingestion of acidic media results in immediate denaturing of proteins which limits proteolysis of cellular constituents and leads to localized eschar formation which limits further tissue damage [<xref ref-type="bibr" rid="B3">3</xref>].</p>
+      <p>Herein we describe a case in which a patient presented with delayed respiratory symptoms and continued upper gastrointestinal symptoms a week after initial ingestion. We hypothesize that the patient suffered from continued yet insidious tissue destruction resulting from his progressively worsening symptoms. For example, because alkaline agents are not limited by decreased proteolysis or eschar formation, it is conceivable that tissue damage can continue after the initial insult due to infiltration of the alkaline material deep within the tissues. This case illustrates the importance of ensuring continue patient monitoring for caustic ingestions and thus minimizing subsequent untoward outcomes.</p></sec>
+    <sec id="sec2">
+      <title>2. Case Report</title>
+      <p>A 62-year-old man presented to the emergency department one week after accidentally drinking an alkaline air-conditioner coil-cleaning agent stored in unlabeled bottle. The day of the incident the patient presented to an outside hospital where he was admitted for an upper endoscopy of the esophagus as well as laryngoscopy which were both found to be negative for acute injury. An initial chest X-ray taken the day of the incident was also found to be normal. After several days of observation the patient was discharged with a prescription for a proton-pump inhibitor. However, the patient continued to have a sore throat and marked dysphagia, dysphonia, and a sore throat which caused him to vomit nearly every time he attempted to eat or drink. He reported 11-kilogram weight loss from his decreased oral intake. Even more concerning was that the patient began to develop progressively worsening epigastric pain and upper chest pain with associated shortness of breath. The patient denied fever, chills, weakness, wheezing, bloody stools, or lower gastrointestinal upset. The ingestion was not an attempt of self-harm as the patient incorrectly assumed the unlabeled bottle contained a popular sports drink which is also brightly colored like the coil cleaning agent. Note that most commercial coil cleaning agents contain up to 5&#x25; sodium or potassium hydroxide solutions (pH &#x3e; 13).</p>
+      <p>The patient&#x2019;s past medical history was significant for diabetes, mild chronic obstructive lung disease, and hypertension for which he is on an insulin regiment and lisinopril for his hypertension. On presentation, the patients vital signs were as follows: blood pressure of 133/77&#x2009;mmHg, pulse of 111, respiratory rate of 20, temperature of 36.7&#xb0;C and oxygen saturation of 96&#x25; on room air. His physical exam was significant for pharyngeal and uvula erythema and edema without ulcers. His lung exam demonstrated slightly diminished breathe sounds bilaterally with no noted increased work of breathing. His abdomen including the epigastric region was soft without rebound or guarding. The remainder of his exam was normal.</p>
+      <p>The patient&#x2019;s basic metabolic panel revealed bicarbonate of 21&#x2009;mmol/dL, urea nitrogen and creatinine of 24&#x2009;mg/dL and 1.27&#x2009;mg/dL, respectively, and serum glucose of 157&#x2009;mg/dL. Serum sodium, potassium, chloride, and liver enzymes were within normal ranges. A complete blood count (CBC) revealed a white count of <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M1"><mml:mn>13.1</mml:mn><mml:mo>&#xd7;</mml:mo><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>/mm<sup>3</sup> with a hematocrit of 53.7&#x25;. Other CBC parameters were normal as was a serum lactate.</p>
+      <p>An anterior chest X-ray (shown in Figure <xref ref-type="fig" rid="fig1">1</xref>) was taken with showed clear lungs fields without effusion, infiltrate or aspiration, normal mediastinum, and no lymphadenopathy. The X-ray was significant for tracheal thickening not evident on the X-ray taken one week earlier. Subsequent upper endoscopy revealed mild diffuse esophageal erythema without no erosions or ulcers. The patient was discharged after two days with the recommendation for outpatient esophageal manometry and a pain management plan for his dysphagia. However, to date he continues to have dysphagia from permanent esophageal injury but no longer has any noted exacerbations of chest pain or dyspnea.</p>
+      <fig id="fig1">
+        <label>Figure 1</label>
+        <caption>
+          <p>Anterior-posterior chest X-ray demonstrating tracheal wall thickening (arrow) as the result of alkaline ingestion.</p></caption>
+        <graphic xlink:href="503205.fig.001" /></fig>
+    </sec>
+    <sec id="sec3">
+      <title>3. Discussion</title>
+      <p>Alkaline ingestion causes liquefactive corrosion to the tissues of the upper gastrointestinal tract which can lead to permanent laryngeal and esophageal injury and dysphagia [<xref ref-type="bibr" rid="B4">4</xref>] as was the case for the patient discussed herein. Liquefactive necrosis is of particular concern because if aspiration occurs (which likely occurred here given the patients significant tracheal thickening) upper respiratory tract injuries can result leading to dyspnea and chest pain. Moreover, cases of significant inhalation or aspiration can result in tracheobronchitis, lung parenchyma injury including hemopneumothorax and lung necrosis&#x2014;which can be potentially life threatening&#x2014;as well as airway bleeding and airway obstruction [<xref ref-type="bibr" rid="B5">5</xref>]. Aspiration may be more common than suspected due to vomiting and laryngeal edema from low viscosity alkaline agents as in this case. When acute airway compromise due to caustic ingestion and possible airway involvement is suspected, patients should be intubated early for airway protection [<xref ref-type="bibr" rid="B5">5</xref>]. Furthermore, the endotracheal tube itself serves as a stent to prevent obstruction from airway scarring and further tissue destruction. Airway establishment is best done under direct bronchoscopy to avoid iatrogenic trauma to the airway or placement of the endotracheal tube in a false passage.</p>
+      <p>Caustic injuries from alkaline injuries are particularly heinous because basic agents (pH &#x3e; 7) can cause liquefaction of tissues forming a viscous gel of necrosed tissues primarily due to saponification of fatty substrates (e.g., cell membranes, neural sheaths, and intracellular vacuoles) and potentially result in full thickness burns. The extent of the tissue damage depends on the concentration of the offending agent, its viscosity, and the contact time of the agent. For example, concentrated crystalline materials such as powdered drain cleaners cause more extensive tissue damage than, say, household bleach which is a more dilute aqueous solution [<xref ref-type="bibr" rid="B6">6</xref>]. Alkaline coil cleaning agents have pH values up to 13.75 but by design have low viscosities to allow for permeation through the coils of cooling system. In our patient&#x2019;s case, the low viscosity likely prevented potentially life-threatening injuries, but the concentration of the ingested agent was enough to cause permanent sequelae in the way of dysphagia and epigastric and chest pain.</p>
+      <p>Management of caustic injuries includes bronchoscopy and esophagoscopy which are essential for initial diagnostic evaluation of the tissues of the upper gastrointestinal and pulmonary tracts and to gauge the extent of injury [<xref ref-type="bibr" rid="B4">4</xref>]. However, for alkaline injuries little can be done to abate the extent of the injury; gastric lavage, dilution of the agent, inducing emesis and activated charcoal, should be avoided. Steroids are still considered beneficial to avoid worsening tissue damage, stricture formation, and latent airway obstruction [<xref ref-type="bibr" rid="B7">7</xref>].</p>
+      <p>Most alkaline ingestions, as was the case here, are accidental. BB noted that 85&#x25; of all caustic ingestions in a retrospective analysis were accidental and patients with intentional ingestions had higher morbidity and mortality rates [<xref ref-type="bibr" rid="B6">6</xref>]. Nevertheless, the concern for self-harm should be part of patient management as needed to ensure patient safety.</p></sec>
+    <sec id="sec4">
+      <title>4. Conclusion</title>
+      <p>Ingestion of alkaline agents is potentially life-threatening depending on the chemical and physical properties of the agent and of course the past medical history of the patient. Initial airway establishment may be necessary and vigilant monitoring for worsening conditions is vital to patient management. Admission for bronchoscopy and esophagoscopy to assess the extent of the injury is warranted in most cases. However, outpatient management is also vital to ensure patient safety. This may include pain management, repeated esophagoscopy with manometry, and medical management with proton-pump inhibitors and possibly steroids.</p></sec>
+  </body>
+  <back>
+    <sec sec-type="conflict">
+      <title>Conflict of Interests</title>
+      <p>The authors declare no conflict of interests regarding the publication of this paper.</p></sec>
+    <ref-list>
+      <ref id="B1" content-type="article">
+        <label>1</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Harley</surname>
+              <given-names>E. H.</given-names></name>
+            <name>
+              <surname>Collins</surname>
+              <given-names>M. D.</given-names></name>
+          </person-group>
+          <article-title>Liquid household bleach ingestion in children: a retrospective review</article-title>
+          <source>
+            <italic>The Laryngoscope</italic></source>
+          <year>1997</year>
+          <volume>107</volume>
+          <issue>1</issue>
+          <fpage>122</fpage>
+          <lpage>125</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0031022527</pub-id>
+          <pub-id pub-id-type="doi">10.1097/00005537-199701000-00023</pub-id></nlm-citation>
+      </ref>
+      <ref id="B2" content-type="article">
+        <label>2</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Riffat</surname>
+              <given-names>F.</given-names></name>
+            <name>
+              <surname>Cheng</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Pediatric caustic ingestion: 50 consecutive cases and a review of the literature</article-title>
+          <source>
+            <italic>Diseases of the Esophagus</italic></source>
+          <year>2009</year>
+          <volume>22</volume>
+          <issue>1</issue>
+          <fpage>89</fpage>
+          <lpage>94</lpage>
+          <pub-id pub-id-type="other">2-s2.0-58749102077</pub-id>
+          <pub-id pub-id-type="doi">10.1111/j.1442-2050.2008.00867.x</pub-id></nlm-citation>
+      </ref>
+      <ref id="B3" content-type="article">
+        <label>3</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jaillard</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>Nseir</surname>
+              <given-names>S.</given-names></name>
+            <name>
+              <surname>M&#xe9;tois</surname>
+              <given-names>D.</given-names></name>
+            <name>
+              <surname>Marquette</surname>
+              <given-names>C. H.</given-names></name>
+            <name>
+              <surname>Darras</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Porte</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Wurtz</surname>
+              <given-names>A.</given-names></name>
+          </person-group>
+          <article-title>Extensive corrosive injuries of the upper airways and gastrointestinal tract</article-title>
+          <source>
+            <italic>Journal of Thoracic and Cardiovascular Surgery</italic></source>
+          <year>2002</year>
+          <volume>123</volume>
+          <issue>1</issue>
+          <fpage>186</fpage>
+          <lpage>188</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0036381811</pub-id>
+          <pub-id pub-id-type="doi">10.1067/mtc.2002.118273</pub-id></nlm-citation>
+      </ref>
+      <ref id="B4" content-type="article">
+        <label>4</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lupa</surname>
+              <given-names>M.</given-names></name>
+            <name>
+              <surname>Magne</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Guarisco</surname>
+              <given-names>J. L.</given-names></name>
+            <name>
+              <surname>Amedee</surname>
+              <given-names>R.</given-names></name>
+          </person-group>
+          <article-title>Update on the diagnosis and treatment of caustic ingestion</article-title>
+          <source>
+            <italic>Ochsner Journal</italic></source>
+          <year>2009</year>
+          <volume>9</volume>
+          <issue>2</issue>
+          <fpage>54</fpage>
+          <lpage>59</lpage>
+          <pub-id pub-id-type="other">2-s2.0-67650361746</pub-id></nlm-citation>
+      </ref>
+      <ref id="B5" content-type="article">
+        <label>5</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huang</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>H.</given-names></name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>Y.</given-names></name>
+          </person-group>
+          <article-title>Extensive tracheobronchitis and lung perforation after alkaline caustic aspiration</article-title>
+          <source>
+            <italic>Annals of Thoracic Surgery</italic></source>
+          <year>2010</year>
+          <volume>89</volume>
+          <issue>5</issue>
+          <fpage>1670</fpage>
+          <lpage>1673</lpage>
+          <pub-id pub-id-type="other">2-s2.0-77953064376</pub-id>
+          <pub-id pub-id-type="doi">10.1016/j.athoracsur.2009.10.002</pub-id></nlm-citation>
+      </ref>
+      <ref id="B6" content-type="article">
+        <label>6</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ramasamy</surname>
+              <given-names>K.</given-names></name>
+            <name>
+              <surname>Gumaste</surname>
+              <given-names>V. V.</given-names></name>
+          </person-group>
+          <article-title>Corrosive ingestion in adults</article-title>
+          <source>
+            <italic>Journal of Clinical Gastroenterology</italic></source>
+          <year>2003</year>
+          <volume>37</volume>
+          <issue>2</issue>
+          <fpage>119</fpage>
+          <lpage>124</lpage>
+          <pub-id pub-id-type="other">2-s2.0-0038721315</pub-id>
+          <pub-id pub-id-type="doi">10.1097/00004836-200308000-00005</pub-id></nlm-citation>
+      </ref>
+      <ref id="B7" content-type="article">
+        <label>7</label>
+        <nlm-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ar&#xe9;valo-Silva</surname>
+              <given-names>C.</given-names></name>
+            <name>
+              <surname>Eliashar</surname>
+              <given-names>R.</given-names></name>
+            <name>
+              <surname>Wohlgelernter</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Elidan</surname>
+              <given-names>J.</given-names></name>
+            <name>
+              <surname>Gross</surname>
+              <given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Ingestion of caustic substances: a 15-year experience</article-title>
+          <source>
+            <italic>The Laryngoscope</italic></source>
+          <year>2006</year>
+          <volume>116</volume>
+          <issue>8</issue>
+          <fpage>1422</fpage>
+          <lpage>1426</lpage>
+          <pub-id pub-id-type="other">2-s2.0-33746783014</pub-id>
+          <pub-id pub-id-type="doi">10.1097/01.mlg.0000225376.83670.4d</pub-id></nlm-citation>
+      </ref></ref-list>
+  </back></article>

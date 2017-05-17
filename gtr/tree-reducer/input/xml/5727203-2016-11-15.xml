@@ -1,0 +1,170 @@
+<article xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/publishing/1.1/xsd/JATS-journalpublishing1-mathml3.xsd" dtd-version="1.1" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="publisher-id">BMRI</journal-id>
+			<journal-title-group>
+				<journal-title>BioMed Research International</journal-title></journal-title-group>
+			<issn pub-type="epub">2314-6141</issn>
+			<issn pub-type="ppub">2314-6133</issn>
+			<publisher>
+				<publisher-name>Hindawi Publishing Corporation</publisher-name></publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="doi">10.1155/2016/5727203</article-id>
+			<article-id pub-id-type="publisher-id">5727203</article-id>
+			<article-categories>
+				<subj-group subj-group-type="heading">
+					<subject>Erratum</subject></subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Erratum to &#x201c;Inhibitory Effect of Long-Chain Fatty Acids on Biogas Production and the Protective Effect of Membrane Bioreactor&#x201d;</article-title></title-group>
+			<contrib-group>
+				<contrib contrib-type="author" id="U31934914">
+					<name>
+						<surname>Dasa</surname>
+						<given-names>Kris Triwulan</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U31898039">
+					<name>
+						<surname>Westman</surname>
+						<given-names>Supansa Y.</given-names></name>
+					
+					<xref ref-type="aff" rid="I2">
+						<sup>2</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U81756278" corresp="yes">
+					<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4367-1974</contrib-id>
+					<name>
+						<surname>Millati</surname>
+						<given-names>Ria</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U32619204">
+					<name>
+						<surname>Cahyanto</surname>
+						<given-names>Muhammad Nur</given-names></name>
+					
+					<xref ref-type="aff" rid="I1">
+						<sup>1</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U36817505">
+					<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4887-2433</contrib-id>
+					<name>
+						<surname>Taherzadeh</surname>
+						<given-names>Mohammad J.</given-names></name>
+					
+					<xref ref-type="aff" rid="I2">
+						<sup>2</sup></xref>
+				</contrib>
+				<contrib contrib-type="author" id="U50231075">
+					<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-6633-5108</contrib-id>
+					<name>
+						<surname>Niklasson</surname>
+						<given-names>Claes</given-names></name>
+					
+					<xref ref-type="aff" rid="I3">
+						<sup>3</sup></xref>
+				</contrib></contrib-group>
+			<aff id="I1">
+				<sup>1</sup>
+				<addr-line>Department of Food and Agricultural Product Technology</addr-line>
+				<addr-line>Universitas Gadjah Mada</addr-line>
+				<addr-line>Yogyakarta 55281</addr-line>
+				<country>Indonesia</country>
+				<ext-link ext-link-type="domain-name">ugm.ac.id</ext-link></aff>
+			<aff id="I2">
+				<sup>2</sup>
+				<addr-line>Swedish Center for Resource Recovery</addr-line>
+				<addr-line>University of Bor&#xe5;s</addr-line>
+				<addr-line>50190 Bor&#xe5;s</addr-line>
+				<country>Sweden</country>
+				<ext-link ext-link-type="domain-name">hb.se</ext-link></aff>
+			<aff id="I3">
+				<sup>3</sup>
+				<addr-line>Department of Chemistry and Chemical Engineering</addr-line>
+				<addr-line>Chalmers University of Technology</addr-line>
+				<addr-line>41296 Gothenburg</addr-line>
+				<country>Sweden</country>
+				<ext-link ext-link-type="domain-name">chalmers.se</ext-link></aff>
+			<pub-date pub-type="publication-year">
+				<year>2016</year></pub-date>
+			<pub-date pub-type="archival-date"><day>15</day><month>11</month><year>2016</year></pub-date>
+			<volume>2016</volume>
+			<history>
+				<date date-type="received">
+					<day>19</day>
+					<month>10</month>
+					<year>2016</year></date>
+				<date date-type="accepted">
+					<day>27</day>
+					<month>10</month>
+					<year>2016</year></date>
+				<date date-type="pub"><day>15</day><month>11</month><year>2016</year></date>
+			</history>
+			<permissions>
+				<copyright-year>2016</copyright-year>
+				<copyright-holder> Copyright &#xa9; 2016 Kris Triwulan Dasa et al.</copyright-holder>
+				<license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+					<license-p>This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license>
+			</permissions>
+			
+			<counts>
+				<ref-count count="1" />
+				<page-count count="2" /></counts>
+		</article-meta></front>
+	<body>
+		<p>In the article titled &#x201c;Inhibitory Effect of Long-Chain Fatty Acids on Biogas Production and the Protective Effect of Membrane Bioreactor&#x201d; [<xref ref-type="bibr" rid="B1">1</xref>], the word &#x201c;stabil&#x201d; is misspelled in section &#x201c;<italic>3.2.2. Volatile Fatty Acid and pH</italic>.&#x201d; It should be corrected to &#x201c;stable.&#x201d; In addition, the bar charts for the encased cell of Figure&#x2009;&#x2009;3 are not clear. A clearer version can be found as follows.</p>
+		<fig-group id="fig1">
+			<label>Figure 3</label>
+			<caption>
+				<p>Percentage of inhibition in the reactors with the free cells and MBR with the encased cells in the presence of LCFAs. (a) Palmitic acid, (b) stearic acid, and (c) oleic acid.</p></caption>
+			<fig id="fig1a">
+				<label>(a)</label>
+				<graphic xlink:href="5727203.fig.001a" /></fig>
+			<fig id="fig1b">
+				<label>(b)</label>
+				<graphic xlink:href="5727203.fig.001b" /></fig>
+			<fig id="fig1c">
+				<label>(c)</label>
+				<graphic xlink:href="5727203.fig.001c" /></fig>
+		</fig-group></body>
+	<back>
+		<ref-list>
+			<ref id="B1" content-type="article">
+				<label>1</label>
+				<element-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Dasa</surname>
+							<given-names>K. T.</given-names></name>
+						<name>
+							<surname>Westman</surname>
+							<given-names>S. Y.</given-names></name>
+						<name>
+							<surname>Millati</surname>
+							<given-names>R.</given-names></name>
+						<name>
+							<surname>Cahyanto</surname>
+							<given-names>M. N.</given-names></name>
+						<name>
+							<surname>Taherzadeh</surname>
+							<given-names>M. J.</given-names></name>
+						<name>
+							<surname>Niklasson</surname>
+							<given-names>C.</given-names></name>
+					</person-group>
+					<article-title>Inhibitory effect of long-chain fatty acids on biogas production and the protective effect of membrane bioreactor</article-title>
+					<source>
+						<italic>BioMed Research International</italic></source>
+					<year>2016</year>
+					<volume>2016</volume>
+					<lpage>9</lpage>
+					<pub-id pub-id-type="publisher-id">7263974</pub-id>
+					<pub-id pub-id-type="doi">10.1155/2016/7263974</pub-id></element-citation>
+			</ref></ref-list>
+	</back></article>
